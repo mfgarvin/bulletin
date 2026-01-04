@@ -1,193 +1,196 @@
+"""Parish bulletin processor - async CLI entrypoint."""
+
 import argparse
-from datetime import date, timedelta
-import os
+import asyncio
+import logging
 import sys
-import time
-from tempfile import TemporaryFile, NamedTemporaryFile
 
-from download_bulletins import download_bulletin
-#from ocr import analyze_document
-#from info_extract import get_times, count_pages
-from structured_output_extract import count_pages, get_times
-from notion_stuff import get_notion_client_from_environment, get_all_parishes, get_individual_parish, upload_parish_analysis, upload_parish_info
-from openai import Client
-from rich import print
+from openai import AsyncOpenAI
 
-# Function to initialize and parse command line arguments
-def parse_arguments():
-    parser = argparse.ArgumentParser(description='Update parish mass times in the Notion DB.')
+from database import NotionClient
+from extractor import BulletinExtractor, ExtractionMethod
+from schemas import BulletinExtraction
+from sources import get_source_for_publisher
 
-    parser.add_argument('-d', '--dry-run', action='store_true', help='Dry run: downloads bulletins but does not update the database')
-    parser.add_argument('-a', '--all', action='store_true', help='Runs against all enabled parishes with expired data')
-    parser.add_argument('-v', '--verbose', action='store_true', help='Verbose')
-    parser.add_argument('-m', '--mass', action='store_true', help='Search for Mass Times')
-    parser.add_argument('-c', '--confession', action='store_true', help='Search for Confession Times')
-    parser.add_argument('-e', '--adoration', action='store_true', help='Search for Adoration Times')
-    parser.add_argument('-i', '--information', action='store_true', help='Find info about the Parish')
-    parser.add_argument('parish_ids', nargs='*', help='ID(s) of the parish(es) to be checked')
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+logger = logging.getLogger(__name__)
+
+
+async def process_parish(
+    parish_id: str,
+    publisher: str,
+    extractor: BulletinExtractor,
+    db: NotionClient,
+    dry_run: bool = False,
+) -> bool:
+    """Process a single parish bulletin. Returns True on success."""
+    log_entries: list[str] = []
+
+    def log(msg: str):
+        logger.info(f"[{parish_id}] {msg}")
+        log_entries.append(msg)
+
+    try:
+        # Skip unsupported publishers
+        if publisher in ["Other", ""]:
+            log(f"Skipping unsupported publisher: {publisher}")
+            return False
+
+        # 1. Download bulletin
+        source = get_source_for_publisher(publisher)
+        log(f"Downloading from {source.name}...")
+
+        # Rate limit delay if needed
+        if source.rate_limit_delay > 0:
+            log(f"Waiting {source.rate_limit_delay}s (rate limit)...")
+            await asyncio.sleep(source.rate_limit_delay)
+
+        result = await source.download(parish_id)
+        if not result.success:
+            log(f"Download failed: {result.error}")
+            return False
+
+        log(f"Downloaded bulletin ({len(result.pdf_bytes)} bytes)")
+
+        # 2. Extract (single LLM call)
+        log("Extracting information...")
+        extraction: BulletinExtraction = await extractor.extract(result.pdf_bytes)
+
+        log(
+            f"Found: {len(extraction.mass_times)} masses, "
+            f"{len(extraction.confession_times)} confessions, "
+            f"{len(extraction.events)} events"
+        )
+
+        if extraction.adoration.is_perpetual:
+            log("Perpetual adoration detected")
+        elif extraction.adoration.times:
+            log(f"Found {len(extraction.adoration.times)} adoration times")
+
+        if extraction.extraction_notes:
+            log(f"Notes: {extraction.extraction_notes}")
+
+        # 3. Validate
+        if len(extraction.mass_times) == 0:
+            log("WARNING: No mass times found - may indicate extraction issue")
+
+        # 4. Save
+        if not dry_run:
+            await db.save_extraction(
+                parish_id=parish_id,
+                extraction=extraction,
+                bulletin_url=result.url,
+                log=log_entries,
+            )
+            log("Saved to database")
+        else:
+            log("Dry run - skipping database save")
+
+        return True
+
+    except Exception as e:
+        log(f"ERROR: {e}")
+        logger.exception(f"Failed to process {parish_id}")
+        return False
+
+
+def parse_arguments() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Parish bulletin processor")
+
+    parser.add_argument(
+        "parish_ids",
+        nargs="*",
+        help="Specific parish IDs to process",
+    )
+    parser.add_argument(
+        "-a",
+        "--all",
+        action="store_true",
+        help="Process all enabled parishes with stale data",
+    )
+    parser.add_argument(
+        "-d",
+        "--dry-run",
+        action="store_true",
+        help="Download and extract but do not save to database",
+    )
+    parser.add_argument(
+        "--method",
+        choices=["direct_pdf", "marker_ocr"],
+        default="direct_pdf",
+        help="Extraction method (default: direct_pdf)",
+    )
+    parser.add_argument(
+        "--stale-days",
+        type=int,
+        default=7,
+        help="Days before data is considered stale (default: 7)",
+    )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="Enable verbose logging",
+    )
 
     return parser.parse_args()
 
-# Function to check for required environment variables and return them in a config object
-def get_config():
-    required_vars = ['OPENAI_API_KEY', 'BULLETIN_ASSISTANT_ID', 'NOTION_API_KEY', 'PARISH_DB_ID']
-    config = {}
 
-    missing_vars = [var for var in required_vars if var not in os.environ]
-    if missing_vars:
-        sys.exit(f"Error: Missing environment variables: {', '.join(missing_vars)}")
-
-    for var in required_vars:
-        config[var.lower()] = os.environ[var]
-
-    return argparse.Namespace(**config)
-
-
-def run_parish(parish_id:str, publisher:str, config:argparse.Namespace, mass:bool=False, confession:bool=False, adoration:bool=False, info:bool=False, dry_run:bool=False, verbose:bool=False):
-
-    # Tiny not-great logging utility
-    analysis_log = []
-    def log(message, console=False):
-        """Adds something to the log we'll write to notion, and optionally prints it out"""
-        analysis_log.append(message)
-        if console:
-            print(f"Parish {parish_id}: {message}")
-
-    log("Process start.", console=True)
-
-    with TemporaryFile('w+b') as temp_file:
-        if publisher in ["Parishes Online"]: 
-            url = download_bulletin(parish_id, temp_file, "PO")
-        if publisher in ["Discover Mass"]:
-            url = download_bulletin(parish_id, temp_file, "DM")
-            log("Brief delay to prevent a lockout", console=True)
-            time.sleep(30)
-        if publisher in ["eCatholic"]:
-            url = download_bulletin(parish_id, temp_file, "EC")
-        if publisher in ["Other"]:
-            return      #There's no code to process "other" bulletins yet"
-        temp_file.seek(0)
-        log(f"Downloaded bulletin from {publisher}.", console=True)
-
-        page_count = count_pages(temp_file)
-        temp_file.seek(0)
-        log(f"Counted {page_count} pages in this PDF", console=True)
-
-### TO DO ###
-### main.py
-###
-### Combine all 3 activities into one request, use an array (events = get_times(... ['mass', 'adoration', 'confession']))
-### Filter out via json, sort into mass_times, etc. And do all of the logic.
-###     e.g. mass_times = json.loads(events){mass} or however json works
-###
-### info_extract.py
-###
-### Implement a for loop
-### Can I resume a run?
-### Only delete bulletin file remotely after I'm done with it
-### Adjust event logic & checking
-        openai_client = Client()
-
-        activities_to_get = []
-        if mass:
-            activities_to_get.append("mass") 
-        if confession:
-            activities_to_get.append("conf") 
-        if adoration:
-            activities_to_get.append("adore")
-        if info:
-            activities_to_get.append("info")
-
-        mass_times, confession_times, adoration_times, parish_info = get_times(openai_client, activities_to_get, temp_file)
-
-        log(f"Extracted {len(mass_times)} mass times.", console=True)
-        log(f"Extracted {len(confession_times)} confession times.", console=True)
-        log(f"Extracted {len(adoration_times)} adoration times.", console=True)
-        if len(mass_times) == 0:
-            log(f"Because no masses were found, they will not be updated.", console=True)
-
-        for mass_time in mass_times:
-            log(f"Found mass {mass_time}", console=verbose)
-
-        if len(confession_times) == 0:
-            log(f"Because no confessions were found, they will not be updated.", console=True)
-        
-        for confession_time in confession_times:
-            log(f"Found confession at {confession_time}", console=verbose)
-
-        if len(adoration_times) == 0:
-            log(f"Because no adoration was found, this will not be updated.", console=True)
-        
-        for adoration_time in adoration_times:
-            log(f"Found adoration at {adoration_time}", console=verbose)
-
-        if parish_info:
-            log(f"Found info about the parish.", console=True)
-
-        if dry_run:
-            log(f"Dry run - skipping DB update.", console=True)
-
-        else:
-            notion_client = get_notion_client_from_environment()
-            upload_parish_analysis(
-                notion_client, 
-                config.parish_db_id, 
-                parish_id, 
-                mass_times,
-                confession_times,
-                adoration_times, 
-                url,
-                analysis_log
-            )
-            if parish_info: #should this be 'if info'?
-                upload_parish_info(
-                    notion_client,
-                    config.parish_db_id,
-                    parish_id,
-                    parish_info
-                )
-            log(f"Uploaded to Notion.", console=True)
-
-    log(f"Finished.", console=True)
-
-
-def main():
+async def main():
     args = parse_arguments()
 
-    # Load configuration
-    config = get_config()
-    notion_client = get_notion_client_from_environment()
+    if args.verbose:
+        logging.getLogger().setLevel(logging.DEBUG)
 
-    parish_ids_to_run = args.parish_ids
+    # Initialize components
+    try:
+        openai_client = AsyncOpenAI()
+        extractor = BulletinExtractor(
+            openai_client, method=args.method  # type: ignore
+        )
+        db = NotionClient.from_environment()
+    except Exception as e:
+        logger.error(f"Failed to initialize: {e}")
+        sys.exit(1)
 
-    if not args.mass and not args.confession and not args.adoration and not args.information:
-        sys.exit(f'Error: No data selected. As this serves no purpose, I will now quit. Try again with the -m and/or the -c operators')
-
+    # Get parishes to process
     if args.all:
-        print("Running against all enabled parishes with old data...")
-        all_parishes = get_all_parishes(notion_client, config.parish_db_id)
-        expiration_date = date.today() - timedelta(days=7)
-        parishes_to_run = [p for p in all_parishes if p.enabled and p.last_run_timestamp < expiration_date]
-        if args.verbose:
-            print(f"Found the following {len(parishes_to_run)} enabled parishes:")
-            for p in parishes_to_run:
-                print(p)
+        parishes = await db.get_parishes_to_process(stale_days=args.stale_days)
+        logger.info(f"Found {len(parishes)} parishes to process")
+    elif args.parish_ids:
+        parishes = []
+        for pid in args.parish_ids:
+            parish = await db.get_parish(pid)
+            if parish:
+                parishes.append(parish)
+            else:
+                logger.warning(f"Parish not found: {pid}")
+    else:
+        logger.error("Specify parish IDs or use --all")
+        sys.exit(1)
 
-        parish_ids_to_run = [p.parish_id for p in parishes_to_run]
+    if not parishes:
+        logger.error("No parishes to process")
+        sys.exit(1)
 
-    if len(parish_ids_to_run) == 0:
-        sys.exit(f"Error: No parishes specified or none found enabled in DB. Use -a or positional arguments to specify parishes")
+    # Process parishes
+    results = {"success": 0, "failed": 0}
 
-    if not args.all:
-        print("Running against the requested parish ID, *regardless* of it is enabled or out of date")
-        single_parish = get_individual_parish(notion_client, config.parish_db_id, args.parish_ids[0])
-        expiration_date = date.today() - timedelta(days=7)
-        parishes_to_run = [p for p in single_parish]
-        parish_ids_to_run = [p.parish_id for p in parishes_to_run]
+    for parish in parishes:
+        success = await process_parish(
+            parish.parish_id,
+            parish.publisher,
+            extractor,
+            db,
+            dry_run=args.dry_run,
+        )
+        results["success" if success else "failed"] += 1
 
-    for parish in parishes_to_run:
-        run_parish(parish.parish_id, parish.publisher, config, args.mass, args.confession, args.adoration, args.information, args.dry_run, args.verbose)
+    logger.info(f"Complete: {results['success']} succeeded, {results['failed']} failed")
+
 
 if __name__ == "__main__":
-    main()
- 
+    asyncio.run(main())

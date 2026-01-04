@@ -1,18 +1,15 @@
-name: Mass time runner
-run-name: Extract masstimes from parish bulletins ⛪️
+name: Bulletin processor
+run-name: Extract parish information from bulletins
 on:
   schedule:
     - cron: '0 14 * * SAT'
   workflow_dispatch:
 env:
   OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-  BULLETIN_ASSISTANT_ID: ${{ secrets.BULLETIN_ASSISTANT_ID }}
   NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
   PARISH_DB_ID: ${{ secrets.PARISH_DB_ID }}
-  AZURE_ENDPOINT: ${{ secrets.AZURE_ENDPOINT }}
-  AZURE_KEY: ${{ secrets.AZURE_KEY }}
 jobs:
-  Masstime-Extractor:
+  Bulletin-Processor:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,9 +17,8 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12' 
+          python-version: '3.12'
           cache: 'pip'
       - run: pip install -r requirements.txt
-      - name: Run Main
-        run: |
-          python main.py -avmec
+      - name: Run processor
+        run: python main.py --all
