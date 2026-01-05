@@ -158,7 +158,9 @@ async def main() -> str:
 
 
 if __name__ == "__main__":
-    from dotenv import load_dotenv
-
-    load_dotenv()
+    try:
+        from dotenv import load_dotenv
+        load_dotenv()
+    except ImportError:
+        pass  # Assume env vars are already set
     print(asyncio.run(main()))
