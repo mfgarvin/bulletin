@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.0.2 - 2026-01-04
+
+- **Fix**: Added truncation for Notion's 2000 character limit on rich_text fields
+  - GPT-5.2 extracts more events, which can exceed the limit
+  - Events, Mass Times, Confessions, Adoration, and Events Summary are now truncated if needed
+
 ## v2.0.1 - 2026-01-04
 
 - **Model upgrade**: Updated from GPT-4o to GPT-5.2

@@ -58,6 +58,10 @@ class NotionClient(DatabaseClient):
             raise ValueError(f"Parish not found: {parish_id}")
 
         # Serialize extraction data to JSON (mode='json' handles date serialization)
+        # Notion rich_text has a 2000 character limit per block
+        def truncate(s: str, limit: int = 2000) -> str:
+            return s if len(s) <= limit else s[:limit-3] + "..."
+
         mass_json = json.dumps([m.model_dump(mode='json') for m in extraction.mass_times])
         conf_json = json.dumps([c.model_dump(mode='json') for c in extraction.confession_times])
         adore_json = json.dumps(extraction.adoration.model_dump(mode='json'))
@@ -70,15 +74,15 @@ class NotionClient(DatabaseClient):
         }
 
         if extraction.mass_times:
-            properties["Mass Times"] = self._text_property(mass_json)
+            properties["Mass Times"] = self._text_property(truncate(mass_json))
         if extraction.confession_times:
-            properties["Confessions"] = self._text_property(conf_json)
+            properties["Confessions"] = self._text_property(truncate(conf_json))
         if extraction.adoration.times or extraction.adoration.is_perpetual:
-            properties["Adoration"] = self._text_property(adore_json)
+            properties["Adoration"] = self._text_property(truncate(adore_json))
         if extraction.events:
-            properties["Events"] = self._text_property(events_json)
+            properties["Events"] = self._text_property(truncate(events_json))
         if extraction.events_summary:
-            properties["Events Summary"] = self._text_property(extraction.events_summary)
+            properties["Events Summary"] = self._text_property(truncate(extraction.events_summary))
 
         # Update parish contact info if present
         # Comment out lines below to prevent overwriting existing values
