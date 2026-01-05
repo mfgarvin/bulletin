@@ -62,6 +62,7 @@ python -m utils.notion_to_app
 - `ParishID` (rich_text) - Unique identifier
 - `Enable` (checkbox) - Whether to process this parish
 - `Bulletin Publisher` (select) - Source: "Parishes Online", "Discover Mass", "eCatholic", "Other"
+- `Bulletin Group ID` (rich_text) - Links parishes sharing a bulletin (see Multi-Site Support)
 - `GPT Timestamp` (rich_text) - Last extraction date
 - `Mass Times` (rich_text) - JSON array of mass times
 - `Confessions` (rich_text) - JSON array of confession times
@@ -71,6 +72,36 @@ python -m utils.notion_to_app
 - `GPT Logs` (rich_text) - Extraction log
 - `Link to latest bulletin` (url) - URL of processed bulletin
 - `Street Address`, `City`, `Zip Code`, `Phone Number`, `Website` (rich_text) - Parish contact info
+
+## Multi-Site Support
+
+Some parishes have multiple worship sites sharing one bulletin, or two parishes may share a single bulletin. The system handles this by:
+
+1. **Extracting per-site data**: The LLM extracts each worship site separately with its own mass times, confessions, and adoration schedule
+2. **Matching sites to database entries**: Sites are matched to Notion entries by fuzzy name matching
+3. **Saving to multiple rows**: Each site's data is saved to its corresponding database entry
+
+**Setup for multi-site parishes:**
+
+1. Create a Notion entry for each worship site with its own address (for mapping)
+2. Set `Bulletin Group ID` on all entries to the primary parish's `ParishID`:
+
+| ParishID | Name | Bulletin Group ID |
+|----------|------|-------------------|
+| parish-main | St. Mary Main Church | parish-main |
+| parish-chapel | Holy Family Chapel | parish-main |
+| parish-mission | St. Joseph Mission | parish-main |
+
+- **Primary site**: `Bulletin Group ID` equals own `ParishID` (or leave empty)
+- **Secondary sites**: `Bulletin Group ID` equals primary's `ParishID`
+
+**How it works:**
+- Secondary sites are skipped during processing (they get data when the primary is processed)
+- The bulletin is downloaded once from the primary site
+- All sites are extracted and matched by name similarity
+- Each site's schedules are saved to the correct database row
+
+**Name matching**: Normalizes names by removing punctuation, common prefixes ("St.", "Saint", "Our Lady of"), and suffixes ("Church", "Parish", "Chapel"). Matches by exact match, substring containment, or word overlap.
 
 ## Environment Variables
 
@@ -91,6 +122,26 @@ Three publishers with different URL patterns:
 GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/workflows/gh-actions.yml`)
 
 ## Changelog
+
+### v2.1.0 (2026-01-05) - Multi-Site Support
+
+**New feature:** Parishes with multiple worship sites (or parishes sharing a bulletin) can now have each site extracted and saved to its own database entry.
+
+**Schema changes:**
+- `SiteInfo` model: Per-site data (site_name, address, mass_times, confessions, adoration)
+- `BulletinExtraction.sites`: Array of `SiteInfo` (replaces flat mass_times/confessions/adoration)
+- `ParishRecord.bulletin_group_id`: Links parishes sharing a bulletin
+- `ParishContact`: Now parish-level only (name, phone, website, email); address moved to `SiteInfo`
+
+**New functionality:**
+- LLM prompt instructs extraction of each worship site separately
+- `match_sites_to_parishes()`: Fuzzy name matching to link extracted sites to database entries
+- `NotionClient.get_bulletin_group()`: Fetches all parishes in a bulletin group
+- `save_extraction(site_index=N)`: Saves specific site's data to a parish entry
+
+**Processing flow:**
+- Secondary sites (where `bulletin_group_id` != `parish_id`) are skipped
+- Primary processes bulletin, extracts all sites, matches to parishes, saves each
 
 ### v2.0.4 (2026-01-05) - Logging Context
 

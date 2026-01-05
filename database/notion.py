@@ -45,27 +45,56 @@ class NotionClient(DatabaseClient):
             return None
         return self._row_to_parish_record(response["results"][0])
 
+    async def get_bulletin_group(self, group_id: str) -> list[ParishRecord]:
+        """Get all parishes that share a bulletin (same Bulletin Group ID)."""
+        response = await self._client.databases.query(
+            database_id=self._database_id,
+            filter={"property": "Bulletin Group ID", "rich_text": {"equals": group_id}},
+        )
+        return [self._row_to_parish_record(row) for row in response["results"]]
+
     async def save_extraction(
         self,
         parish_id: str,
         extraction: BulletinExtraction,
         bulletin_url: str,
         log: list[str],
+        site_index: int = 0,
     ) -> None:
-        """Save extraction results to Notion."""
+        """Save extraction results to Notion.
+
+        Args:
+            parish_id: The parish/site ID to update
+            extraction: Full bulletin extraction
+            bulletin_url: URL of the processed bulletin
+            log: Extraction log messages
+            site_index: Which site to save (default 0 = first/primary site)
+        """
         page_id = await self._get_parish_page_id(parish_id)
         if not page_id:
             raise ValueError(f"Parish not found: {parish_id}")
 
-        # Serialize extraction data to JSON (mode='json' handles date serialization)
         # Notion rich_text has a 2000 character limit per block
         def truncate(s: str, limit: int = 2000) -> str:
-            return s if len(s) <= limit else s[:limit-3] + "..."
+            return s if len(s) <= limit else s[: limit - 3] + "..."
 
-        mass_json = json.dumps([m.model_dump(mode='json') for m in extraction.mass_times])
-        conf_json = json.dumps([c.model_dump(mode='json') for c in extraction.confession_times])
-        adore_json = json.dumps(extraction.adoration.model_dump(mode='json'))
-        events_json = json.dumps([e.model_dump(mode='json') for e in extraction.events])
+        # Get the specific site's data (or empty if no sites)
+        site = extraction.sites[site_index] if extraction.sites else None
+
+        # Serialize site-specific data
+        if site:
+            mass_json = json.dumps([m.model_dump(mode="json") for m in site.mass_times])
+            conf_json = json.dumps(
+                [c.model_dump(mode="json") for c in site.confession_times]
+            )
+            adore_json = json.dumps(site.adoration.model_dump(mode="json"))
+        else:
+            mass_json = "[]"
+            conf_json = "[]"
+            adore_json = "{}"
+
+        # Serialize parish-wide data
+        events_json = json.dumps([e.model_dump(mode="json") for e in extraction.events])
 
         properties: dict = {
             "GPT Timestamp": self._text_property(date.today().isoformat()),
@@ -73,39 +102,36 @@ class NotionClient(DatabaseClient):
             "Link to latest bulletin": {"url": bulletin_url},
         }
 
-        if extraction.mass_times:
+        if site and site.mass_times:
             properties["Mass Times"] = self._text_property(truncate(mass_json))
-        if extraction.confession_times:
+        if site and site.confession_times:
             properties["Confessions"] = self._text_property(truncate(conf_json))
-        if extraction.adoration.times or extraction.adoration.is_perpetual:
+        if site and (site.adoration.times or site.adoration.is_perpetual):
             properties["Adoration"] = self._text_property(truncate(adore_json))
         if extraction.events:
             properties["Events"] = self._text_property(truncate(events_json))
         if extraction.events_summary:
-            properties["Events Summary"] = self._text_property(truncate(extraction.events_summary))
+            properties["Events Summary"] = self._text_property(
+                truncate(extraction.events_summary)
+            )
 
-        # Update parish contact info if present
-        # Comment out lines below to prevent overwriting existing values
+        # Update parish contact info (parish-level)
         info = extraction.parish_info
-        UPDATE_NAME = True
-        UPDATE_ADDRESS = True
-        UPDATE_CITY = True
-        UPDATE_ZIPCODE = True
-        UPDATE_PHONE = True
-        UPDATE_WEBSITE = True
-
-        if UPDATE_NAME and info.name:
+        if info.name:
             properties["Name"] = {"title": [{"text": {"content": info.name}}]}
-        if UPDATE_ADDRESS and info.address:
-            properties["Street Address"] = self._text_property(info.address)
-        if UPDATE_CITY and info.city:
-            properties["City"] = self._text_property(info.city)
-        if UPDATE_ZIPCODE and info.zipcode:
-            properties["Zip Code"] = self._text_property(info.zipcode)
-        if UPDATE_PHONE and info.phone:
+        if info.phone:
             properties["Phone Number"] = self._text_property(info.phone)
-        if UPDATE_WEBSITE and info.website:
+        if info.website:
             properties["Website"] = self._text_property(info.website)
+
+        # Update site-specific address info
+        if site:
+            if site.address:
+                properties["Street Address"] = self._text_property(site.address)
+            if site.city:
+                properties["City"] = self._text_property(site.city)
+            if site.zipcode:
+                properties["Zip Code"] = self._text_property(site.zipcode)
 
         await self._client.pages.update(page_id=page_id, properties=properties)
 
@@ -147,12 +173,17 @@ class NotionClient(DatabaseClient):
             except ValueError:
                 pass
 
+        # Bulletin Group ID links parishes sharing a bulletin
+        group_id = self._get_property(row, "Bulletin Group ID")
+        bulletin_group_id = group_id if group_id else None
+
         return ParishRecord(
             parish_id=self._get_property(row, "ParishID"),
             name=self._get_property(row, "Name"),
             enabled=self._get_property(row, "Enable"),
             publisher=self._get_property(row, "Bulletin Publisher"),
             last_run=last_run,
+            bulletin_group_id=bulletin_group_id,
         )
 
     def _get_property(self, row: dict, name: str):
