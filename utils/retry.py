@@ -5,6 +5,8 @@ import logging
 from functools import wraps
 from typing import Callable, TypeVar
 
+from utils.log_context import get_log_prefix
+
 logger = logging.getLogger(__name__)
 
 T = TypeVar("T")
@@ -48,14 +50,18 @@ def retry_async(
                         delay = min(
                             base_delay * (exponential_base**attempt), max_delay
                         )
+                        prefix = get_log_prefix()
+                        prefix_str = f"{prefix} - " if prefix else ""
                         logger.warning(
-                            f"{func.__name__} failed (attempt {attempt + 1}/{max_attempts}): {e}. "
+                            f"{prefix_str}{func.__name__} failed (attempt {attempt + 1}/{max_attempts}): {e}. "
                             f"Retrying in {delay:.1f}s..."
                         )
                         await asyncio.sleep(delay)
                     else:
+                        prefix = get_log_prefix()
+                        prefix_str = f"{prefix} - " if prefix else ""
                         logger.error(
-                            f"{func.__name__} failed after {max_attempts} attempts: {e}"
+                            f"{prefix_str}{func.__name__} failed after {max_attempts} attempts: {e}"
                         )
 
             raise last_exception

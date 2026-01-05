@@ -11,6 +11,7 @@ from database import NotionClient
 from extractor import BulletinExtractor, ExtractionMethod
 from schemas import BulletinExtraction
 from sources import get_source_for_publisher
+from utils.log_context import set_parish_context
 
 logging.basicConfig(
     level=logging.INFO,
@@ -28,6 +29,8 @@ async def process_parish(
     dry_run: bool = False,
 ) -> bool:
     """Process a single parish bulletin. Returns True on success."""
+    # Set context for logging across all async calls
+    set_parish_context(parish_id, parish_name)
     log_entries: list[str] = []
 
     def log(msg: str):

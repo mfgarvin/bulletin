@@ -38,6 +38,7 @@ python main.py --method marker_ocr --all
 - `sources/` - Bulletin download abstraction (Parishes Online, Discover Mass, eCatholic)
 - `database/` - Database abstraction (Notion implementation, easy to swap)
 - `utils/retry.py` - Async retry with exponential backoff
+- `utils/log_context.py` - Parish context for concurrent logging
 
 **Key design decisions:**
 - Single LLM call extracts everything (mass, confession, adoration, events, parish info, events summary)
@@ -79,6 +80,12 @@ Three publishers with different URL patterns:
 GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/workflows/gh-actions.yml`)
 
 ## Changelog
+
+### v2.0.4 (2026-01-05) - Logging Context
+
+- Added `utils/log_context.py`: Uses `contextvars` to track parish ID through async calls
+- Retry warnings/errors now include parish prefix: `[1234] St. Mary - _extract_direct failed...`
+- Fixes interleaved log messages when processing multiple parishes concurrently
 
 ### v2.0.3 (2026-01-05) - Concurrency & Reliability
 
