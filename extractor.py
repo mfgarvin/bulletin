@@ -3,9 +3,10 @@
 import base64
 from typing import Literal
 
-from openai import AsyncOpenAI
+from openai import APIConnectionError, APITimeoutError, AsyncOpenAI
 
 from schemas import BulletinExtraction
+from utils.retry import retry_async
 
 ExtractionMethod = Literal["direct_pdf", "marker_ocr"]
 
@@ -32,10 +33,10 @@ Extract the following information:
    - Recurring: bible study, RCIA, youth group, Knights of Columbus meetings
    - Include dates for one-time events, day of week for recurring
 
-6. **Events summary**: Write a brief 2-3 sentence summary of what's happening at this parish. Highlight the most notable upcoming events or ongoing programs. Write in a friendly, informative tone.
+6. **Events summary**: Write a brief 2-3 sentence summary of what's happening at this parish. Highlight the most notable upcoming events or ongoing programs. Write in a friendly, informative tone. Make these times 12-hour format.
 
 IMPORTANT GUIDELINES:
-- Use 24-hour time format (e.g., 900 for 9:00am, 1630 for 4:30pm)
+- Use 24-hour time format (e.g., 900 for 9:00am, 1630 for 4:30pm) except where requested otherwise.
 - Only include REGULAR weekly Mass times, not special occasion masses
 - For events, distinguish between one_time and recurring frequencies
 - If information is unclear or not present, omit it rather than guessing
@@ -64,6 +65,7 @@ class BulletinExtractor:
         else:
             return await self._extract_with_marker(pdf_bytes)
 
+    @retry_async(max_attempts=3, retryable_exceptions=(APITimeoutError, APIConnectionError))
     async def _extract_direct(self, pdf_bytes: bytes) -> BulletinExtraction:
         """Send PDF directly to GPT-4o (native PDF support)."""
         pdf_base64 = base64.standard_b64encode(pdf_bytes).decode("utf-8")
@@ -90,10 +92,12 @@ class BulletinExtractor:
                 },
             ],
             response_format=BulletinExtraction,
+            service_tier="flex",
         )
 
         return response.choices[0].message.parsed
 
+    @retry_async(max_attempts=3, retryable_exceptions=(APITimeoutError, APIConnectionError))
     async def _extract_with_marker(self, pdf_bytes: bytes) -> BulletinExtraction:
         """Convert PDF to markdown with Marker, then send to LLM."""
         markdown_text = await self._pdf_to_markdown(pdf_bytes)
@@ -108,6 +112,7 @@ class BulletinExtractor:
                 },
             ],
             response_format=BulletinExtraction,
+            service_tier="flex",
         )
 
         return response.choices[0].message.parsed

@@ -21,6 +21,7 @@ logger = logging.getLogger(__name__)
 
 async def process_parish(
     parish_id: str,
+    parish_name: str,
     publisher: str,
     extractor: BulletinExtractor,
     db: NotionClient,
@@ -30,7 +31,7 @@ async def process_parish(
     log_entries: list[str] = []
 
     def log(msg: str):
-        logger.info(f"[{parish_id}] {msg}")
+        logger.info(f"[{parish_id}] {parish_name} - {msg}")
         log_entries.append(msg)
 
     try:
@@ -176,20 +177,27 @@ async def main():
         logger.error("No parishes to process")
         sys.exit(1)
 
-    # Process parishes
-    results = {"success": 0, "failed": 0}
+    # Process parishes concurrently (max 7 at a time)
+    semaphore = asyncio.Semaphore(7)
 
-    for parish in parishes:
-        success = await process_parish(
-            parish.parish_id,
-            parish.publisher,
-            extractor,
-            db,
-            dry_run=args.dry_run,
-        )
-        results["success" if success else "failed"] += 1
+    async def process_with_limit(parish):
+        async with semaphore:
+            return await process_parish(
+                parish.parish_id,
+                parish.name,
+                parish.publisher,
+                extractor,
+                db,
+                dry_run=args.dry_run,
+            )
 
-    logger.info(f"Complete: {results['success']} succeeded, {results['failed']} failed")
+    results_list = await asyncio.gather(
+        *[process_with_limit(p) for p in parishes]
+    )
+
+    success_count = sum(1 for r in results_list if r)
+    failed_count = len(results_list) - success_count
+    logger.info(f"Complete: {success_count} succeeded, {failed_count} failed")
 
 
 if __name__ == "__main__":

@@ -80,6 +80,19 @@ GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/
 
 ## Changelog
 
+### v2.0.3 (2026-01-05) - Concurrency & Reliability
+
+**Performance:**
+- Concurrent processing: Parishes now process 7 at a time using `asyncio.Semaphore`
+- OpenAI flex priority: Uses `service_tier="flex"` for reduced API costs
+
+**Reliability:**
+- Retry logic: OpenAI calls retry up to 3 times on timeout/connection errors with exponential backoff
+- Discover Mass rate limiting: Global lock serializes all DM requests with 10-second delays to prevent lockout
+
+**UX:**
+- Logs now show parish name alongside ID: `[1234] St. Mary's Parish - Downloading...`
+
 ### v2.0.0 (2026-01-04) - Complete Rewrite
 
 **Breaking Changes:**
