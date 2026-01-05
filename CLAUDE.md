@@ -41,7 +41,7 @@ python main.py --method marker_ocr --all
 
 **Key design decisions:**
 - Single LLM call extracts everything (mass, confession, adoration, events, parish info, events summary)
-- Direct PDF to GPT-4o (no separate OCR step)
+- Direct PDF to GPT-5.2 (no separate OCR step)
 - Database abstraction layer for future flexibility
 - Async throughout for better performance
 

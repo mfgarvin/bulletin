@@ -81,16 +81,26 @@ class NotionClient(DatabaseClient):
             properties["Events Summary"] = self._text_property(extraction.events_summary)
 
         # Update parish contact info if present
+        # Comment out lines below to prevent overwriting existing values
         info = extraction.parish_info
-        if info.address:
+        UPDATE_NAME = True
+        UPDATE_ADDRESS = True
+        UPDATE_CITY = True
+        UPDATE_ZIPCODE = True
+        UPDATE_PHONE = True
+        UPDATE_WEBSITE = True
+
+        if UPDATE_NAME and info.name:
+            properties["Name"] = {"title": [{"text": {"content": info.name}}]}
+        if UPDATE_ADDRESS and info.address:
             properties["Street Address"] = self._text_property(info.address)
-        if info.city:
+        if UPDATE_CITY and info.city:
             properties["City"] = self._text_property(info.city)
-        if info.zipcode:
+        if UPDATE_ZIPCODE and info.zipcode:
             properties["Zip Code"] = self._text_property(info.zipcode)
-        if info.phone:
+        if UPDATE_PHONE and info.phone:
             properties["Phone Number"] = self._text_property(info.phone)
-        if info.website:
+        if UPDATE_WEBSITE and info.website:
             properties["Website"] = self._text_property(info.website)
 
         await self._client.pages.update(page_id=page_id, properties=properties)

@@ -13,7 +13,7 @@ SYSTEM_PROMPT = """You are an expert at extracting structured information from C
 
 Extract the following information:
 
-1. **Parish contact info**: Address, city, state, zip code, phone, website, email (if present)
+1. **Parish contact info**: Parish name, address, city, state, zip code, phone, website, email (if present)
 
 2. **Regular Mass schedule**: Weekly recurring masses only
    - Include the day of week and time (24-hour format, e.g., 1630 for 4:30pm)
@@ -50,7 +50,7 @@ class BulletinExtractor:
         self,
         openai_client: AsyncOpenAI,
         method: ExtractionMethod = "direct_pdf",
-        model: str = "gpt-4o",
+        model: str = "gpt-5.2",
     ):
         self.client = openai_client
         self.method = method

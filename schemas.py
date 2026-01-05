@@ -91,6 +91,7 @@ class AdorationSchedule(BaseModel):
 class ParishContact(BaseModel):
     """Parish contact and location information."""
 
+    name: Optional[str] = Field(None, description="Official name of the parish")
     address: Optional[str] = None
     city: Optional[str] = None
     state: Optional[str] = None

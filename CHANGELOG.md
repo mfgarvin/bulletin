@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.0.1 - 2026-01-04
+
+- **Model upgrade**: Updated from GPT-4o to GPT-5.2
+- **Parish name extraction**: Now extracts and populates the parish name from bulletins
+- **Field update controls**: Added toggles to prevent overwriting existing contact info fields
+  - `UPDATE_NAME`, `UPDATE_ADDRESS`, `UPDATE_CITY`, `UPDATE_ZIPCODE`, `UPDATE_PHONE`, `UPDATE_WEBSITE`
+  - Set any to `False` in `database/notion.py` to preserve existing values
+
 ## v2.0.0 - 2026-01-04
 
 Complete rewrite of the bulletin parser for simplicity, cost reduction, and reliability.
