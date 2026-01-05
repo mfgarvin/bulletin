@@ -27,6 +27,15 @@ python main.py --method marker_ocr --all
 
 **CLI flags:** `--all` process all stale parishes, `--dry-run` skip DB save, `--method` extraction method, `--stale-days N` staleness threshold, `-v` verbose
 
+**Export utilities:**
+```bash
+# Export raw Notion data to export.json (all fields as-is)
+python -m utils.notion_to_json
+
+# Export app-friendly format (12hr times, weekday groupings)
+python -m utils.notion_to_app
+```
+
 ## Architecture
 
 **Data flow:** Download PDF → GPT-4o structured extraction → Notion DB
@@ -39,6 +48,8 @@ python main.py --method marker_ocr --all
 - `database/` - Database abstraction (Notion implementation, easy to swap)
 - `utils/retry.py` - Async retry with exponential backoff
 - `utils/log_context.py` - Parish context for concurrent logging
+- `utils/notion_to_json.py` - Export raw Notion data to JSON
+- `utils/notion_to_app.py` - Export app-friendly formatted data
 
 **Key design decisions:**
 - Single LLM call extracts everything (mass, confession, adoration, events, parish info, events summary)
