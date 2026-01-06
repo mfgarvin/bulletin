@@ -101,7 +101,32 @@ Some parishes have multiple worship sites sharing one bulletin, or two parishes 
 - All sites are extracted and matched by name similarity
 - Each site's schedules are saved to the correct database row
 
-**Name matching**: Normalizes names by removing punctuation, common prefixes ("St.", "Saint", "Our Lady of"), and suffixes ("Church", "Parish", "Chapel"). Matches by exact match, substring containment, or word overlap.
+**Name matching** (`match_sites_to_parishes()` in `main.py`):
+
+The matcher handles cases where extracted site names differ from Notion entry names:
+- Extracted: `"Litchfield Worship Site (Administrative Offices)"`
+- Notion: `"Our Lady Help of Christians - Litchfield"`
+
+Matching strategies (in priority order):
+1. **Exact match** (score 100): After normalization
+2. **City match** (score 90): Extracts city names and matches (e.g., "Litchfield" = "Litchfield")
+3. **Substring** (score 80): One name contains the other
+4. **Word overlap** (score 20 per word): Common words between names
+
+Normalization removes:
+- Punctuation and extra whitespace
+- Prefixes: "St.", "Saint", "Our Lady of", "Our Lady Help of Christians", "Church of"
+- Suffixes: "Church", "Catholic Church", "Parish", "Chapel", "Mission", "Worship Site", "Site"
+- Parenthetical notes: "(Administrative Offices)"
+
+**Example setup** (Our Lady Help of Christians, 4 worship sites):
+
+| ParishID | Name | Bulletin Group ID |
+|----------|------|-------------------|
+| our-lady-help-of-christians-litchfield-oh | Our Lady Help of Christians - Litchfield | our-lady-help-of-christians-litchfield-oh |
+| olhc-lodi | Our Lady Help of Christians - Lodi | our-lady-help-of-christians-litchfield-oh |
+| olhc-nova | Our Lady Help of Christians - Nova | our-lady-help-of-christians-litchfield-oh |
+| olhc-seville | Our Lady Help of Christians - Seville | our-lady-help-of-christians-litchfield-oh |
 
 ## Environment Variables
 
@@ -136,12 +161,13 @@ GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/
 **New functionality:**
 - LLM prompt instructs extraction of each worship site separately
 - `match_sites_to_parishes()`: Fuzzy name matching to link extracted sites to database entries
+- `extract_city()`: City-based matching for multi-site parishes (e.g., "Litchfield Worship Site" → "Our Lady Help of Christians - Litchfield")
 - `NotionClient.get_bulletin_group()`: Fetches all parishes in a bulletin group
 - `save_extraction(site_index=N)`: Saves specific site's data to a parish entry
 
 **Processing flow:**
 - Secondary sites (where `bulletin_group_id` != `parish_id`) are skipped
-- Primary processes bulletin, extracts all sites, matches to parishes, saves each
+- Primary processes bulletin, extracts all sites, matches to parishes by city name, saves each
 
 ### v2.0.4 (2026-01-05) - Logging Context
 
