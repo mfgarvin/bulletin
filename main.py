@@ -28,13 +28,35 @@ def normalize_name(name: str) -> str:
     name = re.sub(r"[^\w\s]", "", name)
     name = re.sub(r"\s+", " ", name).strip()
     # Remove common prefixes/suffixes
-    for prefix in ["st ", "saint ", "our lady of ", "church of "]:
+    for prefix in ["st ", "saint ", "our lady of ", "our lady help of christians ", "church of "]:
         if name.startswith(prefix):
             name = name[len(prefix) :]
-    for suffix in [" church", " catholic church", " parish", " chapel", " mission"]:
+    for suffix in [" church", " catholic church", " parish", " chapel", " mission", " worship site", " site"]:
         if name.endswith(suffix):
             name = name[: -len(suffix)]
+    # Remove parenthetical notes like "(Administrative Offices)"
+    name = re.sub(r"\s*\([^)]*\)", "", name)
     return name.strip()
+
+
+def extract_city(name: str) -> str | None:
+    """Extract city name from a site/parish name."""
+    norm = normalize_name(name)
+    # Common Ohio cities that might appear in parish names
+    ohio_cities = [
+        "litchfield", "lodi", "nova", "seville", "akron", "canton", "cleveland",
+        "columbus", "dayton", "toledo", "youngstown", "parma", "lorain", "hamilton",
+        "springfield", "kettering", "elyria", "lakewood", "cuyahoga falls", "euclid",
+        "mentor", "middletown", "mansfield", "newark", "strongsville", "fairfield",
+        "warren", "dublin", "findlay", "grove city", "lancaster", "reynoldsburg",
+        "westerville", "huber heights", "delaware", "marion", "chillicothe",
+    ]
+    for city in ohio_cities:
+        if city in norm:
+            return city
+    # Fall back to last word (often the city in "Parish Name - City" format)
+    words = norm.split()
+    return words[-1] if words else None
 
 
 def match_sites_to_parishes(
@@ -49,17 +71,27 @@ def match_sites_to_parishes(
 
     for site in sites:
         site_norm = normalize_name(site.site_name)
+        site_city = extract_city(site.site_name)
         best_match: ParishRecord | None = None
         best_score = 0
 
         for parish in unmatched_parishes:
             parish_norm = normalize_name(parish.name)
+            parish_city = extract_city(parish.name)
 
             # Exact match after normalization
             if site_norm == parish_norm:
                 best_match = parish
                 best_score = 100
                 break
+
+            # City match (strong signal for multi-site parishes)
+            if site_city and parish_city and site_city == parish_city:
+                score = 90
+                if score > best_score:
+                    best_match = parish
+                    best_score = score
+                continue
 
             # Substring containment
             if site_norm in parish_norm or parish_norm in site_norm:
@@ -78,7 +110,7 @@ def match_sites_to_parishes(
                     best_match = parish
                     best_score = score
 
-        if best_match and best_score >= 40:
+        if best_match and best_score >= 20:
             results.append((site, best_match))
             unmatched_parishes.remove(best_match)
         else:
