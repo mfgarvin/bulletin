@@ -2,6 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Notes / Pending Work
+
+- **Self-Hosted source (v2.2.0) is untested** - The generic scraper in `sources/self_hosted.py` was just implemented and needs testing. To test: add a parish with `Bulletin Publisher` = "Self-Hosted" and `Bulletin Page URL` set to a parish bulletin page.
+- **~40-50 parishes need self-hosted setup** - These parishes either don't have bulletins on the major publishers or self-host on their own websites. They need `Bulletin Page URL` configured in Notion.
+- **Address discrepancies file** - `address_discrepancies.txt` contains 9 parishes with missing or incorrect addresses in Notion (verified 2026-01-06). Not committed to git.
+
 ## Project Overview
 
 Bulletin-V2 is a Python 3.12 async tool that extracts Catholic parish information from church bulletins. It downloads PDF bulletins from multiple sources, sends them directly to GPT-4o for structured extraction, then syncs data to a Notion database.
