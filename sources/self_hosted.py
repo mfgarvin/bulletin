@@ -1,6 +1,7 @@
 """Self-hosted bulletin source - generic scraper for parish websites."""
 
 import re
+from datetime import date
 from typing import Optional
 from urllib.parse import urljoin, urlparse
 
@@ -24,6 +25,7 @@ DATE_PATTERNS = [
     r"(\d{4})[-_]?(\d{2})[-_]?(\d{2})",  # 2024-01-15, 20240115
     r"(\d{2})[-_](\d{2})[-_](\d{4})",  # 01-15-2024
     r"(\d{1,2})[-_](\d{1,2})[-_](\d{2,4})",  # 1-15-24
+    r"[-_](\d{1,2})[-_](\d{1,2})\.pdf",  # -1-4.pdf (month-day before .pdf)
 ]
 
 
@@ -147,25 +149,63 @@ class SelfHostedSource(BulletinSource):
         if not candidates:
             return None
 
-        # Return the highest-scoring link
-        candidates.sort(key=lambda x: x[1], reverse=True)
+        # Sort by score (descending), then by extracted date (descending)
+        # This ensures that when scores are tied, we pick the most recent bulletin
+        candidates.sort(key=lambda x: (x[1], self._extract_date(x[0])), reverse=True)
         return candidates[0][0]
+
+    def _extract_date(self, url: str) -> date:
+        """Extract date from URL for sorting. Returns min date if not found."""
+        url_lower = url.lower()
+
+        # Try full date patterns first (MM-DD-YY, YYYY-MM-DD, etc.)
+        # Pattern: MM-DD-YY or M-D-YY (e.g., bulletin_1-4-26.pdf)
+        match = re.search(r"[-_](\d{1,2})[-_](\d{1,2})[-_](\d{2,4})\.pdf", url_lower)
+        if match:
+            month, day, year = int(match.group(1)), int(match.group(2)), int(match.group(3))
+            if year < 100:
+                year += 2000
+            try:
+                return date(year, month, day)
+            except ValueError:
+                pass
+
+        # Try YYYY-MM-DD pattern
+        match = re.search(r"(\d{4})[-_]?(\d{2})[-_]?(\d{2})", url_lower)
+        if match:
+            year, month, day = int(match.group(1)), int(match.group(2)), int(match.group(3))
+            try:
+                return date(year, month, day)
+            except ValueError:
+                pass
+
+        # Try month-day only with year from path (e.g., /2025/12/file-1-4.pdf)
+        year_month_match = re.search(r"/(\d{4})/(\d{1,2})/", url_lower)
+        filename_match = re.search(r"[-_](\d{1,2})[-_](\d{1,2})\.pdf", url_lower)
+        if filename_match:
+            month = int(filename_match.group(1))
+            day = int(filename_match.group(2))
+            if year_month_match:
+                year = int(year_month_match.group(1))
+                path_month = int(year_month_match.group(2))
+                # Handle Dec->Jan rollover
+                if month < path_month:
+                    year += 1
+            else:
+                year = date.today().year
+            try:
+                return date(year, month, day)
+            except ValueError:
+                pass
+
+        return date.min
 
     def _might_be_pdf(self, href: str, text: str) -> bool:
         """Check if a link might lead to a PDF."""
-        href_lower = href.lower()
-        text_lower = text.lower()
-
-        # Direct PDF link
-        if ".pdf" in href_lower:
-            return True
-
-        # Link text suggests bulletin
-        for pattern in BULLETIN_PATTERNS:
-            if re.search(pattern, text_lower) or re.search(pattern, href_lower):
-                return True
-
-        return False
+        # Only consider direct .pdf links
+        # Previously this also matched bulletin-keyword links, but that caused
+        # false positives like navigation links with "Bulletins" text
+        return ".pdf" in href.lower()
 
     def _score_link(self, href: str, text: str) -> int:
         """Score a link based on likelihood of being the current bulletin."""

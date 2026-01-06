@@ -4,7 +4,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Notes / Pending Work
 
-- **Self-Hosted source (v2.2.0) is untested** - The generic scraper in `sources/self_hosted.py` was just implemented and needs testing. To test: add a parish with `Bulletin Publisher` = "Self-Hosted" and `Bulletin Page URL` set to a parish bulletin page.
 - **~40-50 parishes need self-hosted setup** - These parishes either don't have bulletins on the major publishers or self-host on their own websites. They need `Bulletin Page URL` configured in Notion.
 - **Address discrepancies file** - `address_discrepancies.txt` contains 9 parishes with missing or incorrect addresses in Notion (verified 2026-01-06). Not committed to git.
 
@@ -173,6 +172,19 @@ Four publisher types with different URL patterns:
 GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/workflows/gh-actions.yml`)
 
 ## Changelog
+
+### v2.2.1 (2026-01-06) - Self-Hosted Scraper Fixes
+
+**Bug fixes for the self-hosted bulletin scraper:**
+
+1. **Fixed PDF link detection**: Previously, navigation links with "bulletin" in the text (e.g., a "Bulletins" menu item) were incorrectly selected over actual PDF links. Now only `.pdf` links are considered as candidates.
+
+2. **Added date-based sorting**: When multiple PDFs have the same relevance score, the scraper now selects the most recent bulletin by extracting and comparing dates from URLs.
+
+3. **Improved date extraction**: Now correctly parses multiple date formats:
+   - `MM-DD-YY` in filename (e.g., `bulletin_1-4-26.pdf` → Jan 4, 2026)
+   - `YYYY-MM-DD` in filename or path
+   - Month-day in filename with year inferred from URL path (e.g., `/2025/12/file-1-4.pdf` → Jan 4, 2026, handling year rollover)
 
 ### v2.2.0 (2026-01-06) - Self-Hosted Bulletin Support
 
