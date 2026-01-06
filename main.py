@@ -161,6 +161,7 @@ async def process_parish(
                             bulletin_url=result.url,
                             log=log_entries,
                             site_index=site_idx,
+                            skip_name_update=True,
                         )
                         log(f"Saved site '{site.site_name}' → {matched_parish.name}")
                     else:

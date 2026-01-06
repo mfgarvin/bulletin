@@ -26,6 +26,8 @@ class DatabaseClient(ABC):
         extraction: BulletinExtraction,
         bulletin_url: str,
         log: list[str],
+        site_index: int = 0,
+        skip_name_update: bool = False,
     ) -> None:
         """Save extraction results to database."""
         ...

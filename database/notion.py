@@ -60,6 +60,7 @@ class NotionClient(DatabaseClient):
         bulletin_url: str,
         log: list[str],
         site_index: int = 0,
+        skip_name_update: bool = False,
     ) -> None:
         """Save extraction results to Notion.
 
@@ -69,6 +70,7 @@ class NotionClient(DatabaseClient):
             bulletin_url: URL of the processed bulletin
             log: Extraction log messages
             site_index: Which site to save (default 0 = first/primary site)
+            skip_name_update: If True, don't overwrite the Name field (for multi-site)
         """
         page_id = await self._get_parish_page_id(parish_id)
         if not page_id:
@@ -117,7 +119,7 @@ class NotionClient(DatabaseClient):
 
         # Update parish contact info (parish-level)
         info = extraction.parish_info
-        if info.name:
+        if info.name and not skip_name_update:
             properties["Name"] = {"title": [{"text": {"content": info.name}}]}
         if info.phone:
             properties["Phone Number"] = self._text_property(info.phone)

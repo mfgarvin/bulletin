@@ -5,6 +5,10 @@
 #     "pattern in extracted name": "target-parish-id",
 # }
 #
+# Or, in other words:
+# "bulletin-group-id": {
+#    "pattern-to-search-for": "target parish id to change",
+# }
 # - Key is the bulletin_group_id (primary parish's ID)
 # - Patterns are matched case-insensitively against extracted site names
 # - First matching pattern wins
