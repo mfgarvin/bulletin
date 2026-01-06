@@ -1,6 +1,7 @@
 """eCatholic bulletin source."""
 
 from datetime import datetime, timedelta
+from typing import Optional
 
 import httpx
 
@@ -18,7 +19,9 @@ class ECatholicSource(BulletinSource):
     def name(self) -> str:
         return "eCatholic"
 
-    async def download(self, parish_id: str) -> DownloadResult:
+    async def download(
+        self, parish_id: str, bulletin_url: Optional[str] = None
+    ) -> DownloadResult:
         """Download the latest bulletin, searching back up to 30 days."""
         async with httpx.AsyncClient() as client:
             current_date = datetime.now()

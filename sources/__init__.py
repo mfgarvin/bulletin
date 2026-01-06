@@ -4,6 +4,7 @@ from .base import BulletinSource, DownloadResult
 from .parishes_online import ParishesOnlineSource
 from .discover_mass import DiscoverMassSource
 from .ecatholic import ECatholicSource
+from .self_hosted import SelfHostedSource
 
 
 def get_source_for_publisher(publisher: str) -> BulletinSource:
@@ -15,6 +16,8 @@ def get_source_for_publisher(publisher: str) -> BulletinSource:
         "DM": DiscoverMassSource(),
         "eCatholic": ECatholicSource(),
         "EC": ECatholicSource(),
+        "Self-Hosted": SelfHostedSource(),
+        "SH": SelfHostedSource(),
     }
     source = sources.get(publisher)
     if not source:
@@ -29,4 +32,5 @@ __all__ = [
     "ParishesOnlineSource",
     "DiscoverMassSource",
     "ECatholicSource",
+    "SelfHostedSource",
 ]

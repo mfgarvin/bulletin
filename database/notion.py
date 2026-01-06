@@ -179,12 +179,16 @@ class NotionClient(DatabaseClient):
         group_id = self._get_property(row, "Bulletin Group ID")
         bulletin_group_id = group_id if group_id else None
 
+        # Bulletin Page URL for self-hosted bulletins
+        bulletin_url = self._get_property(row, "Bulletin Page URL") or None
+
         return ParishRecord(
             parish_id=self._get_property(row, "ParishID"),
             name=self._get_property(row, "Name"),
             enabled=self._get_property(row, "Enable"),
             publisher=self._get_property(row, "Bulletin Publisher"),
             last_run=last_run,
+            bulletin_url=bulletin_url,
             bulletin_group_id=bulletin_group_id,
         )
 

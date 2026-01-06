@@ -192,8 +192,11 @@ class ParishRecord(BaseModel):
     parish_id: str
     name: str
     enabled: bool
-    publisher: str  # "Parishes Online", "Discover Mass", "eCatholic"
+    publisher: str  # "Parishes Online", "Discover Mass", "eCatholic", "Self-Hosted"
     last_run: Optional[date] = None
+
+    # For self-hosted bulletins: URL of the page containing the PDF link
+    bulletin_url: Optional[str] = None
 
     # Multi-site support: groups parishes that share a bulletin
     # If set, this parish shares a bulletin with the "primary" parish

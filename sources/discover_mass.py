@@ -1,6 +1,7 @@
 """Discover Mass bulletin source."""
 
 import asyncio
+from typing import Optional
 
 import httpx
 from bs4 import BeautifulSoup
@@ -25,7 +26,9 @@ class DiscoverMassSource(BulletinSource):
         # Delay is enforced inside download() via global lock
         return 0.0
 
-    async def download(self, parish_id: str) -> DownloadResult:
+    async def download(
+        self, parish_id: str, bulletin_url: Optional[str] = None
+    ) -> DownloadResult:
         """Scrape the parish page to find the current bulletin URL, then download it."""
         page_url = f"https://discovermass.com/church/{parish_id}/#bulletins"
 

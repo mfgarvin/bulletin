@@ -45,7 +45,7 @@ python -m utils.notion_to_app
 - `schemas.py` - All Pydantic models (single source of truth)
 - `extractor.py` - PDF → LLM extraction (single call for all data types)
 - `definitions.py` - Explicit site-to-parish mappings for multi-site bulletins
-- `sources/` - Bulletin download abstraction (Parishes Online, Discover Mass, eCatholic)
+- `sources/` - Bulletin download abstraction (Parishes Online, Discover Mass, eCatholic, Self-Hosted)
 - `database/` - Database abstraction (Notion implementation, easy to swap)
 - `utils/retry.py` - Async retry with exponential backoff
 - `utils/log_context.py` - Parish context for concurrent logging
@@ -62,7 +62,8 @@ python -m utils.notion_to_app
 - `Name` (title) - Parish name
 - `ParishID` (rich_text) - Unique identifier
 - `Enable` (checkbox) - Whether to process this parish
-- `Bulletin Publisher` (select) - Source: "Parishes Online", "Discover Mass", "eCatholic", "Other"
+- `Bulletin Publisher` (select) - Source: "Parishes Online", "Discover Mass", "eCatholic", "Self-Hosted", "Other"
+- `Bulletin Page URL` (url) - For self-hosted bulletins: URL of page containing the PDF link
 - `Bulletin Group ID` (rich_text) - Links parishes sharing a bulletin (see Multi-Site Support)
 - `GPT Timestamp` (rich_text) - Last extraction date
 - `Mass Times` (rich_text) - JSON array of mass times
@@ -150,16 +151,40 @@ Required in `.env`:
 
 ## Bulletin Sources
 
-Three publishers with different URL patterns:
+Four publisher types with different URL patterns:
 1. **Parishes Online (PO):** `container.parishesonline.com/bulletins/14/{id}/{date}B.pdf`
 2. **Discover Mass (DM):** Scraped from `discovermass.com/church/{id}`
 3. **eCatholic (EC):** `files.ecatholic.com/{id}/bulletins/{date}.pdf`
+4. **Self-Hosted (SH):** Generic scraper for parish websites - requires `Bulletin Page URL` field in Notion
+
+**Self-Hosted Setup:**
+1. Set `Bulletin Publisher` to "Self-Hosted"
+2. Set `Bulletin Page URL` to the page containing the bulletin PDF link
+3. The scraper finds PDF links on the page, prioritizing those with "bulletin" in the URL/text and recent dates
 
 ## Automation
 
 GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/workflows/gh-actions.yml`)
 
 ## Changelog
+
+### v2.2.0 (2026-01-06) - Self-Hosted Bulletin Support
+
+**New feature:** Parishes that self-host bulletins on their own websites can now be processed using a generic scraper.
+
+**Schema changes:**
+- `ParishRecord.bulletin_url`: Optional URL for self-hosted bulletin pages
+- `BulletinSource.download()`: Now accepts optional `bulletin_url` parameter
+
+**New functionality:**
+- `sources/self_hosted.py`: Generic scraper that finds PDF links on parish bulletin pages
+- Scoring algorithm prioritizes links with "bulletin" in URL/text and recent dates
+- Notion field `Bulletin Page URL` stores the page containing the PDF link
+
+**Setup:**
+1. Add "Self-Hosted" option to `Bulletin Publisher` select in Notion
+2. Create `Bulletin Page URL` (url) property in Notion
+3. For each self-hosted parish, set publisher to "Self-Hosted" and provide the bulletin page URL
 
 ### v2.1.0 (2026-01-05) - Multi-Site Support
 

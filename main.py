@@ -100,7 +100,7 @@ async def process_parish(
             log(f"Waiting {source.rate_limit_delay}s (rate limit)...")
             await asyncio.sleep(source.rate_limit_delay)
 
-        result = await source.download(parish_id)
+        result = await source.download(parish_id, bulletin_url=parish.bulletin_url)
         if not result.success:
             log(f"Download failed: {result.error}")
             return False

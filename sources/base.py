@@ -19,8 +19,15 @@ class BulletinSource(ABC):
     """Abstract bulletin source."""
 
     @abstractmethod
-    async def download(self, parish_id: str) -> DownloadResult:
-        """Download the latest bulletin for a parish."""
+    async def download(
+        self, parish_id: str, bulletin_url: Optional[str] = None
+    ) -> DownloadResult:
+        """Download the latest bulletin for a parish.
+
+        Args:
+            parish_id: The parish identifier used by this source.
+            bulletin_url: Optional URL for self-hosted bulletins (page containing PDF link).
+        """
         ...
 
     @property
