@@ -52,5 +52,15 @@ SITE_MAPPINGS: dict[str, dict[str, str]] = {
     "1137": {
 	"patrick": "1137",
 	"vincent": "1137-svdp",
-    }
+    },
+    "1855": {
+	"luke": "1855",
+	"james": "1855-james",
+	"clement": "1855-clem",
+    },
+    "0512": {
+	"peace": "0512-peace",
+	"andrew": "0512",
+    },
+
 }
