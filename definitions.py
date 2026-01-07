@@ -62,5 +62,17 @@ SITE_MAPPINGS: dict[str, dict[str, str]] = {
 	"peace": "0512-peace",
 	"andrew": "0512",
     },
+    "amherst": {
+	"joseph": "amherst",
+	"nativity": "amherst-bvm",
+    },
+    "bearer": {
+	"edward": "bearer",
+	"lucy": "bearer-mission",
+    },
+    "shc": {
+	"heart": "shc",
+	"patrick": "shc-pat",
+    },
 
 }
