@@ -13,6 +13,7 @@ class DownloadResult:
     pdf_bytes: Optional[bytes] = None
     url: Optional[str] = None
     error: Optional[str] = None
+    content_type: str = "pdf"  # "pdf", "html", or "text"
 
 
 class BulletinSource(ABC):

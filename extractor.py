@@ -69,12 +69,21 @@ class BulletinExtractor:
         self.model = model
         self._marker_converter = None  # Lazy init if needed
 
-    async def extract(self, pdf_bytes: bytes) -> BulletinExtraction:
-        """Extract all information from bulletin in a single LLM call."""
-        if self.method == "direct_pdf":
-            return await self._extract_direct(pdf_bytes)
+    async def extract(
+        self, content: bytes, content_type: str = "pdf"
+    ) -> BulletinExtraction:
+        """Extract all information from bulletin in a single LLM call.
+
+        Args:
+            content: The bulletin content (PDF bytes or text bytes).
+            content_type: Type of content - "pdf", "html", or "text".
+        """
+        if content_type in ("html", "text"):
+            return await self._extract_from_text(content)
+        elif self.method == "direct_pdf":
+            return await self._extract_direct(content)
         else:
-            return await self._extract_with_marker(pdf_bytes)
+            return await self._extract_with_marker(content)
 
     @retry_async(max_attempts=3, retryable_exceptions=(APITimeoutError, APIConnectionError))
     async def _extract_direct(self, pdf_bytes: bytes) -> BulletinExtraction:
@@ -145,3 +154,23 @@ class BulletinExtractor:
             f.flush()
             result = self._marker_converter(f.name)
             return result.markdown
+
+    @retry_async(max_attempts=3, retryable_exceptions=(APITimeoutError, APIConnectionError))
+    async def _extract_from_text(self, text_bytes: bytes) -> BulletinExtraction:
+        """Extract from text/markdown content (for webpage bulletins)."""
+        text_content = text_bytes.decode("utf-8")
+
+        response = await self.client.beta.chat.completions.parse(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {
+                    "role": "user",
+                    "content": f"Extract all parish information from this bulletin webpage:\n\n{text_content}",
+                },
+            ],
+            response_format=BulletinExtraction,
+            service_tier="flex",
+        )
+
+        return response.choices[0].message.parsed

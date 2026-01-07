@@ -5,6 +5,7 @@ from .parishes_online import ParishesOnlineSource
 from .discover_mass import DiscoverMassSource
 from .ecatholic import ECatholicSource
 from .self_hosted import SelfHostedSource
+from .webpage import WebpageSource
 
 
 def get_source_for_publisher(publisher: str) -> BulletinSource:
@@ -18,6 +19,9 @@ def get_source_for_publisher(publisher: str) -> BulletinSource:
         "EC": ECatholicSource(),
         "Self-Hosted": SelfHostedSource(),
         "SH": SelfHostedSource(),
+        "Webpage": WebpageSource(),
+        "Website": WebpageSource(),
+        "WP": WebpageSource(),
     }
     source = sources.get(publisher)
     if not source:
@@ -33,4 +37,5 @@ __all__ = [
     "DiscoverMassSource",
     "ECatholicSource",
     "SelfHostedSource",
+    "WebpageSource",
 ]

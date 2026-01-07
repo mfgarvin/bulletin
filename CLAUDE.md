@@ -6,6 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - **~40-50 parishes need self-hosted setup** - These parishes either don't have bulletins on the major publishers or self-host on their own websites. They need `Bulletin Page URL` configured in Notion.
 - **Address discrepancies file** - `address_discrepancies.txt` contains 9 parishes with missing or incorrect addresses in Notion (verified 2026-01-06). Not committed to git.
+- **Self-Hosted scraper enhancement** - Some parish bulletin pages (e.g., sfds-a, sak-cle) link to weekly subpages that contain the actual PDF, rather than having PDF links directly on the main page. A potential enhancement would be to follow links one level deep to find PDFs. Affected parishes: sfa-gm (Google Drive), sfds-a (weekly subpages), sak-cle (dated subpages in Korean).
 
 ## Project Overview
 
@@ -43,14 +44,14 @@ python -m utils.notion_to_app
 
 ## Architecture
 
-**Data flow:** Download PDF → GPT-4o structured extraction → Notion DB
+**Data flow:** Download content (PDF or webpage) → GPT structured extraction → Notion DB
 
 **Core modules:**
 - `main.py` - Async CLI entrypoint
 - `schemas.py` - All Pydantic models (single source of truth)
 - `extractor.py` - PDF → LLM extraction (single call for all data types)
 - `definitions.py` - Explicit site-to-parish mappings for multi-site bulletins
-- `sources/` - Bulletin download abstraction (Parishes Online, Discover Mass, eCatholic, Self-Hosted)
+- `sources/` - Bulletin download abstraction (Parishes Online, Discover Mass, eCatholic, Self-Hosted, Webpage)
 - `database/` - Database abstraction (Notion implementation, easy to swap)
 - `utils/retry.py` - Async retry with exponential backoff
 - `utils/log_context.py` - Parish context for concurrent logging
@@ -67,7 +68,7 @@ python -m utils.notion_to_app
 - `Name` (title) - Parish name
 - `ParishID` (rich_text) - Unique identifier
 - `Enable` (checkbox) - Whether to process this parish
-- `Bulletin Publisher` (select) - Source: "Parishes Online", "Discover Mass", "eCatholic", "Self-Hosted", "Other"
+- `Bulletin Publisher` (select) - Source: "Parishes Online", "Discover Mass", "eCatholic", "Self-Hosted", "Webpage", "Other"
 - `Bulletin Page URL` (url) - For self-hosted bulletins: URL of page containing the PDF link
 - `Bulletin Group ID` (rich_text) - Links parishes sharing a bulletin (see Multi-Site Support)
 - `GPT Timestamp` (rich_text) - Last extraction date
@@ -157,22 +158,55 @@ Required in `.env`:
 
 ## Bulletin Sources
 
-Four publisher types with different URL patterns:
+Five publisher types with different URL patterns:
 1. **Parishes Online (PO):** `container.parishesonline.com/bulletins/14/{id}/{date}B.pdf`
 2. **Discover Mass (DM):** Scraped from `discovermass.com/church/{id}`
 3. **eCatholic (EC):** `files.ecatholic.com/{id}/bulletins/{date}.pdf`
-4. **Self-Hosted (SH):** Generic scraper for parish websites - requires `Bulletin Page URL` field in Notion
+4. **Self-Hosted (SH):** Generic scraper for parish websites - finds and downloads PDF links
+5. **Webpage (WP):** Extracts bulletin content directly from HTML pages (no PDF)
 
 **Self-Hosted Setup:**
 1. Set `Bulletin Publisher` to "Self-Hosted"
 2. Set `Bulletin Page URL` to the page containing the bulletin PDF link
 3. The scraper finds PDF links on the page, prioritizing those with "bulletin" in the URL/text and recent dates
 
+**Webpage Setup:**
+1. Set `Bulletin Publisher` to "Webpage"
+2. Set `Bulletin Page URL` to the page containing bulletin content (mass times, events, etc.)
+3. The scraper extracts the main content, converts HTML to markdown, and sends to the LLM
+
+**JS-Heavy Sites (Wix, Squarespace, etc.):**
+The Webpage source only works with static HTML. Sites that load content via JavaScript (Wix, Squarespace, some WordPress themes) will return empty or minimal content. To identify JS-heavy sites: if "View Page Source" shows little text but the rendered page has lots of content, it's JS-rendered.
+
+Options for JS-heavy sites:
+1. **Find a PDF link** - Many JS sites still host PDF bulletins; use Self-Hosted if you can find the direct PDF URL
+2. **Use a different page** - Sometimes `/mass-times` or similar pages are static even if the homepage isn't
+3. **Add headless browser support** - Would require adding Playwright/Selenium to render JS (not currently implemented due to complexity and resource requirements)
+
 ## Automation
 
 GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/workflows/gh-actions.yml`)
 
 ## Changelog
+
+### v2.3.0 (2026-01-07) - Webpage Bulletin Support
+
+**New feature:** Parishes that have bulletin information directly on a webpage (not in a PDF) can now be processed.
+
+**Schema changes:**
+- `DownloadResult.content_type`: New field to indicate content type ("pdf", "html", or "text")
+- `BulletinExtractor.extract()`: Now accepts `content_type` parameter
+
+**New functionality:**
+- `sources/webpage.py`: Scrapes HTML pages, extracts main content, converts to markdown
+- `extractor._extract_from_text()`: New method for processing text/markdown content
+- Content cleaning: Removes navigation, sidebars, headers, footers before extraction
+- Uses `markdownify` library for HTML→markdown conversion
+
+**Setup:**
+1. Add "Webpage" option to `Bulletin Publisher` select in Notion
+2. Set `Bulletin Page URL` to the page containing bulletin content
+3. The scraper extracts main content area and sends markdown to the LLM
 
 ### v2.2.1 (2026-01-06) - Self-Hosted Scraper Fixes
 

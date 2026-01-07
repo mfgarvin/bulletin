@@ -105,11 +105,13 @@ async def process_parish(
             log(f"Download failed: {result.error}")
             return False
 
-        log(f"Downloaded bulletin ({len(result.pdf_bytes)} bytes)")
+        log(f"Downloaded bulletin ({len(result.pdf_bytes)} bytes, type={result.content_type})")
 
         # 2. Extract (single LLM call)
         log("Extracting information...")
-        extraction: BulletinExtraction = await extractor.extract(result.pdf_bytes)
+        extraction: BulletinExtraction = await extractor.extract(
+            result.pdf_bytes, content_type=result.content_type
+        )
 
         # Log extraction summary
         total_masses = sum(len(s.mass_times) for s in extraction.sites)
