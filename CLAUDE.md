@@ -189,6 +189,7 @@ Five publisher types with different URL patterns:
 1. Set `Bulletin Publisher` to "Webpage"
 2. Set `Bulletin Page URL` to the page containing bulletin content (mass times, events, etc.)
 3. The scraper extracts the main content, converts HTML to markdown, and sends to the LLM
+4. For blog listing pages, the scraper auto-follows "Continue Reading" / "Read More" links to get full content
 
 **JS-Heavy Sites (Wix, Squarespace, etc.):**
 The Webpage source only works with static HTML. Sites that load content via JavaScript (Wix, Squarespace, some WordPress themes) will return empty or minimal content. To identify JS-heavy sites: if "View Page Source" shows little text but the rendered page has lots of content, it's JS-rendered.
@@ -217,6 +218,7 @@ GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/
 - `extractor._extract_from_text()`: New method for processing text/markdown content
 - Content cleaning: Removes navigation, sidebars, headers, footers before extraction
 - Uses `markdownify` library for HTML→markdown conversion
+- Auto-follows "Continue Reading" / "Read More" links on blog listing pages
 - Field update controls: `UPDATE_NAME`, `UPDATE_ADDRESS`, `UPDATE_CITY`, `UPDATE_ZIPCODE`, `UPDATE_PHONE`, `UPDATE_WEBSITE` flags in `database/notion.py`
 
 **Setup:**
