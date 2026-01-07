@@ -83,8 +83,24 @@ class WebpageSource(BulletinSource):
                         error=f"Failed to load webpage: HTTP {response.status_code}",
                     )
 
+                html = response.text
+                final_url = bulletin_url
+
+                # Check if this is a listing page with "Continue Reading" links
+                follow_url = self._find_continue_reading_link(html, bulletin_url)
+                if follow_url:
+                    # Follow the link to get full content
+                    follow_response = await client.get(
+                        follow_url,
+                        headers={"User-Agent": USER_AGENT},
+                        follow_redirects=True,
+                    )
+                    if follow_response.status_code == 200:
+                        html = follow_response.text
+                        final_url = follow_url
+
                 # Extract and clean HTML content
-                markdown_content = self._extract_content(response.text, bulletin_url)
+                markdown_content = self._extract_content(html, final_url)
 
                 if not markdown_content or len(markdown_content.strip()) < 100:
                     return DownloadResult(
@@ -95,7 +111,7 @@ class WebpageSource(BulletinSource):
                 return DownloadResult(
                     success=True,
                     pdf_bytes=markdown_content.encode("utf-8"),
-                    url=bulletin_url,
+                    url=final_url,
                     content_type="text",
                 )
 
@@ -104,6 +120,34 @@ class WebpageSource(BulletinSource):
                     success=False,
                     error=f"Request error: {e}",
                 )
+
+    def _find_continue_reading_link(self, html: str, base_url: str) -> Optional[str]:
+        """Find a 'Continue Reading' or 'Read More' link on listing pages.
+
+        Returns the URL of the first/most recent full article, or None if not found.
+        """
+        soup = BeautifulSoup(html, "html.parser")
+
+        # Patterns that indicate a "read more" link
+        read_more_patterns = [
+            "continue reading",
+            "read more",
+            "read the rest",
+            "full article",
+            "view more",
+            "[...]",
+            "…]",
+        ]
+
+        for link in soup.find_all("a", href=True):
+            link_text = link.get_text().lower().strip()
+            for pattern in read_more_patterns:
+                if pattern in link_text:
+                    href = link.get("href", "")
+                    if href and not href.startswith("#"):
+                        return urljoin(base_url, href)
+
+        return None
 
     def _extract_content(self, html: str, base_url: str) -> str:
         """Extract main content from HTML and convert to markdown."""
