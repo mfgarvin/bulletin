@@ -156,6 +156,21 @@ Required in `.env`:
 - `NOTION_API_KEY` - Notion API token
 - `PARISH_DB_ID` - Notion database ID
 
+## Field Update Controls
+
+To prevent overwriting existing contact info in Notion, edit the flags at the top of `database/notion.py`:
+
+```python
+UPDATE_NAME = True      # Parish name
+UPDATE_ADDRESS = True   # Street address
+UPDATE_CITY = True      # City
+UPDATE_ZIPCODE = True   # Zip code
+UPDATE_PHONE = True     # Phone number
+UPDATE_WEBSITE = True   # Website URL
+```
+
+Set any to `False` to preserve existing values. Useful when Notion has manually-corrected data that shouldn't be overwritten by extraction.
+
 ## Bulletin Sources
 
 Five publisher types with different URL patterns:
@@ -202,6 +217,7 @@ GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/
 - `extractor._extract_from_text()`: New method for processing text/markdown content
 - Content cleaning: Removes navigation, sidebars, headers, footers before extraction
 - Uses `markdownify` library for HTML→markdown conversion
+- Field update controls: `UPDATE_NAME`, `UPDATE_ADDRESS`, `UPDATE_CITY`, `UPDATE_ZIPCODE`, `UPDATE_PHONE`, `UPDATE_WEBSITE` flags in `database/notion.py`
 
 **Setup:**
 1. Add "Webpage" option to `Bulletin Publisher` select in Notion
