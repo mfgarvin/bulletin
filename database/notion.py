@@ -12,12 +12,12 @@ from schemas import BulletinExtraction, ParishRecord
 from .base import DatabaseClient
 
 # Field update controls - set to False to preserve existing values
-UPDATE_NAME = True
-UPDATE_ADDRESS = True
-UPDATE_CITY = True
-UPDATE_ZIPCODE = True
-UPDATE_PHONE = True
-UPDATE_WEBSITE = True
+UPDATE_NAME = False
+UPDATE_ADDRESS = False
+UPDATE_CITY = False
+UPDATE_ZIPCODE = False
+UPDATE_PHONE = False
+UPDATE_WEBSITE = False
 
 
 class NotionClient(DatabaseClient):
