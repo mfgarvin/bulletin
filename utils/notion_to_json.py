@@ -24,6 +24,7 @@ class FullParishData:
     zipcode: Optional[str]
     phone: Optional[str]
     website: Optional[str]
+    lonlat: Optional[str]
     mass_times: list[dict]
     confessions: list[dict]
     adoration: dict
@@ -108,6 +109,7 @@ def _row_to_full_parish(row: dict) -> FullParishData:
         zipcode=_get_property(row, "Zip Code") or None,
         phone=_get_property(row, "Phone Number") or None,
         website=_get_property(row, "Website") or None,
+        lonlat=_get_property(row, "LonLat") or None,
         mass_times=_parse_json_field(_get_property(row, "Mass Times")),
         confessions=_parse_json_field(_get_property(row, "Confessions")),
         adoration=adoration,
@@ -131,6 +133,7 @@ def parish_to_dict(parish: FullParishData) -> dict:
             "zipcode": parish.zipcode,
             "phone": parish.phone,
             "website": parish.website,
+            "lonlat": parish.lonlat,
         },
         "mass_times": parish.mass_times,
         "confessions": parish.confessions,

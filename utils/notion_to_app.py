@@ -110,6 +110,9 @@ def format_parish_for_app(parish: FullParishData) -> dict[str, Any]:
         "zip_code": parish.zipcode,
         "phone": parish.phone,
         "website": parish.website,
+        "lonlat": parish.lonlat,
+        "bulletin_url": parish.bulletin_url,
+        "timestamp": parish.last_run,
         "mass_times": format_mass_times(parish.mass_times),
         "confessions": format_confession_times(parish.confessions),
         "adoration": format_adoration(parish.adoration),
@@ -125,11 +128,11 @@ async def main() -> str:
 
     parishes = await fetch_all_parishes(client, database_id)
 
-    # Only export enabled parishes with data
+    # Only export enabled parishes
     export_data = [
         format_parish_for_app(p)
         for p in parishes
-        if p.enabled and p.mass_times
+        if p.enabled
     ]
 
     with open("export.json", "w", encoding="utf-8") as f:

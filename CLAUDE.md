@@ -79,6 +79,7 @@ python -m utils.notion_to_app
 - `GPT Logs` (rich_text) - Extraction log
 - `Link to latest bulletin` (url) - URL of processed bulletin
 - `Street Address`, `City`, `Zip Code`, `Phone Number`, `Website` (rich_text) - Parish contact info
+- `LonLat` (rich_text) - Longitude,latitude coordinates for mapping
 
 ## Multi-Site Support
 
