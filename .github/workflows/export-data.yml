@@ -1,0 +1,43 @@
+name: Export parish data
+run-name: Export parish data to JSON
+on:
+  schedule:
+    - cron: '30 14 * * SAT'  # 30 min after bulletin processor
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Bulletin processor"]
+    types:
+      - completed
+env:
+  NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+  PARISH_DB_ID: ${{ secrets.PARISH_DB_ID }}
+jobs:
+  Export-Data:
+    runs-on: ubuntu-latest
+    # Only run if triggered manually, on schedule, or after successful bulletin processor
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'schedule' ||
+      github.event.workflow_run.conclusion == 'success'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - name: Export data
+        run: python -m utils.notion_to_app
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add export.json
+          if git diff --staged --quiet; then
+            echo "No changes to export.json"
+          else
+            git commit -m "Update export.json [skip ci]"
+            git push
+          fi
