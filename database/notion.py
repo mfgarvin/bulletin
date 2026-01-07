@@ -11,6 +11,14 @@ from schemas import BulletinExtraction, ParishRecord
 
 from .base import DatabaseClient
 
+# Field update controls - set to False to preserve existing values
+UPDATE_NAME = True
+UPDATE_ADDRESS = True
+UPDATE_CITY = True
+UPDATE_ZIPCODE = True
+UPDATE_PHONE = True
+UPDATE_WEBSITE = True
+
 
 class NotionClient(DatabaseClient):
     """Notion database client implementation."""
@@ -119,20 +127,20 @@ class NotionClient(DatabaseClient):
 
         # Update parish contact info (parish-level)
         info = extraction.parish_info
-        if info.name and not skip_name_update:
+        if UPDATE_NAME and info.name and not skip_name_update:
             properties["Name"] = {"title": [{"text": {"content": info.name}}]}
-        if info.phone:
+        if UPDATE_PHONE and info.phone:
             properties["Phone Number"] = self._text_property(info.phone)
-        if info.website:
+        if UPDATE_WEBSITE and info.website:
             properties["Website"] = self._text_property(info.website)
 
         # Update site-specific address info
         if site:
-            if site.address:
+            if UPDATE_ADDRESS and site.address:
                 properties["Street Address"] = self._text_property(site.address)
-            if site.city:
+            if UPDATE_CITY and site.city:
                 properties["City"] = self._text_property(site.city)
-            if site.zipcode:
+            if UPDATE_ZIPCODE and site.zipcode:
                 properties["Zip Code"] = self._text_property(site.zipcode)
 
         await self._client.pages.update(page_id=page_id, properties=properties)
