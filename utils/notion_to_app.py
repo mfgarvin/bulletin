@@ -11,7 +11,10 @@ from typing import Any
 
 from notion_client import AsyncClient
 
-from .notion_to_json import FullParishData, fetch_all_parishes
+try:
+    from .notion_to_json import FullParishData, fetch_all_parishes
+except ImportError:
+    from notion_to_json import FullParishData, fetch_all_parishes
 
 WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
@@ -132,7 +135,7 @@ async def main() -> str:
     export_data = [
         format_parish_for_app(p)
         for p in parishes
-        if p.enabled
+#        if p.enabled
     ]
 
     with open("export.json", "w", encoding="utf-8") as f:
