@@ -74,5 +74,10 @@ SITE_MAPPINGS: dict[str, dict[str, str]] = {
 	"heart": "shc",
 	"patrick": "shc-pat",
     },
+    "1285": {
+	"edward": "1285",
+	#"peter": "1285-pete",
+	#"stephen": "1285-stephen",
+    },
 
 }

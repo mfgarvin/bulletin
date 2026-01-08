@@ -270,8 +270,8 @@ async def main():
     if secondary_count > 0:
         logger.info(f"Skipping {secondary_count} secondary sites (processed with primary)")
 
-    # Process parishes concurrently (max 7 at a time)
-    semaphore = asyncio.Semaphore(7)
+    # Process parishes concurrently (max 10 at a time)
+    semaphore = asyncio.Semaphore(10)
 
     async def process_with_limit(parish: ParishRecord):
         async with semaphore:

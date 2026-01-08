@@ -56,7 +56,8 @@ IMPORTANT GUIDELINES:
 - If information is unclear or not present, omit it rather than guessing
 - Note any extraction difficulties in extraction_notes
 - All times are local to the parish
-- If multiple worship sites share a bulletin, extract each site separately with its own schedules"""
+- If multiple worship sites share a bulletin, extract each site separately with its own schedules and parish contact information
+- For Masses, Confessions, and Adoration, just list the schedule. Don't refer to bulletin pages, list specific needs, or show unnecessary details"""
 
 
 class BulletinExtractor:
