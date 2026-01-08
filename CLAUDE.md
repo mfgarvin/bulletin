@@ -208,6 +208,29 @@ GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/
 
 ## Changelog
 
+### v2.4.0 (2026-01-07) - Holiday Mass Support
+
+**New feature:** Mass schedule now distinguishes between regular weekly masses and holiday/special occasion masses.
+
+**Schema changes:**
+- `MassTime.mass_date`: New optional field for holiday masses (e.g., Christmas, Easter, Holy Days)
+  - `null` for regular weekly masses (shown every week)
+  - Specific date (e.g., `2025-12-24`) for holiday masses (shown only on that date)
+
+**Extraction changes:**
+- Updated `SYSTEM_PROMPT` in `extractor.py` to extract both regular and holiday masses
+- LLM now captures Christmas, Easter, and Holy Day masses with specific dates
+- Holiday masses include descriptive notes (e.g., "Christmas Eve (Vigil of Christmas)")
+
+**App integration:**
+- Apps can filter masses by date: show regular masses (`mass_date == null`) plus any holiday masses within the current week
+- Holiday masses automatically expire after their date
+- Use `mass_date` presence to badge/highlight special masses in the UI
+
+**Testing:**
+- Added `test_extraction.py` for standalone testing without Notion
+- Usage: `python test_extraction.py <pdf_file>`
+
 ### v2.3.0 (2026-01-07) - Webpage Bulletin Support
 
 **New feature:** Parishes that have bulletin information directly on a webpage (not in a PDF) can now be processed.

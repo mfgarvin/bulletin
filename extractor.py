@@ -28,8 +28,10 @@ Extract the following information:
 
 3. **For each site's Mass schedule**:
    - Include the day of week and time (24-hour format, e.g., 1630 for 4:30pm)
+   - For REGULAR weekly Masses: Leave the mass_date field empty/null
+   - For HOLIDAY/SPECIAL masses (Christmas, Easter, Holy Days, etc.): Include the specific mass_date
    - Note if a Mass is in a specific language (Spanish, Latin, etc.)
-   - Add notes for special conditions (e.g., "First Friday only")
+   - Add notes for special conditions (e.g., "First Friday only", "Christmas Eve", "Holy Day")
 
 4. **For each site's Confession schedule**:
    - Include day, start time, and end time
@@ -47,7 +49,9 @@ Extract the following information:
 
 IMPORTANT GUIDELINES:
 - Use 24-hour time format (e.g., 900 for 9:00am, 1630 for 4:30pm) except for events_summary.
-- Only include REGULAR weekly Mass times, not special occasion masses
+- Include BOTH regular weekly Mass times AND holiday/special occasion masses:
+  * Regular weekly: day + time (mass_date field = null)
+  * Holiday/special: day + time + specific mass_date (e.g., 2025-12-24 for Christmas Eve)
 - For events, distinguish between one_time and recurring frequencies
 - If information is unclear or not present, omit it rather than guessing
 - Note any extraction difficulties in extraction_notes

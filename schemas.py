@@ -33,10 +33,13 @@ class MassTime(BaseModel):
     time: int = Field(
         ..., ge=0, le=2359, description="24hr format, e.g., 1630 for 4:30pm"
     )
-    language: Optional[str] = Field(
-        None, description="e.g., 'Spanish', 'Latin' if specified"
+    mass_date: date | None = Field(
+        default=None, description="Specific date for holiday/special occasion masses (e.g., Christmas, Easter). Leave None for regular weekly masses."
     )
-    notes: Optional[str] = Field(None, description="e.g., 'First Friday only'")
+    language: str | None = Field(
+        default=None, description="e.g., 'Spanish', 'Latin' if specified"
+    )
+    notes: str | None = Field(default=None, description="e.g., 'First Friday only', 'Christmas Eve', 'Holy Day'")
 
     @field_validator("time")
     @classmethod
