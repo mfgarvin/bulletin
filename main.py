@@ -4,11 +4,12 @@ import argparse
 import asyncio
 import logging
 import sys
+from dataclasses import dataclass, field
 
 from openai import AsyncOpenAI
 
 from database import NotionClient
-from definitions import SITE_MAPPINGS
+from definitions import SINGLE_SITE_PARISHES, SITE_MAPPINGS
 from extractor import BulletinExtractor, ExtractionMethod
 from schemas import BulletinExtraction, ParishRecord, SiteInfo
 from sources import get_source_for_publisher
@@ -46,13 +47,65 @@ def match_sites_to_parishes(
     return results
 
 
+def merge_sites_into_one(sites: list[SiteInfo], parish_name: str) -> SiteInfo:
+    """Merge multiple extracted sites into a single site.
+
+    Used when a parish is in SINGLE_SITE_PARISHES to combine incorrectly
+    split data back into one site.
+    """
+    from schemas import AdorationSchedule
+
+    if not sites:
+        return SiteInfo(site_name=parish_name)
+
+    if len(sites) == 1:
+        return sites[0]
+
+    # Use first site as base, take its address info
+    base = sites[0]
+
+    # Merge all mass times, confessions, and adoration from all sites
+    all_masses = []
+    all_confessions = []
+    all_adoration_times = []
+    is_perpetual = False
+
+    for site in sites:
+        all_masses.extend(site.mass_times)
+        all_confessions.extend(site.confession_times)
+        all_adoration_times.extend(site.adoration.times)
+        if site.adoration.is_perpetual:
+            is_perpetual = True
+
+    return SiteInfo(
+        site_name=parish_name,
+        address=base.address,
+        city=base.city,
+        state=base.state,
+        zipcode=base.zipcode,
+        mass_times=all_masses,
+        confession_times=all_confessions,
+        adoration=AdorationSchedule(times=all_adoration_times, is_perpetual=is_perpetual),
+    )
+
+
+@dataclass
+class ProcessResult:
+    """Result of processing a parish."""
+    parish_id: str
+    parish_name: str
+    success: bool
+    error: str | None = None
+    warnings: list[str] = field(default_factory=list)
+
+
 async def process_parish(
     parish: ParishRecord,
     extractor: BulletinExtractor,
     db: NotionClient,
     dry_run: bool = False,
-) -> bool:
-    """Process a single parish bulletin. Returns True on success.
+) -> ProcessResult:
+    """Process a single parish bulletin. Returns ProcessResult with details.
 
     For multi-site parishes (bulletin_group_id set), this will:
     1. Download the bulletin once from the primary parish
@@ -66,21 +119,26 @@ async def process_parish(
     # Set context for logging across all async calls
     set_parish_context(parish_id, parish_name)
     log_entries: list[str] = []
+    warnings: list[str] = []
 
     def log(msg: str):
         logger.info(f"[{parish_id}] {parish_name} - {msg}")
         log_entries.append(msg)
 
+    def warn(msg: str):
+        logger.warning(f"[{parish_id}] {parish_name} - {msg}")
+        log_entries.append(f"WARNING: {msg}")
+        warnings.append(msg)
+
     try:
         # Skip secondary sites - they'll be processed when primary is processed
         if parish.is_secondary_site:
             log(f"Skipping secondary site (primary: {parish.bulletin_group_id})")
-            return True  # Not a failure, just skip
+            return ProcessResult(parish_id, parish_name, success=True)
 
         # Skip unsupported publishers
         if publisher in ["Other", ""]:
-            log(f"Skipping unsupported publisher: {publisher}")
-            return False
+            return ProcessResult(parish_id, parish_name, success=False, error=f"Unsupported publisher: {publisher}")
 
         # Get all parishes in this bulletin group (for multi-site matching)
         group_parishes: list[ParishRecord] = []
@@ -102,8 +160,7 @@ async def process_parish(
 
         result = await source.download(parish_id, bulletin_url=parish.bulletin_url)
         if not result.success:
-            log(f"Download failed: {result.error}")
-            return False
+            return ProcessResult(parish_id, parish_name, success=False, error=f"Download failed: {result.error}")
 
         log(f"Downloaded bulletin ({len(result.pdf_bytes)} bytes, type={result.content_type})")
 
@@ -112,6 +169,12 @@ async def process_parish(
         extraction: BulletinExtraction = await extractor.extract(
             result.pdf_bytes, content_type=result.content_type
         )
+
+        # Force single-site if parish is in SINGLE_SITE_PARISHES
+        if parish_id in SINGLE_SITE_PARISHES and len(extraction.sites) > 1:
+            log(f"Merging {len(extraction.sites)} sites into one (SINGLE_SITE_PARISHES)")
+            merged = merge_sites_into_one(extraction.sites, parish_name)
+            extraction.sites = [merged]
 
         # Log extraction summary
         total_masses = sum(len(s.mass_times) for s in extraction.sites)
@@ -135,7 +198,7 @@ async def process_parish(
 
         # 3. Validate
         if len(extraction.sites) == 0 or all(len(s.mass_times) == 0 for s in extraction.sites):
-            log("WARNING: No mass times found - may indicate extraction issue")
+            warn("No mass times found - may indicate extraction issue")
 
         # 4. Match sites to parishes and save
         if not dry_run:
@@ -167,22 +230,21 @@ async def process_parish(
                         )
                         log(f"Saved site '{site.site_name}' → {matched_parish.name}")
                     else:
-                        log(f"WARNING: No match for site '{site.site_name}'")
+                        warn(f"No match for site '{site.site_name}'")
 
                 # Check for unmatched parishes
                 matched_ids = {m.parish_id for _, m in matches if m}
                 for p in group_parishes:
                     if p.parish_id not in matched_ids:
-                        log(f"WARNING: No site matched parish '{p.name}'")
+                        warn(f"No site matched parish '{p.name}'")
         else:
             log("Dry run - skipping database save")
 
-        return True
+        return ProcessResult(parish_id, parish_name, success=True, warnings=warnings)
 
     except Exception as e:
-        log(f"ERROR: {e}")
         logger.exception(f"Failed to process {parish_id}")
-        return False
+        return ProcessResult(parish_id, parish_name, success=False, error=str(e), warnings=warnings)
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -282,13 +344,36 @@ async def main():
                 dry_run=args.dry_run,
             )
 
-    results_list = await asyncio.gather(
+    results: list[ProcessResult] = await asyncio.gather(
         *[process_with_limit(p) for p in primary_parishes]
     )
 
-    success_count = sum(1 for r in results_list if r)
-    failed_count = len(results_list) - success_count
-    logger.info(f"Complete: {success_count} succeeded, {failed_count} failed")
+    # Summarize results
+    succeeded = [r for r in results if r.success]
+    failed = [r for r in results if not r.success]
+    with_warnings = [r for r in succeeded if r.warnings]
+
+    logger.info(f"Complete: {len(succeeded)} succeeded, {len(failed)} failed")
+
+    # Report failures and save issues to Notion
+    if failed:
+        logger.error("=" * 60)
+        logger.error("FAILED PARISHES:")
+        for r in failed:
+            logger.error(f"  [{r.parish_id}] {r.parish_name}: {r.error}")
+            if not args.dry_run:
+                await db.save_issue(r.parish_id, error=r.error, warnings=r.warnings)
+
+    # Report warnings and save to Notion
+    if with_warnings:
+        logger.warning("=" * 60)
+        logger.warning("PARISHES WITH WARNINGS:")
+        for r in with_warnings:
+            logger.warning(f"  [{r.parish_id}] {r.parish_name}:")
+            for w in r.warnings:
+                logger.warning(f"    - {w}")
+            if not args.dry_run:
+                await db.save_issue(r.parish_id, warnings=r.warnings)
 
 
 if __name__ == "__main__":

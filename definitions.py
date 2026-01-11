@@ -1,5 +1,14 @@
 """Explicit site-to-parish mappings for multi-site bulletins."""
 
+# Parishes that should always be treated as single-site.
+# When the LLM incorrectly extracts multiple sites, all data will be merged into one.
+SINGLE_SITE_PARISHES: set[str] = {
+    # Add parish IDs here, e.g.:
+    "ss-c",
+    "5493",
+    "1285",
+}
+
 # Format:
 # "primary-parish-id": {
 #     "pattern in extracted name": "target-parish-id",
@@ -74,10 +83,4 @@ SITE_MAPPINGS: dict[str, dict[str, str]] = {
 	"heart": "shc",
 	"patrick": "shc-pat",
     },
-    "1285": {
-	"edward": "1285",
-	#"peter": "1285-pete",
-	#"stephen": "1285-stephen",
-    },
-
 }

@@ -84,6 +84,28 @@ python -m utils.notion_to_app
 - `Link to latest bulletin` (url) - URL of processed bulletin
 - `Street Address`, `City`, `Zip Code`, `Phone Number`, `Website` (rich_text) - Parish contact info
 - `LonLat` (rich_text) - Longitude,latitude coordinates for mapping
+- `Issues` (status) - Issue tracking: "No Issues", "Warning", or "Error"
+- `Issue Log` (rich_text) - Details of errors/warnings from last run
+
+## Issue Tracking
+
+The system automatically tracks processing issues in Notion:
+
+**Status values (`Issues` field):**
+- **No Issues** - Set on successful extraction (clears previous issues)
+- **Warning** - Extraction succeeded but with warnings (e.g., no mass times found, unmatched sites)
+- **Error** - Processing failed (e.g., download error, unsupported publisher)
+
+**Issue Log field** contains details:
+```
+ERROR: Download failed: 404 Not Found
+WARNING: No mass times found - may indicate extraction issue
+WARNING: No match for site 'Unknown Chapel'
+```
+
+**End-of-run summary** prints all failures and warnings to the console for visibility.
+
+**Filtering in Notion:** Use the `Issues` status to quickly find parishes needing attention.
 
 ## Multi-Site Support
 
@@ -152,6 +174,26 @@ definitions.py:
 },
 ```
 
+## Single-Site Override
+
+Sometimes the LLM incorrectly extracts multiple "sites" from a bulletin that should be treated as a single parish (e.g., it splits the main church from an adoration chapel, or misinterprets section headers as separate locations).
+
+To force a parish to always be treated as single-site, add its `ParishID` to `SINGLE_SITE_PARISHES` in `definitions.py`:
+
+```python
+SINGLE_SITE_PARISHES: set[str] = {
+    "ss-c",
+    "5493",
+    "1285",
+}
+```
+
+**How it works:**
+- After extraction, if the parish is in this set and multiple sites were extracted, all data is merged into one site
+- Mass times, confessions, and adoration schedules from all extracted sites are combined
+- Address info is taken from the first extracted site
+- The merged site uses the parish name from Notion
+
 ## Environment Variables
 
 Required in `.env`:
@@ -207,6 +249,40 @@ Options for JS-heavy sites:
 GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/workflows/gh-actions.yml`)
 
 ## Changelog
+
+### v2.4.3 (2026-01-11) - Issue Tracking
+
+**New feature:** Automatic issue tracking in Notion database.
+
+**Changes:**
+- Added `Issues` (status) and `Issue Log` (rich_text) fields to track processing issues
+- On successful extraction: clears issues (status → "No Issues")
+- On failure: sets status → "Error" with error details in Issue Log
+- On warnings: sets status → "Warning" with warning details in Issue Log
+- End-of-run summary prints all failures and warnings to console
+- Added `ProcessResult` dataclass to track success/error/warnings per parish
+- Added `save_issue()` method to `NotionClient`
+
+**Notion setup:**
+1. Add `Issues` property as Status type with options: "No Issues", "Warning", "Error"
+2. Add `Issue Log` property as Text type
+
+### v2.4.2 (2026-01-11) - Single-Site Override
+
+**New feature:** Force specific parishes to be treated as single-site when the LLM incorrectly extracts multiple sites.
+
+**Changes:**
+- Added `SINGLE_SITE_PARISHES` set in `definitions.py`
+- Added `merge_sites_into_one()` function in `main.py`
+- When a parish is in the set, all extracted sites are merged into one before saving
+
+**Usage:**
+```python
+SINGLE_SITE_PARISHES: set[str] = {
+    "ss-c",
+    "5493",
+}
+```
 
 ### v2.4.1 (2026-01-11) - Notion API Reliability
 

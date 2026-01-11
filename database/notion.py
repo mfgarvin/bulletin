@@ -179,8 +179,57 @@ class NotionClient(DatabaseClient):
             if UPDATE_ZIPCODE and site.zipcode:
                 properties["Zip Code"] = self._text_property(site.zipcode)
 
+        # Clear any previous issues on successful save
+        properties["Issues"] = {"status": {"name": "No Issues"}}
+        properties["Issue Log"] = self._text_property("")
+
         await self._update_page(page_id=page_id, properties=properties)
         logger.info(f"Saved extraction to Notion for parish: {parish_id}")
+
+    async def save_issue(
+        self,
+        parish_id: str,
+        error: str | None = None,
+        warnings: list[str] | None = None,
+    ) -> None:
+        """Save error/warning status to Notion.
+
+        Args:
+            parish_id: The parish ID to update
+            error: Error message if processing failed
+            warnings: List of warning messages
+        """
+        page_id = await self._get_parish_page_id(parish_id)
+        if not page_id:
+            logger.warning(f"Cannot save issue - parish not found: {parish_id}")
+            return
+
+        # Build issue log
+        log_parts = []
+        if error:
+            log_parts.append(f"ERROR: {error}")
+        if warnings:
+            for w in warnings:
+                log_parts.append(f"WARNING: {w}")
+
+        issue_log = "\n".join(log_parts)
+
+        # Determine status: Error if there's an error, Warning if only warnings
+        if error:
+            status = "Error"
+        elif warnings:
+            status = "Warning"
+        else:
+            status = "No Issues"
+
+        properties = {
+            "Issues": {"status": {"name": status}},
+            "Issue Log": self._text_property(issue_log),
+            "GPT Timestamp": self._text_property(date.today().isoformat()),
+        }
+
+        await self._update_page(page_id=page_id, properties=properties)
+        logger.info(f"Saved issue status ({status}) for parish: {parish_id}")
 
     # Private helpers
 
