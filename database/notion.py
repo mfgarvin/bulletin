@@ -1,15 +1,24 @@
 """Notion database implementation."""
 
+import asyncio
 import json
+import logging
 import os
 from datetime import date, timedelta
 from typing import Optional
 
-from notion_client import AsyncClient
+from notion_client import APIResponseError, AsyncClient
 
 from schemas import BulletinExtraction, ParishRecord
+from utils.retry import retry_async
 
 from .base import DatabaseClient
+
+logger = logging.getLogger(__name__)
+
+# Global rate limiter for Notion API (3 requests/second limit)
+_notion_semaphore = asyncio.Semaphore(2)  # Allow 2 concurrent requests
+_notion_delay = 0.4  # 400ms between requests for safety margin
 
 # Field update controls - set to False to preserve existing values
 UPDATE_NAME = False
@@ -35,6 +44,35 @@ class NotionClient(DatabaseClient):
         client = AsyncClient(auth=api_key)
         return cls(client, database_id)
 
+    async def _rate_limited_call(self, coro):
+        """Execute a Notion API call with rate limiting."""
+        async with _notion_semaphore:
+            result = await coro
+            await asyncio.sleep(_notion_delay)
+            return result
+
+    @retry_async(
+        max_attempts=3,
+        base_delay=2.0,
+        retryable_exceptions=(APIResponseError, asyncio.TimeoutError, ConnectionError),
+    )
+    async def _query_database(self, **kwargs):
+        """Query database with rate limiting and retry."""
+        return await self._rate_limited_call(
+            self._client.databases.query(database_id=self._database_id, **kwargs)
+        )
+
+    @retry_async(
+        max_attempts=3,
+        base_delay=2.0,
+        retryable_exceptions=(APIResponseError, asyncio.TimeoutError, ConnectionError),
+    )
+    async def _update_page(self, page_id: str, properties: dict):
+        """Update page with rate limiting and retry."""
+        return await self._rate_limited_call(
+            self._client.pages.update(page_id=page_id, properties=properties)
+        )
+
     async def get_parishes_to_process(self, stale_days: int = 7) -> list[ParishRecord]:
         """Get enabled parishes with data older than stale_days."""
         all_parishes = await self._get_all_parishes()
@@ -45,8 +83,7 @@ class NotionClient(DatabaseClient):
 
     async def get_parish(self, parish_id: str) -> Optional[ParishRecord]:
         """Get a single parish by ID."""
-        response = await self._client.databases.query(
-            database_id=self._database_id,
+        response = await self._query_database(
             filter={"property": "ParishID", "rich_text": {"equals": parish_id}},
         )
         if not response["results"]:
@@ -55,8 +92,7 @@ class NotionClient(DatabaseClient):
 
     async def get_bulletin_group(self, group_id: str) -> list[ParishRecord]:
         """Get all parishes that share a bulletin (same Bulletin Group ID)."""
-        response = await self._client.databases.query(
-            database_id=self._database_id,
+        response = await self._query_database(
             filter={"property": "Bulletin Group ID", "rich_text": {"equals": group_id}},
         )
         return [self._row_to_parish_record(row) for row in response["results"]]
@@ -143,18 +179,17 @@ class NotionClient(DatabaseClient):
             if UPDATE_ZIPCODE and site.zipcode:
                 properties["Zip Code"] = self._text_property(site.zipcode)
 
-        await self._client.pages.update(page_id=page_id, properties=properties)
+        await self._update_page(page_id=page_id, properties=properties)
+        logger.info(f"Saved extraction to Notion for parish: {parish_id}")
 
     # Private helpers
 
     async def _get_all_parishes(self, cursor: Optional[str] = None) -> list[ParishRecord]:
         """Fetch all parishes with pagination."""
         if cursor:
-            response = await self._client.databases.query(
-                database_id=self._database_id, start_cursor=cursor
-            )
+            response = await self._query_database(start_cursor=cursor)
         else:
-            response = await self._client.databases.query(database_id=self._database_id)
+            response = await self._query_database()
 
         results = [self._row_to_parish_record(row) for row in response["results"]]
 
@@ -165,8 +200,7 @@ class NotionClient(DatabaseClient):
 
     async def _get_parish_page_id(self, parish_id: str) -> Optional[str]:
         """Get the Notion page ID for a parish."""
-        response = await self._client.databases.query(
-            database_id=self._database_id,
+        response = await self._query_database(
             filter={"property": "ParishID", "rich_text": {"equals": parish_id}},
         )
         if response["results"]:

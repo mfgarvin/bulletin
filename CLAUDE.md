@@ -208,6 +208,21 @@ GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/
 
 ## Changelog
 
+### v2.4.1 (2026-01-11) - Notion API Reliability
+
+**Bug fix:** Improved reliability of Notion database saves. Previously ~20% of parishes would fail to save when processing large batches due to API rate limits and transient errors.
+
+**Changes:**
+- Added retry logic to all Notion API calls (3 attempts with exponential backoff)
+- Added rate limiting (2 concurrent requests, 400ms delay) to stay within Notion's 3 req/sec limit
+- Reduced parish processing concurrency from 10 to 5
+- Added logging for successful saves: `Saved extraction to Notion for parish: {id}`
+
+**Technical details:**
+- New `_rate_limited_call()` wrapper in `database/notion.py`
+- New `_query_database()` and `_update_page()` methods with `@retry_async` decorator
+- Retries on `APIResponseError`, `TimeoutError`, and `ConnectionError`
+
 ### v2.4.0 (2026-01-07) - Holiday Mass Support
 
 **New feature:** Mass schedule now distinguishes between regular weekly masses and holiday/special occasion masses.
