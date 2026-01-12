@@ -8,22 +8,23 @@
     "phone": "(216) 321-0024",
     "website": "https://cosparish.com",
     "lonlat": "-81.5793325,41.5005227",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0414/20260104B.pdf",
-    "timestamp": "2026-01-11",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0414/20260111B.pdf",
+    "timestamp": "2026-01-12",
     "mass_times": [
-      "Sunday: 8:30AM - St. Ann Church, 10:00AM - St. Philomena Church, 11:30AM - St. Ann Church",
-      "Monday: 8:00AM - Weekday Mass at St. Ann Church",
-      "Tuesday: 8:00AM - Weekday Mass at St. Ann Church",
-      "Wednesday: 8:00AM - Weekday Mass at St. Ann Church",
-      "Thursday: 8:00AM - Weekday Mass at St. Ann Church",
-      "Friday: 8:00AM - Weekday Mass at St. Ann Church",
-      "Saturday: 4:00PM - St. Ann Church"
+      "Sunday: 8:30AM, 11:30AM",
+      "Monday: 8:00AM",
+      "Tuesday: 8:00AM",
+      "Wednesday: 8:00AM",
+      "Thursday: 8:00AM",
+      "Friday: 8:00AM",
+      "Saturday: 4:00PM"
     ],
     "confessions": [
-      "Saturday: 3:00PM to 4:00PM - St. Ann Church"
+      "Wednesday: 7:00PM to 8:00PM - First Wednesday of each month",
+      "Saturday: 3:00PM to 4:00PM"
     ],
     "adoration": [],
-    "events_summary": "Communion of Saints Parish has a full week of formation and community activities, including OCIA on Tuesday evenings and the Psalms Bible Study on Wednesdays (Jan. 14–Mar. 4). Upcoming special events include an Opus Dei Morning of Recollection for Women on Thursday, Jan. 8 (10:00–12:00) and a required Ministry Leaders meeting on Sunday, Jan. 18 at 12:45 in Walsh Hall. Coffee and donuts are also offered on Sundays after the morning Masses."
+    "events_summary": "Communion of Saints Parish has a busy January schedule, including the start of the Psalms Bible Study on Wednesdays from 6:30–8:00 PM (Jan. 14–Mar. 4) and regular weekly faith formation groups like OCIA and Women’s Faith Group. A mandatory meeting for all parish ministry leaders will be held Sunday, January 18 at 12:45 PM in Walsh Hall. The parish is also looking ahead to a three-night Lenten mission with Auxiliary Bishop Michael G. Woost on February 23–25 (details forthcoming)."
   },
   {
     "name": "Saint Patrick Church",
@@ -700,13 +701,11 @@
     "phone": "440-933-3777",
     "website": "www.hspal.org",
     "lonlat": "-81.9894942,41.494133",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0036/20260104B.pdf",
-    "timestamp": "2026-01-11",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0036/20260111B.pdf",
+    "timestamp": "2026-01-12",
     "mass_times": [
       "Sunday: 9:00AM, 10:30AM, 12:00PM - Noon",
-      "Monday: 8:00AM - at St. Joseph",
       "Tuesday: 8:30AM - Chapel",
-      "Wednesday: 8:00AM - at St. Joseph",
       "Thursday: 8:30AM - Chapel",
       "Friday: 8:30AM - Chapel",
       "Saturday: 5:00PM - Vigil Mass"
@@ -717,7 +716,7 @@
     "adoration": [
       "Thursday: 4:00PM to 7:00PM - Chapel"
     ],
-    "events_summary": "Holy Spirit Parish’s January calendar includes ongoing ministries like PSR (Tuesdays), youth groups on Sundays, and regular choir practices during the week. Upcoming special events include Donut Sunday (Jan. 11), a Ladies Guild Birthright Baby Shower & Game Night (Jan. 15), and the Chili Cook-Off (Jan. 24). Adult faith formation continues with the Symbolon series on Thursdays starting Jan. 29."
+    "events_summary": "Holy Spirit Parish has several gatherings coming up, including Donut Sunday on January 11 from 9:00 a.m. to noon and First Communion Prep Session #1 on January 11 at 10:15 a.m. There are also opportunities for community and formation like the Ladies Guild meeting on Thursday, January 15 at 7:00 p.m., and the Chili Cook-Off on Saturday, January 24 at 6:00 p.m. Ongoing programs include weekly PSR classes on Tuesdays, youth groups on Sundays, and the Symbolon adult faith series on Thursdays at 1:00 p.m."
   },
   {
     "name": "Saint Joseph Catholic Church",
@@ -837,21 +836,20 @@
     "phone": "216-486-0850",
     "website": "olleuclid.org",
     "lonlat": "-81.5404977,41.6016578",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0674/20260104B.pdf",
-    "timestamp": "2026-01-11",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0674/20260111B.pdf",
+    "timestamp": "2026-01-12",
     "mass_times": [
       "Sunday: 8:30AM, 11:00AM",
       "Monday: 9:00AM",
-      "Tuesday: 8:45AM - at VASJ Chapel",
       "Wednesday: 9:00AM",
       "Thursday: 9:00AM",
       "Saturday: 4:00PM"
     ],
     "confessions": [
-      "Saturday: 3:00PM to 3:30PM - or by appointment - call the rectory"
+      "Saturday: 3:00PM to 3:30PM - Or by appointment (call the rectory)"
     ],
     "adoration": [],
-    "events_summary": "Our Lady of the Lake Parish has several formation and community opportunities this month, including a Virtus safe-environment training session (Jan. 8) and an Evening Prayer gathering for catechetical ministers (Jan. 11). There’s also a devotions discussion night at the rectory (Jan. 13), First Holy Communion preparation beginning Jan. 17, plus outreach by the music ministry at the Slovene Home (Jan. 8). The parish book club meets Jan. 27 and the school hosts an Open House on Jan. 28."
+    "events_summary": "Our Lady of the Lake has several opportunities to connect this month, including a Genesis Meeting on Sunday, January 11 at 9:30am in the church hall and a Devotions discussion on Tuesday, January 13 at 7:00pm at the rectory. Catholic Schools Week includes the Our Lady of the Lake School Open House on Wednesday, January 28 from 6:00–7:30pm. The Nonviolence Ministry meets Thursday, January 22 at 7:00pm at the rectory, and the OLL Book Club gathers Tuesday, January 27 at 7:00pm."
   },
   {
     "name": "Saint Adalbert",
@@ -1040,23 +1038,23 @@
     "phone": null,
     "website": "https://sacredheartchapel.org/",
     "lonlat": "-82.1352353,41.4299502",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1823/20260104B.pdf",
-    "timestamp": "2026-01-10",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1823/20260111B.pdf",
+    "timestamp": "2026-01-12",
     "mass_times": [
       "Sunday: 9:30AM (English), 11:30AM (Spanish)",
       "Monday: 9:30AM (Spanish)",
       "Tuesday: 9:30AM (Spanish)",
-      "Wednesday: 6:00PM - Bilingual, 7:00PM - Vigil Mass (Solemnity/Holy Day); Bilingual",
-      "Thursday: 9:30AM (Spanish) - Holy Day Mass (Solemnity/Holy Day)",
+      "Wednesday: 6:00PM (Bilingual), 7:00PM (Bilingual) - Solemnity / Holy Day vigil Mass",
+      "Thursday: 9:30AM (Spanish) - Solemnity / Holy Day Mass",
       "Friday: 9:30AM (Spanish)",
       "Saturday: 5:00PM (Spanish)"
     ],
     "confessions": [
-      "Tuesday: 10:00AM to 10:30AM - After Mass",
-      "Saturday: 3:30PM to 4:00PM"
+      "Tuesday: 10:30AM to 11:00AM - After Mass (end time approximate; bulletin does not specify)",
+      "Saturday: 3:30PM to 5:00PM"
     ],
     "adoration": [],
-    "events_summary": "Sacred Heart Chapel continues its regular weekly Mass schedule in English and Spanish, with confessions on Tuesdays after the 9:30 a.m. Mass and Saturdays at 3:30 p.m. Upcoming gatherings include Theology on the Rocks West on Monday, January 12 from 7:00–8:30 p.m., and the Women’s Prayer Group on Wednesday, January 14 from 1:00–2:30 p.m. Ongoing ministries include OCIA on Tuesdays at 7:00 p.m., the Alzheimer’s caregiver group on the 2nd and last Wednesdays of the month (10:30 a.m.–12:00 p.m.), and St. Vincent de Paul assistance on Tuesdays and Fridays from 10:00 a.m.–1:00 p.m. (by appointment)."
+    "events_summary": "Sacred Heart Chapel offers regular bilingual and Spanish-language faith formation and support groups, including OCIA on Tuesdays at 7:00 p.m. and the Alzheimer’s caregiver group on the 2nd and last Wednesdays from 10:30 a.m.–12:00 p.m. Upcoming highlights include Women’s Prayer Group on Wednesday, January 14 from 1:00–2:30 p.m. in the Guadalupe Room, and Theology on the Rocks West on Monday, January 12 from 7:00–8:30 p.m. The parish office will be closed for Martin Luther King Jr. Day on Monday, January 19."
   },
   {
     "name": "Nativity of the Lord Jesus",
@@ -1469,17 +1467,17 @@
     "phone": "(440) 884-2319",
     "website": "stfrancisdesales-church.org",
     "lonlat": "-81.7098919,41.404652",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0523/20260104B.pdf",
-    "timestamp": "2026-01-11",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0523/20260111B.pdf",
+    "timestamp": "2026-01-12",
     "mass_times": [
-      "Sunday: 7:30AM - Weekend Mass (St. Francis de Sales), 10:30AM - Weekend Mass (St. Francis de Sales)"
+      "Sunday: 7:30AM, 10:30AM"
     ],
     "confessions": [
       "Wednesday: 6:00PM to 7:00PM - Reconciliation at St. Anthony of Padua",
       "Saturday: 3:00PM to 4:00PM - Reconciliation at St. Anthony of Padua"
     ],
     "adoration": [],
-    "events_summary": "St. Francis de Sales has several parish group gatherings this week, including the Holy Name Society meeting on Wednesday evening (Jan. 7) and “Fishing for Faith” on Thursday (Jan. 8) in the De Sales Room. Upcoming highlights include the parish prayer gathering (“Called to Pray”) on Tuesday, Jan. 13 and the Lunch Bunch luncheon at Bob Evans on Thursday, Jan. 15 (RSVP required). The parish is also collecting winter clothing for “Varsity Coats for Needy Folks” and is seeking volunteers for Thursday church cleaning."
+    "events_summary": "St. Francis de Sales has several gatherings coming up, including a Meet & Greet next Sunday, January 18 after the morning Masses in the De Sales Room. Volunteers are needed Saturday, January 24 from 9:00 AM–12:00 PM to help clean and prep for the parish fish fries, and the P.A.L.S. Chili Social is Sunday, January 25 from 2:00–4:00 PM ($3; kids free). The parish Prayer Group meets Tuesdays from 7:00–8:00 PM in Room A."
   },
   {
     "name": "Saint Anthony of Padua Parish & School",
@@ -2386,23 +2384,23 @@
     "phone": "(216) 361-1444",
     "website": "www.saintvitus.org",
     "lonlat": "-81.6489348,41.5227521",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=CSWUjlLvgrK%2FVCdKr1nf6StBWzbz8a2CiNRD13Q8oWGwIN%2FBkvaOlXfkwDMgSNMV9NcPh3IfELoU%2BXlGl6TTNaQepOtxf1C9kyLPYFBYciA%3D",
-    "timestamp": "2026-01-11",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=k2t1Ypw0RoO7CZgxKzvWCLDSBBJnwXJcqKqHx3%2FyEb9er1g1ofrJ99bx5CUzc%2BsHqmegWy4jI4XWQstL03iCuV9m9TcXZ1kjaQNmOKH7y34%3D",
+    "timestamp": "2026-01-12",
     "mass_times": [
-      "Sunday: 9:00AM (English) - noted as Eng., 10:30AM (Slovenian) - noted as Slov.",
-      "Monday: 5:00PM - Weekdays listed as Mon–Fri 5:00 p.m. at The Village Chapel",
-      "Tuesday: 5:00PM - Weekdays listed as Mon–Fri 5:00 p.m. at The Village Chapel",
-      "Wednesday: 5:00PM - Weekdays listed as Mon–Fri 5:00 p.m. at The Village Chapel",
-      "Thursday: 5:00PM - Weekdays listed as Mon–Fri 5:00 p.m. at The Village Chapel",
-      "Friday: 5:00PM - Weekdays listed as Mon–Fri 5:00 p.m. at The Village Chapel",
-      "Saturday: 4:00PM (English) - Saturday Vigil (noted as Eng.)"
+      "Sunday: 9:00AM (English), 10:30AM (Slovenian)",
+      "Monday: 5:00PM - Weekday Mass",
+      "Tuesday: 5:00PM - Weekday Mass",
+      "Wednesday: 5:00PM - Weekday Mass",
+      "Thursday: 5:00PM - Weekday Mass",
+      "Friday: 5:00PM - Weekday Mass",
+      "Saturday: 4:00PM (English) - Saturday Vigil"
     ],
     "confessions": [
-      "Sunday: 10:00AM to 10:30AM - Confessions (page 1)",
-      "Saturday: 3:30PM to 3:50PM - Confessions (page 1)"
+      "Sunday: 10:00AM to 10:30AM",
+      "Saturday: 3:30PM to 3:50PM"
     ],
     "adoration": [],
-    "events_summary": "St. Vitus Parish has several January activities, including the Solemn Blessing of Water on Monday, Jan. 5 at 18:30 followed by a Young Adult Holy Hour with adoration at 19:00. Coffee & donuts begin Sunday, Jan. 11 after both Sunday Masses and continue weekly until Lent. Upcoming fundraisers include the St. Mary Slovenian School Benefit Dinner (Jan. 18) and Pristavska Noč (Jan. 24), with a reverse raffle scheduled for Feb. 7."
+    "events_summary": "This week at St. Vitus includes Coffee & Donuts after both Sunday Masses, and the Pastoral Council meets Wednesday at 6:30 p.m. Upcoming community events include Pristavska Noč on Saturday, January 24 (doors open at 6:00 p.m.) and the St. Vitus Slovenian Language School Benefit Brunch on Sunday, February 22 from 10:00 a.m. to 12:30 p.m."
   },
   {
     "name": "Saint Helen",
@@ -2519,19 +2517,19 @@
     "phone": "330-633-3637",
     "website": "www.ourladyofvictory.net",
     "lonlat": "-81.441818,41.10472",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=VZUH0iX7gfYwFFl%2FEESfEe7eod%2BjD%2BKoV9U7V13PIKzSy9oR6zYz3c4epiPypwuPzsaJ8akOcRcKy7daElS1JBv%2BMUlTengOWZyqiJlDMQw%3D",
-    "timestamp": "2026-01-11",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=%2F0LrvyGsAcIGJTNtFxhdmhM2Puy4rkD9QAMMB86gMh8iG7SliN%2BWwjG1O%2BJ1LNuDbJffxj44ztp%2FfphrF3z0N0VyUC19TfBn%2BKJTeVkCX4g%3D",
+    "timestamp": "2026-01-12",
     "mass_times": [
       "Sunday: 8:30AM",
-      "Tuesday: 8:30AM - Daily (Tues & Thurs)",
-      "Thursday: 8:30AM - Daily (Tues & Thurs)",
-      "Saturday: 5:45PM - Vigil"
+      "Tuesday: 8:30AM - Daily Mass (Tues & Thurs)",
+      "Thursday: 8:30AM - Daily Mass (Tues & Thurs)",
+      "Saturday: 5:45PM - Saturday Vigil"
     ],
     "confessions": [
-      "Saturday: 9:00AM to 9:30AM - 2nd & 4th Saturday; or by appointment"
+      "Saturday: 9:00AM to 9:30AM - 2nd & 4th Saturday or by appointment"
     ],
     "adoration": [],
-    "events_summary": "Our Lady of Victory has several parish-center gatherings this week, including OCIA, Bible Study, and a Women’s Book Study. The Bereavement Ministry is beginning a 4-week grief support series on Tuesday evenings (Jan 6–27). The Prayer Shawl Ministry meets monthly, with the next gathering on Wednesday, Jan 14 at 13:15 in the Parish Center Library."
+    "events_summary": "This week includes parish programs like OCIA and bereavement support on Tuesday at 6:30 pm, plus Bible Study Thursday at 2:00 pm and Women’s Book Study at 7:00 pm. The Prayer Shawl Ministry meets Wednesday, January 14 at 1:15 pm in the Parish Center Library, and the Cancer Spirituality Group meets Thursday, January 15 at 11:00 am at St. Matthew. A notable community event is the Summit County March for Life on Saturday, January 17 at 9:00 am, and Theology on the Rocks is Monday, January 19 (doors 6:30 pm; talk 7:30 pm)."
   },
   {
     "name": "Saint Angela Merici Roman Catholic Church",
@@ -3207,20 +3205,20 @@
     "phone": "330-733-9944",
     "website": "stmatthewparish.net",
     "lonlat": "-81.436211,41.053233",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=mHZUOYHhe0izaSrngmRRB8yE3k%2BcSwm6cnU0LE19XWghZdcpOz4fuMnBc74NAac9DVPtbhWhqH0CepBP9ujppMI0QKAgenahKz992UR3KUY%3D",
-    "timestamp": "2026-01-11",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=vupWW0SZq%2F6G2NG2t2kLhh1SsiM%2FjKyG6YFds6LFTwictJLsvznN6jgv0%2FdovElWIDZpkE886e%2BsTPcDrKF1o7PMUGs68AMQdpHykcALs9M%3D",
+    "timestamp": "2026-01-12",
     "mass_times": [
-      "Sunday: 8:30AM - Mass at Our Lady of Victory, 10:30AM",
+      "Sunday: 10:30AM",
       "Monday: 8:00AM",
       "Wednesday: 4:00PM",
       "Friday: 8:00AM",
       "Saturday: 4:00PM"
     ],
     "confessions": [
-      "Saturday: 9:00AM to 9:30AM - Confessions are heard on Saturday mornings; location varies—see calendar (noted as at Our Lady of Victory in this issue). Also available by calling the Parish Office."
+      "Saturday: 9:00AM to 9:30AM - Also available anytime by calling the Parish Office."
     ],
     "adoration": [],
-    "events_summary": "Saint Matthew Parish has a full weekly calendar with faith formation and fellowship, including Sunday PSR, Coffee & Donuts, and Confirmation Preparation, plus weekly OCIA, Scouts, and a Thursday Euchre Club (page 3). A Red Cross Blood Drive is scheduled for Tuesday, January 6 (12:00–18:00) in the Silva Center, and the Knights of Columbus are sponsoring a youth basketball free throw competition on Saturday, January 10 at 17:30 offsite at Nativity of The Lord Jesus Church (pages 3 & 6). Looking ahead, couples are invited to a catered Couples’ Dinner on Saturday, February 7—reservations through the parish office (page 5)."
+    "events_summary": "Saint Matthew Parish has a new Bible Study on Ruth and Esther beginning Tuesday, January 13 at 10:00 AM in the Conference Room, and the Prayer Shawl Ministry meets Wednesday, January 14 at 6:30 PM in the Parish Office meeting room. The Cancer Spirituality Group gathers Thursday, January 15 at 11:00 AM in the conference room, and volunteers are needed for an Outreach Ministry service day on Saturday, January 31 from 9:30 AM to noon at the Father Hilkert Center. Couples are invited to a catered Couples’ Dinner on Saturday, February 7 in the Father Silva Center ($20 per couple; call the parish office to reserve)."
   },
   {
     "name": "Saint John of the Cross ",
@@ -3364,8 +3362,8 @@
     "phone": "(216) 531-3313",
     "website": "https://www.holyredeemer-cleveland.org/",
     "lonlat": "-81.5680066,41.554816",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0342/20260104B.pdf",
-    "timestamp": "2026-01-11",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0342/20260111B.pdf",
+    "timestamp": "2026-01-12",
     "mass_times": [
       "Sunday: 11:00AM",
       "Monday: 8:00AM",
@@ -3373,10 +3371,10 @@
       "Saturday: 4:00PM - Vigil Mass"
     ],
     "confessions": [
-      "Saturday: 3:00PM to 3:30PM - Or call the Rectory"
+      "Saturday: 3:00PM to 3:30PM - Or call the rectory"
     ],
     "adoration": [],
-    "events_summary": "Holy Redeemer is hosting a Scripture Study on St. Paul’s Letter to the Romans at 19:00 on several Fridays in January, alternating between St. Jerome Parish Hall and the Holy Redeemer Rectory. Two January Holy Hours are also scheduled at 19:00 (with confessions at 18:30) on Jan 21 at St. Jerome and Jan 28 at Holy Redeemer. Ongoing opportunities include weekly Rosary before weekend Masses, a monthly Senior Citizens meeting, food pantry donations, and a sausage sale fundraiser."
+    "events_summary": "Join the Scripture Study on St. Paul’s Letter to the Romans at 7:00pm on Jan. 2, 9, 16, 23, and 30 (alternating between St. Jerome Parish Hall and the Holy Redeemer Rectory). January Holy Hours are scheduled for Jan. 21 at St. Jerome and Jan. 28 at Holy Redeemer—Confessions begin at 6:30pm and the Holy Hour starts at 7:00pm. The Holy Redeemer Senior Citizens meet on the third Wednesday of each month at 12:00 noon at the Mill Tavern."
   },
   {
     "name": "Saint Eugene Catholic Church",
@@ -4522,20 +4520,21 @@
     "phone": "216-251-1200",
     "website": "https://www.2parishes1faithcle.org",
     "lonlat": "-81.8217189,41.434398",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1137/20260104B.pdf",
-    "timestamp": "2026-01-10",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1137/20260111B.pdf",
+    "timestamp": "2026-01-12",
     "mass_times": [
       "Sunday: 11:00AM",
+      "Tuesday: 7:00PM",
       "Wednesday: 8:30AM",
       "Saturday: 4:00PM"
     ],
     "confessions": [
-      "Saturday: 3:00PM to 4:00PM"
+      "Saturday: 11:00AM to 11:59AM - Confessions (listed in 'This Week at St. Patrick')"
     ],
     "adoration": [
       "Saturday: 4:00PM to 5:00PM - Eucharistic Adoration at St. Vincent de Paul (page 4)"
     ],
-    "events_summary": "St. Patrick and St. Vincent de Paul have several opportunities this month, including AED & CPR Training in the St. Patrick Lower Church from 10:00am–3:00pm on January 10, 24, and 31. St. Patrick’s Holy Name Meeting is Monday, January 12 at 6:30pm in Thorpe Hall, and the Catholic Cemeteries Association Grief Support Group meets Sunday, January 18 (in-person at 3:00pm and virtual at 5:00pm). Regular weekly ministries continue, including the Hunger Center hours (Mon/Wed/Fri mornings) and Saturday confessions at both sites."
+    "events_summary": "This week includes regular ministry and support programs at St. Patrick, including Hunger Center hours on Monday/Wednesday/Friday (9:15–11:00 a.m.) and multiple AA meetings throughout the week. Upcoming dates to note: the Holy Name Meeting is Monday, January 12 at 6:30 p.m. in Thorpe Hall, and AED & CPR Training is Saturday, January 24 from 10:00 a.m.–3:00 p.m. in the Lower Church. At St. Vincent de Paul, Saturday afternoon includes Eucharistic Adoration and Confessions from 4:00–5:00 p.m."
   },
   {
     "name": "Saint Malachi Oratory",
@@ -4669,14 +4668,15 @@
     "phone": "216-251-1200; 216-252-2626",
     "website": "https://www.2parishes1faithcle.org",
     "lonlat": "-81.7840849,41.457458",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1137/20260104B.pdf",
-    "timestamp": "2026-01-10",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1137/20260111B.pdf",
+    "timestamp": "2026-01-12",
     "mass_times": [
       "Sunday: 9:00AM",
       "Monday: 8:30AM",
       "Wednesday: 5:30PM - Vigil Mass",
       "Thursday: 9:00AM",
-      "Saturday: 5:30PM"
+      "Friday: 9:00AM",
+      "Saturday: 5:30PM - Mass intention list shows 5:30pm at SVdP"
     ],
     "confessions": [
       "Saturday: 4:00PM to 5:00PM"
@@ -4684,7 +4684,7 @@
     "adoration": [
       "Saturday: 4:00PM to 5:00PM - Eucharistic Adoration"
     ],
-    "events_summary": "St. Patrick and St. Vincent de Paul have several opportunities this month, including AED & CPR Training in the St. Patrick Lower Church from 10:00am–3:00pm on January 10, 24, and 31. St. Patrick’s Holy Name Meeting is Monday, January 12 at 6:30pm in Thorpe Hall, and the Catholic Cemeteries Association Grief Support Group meets Sunday, January 18 (in-person at 3:00pm and virtual at 5:00pm). Regular weekly ministries continue, including the Hunger Center hours (Mon/Wed/Fri mornings) and Saturday confessions at both sites."
+    "events_summary": "This week includes regular ministry and support programs at St. Patrick, including Hunger Center hours on Monday/Wednesday/Friday (9:15–11:00 a.m.) and multiple AA meetings throughout the week. Upcoming dates to note: the Holy Name Meeting is Monday, January 12 at 6:30 p.m. in Thorpe Hall, and AED & CPR Training is Saturday, January 24 from 10:00 a.m.–3:00 p.m. in the Lower Church. At St. Vincent de Paul, Saturday afternoon includes Eucharistic Adoration and Confessions from 4:00–5:00 p.m."
   },
   {
     "name": "Saint James",
@@ -4774,21 +4774,15 @@
     "phone": "(216) 321-0024",
     "website": "https://cosparish.com",
     "lonlat": "-81.586407, 41.526055",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0414/20260104B.pdf",
-    "timestamp": "2026-01-11",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0414/20260111B.pdf",
+    "timestamp": "2026-01-12",
     "mass_times": [
-      "Sunday: 8:30AM - St. Ann Church, 10:00AM - St. Philomena Church, 11:30AM - St. Ann Church",
-      "Monday: 8:00AM - Weekday Mass at St. Ann Church",
-      "Tuesday: 8:00AM - Weekday Mass at St. Ann Church",
-      "Wednesday: 8:00AM - Weekday Mass at St. Ann Church",
-      "Thursday: 8:00AM - Weekday Mass at St. Ann Church",
-      "Friday: 8:00AM - Weekday Mass at St. Ann Church",
-      "Saturday: 4:00PM - St. Ann Church"
+      "Sunday: 10:00AM"
     ],
     "confessions": [
       "Saturday: 3:00PM to 4:00PM - St. Ann Church"
     ],
     "adoration": [],
-    "events_summary": "Communion of Saints Parish has a full week of formation and community activities, including OCIA on Tuesday evenings and the Psalms Bible Study on Wednesdays (Jan. 14–Mar. 4). Upcoming special events include an Opus Dei Morning of Recollection for Women on Thursday, Jan. 8 (10:00–12:00) and a required Ministry Leaders meeting on Sunday, Jan. 18 at 12:45 in Walsh Hall. Coffee and donuts are also offered on Sundays after the morning Masses."
+    "events_summary": "Communion of Saints Parish has a busy January schedule, including the start of the Psalms Bible Study on Wednesdays from 6:30–8:00 PM (Jan. 14–Mar. 4) and regular weekly faith formation groups like OCIA and Women’s Faith Group. A mandatory meeting for all parish ministry leaders will be held Sunday, January 18 at 12:45 PM in Walsh Hall. The parish is also looking ahead to a three-night Lenten mission with Auxiliary Bishop Michael G. Woost on February 23–25 (details forthcoming)."
   }
 ]
