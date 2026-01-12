@@ -17,6 +17,7 @@ SINGLE_SITE_PARISHES: set[str] = {
     "0523",
     "st-matthew-akron-oh",
     "st-vitus-cleveland-oh",
+    "29182",
 }
 
 # Format:
