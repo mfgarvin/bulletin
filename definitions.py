@@ -10,6 +10,13 @@ SINGLE_SITE_PARISHES: set[str] = {
     "5493",
     "1285",
     "0077",
+    "0674",
+    "0342",
+    "0036",
+    "our-lady-of-victory-tallmadge-oh",
+    "0523",
+    "st-matthew-akron-oh",
+    "st-vitus-cleveland-oh",
 }
 
 # Format:
