@@ -269,12 +269,21 @@ GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/
 
 ### v2.4.2 (2026-01-11) - Single-Site Override
 
-**New feature:** Force specific parishes to be treated as single-site when the LLM incorrectly extracts multiple sites.
+**New feature:** Force specific parishes to be treated as single-site when the LLM extracts multiple sites from a shared bulletin.
+
+**Behavior:**
+1. **Filters** extracted sites to those matching the parish name (based on distinctive words like "Mary", "Paschal", etc.)
+2. **Merges** all matching sites into one (combines schedules from Church + Chapel locations)
+
+This handles two scenarios:
+- Bulletins that list multiple unrelated parishes → keeps only the matching one
+- Bulletins with multiple on-site locations (Church, Chapel, Shrine) → merges them together
 
 **Changes:**
 - Added `SINGLE_SITE_PARISHES` set in `definitions.py`
-- Added `merge_sites_into_one()` function in `main.py`
-- When a parish is in the set, all extracted sites are merged into one before saving
+- Added `filter_and_merge_matching_sites()` function in `main.py`
+- Uses regex to extract distinctive words from parish name (strips punctuation, stop words)
+- Scores sites by word matches, keeps all with best score, merges if multiple
 
 **Usage:**
 ```python
@@ -283,6 +292,11 @@ SINGLE_SITE_PARISHES: set[str] = {
     "5493",
 }
 ```
+
+**Example:** For "Saint Paschal Baylon" processing a bulletin with:
+- "Saint Paschal Baylon Church" (score: 2) → kept
+- "Saint Ann Shrine (on Saint Paschal Baylon campus)" (score: 2) → kept
+- Both merged into one entry with combined mass times
 
 ### v2.4.1 (2026-01-11) - Notion API Reliability
 

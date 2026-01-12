@@ -47,11 +47,15 @@ def match_sites_to_parishes(
     return results
 
 
-def merge_sites_into_one(sites: list[SiteInfo], parish_name: str) -> SiteInfo:
-    """Merge multiple extracted sites into a single site.
+def filter_and_merge_matching_sites(sites: list[SiteInfo], parish_name: str) -> SiteInfo:
+    """Filter to sites matching the parish name, then merge them.
 
-    Used when a parish is in SINGLE_SITE_PARISHES to combine incorrectly
-    split data back into one site.
+    Used when a parish is in SINGLE_SITE_PARISHES to:
+    1. Filter out unrelated parishes from a shared bulletin
+    2. Merge multiple locations of the same parish (e.g., Church + Chapel)
+
+    Example: For "St. Mary Parish", keeps "St. Mary - Church" and "St. Mary - Chapel"
+    but discards "St. Joseph Mission", then merges the St. Mary sites into one.
     """
     from schemas import AdorationSchedule
 
@@ -61,16 +65,47 @@ def merge_sites_into_one(sites: list[SiteInfo], parish_name: str) -> SiteInfo:
     if len(sites) == 1:
         return sites[0]
 
-    # Use first site as base, take its address info
-    base = sites[0]
+    import re
 
-    # Merge all mass times, confessions, and adoration from all sites
+    # Words that don't help distinguish between parishes
+    stop_words = {
+        "st", "saint", "our", "lady", "of", "the", "parish",
+        "church", "catholic", "roman", "mission", "chapel", "oh",
+    }
+
+    # Extract only alphanumeric words, lowercased
+    words = re.findall(r"[a-zA-Z]+", parish_name.lower())
+
+    # Filter to distinctive words (not stop words, length > 2)
+    parish_words = [w for w in words if w not in stop_words and len(w) > 2]
+
+    # Deduplicate while preserving order
+    seen = set()
+    parish_words = [w for w in parish_words if not (w in seen or seen.add(w))]
+
+    # Score each site by how many distinctive words match
+    scored_sites = []
+    for site in sites:
+        site_name_lower = site.site_name.lower()
+        score = sum(1 for word in parish_words if word in site_name_lower)
+        scored_sites.append((score, site))
+
+    # Find the best score and keep all sites with that score
+    best_score = max(score for score, _ in scored_sites)
+    matching_sites = [site for score, site in scored_sites if score == best_score]
+
+    # If only one match, return it directly
+    if len(matching_sites) == 1:
+        return matching_sites[0]
+
+    # Merge all matching sites into one
+    base = matching_sites[0]
     all_masses = []
     all_confessions = []
     all_adoration_times = []
     is_perpetual = False
 
-    for site in sites:
+    for site in matching_sites:
         all_masses.extend(site.mass_times)
         all_confessions.extend(site.confession_times)
         all_adoration_times.extend(site.adoration.times)
@@ -172,8 +207,10 @@ async def process_parish(
 
         # Force single-site if parish is in SINGLE_SITE_PARISHES
         if parish_id in SINGLE_SITE_PARISHES and len(extraction.sites) > 1:
-            log(f"Merging {len(extraction.sites)} sites into one (SINGLE_SITE_PARISHES)")
-            merged = merge_sites_into_one(extraction.sites, parish_name)
+            site_names = [s.site_name for s in extraction.sites]
+            log(f"Filtering {len(extraction.sites)} sites: {site_names} (SINGLE_SITE_PARISHES)")
+            merged = filter_and_merge_matching_sites(extraction.sites, parish_name)
+            log(f"Result: {merged.site_name}")
             extraction.sites = [merged]
 
         # Log extraction summary
