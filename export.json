@@ -1,6 +1,6 @@
 [
   {
-    "name": "Communion of Saints Parish",
+    "name": "Communion of Saints Parish - Saint Ann",
     "parish_id": "0414",
     "address": "2175 Coventry Road",
     "city": "Cleveland Heights",
@@ -9,7 +9,7 @@
     "website": "https://cosparish.com",
     "lonlat": "-81.5793325,41.5005227",
     "bulletin_url": "https://container.parishesonline.com/bulletins/14/0414/20260104B.pdf",
-    "timestamp": null,
+    "timestamp": "2026-01-11",
     "mass_times": [
       "Sunday: 8:30AM - St. Ann Church, 10:00AM - St. Philomena Church, 11:30AM - St. Ann Church",
       "Monday: 8:00AM - Weekday Mass at St. Ann Church",
@@ -701,7 +701,7 @@
     "website": "www.hspal.org",
     "lonlat": "-81.9894942,41.494133",
     "bulletin_url": "https://container.parishesonline.com/bulletins/14/0036/20260104B.pdf",
-    "timestamp": null,
+    "timestamp": "2026-01-11",
     "mass_times": [
       "Sunday: 9:00AM, 10:30AM, 12:00PM - Noon",
       "Monday: 8:00AM - at St. Joseph",
@@ -838,7 +838,7 @@
     "website": "olleuclid.org",
     "lonlat": "-81.5404977,41.6016578",
     "bulletin_url": "https://container.parishesonline.com/bulletins/14/0674/20260104B.pdf",
-    "timestamp": null,
+    "timestamp": "2026-01-11",
     "mass_times": [
       "Sunday: 8:30AM, 11:00AM",
       "Monday: 9:00AM",
@@ -863,7 +863,7 @@
     "website": "https://olpchurch.com/st-adalbertolbs",
     "lonlat": "-81.6292108,41.4950223-81.699628,40.970462",
     "bulletin_url": null,
-    "timestamp": null,
+    "timestamp": "2026-01-11",
     "mass_times": [],
     "confessions": [],
     "adoration": [],
@@ -1268,23 +1268,24 @@
     "phone": "216-621-3847",
     "website": "www.smacleveland.net",
     "lonlat": "-81.6974633,41.4697367",
-    "bulletin_url": "https://files.ecatholic.com/20822/bulletins/20260104.pdf",
-    "timestamp": null,
+    "bulletin_url": "https://files.ecatholic.com/20822/bulletins/20260111.pdf",
+    "timestamp": "2026-01-11",
     "mass_times": [
       "Sunday: 9:00AM (English), 12:00PM (Spanish)",
-      "Monday: 12:00PM (English) - In the chapel; no 12:00 Mass if there is a funeral or holiday, 12:00PM (Spanish) - In the chapel; (Spanish listing notes no Mass if funeral/holiday)",
+      "Monday: 12:00PM (English) - Mass in the chapel (no 12pm English Mass if there is a funeral or holiday), 12:00PM (Spanish) - Misa en la capilla (nota en el boletín: si hay funeral o día festivo el lunes o viernes, no habrá misa en inglés a las 12pm)",
       "Wednesday: 6:30PM (Spanish)",
       "Thursday: 6:30PM (Spanish)",
-      "Friday: 12:00PM (English) - In the chapel; no 12:00 Mass if there is a funeral or holiday, 12:00PM (Spanish) - In the chapel; (Spanish listing notes no Mass if funeral/holiday)",
+      "Friday: 12:00PM (English) - Mass in the chapel (no 12pm English Mass if there is a funeral or holiday), 12:00PM (Spanish) - Misa en la capilla (nota en el boletín: si hay funeral o día festivo el lunes o viernes, no habrá misa en inglés a las 12pm)",
       "Saturday: 5:00PM (English) - Saturday Vigil, 7:00PM (Spanish) - Saturday Vigil"
     ],
     "confessions": [
       "Saturday: 3:30PM to 4:30PM - Or by appointment"
     ],
     "adoration": [
-      "Friday: 7:00PM to 8:00PM - Holy Hour (Hora Santa) - 1st Friday of the month"
+      "Wednesday: 5:30PM to 6:30PM - Hora Santa",
+      "Friday: 7:00PM to 8:00PM - Holy Hour (1st Friday of the month)"
     ],
-    "events_summary": "Saint Michael the Archangel Parish offers regular Eucharistic life in both English and Spanish, including weekday Masses and Saturday confessions. The parish hosts a Holy Hour on the first Friday of each month and operates a food pantry on the 2nd and 4th Saturdays. Pre-baptism workshops are planned for 2026 (dates to be announced); contact the parish office to register."
+    "events_summary": "St. Michael the Archangel Parish continues its regular weekend Mass schedule in English and Spanish, with Confessions available Saturdays from 3:30–4:30 p.m. The parish pantry is open on the 2nd and 4th Saturdays from 9:00–11:00 a.m. at the Parish Hall (3115 Scranton). Upcoming required Pre-Baptismal workshops are scheduled for Feb. 1, 2026 (English) and Feb. 8, 2026 (Spanish)."
   },
   {
     "name": "Church of Saint Dominic",
@@ -1335,12 +1336,19 @@
     "phone": null,
     "website": "https://stmaryakron.com/",
     "lonlat": "-81.5274569,41.0662748",
-    "bulletin_url": null,
-    "timestamp": null,
-    "mass_times": [],
-    "confessions": [],
+    "bulletin_url": "https://files.ecatholic.com/29182/bulletins/20260111.pdf",
+    "timestamp": "2026-01-12",
+    "mass_times": [
+      "Sunday: 9:00AM, 1:00PM"
+    ],
+    "confessions": [
+      "Sunday: 11:45AM to 1:15PM - First Sunday of the month; before and after Noon Mass (approx.)",
+      "Wednesday: 6:10PM to 7:10PM",
+      "Friday: 11:00AM to 12:00PM - Every 1st Friday",
+      "Saturday: 3:00PM to 4:00PM"
+    ],
     "adoration": [],
-    "events_summary": null
+    "events_summary": "St. Mary & St. Bernard parishes have several January events, including a Bridal Gown Sale volunteer meeting on Saturday, January 17 at 1:00 p.m. (St. Bernard Social Hall) and Catholic Movie Night featuring The Chosen on Friday, January 23 at 7:00 p.m. in St. Bernard’s classroom. Knights of Columbus members will be available after all Masses January 17–18 to welcome new members. Looking ahead, the St. Bernard Parish Health Fair is Sunday, February 1 from 2:00–5:00 p.m., and the Mardi Gras Night at the Races fundraiser is Saturday, February 7 starting at 5:30 p.m."
   },
   {
     "name": "Saint Anthony of Padua Roman Catholic Church",
@@ -1462,7 +1470,7 @@
     "website": "stfrancisdesales-church.org",
     "lonlat": "-81.7098919,41.404652",
     "bulletin_url": "https://container.parishesonline.com/bulletins/14/0523/20260104B.pdf",
-    "timestamp": null,
+    "timestamp": "2026-01-11",
     "mass_times": [
       "Sunday: 7:30AM - Weekend Mass (St. Francis de Sales), 10:30AM - Weekend Mass (St. Francis de Sales)"
     ],
@@ -1508,8 +1516,8 @@
     "phone": "440.871.1100",
     "website": "www.saintraphaelparish.com",
     "lonlat": "-81.9195342,41.4805755",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1814/20260104B.pdf",
-    "timestamp": null,
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1814/20260111B.pdf",
+    "timestamp": "2026-01-11",
     "mass_times": [
       "Sunday: 8:00AM, 10:00AM, 12:00PM",
       "Monday: 7:45AM, 9:15AM",
@@ -1517,15 +1525,16 @@
       "Wednesday: 7:45AM",
       "Thursday: 9:15AM",
       "Friday: 7:45AM, 9:15AM",
-      "Saturday: 4:30PM - Vigil"
+      "Saturday: 4:30PM - Saturday Vigil"
     ],
     "confessions": [
       "Saturday: 3:00PM to 4:00PM - or by appointment"
     ],
     "adoration": [
-      "Friday: 10:00AM to 4:00PM - Continues until Saturday 16:00; in the Franciscan Chapel"
+      "Friday: 10:00AM to 11:59PM - Begins 10am Friday in the Franciscan Chapel; continues overnight until Saturday 4pm, 3:30PM to 3:50PM - Children’s Adoration (when school is in session) in the Franciscan Chapel",
+      "Saturday: 12:00AM to 4:00PM - Continues from Friday 10am until 4pm Saturday in the Franciscan Chapel"
     ],
-    "events_summary": "St. Raphael Parish continues weekly Eucharistic Adoration (from Friday morning through Saturday afternoon) along with Saturday Confessions before the Vigil Mass. In January, there are multiple formation and community opportunities, including Bible studies, a Family Movie Night (Jan 10), Trivia Night (Jan 26), and support groups for women and men with cancer. Looking ahead, the parish is also promoting a three-night Parish Mission with Fr. Leo Patalinghug on Feb. 22–24 at 19:00."
+    "events_summary": "St. Raphael Parish has several upcoming formation and community events, including Men’s Huddle on Tuesday, January 13 (6:00–7:30 AM) and a Ladies Guild Book Club meeting on Thursday, January 15 at 7:30 PM. Later this month, Eucharistic Ministers Enrich is Saturday, January 24 at 3:30 PM, and Trivia Night is Monday, January 26 at 7:00 PM. Mark your calendar for the Parish Mission with Fr. Leo Patalinghug on February 22–24 at 7:00 PM each night."
   },
   {
     "name": "Saint Leo the Great",
@@ -1759,8 +1768,8 @@
     "phone": "216-429-1515",
     "website": "http://stspeterpaul.weconnect.com/",
     "lonlat": "-81.6168576,41.4305067",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0069/20260104B.pdf",
-    "timestamp": null,
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0069/20260111B.pdf",
+    "timestamp": "2026-01-11",
     "mass_times": [
       "Sunday: 8:30AM",
       "Wednesday: 8:30AM",
@@ -1772,7 +1781,7 @@
       "Saturday: 3:00PM to 4:00PM"
     ],
     "adoration": [],
-    "events_summary": "Saints Peter and Paul is offering regular faith-formation activities this week, including Tuesday evening Bible Study at the St. Therese Rectory and Wednesday evening PSR at the St. Therese Church Hall. Upcoming community events include a pre-order Pork & Sauerkraut Dinner (pickup Jan. 21) and the Saint Therese Chili & Soup Cookoff (Jan. 25, serving at noon). Mark your calendar for the SS. Peter and Paul Annual Pork Chop Dinner on Feb. 14 at St. Therese Hall, and join a Divine Mercy Holy Hour on Jan. 11 (St. Monica) or Jan. 25 (St. Therese)."
+    "events_summary": "This month includes several parish community gatherings, including a pre-order Pork & Sauerkraut Dinner with curbside pickup on Wednesday, January 21 (4:00–6:00 PM) and the 9th Annual Soup & Chili Cook-off on Sunday, January 25 (doors open after the 10:30 AM Mass). A Divine Mercy Holy Hour is offered at 2:30 PM on Sunday, January 11 at St. Monica Church and again on Sunday, January 25 at St. Therese Church. The Annual Pork Chop Dinner is coming up on Saturday, February 14, with doors opening at 4:30 PM and dinner served 5:30–6:30 PM."
   },
   {
     "name": "Saint Mel Catholic Church",
@@ -1806,24 +1815,24 @@
     "phone": "(330) 666-1373",
     "website": "www.copleyangels.org",
     "lonlat": "-81.645418,41.0915674",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0077/20260104B.pdf",
-    "timestamp": null,
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0077/20260111B.pdf",
+    "timestamp": "2026-01-11",
     "mass_times": [
       "Sunday: 9:00AM, 11:00AM",
-      "Monday: 8:00AM - Daily Mass",
+      "Monday: 8:00AM - Daily Mass, 8:00AM - Holy Days (also 19:00), 7:00PM - Holy Days (also 08:00)",
       "Tuesday: 8:00AM - Daily Mass",
       "Thursday: 8:00AM - Daily Mass",
       "Friday: 8:00AM - Daily Mass",
-      "Saturday: 5:00PM - Vigil Mass"
+      "Saturday: 5:00PM - Vigil"
     ],
     "confessions": [
-      "Saturday: 4:00PM to 5:00PM - Or call parish office"
+      "Saturday: 4:00PM to 4:45PM - Time listed as '4pm' on front; end time not specified (approximate end omitted if strict). Also: or call parish office."
     ],
     "adoration": [
-      "Tuesday: 12:00AM to 11:59PM - 2nd Tuesday of the month (listed as '2nd Tues/4th Thurs of month')",
-      "Thursday: 12:00AM to 11:59PM - 4th Thursday of the month (listed as '2nd Tues/4th Thurs of month')"
+      "Tuesday: 12:00AM to 12:00AM - 2nd Tuesday of the month (time not specified in bulletin text)",
+      "Thursday: 12:00AM to 12:00AM - 4th Thursday of the month (time not specified in bulletin text)"
     ],
-    "events_summary": "Guardian Angels Parish is promoting upcoming parish gatherings, including Casino Night (registration now open online; tickets are limited) and the 2nd Annual Men’s Breakfast on Saturday, February 7, 2026. Coffee & Donuts will be offered on Sunday, January 11 after the 9:00 and 11:00am Masses. The bulletin also highlights a Thursday evening separated/divorced support group hosted at St. Hilary Parish and St. Hilary School’s Catholic Schools Week Open House on January 25."
+    "events_summary": "Guardian Angels has several upcoming opportunities for fellowship and support of parish life, including Coffee & Donuts on Sunday, January 11 after the 9:00am and 11:00am Masses. Mark your calendar for the Casino Night & Dinner fundraiser on Friday, January 30 from 6:30–10:00pm in the Parish Hall, and the Men’s Breakfast and Fellowship on Saturday, February 7 (doors open at 8:00am). St. Hilary School will also host its Catholic Schools Week Open House on Sunday, January 25 from 12:00–2:00pm."
   },
   {
     "name": "Immaculate Conception",
@@ -2086,7 +2095,7 @@
     "website": "holyspiritcleveland.org",
     "lonlat": "-81.5904904,41.4411655",
     "bulletin_url": "https://www.holyspiritcleveland.org/wp-content/uploads/2026/01/bulletin_1-4-26.pdf",
-    "timestamp": null,
+    "timestamp": "2026-01-11",
     "mass_times": [
       "Sunday: 10:30AM",
       "Wednesday: 5:00PM - Weekday Mass",
@@ -2378,7 +2387,7 @@
     "website": "www.saintvitus.org",
     "lonlat": "-81.6489348,41.5227521",
     "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=CSWUjlLvgrK%2FVCdKr1nf6StBWzbz8a2CiNRD13Q8oWGwIN%2FBkvaOlXfkwDMgSNMV9NcPh3IfELoU%2BXlGl6TTNaQepOtxf1C9kyLPYFBYciA%3D",
-    "timestamp": null,
+    "timestamp": "2026-01-11",
     "mass_times": [
       "Sunday: 9:00AM (English) - noted as Eng., 10:30AM (Slovenian) - noted as Slov.",
       "Monday: 5:00PM - Weekdays listed as Mon–Fri 5:00 p.m. at The Village Chapel",
@@ -2430,29 +2439,21 @@
     "phone": "440-442-3410",
     "website": "https://church.saintpaschal.com",
     "lonlat": "-81.4854892,41.5380938",
-    "bulletin_url": "https://files.ecatholic.com/5493/bulletins/20260104.pdf",
-    "timestamp": null,
-    "mass_times": [
-      "Sunday: 8:30AM, 10:30AM, 6:30PM",
-      "Monday: 9:00AM - in church, 11:30AM - in Saint Ann Shrine",
-      "Tuesday: 9:00AM - in church, 11:30AM - in Saint Ann Shrine",
-      "Wednesday: 9:00AM - in church, 11:30AM - in Saint Ann Shrine",
-      "Thursday: 9:00AM - in church, 11:30AM - in Saint Ann Shrine",
-      "Friday: 9:00AM - in church, 11:30AM - in Saint Ann Shrine",
-      "Saturday: 9:00AM, 4:30PM"
-    ],
+    "bulletin_url": "https://files.ecatholic.com/5493/bulletins/20260111.pdf",
+    "timestamp": "2026-01-11",
+    "mass_times": [],
     "confessions": [
-      "Monday: 6:00PM to 7:00PM - in the church’s reconciliation chapel by the baptismal font",
-      "Saturday: 3:30PM to 4:15PM - in church or by appointment"
+      "Monday: 6:00PM to 7:00PM - In the church’s reconciliation chapel by the baptismal font",
+      "Saturday: 3:30PM to 4:15PM - In church or by appointment; communal services during Advent and Lent"
     ],
     "adoration": [
-      "Monday: 7:30AM to 8:15AM - Exposition with Morning Prayer (Mon–Fri), 9:30AM to 10:30AM - Exposition after Mass (Mon–Fri)",
-      "Tuesday: 7:30AM to 8:15AM - Exposition with Morning Prayer (Mon–Fri), 9:30AM to 10:30AM - Exposition after Mass (Mon–Fri)",
-      "Wednesday: 7:30AM to 8:15AM - Exposition with Morning Prayer (Mon–Fri), 9:30AM to 10:30AM - Exposition after Mass (Mon–Fri)",
-      "Thursday: 7:30AM to 8:15AM - Exposition with Morning Prayer (Mon–Fri), 9:30AM to 10:30AM - Exposition after Mass (Mon–Fri), 9:30AM to 8:00PM - Exposition of the Blessed Sacrament",
-      "Friday: 7:30AM to 8:15AM - Exposition with Morning Prayer (Mon–Fri), 9:30AM to 10:30AM - Exposition after Mass (Mon–Fri)"
+      "Monday: 7:30AM to 8:15AM - Exposition with Morning Prayer, 9:30AM to 10:30AM - Exposition after Mass",
+      "Tuesday: 7:30AM to 8:15AM - Exposition with Morning Prayer, 9:30AM to 10:30AM - Exposition after Mass",
+      "Wednesday: 7:30AM to 8:15AM - Exposition with Morning Prayer, 9:30AM to 10:30AM - Exposition after Mass",
+      "Thursday: 9:30AM to 8:00PM - Exposition of the Blessed Sacrament, 7:30AM to 8:15AM - Exposition with Morning Prayer, 9:30AM to 10:30AM - Exposition after Mass (in addition to the longer Thursday exposition listed)",
+      "Friday: 7:30AM to 8:15AM - Exposition with Morning Prayer, 9:30AM to 10:30AM - Exposition after Mass"
     ],
-    "events_summary": "Saint Paschal Baylon offers a full weekly schedule of liturgy and formation, including OCIA on Thursday evenings, Men’s Bible Study and Knights of Columbus on Tuesdays, and music rehearsals midweek. Coming up in January are special gatherings like the Word of God Eucharistic Holy Hour (Jan. 21), school open houses (Jan. 22 and Catholic School Week on Jan. 25), and Night Prayer hosted by PSR (Jan. 26). The parish is also preparing for major events later in the year, including the Spring Fling fundraiser on May 16 and the next parish blood drive on March 29."
+    "events_summary": "Saint Paschal Baylon has several upcoming parish and school highlights, including the “Word of God” Eucharistic Holy Hour on Wednesday, January 21 at 7:00 PM, plus a Preschool Open House on Thursday, January 22 at 6:30 PM. Catholic Schools Week begins with the 10:30 AM Mass on Sunday, January 25 followed by the school Open House (11:30 AM–1:00 PM), and the Father–Daughter Snowball Dance is Saturday, January 24 from 6:00–8:00 PM. Ash Wednesday liturgies are scheduled for February 18, including Masses at 6:30 AM, 9:00 AM, 12:15 PM, and 7:00 PM (with ashes)."
   },
   {
     "name": "Nativity of the Blessed Virgin Mary Parish (Roman Catholic Church)",
@@ -2519,7 +2520,7 @@
     "website": "www.ourladyofvictory.net",
     "lonlat": "-81.441818,41.10472",
     "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=VZUH0iX7gfYwFFl%2FEESfEe7eod%2BjD%2BKoV9U7V13PIKzSy9oR6zYz3c4epiPypwuPzsaJ8akOcRcKy7daElS1JBv%2BMUlTengOWZyqiJlDMQw%3D",
-    "timestamp": null,
+    "timestamp": "2026-01-11",
     "mass_times": [
       "Sunday: 8:30AM",
       "Tuesday: 8:30AM - Daily (Tues & Thurs)",
@@ -3207,7 +3208,7 @@
     "website": "stmatthewparish.net",
     "lonlat": "-81.436211,41.053233",
     "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=mHZUOYHhe0izaSrngmRRB8yE3k%2BcSwm6cnU0LE19XWghZdcpOz4fuMnBc74NAac9DVPtbhWhqH0CepBP9ujppMI0QKAgenahKz992UR3KUY%3D",
-    "timestamp": null,
+    "timestamp": "2026-01-11",
     "mass_times": [
       "Sunday: 8:30AM - Mass at Our Lady of Victory, 10:30AM",
       "Monday: 8:00AM",
@@ -3364,7 +3365,7 @@
     "website": "https://www.holyredeemer-cleveland.org/",
     "lonlat": "-81.5680066,41.554816",
     "bulletin_url": "https://container.parishesonline.com/bulletins/14/0342/20260104B.pdf",
-    "timestamp": null,
+    "timestamp": "2026-01-11",
     "mass_times": [
       "Sunday: 11:00AM",
       "Monday: 8:00AM",
@@ -3658,8 +3659,8 @@
     "phone": "419-289-7224",
     "website": "stedwardashland.org",
     "lonlat": "-82.3179253,40.8722811",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1285/20260104B.pdf",
-    "timestamp": "2026-01-10",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1285/20260111B.pdf",
+    "timestamp": "2026-01-11",
     "mass_times": [
       "Sunday: 8:30AM, 11:00AM",
       "Monday: 8:00AM",
@@ -3667,18 +3668,18 @@
       "Wednesday: 1:15PM",
       "Thursday: 8:00AM",
       "Friday: 8:00AM",
-      "Saturday: 8:00AM - 1st Saturday only, 4:30PM - Saturday Vigil"
+      "Saturday: 8:00AM - 1st Saturday only (Rosary at 07:35), 4:30PM - Vigil"
     ],
     "confessions": [
       "Saturday: 3:00PM to 4:00PM"
     ],
     "adoration": [
-      "Sunday: 12:00AM to 6:00AM - Adorers needed",
-      "Thursday: 12:00AM to 11:59PM - Adoration is Thurs–Sun (specific hours not fully listed in bulletin); adorers needed at listed Friday/Saturday/Sunday overnight and evening times",
-      "Friday: 12:00AM to 2:00AM - Adorers needed, 3:00AM to 5:00AM - Adorers needed, 11:00PM to 11:59PM - Adorers needed (11:00pm hour)",
-      "Saturday: 12:00AM to 6:00AM - Adorers needed, 4:30PM to 8:00PM - Adorers needed, 11:00PM to 11:59PM - Adorers needed (11:00pm hour)"
+      "Sunday: 12:00AM to 11:59PM - Adoration is Thurs–Sun (specific hours not listed)",
+      "Thursday: 12:00AM to 11:59PM - Adoration is Thurs–Sun (specific hours not listed)",
+      "Friday: 12:00AM to 11:59PM - Adoration is Thurs–Sun (specific hours not listed)",
+      "Saturday: 12:00AM to 11:59PM - Adoration is Thurs–Sun (specific hours not listed)"
     ],
-    "events_summary": "This month includes Boy Scouts (Wed, Jan 7 at 7:00pm) and Catholic Daughters (Thu, Jan 8 at 6:30pm), plus the Divine Mercy Chaplet on Fri, Jan 9 at 3:00pm. Little Rock Scripture Study begins Sunday, Jan 11 from 7:00–8:30pm in the Parish Activity Center, and Red Tub Weekend food collection runs Jan 10–11. Couples can also consider the Retrouvaille marriage renewal weekend Feb 13–15, 2026."
+    "events_summary": "Little Rock Scripture Study (Women of the Old Testament) begins Sunday, January 11 at 7:00pm in the Parish Activity Center. This week includes Stephen Ministry on Tuesday at 7:00pm, Parish Council on Wednesday at 7:00pm, and the Divine Mercy Chaplet on Friday at 3:00pm; there is also a second collection for The Catholic University of America the weekend of January 17–18. A Retrouvaille marriage renewal weekend is coming February 13–15, 2026."
   },
   {
     "name": "Divine Word Catholic Church",
@@ -4151,20 +4152,26 @@
     "phone": "216-631-5633",
     "website": "ststephencleveland.org",
     "lonlat": "-81.7240446,41.478899",
-    "bulletin_url": "https://ststephencleveland.org/wp-content/uploads/bsk-pdf-manager/2025/12/25_12_28_bulletin.pdf",
-    "timestamp": null,
+    "bulletin_url": "https://ststephencleveland.org/wp-content/uploads/bsk-pdf-manager/2026/01/26_01_11_bulletin.pdf",
+    "timestamp": "2026-01-11",
     "mass_times": [
-      "Sunday: 8:00AM - Weekend Mass, 11:00AM - Weekend Mass; German Mass on the 1st Sunday of every month at 11:00am (except Easter Sunday)",
-      "Saturday: 5:00PM - Weekend Mass"
+      "Sunday: 8:00AM - Weekend Mass, 11:00AM - Weekend Mass (also listed as German weekend Mass: 1st Sunday of every month)",
+      "Monday: 6:30PM - Weekday Mass (location: Rectory Chapel)",
+      "Tuesday: 6:45AM (Latin), 6:30PM - Weekday Mass (location: Rectory Chapel)",
+      "Wednesday: 6:30PM",
+      "Thursday: 6:30PM (Latin)",
+      "Friday: 6:30PM - 1st Friday Mass & Benediction, 6:30PM - Weekday Mass (location: Rectory Chapel)",
+      "Saturday: 5:00PM - Weekend Mass, 9:30AM - 1st Saturday Mass & Lecture"
     ],
     "confessions": [
       "Sunday: 9:00AM to 9:30AM - Before 9:30am Mass (or by appointment)",
+      "Wednesday: 7:00PM to 8:00PM - Confession during Holy Hour and Benediction",
       "Saturday: 4:15PM to 4:45PM"
     ],
     "adoration": [
-      "Wednesday: 7:00PM to 8:00PM - Holy Hour with Confession and Benediction"
+      "Wednesday: 7:00PM to 8:00PM - Holy Hour, Confession and Benediction"
     ],
-    "events_summary": "St. Stephen’s weekly devotional life includes Sunday Rosary at 9:00 AM and a Wednesday Holy Hour with Confession and Benediction at 7:00 PM. The monthly German Mass is celebrated on the first Sunday at 11:00 AM, and on Sunday, January 4, the 11:00 AM German Mass will feature the Heiligenblut Nativity Mass setting sung by the Gottscheer Heimatchor. Outreach continues with the Food Pantry on the last Thursday of each month from 9:30 AM–12:00 noon, and parishioners are invited to support the Giving Tree donations due by December 31."
+    "events_summary": "St. Stephen’s upcoming gatherings include Schola Practice on Sunday, January 11 at 8:00am, a Latin Social after the 9:30am Mass, and a Parish Council meeting on Monday, January 12 at 7:00pm. RCIA/OCIA meets Thursday, January 15 at 6:30pm. The Diocese of Cleveland’s Mass for the Gift of Human Life will be Friday, January 23 at 10:00am at the Cathedral of St. John the Evangelist."
   },
   {
     "name": "Saint Frances Xavier Cabrini Catholic Church",
@@ -4757,5 +4764,31 @@
       "Wednesday: 2:00PM to 5:00PM - Evening Prayer begins at 16:45"
     ],
     "events_summary": "St. Peter & St. Julie Billiart have several January gatherings, including the Walking With Moms in Need Epiphany Celebration on Wednesday, January 7 (6:30–7:30 PM) at St. Julie’s and Donut Sunday on Sunday, January 11 after all Masses in St. Peter’s Apostles Hall. Men and women can join fellowship breakfasts on January 10 (8:30 AM at St. Julie’s) and January 17 (8:20 AM at St. Peter’s gym). Youth events are coming up too, with Middle School RCY on January 15 and High School RCY on January 22, both 7:30–8:30 PM at St. Peter."
+  },
+  {
+    "name": "Communion of Saints Parish - Saint Philomena",
+    "parish_id": "0414-sp",
+    "address": "13824 Euclid Avenue\n",
+    "city": "East Cleveland",
+    "zip_code": "44112",
+    "phone": "(216) 321-0024",
+    "website": "https://cosparish.com",
+    "lonlat": "-81.586407, 41.526055",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0414/20260104B.pdf",
+    "timestamp": "2026-01-11",
+    "mass_times": [
+      "Sunday: 8:30AM - St. Ann Church, 10:00AM - St. Philomena Church, 11:30AM - St. Ann Church",
+      "Monday: 8:00AM - Weekday Mass at St. Ann Church",
+      "Tuesday: 8:00AM - Weekday Mass at St. Ann Church",
+      "Wednesday: 8:00AM - Weekday Mass at St. Ann Church",
+      "Thursday: 8:00AM - Weekday Mass at St. Ann Church",
+      "Friday: 8:00AM - Weekday Mass at St. Ann Church",
+      "Saturday: 4:00PM - St. Ann Church"
+    ],
+    "confessions": [
+      "Saturday: 3:00PM to 4:00PM - St. Ann Church"
+    ],
+    "adoration": [],
+    "events_summary": "Communion of Saints Parish has a full week of formation and community activities, including OCIA on Tuesday evenings and the Psalms Bible Study on Wednesdays (Jan. 14–Mar. 4). Upcoming special events include an Opus Dei Morning of Recollection for Women on Thursday, Jan. 8 (10:00–12:00) and a required Ministry Leaders meeting on Sunday, Jan. 18 at 12:45 in Walsh Hall. Coffee and donuts are also offered on Sundays after the morning Masses."
   }
 ]
