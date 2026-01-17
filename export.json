@@ -4784,5 +4784,21 @@
     ],
     "adoration": [],
     "events_summary": "Communion of Saints Parish has a busy January schedule, including the start of the Psalms Bible Study on Wednesdays from 6:30–8:00 PM (Jan. 14–Mar. 4) and regular weekly faith formation groups like OCIA and Women’s Faith Group. A mandatory meeting for all parish ministry leaders will be held Sunday, January 18 at 12:45 PM in Walsh Hall. The parish is also looking ahead to a three-night Lenten mission with Auxiliary Bishop Michael G. Woost on February 23–25 (details forthcoming)."
+  },
+  {
+    "name": "",
+    "parish_id": "",
+    "address": null,
+    "city": null,
+    "zip_code": null,
+    "phone": null,
+    "website": null,
+    "lonlat": null,
+    "bulletin_url": null,
+    "timestamp": null,
+    "mass_times": [],
+    "confessions": [],
+    "adoration": [],
+    "events_summary": null
   }
 ]
