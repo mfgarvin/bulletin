@@ -1,8 +1,9 @@
-"""Export Notion parish data to JSON file."""
+"""Export Notion parish data to JSON file for reference.py (mapboard)."""
 
 import asyncio
 import json
 import os
+from collections import defaultdict
 from dataclasses import dataclass
 from typing import Any, Optional
 
@@ -118,46 +119,102 @@ def _row_to_full_parish(row: dict) -> FullParishData:
     )
 
 
-def parish_to_dict(parish: FullParishData) -> dict:
-    """Convert FullParishData to a dictionary for JSON export."""
+def _group_mass_times(mass_times: list[dict]) -> dict[str, list[int]]:
+    """Group mass times by weekday, returning just the time integers.
+
+    Input: [{"day": "Sunday", "time": 900}, {"day": "Sunday", "time": 1100}]
+    Output: {"Sunday": [900, 1100]}
+    """
+    grouped: dict[str, list[int]] = defaultdict(list)
+    for mt in mass_times:
+        day = mt.get("day")
+        time = mt.get("time")
+        # Skip holiday masses (those with mass_date set)
+        if day and time is not None and not mt.get("mass_date"):
+            grouped[day].append(time)
+    # Sort times within each day
+    return {day: sorted(times) for day, times in grouped.items()}
+
+
+def _calculate_duration(start: int, end: int) -> int:
+    """Calculate duration in minutes between two 24hr times."""
+    start_mins = (start // 100) * 60 + (start % 100)
+    end_mins = (end // 100) * 60 + (end % 100)
+    # Handle overnight (e.g., 2300 to 0100)
+    if end_mins < start_mins:
+        end_mins += 24 * 60
+    return end_mins - start_mins
+
+
+def _group_confessions(confessions: list[dict]) -> dict[str, list[dict[str, int]]]:
+    """Group confessions by weekday with start time and duration.
+
+    Input: [{"day": "Saturday", "start_time": 1500, "end_time": 1600}]
+    Output: {"Saturday": [{"1500": 60}]}
+    """
+    grouped: dict[str, list[dict[str, int]]] = defaultdict(list)
+    for conf in confessions:
+        day = conf.get("day")
+        start = conf.get("start_time")
+        end = conf.get("end_time")
+        if day and start is not None and end is not None:
+            duration = _calculate_duration(start, end)
+            grouped[day].append({str(start): duration})
+    return dict(grouped)
+
+
+def _format_adoration(adoration: dict) -> dict:
+    """Format adoration schedule for reference.py.
+
+    Input: {"is_perpetual": true, "times": [...]}
+    Output: {"Is24Hour": true} or {"Saturday": [{"900": 60}]}
+    """
+    if adoration.get("is_perpetual"):
+        return {"Is24Hour": True}
+
+    times = adoration.get("times", [])
+    if not times:
+        return {}
+
+    grouped: dict[str, list[dict[str, int]]] = defaultdict(list)
+    for slot in times:
+        day = slot.get("day")
+        start = slot.get("start_time")
+        end = slot.get("end_time")
+        if day and start is not None and end is not None:
+            duration = _calculate_duration(start, end)
+            grouped[day].append({str(start): duration})
+    return dict(grouped)
+
+
+def parish_to_dict(parish: FullParishData, parish_id: int) -> dict:
+    """Convert FullParishData to a dictionary for reference.py consumption."""
     return {
-        "parish_id": parish.parish_id,
-        "name": parish.name,
-        "enabled": parish.enabled,
-        "publisher": parish.publisher,
-        "last_run": parish.last_run,
-        "bulletin_url": parish.bulletin_url,
-        "contact": {
-            "address": parish.address,
-            "city": parish.city,
-            "zipcode": parish.zipcode,
-            "phone": parish.phone,
-            "website": parish.website,
-            "lonlat": parish.lonlat,
-        },
-        "mass_times": parish.mass_times,
-        "confessions": parish.confessions,
-        "adoration": parish.adoration,
-        "events": parish.events,
-        "events_summary": parish.events_summary,
+        "ID": parish_id,
+        "Mass Times": _group_mass_times(parish.mass_times),
+        "Confessions": _group_confessions(parish.confessions),
+        "Adoration": _format_adoration(parish.adoration),
     }
 
 
 async def main() -> str:
-    """Export all Notion parish data to export.json."""
+    """Export Notion parish data to parish_data.json for reference.py."""
     api_key = os.environ["NOTION_API_KEY"]
     database_id = os.environ["PARISH_DB_ID"]
     client = AsyncClient(auth=api_key)
 
     parishes = await fetch_all_parishes(client, database_id)
 
-    # Export as dict keyed by parish name
-    export_data = {p.name: parish_to_dict(p) for p in parishes}
+    # Export as dict keyed by parish name, with sequential IDs
+    export_data = {
+        p.name: parish_to_dict(p, idx + 1)
+        for idx, p in enumerate(parishes)
+    }
 
-    with open("export.json", "w", encoding="utf-8") as f:
+    with open("parish_data.json", "w", encoding="utf-8") as f:
         json.dump(export_data, f, ensure_ascii=False, indent=2)
 
-    return f"Exported {len(parishes)} parishes to export.json"
+    return f"Exported {len(parishes)} parishes to parish_data.json"
 
 
 if __name__ == "__main__":
