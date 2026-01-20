@@ -14,6 +14,7 @@ from notion_client import AsyncClient
 class FullParishData:
     """Complete parish data from Notion."""
 
+    notion_id: str
     parish_id: str
     name: str
     enabled: bool
@@ -99,6 +100,7 @@ def _row_to_full_parish(row: dict) -> FullParishData:
             pass
 
     return FullParishData(
+        notion_id=row["id"],
         parish_id=_get_property(row, "ParishID"),
         name=_get_property(row, "Name"),
         enabled=_get_property(row, "Enable"),
@@ -191,6 +193,7 @@ def parish_to_dict(parish: FullParishData, parish_id: int) -> dict:
     """Convert FullParishData to a dictionary for reference.py consumption."""
     return {
         "ID": parish_id,
+        "NotionID": parish.notion_id,
         "Mass Times": _group_mass_times(parish.mass_times),
         "Confessions": _group_confessions(parish.confessions),
         "Adoration": _format_adoration(parish.adoration),
