@@ -6257,7 +6257,7 @@
       ]
     }
   },
-  "SaintMary of the Falls": {
+  "Saint Mary of the Falls": {
     "ID": 176,
     "NotionID": "2df29b8f-0e6e-81fc-916c-f75035916518",
     "Mass Times": {
@@ -6694,5 +6694,58 @@
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
+  },
+  "Saint Sebastian Parish": {
+    "ID": 190,
+    "NotionID": "2ef29b8f-0e6e-80f7-b685-fa4fea6f9838",
+    "Mass Times": {
+      "Monday": [
+        800
+      ],
+      "Tuesday": [
+        800
+      ],
+      "Wednesday": [
+        800
+      ],
+      "Thursday": [
+        805
+      ],
+      "Friday": [
+        800
+      ],
+      "Saturday": [
+        800,
+        1630
+      ],
+      "Sunday": [
+        900,
+        1100
+      ]
+    },
+    "Confessions": {
+      "Tuesday": [
+        {
+          "1900": 30
+        }
+      ],
+      "Friday": [
+        {
+          "1600": 60
+        }
+      ],
+      "Saturday": [
+        {
+          "930": 30
+        }
+      ]
+    },
+    "Adoration": {
+      "Tuesday": [
+        {
+          "830": 670
+        }
+      ]
+    }
   }
 }
