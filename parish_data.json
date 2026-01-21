@@ -1,7 +1,7 @@
 {
-  "Communion of Saints Parish - Saint Ann": {
+  "2df29b8f-0e6e-8100-83b0-f89558dc754d": {
     "ID": 1,
-    "NotionID": "2df29b8f-0e6e-8100-83b0-f89558dc754d",
+    "Name": "Communion of Saints Parish - Saint Ann",
     "Mass Times": {
       "Saturday": [
         1600
@@ -40,9 +40,9 @@
     },
     "Adoration": {}
   },
-  "Saint Patrick Church": {
+  "2df29b8f-0e6e-8101-9103-de306ec8aed1": {
     "ID": 2,
-    "NotionID": "2df29b8f-0e6e-8101-9103-de306ec8aed1",
+    "Name": "Saint Patrick Church",
     "Mass Times": {
       "Saturday": [
         1600
@@ -66,9 +66,9 @@
       ]
     }
   },
-  "Saint Paul Catholic Parish": {
+  "2df29b8f-0e6e-8102-b187-d8a5c5644752": {
     "ID": 3,
-    "NotionID": "2df29b8f-0e6e-8102-b187-d8a5c5644752",
+    "Name": "Saint Paul Catholic Parish",
     "Mass Times": {
       "Saturday": [
         1630
@@ -108,9 +108,9 @@
     },
     "Adoration": {}
   },
-  "Saint Mary Catholic Church": {
+  "2df29b8f-0e6e-8103-8c27-f7333090c531": {
     "ID": 4,
-    "NotionID": "2df29b8f-0e6e-8103-8c27-f7333090c531",
+    "Name": "Saint Mary Catholic Church",
     "Mass Times": {
       "Saturday": [
         1600
@@ -157,9 +157,9 @@
     },
     "Adoration": {}
   },
-  "Saint Columbkille Parish (Roman Catholic Church)": {
+  "2df29b8f-0e6e-8104-8424-c7773b03b3a2": {
     "ID": 5,
-    "NotionID": "2df29b8f-0e6e-8104-8424-c7773b03b3a2",
+    "Name": "Saint Columbkille Parish (Roman Catholic Church)",
     "Mass Times": {
       "Saturday": [
         815,
@@ -205,9 +205,9 @@
       "Is24Hour": true
     }
   },
-  "Saint Patrick Parish": {
+  "2df29b8f-0e6e-8105-9c27-e2f53d060f43": {
     "ID": 6,
-    "NotionID": "2df29b8f-0e6e-8105-9c27-e2f53d060f43",
+    "Name": "Saint Patrick Parish",
     "Mass Times": {
       "Saturday": [
         1630
@@ -245,9 +245,9 @@
       ]
     }
   },
-  "Nativity of the Blessed Virgin Mary, South Amherst.": {
+  "2df29b8f-0e6e-8106-98b6-d7a3b67ef78d": {
     "ID": 7,
-    "NotionID": "2df29b8f-0e6e-8106-98b6-d7a3b67ef78d",
+    "Name": "Nativity of the Blessed Virgin Mary, South Amherst.",
     "Mass Times": {
       "Tuesday": [
         800
@@ -285,9 +285,9 @@
       ]
     }
   },
-  "Mother of Sorrows Parish": {
+  "2df29b8f-0e6e-8107-adfd-f41a12649d1a": {
     "ID": 8,
-    "NotionID": "2df29b8f-0e6e-8107-adfd-f41a12649d1a",
+    "Name": "Mother of Sorrows Parish",
     "Mass Times": {
       "Saturday": [
         1700
@@ -299,9 +299,9 @@
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Michael Catholic Church": {
+  "2df29b8f-0e6e-8108-a992-f6a8d5b84fdb": {
     "ID": 9,
-    "NotionID": "2df29b8f-0e6e-8108-a992-f6a8d5b84fdb",
+    "Name": "Saint Michael Catholic Church",
     "Mass Times": {
       "Monday": [
         830
@@ -338,9 +338,9 @@
       "Is24Hour": true
     }
   },
-  "Saint Ambrose Catholic Parish": {
+  "2df29b8f-0e6e-8109-94f9-cdad8bfc117c": {
     "ID": 10,
-    "NotionID": "2df29b8f-0e6e-8109-94f9-cdad8bfc117c",
+    "Name": "Saint Ambrose Catholic Parish",
     "Mass Times": {
       "Monday": [
         815
@@ -386,9 +386,9 @@
       ]
     }
   },
-  "Church of the Gesu": {
+  "2df29b8f-0e6e-810c-b34f-e3b97c161ab3": {
     "ID": 11,
-    "NotionID": "2df29b8f-0e6e-810c-b34f-e3b97c161ab3",
+    "Name": "Church of the Gesu",
     "Mass Times": {
       "Saturday": [
         1630
@@ -432,9 +432,9 @@
       ]
     }
   },
-  "The Parish of Saint Bede the Venerable": {
+  "2df29b8f-0e6e-810e-b79a-cc461cb27fb8": {
     "ID": 12,
-    "NotionID": "2df29b8f-0e6e-810e-b79a-cc461cb27fb8",
+    "Name": "The Parish of Saint Bede the Venerable",
     "Mass Times": {
       "Saturday": [
         1630
@@ -472,16 +472,16 @@
       ]
     }
   },
-  "Saint Francis of Assissi": {
+  "2df29b8f-0e6e-810e-bde9-dbf004496439": {
     "ID": 13,
-    "NotionID": "2df29b8f-0e6e-810e-bde9-dbf004496439",
+    "Name": "Saint Francis of Assissi",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Charles Borromeo Parish": {
+  "2df29b8f-0e6e-8111-8e9d-e44a2298f21e": {
     "ID": 14,
-    "NotionID": "2df29b8f-0e6e-8111-8e9d-e44a2298f21e",
+    "Name": "Saint Charles Borromeo Parish",
     "Mass Times": {
       "Saturday": [
         800,
@@ -526,9 +526,9 @@
     },
     "Adoration": {}
   },
-  "Saint Ignatius of Antioch": {
+  "2df29b8f-0e6e-8111-b21c-ea34ff9dac4a": {
     "ID": 15,
-    "NotionID": "2df29b8f-0e6e-8111-b21c-ea34ff9dac4a",
+    "Name": "Saint Ignatius of Antioch",
     "Mass Times": {
       "Saturday": [
         1700
@@ -559,9 +559,9 @@
       ]
     }
   },
-  "Saint Bernadette Parish (Saint Bernadette Church)": {
+  "2df29b8f-0e6e-8112-bdcd-c502ed4c9799": {
     "ID": 16,
-    "NotionID": "2df29b8f-0e6e-8112-bdcd-c502ed4c9799",
+    "Name": "Saint Bernadette Parish (Saint Bernadette Church)",
     "Mass Times": {
       "Monday": [
         900
@@ -590,9 +590,9 @@
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Justin Martyr Church": {
+  "2df29b8f-0e6e-8113-8e64-e38cb4218084": {
     "ID": 17,
-    "NotionID": "2df29b8f-0e6e-8113-8e64-e38cb4218084",
+    "Name": "Saint Justin Martyr Church",
     "Mass Times": {
       "Saturday": [
         1700
@@ -663,9 +663,9 @@
       ]
     }
   },
-  "The Church of Saint Clarence (Saint Clarence Church)": {
+  "2df29b8f-0e6e-8114-8f74-e9e85ba3c4d6": {
     "ID": 18,
-    "NotionID": "2df29b8f-0e6e-8114-8f74-e9e85ba3c4d6",
+    "Name": "The Church of Saint Clarence (Saint Clarence Church)",
     "Mass Times": {
       "Saturday": [
         1630
@@ -700,9 +700,9 @@
     },
     "Adoration": {}
   },
-  "Blessed Trinity Catholic Church": {
+  "2df29b8f-0e6e-8115-8863-fb38d7a1ac58": {
     "ID": 19,
-    "NotionID": "2df29b8f-0e6e-8115-8863-fb38d7a1ac58",
+    "Name": "Blessed Trinity Catholic Church",
     "Mass Times": {
       "Saturday": [
         1600
@@ -727,9 +727,9 @@
     "Confessions": {},
     "Adoration": {}
   },
-  "Church of the Assumption": {
+  "2df29b8f-0e6e-8117-8408-e811d348356e": {
     "ID": 20,
-    "NotionID": "2df29b8f-0e6e-8117-8408-e811d348356e",
+    "Name": "Church of the Assumption",
     "Mass Times": {
       "Saturday": [
         830,
@@ -809,9 +809,9 @@
       ]
     }
   },
-  "Saint Martin of Tours": {
+  "2df29b8f-0e6e-811b-9a13-dae94abc747c": {
     "ID": 21,
-    "NotionID": "2df29b8f-0e6e-811b-9a13-dae94abc747c",
+    "Name": "Saint Martin of Tours",
     "Mass Times": {
       "Saturday": [
         730,
@@ -855,9 +855,9 @@
       "Is24Hour": true
     }
   },
-  "Saint Vincent de Paul Catholic Church": {
+  "2df29b8f-0e6e-811b-bf41-e10339d73ac4": {
     "ID": 22,
-    "NotionID": "2df29b8f-0e6e-811b-bf41-e10339d73ac4",
+    "Name": "Saint Vincent de Paul Catholic Church",
     "Mass Times": {
       "Tuesday": [
         730
@@ -888,38 +888,57 @@
       ]
     }
   },
-  "Saint Mary of the Immaculate Conception": {
-    "ID": 124,
-    "NotionID": "2df29b8f-0e6e-81aa-982e-e6c82394299f",
+  "2df29b8f-0e6e-811b-bf73-dbbc5172747c": {
+    "ID": 23,
+    "Name": "Saint Mary of the Immaculate Conception",
     "Mass Times": {
-      "Saturday": [
-        1600
-      ],
       "Sunday": [
-        915
+        800,
+        1100,
+        1700
+      ],
+      "Monday": [
+        700
       ],
       "Tuesday": [
-        800
+        700
       ],
       "Wednesday": [
-        800
+        930
       ],
       "Thursday": [
-        800
+        700
+      ],
+      "Friday": [
+        700
+      ],
+      "Saturday": [
+        1700
       ]
     },
     "Confessions": {
+      "Sunday": [
+        {
+          "900": 60
+        }
+      ],
       "Saturday": [
         {
-          "1500": 30
+          "1500": 60
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {
+      "Tuesday": [
+        {
+          "900": 720
+        }
+      ]
+    }
   },
-  "Saint Joseph": {
+  "2df29b8f-0e6e-811d-8d86-ede10ab44dd5": {
     "ID": 24,
-    "NotionID": "2df29b8f-0e6e-811d-8d86-ede10ab44dd5",
+    "Name": "Saint Joseph",
     "Mass Times": {
       "Monday": [
         900
@@ -953,30 +972,16 @@
     },
     "Adoration": {}
   },
-  "Saint Mary": {
-    "ID": 159,
-    "NotionID": "2df29b8f-0e6e-81dd-b16a-e02449e10e51",
-    "Mass Times": {
-      "Sunday": [
-        830,
-        1030
-      ],
-      "Saturday": [
-        1600
-      ],
-      "Tuesday": [
-        900
-      ],
-      "Thursday": [
-        900
-      ]
-    },
+  "2df29b8f-0e6e-811e-bd5d-df80f9eab274": {
+    "ID": 25,
+    "Name": "Saint Mary",
+    "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Lucy Mission": {
+  "2df29b8f-0e6e-8122-8344-df9dc04db3e1": {
     "ID": 26,
-    "NotionID": "2df29b8f-0e6e-8122-8344-df9dc04db3e1",
+    "Name": "Saint Lucy Mission",
     "Mass Times": {
       "Saturday": [
         1830
@@ -997,9 +1002,9 @@
       ]
     }
   },
-  "Saint Emeric Parish": {
+  "2df29b8f-0e6e-8124-8205-ce587e7540f3": {
     "ID": 27,
-    "NotionID": "2df29b8f-0e6e-8124-8205-ce587e7540f3",
+    "Name": "Saint Emeric Parish",
     "Mass Times": {
       "Sunday": [
         900,
@@ -1009,9 +1014,9 @@
     "Confessions": {},
     "Adoration": {}
   },
-  "Holy Spirit Catholic Parish": {
+  "2df29b8f-0e6e-8124-a4ba-fcd0ca4cf1ac": {
     "ID": 28,
-    "NotionID": "2df29b8f-0e6e-8124-a4ba-fcd0ca4cf1ac",
+    "Name": "Holy Spirit Catholic Parish",
     "Mass Times": {
       "Saturday": [
         1700
@@ -1046,9 +1051,9 @@
       ]
     }
   },
-  "Saint Joseph Catholic Church": {
+  "2df29b8f-0e6e-8125-a2de-c7579c4ef0ba": {
     "ID": 29,
-    "NotionID": "2df29b8f-0e6e-8125-a2de-c7579c4ef0ba",
+    "Name": "Saint Joseph Catholic Church",
     "Mass Times": {
       "Saturday": [
         800,
@@ -1088,9 +1093,9 @@
     },
     "Adoration": {}
   },
-  "The Catholic Community of Saint Gabriel": {
+  "2df29b8f-0e6e-812b-9c91-e557231363f9": {
     "ID": 30,
-    "NotionID": "2df29b8f-0e6e-812b-9c91-e557231363f9",
+    "Name": "The Catholic Community of Saint Gabriel",
     "Mass Times": {
       "Sunday": [
         730,
@@ -1133,9 +1138,9 @@
       ]
     }
   },
-  "Saint Therese Parish": {
+  "2df29b8f-0e6e-812b-a725-f3055db88499": {
     "ID": 31,
-    "NotionID": "2df29b8f-0e6e-812b-a725-f3055db88499",
+    "Name": "Saint Therese Parish",
     "Mass Times": {
       "Saturday": [
         1730
@@ -1165,9 +1170,9 @@
       ]
     }
   },
-  "Saint Agnes Church (Orrville, Ohio)": {
+  "2df29b8f-0e6e-812b-ae0f-c24462a6cc4a": {
     "ID": 32,
-    "NotionID": "2df29b8f-0e6e-812b-ae0f-c24462a6cc4a",
+    "Name": "Saint Agnes Church (Orrville, Ohio)",
     "Mass Times": {
       "Saturday": [
         1700
@@ -1218,9 +1223,9 @@
       ]
     }
   },
-  "Our Lady of the Lake Parish": {
+  "2df29b8f-0e6e-812c-9ce3-ffa40cb0f37e": {
     "ID": 33,
-    "NotionID": "2df29b8f-0e6e-812c-9ce3-ffa40cb0f37e",
+    "Name": "Our Lady of the Lake Parish",
     "Mass Times": {
       "Monday": [
         900
@@ -1248,16 +1253,16 @@
     },
     "Adoration": {}
   },
-  "Saint Adalbert, Cleveland": {
+  "2df29b8f-0e6e-812d-83a0-f06c6ab0c47f": {
     "ID": 34,
-    "NotionID": "2df29b8f-0e6e-812d-83a0-f06c6ab0c47f",
+    "Name": "Saint Adalbert, Cleveland",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "Our Lady of Mt. Carmel Church": {
+  "2df29b8f-0e6e-812e-b3d6-d7d0f282bcdd": {
     "ID": 35,
-    "NotionID": "2df29b8f-0e6e-812e-b3d6-d7d0f282bcdd",
+    "Name": "Our Lady of Mt. Carmel Church",
     "Mass Times": {
       "Monday": [
         700
@@ -1299,9 +1304,9 @@
       "Is24Hour": true
     }
   },
-  "Saint Jerome Church": {
+  "2df29b8f-0e6e-8134-9167-f8cfab892398": {
     "ID": 36,
-    "NotionID": "2df29b8f-0e6e-8134-9167-f8cfab892398",
+    "Name": "Saint Jerome Church",
     "Mass Times": {
       "Saturday": [
         1600
@@ -1331,9 +1336,9 @@
       ]
     }
   },
-  "Saint Colman Church": {
+  "2df29b8f-0e6e-8134-b02d-d8dbbd8dd2a7": {
     "ID": 37,
-    "NotionID": "2df29b8f-0e6e-8134-b02d-d8dbbd8dd2a7",
+    "Name": "Saint Colman Church",
     "Mass Times": {
       "Saturday": [
         1700
@@ -1370,9 +1375,9 @@
     },
     "Adoration": {}
   },
-  "Saint Stephen Catholic Church": {
+  "2df29b8f-0e6e-8135-8145-c6b9b3976432": {
     "ID": 38,
-    "NotionID": "2df29b8f-0e6e-8135-8145-c6b9b3976432",
+    "Name": "Saint Stephen Catholic Church",
     "Mass Times": {
       "Saturday": [
         1600
@@ -1405,9 +1410,9 @@
       ]
     }
   },
-  "Saint Hilary Parish": {
+  "2df29b8f-0e6e-8136-909c-d1b9dd03619f": {
     "ID": 39,
-    "NotionID": "2df29b8f-0e6e-8136-909c-d1b9dd03619f",
+    "Name": "Saint Hilary Parish",
     "Mass Times": {
       "Saturday": [
         1600
@@ -1452,9 +1457,9 @@
       ]
     }
   },
-  "Saint Ladislas Church": {
+  "2df29b8f-0e6e-8137-9a88-e86f18bc231a": {
     "ID": 40,
-    "NotionID": "2df29b8f-0e6e-8137-9a88-e86f18bc231a",
+    "Name": "Saint Ladislas Church",
     "Mass Times": {
       "Monday": [
         1830
@@ -1494,9 +1499,9 @@
       ]
     }
   },
-  "Sacred Heart Chapel, Lorain": {
+  "2df29b8f-0e6e-8139-a1fd-ebcf3dd284a9": {
     "ID": 41,
-    "NotionID": "2df29b8f-0e6e-8139-a1fd-ebcf3dd284a9",
+    "Name": "Sacred Heart Chapel, Lorain",
     "Mass Times": {
       "Saturday": [
         1700
@@ -1536,9 +1541,9 @@
     },
     "Adoration": {}
   },
-  "Nativity of the Lord Jesus": {
+  "2df29b8f-0e6e-813b-b394-d42bc56caf24": {
     "ID": 42,
-    "NotionID": "2df29b8f-0e6e-813b-b394-d42bc56caf24",
+    "Name": "Nativity of the Lord Jesus",
     "Mass Times": {
       "Sunday": [
         830,
@@ -1580,9 +1585,9 @@
       ]
     }
   },
-  "Saint Richard Parish": {
+  "2df29b8f-0e6e-813e-a312-c03e908e4a9d": {
     "ID": 43,
-    "NotionID": "2df29b8f-0e6e-813e-a312-c03e908e4a9d",
+    "Name": "Saint Richard Parish",
     "Mass Times": {
       "Monday": [
         700
@@ -1623,9 +1628,9 @@
       ]
     }
   },
-  "Saint Joan of Arc Catholic Church": {
+  "2df29b8f-0e6e-813f-85ca-ed3468a5d5d5": {
     "ID": 44,
-    "NotionID": "2df29b8f-0e6e-813f-85ca-ed3468a5d5d5",
+    "Name": "Saint Joan of Arc Catholic Church",
     "Mass Times": {
       "Saturday": [
         1630
@@ -1665,9 +1670,9 @@
       ]
     }
   },
-  "Saint Mary of the Assumption Church": {
+  "2df29b8f-0e6e-813f-8b78-cb5576bd82c5": {
     "ID": 45,
-    "NotionID": "2df29b8f-0e6e-813f-8b78-cb5576bd82c5",
+    "Name": "Saint Mary of the Assumption Church",
     "Mass Times": {
       "Saturday": [
         1630
@@ -1704,16 +1709,16 @@
     },
     "Adoration": {}
   },
-  "Saint Barnabas, Northfield": {
+  "2df29b8f-0e6e-813f-a774-fc6471f0e007": {
     "ID": 46,
-    "NotionID": "2df29b8f-0e6e-813f-a774-fc6471f0e007",
+    "Name": "Saint Barnabas, Northfield",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Anthony of Padua Parish": {
+  "2df29b8f-0e6e-8141-97d0-fe76197f0694": {
     "ID": 47,
-    "NotionID": "2df29b8f-0e6e-8141-97d0-fe76197f0694",
+    "Name": "Saint Anthony of Padua Parish",
     "Mass Times": {
       "Saturday": [
         1600
@@ -1744,9 +1749,9 @@
       ]
     }
   },
-  "Visitation of Mary Parish": {
+  "2df29b8f-0e6e-8142-84b5-e4049826988d": {
     "ID": 48,
-    "NotionID": "2df29b8f-0e6e-8142-84b5-e4049826988d",
+    "Name": "Visitation of Mary Parish",
     "Mass Times": {
       "Saturday": [
         1600
@@ -1786,9 +1791,9 @@
       ]
     }
   },
-  "Saint Wendelin Catholic Church": {
+  "2df29b8f-0e6e-8143-aceb-f84a67abaac3": {
     "ID": 49,
-    "NotionID": "2df29b8f-0e6e-8143-aceb-f84a67abaac3",
+    "Name": "Saint Wendelin Catholic Church",
     "Mass Times": {
       "Monday": [
         1100
@@ -1809,9 +1814,9 @@
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Michael the Archangel Parish": {
+  "2df29b8f-0e6e-8144-8098-fea711d6eb28": {
     "ID": 50,
-    "NotionID": "2df29b8f-0e6e-8144-8098-fea711d6eb28",
+    "Name": "Saint Michael the Archangel Parish",
     "Mass Times": {
       "Saturday": [
         1700,
@@ -1856,9 +1861,9 @@
       ]
     }
   },
-  "Church of Saint Dominic": {
+  "2df29b8f-0e6e-8145-a619-ffd5ef0e6211": {
     "ID": 51,
-    "NotionID": "2df29b8f-0e6e-8145-a619-ffd5ef0e6211",
+    "Name": "Church of Saint Dominic",
     "Mass Times": {
       "Monday": [
         830
@@ -1886,16 +1891,49 @@
     "Confessions": {},
     "Adoration": {}
   },
-  "Our Lady of Peace, Cleveland": {
+  "2df29b8f-0e6e-8146-8010-f8884fda41cb": {
     "ID": 52,
-    "NotionID": "2df29b8f-0e6e-8146-8010-f8884fda41cb",
+    "Name": "Our Lady of Peace, Cleveland",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Anthony of Padua Roman Catholic Church": {
+  "2df29b8f-0e6e-8147-b4a8-cf4c3bd8d694": {
+    "ID": 53,
+    "Name": "Saint Mary",
+    "Mass Times": {
+      "Sunday": [
+        900,
+        1300
+      ]
+    },
+    "Confessions": {
+      "Wednesday": [
+        {
+          "1810": 60
+        }
+      ],
+      "Saturday": [
+        {
+          "1500": 60
+        }
+      ],
+      "Friday": [
+        {
+          "1100": 60
+        }
+      ],
+      "Sunday": [
+        {
+          "1145": 90
+        }
+      ]
+    },
+    "Adoration": {}
+  },
+  "2df29b8f-0e6e-8149-9af8-cbd7a6ff9268": {
     "ID": 54,
-    "NotionID": "2df29b8f-0e6e-8149-9af8-cbd7a6ff9268",
+    "Name": "Saint Anthony of Padua Roman Catholic Church",
     "Mass Times": {
       "Saturday": [
         1600
@@ -1945,9 +1983,9 @@
       ]
     }
   },
-  "Saint Adalbert Roman Catholic Parish (Saint Adalbert Church)": {
+  "2df29b8f-0e6e-814a-b187-f2a13f8de764": {
     "ID": 55,
-    "NotionID": "2df29b8f-0e6e-814a-b187-f2a13f8de764",
+    "Name": "Saint Adalbert Roman Catholic Parish (Saint Adalbert Church)",
     "Mass Times": {
       "Saturday": [
         900,
@@ -2000,9 +2038,9 @@
       ]
     }
   },
-  "Saint Victor Parish": {
+  "2df29b8f-0e6e-814a-b56f-c98faeef73fc": {
     "ID": 56,
-    "NotionID": "2df29b8f-0e6e-814a-b56f-c98faeef73fc",
+    "Name": "Saint Victor Parish",
     "Mass Times": {
       "Saturday": [
         1700
@@ -2026,64 +2064,78 @@
     "Confessions": {},
     "Adoration": {}
   },
-  "Holy Family Parish": {
-    "ID": 67,
-    "NotionID": "2df29b8f-0e6e-8155-8723-ea9777416b47",
+  "2df29b8f-0e6e-814b-9672-cd82002f2a82": {
+    "ID": 57,
+    "Name": "Holy Family Parish",
     "Mass Times": {
       "Monday": [
-        830
+        800
       ],
       "Tuesday": [
-        830
+        800
       ],
       "Wednesday": [
-        830
+        800,
+        1830
       ],
       "Thursday": [
-        830
+        800
       ],
       "Friday": [
-        830
+        800
       ],
       "Saturday": [
-        1630
+        800,
+        1700
       ],
       "Sunday": [
         730,
-        930,
+        900,
         1130
       ]
     },
     "Confessions": {
+      "Wednesday": [
+        {
+          "1800": 30
+        }
+      ],
       "Saturday": [
         {
-          "1530": 45
+          "1500": 60
         }
       ]
     },
     "Adoration": {
-      "Sunday": [
-        {
-          "1900": 120
-        }
-      ],
-      "Wednesday": [
-        {
-          "1330": 120
-        }
-      ]
+      "Is24Hour": true
     }
   },
-  "Saint Francis de Sales": {
-    "ID": 62,
-    "NotionID": "2df29b8f-0e6e-8151-ab18-e5ffb7ce8c25",
-    "Mass Times": {},
-    "Confessions": {},
+  "2df29b8f-0e6e-814c-93d5-ef378a7e5e21": {
+    "ID": 58,
+    "Name": "Saint Francis de Sales",
+    "Mass Times": {
+      "Sunday": [
+        730,
+        1030
+      ]
+    },
+    "Confessions": {
+      "Wednesday": [
+        {
+          "1800": 60
+        }
+      ],
+      "Saturday": [
+        {
+          "1500": 60
+        }
+      ]
+    },
     "Adoration": {}
   },
-  "Saint Anthony of Padua Parish & School": {
+  "2df29b8f-0e6e-814c-bae0-e942686c0400": {
     "ID": 59,
-    "NotionID": "2df29b8f-0e6e-814c-bae0-e942686c0400",
+    "Name": "Saint Anthony of Padua Parish & School",
     "Mass Times": {
       "Saturday": [
         1600
@@ -2119,9 +2171,9 @@
       ]
     }
   },
-  "Saint Raphael Catholic Church": {
+  "2df29b8f-0e6e-814e-8280-f04a8290019e": {
     "ID": 60,
-    "NotionID": "2df29b8f-0e6e-814e-8280-f04a8290019e",
+    "Name": "Saint Raphael Catholic Church",
     "Mass Times": {
       "Saturday": [
         1630
@@ -2173,9 +2225,9 @@
       ]
     }
   },
-  "Saint Leo the Great": {
+  "2df29b8f-0e6e-814f-80a6-eba0c5b588fa": {
     "ID": 61,
-    "NotionID": "2df29b8f-0e6e-814f-80a6-eba0c5b588fa",
+    "Name": "Saint Leo the Great",
     "Mass Times": {
       "Saturday": [
         1600
@@ -2220,9 +2272,16 @@
       ]
     }
   },
-  "Saint Brendan Parish": {
+  "2df29b8f-0e6e-8151-ab18-e5ffb7ce8c25": {
+    "ID": 62,
+    "Name": "Saint Francis de Sales",
+    "Mass Times": {},
+    "Confessions": {},
+    "Adoration": {}
+  },
+  "2df29b8f-0e6e-8152-b105-dd78a3b1d2f4": {
     "ID": 63,
-    "NotionID": "2df29b8f-0e6e-8152-b105-dd78a3b1d2f4",
+    "Name": "Saint Brendan Parish",
     "Mass Times": {
       "Saturday": [
         1700,
@@ -2285,9 +2344,9 @@
       ]
     }
   },
-  "Saint Patrick, Wellington": {
+  "2df29b8f-0e6e-8152-baac-d5eda1c1d328": {
     "ID": 64,
-    "NotionID": "2df29b8f-0e6e-8152-baac-d5eda1c1d328",
+    "Name": "Saint Patrick, Wellington",
     "Mass Times": {
       "Monday": [
         845
@@ -2305,9 +2364,9 @@
     "Confessions": {},
     "Adoration": {}
   },
-  "Our Lady of Grace Catholic Church": {
+  "2df29b8f-0e6e-8154-b0cb-fc6212f98bcc": {
     "ID": 65,
-    "NotionID": "2df29b8f-0e6e-8154-b0cb-fc6212f98bcc",
+    "Name": "Our Lady of Grace Catholic Church",
     "Mass Times": {
       "Saturday": [
         1600
@@ -2345,16 +2404,64 @@
       ]
     }
   },
-  "Saint Andrew Kim, Cleveland": {
+  "2df29b8f-0e6e-8154-b85c-ef5c39efad90": {
     "ID": 66,
-    "NotionID": "2df29b8f-0e6e-8154-b85c-ef5c39efad90",
+    "Name": "Saint Andrew Kim, Cleveland",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Peter Parish": {
+  "2df29b8f-0e6e-8155-8723-ea9777416b47": {
+    "ID": 67,
+    "Name": "Holy Family Parish",
+    "Mass Times": {
+      "Monday": [
+        830
+      ],
+      "Tuesday": [
+        830
+      ],
+      "Wednesday": [
+        830
+      ],
+      "Thursday": [
+        830
+      ],
+      "Friday": [
+        830
+      ],
+      "Saturday": [
+        1630
+      ],
+      "Sunday": [
+        730,
+        930,
+        1130
+      ]
+    },
+    "Confessions": {
+      "Saturday": [
+        {
+          "1530": 45
+        }
+      ]
+    },
+    "Adoration": {
+      "Sunday": [
+        {
+          "1900": 120
+        }
+      ],
+      "Wednesday": [
+        {
+          "1330": 120
+        }
+      ]
+    }
+  },
+  "2df29b8f-0e6e-8155-90fc-da7e364ae164": {
     "ID": 68,
-    "NotionID": "2df29b8f-0e6e-8155-90fc-da7e364ae164",
+    "Name": "Saint Peter Parish",
     "Mass Times": {
       "Saturday": [
         1600
@@ -2385,9 +2492,9 @@
     },
     "Adoration": {}
   },
-  "Saint Jude Church": {
+  "2df29b8f-0e6e-8156-8bbf-d7f9baedbf3c": {
     "ID": 69,
-    "NotionID": "2df29b8f-0e6e-8156-8bbf-d7f9baedbf3c",
+    "Name": "Saint Jude Church",
     "Mass Times": {
       "Saturday": [
         1630
@@ -2427,9 +2534,9 @@
       ]
     }
   },
-  "Saints Peter and Paul Catholic Church": {
+  "2df29b8f-0e6e-8156-aefd-dad5993dc413": {
     "ID": 70,
-    "NotionID": "2df29b8f-0e6e-8156-aefd-dad5993dc413",
+    "Name": "Saints Peter and Paul Catholic Church",
     "Mass Times": {
       "Wednesday": [
         830
@@ -2458,9 +2565,9 @@
     },
     "Adoration": {}
   },
-  "Saint Mel Catholic Church": {
+  "2df29b8f-0e6e-8157-a489-ea71565cf57b": {
     "ID": 71,
-    "NotionID": "2df29b8f-0e6e-8157-a489-ea71565cf57b",
+    "Name": "Saint Mel Catholic Church",
     "Mass Times": {
       "Saturday": [
         1630
@@ -2487,9 +2594,9 @@
     },
     "Adoration": {}
   },
-  "Guardian Angels Catholic Church": {
+  "2df29b8f-0e6e-815a-9b4b-d08db87e8ee2": {
     "ID": 72,
-    "NotionID": "2df29b8f-0e6e-815a-9b4b-d08db87e8ee2",
+    "Name": "Guardian Angels Catholic Church",
     "Mass Times": {
       "Saturday": [
         1700
@@ -2533,16 +2640,16 @@
       ]
     }
   },
-  "Immaculate Conception, Cleveland": {
+  "2df29b8f-0e6e-815c-838f-e65b319eb239": {
     "ID": 73,
-    "NotionID": "2df29b8f-0e6e-815c-838f-e65b319eb239",
+    "Name": "Immaculate Conception, Cleveland",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "Our Lady of Lourdes Parish": {
+  "2df29b8f-0e6e-815d-a722-cf9faea7c0fc": {
     "ID": 74,
-    "NotionID": "2df29b8f-0e6e-815d-a722-cf9faea7c0fc",
+    "Name": "Our Lady of Lourdes Parish",
     "Mass Times": {
       "Saturday": [
         1600
@@ -2555,9 +2662,9 @@
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint John Neumann Church": {
+  "2df29b8f-0e6e-815f-bbd0-cfda6dfa68c9": {
     "ID": 75,
-    "NotionID": "2df29b8f-0e6e-815f-bbd0-cfda6dfa68c9",
+    "Name": "Saint John Neumann Church",
     "Mass Times": {
       "Monday": [
         900
@@ -2609,9 +2716,9 @@
       ]
     }
   },
-  "Our Lady Queen of Peace Church": {
+  "2df29b8f-0e6e-8160-a0b6-e9792b401e99": {
     "ID": 76,
-    "NotionID": "2df29b8f-0e6e-8160-a0b6-e9792b401e99",
+    "Name": "Our Lady Queen of Peace Church",
     "Mass Times": {
       "Saturday": [
         1630
@@ -2645,9 +2752,9 @@
     },
     "Adoration": {}
   },
-  "Saint Peter Parish North Ridgeville": {
+  "2df29b8f-0e6e-8161-ad33-c08aa86b788d": {
     "ID": 77,
-    "NotionID": "2df29b8f-0e6e-8161-ad33-c08aa86b788d",
+    "Name": "Saint Peter Parish North Ridgeville",
     "Mass Times": {
       "Saturday": [
         1600
@@ -2693,9 +2800,9 @@
       ]
     }
   },
-  "Immaculate Heart of Mary Church": {
+  "2df29b8f-0e6e-8162-b336-fae1d9798570": {
     "ID": 78,
-    "NotionID": "2df29b8f-0e6e-8162-b336-fae1d9798570",
+    "Name": "Immaculate Heart of Mary Church",
     "Mass Times": {
       "Saturday": [
         1630
@@ -2735,9 +2842,9 @@
       ]
     }
   },
-  "Saint Bridget of Kildare Parish": {
+  "2df29b8f-0e6e-8164-87b9-f65d2e7da474": {
     "ID": 79,
-    "NotionID": "2df29b8f-0e6e-8164-87b9-f65d2e7da474",
+    "Name": "Saint Bridget of Kildare Parish",
     "Mass Times": {
       "Saturday": [
         1600
@@ -2778,9 +2885,9 @@
       ]
     }
   },
-  "Immaculate Conception Church": {
+  "2df29b8f-0e6e-8164-b56c-cc53b73b4a3b": {
     "ID": 80,
-    "NotionID": "2df29b8f-0e6e-8164-b56c-cc53b73b4a3b",
+    "Name": "Immaculate Conception Church",
     "Mass Times": {
       "Saturday": [
         1600
@@ -2828,9 +2935,9 @@
       ]
     }
   },
-  "Saint Francis Xavier Parish": {
+  "2df29b8f-0e6e-8165-be89-ffb1efbf4512": {
     "ID": 81,
-    "NotionID": "2df29b8f-0e6e-8165-be89-ffb1efbf4512",
+    "Name": "Saint Francis Xavier Parish",
     "Mass Times": {
       "Monday": [
         730
@@ -2882,16 +2989,16 @@
       ]
     }
   },
-  "Immaculate Heart of Mary, Cleveland": {
+  "2df29b8f-0e6e-8166-a588-f94f1d80d87a": {
     "ID": 82,
-    "NotionID": "2df29b8f-0e6e-8166-a588-f94f1d80d87a",
+    "Name": "Immaculate Heart of Mary, Cleveland",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "Holy Spirit Catholic Church": {
+  "2df29b8f-0e6e-8167-a60b-d1b7f7be9da8": {
     "ID": 83,
-    "NotionID": "2df29b8f-0e6e-8167-a60b-d1b7f7be9da8",
+    "Name": "Holy Spirit Catholic Church",
     "Mass Times": {
       "Saturday": [
         1600
@@ -2918,9 +3025,9 @@
       ]
     }
   },
-  "Saint Anselm Catholic Church (The Church of Saint Anselm)": {
+  "2df29b8f-0e6e-8167-abd2-d96cab7fd861": {
     "ID": 84,
-    "NotionID": "2df29b8f-0e6e-8167-abd2-d96cab7fd861",
+    "Name": "Saint Anselm Catholic Church (The Church of Saint Anselm)",
     "Mass Times": {
       "Monday": [
         830
@@ -2957,9 +3064,9 @@
       ]
     }
   },
-  "Saint Augustine Church": {
+  "2df29b8f-0e6e-8169-a5ff-df9f21841526": {
     "ID": 85,
-    "NotionID": "2df29b8f-0e6e-8169-a5ff-df9f21841526",
+    "Name": "Saint Augustine Church",
     "Mass Times": {
       "Saturday": [
         1615
@@ -2987,9 +3094,9 @@
     },
     "Adoration": {}
   },
-  "St. Casimir Parish": {
+  "2df29b8f-0e6e-8169-b8a1-ca63639d578d": {
     "ID": 86,
-    "NotionID": "2df29b8f-0e6e-8169-b8a1-ca63639d578d",
+    "Name": "St. Casimir Parish",
     "Mass Times": {
       "Sunday": [
         1130
@@ -2998,16 +3105,16 @@
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Peter, Cleveland": {
+  "2df29b8f-0e6e-816a-8429-ccdc7d16cbf4": {
     "ID": 87,
-    "NotionID": "2df29b8f-0e6e-816a-8429-ccdc7d16cbf4",
+    "Name": "Saint Peter, Cleveland",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "La Sagrada Familia Catholic Church": {
+  "2df29b8f-0e6e-8170-8f5f-e09d4c01c64d": {
     "ID": 88,
-    "NotionID": "2df29b8f-0e6e-8170-8f5f-e09d4c01c64d",
+    "Name": "La Sagrada Familia Catholic Church",
     "Mass Times": {
       "Wednesday": [
         1830
@@ -3046,9 +3153,9 @@
       ]
     }
   },
-  "Holy Rosary Church": {
+  "2df29b8f-0e6e-8170-ba30-e1933a1ecfda": {
     "ID": 89,
-    "NotionID": "2df29b8f-0e6e-8170-ba30-e1933a1ecfda",
+    "Name": "Holy Rosary Church",
     "Mass Times": {
       "Saturday": [
         830,
@@ -3097,9 +3204,9 @@
       ]
     }
   },
-  "Saint Noel Parish": {
+  "2df29b8f-0e6e-8172-a3dc-d52223d14acb": {
     "ID": 90,
-    "NotionID": "2df29b8f-0e6e-8172-a3dc-d52223d14acb",
+    "Name": "Saint Noel Parish",
     "Mass Times": {
       "Monday": [
         830
@@ -3130,9 +3237,9 @@
       ]
     }
   },
-  "Church of the Resurrection": {
+  "2df29b8f-0e6e-8174-bee3-fdf989432d32": {
     "ID": 91,
-    "NotionID": "2df29b8f-0e6e-8174-bee3-fdf989432d32",
+    "Name": "Church of the Resurrection",
     "Mass Times": {
       "Saturday": [
         1700
@@ -3151,9 +3258,9 @@
     },
     "Adoration": {}
   },
-  "Mary Queen of the Apostles Parish": {
+  "2df29b8f-0e6e-8176-8787-e572904eee14": {
     "ID": 92,
-    "NotionID": "2df29b8f-0e6e-8176-8787-e572904eee14",
+    "Name": "Mary Queen of the Apostles Parish",
     "Mass Times": {
       "Monday": [
         800
@@ -3184,9 +3291,9 @@
     },
     "Adoration": {}
   },
-  "Saint John Cantius Church": {
+  "2df29b8f-0e6e-8176-a3ac-e95c75aace8e": {
     "ID": 93,
-    "NotionID": "2df29b8f-0e6e-8176-a3ac-e95c75aace8e",
+    "Name": "Saint John Cantius Church",
     "Mass Times": {
       "Monday": [
         1800
@@ -3217,9 +3324,9 @@
     },
     "Adoration": {}
   },
-  "Mary Queen of Peace": {
+  "2df29b8f-0e6e-8176-abbc-e8fb7dcbb7ca": {
     "ID": 94,
-    "NotionID": "2df29b8f-0e6e-8176-abbc-e8fb7dcbb7ca",
+    "Name": "Mary Queen of Peace",
     "Mass Times": {
       "Sunday": [
         630,
@@ -3289,9 +3396,9 @@
     },
     "Adoration": {}
   },
-  "Saint Vitus Parish - Župnija Svetega Vida": {
+  "2df29b8f-0e6e-8176-be3b-f23042e45dd1": {
     "ID": 95,
-    "NotionID": "2df29b8f-0e6e-8176-be3b-f23042e45dd1",
+    "Name": "Saint Vitus Parish - Župnija Svetega Vida",
     "Mass Times": {
       "Saturday": [
         1600
@@ -3330,9 +3437,9 @@
     },
     "Adoration": {}
   },
-  "Saint Helen, Newbury": {
+  "2df29b8f-0e6e-8178-b473-d98ff8e84300": {
     "ID": 96,
-    "NotionID": "2df29b8f-0e6e-8178-b473-d98ff8e84300",
+    "Name": "Saint Helen, Newbury",
     "Mass Times": {
       "Saturday": [
         800,
@@ -3368,9 +3475,9 @@
     },
     "Adoration": {}
   },
-  "Saint Paschal Baylon (Saint Paschal Baylon Church)": {
+  "2df29b8f-0e6e-8179-a9a5-ea00e4206a69": {
     "ID": 97,
-    "NotionID": "2df29b8f-0e6e-8179-a9a5-ea00e4206a69",
+    "Name": "Saint Paschal Baylon (Saint Paschal Baylon Church)",
     "Mass Times": {},
     "Confessions": {
       "Saturday": [
@@ -3430,9 +3537,9 @@
       ]
     }
   },
-  "Nativity of the Blessed Virgin Mary Parish (Roman Catholic Church)": {
+  "2df29b8f-0e6e-817a-b836-df0687dff586": {
     "ID": 98,
-    "NotionID": "2df29b8f-0e6e-817a-b836-df0687dff586",
+    "Name": "Nativity of the Blessed Virgin Mary Parish (Roman Catholic Church)",
     "Mass Times": {
       "Saturday": [
         1600
@@ -3468,9 +3575,9 @@
       ]
     }
   },
-  "Church of the Holy Angels": {
+  "2df29b8f-0e6e-817b-a6e8-f5445a11611c": {
     "ID": 99,
-    "NotionID": "2df29b8f-0e6e-817b-a6e8-f5445a11611c",
+    "Name": "Church of the Holy Angels",
     "Mass Times": {
       "Saturday": [
         1700,
@@ -3513,9 +3620,9 @@
       ]
     }
   },
-  "Our Lady of Victory Church": {
+  "2df29b8f-0e6e-817c-981e-f5098c68820a": {
     "ID": 100,
-    "NotionID": "2df29b8f-0e6e-817c-981e-f5098c68820a",
+    "Name": "Our Lady of Victory Church",
     "Mass Times": {
       "Saturday": [
         1745
@@ -3539,9 +3646,9 @@
     },
     "Adoration": {}
   },
-  "Saint Angela Merici Roman Catholic Church": {
+  "2df29b8f-0e6e-8180-9cb6-db73a8a35fed": {
     "ID": 101,
-    "NotionID": "2df29b8f-0e6e-8180-9cb6-db73a8a35fed",
+    "Name": "Saint Angela Merici Roman Catholic Church",
     "Mass Times": {
       "Saturday": [
         1630
@@ -3576,9 +3683,9 @@
     },
     "Adoration": {}
   },
-  "Saint Paul Croatian Church (Hrvatska Crkva Sv. Pavla)": {
+  "2df29b8f-0e6e-8183-9673-e8d4daa1f985": {
     "ID": 102,
-    "NotionID": "2df29b8f-0e6e-8183-9673-e8d4daa1f985",
+    "Name": "Saint Paul Croatian Church (Hrvatska Crkva Sv. Pavla)",
     "Mass Times": {
       "Monday": [
         730
@@ -3619,9 +3726,9 @@
       ]
     }
   },
-  "Holy Martyrs Catholic Church": {
+  "2df29b8f-0e6e-8186-aa82-d23a416bd297": {
     "ID": 103,
-    "NotionID": "2df29b8f-0e6e-8186-aa82-d23a416bd297",
+    "Name": "Holy Martyrs Catholic Church",
     "Mass Times": {
       "Saturday": [
         1630
@@ -3661,9 +3768,9 @@
       ]
     }
   },
-  "Our Lady Help of Christians Catholic Church - Seville": {
+  "2df29b8f-0e6e-8187-b29d-c99b4e19a917": {
     "ID": 104,
-    "NotionID": "2df29b8f-0e6e-8187-b29d-c99b4e19a917",
+    "Name": "Our Lady Help of Christians Catholic Church - Seville",
     "Mass Times": {
       "Saturday": [
         1600
@@ -3675,9 +3782,9 @@
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Mary Magdalene Catholic Community": {
+  "2df29b8f-0e6e-818a-aab0-de40a524ec6b": {
     "ID": 105,
-    "NotionID": "2df29b8f-0e6e-818a-aab0-de40a524ec6b",
+    "Name": "Saint Mary Magdalene Catholic Community",
     "Mass Times": {
       "Saturday": [
         1630
@@ -3708,16 +3815,16 @@
     },
     "Adoration": {}
   },
-  "Saint Barbara, Cleveland": {
+  "2df29b8f-0e6e-818c-84c2-e78c3e9bc0fe": {
     "ID": 106,
-    "NotionID": "2df29b8f-0e6e-818c-84c2-e78c3e9bc0fe",
+    "Name": "Saint Barbara, Cleveland",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint John Vianney Catholic Parish": {
+  "2df29b8f-0e6e-818d-b7d7-d53b1ce69e9b": {
     "ID": 107,
-    "NotionID": "2df29b8f-0e6e-818d-b7d7-d53b1ce69e9b",
+    "Name": "Saint John Vianney Catholic Parish",
     "Mass Times": {
       "Saturday": [
         1600
@@ -3760,9 +3867,9 @@
     },
     "Adoration": {}
   },
-  "Saint Elizabeth Ann Seton Roman Catholic Parish": {
+  "2df29b8f-0e6e-8193-9f95-c63ad29759ea": {
     "ID": 108,
-    "NotionID": "2df29b8f-0e6e-8193-9f95-c63ad29759ea",
+    "Name": "Saint Elizabeth Ann Seton Roman Catholic Parish",
     "Mass Times": {
       "Tuesday": [
         1900
@@ -3799,9 +3906,9 @@
       ]
     }
   },
-  "Saint John Bosco Church": {
+  "2df29b8f-0e6e-8194-8f27-fb0a08cdc072": {
     "ID": 109,
-    "NotionID": "2df29b8f-0e6e-8194-8f27-fb0a08cdc072",
+    "Name": "Saint John Bosco Church",
     "Mass Times": {
       "Saturday": [
         1600
@@ -3876,48 +3983,56 @@
       ]
     }
   },
-  "Saint Joseph Parish": {
-    "ID": 148,
-    "NotionID": "2df29b8f-0e6e-81cd-989a-e4b6ea98273a",
+  "2df29b8f-0e6e-8196-b853-e1c72bc28a23": {
+    "ID": 110,
+    "Name": "Saint Joseph Parish",
     "Mass Times": {
       "Saturday": [
-        1700
+        1630
       ],
       "Sunday": [
         830,
-        1030
+        1100,
+        1700
       ],
       "Monday": [
-        845
+        800
       ],
-      "Tuesday": [
-        845
-      ],
-      "Thursday": [
-        845
+      "Wednesday": [
+        800
       ],
       "Friday": [
-        845
+        800
       ]
     },
     "Confessions": {
+      "Wednesday": [
+        {
+          "845": 45
+        }
+      ],
       "Saturday": [
         {
-          "1530": 60
+          "1500": 60
         }
       ]
     },
     "Adoration": {
+      "Tuesday": [
+        {
+          "900": 660
+        }
+      ],
       "Friday": [
         {
-          "900": 540
+          "900": 0
         }
       ]
     }
   },
-  "Immaculate Conception of Mary": {
+  "2df29b8f-0e6e-8197-81b0-c07ced25f945": {
     "ID": 111,
-    "NotionID": "2df29b8f-0e6e-8197-81b0-c07ced25f945",
+    "Name": "Immaculate Conception of Mary",
     "Mass Times": {
       "Saturday": [
         1700
@@ -3935,9 +4050,9 @@
       ]
     }
   },
-  "Transfiguration Parish": {
+  "2df29b8f-0e6e-8198-811d-d08003f1009e": {
     "ID": 112,
-    "NotionID": "2df29b8f-0e6e-8198-811d-d08003f1009e",
+    "Name": "Transfiguration Parish",
     "Mass Times": {
       "Saturday": [
         1600
@@ -3964,9 +4079,9 @@
     },
     "Adoration": {}
   },
-  "Saint Vincent de Paul Catholic Church (Saint Vincent de Paul Catholic Parish)": {
+  "2df29b8f-0e6e-8198-b44a-ecb8501e19c5": {
     "ID": 113,
-    "NotionID": "2df29b8f-0e6e-8198-b44a-ecb8501e19c5",
+    "Name": "Saint Vincent de Paul Catholic Church (Saint Vincent de Paul Catholic Parish)",
     "Mass Times": {
       "Saturday": [
         1700
@@ -4014,16 +4129,16 @@
       ]
     }
   },
-  "Saint Thomas, Sheffield Lake": {
+  "2df29b8f-0e6e-819c-a36e-e9b2c8f634de": {
     "ID": 114,
-    "NotionID": "2df29b8f-0e6e-819c-a36e-e9b2c8f634de",
+    "Name": "Saint Thomas, Sheffield Lake",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "Our Lady Help of Christians Catholic Church - Litchfield": {
+  "2df29b8f-0e6e-819d-b1b1-e98755961cdf": {
     "ID": 115,
-    "NotionID": "2df29b8f-0e6e-819d-b1b1-e98755961cdf",
+    "Name": "Our Lady Help of Christians Catholic Church - Litchfield",
     "Mass Times": {
       "Saturday": [
         1800
@@ -4053,9 +4168,9 @@
       ]
     }
   },
-  "Saint Bartholomew Parish": {
+  "2df29b8f-0e6e-819e-af51-c403251b35d5": {
     "ID": 116,
-    "NotionID": "2df29b8f-0e6e-819e-af51-c403251b35d5",
+    "Name": "Saint Bartholomew Parish",
     "Mass Times": {
       "Monday": [
         800
@@ -4087,9 +4202,9 @@
     },
     "Adoration": {}
   },
-  "Saint Martin of Tours Parish": {
+  "2df29b8f-0e6e-81a0-a7ea-d9771ccce630": {
     "ID": 117,
-    "NotionID": "2df29b8f-0e6e-81a0-a7ea-d9771ccce630",
+    "Name": "Saint Martin of Tours Parish",
     "Mass Times": {
       "Saturday": [
         1700
@@ -4161,9 +4276,9 @@
       ]
     }
   },
-  "Saint Matthias the Apostle Catholic Church": {
+  "2df29b8f-0e6e-81a1-b271-f89828d3dc11": {
     "ID": 118,
-    "NotionID": "2df29b8f-0e6e-81a1-b271-f89828d3dc11",
+    "Name": "Saint Matthias the Apostle Catholic Church",
     "Mass Times": {
       "Saturday": [
         1600
@@ -4208,9 +4323,9 @@
       ]
     }
   },
-  "Our Lady Help of Christians Catholic Church - Lodi": {
+  "2df29b8f-0e6e-81a4-8acc-ed916335ae59": {
     "ID": 119,
-    "NotionID": "2df29b8f-0e6e-81a4-8acc-ed916335ae59",
+    "Name": "Our Lady Help of Christians Catholic Church - Lodi",
     "Mass Times": {
       "Sunday": [
         830
@@ -4228,9 +4343,9 @@
     },
     "Adoration": {}
   },
-  "Saint Cyprian Parish": {
+  "2df29b8f-0e6e-81a5-8676-d4f89d31cb67": {
     "ID": 120,
-    "NotionID": "2df29b8f-0e6e-81a5-8676-d4f89d31cb67",
+    "Name": "Saint Cyprian Parish",
     "Mass Times": {
       "Saturday": [
         1700
@@ -4249,9 +4364,84 @@
       ]
     }
   },
-  "Saint Mary Parish": {
+  "2df29b8f-0e6e-81a5-905b-e5fea07f297e": {
+    "ID": 121,
+    "Name": "Saint Mary Parish",
+    "Mass Times": {
+      "Sunday": [
+        800,
+        1000,
+        1200
+      ],
+      "Monday": [
+        730
+      ],
+      "Tuesday": [
+        830
+      ],
+      "Wednesday": [
+        1200
+      ],
+      "Thursday": [
+        730
+      ],
+      "Friday": [
+        730
+      ],
+      "Saturday": [
+        830,
+        1630
+      ]
+    },
+    "Confessions": {
+      "Saturday": [
+        {
+          "1500": 60
+        }
+      ]
+    },
+    "Adoration": {
+      "Wednesday": [
+        {
+          "1230": 420
+        }
+      ]
+    }
+  },
+  "2df29b8f-0e6e-81a7-9041-f1ff47219753": {
+    "ID": 122,
+    "Name": "Church of Saint Mary of the Assumption",
+    "Mass Times": {
+      "Monday": [
+        745
+      ],
+      "Tuesday": [
+        745
+      ],
+      "Wednesday": [
+        745
+      ],
+      "Thursday": [
+        745
+      ],
+      "Friday": [
+        745
+      ],
+      "Saturday": [
+        745,
+        1700
+      ],
+      "Sunday": [
+        830,
+        1015
+      ]
+    },
+    "Confessions": {},
+    "Adoration": {}
+  },
+  "2df29b8f-0e6e-81a9-922c-ef58001e9be0": {
     "ID": 123,
-    "NotionID": "2df29b8f-0e6e-81a9-922c-ef58001e9be0",
+    "Name": "Saint Mary Parish",
     "Mass Times": {
       "Monday": [
         900
@@ -4298,40 +4488,38 @@
       ]
     }
   },
-  "Church of Saint Mary of the Assumption": {
-    "ID": 122,
-    "NotionID": "2df29b8f-0e6e-81a7-9041-f1ff47219753",
+  "2df29b8f-0e6e-81aa-982e-e6c82394299f": {
+    "ID": 124,
+    "Name": "Saint Mary of the Immaculate Conception",
     "Mass Times": {
-      "Monday": [
-        745
-      ],
-      "Tuesday": [
-        745
-      ],
-      "Wednesday": [
-        745
-      ],
-      "Thursday": [
-        745
-      ],
-      "Friday": [
-        745
-      ],
       "Saturday": [
-        745,
-        1700
+        1600
       ],
       "Sunday": [
-        830,
-        1015
+        915
+      ],
+      "Tuesday": [
+        800
+      ],
+      "Wednesday": [
+        800
+      ],
+      "Thursday": [
+        800
       ]
     },
-    "Confessions": {},
+    "Confessions": {
+      "Saturday": [
+        {
+          "1500": 30
+        }
+      ]
+    },
     "Adoration": {}
   },
-  "Saint Anthony of Padua Church": {
+  "2df29b8f-0e6e-81aa-b998-f339768a3a5d": {
     "ID": 125,
-    "NotionID": "2df29b8f-0e6e-81aa-b998-f339768a3a5d",
+    "Name": "Saint Anthony of Padua Church",
     "Mass Times": {
       "Saturday": [
         1630
@@ -4367,9 +4555,9 @@
     },
     "Adoration": {}
   },
-  "Saints Cosmas & Damian Catholic Church": {
+  "2df29b8f-0e6e-81ab-89b5-dcfacd3ebe3e": {
     "ID": 126,
-    "NotionID": "2df29b8f-0e6e-81ab-89b5-dcfacd3ebe3e",
+    "Name": "Saints Cosmas & Damian Catholic Church",
     "Mass Times": {
       "Monday": [
         830
@@ -4410,9 +4598,9 @@
       "Is24Hour": true
     }
   },
-  "Saint Matthew Parish": {
+  "2df29b8f-0e6e-81ae-8208-efc0be0a9660": {
     "ID": 127,
-    "NotionID": "2df29b8f-0e6e-81ae-8208-efc0be0a9660",
+    "Name": "Saint Matthew Parish",
     "Mass Times": {
       "Sunday": [
         1030
@@ -4439,9 +4627,9 @@
     },
     "Adoration": {}
   },
-  "Saint John of the Cross ": {
+  "2df29b8f-0e6e-81ae-b240-e92ffbaacef3": {
     "ID": 128,
-    "NotionID": "2df29b8f-0e6e-81ae-b240-e92ffbaacef3",
+    "Name": "Saint John of the Cross ",
     "Mass Times": {
       "Saturday": [
         1600
@@ -4474,16 +4662,16 @@
     },
     "Adoration": {}
   },
-  "Saint Boniface, Cleveland": {
+  "2df29b8f-0e6e-81b2-88c7-e60f58e7ab91": {
     "ID": 129,
-    "NotionID": "2df29b8f-0e6e-81b2-88c7-e60f58e7ab91",
+    "Name": "Saint Boniface, Cleveland",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Thomas More Parish": {
+  "2df29b8f-0e6e-81b3-8d2a-efc0d08594dc": {
     "ID": 130,
-    "NotionID": "2df29b8f-0e6e-81b3-8d2a-efc0d08594dc",
+    "Name": "Saint Thomas More Parish",
     "Mass Times": {},
     "Confessions": {
       "Saturday": [
@@ -4494,9 +4682,9 @@
     },
     "Adoration": {}
   },
-  "Queen of Heaven Parish": {
+  "2df29b8f-0e6e-81b4-b63f-e3476b5b6578": {
     "ID": 131,
-    "NotionID": "2df29b8f-0e6e-81b4-b63f-e3476b5b6578",
+    "Name": "Queen of Heaven Parish",
     "Mass Times": {
       "Saturday": [
         830,
@@ -4538,9 +4726,9 @@
       "Is24Hour": true
     }
   },
-  "Our Lady Help of Christians Catholic Church - Nova": {
+  "2df29b8f-0e6e-81b8-8326-fc3a0424e6c0": {
     "ID": 132,
-    "NotionID": "2df29b8f-0e6e-81b8-8326-fc3a0424e6c0",
+    "Name": "Our Lady Help of Christians Catholic Church - Nova",
     "Mass Times": {
       "Sunday": [
         1100
@@ -4549,9 +4737,9 @@
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Agnes - Elyria": {
+  "2df29b8f-0e6e-81ba-b21e-d4999913b534": {
     "ID": 133,
-    "NotionID": "2df29b8f-0e6e-81ba-b21e-d4999913b534",
+    "Name": "Saint Agnes - Elyria",
     "Mass Times": {
       "Tuesday": [
         900
@@ -4584,9 +4772,9 @@
       ]
     }
   },
-  "Holy Redeemer Roman Catholic Parish": {
+  "2df29b8f-0e6e-81bb-b5b1-f4122013ae4b": {
     "ID": 134,
-    "NotionID": "2df29b8f-0e6e-81bb-b5b1-f4122013ae4b",
+    "Name": "Holy Redeemer Roman Catholic Parish",
     "Mass Times": {
       "Saturday": [
         1600
@@ -4610,9 +4798,9 @@
     },
     "Adoration": {}
   },
-  "Saint Eugene Catholic Church": {
+  "2df29b8f-0e6e-81bc-a078-f953cb64d946": {
     "ID": 135,
-    "NotionID": "2df29b8f-0e6e-81bc-a078-f953cb64d946",
+    "Name": "Saint Eugene Catholic Church",
     "Mass Times": {
       "Monday": [
         1100
@@ -4647,9 +4835,9 @@
     },
     "Adoration": {}
   },
-  "Sacred Heart of Jesus Catholic Church": {
+  "2df29b8f-0e6e-81be-a332-f5991e2c9ed6": {
     "ID": 136,
-    "NotionID": "2df29b8f-0e6e-81be-a332-f5991e2c9ed6",
+    "Name": "Sacred Heart of Jesus Catholic Church",
     "Mass Times": {
       "Saturday": [
         800,
@@ -4687,9 +4875,9 @@
       "Is24Hour": true
     }
   },
-  "Blessed Trinity Parish": {
+  "2df29b8f-0e6e-81be-a725-f80109a7b195": {
     "ID": 137,
-    "NotionID": "2df29b8f-0e6e-81be-a725-f80109a7b195",
+    "Name": "Blessed Trinity Parish",
     "Mass Times": {
       "Saturday": [
         1700
@@ -4747,9 +4935,9 @@
       ]
     }
   },
-  "Saint Mark Parish": {
+  "2df29b8f-0e6e-81c1-9be5-c7d0bef03c29": {
     "ID": 138,
-    "NotionID": "2df29b8f-0e6e-81c1-9be5-c7d0bef03c29",
+    "Name": "Saint Mark Parish",
     "Mass Times": {
       "Saturday": [
         1600
@@ -4777,9 +4965,9 @@
     },
     "Adoration": {}
   },
-  "Saint John Nepomucene Parish": {
+  "2df29b8f-0e6e-81c3-9376-c42b78bffd7f": {
     "ID": 139,
-    "NotionID": "2df29b8f-0e6e-81c3-9376-c42b78bffd7f",
+    "Name": "Saint John Nepomucene Parish",
     "Mass Times": {
       "Saturday": [
         1600
@@ -4797,9 +4985,9 @@
     },
     "Adoration": {}
   },
-  "Saint Basil the Great Catholic Church": {
+  "2df29b8f-0e6e-81c3-a009-ee24ebdf3043": {
     "ID": 140,
-    "NotionID": "2df29b8f-0e6e-81c3-a009-ee24ebdf3043",
+    "Name": "Saint Basil the Great Catholic Church",
     "Mass Times": {
       "Monday": [
         800
@@ -4846,9 +5034,9 @@
       ]
     }
   },
-  "Saint Colette Catholic Church": {
+  "2df29b8f-0e6e-81c3-b978-d3fb14d33a5d": {
     "ID": 141,
-    "NotionID": "2df29b8f-0e6e-81c3-b978-d3fb14d33a5d",
+    "Name": "Saint Colette Catholic Church",
     "Mass Times": {
       "Monday": [
         1815
@@ -4891,16 +5079,16 @@
       ]
     }
   },
-  "Saint Augustine, Barberton": {
+  "2df29b8f-0e6e-81c4-84e2-cba95eaada54": {
     "ID": 142,
-    "NotionID": "2df29b8f-0e6e-81c4-84e2-cba95eaada54",
+    "Name": "Saint Augustine, Barberton",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Rocco Catholic Church (Saint Rocco Parish)": {
+  "2df29b8f-0e6e-81c4-a283-dac7310c10f5": {
     "ID": 143,
-    "NotionID": "2df29b8f-0e6e-81c4-a283-dac7310c10f5",
+    "Name": "Saint Rocco Catholic Church (Saint Rocco Parish)",
     "Mass Times": {
       "Saturday": [
         645,
@@ -4972,9 +5160,9 @@
       ]
     }
   },
-  "The Cathedral of Saint John the Evangelist": {
+  "2df29b8f-0e6e-81c6-9100-ce9b22c7f19d": {
     "ID": 144,
-    "NotionID": "2df29b8f-0e6e-81c6-9100-ce9b22c7f19d",
+    "Name": "The Cathedral of Saint John the Evangelist",
     "Mass Times": {
       "Sunday": [
         830,
@@ -5063,9 +5251,9 @@
       ]
     }
   },
-  "Saint Edward Roman Catholic Parish": {
+  "2df29b8f-0e6e-81c6-a639-e4e62c8e6a5f": {
     "ID": 145,
-    "NotionID": "2df29b8f-0e6e-81c6-a639-e4e62c8e6a5f",
+    "Name": "Saint Edward Roman Catholic Parish",
     "Mass Times": {
       "Monday": [
         800
@@ -5121,9 +5309,9 @@
       ]
     }
   },
-  "Divine Word Catholic Church": {
+  "2df29b8f-0e6e-81c8-bef3-de60123024dd": {
     "ID": 146,
-    "NotionID": "2df29b8f-0e6e-81c8-bef3-de60123024dd",
+    "Name": "Divine Word Catholic Church",
     "Mass Times": {
       "Saturday": [
         1630
@@ -5163,9 +5351,9 @@
       ]
     }
   },
-  "Saint Edward, Parkman": {
+  "2df29b8f-0e6e-81c9-a620-f7a8846c02d7": {
     "ID": 147,
-    "NotionID": "2df29b8f-0e6e-81c9-a620-f7a8846c02d7",
+    "Name": "Saint Edward, Parkman",
     "Mass Times": {
       "Saturday": [
         1700
@@ -5206,9 +5394,48 @@
       ]
     }
   },
-  "Church of Saint Casimir / Parafia Sw. Kazimierza": {
+  "2df29b8f-0e6e-81cd-989a-e4b6ea98273a": {
+    "ID": 148,
+    "Name": "Saint Joseph Parish",
+    "Mass Times": {
+      "Saturday": [
+        1700
+      ],
+      "Sunday": [
+        830,
+        1030
+      ],
+      "Monday": [
+        845
+      ],
+      "Tuesday": [
+        845
+      ],
+      "Thursday": [
+        845
+      ],
+      "Friday": [
+        845
+      ]
+    },
+    "Confessions": {
+      "Saturday": [
+        {
+          "1530": 60
+        }
+      ]
+    },
+    "Adoration": {
+      "Friday": [
+        {
+          "900": 540
+        }
+      ]
+    }
+  },
+  "2df29b8f-0e6e-81ce-bb19-d214c32ef1f9": {
     "ID": 149,
-    "NotionID": "2df29b8f-0e6e-81ce-bb19-d214c32ef1f9",
+    "Name": "Church of Saint Casimir / Parafia Sw. Kazimierza",
     "Mass Times": {
       "Saturday": [
         1700
@@ -5220,9 +5447,9 @@
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Rita Parish": {
+  "2df29b8f-0e6e-81cf-854d-f78f77a2f115": {
     "ID": 150,
-    "NotionID": "2df29b8f-0e6e-81cf-854d-f78f77a2f115",
+    "Name": "Saint Rita Parish",
     "Mass Times": {
       "Monday": [
         830
@@ -5263,9 +5490,9 @@
       ]
     }
   },
-  "Saint Teresa of Avila Parish": {
+  "2df29b8f-0e6e-81cf-85e0-d2ba27a6fca5": {
     "ID": 151,
-    "NotionID": "2df29b8f-0e6e-81cf-85e0-d2ba27a6fca5",
+    "Name": "Saint Teresa of Avila Parish",
     "Mass Times": {
       "Saturday": [
         1630
@@ -5296,16 +5523,16 @@
       ]
     }
   },
-  "Saint Elizabeth of Hungry, Cleveland": {
+  "2df29b8f-0e6e-81cf-aae4-ef161a4d16fd": {
     "ID": 152,
-    "NotionID": "2df29b8f-0e6e-81cf-aae4-ef161a4d16fd",
+    "Name": "Saint Elizabeth of Hungry, Cleveland",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "Sacred Heart of Jesus Parish": {
+  "2df29b8f-0e6e-81d3-9423-f9376c490bf5": {
     "ID": 153,
-    "NotionID": "2df29b8f-0e6e-81d3-9423-f9376c490bf5",
+    "Name": "Sacred Heart of Jesus Parish",
     "Mass Times": {
       "Saturday": [
         1600
@@ -5329,9 +5556,9 @@
     },
     "Adoration": {}
   },
-  "Holy Name Church": {
+  "2df29b8f-0e6e-81d3-985c-f49700e2f22b": {
     "ID": 154,
-    "NotionID": "2df29b8f-0e6e-81d3-985c-f49700e2f22b",
+    "Name": "Holy Name Church",
     "Mass Times": {
       "Monday": [
         800
@@ -5373,9 +5600,9 @@
       ]
     }
   },
-  "Saint Agnes + Our Lady of Fatima Catholic Church": {
+  "2df29b8f-0e6e-81d6-b944-dd8d452255c6": {
     "ID": 155,
-    "NotionID": "2df29b8f-0e6e-81d6-b944-dd8d452255c6",
+    "Name": "Saint Agnes + Our Lady of Fatima Catholic Church",
     "Mass Times": {
       "Sunday": [
         830,
@@ -5394,9 +5621,9 @@
     },
     "Adoration": {}
   },
-  "The Shrine Church of Saint Stanislaus, Bishop & Martyr": {
+  "2df29b8f-0e6e-81d8-a456-d847be4f7a45": {
     "ID": 156,
-    "NotionID": "2df29b8f-0e6e-81d8-a456-d847be4f7a45",
+    "Name": "The Shrine Church of Saint Stanislaus, Bishop & Martyr",
     "Mass Times": {
       "Saturday": [
         830,
@@ -5440,9 +5667,9 @@
     },
     "Adoration": {}
   },
-  "Our Lady of Angels": {
+  "2df29b8f-0e6e-81db-9839-fc6973d11f9a": {
     "ID": 157,
-    "NotionID": "2df29b8f-0e6e-81db-9839-fc6973d11f9a",
+    "Name": "Our Lady of Angels",
     "Mass Times": {
       "Saturday": [
         1600
@@ -5518,9 +5745,9 @@
       ]
     }
   },
-  "Saints Peter and Paul": {
+  "2df29b8f-0e6e-81dc-9ab8-ccf6aa935093": {
     "ID": 158,
-    "NotionID": "2df29b8f-0e6e-81dc-9ab8-ccf6aa935093",
+    "Name": "Saints Peter and Paul",
     "Mass Times": {
       "Saturday": [
         1600
@@ -5550,9 +5777,30 @@
     },
     "Adoration": {}
   },
-  "Saint Peter Catholic Church": {
+  "2df29b8f-0e6e-81dd-b16a-e02449e10e51": {
+    "ID": 159,
+    "Name": "Saint Mary",
+    "Mass Times": {
+      "Sunday": [
+        830,
+        1030
+      ],
+      "Saturday": [
+        1600
+      ],
+      "Tuesday": [
+        900
+      ],
+      "Thursday": [
+        900
+      ]
+    },
+    "Confessions": {},
+    "Adoration": {}
+  },
+  "2df29b8f-0e6e-81df-9251-fd169f9c32c8": {
     "ID": 160,
-    "NotionID": "2df29b8f-0e6e-81df-9251-fd169f9c32c8",
+    "Name": "Saint Peter Catholic Church",
     "Mass Times": {
       "Wednesday": [
         1600
@@ -5582,9 +5830,9 @@
       ]
     }
   },
-  "Our Lady of Guadalupe Parish": {
+  "2df29b8f-0e6e-81e2-8106-f688484a67b3": {
     "ID": 161,
-    "NotionID": "2df29b8f-0e6e-81e2-8106-f688484a67b3",
+    "Name": "Our Lady of Guadalupe Parish",
     "Mass Times": {
       "Saturday": [
         1630
@@ -5643,9 +5891,9 @@
       ]
     }
   },
-  "Saint Monica Catholic Church": {
+  "2df29b8f-0e6e-81e2-b6d1-fa7fb4a721d4": {
     "ID": 162,
-    "NotionID": "2df29b8f-0e6e-81e2-b6d1-fa7fb4a721d4",
+    "Name": "Saint Monica Catholic Church",
     "Mass Times": {
       "Saturday": [
         1600
@@ -5685,9 +5933,9 @@
       ]
     }
   },
-  "Prince of Peace - Barberton": {
+  "2df29b8f-0e6e-81e4-abe1-c2099acbb0d6": {
     "ID": 163,
-    "NotionID": "2df29b8f-0e6e-81e4-abe1-c2099acbb0d6",
+    "Name": "Prince of Peace - Barberton",
     "Mass Times": {
       "Saturday": [
         1600
@@ -5740,9 +5988,9 @@
       ]
     }
   },
-  "Saint Stephen Roman Catholic Church": {
+  "2df29b8f-0e6e-81e8-acd2-e84eb915b03c": {
     "ID": 164,
-    "NotionID": "2df29b8f-0e6e-81e8-acd2-e84eb915b03c",
+    "Name": "Saint Stephen Roman Catholic Church",
     "Mass Times": {
       "Saturday": [
         930,
@@ -5795,9 +6043,9 @@
       ]
     }
   },
-  "Saint Frances Xavier Cabrini Catholic Church": {
+  "2df29b8f-0e6e-81ea-b210-de635137d18a": {
     "ID": 165,
-    "NotionID": "2df29b8f-0e6e-81ea-b210-de635137d18a",
+    "Name": "Saint Frances Xavier Cabrini Catholic Church",
     "Mass Times": {
       "Thursday": [
         900
@@ -5827,9 +6075,9 @@
       ]
     }
   },
-  "Our Lady of Mount Carmel Roman Catholic Church": {
+  "2df29b8f-0e6e-81ef-b72d-d3e64b95baf6": {
     "ID": 166,
-    "NotionID": "2df29b8f-0e6e-81ef-b72d-d3e64b95baf6",
+    "Name": "Our Lady of Mount Carmel Roman Catholic Church",
     "Mass Times": {
       "Sunday": [
         800,
@@ -5864,9 +6112,9 @@
       ]
     }
   },
-  "Saint Luke": {
+  "2df29b8f-0e6e-81f0-8650-c85bc941155c": {
     "ID": 167,
-    "NotionID": "2df29b8f-0e6e-81f0-8650-c85bc941155c",
+    "Name": "Saint Luke",
     "Mass Times": {
       "Monday": [
         815
@@ -5901,9 +6149,9 @@
       ]
     }
   },
-  "Avon Catholic Community - Holy Trinity": {
+  "2df29b8f-0e6e-81f3-b3a5-d226ca83f6db": {
     "ID": 168,
-    "NotionID": "2df29b8f-0e6e-81f3-b3a5-d226ca83f6db",
+    "Name": "Avon Catholic Community - Holy Trinity",
     "Mass Times": {
       "Saturday": [
         1700
@@ -5944,9 +6192,9 @@
       ]
     }
   },
-  "Church of Saint Clare": {
+  "2df29b8f-0e6e-81f5-9cf7-fbc2a7e4639c": {
     "ID": 169,
-    "NotionID": "2df29b8f-0e6e-81f5-9cf7-fbc2a7e4639c",
+    "Name": "Church of Saint Clare",
     "Mass Times": {},
     "Confessions": {
       "Saturday": [
@@ -5971,9 +6219,9 @@
       ]
     }
   },
-  "Saint Albert the Great Roman Catholic Parish": {
+  "2df29b8f-0e6e-81f5-a006-f4af8a897af5": {
     "ID": 170,
-    "NotionID": "2df29b8f-0e6e-81f5-a006-f4af8a897af5",
+    "Name": "Saint Albert the Great Roman Catholic Parish",
     "Mass Times": {
       "Monday": [
         715,
@@ -6029,9 +6277,9 @@
       ]
     }
   },
-  "Saint Aloysius Parish": {
+  "2df29b8f-0e6e-81f5-befc-ca6a7c6dd8b6": {
     "ID": 171,
-    "NotionID": "2df29b8f-0e6e-81f5-befc-ca6a7c6dd8b6",
+    "Name": "Saint Aloysius Parish",
     "Mass Times": {
       "Sunday": [
         1000
@@ -6052,9 +6300,9 @@
     },
     "Adoration": {}
   },
-  "Saint Bernard Parish": {
+  "2df29b8f-0e6e-81f7-9e37-de6b59669d8e": {
     "ID": 172,
-    "NotionID": "2df29b8f-0e6e-81f7-9e37-de6b59669d8e",
+    "Name": "Saint Bernard Parish",
     "Mass Times": {
       "Saturday": [
         1630
@@ -6094,9 +6342,9 @@
     },
     "Adoration": {}
   },
-  "Immaculate Conception Catholic Church": {
+  "2df29b8f-0e6e-81f7-a797-d2cdfcc637c3": {
     "ID": 173,
-    "NotionID": "2df29b8f-0e6e-81f7-a797-d2cdfcc637c3",
+    "Name": "Immaculate Conception Catholic Church",
     "Mass Times": {
       "Saturday": [
         1630
@@ -6177,9 +6425,9 @@
       ]
     }
   },
-  "Saint Christopher Parish": {
+  "2df29b8f-0e6e-81f9-84be-f9ac5b0e11a3": {
     "ID": 174,
-    "NotionID": "2df29b8f-0e6e-81f9-84be-f9ac5b0e11a3",
+    "Name": "Saint Christopher Parish",
     "Mass Times": {
       "Saturday": [
         1700
@@ -6214,9 +6462,9 @@
     },
     "Adoration": {}
   },
-  "Avon Catholic Community - Saint Mary of the Immaculate Conception": {
+  "2df29b8f-0e6e-81fb-bb0b-fbcc16cd3fde": {
     "ID": 175,
-    "NotionID": "2df29b8f-0e6e-81fb-bb0b-fbcc16cd3fde",
+    "Name": "Avon Catholic Community - Saint Mary of the Immaculate Conception",
     "Mass Times": {
       "Saturday": [
         830,
@@ -6257,9 +6505,9 @@
       ]
     }
   },
-  "Saint Mary of the Falls": {
+  "2df29b8f-0e6e-81fc-916c-f75035916518": {
     "ID": 176,
-    "NotionID": "2df29b8f-0e6e-81fc-916c-f75035916518",
+    "Name": "Saint Mary of the Falls",
     "Mass Times": {
       "Saturday": [
         1700
@@ -6296,9 +6544,9 @@
       ]
     }
   },
-  "Sacred Heart, Oberlin": {
+  "2df29b8f-0e6e-81fd-b187-d211df45fab2": {
     "ID": 177,
-    "NotionID": "2df29b8f-0e6e-81fd-b187-d211df45fab2",
+    "Name": "Sacred Heart, Oberlin",
     "Mass Times": {
       "Thursday": [
         1000
@@ -6316,9 +6564,9 @@
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Patrick Church West Park ": {
+  "2df29b8f-0e6e-81fe-b3d8-c663c2c6936a": {
     "ID": 178,
-    "NotionID": "2df29b8f-0e6e-81fe-b3d8-c663c2c6936a",
+    "Name": "Saint Patrick Church West Park ",
     "Mass Times": {
       "Tuesday": [
         1900
@@ -6348,9 +6596,9 @@
       ]
     }
   },
-  "Saint Malachi Oratory": {
+  "2e029b8f-0e6e-8026-9c91-f00608cfd6f1": {
     "ID": 179,
-    "NotionID": "2e029b8f-0e6e-8026-9c91-f00608cfd6f1",
+    "Name": "Saint Malachi Oratory",
     "Mass Times": {
       "Sunday": [
         1000
@@ -6377,9 +6625,9 @@
       ]
     }
   },
-  "Saint Mary (Our Lady of the Assumption) - Elyria": {
+  "2e029b8f-0e6e-802b-bcdd-d544b5fe2c50": {
     "ID": 180,
-    "NotionID": "2e029b8f-0e6e-802b-bcdd-d544b5fe2c50",
+    "Name": "Saint Mary (Our Lady of the Assumption) - Elyria",
     "Mass Times": {
       "Saturday": [
         1630
@@ -6415,9 +6663,9 @@
       ]
     }
   },
-  "Saint Clement - Lakewood": {
+  "2e029b8f-0e6e-8034-8a4f-f52734997709": {
     "ID": 181,
-    "NotionID": "2e029b8f-0e6e-8034-8a4f-f52734997709",
+    "Name": "Saint Clement - Lakewood",
     "Mass Times": {
       "Thursday": [
         815
@@ -6444,9 +6692,9 @@
       ]
     }
   },
-  "Saint John the Baptist Parish": {
+  "2e029b8f-0e6e-8040-96c2-cf5cf3f2491c": {
     "ID": 182,
-    "NotionID": "2e029b8f-0e6e-8040-96c2-cf5cf3f2491c",
+    "Name": "Saint John the Baptist Parish",
     "Mass Times": {
       "Sunday": [
         1000,
@@ -6471,9 +6719,9 @@
       ]
     }
   },
-  "Saints Robert & William": {
+  "2e029b8f-0e6e-8059-82f1-f88866826fa8": {
     "ID": 183,
-    "NotionID": "2e029b8f-0e6e-8059-82f1-f88866826fa8",
+    "Name": "Saints Robert & William",
     "Mass Times": {
       "Saturday": [
         830,
@@ -6509,9 +6757,9 @@
     },
     "Adoration": {}
   },
-  "Saint Vincent de Paul Church West Park": {
+  "2e029b8f-0e6e-805b-8383-c405ee328862": {
     "ID": 184,
-    "NotionID": "2e029b8f-0e6e-805b-8383-c405ee328862",
+    "Name": "Saint Vincent de Paul Church West Park",
     "Mass Times": {
       "Monday": [
         830
@@ -6547,9 +6795,9 @@
       ]
     }
   },
-  "Saint James": {
+  "2e029b8f-0e6e-80a1-a790-d48824b5e2a8": {
     "ID": 185,
-    "NotionID": "2e029b8f-0e6e-80a1-a790-d48824b5e2a8",
+    "Name": "Saint James",
     "Mass Times": {
       "Friday": [
         815
@@ -6581,9 +6829,9 @@
       ]
     }
   },
-  "Saint Andrew the Apostle - Norton": {
+  "2e029b8f-0e6e-80cd-b8c5-f2c997d60cda": {
     "ID": 186,
-    "NotionID": "2e029b8f-0e6e-80cd-b8c5-f2c997d60cda",
+    "Name": "Saint Andrew the Apostle - Norton",
     "Mass Times": {
       "Saturday": [
         800,
@@ -6635,9 +6883,9 @@
       ]
     }
   },
-  "Saint Julie Billiart ": {
+  "2e029b8f-0e6e-80df-840e-c265e2dc9796": {
     "ID": 187,
-    "NotionID": "2e029b8f-0e6e-80df-840e-c265e2dc9796",
+    "Name": "Saint Julie Billiart ",
     "Mass Times": {
       "Saturday": [
         1700
@@ -6671,9 +6919,9 @@
       ]
     }
   },
-  "Communion of Saints Parish - Saint Philomena": {
+  "2e529b8f-0e6e-804c-8847-db1eedddcf8d": {
     "ID": 188,
-    "NotionID": "2e529b8f-0e6e-804c-8847-db1eedddcf8d",
+    "Name": "Communion of Saints Parish - Saint Philomena",
     "Mass Times": {
       "Sunday": [
         1000
@@ -6688,16 +6936,16 @@
     },
     "Adoration": {}
   },
-  "": {
+  "2e629b8f-0e6e-8066-b259-ecbfde37f6d6": {
     "ID": 189,
-    "NotionID": "2e629b8f-0e6e-8066-b259-ecbfde37f6d6",
+    "Name": "",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
   },
-  "Saint Sebastian Parish": {
+  "2ef29b8f-0e6e-80f7-b685-fa4fea6f9838": {
     "ID": 190,
-    "NotionID": "2ef29b8f-0e6e-80f7-b685-fa4fea6f9838",
+    "Name": "Saint Sebastian Parish",
     "Mass Times": {
       "Monday": [
         800

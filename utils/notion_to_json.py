@@ -193,7 +193,7 @@ def parish_to_dict(parish: FullParishData, parish_id: int) -> dict:
     """Convert FullParishData to a dictionary for reference.py consumption."""
     return {
         "ID": parish_id,
-        "NotionID": parish.notion_id,
+        "Name": parish.name,
         "Mass Times": _group_mass_times(parish.mass_times),
         "Confessions": _group_confessions(parish.confessions),
         "Adoration": _format_adoration(parish.adoration),
@@ -208,9 +208,9 @@ async def main() -> str:
 
     parishes = await fetch_all_parishes(client, database_id)
 
-    # Export as dict keyed by parish name, with sequential IDs
+    # Export as dict keyed by NotionID
     export_data = {
-        p.name: parish_to_dict(p, idx + 1)
+        p.notion_id: parish_to_dict(p, idx + 1)
         for idx, p in enumerate(parishes)
     }
 
