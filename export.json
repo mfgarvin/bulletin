@@ -4948,25 +4948,25 @@
     "phone": "(330)836-2233",
     "website": "https://www.stsebastian.org",
     "lonlat": null,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0689/20260308B.pdf",
-    "timestamp": "2026-03-14",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0689/20260322B.pdf",
+    "timestamp": "2026-03-28",
     "mass_times": [
-      "Sunday: 9:00AM, 11:00AM",
-      "Monday: 8:00AM - Weekday Mass",
-      "Tuesday: 8:00AM - Weekday Mass",
-      "Wednesday: 8:00AM - Weekday Mass",
-      "Thursday: 8:05AM - Weekday Mass, 7:00PM - Mass for the Sanctification of Priests",
-      "Friday: 8:00AM - Weekday Mass",
-      "Saturday: 8:00AM - Weekday Mass, 4:30PM - Saturday Vigil"
+      "Sunday: 9:00AM, 11:00AM, 9:00AM - Easter Sunday, 11:00AM - Easter Sunday",
+      "Monday: 8:00AM",
+      "Tuesday: 8:00AM",
+      "Wednesday: 8:00AM, 7:00PM - Tenebrae service (Holy Week)",
+      "Thursday: 8:05AM, 7:00PM - Holy Thursday: Mass of the Lord's Supper",
+      "Friday: 8:00AM",
+      "Saturday: 8:00AM, 4:30PM - Vigil, 9:00PM - Easter Vigil Mass"
     ],
     "confessions": [
       "Tuesday: 7:00PM to 7:30PM",
       "Friday: 4:00PM to 5:00PM",
-      "Saturday: 9:30AM to 10:00AM - Or by appointment"
+      "Saturday: 9:30AM to 10:00AM"
     ],
     "adoration": [
       "Tuesday: 8:30AM to 7:40PM - Benediction at 19:40"
     ],
-    "events_summary": "St. Sebastian Parish’s Lenten Mission with Fr. Nathan Cromly runs Sunday–Tuesday, March 8–10 at 7:00 PM in the church, with on-site childcare available. Men are invited to the free Men’s Breakfast Club (“The Journey Home”) on Saturday, March 14 at 8:45 AM in Zwisler Hall, and everyone is welcome to the Tolkien presentation on Sunday, March 15 at 2:00 PM. Other upcoming highlights include Martha’s Day Out on Saturday, March 21 (8:00 AM–3:00 PM) and a special Mass for the Sanctification of Priests on Thursday, March 19 at 7:00 PM followed by a Holy Hour."
+    "events_summary": "St. Sebastian is preparing for Holy Week and Easter, including Tenebrae on Wednesday, April 1 at 7:00 PM, Holy Thursday Mass on April 2 at 7:00 PM, Good Friday services (Family Stations at 12:00 PM and the Lord’s Passion at 3:00 PM), and the Easter Vigil on Saturday, April 4 at 9:00 PM with Easter Sunday Masses at 9:00 AM and 11:00 AM. Looking ahead, the Shroud of Turin presentation is Saturday, April 18 at 2:00 PM with a weekend display, and the St. Sebastian Spectacular fundraiser is Saturday, April 25 from 6:30–10:00 PM in Zwisler Hall. Regular opportunities include Tuesday Eucharistic Adoration (8:30 AM–7:40 PM with Benediction) and Friday Stations of the Cross at 1:45 PM and 7:00 PM."
   }
 ]
