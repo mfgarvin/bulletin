@@ -65,19 +65,19 @@
     "phone": "216-671-5890",
     "website": "www.blessedtrinitycleveland.org",
     "lonlat": "-81.7915284,41.4339645",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0244/20260215B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0244/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
       "Sunday: 9:00AM, 11:00AM",
-      "Monday: 11:00AM - Mass at West Park Health Center, 4401 West 150th St, Cleveland, OH",
-      "Tuesday: 8:30AM, 8:30AM",
-      "Wednesday: 8:30AM, 12:05PM - Ash Wednesday, 7:30PM - Ash Wednesday service",
-      "Friday: 8:30AM, 8:30AM",
+      "Monday: 11:00AM - All Souls at West Park Health Center (off-site Mass listed in worship schedule)",
+      "Tuesday: 8:30AM",
+      "Wednesday: 8:30AM",
+      "Friday: 8:30AM",
       "Saturday: 4:00PM - Vigil Mass"
     ],
     "confessions": [],
     "adoration": [],
-    "events_summary": "Blessed Trinity’s Ash Wednesday Soup Supper is Wednesday, February 18 from 6:00–7:30 p.m. in Fogarty Hall, followed by Ash Wednesday worship (including a 7:30 p.m. service). Lenten Fish Fries are held on Fridays from 5:30–7:30 p.m., with short prayer services in the church at 5:00 p.m. and 7:30 p.m. Regular parish life continues with weekly groups like OCIA on Mondays at 5:00 p.m. and Coffee & Donuts on Sundays starting at 10:00 a.m."
+    "events_summary": "Blessed Trinity has many ongoing weekly ministries, including the Sunday Community Meal at 12:00 PM, OCIA on Mondays at 5:00 PM, and multiple faith-formation and music groups throughout the week. Mark your calendar for the Holy Name meeting with guest speakers on Tuesday, April 21 (doors open at 6:45 PM) and the Reverse Raffle on April 25. Looking ahead, the Outdoor Clothing Giveaway is scheduled for Sunday, June 7 from 1:00–2:00 PM (rain date June 14)."
   },
   {
     "name": "Blessed Trinity Parish",
@@ -88,29 +88,27 @@
     "phone": "330-376-5144",
     "website": "www.blessedtrinityakron.org",
     "lonlat": "-81.504139,41.101228",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0039/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0039/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:30AM, 11:00AM, 12:30PM (Swahili) - Fourth Sunday of the month; currently suspended due to coronavirus, 8:30AM - Easter Sunday, 11:00AM - Easter Sunday",
-      "Monday: 8:30AM - Weekday Mass; does not take place if there is a Funeral Mass",
-      "Tuesday: 8:30AM - Weekday Mass; does not take place if there is a Funeral Mass",
-      "Wednesday: 5:30PM - Weekday Mass",
-      "Thursday: 7:00PM - Holy Thursday of the Lord’s Supper",
-      "Friday: 8:30AM - Weekday Mass; does not take place if there is a Funeral Mass",
-      "Saturday: 5:00PM - Vigil Mass, 8:30PM - Easter Vigil in the Holy Night"
+      "Sunday: 8:30AM, 11:00AM",
+      "Monday: 8:30AM - Scheduled Mass may not take place if there is a Funeral Mass",
+      "Tuesday: 8:30AM - Scheduled Mass may not take place if there is a Funeral Mass",
+      "Wednesday: 5:30PM",
+      "Friday: 8:30AM - Scheduled Mass may not take place if there is a Funeral Mass",
+      "Saturday: 5:00PM - Vigil Mass"
     ],
     "confessions": [
-      "Monday: 6:00PM to 7:00PM - During Eucharistic Adoration, 10:00AM to 11:00AM - Special Holy Week schedule (Confessions only)",
+      "Monday: 6:00PM to 7:00PM - During Eucharistic Adoration",
       "Wednesday: 6:00PM to 7:00PM - During Eucharistic Adoration",
       "Friday: 6:00PM to 7:00PM - During Eucharistic Adoration"
     ],
     "adoration": [
       "Monday: 6:00PM to 7:00PM",
       "Wednesday: 6:00PM to 7:00PM",
-      "Thursday: 7:00PM to 9:00PM - Holy Thursday: Eucharistic Exposition following Mass",
       "Friday: 6:00PM to 7:00PM"
     ],
-    "events_summary": "Holy Week and the Sacred Paschal Triduum liturgies are coming up soon, including Holy Thursday Mass at 7:00 pm with Eucharistic Exposition until 9:00 pm, Good Friday Stations of the Cross at 12:00 pm and the Celebration of the Lord’s Passion at 7:00 pm, and the Easter Vigil at 8:30 pm on Holy Saturday. Easter Sunday Masses will be celebrated at 8:30 am and 11:00 am. There’s also a free 55+ lunch with entertainment on Thursday, April 9 at 11:30 am, and a “Road to Emmaus” Scripture Study on Thursdays, April 9 and 16 at 6:30 pm."
+    "events_summary": "This week includes Easter Evening Prayer on Tuesday, April 14 at 6:00 PM in church, followed by a covered dish supper and a book study at 6:30 PM in McKeever Hall. There’s also Road to Emmaus Scripture Study on Thursday, April 16 at 6:30 PM, and Coffee & Donuts after the 8:30 AM and 11:00 AM Masses on Sunday, April 19. Seniors (55+) are invited to a free hot lunch and entertainment on Thursday, April 23 at 11:30 AM in Frey Hall."
   },
   {
     "name": "Church of Saint Casimir / Parafia Sw. Kazimierza",
@@ -122,7 +120,7 @@
     "website": "http://www.saintcasimirparish.org/",
     "lonlat": "-81.553839,41.584164",
     "bulletin_url": "http://www.saintcasimirparish.org/main-en/bulletin-en.html",
-    "timestamp": "2026-04-04",
+    "timestamp": "2026-04-18",
     "mass_times": [
       "Sunday: 8:30AM",
       "Saturday: 5:00PM"
@@ -132,9 +130,10 @@
       "Saturday: 4:00PM to 5:00PM"
     ],
     "adoration": [
-      "Thursday: 8:00PM to 9:00PM - After Holy Thursday Mass of the Lord’s Supper (period of adoration)"
+      "Tuesday: 5:00PM to 6:00PM - Second Tuesday of each month",
+      "Friday: 8:00AM to 9:00AM - First Friday of each month"
     ],
-    "events_summary": "Saint Casimir Parish is highlighting Divine Mercy Sunday next weekend and encourages everyone to experience God’s mercy through the Sacrament of Reconciliation. The Lithuanian Pensioners will host an Easter luncheon on Thursday, April 9 at 12:00 PM at the Lithuanian Club. The annual Plant Sale is underway—orders are due by Sunday, April 19, with pick-up on the weekend of May 9–10."
+    "events_summary": "St. Casimir Parish offers Eucharistic Adoration twice a month: the first Friday from 8–9am and the second Tuesday from 5–6pm. Plant sale orders are due Sunday, April 19, with pickup the weekend of May 9–10. The Catholic Cemeteries Association hosts its grief support group on Sunday, April 19 (3pm in-person, 5pm virtual)."
   },
   {
     "name": "Church of Saint Clare",
@@ -146,7 +145,7 @@
     "website": "https://saintclare.net",
     "lonlat": "-81.4749273,41.5212583",
     "bulletin_url": "https://clientsaintclarenet.blob.core.windows.net/site-saintclare-net/uploaded_media/saintclare_net/FF_Sunday_Resource_Docs/Bulletins/Clare4-52__1775163948.pdf",
-    "timestamp": "2026-04-04",
+    "timestamp": "2026-04-18",
     "mass_times": [
       "Sunday: 8:00AM, 10:00AM, 12:00PM",
       "Tuesday: 8:30AM",
@@ -159,7 +158,7 @@
     "adoration": [
       "Wednesday: 9:00AM to 1:00PM"
     ],
-    "events_summary": "This Easter season at Church of Saint Clare includes weekly Adoration on Wednesdays from 9:00 a.m.–1:00 p.m. with Confession offered from 12:00–1:00 p.m., plus regular gatherings like Cenacle on Tuesdays at 9:00 a.m. and OCIA on Thursdays from 6:00–8:30 p.m. A six-week bereavement support group, “Walking in Hope,” begins Tuesday, April 14, 2026, meeting 6:30–8:30 p.m. at St. Paschal Parlor (no charge). The parish is also promoting a children’s summer program “Rainforest Falls” (June 15–19, 9:00 a.m.–noon) and volunteer help is needed."
+    "events_summary": "This Easter season at Church of Saint Clare includes Eucharistic Adoration on Wednesdays from 9:00 a.m. to 1:00 p.m. with Confession offered 12:00–1:00 p.m., plus weekly OCIA on Thursdays from 6:00–8:30 p.m. A six-week bereavement support group (“Walking in Hope”) begins Tuesday, April 14, meeting 6:30–8:30 p.m. at St. Paschal. Registration is also encouraged for the “Rainforest Falls” children’s program running June 15–19 from 9:00 a.m. to noon."
   },
   {
     "name": "Church of Saint Dominic",
@@ -170,19 +169,20 @@
     "phone": "(216) 991-1444",
     "website": "https://www.stdominicchurch.net",
     "lonlat": "-81.5454586,41.4660837",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1831/20260315B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1831/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
       "Sunday: 9:00AM - In-person and livestream, 11:00AM - In-person and livestream",
       "Monday: 8:30AM - In-person and livestream (except Thursday)",
       "Tuesday: 8:30AM - In-person and livestream (except Thursday)",
       "Wednesday: 8:30AM - In-person and livestream (except Thursday)",
+      "Thursday: 8:30AM - No Mass (per intentions for Thu, Apr 16, 2026)",
       "Friday: 8:30AM - In-person and livestream (except Thursday)",
       "Saturday: 5:00PM - In-person"
     ],
     "confessions": [],
     "adoration": [],
-    "events_summary": "St. Dominic has several Lenten opportunities coming up, including the final week of the adult faith series on Monday, March 16 (optional soup supper at 6:15 p.m., talk 7:00–8:00 p.m.). The parish Fish Fry continues on Fridays from 4:30–7:00 p.m., and families can look ahead to the Resurrection Scavenger Egg Hunt on Saturday, April 4 from 10:00–11:00 a.m. Seniors are invited to the Four Seasons Spring Luncheon on Wednesday, April 8 at 11:30 a.m. (RSVP by April 5)."
+    "events_summary": "St. Dominic has several service and community opportunities coming up, including Greater Cleveland Food Bank Family Night on Thursday, April 16 from 6:00–8:00 p.m., and the St. Dominic School FEA Pancake Breakfast fundraiser on Sunday, April 19 from 9:30 a.m.–12:30 p.m. The parish will also host a free National Faith + Climate Forum watch party on Saturday, April 25, and the Seasons of Life grief support group continues on Wednesdays from 9:30–11:00 a.m. (April 8–May 27)."
   },
   {
     "name": "Church of Saint Mary of the Assumption",
@@ -193,13 +193,13 @@
     "phone": "216-761-7740",
     "website": "www.DiscoverMass.com",
     "lonlat": "-81.573232,41.560673",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=Z93Qq7%2FizWrH8iwqaTkNSJvXrlY9zZgdP1KMoA4nHMIvI9MyfNlmNe%2Bla5e46kxtDfLs3DJVdaKMvSOL6yoy3PAVTSfjdeiQF%2BFg4ISIOC0%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=WMn1tDQahNetcOoe6ad9T43P9EPnd%2F1yTl7b6Kdj1Epz0XNNZ%2BH81pQ0%2FDIrHv1wYlUHrZFkbZgxCaykaD%2BJcYy6mP3tu6X18sgdfO8YBhk%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
       "Sunday: 8:30AM, 10:15AM",
-      "Monday: 7:45AM",
+      "Monday: 7:45AM, 7:00PM",
       "Tuesday: 7:45AM",
-      "Wednesday: 7:45AM, 7:00PM",
+      "Wednesday: 7:45AM",
       "Thursday: 7:45AM",
       "Friday: 7:45AM",
       "Saturday: 7:45AM, 5:00PM"
@@ -210,7 +210,7 @@
     "adoration": [
       "Thursday: 2:00PM to 6:00PM - Thursdays of Lent only (quiet time before the Blessed Sacrament)"
     ],
-    "events_summary": "Next Sunday, April 12, the parish will celebrate Divine Mercy Sunday with a 1:30 p.m. Altar Society Holy Hour and the Divine Mercy Chaplet, Rosary, and Benediction at 2:00 p.m., plus the Sung Litany of the Blessed Virgin Mary after the 10:15 a.m. Mass. Upcoming events include the Korotan Annual Concert on Sunday, April 19 (doors open at 3:00 p.m., concert at 3:30 p.m.) and a Women’s Tea on Sunday, April 26 after the 10:15 a.m. Mass in the Slovenian Room."
+    "events_summary": "Next Sunday, April 26, the parish will host a Women’s Tea in the Slovenian Room right after the 10:15 a.m. Mass, featuring a talk by Deacon David Kushner (donation $10; call 216-761-7740 for reservations). “Cooking with Micka” meets Wednesday, May 6 at 7:00 p.m. in the hall kitchen ($25). Baseball raffle tickets are available now (contest begins June 1), and there are still openings for the Discover Slovenia trip September 21–October 2, 2026."
   },
   {
     "name": "Church of the Assumption",
@@ -283,24 +283,24 @@
     "phone": "440-708-0000",
     "website": "www.holyangelschurch.com",
     "lonlat": "-81.3349092,41.3730246",
-    "bulletin_url": "https://files.ecatholic.com/15918/bulletins/20260329.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://files.ecatholic.com/15918/bulletins/20260412.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 9:00AM, 11:00AM, 9:00AM - Easter Sunday, 11:00AM - Easter Sunday",
+      "Sunday: 9:00AM, 11:00AM",
       "Monday: 9:00AM",
       "Tuesday: 7:00AM",
       "Wednesday: 9:00AM",
-      "Thursday: 7:00PM - Holy Thursday - Mass of the Lord's Supper",
       "Friday: 9:00AM",
-      "Saturday: 5:00PM, 8:45PM - Holy Saturday - Easter Vigil"
+      "Saturday: 5:00PM"
     ],
     "confessions": [
       "Saturday: 3:00PM to 4:30PM"
     ],
     "adoration": [
-      "Thursday: 8:00PM to 2:40AM - Holy Thursday adoration ending at Midnight"
+      "Monday: 7:00PM to 8:30PM",
+      "Friday: 9:30AM to 7:00PM"
     ],
-    "events_summary": "Holy Angels is celebrating Holy Week and Easter with Mass of the Lord’s Supper on Thursday, April 2 at 7:00 PM, followed by Adoration until midnight, and Good Friday services at 3:00 PM (The Lord’s Passion) and 7:00 PM (Stations of the Cross). Easter weekend includes an Easter Food Blessing on Saturday, April 4 at 1:00 PM, the Easter Vigil at 8:45 PM, and Easter Sunday Masses at 9:00 AM and 11:00 AM. Upcoming parish life events include a Masters Golf Watch Party on Sunday, April 12 at 3:00 PM, a Young Adult Group gathering on April 13 from 6:00–7:00 PM, and XLT Adoration on April 22 from 7:00–9:00 PM."
+    "events_summary": "Holy Angels celebrates Divine Mercy Sunday with a Divine Mercy Prayer Service on Sunday, April 12 at 3:00 PM. Upcoming parish life includes Holy Angels Clean-Up Day on Saturday, April 18 from 9:00 AM–1:00 PM, plus the WE CAN Sunday food drive April 18–19 and Anointing of the Sick at all Masses that weekend. There are many ongoing ministries as well, including Eucharistic Adoration Mondays 7:00–8:30 PM and Fridays 9:30 AM–7:00 PM, Thursday evening “Shoulder to Shoulder” prayer at 7:00 PM in the Mercy Chapel, and weekly Rosary on Wednesdays and Fridays at 8:30 AM."
   },
   {
     "name": "Church of the Resurrection",
@@ -311,25 +311,20 @@
     "phone": "440-248-0980",
     "website": "https://www.churchofresurrection.org/",
     "lonlat": "-81.4523014,41.4102989",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1733/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1733/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 9:00AM, 11:00AM, 9:00AM - Easter Sunday, 11:00AM - Easter Sunday",
+      "Sunday: 9:00AM, 11:00AM - FFFamily Mass with Blessing of Sacramental Candidates (as listed for April 19)",
       "Monday: 8:30AM",
-      "Tuesday: 8:30AM",
-      "Wednesday: 8:30AM",
-      "Thursday: 7:00PM - Holy Thursday - Mass of the Lord's Supper",
-      "Friday: 3:00PM - Good Friday - Commemoration/Service of the Lord's Passion (not Mass)",
-      "Saturday: 5:00PM - Vigil Mass, 8:30PM - Easter Vigil"
+      "Saturday: 5:00PM"
     ],
     "confessions": [
-      "Wednesday: 7:00PM to 8:00PM - 2026-04-01 only (Holy Week)",
-      "Saturday: 4:00PM to 4:30PM - Regular schedule; except Holy Saturday"
+      "Saturday: 4:00PM to 5:00PM"
     ],
     "adoration": [
       "Thursday: 8:00PM to 9:00PM - 2026-04-02 only; after Holy Thursday Mass"
     ],
-    "events_summary": "Holy Week is underway with Palm Sunday Masses and special liturgies throughout the week, including Holy Thursday Mass at 7:00pm (with Adoration until 9:00pm), Good Friday service at 3:00pm, and the Easter Vigil at 8:30pm, followed by Easter Sunday Masses at 9:00am and 11:00am. Confession is available Wednesday, April 1 from 7:00–8:00pm, and the annual Easter Egg Hunts and Easter Food Blessing take place Saturday, April 4 (11:00am kids, 11:15am teens, 12:30pm blessing). Looking ahead, the parish hosts a Women’s Spirituali-Tea on May 3 (2:00–4:00pm) and a two-day “Souls in Full Sail” workshop May 27–28 (9:30am–2:30pm)."
+    "events_summary": "At Church of the Resurrection, upcoming opportunities include a Red Cross Blood Drive on Tuesday, April 21 from 12:00–6:00 PM and a High School Hang on Friday, May 1 from 6:00–9:00 PM. Women are invited to the Spirituali-Tea on Sunday, May 3 from 2:00–4:00 PM in Emmaus Hall, and the parish will host “Fatima Movie and Rosary” on Wednesday, May 13 (Rosary at 6:00 PM; movie at 6:30 PM). Parishioners can also look ahead to the “Souls in Full Sail” workshop May 27–28 (9:30 AM–2:30 PM each day) and the England & Scotland pilgrimage November 9–19, 2026."
   },
   {
     "name": "Communion of Saints Parish - Saint Ann",
@@ -340,25 +335,25 @@
     "phone": "(216) 321-0024",
     "website": "https://cosparish.com",
     "lonlat": "-81.5793325,41.5005227",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0414/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0414/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:30AM, 11:30AM, 8:30AM - Easter Sunday (time listed in Holy Week schedule; date not provided in bulletin), 11:30AM - Easter Sunday (time listed in Holy Week schedule; date not provided in bulletin)",
+      "Sunday: 8:30AM, 11:30AM",
       "Monday: 8:00AM - Weekday Mass",
       "Tuesday: 8:00AM - Weekday Mass",
       "Wednesday: 8:00AM - Weekday Mass",
-      "Thursday: 8:00AM - Weekday Mass, 7:00PM - Holy Thursday - Mass of the Lord’s Supper",
+      "Thursday: 8:00AM - Weekday Mass",
       "Friday: 8:00AM - Weekday Mass",
-      "Saturday: 4:00PM, 8:45PM - Holy Saturday - Easter Vigil Mass"
+      "Saturday: 4:00PM"
     ],
     "confessions": [
-      "Wednesday: 7:00PM to 8:00PM - First Wednesday of each month at 7:00pm in St. Ann Church (end time not specified; assumed 1 hour)",
-      "Saturday: 3:00PM to 4:00PM - Reconciliation at St. Ann Church (end time not specified; assumed to run until the 4:00pm Mass)"
+      "Wednesday: 7:00PM to 8:00PM - First Wednesday of each month (Reconciliation listed under 'Celebrate the Sacraments')",
+      "Saturday: 3:00PM to 4:00PM"
     ],
     "adoration": [
-      "Wednesday: 5:00PM to 8:00PM - Blessed Sacrament exposed during Evening of Confessions (March 4, 2026)"
+      "Wednesday: 7:00PM to 8:00PM - Worship in the Heights: worship/adoration/confession (May 6, 7:00–8:00 PM)"
     ],
-    "events_summary": "Communion of Saints Parish celebrates Holy Week with Mass of the Lord’s Supper on Thursday, April 2 at 7:00 PM, Good Friday devotions (Stations at 12:00 PM at St. Philomena and 7:00 PM at St. Ann, plus the Lord’s Passion liturgy at 3:00 PM), and the Easter Vigil on Saturday, April 4 at 8:45 PM at St. Ann. There’s also a Blessing of Food on Holy Saturday at 12:00 PM and ongoing parish life with the Psalms Bible Study on Wednesdays from 6:30–8:00 PM. Upcoming community programming includes the Bishop Pilla Center “Lunch and Learn” on Saturdays at 12:30 PM and a free CWRU health screening event on Thursday, April 9 from 6:00–8:00 PM at New Life Cathedral."
+    "events_summary": "Communion of Saints Parish has lots happening this month, including the FYC Easter Egg Hunt & Pancake Breakfast on Saturday, April 18 at 9:30 AM in Walsh Hall (hunt begins at 10:00 AM). Young adults are invited to Theology on Tap on Wednesday, April 22 from 7:00–9:00 PM at Jake’s Speakeasy, and the Page Turners book club meets Tuesday, April 21 at 6:30 PM at St. Ann. Looking ahead, “Worship in the Heights” (worship, adoration, and confession) will be Wednesday, May 6 from 7:00–8:00 PM at St. Ann Church."
   },
   {
     "name": "Communion of Saints Parish - Saint Philomena",
@@ -369,16 +364,16 @@
     "phone": "(216) 321-0024",
     "website": "https://cosparish.com",
     "lonlat": "-81.586407, 41.526055",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0414/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0414/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 10:00AM, 10:00AM - Easter Sunday (time listed in Holy Week schedule; date not provided in bulletin)"
+      "Sunday: 10:00AM"
     ],
     "confessions": [
       "Saturday: 3:00PM to 4:00PM - St. Ann Church"
     ],
     "adoration": [],
-    "events_summary": "Communion of Saints Parish celebrates Holy Week with Mass of the Lord’s Supper on Thursday, April 2 at 7:00 PM, Good Friday devotions (Stations at 12:00 PM at St. Philomena and 7:00 PM at St. Ann, plus the Lord’s Passion liturgy at 3:00 PM), and the Easter Vigil on Saturday, April 4 at 8:45 PM at St. Ann. There’s also a Blessing of Food on Holy Saturday at 12:00 PM and ongoing parish life with the Psalms Bible Study on Wednesdays from 6:30–8:00 PM. Upcoming community programming includes the Bishop Pilla Center “Lunch and Learn” on Saturdays at 12:30 PM and a free CWRU health screening event on Thursday, April 9 from 6:00–8:00 PM at New Life Cathedral."
+    "events_summary": "Communion of Saints Parish has lots happening this month, including the FYC Easter Egg Hunt & Pancake Breakfast on Saturday, April 18 at 9:30 AM in Walsh Hall (hunt begins at 10:00 AM). Young adults are invited to Theology on Tap on Wednesday, April 22 from 7:00–9:00 PM at Jake’s Speakeasy, and the Page Turners book club meets Tuesday, April 21 at 6:30 PM at St. Ann. Looking ahead, “Worship in the Heights” (worship, adoration, and confession) will be Wednesday, May 6 from 7:00–8:00 PM at St. Ann Church."
   },
   {
     "name": "Divine Word Catholic Church",
@@ -389,27 +384,24 @@
     "phone": "440-256-1412",
     "website": "www.divinewordkirtland.org",
     "lonlat": "-81.3541559,41.6042265",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0884/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0884/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:30AM, 11:00AM, 8:30AM - Easter Sunday, 11:00AM - Easter Sunday",
-      "Monday: 8:30AM",
-      "Tuesday: 8:30AM",
-      "Wednesday: 8:30AM",
-      "Thursday: 8:30AM - Not held on Holy Thursday (see Holy Week schedule)., 7:30PM - Holy Thursday – Mass of the Lord’s Supper",
-      "Friday: 8:30AM - Not held on Good Friday (see Holy Week schedule).",
-      "Saturday: 4:30PM, 9:00PM - Easter Vigil"
+      "Sunday: 8:30AM, 11:00AM",
+      "Monday: 8:30AM - Weekday Mass (Mon–Fri)",
+      "Tuesday: 8:30AM - Weekday Mass (Mon–Fri)",
+      "Wednesday: 8:30AM - Weekday Mass (Mon–Fri)",
+      "Thursday: 8:30AM - Weekday Mass (Mon–Fri)",
+      "Friday: 8:30AM - Weekday Mass (Mon–Fri)",
+      "Saturday: 4:30PM - Vigil"
     ],
     "confessions": [
-      "Monday: 9:00AM to 10:00AM, 7:00PM to 8:00PM",
-      "Tuesday: 9:00AM to 10:00AM",
-      "Wednesday: 9:00AM to 10:00AM, 7:00PM to 8:00PM",
-      "Saturday: 3:30PM to 4:15PM - Also available by appointment."
+      "Saturday: 3:30PM to 4:15PM - Reconciliation; or by appointment"
     ],
     "adoration": [
       "Monday: 9:00AM to 10:00PM"
     ],
-    "events_summary": "Divine Word is entering Holy Week with special liturgies and devotions, including the Holy Thursday Agape Meal at 6:00 PM and Mass of the Lord’s Supper at 7:30 PM, plus Good Friday Stations of the Cross at noon and the Service of the Lord’s Passion at 3:00 PM. The Divine Mercy Novena begins on Good Friday after 9:00 AM Morning Prayer, and Easter Masses are celebrated at 8:30 AM and 11:00 AM on Easter Sunday. Looking ahead, there’s a Parish Office & Rectory Open House following all Masses on April 12, and the “Growing Through Grief” support series begins Thursdays at 2:30 PM starting April 16."
+    "events_summary": "Divine Word is hosting a Parish Office & Rectory Open House after all Sunday Masses on April 12, along with a Divine Mercy Service at 2:00 PM. Upcoming opportunities include the New Parishioner Meet & Greet on Saturday, April 18 at 5:30 PM and the Kirtland Community Meal on Sunday, April 19 from 3:00–5:00 PM in Hanson Hall. The bereavement support series “Growing Through Grief” begins Thursday, April 16 at 2:30 PM, and a Moms’ Faith Sharing night is planned for Monday, April 27 from 6:30–8:00 PM."
   },
   {
     "name": "Guardian Angels Catholic Church",
@@ -420,24 +412,24 @@
     "phone": "(330) 666-1373",
     "website": "www.copleyangels.org",
     "lonlat": "-81.645418,41.0915674",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0077/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0077/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 9:00AM, 11:00AM, 9:00AM - Easter Sunday, 11:00AM - Easter Sunday",
-      "Monday: 8:00AM",
-      "Tuesday: 8:00AM",
-      "Thursday: 8:00AM, 7:00PM - Holy Thursday (Mass of the Lord’s Supper)",
-      "Friday: 8:00AM",
-      "Saturday: 5:00PM - Vigil, 8:30PM - Holy Saturday (Easter Vigil)"
+      "Sunday: 9:00AM, 11:00AM, 9:00AM - 3rd Sunday of Easter, 11:00AM - 3rd Sunday of Easter",
+      "Monday: 8:00AM - Daily Mass, 8:00AM - Easter Weekday",
+      "Tuesday: 8:00AM - Daily Mass, 8:00AM - Easter Weekday",
+      "Thursday: 8:00AM - Daily Mass, 8:00AM - Easter Weekday",
+      "Friday: 8:00AM - Daily Mass, 8:00AM - Easter Weekday",
+      "Saturday: 5:00PM - Vigil, 5:00PM - Vigil"
     ],
     "confessions": [
-      "Saturday: 4:00PM to 5:00PM"
+      "Saturday: 4:00PM to 5:00PM - Also available by calling parish office"
     ],
     "adoration": [
       "Tuesday: 12:00AM to 12:00AM - 2nd Tuesday of the month (time not specified)",
       "Thursday: 12:00AM to 12:00AM - 4th Thursday of the month (time not specified)"
     ],
-    "events_summary": "Holy Week and Easter liturgies are highlighted this week at Guardian Angels, including Holy Thursday Mass at 7:00 PM, Good Friday services at 3:00 PM and Stations of the Cross at 7:00 PM, and the Easter Vigil on Saturday at 8:30 PM. Easter Sunday Masses will be celebrated at 9:00 AM and 11:00 AM. A special talk on Monday, April 20 (doors open at 6:30 PM) will feature guest speaker Matthew Carey Jordan presenting “Who Was C.S. Lewis, and Why Should Catholics Care?” at Our Lady of the Cedars Maronite Church in Fairlawn."
+    "events_summary": "Guardian Angels is hosting a parish-wide “Growing in Christ, Sharing His Love” intergenerational evening on Wednesday, April 28 at 6:00 PM in the parish hall with dinner and activities for all ages. There’s also a C.S. Lewis talk on Monday, April 20 (doors at 6:30 PM; program at 7:30 PM) at Our Lady of the Cedars in Fairlawn, with a $15 admission. A virtual grief-support gathering is available on Sunday, April 19 at 5:00 PM (and continues on the 3rd Sunday each month)."
   },
   {
     "name": "Holy Family Parish",
@@ -448,16 +440,16 @@
     "phone": "330-688-6412",
     "website": "https://www.holyfamilystow.org",
     "lonlat": "-81.444991,41.158383",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1236/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1236/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 7:30AM, 9:00AM, 11:30AM, 7:30AM - Easter Sunday, 9:00AM - Easter Sunday, 11:30AM - Easter Sunday",
+      "Sunday: 7:30AM, 9:00AM, 11:30AM",
       "Monday: 8:00AM",
       "Tuesday: 8:00AM",
-      "Wednesday: 8:00AM, 6:30PM - Evening Mass",
-      "Thursday: 8:00AM, 7:00PM - Holy Thursday – Mass of the Lord’s Supper (No 8:00 AM Mass)",
-      "Friday: 8:00AM, 3:00PM - Good Friday – Celebration of the Passion of the Lord (Service), 7:00PM - Good Friday – Celebration of the Passion of the Lord (Service)",
-      "Saturday: 8:00AM, 5:00PM - Vigil Mass, 9:00PM - Easter Vigil (no 5:00 PM Mass)"
+      "Wednesday: 8:00AM, 6:30PM - Wednesday evening Mass",
+      "Thursday: 8:00AM",
+      "Friday: 8:00AM",
+      "Saturday: 8:00AM, 5:00PM - Vigil Mass"
     ],
     "confessions": [
       "Wednesday: 6:00PM to 6:30PM",
@@ -466,7 +458,7 @@
     "adoration": [
       "Perpetual Adoration (24/7)"
     ],
-    "events_summary": "Holy Family Parish is entering Holy Week with special liturgies: Holy Thursday Mass of the Lord’s Supper at 7:00 PM, Good Friday services at 3:00 PM and 7:00 PM, and the Easter Vigil at 9:00 PM on Holy Saturday. Tenebrae is Wednesday, April 1 at 8:00 PM with Reconciliation from 6:30–7:30 PM (final opportunity for confession before Easter). Looking ahead, Divine Mercy Sunday is celebrated April 12 at 3:00 PM, and a Family Adoration Night is planned for Tuesday, April 14 from 6:00–8:00 PM."
+    "events_summary": "Holy Family Parish is celebrating Divine Mercy Sunday with a special Divine Mercy devotion at 3:00 PM that includes adoration, the Divine Mercy Chaplet, and confessions, plus a LifeTeen-hosted Adoration Night from 7:30–8:30 PM. This week also includes Family Adoration Night on Tuesday evening (with a reception afterward) and a Jesus Day Retreat on Saturday at 9:00 AM. Save the dates for upcoming Teaching Masses on April 19 and May 24, and Vacation Bible School June 22–26 from 9:00 AM–12:00 PM."
   },
   {
     "name": "Holy Family Parish",
@@ -477,25 +469,25 @@
     "phone": "440-842-5533",
     "website": "www.holyfamparma.org",
     "lonlat": "-81.7576935,41.3658995",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=sMM9uXES8LGpS7G1krK6HYtkYWu2Ov1VCL7JDzu9ppAUEWvIQznCNMau4pRMtBfUjJebw6UE0P3i0NYChZiOu32UPFKsCCxIudgl3f6IxK4%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=CNpMrZMOZsb565YFMiCigBpUoPOiyCVvknoaf2Lhv4iWfRnbsb7zyp9BHAvDjHNPBM%2FLZbP1o7hgarROIIudszWZMjZ76C8bJqPJ2zFPDOY%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
       "Sunday: 7:30AM, 9:30AM, 11:30AM",
-      "Monday: 8:30AM",
-      "Tuesday: 8:30AM",
-      "Wednesday: 8:30AM",
-      "Thursday: 8:30AM",
-      "Friday: 8:30AM",
-      "Saturday: 4:30PM - Live streamed weekly Mass (YouTube: HolyFamilyParishParma)"
+      "Monday: 8:30AM - Weekday Mass (M-F)",
+      "Tuesday: 8:30AM - Weekday Mass (M-F)",
+      "Wednesday: 8:30AM - Weekday Mass (M-F)",
+      "Thursday: 8:30AM - Weekday Mass (M-F)",
+      "Friday: 8:30AM - Weekday Mass (M-F), 8:30AM - Fourth Friday Mass listed as 'Holy Family: Fourth Friday at 8:30 am Mass' (appears to be the usual weekday Mass time)",
+      "Saturday: 4:30PM - Also live streamed on YouTube (HolyFamilyParishParma)"
     ],
     "confessions": [
-      "Saturday: 3:30PM to 4:15PM - In the church"
+      "Saturday: 3:30PM to 4:15PM - In Church"
     ],
     "adoration": [
       "Sunday: 7:00PM to 9:00PM - Exposition in the Church",
       "Wednesday: 1:30PM to 3:30PM - Exposition in the Chapel"
     ],
-    "events_summary": "Holy Family is celebrating the Easter season with Eucharistic Adoration on Sundays (7:00–9:00 p.m.) and Wednesdays (1:30–3:30 p.m.), plus regular opportunities for prayer and fellowship. Coming up soon: Knights of Columbus Movie Night on Friday, April 10 at 6:00 p.m. and Divine Mercy Sunday devotions on Sunday, April 12 at 2:30 p.m., along with Donut Sunday after the 9:30 a.m. Mass. Save the dates for the Night at the Races (April 25), the Family Dinner Dance (May 16), and Summer Fest 2026 (July 24–26)."
+    "events_summary": "Holy Family Parish has several spring events coming up, including Night at the Races on Saturday, April 25, and an Altar & Rosary Society fundraiser at Bakers Square on Tuesday, April 28 (10:00 AM–7:00 PM). The Knights of Columbus host a Friday Night Movie on May 1 at 6:00 PM in the chapel, followed by a Paint & Sip/Walking With Purpose event on Thursday, May 7 at 6:15 PM and the Holy Family Dinner Dance on Saturday, May 16 (doors at 5:30 PM, dinner at 6:00 PM). Regular weekly opportunities include Sunday evening Exposition (7:00–9:00 PM), Wednesday afternoon Exposition (1:30–3:30 PM), and Saturday confessions from 3:30–4:15 PM."
   },
   {
     "name": "Holy Martyrs Catholic Church",
@@ -562,13 +554,13 @@
     "phone": "(216) 531-3313",
     "website": "https://www.holyredeemer-cleveland.org/",
     "lonlat": "-81.5680066,41.554816",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0342/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0342/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 11:00AM, 11:00AM - Easter Sunday",
+      "Sunday: 11:00AM",
       "Monday: 8:00AM",
-      "Thursday: 8:00AM, 7:00PM - Holy Thursday — Mass of the Lord’s Supper (no 8:00am Mass this day)",
-      "Saturday: 4:00PM - Vigil Mass, 9:00PM - Easter Vigil"
+      "Thursday: 8:00AM",
+      "Saturday: 4:00PM - Vigil"
     ],
     "confessions": [
       "Saturday: 3:00PM to 3:30PM - Or call the Rectory"
@@ -576,7 +568,7 @@
     "adoration": [
       "Wednesday: 7:00PM to 8:00PM - March Holy Hour (listed date: March 25); Confessions at 18:30"
     ],
-    "events_summary": "Holy Week and Easter liturgies are coming up soon for Holy Redeemer and St. Jerome, including Holy Thursday Mass of the Lord’s Supper at 7:00 PM, Good Friday services, and Easter Vigil on Saturday evening. A Divine Mercy Sunday Presentation will be held at St. Jerome on Saturday, April 11 at 5:30 PM (after the 4:00 PM Mass). May Crowning is scheduled for Friday, May 18 at 7:00 PM at Holy Redeemer."
+    "events_summary": "May Crowning will be held on Friday, May 8 at 7:00 PM at Holy Redeemer. Mark your calendar for the Parish Picnic on Friday, June 12 (details forthcoming). Seniors also have a bus trip to Seneca Allegany on Wednesday, May 27 ($50 per person), and Senior Citizens meetings continue on the third Wednesday of each month at 12:00 PM at the Mill Tavern."
   },
   {
     "name": "Holy Rosary Church",
@@ -587,26 +579,25 @@
     "phone": "(216) 421-2995",
     "website": "www.holy-rosary.org",
     "lonlat": "-81.5987462,41.5089035",
-    "bulletin_url": "https://files.ecatholic.com/5217/bulletins/20260329.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://files.ecatholic.com/5217/bulletins/20260412.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:30AM, 11:00AM, 8:00PM, 8:30AM - Easter Sunday, 11:00AM - Easter Sunday, 8:00PM - No 8:00 p.m. Mass on Easter Sunday",
+      "Sunday: 8:30AM, 11:00AM, 8:00PM",
       "Monday: 12:15PM",
-      "Tuesday: 12:15PM",
+      "Tuesday: 12:15PM - No 12:15 Mass on Tuesdays from 2026-04-21 through 2026-06-09 (see St. Anthony Novena schedule), 7:00PM - St. Anthony Novena Mass (every Tuesday evening through 2026-06-09); on 2026-04-14 prayers after 12:15 p.m. Mass",
       "Wednesday: 12:15PM",
-      "Thursday: 7:30PM - Holy Thursday: Mass of the Lord's Supper",
-      "Friday: 12:15PM, 3:00PM - Good Friday: Celebration of the Lord's Passion",
-      "Saturday: 4:00PM - Vigil Mass, 8:30AM - First Saturday of the month, 8:45PM - Holy Saturday: Easter Vigil Mass"
+      "Friday: 12:15PM",
+      "Saturday: 4:00PM - Vigil Mass, 8:30AM - First Saturday of the month"
     ],
     "confessions": [
-      "Wednesday: 6:30PM to 7:30PM - With Eucharistic Adoration, 6:00PM to 8:00PM - Extended time (Holy Week), April 1, 2026",
+      "Wednesday: 6:30PM to 7:30PM - With Eucharistic Adoration",
       "Saturday: 3:00PM to 3:45PM"
     ],
     "adoration": [
-      "Wednesday: 6:30PM to 7:30PM - Confession available during this time, 6:00PM to 8:00PM - Extended time (Holy Week), April 1, 2026; opportunity for Confession",
-      "Friday: 12:15PM to 1:45PM - First Friday: Exposition after 12:15 p.m. Mass until 1:45 p.m."
+      "Wednesday: 6:30PM to 7:30PM - Confession available during this time",
+      "Friday: 12:45PM to 1:45PM - First Friday: Exposition after 12:15 p.m. Mass until 1:45 p.m."
     ],
-    "events_summary": "Holy Rosary is celebrating Holy Week with special liturgies and devotions, including Adoration and Confession with extended hours on Wednesday, April 1 (6:00–8:00 p.m.). The Triduum schedule includes Holy Thursday Mass at 7:30 p.m. with Adoration until 11:00 p.m., Good Friday services at 3:00 p.m. and Outdoor Stations at 6:30 p.m., and the Easter Vigil on Saturday at 8:45 p.m., followed by Masses on Easter Sunday at 8:30 a.m. and 11:00 a.m. Palm Sunday also features a complimentary pancake breakfast after the 8:30 a.m. and 11:00 a.m. Masses."
+    "events_summary": "Holy Rosary has weekly opportunities for fellowship and formation, including Coffee & Donuts after the 8:30 a.m. and 11:00 a.m. Sunday Masses, Sunday Scripture Study (9:45 a.m. in the Parish Center), and Wednesday Adoration with Confession from 6:30–7:30 p.m. The St. Anthony Novena begins Tuesday, April 14, with prayers after the 12:15 p.m. Mass, and then continues with a 7:00 p.m. Tuesday evening Novena Mass through June 9 (no 12:15 p.m. Mass on Tuesdays April 21–June 9). Upcoming highlights include Newman Night on Thursday, April 16 at 6:30 p.m. in the Parish Center, and First Holy Communion on Sunday, April 26 during the 8:30 a.m. Mass."
   },
   {
     "name": "Holy Spirit Catholic Church",
@@ -617,22 +608,20 @@
     "phone": "216.581.0981",
     "website": "holyspiritcleveland.org",
     "lonlat": "-81.5904904,41.4411655",
-    "bulletin_url": "https://www.holyspiritcleveland.org/wp-content/uploads/2026/03/bulletin_3-29-26.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://www.holyspiritcleveland.org/wp-content/uploads/2026/04/bulletin_4-19-26.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 10:30AM, 10:30AM - Easter Sunday – The Resurrection of the Lord (Mass of Easter Day)",
+      "Sunday: 10:30AM",
       "Wednesday: 5:00PM - Weekday Mass",
-      "Thursday: 7:00PM - Holy Thursday – Evening Mass of the Lord’s Supper (Sacred Triduum)",
-      "Friday: 7:00PM - Good Friday of the Lord’s Passion (Celebration of the Passion of the Lord)",
-      "Saturday: 4:00PM - Vigil Mass, 8:30PM - Holy Saturday – Easter Vigil in the Holy Night of Easter"
+      "Saturday: 4:00PM - Vigil Mass"
     ],
     "confessions": [
-      "Wednesday: 4:00PM to 4:50PM - or by appointment"
+      "Wednesday: 4:00PM to 4:50PM - Or by appointment"
     ],
     "adoration": [
-      "Wednesday: 4:00PM to 4:50PM - Eucharistic Adoration; Holy Rosary at 16:30"
+      "Wednesday: 4:00PM to 4:50PM - Holy Rosary at 16:30"
     ],
-    "events_summary": "Holy Spirit’s Holy Week and Easter schedule includes Holy Thursday Mass at 7:00pm (Apr. 2), Good Friday at 7:00pm (Apr. 3), the Easter Vigil at 8:30pm (Apr. 4), and Easter Sunday Mass at 10:30am (Apr. 5), followed by an Easter Egg Hunt with the Easter Bunny. A Communal Penance Service will be held Monday, March 30 from 7:00–8:30pm at St. Adalbert Church, and “Two Table Wednesdays” continues each week with holy hour/confessions at 4:00pm, Mass at 5:00pm, and soup/bread at 5:45pm. Registration is also open for the Operation Good News Spring Weekend Retreat (May 29–31) and the Arts Reaching Kids Summer Camp (June 8–18, 9:00am–5:00pm)."
+    "events_summary": "Holy Spirit Church has a full week of faith and fellowship opportunities, including Monday Bible Study on Zoom at 7:00pm, Thursday Bible Study at 12:00pm, and Sunday Arts Reaching Kids from 2:00–4:00pm. Mark your calendar for Faith + Family Fun Night on Friday, April 24 (5:30–8:00pm), plus upcoming summer programs: Arts Reaching Kids Summer Camp (June 8–18) and Vacation Bible School (June 22–26, 9:00am–12:00pm). Operation Good News also hosts a Spring Weekend Retreat May 29–31 at the Jesuit Retreat Center in Parma."
   },
   {
     "name": "Holy Spirit Catholic Parish",
@@ -643,23 +632,24 @@
     "phone": "440-933-3777",
     "website": "www.hspal.org",
     "lonlat": "-81.9894942,41.494133",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0036/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0036/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 9:00AM, 10:30AM, 12:00PM, 9:00AM - Easter Sunday Masses (all Masses in the Church), 10:30AM - Easter Sunday Masses (all Masses in the Church), 12:00PM - Easter Sunday Masses (all Masses in the Church)",
-      "Tuesday: 8:30AM - Chapel",
-      "Thursday: 8:30AM - Chapel, 7:00PM - Holy Thursday — Mass of the Lord’s Supper (Church)",
-      "Friday: 8:30AM - Chapel, 3:00PM - Good Friday — The Passion of the Lord (Church)",
-      "Saturday: 5:00PM - Vigil Mass, 8:45PM - Holy Saturday — Easter Vigil Mass (Church); no 5:00 PM Mass"
+      "Sunday: 9:00AM, 10:30AM, 12:00PM - Noon",
+      "Monday: 8:00AM - Mass at St. Joseph (see separate site entry)",
+      "Tuesday: 8:30AM - Chapel, 5:30PM - End-of-year Mass for 2025-26 PSR (in church)",
+      "Wednesday: 8:00AM - Mass at St. Joseph (see separate site entry)",
+      "Thursday: 8:30AM - Chapel, 8:30AM - Holy Day schedule listed as 8:30 a.m. and 7:00 p.m. (dates not specified), 7:00PM - Holy Day schedule listed as 8:30 a.m. and 7:00 p.m. (dates not specified)",
+      "Friday: 8:30AM - Chapel",
+      "Saturday: 5:00PM - Vigil Mass"
     ],
     "confessions": [
-      "Friday: 4:15PM to 11:59PM - 2026-04-03 (Good Friday) after the Passion of the Lord—until all are heard",
-      "Saturday: 3:30PM to 4:30PM - (Church)"
+      "Saturday: 3:30PM to 4:30PM - In church"
     ],
     "adoration": [
-      "Thursday: 4:00PM to 7:00PM - (Chapel), 8:00PM to 2:40AM - 2026-04-02 Holy Thursday — Eucharistic Adoration until midnight (Chapel)"
+      "Thursday: 4:00PM to 7:00PM - Chapel"
     ],
-    "events_summary": "Holy Spirit Parish is entering Holy Week with several special liturgies: Tenebrae on Monday, March 30 at 7:30 PM, the Holy Thursday Mass of the Lord’s Supper on April 2 at 7:00 PM followed by Adoration until midnight, and Good Friday services on April 3 at 3:00 PM and Stations of the Cross at 7:00 PM. Easter Food Blessing is Saturday, April 4 at 11:00 AM, with the Easter Vigil at 8:45 PM, and Easter Sunday Masses on April 5 at 9:00 AM, 10:30 AM, and 12:00 PM. Looking ahead, Divine Mercy devotions are Sunday, April 12 at 2:30 PM, and Vacation Bible School runs June 8–12 from 9:30 AM–12:30 PM for ages 4–12."
+    "events_summary": "This week at Holy Spirit Parish includes Donut Sunday (9:00 AM–12:00 PM) and Divine Mercy Sunday devotions at 2:30 PM in the chapel. Upcoming highlights include Couples Trivia Night on Thursday, April 23 at 7:00 PM, and the PSR end-of-year Mass on Tuesday, April 21 at 5:30 PM with refreshments afterward. The parish is also preparing for the Ladies Guild-sponsored garage sale (donations April 27–28; sale April 30–May 1) and Vacation Bible School June 8–12 (9:30 AM–12:30 PM)."
   },
   {
     "name": "Immaculate Conception Catholic Church",
@@ -670,32 +660,31 @@
     "phone": "440-942-4500",
     "website": "https://immaculate.net",
     "lonlat": "-81.4093644,41.6351744",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1318/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1318/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:30AM, 11:00AM, 8:30AM - Easter Sunday, 11:00AM - Easter Sunday",
+      "Sunday: 8:30AM, 11:00AM, 3:00PM - Divine Mercy Devotion (service)",
       "Monday: 7:30AM",
       "Tuesday: 7:30AM",
-      "Wednesday: 7:30AM, 7:00PM - Tenebrae Service (Holy Week)",
-      "Thursday: 7:30AM, 7:00PM - Holy Thursday Mass of the Lord’s Supper",
+      "Wednesday: 7:30AM",
+      "Thursday: 7:30AM",
       "Friday: 7:30AM, 7:00PM - First Friday only",
-      "Saturday: 4:30PM, 9:00PM - Easter Vigil"
+      "Saturday: 4:30PM"
     ],
     "confessions": [
-      "Thursday: 12:00AM to 12:00AM - Thursday before First Friday: after 7:30am Mass (time not specified)",
-      "Friday: 6:00PM to 7:00PM - First Friday, 4:00PM to 5:00PM - Good Friday confessions",
+      "Friday: 6:00PM to 7:00PM - First Friday",
       "Saturday: 3:00PM to 4:00PM - In the church"
     ],
     "adoration": [
-      "Sunday: 6:00AM to 11:00PM - Adoration Chapel hours (daily)",
-      "Monday: 6:00AM to 11:00PM - Adoration Chapel hours (daily)",
-      "Tuesday: 6:00AM to 11:00PM - Adoration Chapel hours (daily)",
-      "Wednesday: 6:00AM to 11:00PM - Adoration Chapel hours (daily)",
-      "Thursday: 6:00AM to 11:00PM - Adoration Chapel hours (daily), 8:00PM to 11:00PM - Holy Thursday Adoration of the Blessed Sacrament",
-      "Friday: 6:00AM to 11:00PM - Adoration Chapel hours (daily)",
-      "Saturday: 6:00AM to 11:00PM - Adoration Chapel hours (daily)"
+      "Sunday: 6:00AM to 11:00PM - Adoration Chapel hours (seven days a week)",
+      "Monday: 6:00AM to 11:00PM - Adoration Chapel hours (seven days a week)",
+      "Tuesday: 6:00AM to 11:00PM - Adoration Chapel hours (seven days a week)",
+      "Wednesday: 6:00AM to 11:00PM - Adoration Chapel hours (seven days a week)",
+      "Thursday: 6:00AM to 11:00PM - Adoration Chapel hours (seven days a week)",
+      "Friday: 6:00AM to 11:00PM - Adoration Chapel hours (seven days a week)",
+      "Saturday: 6:00AM to 11:00PM - Adoration Chapel hours (seven days a week)"
     ],
-    "events_summary": "Holy Week continues with special liturgies including Tenebrae on Wednesday at 7:00 PM, Holy Thursday Mass of the Lord’s Supper at 7:00 PM followed by adoration until 11:00 PM, and the Easter Vigil on Saturday at 9:00 PM; Easter Sunday Masses are at 8:30 AM and 11:00 AM. Upcoming parish events include the Senior Ministry Easter luncheon on April 8 at 12:00 PM, Safety Training on April 11 at 2:00 PM, and the St. Vincent de Paul “Stuff the Truck” donation drive April 25–26. Save the dates for Vacation Bible School (June 8–12) and the parish Oktoberfest in July (July 17–19)."
+    "events_summary": "Immaculate Conception is celebrating Divine Mercy Sunday with a Divine Mercy Service at 3:00 PM on April 12, plus extra Confessions (12:00–2:00 PM) and Exposition of the Blessed Sacrament (12:00–3:00 PM). Coming up: “Movies with McNeil” on April 15 at 2:00 PM and 7:00 PM, and the SVdP “Stuff the Truck” donation weekend April 25 (3:30–5:30 PM) and April 26 (8:00–11:00 AM). Mark your calendars for Vacation Bible School June 8–12 (8:45 AM–12:00 PM) and the parish Golf Outing on June 27."
   },
   {
     "name": "Immaculate Conception Church",
@@ -706,29 +695,25 @@
     "phone": "(440) 428-5164",
     "website": "http://www.iccmadison.com",
     "lonlat": "-81.0490548,41.7981417",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1170/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1170/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:30AM, 11:00AM, 8:30AM - Easter Sunday, 11:00AM - Easter Sunday",
+      "Sunday: 8:30AM, 11:00AM",
       "Monday: 8:30AM - Weekday Mass",
       "Tuesday: 7:00PM - Weekday Mass",
       "Wednesday: 8:30AM - Weekday Mass",
-      "Thursday: 7:00PM - Weekday Mass, 7:00PM - Holy Thursday Mass",
-      "Friday: 8:30AM - Weekday Mass, 8:30AM - Good Friday (morning service listed), 3:00PM - Good Friday Passion",
-      "Saturday: 4:00PM - Vigil Mass, 8:30PM - Easter Vigil (no 4:00pm Mass this day)"
+      "Thursday: 7:00PM - Weekday Mass",
+      "Friday: 8:30AM - Weekday Mass",
+      "Saturday: 4:00PM - Vigil Mass"
     ],
     "confessions": [
-      "Sunday: 9:45AM to 10:45AM",
-      "Wednesday: 4:00PM to 5:30PM - Listed for Holy Week (Apr 1, 2026)",
-      "Thursday: 8:00PM to 9:00PM - Holy Thursday (Apr 2, 2026)",
-      "Friday: 4:00PM to 5:00PM - Good Friday (Apr 3, 2026)",
+      "Sunday: 9:45AM to 10:45AM, 2:00PM to 3:00PM - For Divine Mercy Service day (bulletin notes: 'Confessions at 2:00PM')",
       "Saturday: 3:00PM to 3:45PM, 7:30PM to 8:00PM"
     ],
     "adoration": [
-      "Wednesday: 9:00AM to 6:00PM - Eucharistic Exposition (during Lent; begins after 8:30am Mass)",
-      "Thursday: 8:00PM to 10:00PM - Holy Thursday (Apr 2, 2026)"
+      "Wednesday: 9:00AM to 6:00PM - Eucharistic Adoration/Exposition (extended hours). Page notes also mention Benediction at 4:00pm; exposition begins after the 8:30am Mass."
     ],
-    "events_summary": "Holy Week and Easter liturgies are the focus at Immaculate Conception: Holy Thursday Mass is at 7:00 PM, Good Friday Passion service is at 3:00 PM (with a meager meal at 4:00 PM), and the Easter Vigil begins at 8:30 PM on Saturday; Easter Sunday Masses are at 8:30 AM and 11:00 AM. Looking ahead, Divine Mercy Sunday includes confessions starting at 2:00 PM and a prayer service at 3:00 PM on April 12, and the Consolation Ministry meets Sunday, April 26 from 12:30–2:30 PM (lunch provided). Vacation Bible School runs June 8–12 from 9:00 AM–12:00 PM."
+    "events_summary": "Immaculate Conception Church has a Divine Mercy Service this Sunday, April 12 at 3:00 PM, with Confessions at 2:00 PM beforehand. The parish’s Italian Night community dinner is Saturday, April 25 from 5:00–7:00 PM in the Parish Center (reservations required). Ongoing opportunities include Eucharistic Adoration on Wednesdays from 9:00 AM–6:00 PM, plus weekly Bible Study (Mondays at 7:00 PM on Zoom) and Legion of Mary (Tuesdays 6:00–7:00 PM)."
   },
   {
     "name": "Immaculate Conception of Mary",
@@ -778,25 +763,24 @@
     "phone": "330-929-8361",
     "website": "www.ihmcfo.org",
     "lonlat": "-81.5052399,41.1485774",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=jcLjp9kqxFsy1fpyRT1J6Ig8t8ncLtXNNfsUAEUcRyIyHjeYAICOwM%2BokoxmV0p1AqVoI%2BoDhury0DCtxfPmv74iYyOEeJ9ecScXknW4xlg%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=1kDUv0888F9s7J0ZDGnFgxSUlFcWcKIigwgrajY4qpu08pKjHTrClSVEDf0lnOAnUOn9lAR%2FiBSl6K67QKq8VU%2BO96wEAwIumVJj4mS%2FNiM%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:00AM, 10:00AM, 4:00PM - Divine Mercy Sunday Mass",
+      "Sunday: 8:00AM, 10:00AM",
       "Monday: 8:00AM",
       "Tuesday: 8:00AM",
       "Wednesday: 5:00PM",
       "Thursday: 8:00AM",
-      "Friday: 8:15AM, 5:30PM - Young at Heart Mass (special event)",
-      "Saturday: 4:30PM - Saturday Vigil"
+      "Friday: 8:15AM",
+      "Saturday: 4:30PM - Vigil"
     ],
     "confessions": [
-      "Sunday: 2:00PM to 4:00PM - Divine Mercy Sunday devotions include reconciliation beginning at 2:00pm (bulletin notes 3-4 priests scheduled); end time inferred as flowing into 4:00pm Mass",
       "Saturday: 3:00PM to 4:00PM"
     ],
     "adoration": [
       "Wednesday: 8:00AM to 5:00PM - Adoration of the Blessed Sacrament"
     ],
-    "events_summary": "Immaculate Heart of Mary has several special liturgies and gatherings coming up, including Divine Mercy Sunday devotions with reconciliation on Sunday, April 12 at 2:00 PM flowing into the 4:00 PM Mass. The Young at Heart Spring Mass & Dinner is Friday, April 10 at 5:30 PM, and Fr. Jim Singler’s retirement reception follows the 10:00 AM Mass on Sunday, April 19 (11:00 AM–2:00 PM). Looking ahead, the parish’s “Christ on the Corner” Day of Service is Saturday, May 16, with breakfast at 7:30 AM and projects concluding by 3:00 PM."
+    "events_summary": "Immaculate Heart of Mary will celebrate Fr. Jim Singler’s retirement with a reception on Sunday, April 19, from 11:00 a.m. to 2:00 p.m. in the Parish Community Center following the 10:00 a.m. Mass. The IHM School musical, The Wizard of Oz, runs April 24–25 at 7:00 p.m. and April 26 at 2:00 p.m. in the PCC gym, and the parish’s Day of Service is coming up on Saturday, May 16 (breakfast 7:30–8:15 a.m., concluding by 3:00 p.m.)."
   },
   {
     "name": "Immaculate Heart of Mary",
@@ -823,23 +807,23 @@
     "phone": "216-631-2888",
     "website": "http://www.lasagradafamiliaparish.org",
     "lonlat": "-81.7381139,41.481504",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0131/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0131/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 10:00AM (English), 12:00PM (Spanish), 10:00AM (English) - Easter Sunday, 12:00PM (Spanish) - Easter Sunday",
+      "Sunday: 10:00AM (English), 12:00PM (Spanish)",
       "Wednesday: 6:30PM (Spanish) - Weekday Mass",
-      "Thursday: 6:30PM (Spanish) - Weekday Mass, 7:00PM (Spanish) - Holy Thursday",
+      "Thursday: 6:30PM (Spanish) - Weekday Mass",
       "Friday: 6:30PM (Spanish) - Weekday Mass",
-      "Saturday: 5:00PM (Spanish) - Sunday Mass (Vigil), 8:30PM - Easter Vigil (NO 5:00pm Mass this day)"
+      "Saturday: 5:00PM (Spanish) - Sunday Mass (Vigil)"
     ],
     "confessions": [
       "Thursday: 5:30PM to 6:15PM",
       "Saturday: 4:00PM to 4:45PM"
     ],
     "adoration": [
-      "Thursday: 5:30PM to 6:30PM - Holy Hour (Hora Santa), 7:00PM to 10:00PM - Holy Thursday adoration following Mass (in silence)"
+      "Thursday: 5:30PM to 6:30PM - Hora Santa (Holy Hour)"
     ],
-    "events_summary": "Holy Week liturgies include Holy Thursday Mass in Spanish at 7:00pm on April 2 followed by silent Adoration until 10:00pm, Good Friday’s procession starting at 11:00am on April 3, and the Easter Vigil Mass at 8:30pm on April 4. The Spring Bazaar runs April 18 (3:00–7:00pm) and April 19 (9:00am–2:00pm), and the next Food Pantry San Martin distribution is Thursday, April 16 from 9:00–11:00am. Ongoing opportunities include Saturday catechism at 10:00am and the weekly Renovación Carismática prayer circle."
+    "events_summary": "La Sagrada Familia is hosting a Spring Bazaar on Saturday, April 25 (3:00–7:00 PM) and Sunday, April 26 (9:00 AM–2:00 PM), with tables available for $20 (reserve through the parish office). The San Martin Food Pantry’s next food distribution is Thursday, April 16 from 9:00–11:00 AM, and the Guatemala Mobile Consulate will be at Urban Community School on April 18 (8:00 AM–3:00 PM) and April 19 (8:00 AM–12:00 PM). Upcoming sacramental events include First Communion on Saturday, May 2 at 2:00 PM and the next Pre-Baptism Class on Saturday, May 16 from 1:00–3:30 PM."
   },
   {
     "name": "Mary Queen of Peace",
@@ -850,22 +834,30 @@
     "phone": "216-749-2323",
     "website": "http://www.maryqop.org",
     "lonlat": "-81.7095886,41.4352011",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0875/20260329B.pdf",
-    "timestamp": "2026-04-04",
-    "mass_times": [],
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0875/20260412B.pdf",
+    "timestamp": "2026-04-18",
+    "mass_times": [
+      "Sunday: 6:30AM, 8:30AM, 11:00AM (Latin N.O.), 3:00PM - Divine Mercy Sunday additional Mass",
+      "Monday: 6:15AM (Latin N.O.), 8:00AM",
+      "Tuesday: 6:15AM (Latin N.O.), 8:00AM",
+      "Wednesday: 6:15AM (Latin N.O.), 8:00AM",
+      "Thursday: 6:15AM (Latin N.O.), 8:00AM",
+      "Friday: 6:15AM (Latin N.O.), 8:00AM, 7:00PM (Latin N.O.) - First Friday only",
+      "Saturday: 8:00AM (Latin N.O.), 4:30PM - Vigil"
+    ],
     "confessions": [
-      "Sunday: 10:00AM to 10:45AM - Holy Week: 2026-03-29, 12:30PM to 1:30PM - Holy Week: 2026-03-29",
-      "Monday: 8:30AM to 9:00AM - Regular: weekdays at 8:30 AM (end time not listed); Holy Week schedule, 5:00PM to 6:00PM - Holy Week: 2026-03-30",
-      "Tuesday: 8:30AM to 9:00AM - Regular: weekdays at 8:30 AM (end time not listed); Holy Week schedule, 6:00PM to 7:00PM - Holy Week: 2026-03-31",
-      "Wednesday: 8:30AM to 9:00AM - Regular: weekdays at 8:30 AM (end time not listed); Holy Week schedule, 7:30PM to 8:30PM - Holy Week: 2026-04-01",
-      "Thursday: 8:30AM to 9:00AM - Regular: weekdays at 8:30 AM (end time not listed); Holy Week schedule, 7:15AM to 8:00AM - Holy Week: 2026-04-02, 2:00PM to 3:00PM - Holy Week: 2026-04-02",
-      "Friday: 8:30AM to 9:00AM - Regular: weekdays at 8:30 AM (end time not listed); Holy Week schedule, 7:15AM to 8:00AM - Holy Week: 2026-04-03, 4:30PM to 5:30PM - Holy Week: 2026-04-03",
-      "Saturday: 8:45AM to 9:00AM - Regular: Saturdays 8:45 AM (end time not listed), 3:00PM to 4:00PM - Regular: Saturdays 3:00 PM (end time not listed), 7:15AM to 8:00AM - Holy Week: 2026-04-04, 1:30PM to 2:30PM - Holy Week: 2026-04-04"
+      "Sunday: 10:00AM to 10:45AM - Divine Mercy Sunday confessions, 12:30PM to 2:30PM - Divine Mercy Sunday confessions",
+      "Monday: 8:30AM to 9:00AM - Weekdays listed as 8:30 AM (end time not specified in bulletin)",
+      "Tuesday: 8:30AM to 9:00AM - Weekdays listed as 8:30 AM (end time not specified in bulletin)",
+      "Wednesday: 8:30AM to 9:00AM - Weekdays listed as 8:30 AM (end time not specified in bulletin)",
+      "Thursday: 8:30AM to 9:00AM - Weekdays listed as 8:30 AM (end time not specified in bulletin)",
+      "Friday: 8:30AM to 9:00AM - Weekdays listed as 8:30 AM (end time not specified in bulletin)",
+      "Saturday: 8:45AM to 9:30AM - Start time given; end time not specified in bulletin, 3:00PM to 4:00PM - Start time given; end time not specified in bulletin"
     ],
     "adoration": [
-      "Thursday: 8:15PM to 11:00PM - Holy Thursday: Adoration at the Altar of Repose until Compline (Holy Week; 2026-04-02)"
+      "Sunday: 12:15PM to 2:50PM - Divine Mercy Sunday Exposition/Adoration with Benediction at 2:50 PM"
     ],
-    "events_summary": "Holy Week is packed with special liturgies and devotions, including Living Stations of the Cross on Wednesday, April 1 at 2:00 PM and 6:30 PM, Tenebrae at 8:30 PM, and the Sacred Triduum services (Holy Thursday Mass at 7:00 PM; Good Friday service at 3:00 PM; Easter Vigil at 8:45 PM). On Holy Saturday (April 4), bring Easter baskets for the Świeconka blessing at 11:45 AM or 12:30 PM, and join the parish for the Easter Sunday community meal on April 5 from 12:00–2:00 PM (free; delivery available by calling the rectory by April 1). Catholic Movie Nights continue monthly at 6:00 PM in the Parish Center Upper Hall (next: April 19)."
+    "events_summary": "Mary Queen of Peace is celebrating Divine Mercy Sunday on April 12 with extra devotions, including extended Confessions, Exposition of the Blessed Sacrament, a 3:00 PM Mass, and a reception afterward. Next weekend brings the Mobile Food Pantry on Saturday, April 18 (9:00–11:00 AM) and a free Community Meal on Sunday, April 19 at 1:00 PM. Also coming up: the School Spring Open House on Thursday, April 16 (3:30–6:00 PM) and Catholic Movie Night (“Romero”) on Sunday, April 19 at 6:00 PM."
   },
   {
     "name": "Mary Queen of the Apostles Parish",
@@ -876,24 +868,23 @@
     "phone": "(216) 433.1440",
     "website": "www.mqabrookpark.org",
     "lonlat": "-81.8227197,41.39204",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0571/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0571/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 9:00AM, 11:00AM, 9:00AM - Easter Sunday, 11:00AM - Easter Sunday",
+      "Sunday: 9:00AM, 11:00AM",
       "Monday: 8:00AM - Weekday Mass",
       "Tuesday: 8:00AM - Weekday Mass",
-      "Thursday: 8:00AM - Weekday Mass, 7:00PM - Holy Thursday - Mass of the Lord's Supper; procession followed by adoration until 21:00",
+      "Thursday: 8:00AM - Weekday Mass",
       "Friday: 8:00AM - Weekday Mass",
-      "Saturday: 4:30PM - Vigil Mass, 8:45PM - Easter Vigil Mass (Holy Saturday)"
+      "Saturday: 4:30PM - Vigil Mass"
     ],
     "confessions": [
-      "Wednesday: 6:30PM to 8:00PM - Extended confession time (Holy Week)",
-      "Saturday: 3:30PM to 4:15PM - Regular weekly confessions; and by appointment"
+      "Saturday: 3:30PM to 4:15PM - and by appointment"
     ],
     "adoration": [
-      "Thursday: 8:30AM to 6:30PM - Weekly adoration (not held on Holy Thursday), 7:00PM to 9:00PM - Holy Thursday adoration following Mass until 21:00 (2026-04-02)"
+      "Thursday: 8:30AM to 6:30PM - Adoration of the Blessed Sacrament"
     ],
-    "events_summary": "Holy Week liturgies at Mary Queen of the Apostles include Holy Thursday Mass at 7:00 PM with adoration until 9:00 PM, Good Friday Stations of the Cross at 12:00 PM and Solemn Service at 3:00 PM, and the Easter Vigil at 8:45 PM, with Easter Sunday Masses at 9:00 AM and 11:00 AM. Confession opportunities include an extended session on Wednesday, April 1 from 6:30–8:00 PM, plus a cluster communal penance service on Monday, March 30 at 7:00 PM at St. Bridget of Kildare. Upcoming gatherings include the Ladies Guild meeting on Wednesday, April 1 at 1:30 PM, and Theology on the Rocks West on Monday, April 13 from 7:00–8:30 PM."
+    "events_summary": "This week includes Sharing Christ on Monday at 12:30 PM, plus Bible Study on Thursday at 11:00 AM and Choir practice at 7:00 PM. Don’t miss Food Drive Weekend and the Men’s Spirituality Group meeting on Saturday at 9:30 AM, followed by Confessions from 3:30–4:15 PM and the Saturday vigil Mass at 4:30 PM. Looking ahead, mark your calendar for the Amish Country bus trip to see “Elijah: Prophet of Fire” on Thursday, June 18."
   },
   {
     "name": "Mother of Sorrows Parish",
@@ -904,18 +895,18 @@
     "phone": "330-657-2631",
     "website": "www.motherofsorrowspeninsula.org",
     "lonlat": "-81.5482742,41.2404221",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1810/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1810/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 9:30AM, 9:30AM - Easter Sunday Mass",
-      "Thursday: 7:00PM - Holy Thursday Mass of the Lord’s Supper",
-      "Saturday: 5:00PM - Saturday Vigil, 8:00PM - Easter Vigil"
+      "Sunday: 9:30AM",
+      "Saturday: 5:00PM - Saturday Vigil"
     ],
     "confessions": [],
     "adoration": [
-      "Wednesday: 6:00PM to 6:00PM - Eucharistic Adoration (bulletin lists time only; end time not provided)"
+      "Sunday: 10:30AM to 11:30AM - Divine Mercy Prayers and Eucharistic Adoration (immediately after Mass); listed for 4/12/2026",
+      "Wednesday: 6:00PM to 7:00PM - Eucharistic Adoration; listed for 4/29/2026, 6:00PM to 7:00PM - Eucharistic Adoration; listed for 5/27/2026"
     ],
-    "events_summary": "Mother of Sorrows Parish is entering Holy Week with special liturgies including Holy Thursday Mass at 7:00 PM, Good Friday Stations of the Cross at 12:00 PM and the Passion service at 3:00 PM, followed by the Easter Vigil at 8:00 PM and Easter Sunday Mass at 9:30 AM. Upcoming gatherings include the Faith & Fiction Book Club on Wednesday, April 8 at 10:00 AM, and Eucharistic Adoration on Wednesday, April 29 at 6:00 PM followed by a Finance Council meeting at 7:00 PM. Free CPR and First Aid training sessions (registration required) will be held at the Peninsula Coffee House on select dates in early April."
+    "events_summary": "Mother of Sorrows is hosting Divine Mercy Prayers and Eucharistic Adoration on Sunday, April 12 at 10:30 AM (right after Mass). Upcoming midweek opportunities include Eucharistic Adoration and a Finance Council meeting on Wednesday, April 29 at 6:00 PM and 7:00 PM, plus the Faith & Fiction Book Club on Wednesday, May 13 at 10:00 AM. A special community concert (Brecksville–Broadview Heights Community Chorus) is also coming up on Sunday, April 26 at 4:00 PM (tickets $10)."
   },
   {
     "name": "Nativity of the Blessed Virgin Mary Parish (Roman Catholic Church)",
@@ -926,23 +917,23 @@
     "phone": "440-244-9090",
     "website": "nativitybvmlorain.org",
     "lonlat": "-82.1724515,41.4560215",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=nVfOPeTZNXa9zqt7uJwNabTIjiINUF8e1Dx5smLe2E7zj7m1ScIiUpA8jf%2BttuYjF8CcRjYzC%2BQq4glH%2F%2Fmpwssw7BQ7mdmVKHMhJE1I4KE%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=58hGAO%2FcEOV5zDp%2F8gvSmlJ7OPY9Cv1RYPqZUmhT0G2gRG4vf5LcKuAI3b1oqwgkEEKVZWxoYMxmHtKLa1kLuzS%2BOA%2BIO8lNGM16kqZl%2FGE%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 10:30AM, 8:30AM - Easter Sunday, 10:30AM - Easter Sunday",
+      "Sunday: 10:30AM",
       "Monday: 8:15AM",
       "Wednesday: 6:30PM",
       "Thursday: 8:15AM",
       "Friday: 8:15AM",
-      "Saturday: 4:00PM - Vigil, 8:45PM - Holy Saturday"
+      "Saturday: 4:00PM - Vigil"
     ],
     "confessions": [
-      "Saturday: 2:30PM to 3:00PM - Or call the parish office for an appointment"
+      "Saturday: 2:30PM to 3:00PM - Or call parish office for an appointment"
     ],
     "adoration": [
       "Saturday: 2:30PM to 3:30PM - Eucharistic Holy Hour"
     ],
-    "events_summary": "Nativity of the Blessed Virgin Mary Parish is celebrating the Easter season with special liturgies and devotions, including Divine Mercy Sunday Confessions at 2:00 PM and a Prayer Service at 3:00 PM on Sunday, April 12. Join the parish for the Stations of Light (Stations of the Resurrection) on Wednesday, April 8 at 7:00 PM (after the 6:30 PM Mass), and consider getting involved through the Altar & Rosary Society meeting on April 8 at 1:00 PM or the parish’s monthly Heritage Committee and Education Commission gatherings."
+    "events_summary": "Nativity of the Blessed Virgin Mary Parish continues its regular Saturday Eucharistic Holy Hour (2:30–3:30 PM) with Confession available Saturdays from 2:30–3:00 PM. Upcoming parish gatherings include Music Class at 6:10 PM and Choir at 7:00 PM on April 22, a Parish Council meeting at 6:30 PM on April 23, and a prayer service in the church at 7:00 PM on April 27. Teens can also plan ahead for the CLE 21:6 diocesan high school youth conference on January 9, 2027 at John Carroll University."
   },
   {
     "name": "Nativity of the Blessed Virgin Mary",
@@ -978,24 +969,24 @@
     "phone": "330-699-5086",
     "website": "www.nativityofthelord.org",
     "lonlat": "-81.4352644,40.9975087",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0042/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0042/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:30AM, 11:00AM, 8:30AM - Easter Sunday Mass, 11:00AM - Easter Sunday Mass",
+      "Sunday: 8:30AM, 11:00AM",
       "Monday: 8:00AM",
       "Wednesday: 8:00AM",
-      "Thursday: 7:00PM",
-      "Friday: 7:00PM - Good Friday: Passion of the Lord (service; listed in bulletin under Mass times/intentions)",
-      "Saturday: 9:00PM - Easter Vigil Mass"
+      "Thursday: 8:00AM",
+      "Friday: 8:00AM",
+      "Saturday: 4:30PM"
     ],
     "confessions": [
-      "Tuesday: 6:00PM to 6:45PM - 1st Tuesday only",
-      "Saturday: 3:00PM to 4:00PM, 3:00PM to 4:00PM - NO confessions on 2026-04-04 (Holy Saturday)"
+      "Tuesday: 6:00PM to 6:45PM - 1st Tuesday",
+      "Saturday: 3:00PM to 4:00PM"
     ],
     "adoration": [
-      "Thursday: 12:00PM to 7:00PM - Eucharistic Exposition/Adoration, 8:00PM to 10:00PM - Holy Thursday adoration after Mass of the Lord's Supper until 10:00 PM; NO daily Adoration on 2026-04-02 earlier in the day"
+      "Thursday: 12:00PM to 7:00PM - Eucharistic Exposition/Adoration"
     ],
-    "events_summary": "Holy Week is here at Nativity of the Lord Jesus Parish, with Holy Thursday Mass of the Lord’s Supper at 7:00 PM followed by adoration until 10:00 PM, Good Friday Stations of the Cross at 2:30 PM and the Passion of the Lord at 7:00 PM, and the Easter Vigil on Saturday at 9:00 PM. Easter Sunday Masses are at 8:30 AM and 11:00 AM, and the Divine Mercy Novena begins Friday at 6:30 PM. Looking ahead, the Knights of Columbus host “Knight at the Races” on April 11, and the Ladies Guild meets April 13 at 6:30 PM."
+    "events_summary": "Nativity of the Lord Jesus is celebrating Divine Mercy Sunday, with a cluster Divine Mercy Chaplet, Adoration, and a reception at Queen of Heaven Parish on Sunday, April 12 at 2:30 PM. This week includes the Ladies Guild meeting on Monday, April 13 at 6:30 PM and the Cluster Prayer Shawl Ministry meeting on Tuesday, April 14 at 10:00 AM, plus a STARS planning meeting Tuesday at 6:00 PM. Coming up: the Scouts Pancake Breakfast on Saturday, April 25 from 8:00–11:00 AM, and “The Five Love Languages” enrichment night on Saturday, May 2 starting with the 4:30 PM Mass followed by dinner."
   },
   {
     "name": "Our Lady Help of Christians Catholic Church - Litchfield",
@@ -1006,21 +997,20 @@
     "phone": "(330) 722-1180",
     "website": "https://www.olhc-parish.com",
     "lonlat": "-82.0339708,41.164286",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=RC1JFL3P1kUunZfHBE1dkkU%2FVLy%2FfhVsA3bOK1x2ckQax1sisgIOh3Q%2FycN1EzWRFt3ZYCz%2FvYVsN5p7fCe7Y6CjYzRW3jdIouxregmPTH8%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=x9h4xSJh8wH%2FhYoleACLig0jCxIAh21lV86OmCiSjfM5c%2BQYaan8sCr0f5f%2BD2H8aXm3rgm7GZXrm3FSuSHVEzC4QCrYziLaaDa1%2Fh6WiaQ%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
       "Sunday: 9:00AM",
-      "Wednesday: 9:00AM",
-      "Friday: 7:00PM - First Friday of the month only (Mass follows adoration at 6:00 p.m.)",
+      "Wednesday: 9:00AM, 9:00AM - NO MASS TODAY ONLY",
       "Saturday: 6:00PM"
     ],
     "confessions": [
       "Monday: 6:00PM to 7:00PM - First Monday of the month; after 6:00PM Mass (listed as Lodi Site in bulletin)"
     ],
     "adoration": [
-      "Friday: 6:00PM to 7:00PM - First Friday of the month only"
+      "Friday: 6:00PM to 7:00PM - First Friday of the month (Adoration at 6:00 p.m.; Mass follows at 7:00 p.m.)"
     ],
-    "events_summary": "This month includes Divine Mercy Sunday at the Seville site on Sunday, April 12 at 3:00 PM, along with a Seville social with donuts and coffee after the 10:30 AM Mass that day. Women are invited to the Bernadette Guild program on Thursday, April 9 at 6:30 PM, and everyone is welcome at the Seville potluck after the 4:00 PM Mass on Saturday, April 25. Photography sessions for the parish pictorial directory run April 15–30 at various sites, and the next First Friday adoration and Mass will be May 1 at 6:00 PM/7:00 PM in Litchfield."
+    "events_summary": "Upcoming parish highlights include a Seville Potluck Dinner after the 4:00 PM Mass on Saturday, April 25, and the Bernadette Guild Mother/Daughter Potluck Banquet on Thursday, May 14 at 6:00 PM at the Seville site. First Friday Adoration begins at 6:00 PM with Mass at 7:00 PM on Friday, May 1 at the Litchfield site, followed by First Saturday Rosary at 9:00 AM on May 2. The OLHC Men’s Group meets Tuesdays at 6:30 PM at the Lodi site, and Youth Group gatherings continue on select Sundays from 5:00–7:00 PM at rotating locations."
   },
   {
     "name": "Our Lady Help of Christians Catholic Church - Lodi",
@@ -1031,17 +1021,17 @@
     "phone": "(330) 722-1180",
     "website": "https://www.olhc-parish.com",
     "lonlat": "-81.9872142,41.0398731",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=RC1JFL3P1kUunZfHBE1dkkU%2FVLy%2FfhVsA3bOK1x2ckQax1sisgIOh3Q%2FycN1EzWRFt3ZYCz%2FvYVsN5p7fCe7Y6CjYzRW3jdIouxregmPTH8%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=x9h4xSJh8wH%2FhYoleACLig0jCxIAh21lV86OmCiSjfM5c%2BQYaan8sCr0f5f%2BD2H8aXm3rgm7GZXrm3FSuSHVEzC4QCrYziLaaDa1%2Fh6WiaQ%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
       "Sunday: 8:30AM",
-      "Monday: 6:00PM"
+      "Monday: 6:00PM, 6:00PM"
     ],
     "confessions": [
-      "Monday: 7:00PM to 8:00PM - First Monday of the month only; after 6:00 p.m. Mass (bulletin does not list an end time)"
+      "Monday: 7:00PM to 7:30PM - First Monday of the month: after 6:00PM daily Mass (approximate end time not specified)"
     ],
     "adoration": [],
-    "events_summary": "This month includes Divine Mercy Sunday at the Seville site on Sunday, April 12 at 3:00 PM, along with a Seville social with donuts and coffee after the 10:30 AM Mass that day. Women are invited to the Bernadette Guild program on Thursday, April 9 at 6:30 PM, and everyone is welcome at the Seville potluck after the 4:00 PM Mass on Saturday, April 25. Photography sessions for the parish pictorial directory run April 15–30 at various sites, and the next First Friday adoration and Mass will be May 1 at 6:00 PM/7:00 PM in Litchfield."
+    "events_summary": "Upcoming parish highlights include a Seville Potluck Dinner after the 4:00 PM Mass on Saturday, April 25, and the Bernadette Guild Mother/Daughter Potluck Banquet on Thursday, May 14 at 6:00 PM at the Seville site. First Friday Adoration begins at 6:00 PM with Mass at 7:00 PM on Friday, May 1 at the Litchfield site, followed by First Saturday Rosary at 9:00 AM on May 2. The OLHC Men’s Group meets Tuesdays at 6:30 PM at the Lodi site, and Youth Group gatherings continue on select Sundays from 5:00–7:00 PM at rotating locations."
   },
   {
     "name": "Our Lady Help of Christians Catholic Church - Nova",
@@ -1052,14 +1042,14 @@
     "phone": "(330) 722-1180",
     "website": "https://www.olhc-parish.com",
     "lonlat": "-82.3051178,41.0302099",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=RC1JFL3P1kUunZfHBE1dkkU%2FVLy%2FfhVsA3bOK1x2ckQax1sisgIOh3Q%2FycN1EzWRFt3ZYCz%2FvYVsN5p7fCe7Y6CjYzRW3jdIouxregmPTH8%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=x9h4xSJh8wH%2FhYoleACLig0jCxIAh21lV86OmCiSjfM5c%2BQYaan8sCr0f5f%2BD2H8aXm3rgm7GZXrm3FSuSHVEzC4QCrYziLaaDa1%2Fh6WiaQ%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
       "Sunday: 11:00AM"
     ],
     "confessions": [],
     "adoration": [],
-    "events_summary": "This month includes Divine Mercy Sunday at the Seville site on Sunday, April 12 at 3:00 PM, along with a Seville social with donuts and coffee after the 10:30 AM Mass that day. Women are invited to the Bernadette Guild program on Thursday, April 9 at 6:30 PM, and everyone is welcome at the Seville potluck after the 4:00 PM Mass on Saturday, April 25. Photography sessions for the parish pictorial directory run April 15–30 at various sites, and the next First Friday adoration and Mass will be May 1 at 6:00 PM/7:00 PM in Litchfield."
+    "events_summary": "Upcoming parish highlights include a Seville Potluck Dinner after the 4:00 PM Mass on Saturday, April 25, and the Bernadette Guild Mother/Daughter Potluck Banquet on Thursday, May 14 at 6:00 PM at the Seville site. First Friday Adoration begins at 6:00 PM with Mass at 7:00 PM on Friday, May 1 at the Litchfield site, followed by First Saturday Rosary at 9:00 AM on May 2. The OLHC Men’s Group meets Tuesdays at 6:30 PM at the Lodi site, and Youth Group gatherings continue on select Sundays from 5:00–7:00 PM at rotating locations."
   },
   {
     "name": "Our Lady Help of Christians Catholic Church - Seville",
@@ -1070,15 +1060,15 @@
     "phone": "(330) 722-1180",
     "website": "https://www.olhc-parish.com",
     "lonlat": "-81.8684697,41.0136379",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=RC1JFL3P1kUunZfHBE1dkkU%2FVLy%2FfhVsA3bOK1x2ckQax1sisgIOh3Q%2FycN1EzWRFt3ZYCz%2FvYVsN5p7fCe7Y6CjYzRW3jdIouxregmPTH8%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=x9h4xSJh8wH%2FhYoleACLig0jCxIAh21lV86OmCiSjfM5c%2BQYaan8sCr0f5f%2BD2H8aXm3rgm7GZXrm3FSuSHVEzC4QCrYziLaaDa1%2Fh6WiaQ%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 10:30AM - Children's Liturgy of the Word",
-      "Saturday: 4:00PM"
+      "Sunday: 10:30AM - Children's Liturgy of the Word, 10:30AM",
+      "Saturday: 4:00PM, 4:00PM, 4:00PM"
     ],
     "confessions": [],
     "adoration": [],
-    "events_summary": "This month includes Divine Mercy Sunday at the Seville site on Sunday, April 12 at 3:00 PM, along with a Seville social with donuts and coffee after the 10:30 AM Mass that day. Women are invited to the Bernadette Guild program on Thursday, April 9 at 6:30 PM, and everyone is welcome at the Seville potluck after the 4:00 PM Mass on Saturday, April 25. Photography sessions for the parish pictorial directory run April 15–30 at various sites, and the next First Friday adoration and Mass will be May 1 at 6:00 PM/7:00 PM in Litchfield."
+    "events_summary": "Upcoming parish highlights include a Seville Potluck Dinner after the 4:00 PM Mass on Saturday, April 25, and the Bernadette Guild Mother/Daughter Potluck Banquet on Thursday, May 14 at 6:00 PM at the Seville site. First Friday Adoration begins at 6:00 PM with Mass at 7:00 PM on Friday, May 1 at the Litchfield site, followed by First Saturday Rosary at 9:00 AM on May 2. The OLHC Men’s Group meets Tuesdays at 6:30 PM at the Lodi site, and Youth Group gatherings continue on select Sundays from 5:00–7:00 PM at rotating locations."
   },
   {
     "name": "Our Lady of Angels",
@@ -1089,10 +1079,10 @@
     "phone": "216-252-2332",
     "website": "www.olangels.org",
     "lonlat": "-81.8170805,41.4542071",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=fkqv%2B0sfRMhyQi9Zm%2Fg9OGQMCgCeau0DpnWDqooG0G3TQGV2g4fXvR70SfL%2BUwtD1U2kxYDS9XliUdiRTREmke9Q7Y%2BaaBh8idK03%2F3YmbM%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=zRHq4QOaPypqtGXBbqjPpWTHnE3ssGjK9%2B0WN6sFN6po6SeZewLO1GAZtqot%2F9C6obF8MWs2ymeuVqPf7PO8MJXl%2BMllleV5nVg%2FDfBH8kI%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 9:00AM, 11:00AM, 9:00AM - Easter Sunday (Resurrection of the Lord), 11:00AM - Easter Sunday (Resurrection of the Lord)",
+      "Sunday: 9:00AM, 11:00AM",
       "Monday: 6:00PM",
       "Wednesday: 9:30AM - During school year, 6:00PM - During summer",
       "Thursday: 6:00PM",
@@ -1104,15 +1094,15 @@
       "Saturday: 2:30PM to 3:45PM"
     ],
     "adoration": [
-      "Sunday: 5:00AM to 10:00PM - Adoration Chapel open daily 5:00am-10:00pm",
-      "Monday: 5:00AM to 10:00PM - Adoration Chapel open daily 5:00am-10:00pm",
-      "Tuesday: 5:00AM to 10:00PM - Adoration Chapel open daily 5:00am-10:00pm",
-      "Wednesday: 5:00AM to 10:00PM - Adoration Chapel open daily 5:00am-10:00pm",
-      "Thursday: 5:00AM to 10:00PM - Adoration Chapel open daily 5:00am-10:00pm",
-      "Friday: 5:00AM to 10:00PM - Adoration Chapel open daily 5:00am-10:00pm",
-      "Saturday: 5:00AM to 10:00PM - Adoration Chapel open daily 5:00am-10:00pm"
+      "Sunday: 5:00AM to 10:00PM - Adoration Chapel open daily 5:00 AM–10:00 PM",
+      "Monday: 5:00AM to 10:00PM - Adoration Chapel open daily 5:00 AM–10:00 PM",
+      "Tuesday: 5:00AM to 10:00PM - Adoration Chapel open daily 5:00 AM–10:00 PM",
+      "Wednesday: 5:00AM to 10:00PM - Adoration Chapel open daily 5:00 AM–10:00 PM",
+      "Thursday: 5:00AM to 10:00PM - Adoration Chapel open daily 5:00 AM–10:00 PM",
+      "Friday: 5:00AM to 10:00PM - Adoration Chapel open daily 5:00 AM–10:00 PM",
+      "Saturday: 5:00AM to 10:00PM - Adoration Chapel open daily 5:00 AM–10:00 PM"
     ],
-    "events_summary": "Our Lady of Angels is celebrating the Easter season with a Divine Mercy Holy Hour on Sunday, April 12 at 3:00 PM in the church. The parish will also host a Town Hall meeting after all Masses the weekend of April 18–19 (with donuts and coffee) to discuss the Called to Flourish Capital Campaign. Upcoming community activities include the OLA Guild Spring Brunch on April 12 at 12:00 PM and the Fine Arts Council’s “Finding Nemo Jr.” performances on April 25 at 7:00 PM, April 26 at 3:00 PM, and April 27 at 7:00 PM."
+    "events_summary": "Our Lady of Angels has several gatherings coming up, including Holy Hour (held on the first and third Monday at 7:00 PM) and performances of “Finding Nemo Jr.” in Linus Hall on Saturday, April 25 at 7:00 PM; Sunday, April 26 at 3:00 PM; and Monday, April 27 at 7:00 PM. PSR registration for the 2026–2027 year is due by June 1, and the next Baptism class will be Sunday, June 14 at 10:00 AM in the Stigmata Chapel. Fr. Rob is also hosting an Ireland pilgrimage October 12–22, 2026 with limited space."
   },
   {
     "name": "Our Lady of Grace Catholic Church",
@@ -1152,26 +1142,27 @@
     "phone": "330.468.2194",
     "website": "www.olg.cc",
     "lonlat": "-81.489806,41.322031",
-    "bulletin_url": "https://olg.cc/wp-content/uploads/2026/04/20260405-1.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://olg.cc/wp-content/uploads/2026/04/20260419.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:30AM, 10:30AM, 8:30AM - Easter Sunday, 10:30AM - Easter Sunday",
-      "Monday: 12:00PM - Weekday Mass",
-      "Tuesday: 12:00PM - Weekday Mass",
-      "Friday: 12:00PM - Weekday Mass",
-      "Saturday: 4:30PM - Vigil Mass, 8:45PM - Easter Vigil"
+      "Sunday: 8:30AM, 10:30AM - Children’s Liturgy of the Word during this Mass",
+      "Monday: 12:00PM",
+      "Tuesday: 12:00PM",
+      "Friday: 12:00PM",
+      "Saturday: 4:30PM"
     ],
     "confessions": [
-      "Saturday: 3:30PM to 4:15PM - Sacrament of Penance (regular weekly); also listed this week as 'Confessions, CH 3:30-4:15 pm'"
+      "Tuesday: 6:30PM to 7:30PM - 1st Tuesday of each month",
+      "Saturday: 3:30PM to 4:15PM, 3:30PM to 4:15PM - or by appointment"
     ],
     "adoration": [
-      "Monday: 9:00AM to 8:00PM - Eucharistic Adoration (Chapel)",
-      "Tuesday: 9:00AM to 8:00PM - Eucharistic Adoration (Chapel)",
-      "Wednesday: 9:00AM to 4:00PM - Eucharistic Adoration (Chapel)",
-      "Thursday: 9:00AM to 4:00PM - Eucharistic Adoration (Chapel)",
-      "Friday: 9:00AM to 4:00PM - Eucharistic Adoration (Chapel)"
+      "Monday: 9:00AM to 11:59PM - Perpetual adoration begins Monday 9:00am (continues overnight into Tuesday)",
+      "Tuesday: 12:00AM to 8:00AM - Continuation of Monday-to-Tuesday perpetual slot (ends Tuesday 8:00am), 9:00AM to 4:00PM",
+      "Wednesday: 9:00AM to 7:00PM",
+      "Thursday: 9:00AM to 4:00PM",
+      "Friday: 9:00AM to 2:00PM"
     ],
-    "events_summary": "Our Lady of Guadalupe is celebrating the Easter season with a special Divine Mercy Sunday Holy Hour and Chaplet on Sunday, April 12 at 3:00 PM, with Confession available. Youth ministry events include Rosary Night on April 8 (6:00–7:00 PM) and a trip for Mass and Adoration at the seminary on April 23 (5:45–9:00 PM). Upcoming retreats include the Women’s “Better Together” retreat on Saturday, April 18 at 10:00 AM and the Men’s Retreat on Saturday, May 16 from 8:30 AM–4:30 PM."
+    "events_summary": "Our Lady of Guadalupe has several upcoming parish opportunities, including a Knights of Columbus Pancake Breakfast on Sunday, April 26 after the 8:30 a.m. and 10:30 a.m. Masses and a Spaghetti Dinner fundraiser on Saturday, May 2 from 5:30–7:30 p.m. Youth in grades 7–12 are invited to ALTARED events, including a seminary visit on Thursday, April 23 (5:45–9:00 p.m.) and an ALTARED night on Sunday, April 26 (6:00–7:30 p.m.). Mark your calendar for May Crowning on May 10 after the 10:30 a.m. Mass and the OLG Men’s Retreat on Saturday, May 16 (8:30 a.m.–4:30 p.m.)."
   },
   {
     "name": "Our Lady of Lourdes Parish",
@@ -1182,10 +1173,10 @@
     "phone": "216.641.2829",
     "website": "www.ourladyoflourdes-cle.com",
     "lonlat": "-81.6521799,41.4655976",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=XGlFr6Zu3rGMj3N%2Fu5i6gCoT1EYdgDCGslw7njrGZ8IkqySufFK%2F0dUI75YsS05GGx8GihlUiRJzzb3cKhkql8YOAA7w2DRJ9efz5%2FySw%2FE%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=QukebLRpDYdaeBO7wRaWO%2FzaTXSSDYUue4Lzfc49NTtQjks9hRHQ576JgEpdxBXjPe6q5O0Kl8zkBUYSOKDPjTWIJXOUh2RGzaisjRMHuYI%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 10:00AM, 12:30PM (Spanish)",
+      "Sunday: 10:00AM, 12:30PM, 4:00PM (Spanish) - Retreat Mass",
       "Saturday: 4:00PM"
     ],
     "confessions": [
@@ -1194,7 +1185,7 @@
     "adoration": [
       "Thursday: 7:00PM to 9:00PM - Holy Thursday only: Adoration of the Blessed Sacrament until 9:00 PM (after Mass of the Lord’s Supper)"
     ],
-    "events_summary": "Our Lady of Lourdes is celebrating Easter season while continuing a major fundraising effort for urgent church repairs through the Matching Sacred Places Grant appeal. This week includes the Food Pantry on Wednesday at 3:00 PM, and a pre-baptism talk on Sunday, April 12 at 11:00 AM, along with Altar & Rosary and the Activities Committee meeting after Mass. Upcoming formation opportunities include a Baptism Class on Sunday, April 19 at 11:15 AM and Confirmation prep on Sunday, April 26 at 2:15 PM."
+    "events_summary": "Our Lady of Lourdes has several upcoming parish activities, including a pre-baptism class on Sunday, April 19 at 11:15 a.m. and a Spanish retreat Mass the same day at 4:00 p.m. This week also includes the Food Pantry on Wednesday, April 22 at 3:00 p.m., PSR/Doctrina on Saturday, April 25 at 10:00 a.m., and a pupusas sale on Sunday, April 26 after Mass. A Spanish pre-baptism talk is scheduled for Sunday, May 10 at 11:00 a.m., and confirmation preparation (retreat) meets Sunday, April 26 at 2:15 p.m."
   },
   {
     "name": "Our Lady of Mount Carmel Roman Catholic Church",
@@ -1205,25 +1196,24 @@
     "phone": "216-651-5043",
     "website": "www.olmccleveland.org",
     "lonlat": "-81.7330876,41.4836489",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0582/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0582/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:00AM, 11:30AM (English & Italian), 5:00PM, 8:00AM - Easter Sunday; no 5:00 PM Mass, 11:30AM (English & Italian) - Easter Sunday; no 5:00 PM Mass",
+      "Sunday: 8:00AM, 11:30AM (English & Italian), 5:00PM",
       "Monday: 6:00PM",
       "Tuesday: 6:30AM",
       "Wednesday: 6:00PM",
-      "Thursday: 6:30AM, 7:00PM - Holy Thursday",
+      "Thursday: 6:30AM",
       "Friday: 6:00PM",
-      "Saturday: 8:15AM, 8:30PM - Easter Vigil (Holy Saturday); no 8:15 AM Mass"
+      "Saturday: 8:15AM"
     ],
     "confessions": [
       "Monday: 5:00PM to 5:45PM - During Lent"
     ],
     "adoration": [
-      "Thursday: 7:00PM to 11:00PM - Holy Thursday: adoration immediately after Mass until 11:00 PM",
-      "Friday: 10:00PM to 8:15AM - First Fridays: following the 10:00 PM Mass until Benediction at 8:15 AM preceding the Saturday 8:15 AM Mass"
+      "Friday: 10:00PM to 8:15AM - First Fridays only; following the 10:00 pm Mass until Benediction at 8:15 am preceding the Saturday 8:15 am Mass"
     ],
-    "events_summary": "Holy Week is underway with Holy Thursday Mass at 7:00 PM on April 2 followed by adoration until 11:00 PM, Good Friday service at 3:00 PM on April 3, and Easter Vigil Mass at 8:30 PM on April 4. Easter Sunday Masses are at 8:00 AM and 11:30 AM (English & Italian) on April 5, with no 5:00 PM Mass. Looking ahead, the parish will host a Centennial Celebration on Saturday, April 18 (doors open at 6:00 PM, dinner at 7:00 PM), plus upcoming events like the Mothers’ & Sons’ “Noms with Moms” on May 8 and the 100th Annual Italian Festival July 8–12."
+    "events_summary": "Our Lady of Mount Carmel is celebrating its centennial year, with a Holy Name/Sacred Heart Centennial Celebration on Saturday, April 18, 2026 at 6:00 PM (dinner at 7:00 PM; tickets $30). Mark your calendar for upcoming special events including the Memorial Day Mass, wreath-laying, and breakfast on May 25 at 9:00 AM and the 100th Annual Italian Festival July 8–12 (with the Procession of Saints after the 11:30 AM Mass on July 12). Ongoing groups meet regularly, including Holy Name on Sundays at 10:00 AM and St. Vincent de Paul on Thursdays at 6:30 PM."
   },
   {
     "name": "Our Lady of Mt. Carmel Church",
@@ -1279,22 +1269,22 @@
     "phone": "216-486-0850",
     "website": "olleuclid.org",
     "lonlat": "-81.5404977,41.6016578",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0674/20260215B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0674/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:30AM, 11:00AM, 8:30AM - Palm Sunday, 11:00AM - Palm Sunday, 8:30AM - Easter Sunday, 11:00AM - Easter Sunday",
+      "Sunday: 8:30AM, 11:00AM",
       "Monday: 9:00AM",
-      "Wednesday: 9:00AM, 9:00AM - Ash Wednesday Mass with ashes, 7:00PM - Ash Wednesday Mass with ashes, 7:00PM - Tenebrae",
-      "Thursday: 9:00AM, 7:00PM - Holy Thursday Mass of the Lord's Supper",
-      "Saturday: 4:00PM, 4:00PM - Palm Sunday (Vigil), 8:45PM - Easter Vigil Mass"
+      "Wednesday: 9:00AM",
+      "Thursday: 9:00AM",
+      "Saturday: 4:00PM"
     ],
     "confessions": [
-      "Saturday: 3:00PM to 3:30PM - Or by appointment (call rectory)"
+      "Saturday: 3:00PM to 3:30PM - Or by appointment (call the rectory)"
     ],
     "adoration": [
       "Thursday: 7:00PM to 10:30PM - Holy Thursday adoration before the Blessed Sacrament (until 10:30pm)"
     ],
-    "events_summary": "Ash Wednesday is February 18 with Masses and ashes at 9:00 AM and 7:00 PM, plus a 12:00 PM Liturgy of the Word Service with ashes. Mark your calendar for the Genesis meeting on Sunday, March 8 after the 8:30 AM Mass, featuring Mayor Kirsten Holzheimer Gail’s State of the City address, and for the Winter Book Club at the rectory on Tuesday, February 24 at 7:00 PM. Holy Week begins with Palm Sunday Masses on Saturday, March 28 at 4:00 PM and Sunday, March 29 at 8:30 AM and 11:00 AM, leading into the Triduum and Easter celebrations."
+    "events_summary": "Our Lady of the Lake has several upcoming gatherings, including the Genesis Meeting on Sunday, April 12 at 9:30am in the church hall (focused on safety for seniors) and a parish Litter Pilgrimage on Saturday, April 25 starting at 10:00am in the church parking lot. The OLL Book Club meets Tuesday, April 28 at 7:00pm (and again Tuesday, May 26 at 7:00pm) at the rectory, and Vacation Bible School runs June 8–12, 9:00am–12:00pm in the church hall. Save the date for the Parish Picnic on Sunday, September 20 from 12:00–4:00pm at the Italian American Club."
   },
   {
     "name": "Our Lady of Victory Church",
@@ -1305,21 +1295,21 @@
     "phone": "330-633-3637",
     "website": "www.ourladyofvictory.net",
     "lonlat": "-81.441818,41.10472",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=nR6m3JlCsDfv5FdzCS8%2FZLs0tVm%2Ferfrp7vfL8oROuNe8nek5rghJ6f9CCG3qRzTYG%2BwpDb8nNYdeSwfhYR2n5Nn6tLFIDI8ajeL1oFCIsQ%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=siaV9mR233xJt3ZhHgWiRQmd40WM4V6quCgcU0wHTlyUBPz4AOo%2BBtVW2bt66g0gWVMOSA0wcEzIgLIVlLXcMvFGvafpCEk4T3KC9kGpmTo%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
       "Sunday: 8:30AM",
-      "Tuesday: 8:30AM - Daily Mass (Tuesdays) per posted schedule",
-      "Thursday: 8:30AM - Daily Mass (Thursdays) per posted schedule",
-      "Saturday: 5:45PM - Vigil Mass"
+      "Tuesday: 8:30AM - Daily Mass",
+      "Thursday: 8:30AM - Daily Mass",
+      "Saturday: 5:45PM - Vigil Mass, 5:45AM - Listed in 'Masses & Services for this week' (likely typo in bulletin; shown as 5:45 am)"
     ],
     "confessions": [
-      "Saturday: 9:00AM to 9:30AM - 2nd & 4th Saturday (regular schedule) or by appointment"
+      "Saturday: 9:00AM to 9:30AM - 2nd & 4th Saturday (or by appointment)"
     ],
     "adoration": [
       "Tuesday: 9:00AM to 6:00PM - Lenten Eucharistic Adoration (noted as the final Lenten adoration on Tue, Mar 24, 2026); closing benediction at 18:00"
     ],
-    "events_summary": "This week at Our Lady of Victory includes several parish-center gatherings: Knights of Columbus meets Tuesday at 7:00 PM, Bible Study is Thursday at 2:00 PM, and Women’s Book Study is Thursday at 7:00 PM. Prayer Shawl Ministry meets Wednesday at 1:15 PM in the Parish Center Library, and there are faith formation opportunities on Sunday morning (including Life Teen at 9:45 AM). Confessions are offered Saturday at 9:00 AM, and a Confirmation Mass with Bishop Martin Amos is coming up on Sunday, May 3."
+    "events_summary": "Our Lady of Victory has several parish activities this week, including Bible Study on Thursdays at 2:00 PM and Women’s Book Study on Thursdays at 7:00 PM. Next Sunday, April 26, the parish will assemble “Grab & Go” lunches after the 8:30 AM Mass (around 9:30 AM) in Finnerty Hall, and all ages are welcome. Looking ahead, the Confirmation Mass will be celebrated at OLV on Sunday, May 3 at 3:00 PM with Bishop Martin Amos."
   },
   {
     "name": "Our Lady Queen of Peace Church",
@@ -1330,25 +1320,25 @@
     "phone": "(440) 926-2364",
     "website": "www.olqpgrafton.org",
     "lonlat": "-82.0600877,41.2769793",
-    "bulletin_url": "https://files.ecatholic.com/13722/bulletins/20260329.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://files.ecatholic.com/13722/bulletins/20260412.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:30AM - Mass (Church), 11:00AM - Mass (Church), 8:30AM - Easter Sunday Mass (Church), 11:00AM - Easter Sunday Mass (Church)",
-      "Monday: 9:00AM - Weekday Mass (Chapel), 6:30PM - Special Holy Week weeknight Mass (Chapel)",
+      "Sunday: 8:30AM, 11:00AM",
+      "Monday: 9:00AM - Weekday Mass (Chapel)",
       "Tuesday: 9:00AM - Weekday Mass (Chapel)",
-      "Wednesday: 6:30PM - 3rd Wednesday of the month following Adoration (Church)",
-      "Thursday: 9:00AM - Weekday Mass (Chapel), 7:00PM - Holy Thursday - Mass of the Lord’s Supper (Church)",
-      "Friday: 9:00AM - Weekday Mass (Chapel), 3:00PM - Good Friday - Lord’s Passion (Church)",
-      "Saturday: 4:30PM - Vigil Mass (Church), 9:00PM - Easter Vigil (Church); no 4:30pm Mass"
+      "Wednesday: 6:30PM - 3rd Wednesday of the month; following Adoration; in Church",
+      "Thursday: 9:00AM - Weekday Mass (Chapel)",
+      "Friday: 9:00AM - Weekday Mass (Chapel)",
+      "Saturday: 4:30PM - Vigil"
     ],
     "confessions": [
-      "Monday: 7:00PM to 8:00PM - 2026-03-30: Individual Reconciliation (Chapel), after Mass",
       "Saturday: 3:30PM to 4:00PM"
     ],
     "adoration": [
-      "Monday: 2:30PM to 6:30PM - 2026-03-30: Adoration (Chapel)"
+      "Sunday: 3:00PM to 3:00PM - Divine Mercy Sunday: Adoration of the Blessed Sacrament & veneration of Divine Mercy Image",
+      "Wednesday: 2:30PM to 6:30PM - Adoration (monthly, coincides with evening Mass)"
     ],
-    "events_summary": "Holy Week liturgies are celebrated April 2–5, including Holy Thursday Mass at 7:00pm, Good Friday service at 3:00pm, and the Easter Vigil on Saturday at 9:00pm (no 4:30pm Mass). Adoration and individual Reconciliation are offered Monday, March 30 in the chapel, with Adoration from 2:30–6:30pm and Reconciliation at 7:00pm. Coming up: the Holy Name Society hosts a Spring Pancake Breakfast on Sunday, April 12 from 9:00am–12:30pm, and the Lady’s Guild rummage/bake sale runs April 24–25."
+    "events_summary": "This week at Our Lady Queen of Peace includes the Holy Name Pancake Breakfast on Sunday, April 12 (9:00 AM–12:30 PM) in the Parish Hall and the Divine Mercy Chaplet with Adoration at 3:00 PM in the Chapel. The parish will host Confirmation Mass with Bishop Woost on Tuesday, April 14 at 7:00 PM, and a Helping Hands Community Meal on Thursday, April 16 at 5:30 PM. Looking ahead, the Lady’s Guild Spring Rummage/Bake Sale runs April 24–25, with item drop-off on April 19–20."
   },
   {
     "name": "Prince of Peace - Barberton",
@@ -1391,28 +1381,25 @@
     "phone": "330-896-2345",
     "website": "www.queenofheavenparish.org",
     "lonlat": "-81.469451,40.9468231",
-    "bulletin_url": "https://files.ecatholic.com/21865/bulletins/20260329.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://files.ecatholic.com/21865/bulletins/20260412.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:15AM, 11:00AM, 8:00AM - Easter Sunday Mass, 10:00AM - Easter Sunday Mass (Children’s Choir), 12:00PM - Easter Sunday Mass",
+      "Sunday: 8:15AM, 11:00AM",
       "Monday: 8:30AM",
       "Tuesday: 8:30AM",
       "Wednesday: 8:30AM",
-      "Thursday: 8:30AM, 7:00PM - Holy Thursday Mass",
-      "Friday: 8:30AM, 3:00PM - Good Friday: Liturgy of the Lord’s Passion (not Mass)",
-      "Saturday: 4:30PM - Vigil Mass, 8:30AM, 8:00PM - Easter Vigil Mass"
+      "Thursday: 8:30AM",
+      "Friday: 8:30AM",
+      "Saturday: 4:30PM - Vigil Mass, 8:30AM - Morning Mass, 6:30PM (Korean) - Korean Mass"
     ],
     "confessions": [
-      "Monday: 9:00AM to 10:00AM - Holy Week schedule",
-      "Tuesday: 9:00AM to 10:00AM - Holy Week schedule",
-      "Wednesday: 9:00AM to 10:00AM - Holy Week schedule",
-      "Friday: 9:00AM to 10:00AM - Regular weekly schedule, 4:00PM to 5:00PM - Holy Week schedule (Good Friday)",
-      "Saturday: 3:00PM to 4:00PM - Regular weekly schedule, 10:00AM to 11:00AM - Holy Week schedule (Holy Saturday)"
+      "Friday: 9:00AM to 10:00AM",
+      "Saturday: 3:00PM to 4:00PM"
     ],
     "adoration": [
       "Perpetual Adoration (24/7)"
     ],
-    "events_summary": "Holy Week and Easter liturgies are coming up soon, including Holy Thursday Mass at 7:00 PM with adoration until 11:00 PM, Good Friday service at 3:00 PM, and Easter Sunday Masses at 8:00 AM, 10:00 AM (Children’s Choir), and noon. A free six-week “Journey to Peace” bereavement support series begins Monday, April 6 from 7:00–8:30 PM, and the annual Divine Mercy Service will be held Sunday, April 12 at 2:30 PM with Exposition, the Chaplet, and Benediction. Registration is also open for “Rainforest Falls” Vacation Bible School, June 22–26."
+    "events_summary": "Queen of Heaven is celebrating Divine Mercy Sunday with a special Divine Mercy Service on Sunday, April 12 at 2:30 PM, including Exposition, the Chaplet of Divine Mercy, and Benediction, with a social afterward (also livestreamed). Ongoing formation continues weekly with PSR on Sundays at 9:30 AM and High School Youth Ministry on Sundays at 12:15 PM. Registration is open now for “Rainforest Falls” Vacation Bible School, June 22–26 at Queen of Heaven."
   },
   {
     "name": "Sacred Heart Chapel",
@@ -1423,24 +1410,23 @@
     "phone": null,
     "website": "https://sacredheartchapel.org/",
     "lonlat": "-82.1352353,41.4299502",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1823/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1823/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 9:30AM (English), 11:30AM (Spanish), 9:30AM (English) - Easter Sunday, 11:30AM (Spanish) - Easter Sunday, 9:30AM (English) - Palm Sunday, 11:30AM (Spanish) - Palm Sunday",
+      "Sunday: 9:30AM (English), 11:30AM (Spanish), 9:30AM (Spanish) - Holy Day Mass / Mass of Obligation",
       "Monday: 9:30AM (Spanish)",
-      "Tuesday: 9:30AM (Spanish), 9:30AM (Spanish) - Holy Day",
+      "Tuesday: 9:30AM (Spanish)",
       "Wednesday: 6:00PM - Bilingual",
-      "Thursday: 7:00PM - Holy Thursday (Mass of the Lord's Supper)",
-      "Friday: 9:30AM (Spanish), 3:00PM - Good Friday (Service of the Passion of the Lord)",
-      "Saturday: 5:00PM (Spanish), 8:30PM - Holy Saturday (Easter Vigil), 7:00PM - Holy Day Vigil Mass (Bilingual)"
+      "Thursday: 12:00AM - No Mass",
+      "Friday: 9:30AM (Spanish)",
+      "Saturday: 5:00PM (Spanish), 7:00PM - Holy Day Vigil Mass (Bilingual)"
     ],
     "confessions": [
-      "Tuesday: 10:15AM to 11:45AM, 10:30AM to 11:00AM - After Mass (time not specified in bulletin; this slot is approximate and should be confirmed)",
-      "Wednesday: 6:30PM to 7:30PM - After Mass until 7:30pm, 5:00PM to 8:00PM - Evening of Confession (Lent)",
-      "Saturday: 3:30PM to 4:30PM"
+      "Tuesday: 12:00AM to 12:00AM - After Mass",
+      "Saturday: 3:30PM to 12:00AM"
     ],
     "adoration": [],
-    "events_summary": "Sacred Heart Chapel is celebrating Holy Week and Easter with the Paschal Triduum: Holy Thursday Mass at 7:00 PM, Good Friday service at 3:00 PM, and the Easter Vigil at 8:30 PM, followed by Easter Sunday Masses at 9:30 AM (English) and 11:30 AM (Spanish). Upcoming parish activities include the Women’s Prayer Group on Wednesday, April 8 from 1:00–2:30 PM and Theology on the Rocks West on Monday, April 13 from 7:00–8:30 PM (registration required). Ongoing ministries include OCIA on Tuesdays at 7:00 PM, the Alzheimer’s caregiver group (2nd & last Wednesdays), and weekly Legion of Mary meetings on Wednesdays at 9:30 AM."
+    "events_summary": "Sacred Heart Chapel continues its regular bilingual and Spanish/English liturgies, with weekly formation opportunities like OCIA on Tuesdays at 7:00 PM and the Legion of Mary on Wednesdays at 9:30 AM. Upcoming highlights include Theology on the Rocks West on Monday, April 13 (7:00–8:30 PM) and a Rummage & Bake Sale on Friday–Saturday, April 24–25 (9:00 AM start both days). The Women’s Prayer Group meets Wednesday, April 22 from 1:00–2:30 PM in the Guadalupe Room, and the First Friday Forum luncheon is May 1 at 11:30 AM in Avon."
   },
   {
     "name": "Sacred Heart of Jesus Catholic Church",
@@ -1451,28 +1437,24 @@
     "phone": "330-336-3049",
     "website": "www.shofjesus.com",
     "lonlat": "-81.7230331,41.0258816",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1608/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1608/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:00AM, 10:30AM, 5:00PM, 8:00AM - Easter Sunday, 10:00AM - Easter Sunday, 12:00PM - Easter Sunday",
-      "Monday: 8:00AM - Daily Mass",
-      "Tuesday: 8:00AM - Daily Mass",
-      "Wednesday: 8:00AM - Daily Mass",
-      "Thursday: 8:00AM - Daily Mass, 7:00PM - Holy Thursday Mass",
-      "Friday: 8:00AM - Daily Mass, 3:00PM - Good Friday: Passion of the Lord (service)",
-      "Saturday: 5:00PM - Vigil Mass, 8:00AM - First Saturday of the month, 8:45PM - Holy Saturday / Easter Vigil"
+      "Sunday: 8:00AM, 10:30AM, 5:00PM",
+      "Monday: 8:00AM - Daily Mass (Mon–Fri schedule)",
+      "Tuesday: 8:00AM - Daily Mass (Mon–Fri schedule)",
+      "Wednesday: 8:00AM - Daily Mass (Mon–Fri schedule)",
+      "Thursday: 8:00AM - Daily Mass (Mon–Fri schedule)",
+      "Friday: 8:00AM - Daily Mass (Mon–Fri schedule)",
+      "Saturday: 5:00PM - Vigil Mass, 8:00AM - First Saturday of the month"
     ],
     "confessions": [
-      "Monday: 6:00PM to 7:00PM - Holy Week Confessions (2026-03-30)",
-      "Wednesday: 6:00PM to 7:00PM - Holy Week Confessions (2026-04-01)",
-      "Thursday: 11:00AM to 12:00PM - Holy Week Confessions (Holy Thursday, 2026-04-02)",
-      "Friday: 11:00AM to 12:00PM - Holy Week Confessions (Good Friday, 2026-04-03)",
-      "Saturday: 11:00AM to 12:00PM - Or by appointment, 11:00AM to 12:00PM - Holy Week Confessions (Holy Saturday, 2026-04-04)"
+      "Saturday: 11:00AM to 12:00PM - Or by appointment"
     ],
     "adoration": [
       "Perpetual Adoration (24/7)"
     ],
-    "events_summary": "Holy Week is underway at Sacred Heart of Jesus in Wadsworth, with special liturgies including Tenebrae on Wednesday, April 1 at 8:00 PM, and Stations of the Cross on Friday, April 3 at 7:00 PM. The Knights of Columbus Fish Fry runs Friday, April 3 from 4:00–6:30 PM, and Easter basket blessings will be held on Holy Saturday, April 4 at 12:00 PM in the church. Looking ahead, “Tea at the Gallery” (Ladies’ Tea) is Sunday, April 12 from 2:00–4:00 PM in McMahon Hall, and volunteers are needed for Wadsworth First Friday outreach on May 1 from 5:30–8:00 PM."
+    "events_summary": "Sacred Heart of Jesus offers perpetual adoration in the Divine Mercy Chapel and weekly confession on Saturdays from 11:00 a.m. to noon. This week includes the Mother/Daughter Tea on Sunday, April 12 at 2:00 p.m. and the SHS Talent Show on Friday, April 17 at 1:30 p.m. Volunteers are also needed for the Main Street Wadsworth First Friday outreach on May 1 from 5:30–8:00 p.m., and the parish is already planning its patronal feast weekend June 13–14 with a parish picnic after the 5:00 p.m. Mass on June 14."
   },
   {
     "name": "Sacred Heart of Jesus Parish",
@@ -1483,20 +1465,22 @@
     "phone": "216.382.7601",
     "website": "www.sacredheartofjesusparish.org",
     "lonlat": "-81.5186292,41.5179066",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0885/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0885/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 10:00AM, 10:00AM - Easter Sunday",
+      "Sunday: 10:00AM",
       "Monday: 12:10PM",
-      "Thursday: 7:30PM - Holy Thursday - Mass of the Lord’s Supper",
+      "Tuesday: 12:10PM",
+      "Wednesday: 12:10PM",
+      "Thursday: 12:10PM",
       "Friday: 12:10PM",
-      "Saturday: 4:00PM - Sunday Vigil, 8:45PM - Easter Vigil"
+      "Saturday: 4:00PM - Sunday Vigil"
     ],
     "confessions": [
       "Saturday: 2:30PM to 3:30PM - Or by appointment"
     ],
     "adoration": [],
-    "events_summary": "Holy Week liturgies are underway at Sacred Heart of Jesus, including Tenebrae on Monday, March 30 at 7:30 p.m., the Mass of the Lord’s Supper on Holy Thursday (April 2) at 7:30 p.m., Good Friday Stations at 12:00 p.m. and the Passion of the Lord at 3:00 p.m., and the Easter Vigil on Saturday, April 4 at 8:45 p.m. Holy Saturday also includes a Blessing of Food at 1:00 p.m. Looking ahead, the Homebound Ministry planning meeting is Tuesday, April 14 at 1:00 p.m. in Mary’s Room, and a 6-week bereavement support group begins that same evening at 6:30 p.m. at St. Paschal."
+    "events_summary": "Sacred Heart of Jesus has several gatherings this week, including Troops of St. George (Tuesday, April 14 from 6–8 p.m.) and a Homebound Ministry meeting (Tuesday, April 14 at 1 p.m. in Mary’s Room). The Friends of Sacred Heart of Jesus host a luncheon with guest speaker Therese Grida on Saturday, April 18 at 12:00 p.m. ($15, RSVP by April 13). Coming up: a reception for Deacon Chordas after the 10:00 a.m. Mass on Sunday, May 17, and the annual parish picnic after the 10:00 a.m. Mass on Sunday, August 9."
   },
   {
     "name": "Sacred Heart",
@@ -1508,18 +1492,21 @@
     "website": "StPatrick.cc; SHOJ.CC",
     "lonlat": "-82.23259,41.2949906",
     "bulletin_url": "https://shoj.cc/PDFs/Bulletins/CurrentBulletin.pdf",
-    "timestamp": "2026-04-04",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 11:00AM - Easter Sunday",
-      "Friday: 7:30PM - Good Friday",
-      "Saturday: 1:00PM - Blessing of Easter Foods, 8:45PM - Easter Vigil"
+      "Sunday: 10:30AM",
+      "Thursday: 8:45AM",
+      "Friday: 8:45AM",
+      "Saturday: 4:00PM"
     ],
     "confessions": [
       "Sunday: 12:00PM to 2:00PM - Evening of Confession (Mar 8)",
       "Friday: 7:00AM to 8:20AM"
     ],
-    "adoration": [],
-    "events_summary": "Holy Week and Easter liturgies are coming up soon, including Holy Thursday Mass (April 2 at 7:30 PM at St. Patrick), Good Friday services (April 3 at 3:00 PM at St. Patrick and 7:30 PM at Sacred Heart), and Easter weekend celebrations (Blessing of Easter Foods and the Easter Vigil on April 4 at Sacred Heart, plus Easter Sunday Masses on April 5). Parish fellowship events include the St. Patrick Men’s Club Pancake & Sausage Breakfast on April 12 after the 8:15 AM Mass and Coffee & Donuts on April 19 after the 10:30 AM Mass in the Ed. Building. Ongoing outreach includes returning CRS Rice Bowls and donating food/supplies for Oberlin Community Services (drop-off at Sacred Heart)."
+    "adoration": [
+      "Friday: 7:00AM to 8:30AM - Confession available during adoration; Mass follows at 08:45"
+    ],
+    "events_summary": "This week includes special fellowship and service opportunities: the St. Patrick Men’s Club Pancake & Sausage Breakfast is Sunday, April 12 after the 8:15 AM Mass, and Coffee & Donuts will be served Sunday, April 19 after the 10:30 AM Mass in the Education Building. The parish food pantry will be open Saturday, April 18 from 10:00 AM–1:00 PM and Tuesday, April 21 from 6:00–8:00 PM. Eucharistic Adoration is offered Wednesdays 5:30–6:20 PM at St. Patrick and Fridays 7:00–8:30 AM at Sacred Heart (with Confession available during Adoration)."
   },
   {
     "name": "Saint Agnes - Elyria",
@@ -1530,23 +1517,22 @@
     "phone": "440-322-5622",
     "website": "www.saintagneselyria.church",
     "lonlat": "-82.12023,41.377289",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=X5fL7uskXoxmO2Mek11%2BMjar%2Fx23RLJ1TFuPPHjKuzdyLWJS8nUnEcYbj%2Bq07zzB8TSa3NE%2BopeH7J%2BK3hBGvho4TkYoRPr2xCFhsnCLyhQ%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=hPH1s6Y7mt8icyXxP7j9OspFNniwupMgLu%2FPxhyM%2BmWgQa23wmmbmsYGQWIDhD8z5awHT2hYb5EzGv7QAUZwWVb7aZV0XI%2FH5b8qHP6GTbU%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 10:00AM, 10:00AM - Easter Sunday",
+      "Sunday: 10:00AM",
       "Monday: 9:00AM",
       "Tuesday: 9:00AM",
       "Wednesday: 9:00AM",
       "Saturday: 4:00PM - Vigil Mass"
     ],
     "confessions": [
-      "Monday: 7:00PM to 8:00PM - Holy Week—Confession (Mar 30) at St. Agnes",
-      "Wednesday: 7:00PM to 8:00PM - Holy Week—Confession (Apr 1) at St. Agnes"
+      "Saturday: 3:30PM to 4:15PM - Reconciliation (per bulletin: 'Saturdays 3:30PM—4:15PM')"
     ],
     "adoration": [
-      "Tuesday: 9:30AM to 10:30AM - Eucharistic Adoration & Benediction"
+      "Tuesday: 9:30AM to 10:30AM - Eucharistic Adoration (listed in 'Activities for the Week')"
     ],
-    "events_summary": "St. Agnes & St. Mary are celebrating Easter, with a Free Community Easter Dinner on Sunday, April 5 from noon–2:00 p.m. in St. Mary’s Parish Hall. Upcoming events include the St. Agnes 50+ Club gathering on Wednesday, April 8, and a benefit “Lights, Sound, QUARTER AUCTION” at St. Agnes on Saturday, May 9 (auction runs 1:00–3:00 p.m.). St. Mary also has a Senior Luncheon on Monday, April 13 at 12:00 noon, plus a Book Club meeting on Thursday, April 23 at 7:00 p.m."
+    "events_summary": "St. Agnes and St. Mary have several spring events coming up, including the Quarter Auction Baskets fundraiser on Saturday, May 9 from 12:00–3:00 PM at St. Agnes Hall (tickets $20). St. Mary’s next Senior Luncheon is Monday, May 11 at 12:00 PM in the Weigand Room, and a Pre-Baptism Class is scheduled for Wednesday, May 13 from 6:30–8:30 PM. Ongoing opportunities include St. Mary Eucharistic Adoration on Thursdays (9:30 AM–1:30 PM) and St. Agnes Eucharistic Adoration on Tuesdays (9:30–10:30 AM), plus Knights of Columbus rosary on the 1st and 3rd Tuesdays at 7:00 PM."
   },
   {
     "name": "Saint Aloysius Parish",
@@ -1557,8 +1543,8 @@
     "phone": "216-451-3262",
     "website": "www.saintaloysiuscleveland.com",
     "lonlat": "-81.609061,41.5397129",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1472/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1472/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
       "Sunday: 10:00AM"
     ],
@@ -1566,7 +1552,7 @@
       "Sunday: 9:00AM to 10:00AM - Before Sunday Mass or by appointment"
     ],
     "adoration": [],
-    "events_summary": "Holy Week services are coming up with the Evening Mass of the Lord’s Supper on Thursday, April 2 at 6:30 p.m., Good Friday Services on April 3 at 3:00 p.m., and the Holy Saturday/Easter Vigil on April 4 at 8:00 p.m., followed by Easter Sunday Mass on April 5 at 10:00 a.m. The parish also hosts an Easter Buffet on Tuesday, March 31 from 4:30–6:00 p.m., plus a Community Meal & food distribution on Tuesday, April 7 at 5:00 p.m. Mark your calendar for the “Fling into Spring” Tea Luncheon & Fashion Show on Saturday, April 18 at 1:00 p.m., and the Operation Good News Renewal Weekend May 29–31."
+    "events_summary": "St. Aloysius Parish continues its weekly Community Meal & food distribution on Tuesdays from 5:00–6:00 PM. The parish is hosting the Fling into Spring Tea Luncheon and Fashion Show on Saturday, April 18 at 1:00 PM ($20). Save the date for Operation Good News Spring 2026 Renewal Weekend, beginning Friday, May 29 at 6:00 PM and concluding Sunday, May 31 at 3:30 PM."
   },
   {
     "name": "Saint Ambrose Catholic Parish",
@@ -1606,24 +1592,24 @@
     "phone": "440-734-1300",
     "website": "https://www.saintbernadetteparish.org",
     "lonlat": "-81.886538,41.4543426",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=GveqW8EDAP%2FyunON0eaHG50LDAxEKKvBWTk%2F%2FKe57CggKPAzuMvsg%2Bts%2BHibBgfxjWGsmHrgVvSCym3x3IDlsI32KLqbeiAq227FYjUDbTw%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=adWq%2FSkSB4iSMwMNu2A1ZVJ%2B6fTq2TDix2AyO4PZPDKH5R4LHNAtTg16VJZJPUkCwfVGjpoiqPACrY8GQHwwQRzaaD2a7GCKHPMYYXudDfM%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
       "Sunday: 8:30AM, 10:30AM",
       "Monday: 9:00AM",
       "Tuesday: 8:00AM",
       "Wednesday: 9:00AM",
-      "Thursday: 9:00AM",
-      "Friday: 9:00AM",
-      "Saturday: 8:00AM, 5:00PM - Saturday Vigil Mass (note in bulletin: moves to 5:00PM on Saturday, April 11), 5:00PM - First Mass of newly ordained Fr. Joseph Ho (following ordination); reception follows in Dempsey Hall"
+      "Thursday: 8:00AM",
+      "Friday: 9:00AM, 9:00AM - First Friday Adoration day Mass",
+      "Saturday: 8:00AM - First Saturday devotion (listed for May 2, 2026), 5:00PM, 8:00AM - First Saturday Mass, 5:00PM - First Mass of newly ordained Fr. Joseph (Deacon Joseph’s ordination day)"
     ],
     "confessions": [
-      "Saturday: 4:00PM to 4:45PM - Confession moved to 4:00-4:45PM for Saturday, April 11"
+      "Saturday: 8:00AM to 9:00AM - First Saturday: Confession during Exposition (May 2, 2026 listed; exact end time not specified)"
     ],
     "adoration": [
-      "Thursday: 9:00PM to 2:40AM - Holy Thursday Eucharistic Adoration concluding at Midnight (Holy Week)"
+      "Friday: 10:00AM to 5:00PM - First Friday Adoration (May 1, 2026); Benediction at 17:00"
     ],
-    "events_summary": "St. Bernadette is entering the Easter season with several important parish moments, including a clergy assignment feedback survey open through Monday, April 6. The final “Growing Through Grief” session meets Wednesday, April 8 at 1:00 PM, and the Christ Present in Action Committee hosts sandwich making on April 8 and April 29 at 1:30 PM in Dempsey Hall. Looking ahead, Deacon Joseph Ho’s ordination and first Mass will be celebrated Saturday, May 16 at 5:00 PM with a reception to follow, and the next Baptism Class is Sunday, May 31 at 12:00 PM."
+    "events_summary": "St. Bernadette Parish has several special liturgies coming up, including First Friday Adoration on May 1 (Mass at 9:00 AM, Adoration 10:00 AM–5:00 PM with Benediction at 5:00 PM) and the First Saturday devotion on May 2 at 8:00 AM with Exposition and Confession. Deacon Joseph will be ordained and celebrates his first Mass on Saturday, May 16 at 5:00 PM followed by a reception in Dempsey Hall. Parishioners can also join the “Young at Heart” luncheon on Wednesday, May 6 from 12:00–1:30 PM and attend the Blue Sunday Prayer Service on April 26 from 3:00–4:00 PM at Blessing House in Elyria."
   },
   {
     "name": "Saint Anthony of Padua Parish & School",
@@ -1634,22 +1620,22 @@
     "phone": "330-762-7277",
     "website": "www.stanthonyakron.org",
     "lonlat": "-81.5122528,41.0989521",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=vweau7NbDcCB01jCdTBy1mRhchq%2B7pwSnvo6yG6PYpHRytX2vWH3INsUPA0YaF%2BvB0DueyP8Y5qJRyp6wNLA0fPPn15O8VUr4RoqbXv9ruo%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=HtEPghW0W2ZrTdMgSNFRxjOAMtmQ5SxZOkq33wxH5Ijuq2mG0%2FSWVL8FRhEuIbKopl6bZo%2BArYuggBHBzfoebyHlD%2Bf7JXe%2Faf%2BD91y3b2k%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:30AM - Easter Sunday, 10:30AM - Easter Sunday, 8:30AM, 10:30AM",
+      "Sunday: 8:30AM, 10:30AM",
       "Monday: 5:30PM",
       "Friday: 8:15AM",
-      "Saturday: 9:00PM - Holy Saturday (Easter Vigil) Mass time listed as 8:45pm in intentions, 4:00PM - Mass celebrated by Fr. Anthony Donatelli (homecoming)"
+      "Saturday: 4:00PM - Vigil"
     ],
     "confessions": [
-      "Monday: 4:50PM to 5:30PM",
-      "Saturday: 3:00PM to 4:00PM"
+      "Monday: 4:50PM to 5:25PM",
+      "Saturday: 3:00PM to 3:40PM"
     ],
     "adoration": [
       "Wednesday: 4:00PM to 5:00PM - Eucharistic Adoration and Benediction (April 8)"
     ],
-    "events_summary": "St. Anthony of Padua is celebrating Easter and has Eucharistic Adoration and Benediction on Wednesday, April 8 from 4:00–5:00 PM. Father Anthony Donatelli will celebrate Mass at 4:00 PM on Saturday, April 11, and the parish will also be saying farewell to Deacon Bob with light refreshments after the 10:30 AM Mass. Other upcoming opportunities include Theology on the Rocks on Monday, April 20 (doors 6:30 PM; program 7:30 PM) and the Dominican Rosary Pilgrimage on Saturday, April 25 from 6:00–7:00 PM."
+    "events_summary": "St. Anthony of Padua has a school performance of Willy Wonka and the Chocolate Factory on Thursday, May 14 at 6:30pm in the gym. Parishioners are also invited to the Dominican Rosary Pilgrimage on April 25 from 6:00–7:00pm at St. Vincent de Paul, led by Fr. Damian Ference. This weekend also includes a second collection for Home Missions, and April’s Movie Night has been cancelled."
   },
   {
     "name": "Saint Bernard Parish",
@@ -1660,23 +1646,25 @@
     "phone": "(330) 253-5161",
     "website": "stbernardakron.org",
     "lonlat": "-81.5182503,41.0781069",
-    "bulletin_url": "https://files.ecatholic.com/22544/bulletins/20260329.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://files.ecatholic.com/22544/bulletins/20260412.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 10:00AM, 12:00PM (Spanish), 8:00PM, 10:00AM - Easter Sunday, 12:00PM - Easter Sunday",
-      "Monday: 12:10PM - Daily Mass",
-      "Tuesday: 12:10PM - Daily Mass",
-      "Wednesday: 12:10PM - Daily Mass",
-      "Thursday: 12:10PM - Daily Mass",
-      "Friday: 12:10PM - Daily Mass, 3:00PM - Good Friday Passion (no 12:10 Mass)",
-      "Saturday: 4:30PM - Vigil Mass, 8:30PM - Holy Saturday/Easter Vigil"
+      "Sunday: 10:00AM, 12:00PM (Spanish) - Español, 8:00PM",
+      "Monday: 12:10PM - Daily Mass (Mon–Fri)",
+      "Tuesday: 12:10PM - Daily Mass (Mon–Fri)",
+      "Wednesday: 12:10PM - Daily Mass (Mon–Fri)",
+      "Thursday: 12:10PM - Daily Mass (Mon–Fri)",
+      "Friday: 12:10PM - Daily Mass (Mon–Fri)",
+      "Saturday: 4:30PM - Vigil Mass"
     ],
     "confessions": [
+      "Sunday: 11:45AM to 12:15PM - First Sunday of the month; before and after noon Mass (approximate window; exact times not specified)",
       "Wednesday: 6:10PM to 7:10PM",
+      "Friday: 11:00AM to 2:00PM - Every 1st Friday",
       "Saturday: 3:00PM to 4:00PM"
     ],
     "adoration": [],
-    "events_summary": "St. Bernard Parish continues its weekly ministries, including Newman Nights on Wednesdays at 6:30 p.m. and the Sunday Rosary at 11:30 a.m. Holy Week and Easter liturgies are underway, with the Divine Mercy Novena beginning on Good Friday at 4:00 p.m. and Divine Mercy Sunday on April 12 at 3:00 p.m. An Easter Egg Hunt is also planned after the noon Mass on Easter Sunday in St. Bernard Social Hall."
+    "events_summary": "St. Bernard Parish has several upcoming opportunities for fellowship and formation, including Bible Study on select Tuesdays from 7:00–8:15 p.m. and Newman Nights each Wednesday at 6:30 p.m. On Sunday, April 19, Mr. John Libertore will present “Eucharistic Miracles” at 10:30–11:15 a.m. and again from 2:15–3:00 p.m., and there will be a Tamales & Pupusas food sale/pickup after the noon Mass. Catholic Movie Night is Friday, April 24 at 7:00 p.m., and the ITE Project “Join the Story” fundraiser gala is also April 24 from 6:00–9:00 p.m. (RSVP by April 17)."
   },
   {
     "name": "Saint Bridget of Kildare Parish",
@@ -1687,26 +1675,26 @@
     "phone": "440-886-4434",
     "website": "https://www.stbridgetparma.com",
     "lonlat": "-81.7595526,41.4083669",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0241/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0241/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:00AM, 10:00AM, 12:00PM - Noon Mass, 8:00AM - Easter Sunday Mass, 10:00AM - Easter Sunday Mass, 12:00PM - Easter Sunday Mass (Noon)",
+      "Sunday: 8:00AM, 10:00AM, 12:00PM - Noon",
       "Monday: 8:30AM - Weekday Mass",
       "Tuesday: 8:30AM - Weekday Mass",
       "Wednesday: 8:30AM - Weekday Mass",
-      "Thursday: 8:30AM - Weekday Mass, 7:00PM - Holy Thursday – Mass of the Lord’s Supper",
+      "Thursday: 8:30AM - Weekday Mass",
       "Friday: 8:30AM - Weekday Mass",
-      "Saturday: 4:00PM - Vigil Mass, 8:45PM - Easter Vigil Mass (Holy Saturday)"
+      "Saturday: 4:00PM - Saturday Vigil"
     ],
     "confessions": [
-      "Sunday: 1:30PM to 2:30PM - Divine Mercy Sunday confessions (April 12, 2026)",
-      "Saturday: 3:00PM to 4:00PM - Reconciliation (in the church)"
+      "Sunday: 1:30PM to 2:30PM - Divine Mercy Sunday (special confession time)",
+      "Saturday: 3:00PM to 4:00PM - In the church"
     ],
     "adoration": [
-      "Wednesday: 9:00AM to 6:30PM - Eucharistic Adoration; closing prayers/Benediction begin 18:10",
-      "Thursday: 8:00PM to 9:00PM - Holy Thursday (Apr 2, 2026) Exposition of the Blessed Sacrament after Mass"
+      "Sunday: 1:00PM to 3:00PM - Divine Mercy Sunday (April 12, 2026): adoration following the 12:00 Noon Mass until 3:00 PM",
+      "Wednesday: 9:00AM to 6:30PM - Exposition of the Blessed Sacrament; closing prayers begin at 18:10"
     ],
-    "events_summary": "St. Bridget of Kildare is observing Holy Week with a Communal Penance Service on Monday, March 30 at 7:00 PM, the Holy Thursday Mass of the Lord’s Supper on April 2 at 7:00 PM, and Good Friday services on April 3 at 12:00 PM (Stations) and 3:00 PM (Lord’s Passion). Divine Mercy Sunday is April 12, with adoration after the 12:00 noon Mass until 3:00 PM, Confession from 1:30–2:30 PM, and the Chaplet at 3:00 PM. Upcoming parish life includes the Ladies Guild Rummage Sale (April 7–10), Women of Faith & Prayer beginning April 16 at 6:30 PM, and Vacation Bible School July 13–17 from 6:30–8:30 PM."
+    "events_summary": "Divine Mercy Sunday is today, with Eucharistic adoration after the 12:00 noon Mass until 3:00 PM, Confession from 1:30–2:30 PM, and the Divine Mercy Chaplet at 3:00 PM. This week includes Wednesday adoration (9:00 AM–6:30 PM) and the Prayer Shawl Ministry meeting on Wednesday, April 15 at 1:00 PM. Upcoming highlights include the Ladies Guild meeting on Monday, April 20 at 7:00 PM and a seniors talk on “Hearing Loss and Balancing” on Wednesday, May 13 at 1:30 PM."
   },
   {
     "name": "Saint Colman Church",
@@ -1717,23 +1705,23 @@
     "phone": "216-651-0550",
     "website": "https://www.stcolmanchurch.org",
     "lonlat": "-81.7296719,41.4760301",
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0882/20260329B.pdf",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0882/20260412B.pdf",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 9:00AM, 11:00AM, 9:00AM - Easter Sunday, 11:00AM - Easter Sunday",
+      "Sunday: 9:00AM, 11:00AM, 1:00PM (Swahili) - Swahili Mass",
       "Monday: 8:00AM - Weekday Mass (except on First Fridays)",
       "Tuesday: 8:00AM - Weekday Mass (except on First Fridays)",
       "Wednesday: 8:00AM - Weekday Mass (except on First Fridays)",
-      "Thursday: 8:00AM - Weekday Mass (except on First Fridays), 7:00PM - Holy Thursday Mass of the Lord’s Supper and Washing of Feet",
-      "Friday: 6:30PM - First Friday only (Mass only), 3:00PM - Good Friday: Celebration of the Lord’s Passion and Veneration of the Cross",
-      "Saturday: 5:00PM - Saturday Vigil, 9:00PM - Easter Vigil Mass (after 20:30 readings; includes Blessing of New Fire & Water)"
+      "Thursday: 8:00AM - Weekday Mass (except on First Fridays)",
+      "Friday: 8:00AM - Weekday Mass (except on First Fridays), 6:30PM - First Fridays: Mass only",
+      "Saturday: 5:00PM - Saturday Vigil"
     ],
     "confessions": [
       "Friday: 7:00PM to 8:00PM - Private confessions on First Fridays or by appointment",
-      "Saturday: 4:30PM to 5:00PM"
+      "Saturday: 4:30PM to 5:00PM - Sacrament of Reconciliation"
     ],
     "adoration": [],
-    "events_summary": "Holy Week and Easter liturgies are coming up soon, including Holy Thursday Mass at 7:00 PM (April 2), Good Friday Procession at 11:00 AM and the Lord’s Passion service at 3:00 PM (April 3), and the Easter Vigil Mass at 9:00 PM (April 4). Easter Sunday Masses will be celebrated at 9:00 AM and 11:00 AM (April 5). Other upcoming highlights include Theology on the Rocks West on Monday, April 13 from 7:00–8:30 PM, and the next Parish Council meeting on Thursday, April 23 at 5:30 PM."
+    "events_summary": "This week at St. Colman, the parish will bless the St. Colman Community Computer Center on Sunday, April 12, following the 9:00 a.m. Mass. Upcoming highlights include Theology on the Rocks West on Monday, April 13 from 7:00–8:30 p.m., and the next Parish Council meeting on Thursday, April 16 at 5:30 p.m. The parish is also promoting its Luck of the Irish Raffle, with the drawing on Sunday, June 21."
   },
   {
     "name": "Saint Edward Roman Catholic Parish",
@@ -1863,21 +1851,21 @@
     "phone": "440-323-5539",
     "website": "www.stmaryelyria.org",
     "lonlat": "-82.1068211,41.3645301",
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=X5fL7uskXoxmO2Mek11%2BMjar%2Fx23RLJ1TFuPPHjKuzdyLWJS8nUnEcYbj%2Bq07zzB8TSa3NE%2BopeH7J%2BK3hBGvho4TkYoRPr2xCFhsnCLyhQ%3D",
-    "timestamp": "2026-04-04",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=hPH1s6Y7mt8icyXxP7j9OspFNniwupMgLu%2FPxhyM%2BmWgQa23wmmbmsYGQWIDhD8z5awHT2hYb5EzGv7QAUZwWVb7aZV0XI%2FH5b8qHP6GTbU%3D",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 8:30AM, 10:30AM, 8:30AM - Easter Sunday, 10:30AM - Easter Sunday",
-      "Thursday: 9:00AM",
-      "Friday: 9:00AM",
-      "Saturday: 9:00AM, 4:30PM, 9:00PM - Easter Vigil (Holy Saturday)"
+      "Sunday: 8:30AM, 10:30AM",
+      "Thursday: 9:00AM - Mass at St. Mary (noted in St. Agnes 'Activities for the Week')",
+      "Friday: 9:00AM - Mass at St. Mary (noted in St. Agnes 'Activities for the Week')",
+      "Saturday: 9:00AM, 4:30PM"
     ],
     "confessions": [
       "Saturday: 3:30PM to 4:15PM - Reconciliation"
     ],
     "adoration": [
-      "Thursday: 9:30AM to 11:30AM - Lower Church"
+      "Thursday: 9:30AM to 1:30PM - Eucharistic Adoration (St. Mary 'This Week in our Parish')"
     ],
-    "events_summary": "St. Agnes & St. Mary are celebrating Easter, with a Free Community Easter Dinner on Sunday, April 5 from noon–2:00 p.m. in St. Mary’s Parish Hall. Upcoming events include the St. Agnes 50+ Club gathering on Wednesday, April 8, and a benefit “Lights, Sound, QUARTER AUCTION” at St. Agnes on Saturday, May 9 (auction runs 1:00–3:00 p.m.). St. Mary also has a Senior Luncheon on Monday, April 13 at 12:00 noon, plus a Book Club meeting on Thursday, April 23 at 7:00 p.m."
+    "events_summary": "St. Agnes and St. Mary have several spring events coming up, including the Quarter Auction Baskets fundraiser on Saturday, May 9 from 12:00–3:00 PM at St. Agnes Hall (tickets $20). St. Mary’s next Senior Luncheon is Monday, May 11 at 12:00 PM in the Weigand Room, and a Pre-Baptism Class is scheduled for Wednesday, May 13 from 6:30–8:30 PM. Ongoing opportunities include St. Mary Eucharistic Adoration on Thursdays (9:30 AM–1:30 PM) and St. Agnes Eucharistic Adoration on Tuesdays (9:30–10:30 AM), plus Knights of Columbus rosary on the 1st and 3rd Tuesdays at 7:00 PM."
   },
   {
     "name": "Saint Mary of the Immaculate Conception",
@@ -4319,19 +4307,20 @@
     "website": "StPatrick.cc; SHOJ.CC",
     "lonlat": "-82.2167846,41.175007",
     "bulletin_url": "https://shoj.cc/PDFs/Bulletins/CurrentBulletin.pdf",
-    "timestamp": "2026-04-04",
+    "timestamp": "2026-04-18",
     "mass_times": [
-      "Sunday: 9:00AM - Easter Sunday",
+      "Sunday: 8:15AM",
       "Monday: 8:45AM",
       "Wednesday: 6:30PM",
-      "Thursday: 7:30PM - Holy Thursday",
-      "Friday: 3:00PM - Good Friday"
+      "Saturday: 6:00PM"
     ],
     "confessions": [
       "Wednesday: 5:30PM to 6:15PM, 5:00PM to 8:00PM - Evening of Confession (Mar 4)"
     ],
-    "adoration": [],
-    "events_summary": "Holy Week and Easter liturgies are coming up soon, including Holy Thursday Mass (April 2 at 7:30 PM at St. Patrick), Good Friday services (April 3 at 3:00 PM at St. Patrick and 7:30 PM at Sacred Heart), and Easter weekend celebrations (Blessing of Easter Foods and the Easter Vigil on April 4 at Sacred Heart, plus Easter Sunday Masses on April 5). Parish fellowship events include the St. Patrick Men’s Club Pancake & Sausage Breakfast on April 12 after the 8:15 AM Mass and Coffee & Donuts on April 19 after the 10:30 AM Mass in the Ed. Building. Ongoing outreach includes returning CRS Rice Bowls and donating food/supplies for Oberlin Community Services (drop-off at Sacred Heart)."
+    "adoration": [
+      "Wednesday: 5:30PM to 6:20PM - Confession available during adoration; Mass follows at 18:30"
+    ],
+    "events_summary": "This week includes special fellowship and service opportunities: the St. Patrick Men’s Club Pancake & Sausage Breakfast is Sunday, April 12 after the 8:15 AM Mass, and Coffee & Donuts will be served Sunday, April 19 after the 10:30 AM Mass in the Education Building. The parish food pantry will be open Saturday, April 18 from 10:00 AM–1:00 PM and Tuesday, April 21 from 6:00–8:00 PM. Eucharistic Adoration is offered Wednesdays 5:30–6:20 PM at St. Patrick and Fridays 7:00–8:30 AM at Sacred Heart (with Confession available during Adoration)."
   },
   {
     "name": "Saint Matthew Parish",
