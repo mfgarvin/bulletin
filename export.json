@@ -8,16 +8,16 @@
     "phone": "(330)836-2233",
     "website": "https://www.stsebastian.org",
     "lonlat": null,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0689/20260503B.pdf",
-    "timestamp": "2026-05-09",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0689/20260517B.pdf",
+    "timestamp": "2026-05-23",
     "mass_times": [
       "Sunday: 9:00AM, 11:00AM",
-      "Monday: 8:00AM, 9:00AM - Memorial Day morning Mass (mentioned as preceding annual potluck breakfast)",
-      "Tuesday: 8:00AM",
-      "Wednesday: 8:00AM",
-      "Thursday: 8:05AM",
-      "Friday: 8:00AM",
-      "Saturday: 8:00AM, 4:30PM - Vigil Mass"
+      "Monday: 8:00AM - Weekday Mass",
+      "Tuesday: 8:00AM - Weekday Mass",
+      "Wednesday: 8:00AM - Weekday Mass",
+      "Thursday: 8:05AM - Weekday Mass (listed separately in bulletin schedule)",
+      "Friday: 8:00AM - Weekday Mass, 1:00PM - Wedding (Kasper & Turner)",
+      "Saturday: 8:00AM - Weekday Mass, 4:30PM - Saturday Vigil Mass, 2:00PM - Wedding (Hornung & Hurtuk)"
     ],
     "confessions": [
       "Tuesday: 7:00PM to 7:30PM",
@@ -25,9 +25,9 @@
       "Saturday: 9:30AM to 10:00AM"
     ],
     "adoration": [
-      "Tuesday: 8:30AM to 7:40PM - Benediction at 19:40 (7:40pm)"
+      "Tuesday: 8:30AM to 7:40PM - Benediction at 19:40"
     ],
-    "events_summary": "St. Sebastian Parish has several upcoming opportunities for prayer and community, including Tuesday Adoration (8:30am–7:40pm with Benediction at 7:40pm) and regular confession times on Tuesdays, Fridays, and Saturdays. This month includes a Baptism Preparation Class on Monday, May 11 at 7:00pm, a Grief Support Group gathering on Sunday, May 17 after the 9:00am Mass, and an Annual Memorial Day Potluck Breakfast on Monday, May 25 following the 9:00am Mass. Looking ahead, don’t miss the St. Christina relic visit beginning Sunday, May 31 at the 9:00am Mass, the Corpus Christi procession and Fr. Marcelli farewell on Sunday, June 7 at 9:00am, and the Brickstreet Jazz & Wine Festival on Thursday, June 25."
+    "events_summary": "St. Sebastian has several upcoming opportunities for prayer and community, including Theology on the Rocks on Monday, May 18 (speaker at 7:30 p.m.) and the Memorial Day Potluck Breakfast right after the 9:00 a.m. Mass on Monday, May 25. Mark your calendar for a farewell gathering for Fr. Marcelli on Sunday, June 7 from 10:30 a.m.–12:30 p.m. in Zwisler Hall, and the BrickStreet Jazz & Wine Festival on Thursday, June 25 (Patron 5–9 p.m.; General Admission 6–9 p.m.). Weekly Tuesday Adoration runs 8:30 a.m.–7:40 p.m. with Benediction at 7:40 p.m., and volunteers are welcome for the parish Grounds Crew on Thursdays and Saturdays."
   },
   {
     "name": "Communion of Saints Parish - Saint Philomena",
