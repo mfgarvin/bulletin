@@ -27,6 +27,10 @@ UPDATE_CITY = False
 UPDATE_ZIPCODE = False
 UPDATE_PHONE = False
 UPDATE_WEBSITE = False
+# Adoration schedules rarely change and are noisy to extract (LLM occasionally
+# hallucinates is_perpetual=true). Lock by default; set True for a one-off
+# refresh run if you've manually updated Adoration in Notion and want it pushed.
+UPDATE_ADORATION = False
 
 
 class NotionClient(DatabaseClient):
@@ -152,7 +156,7 @@ class NotionClient(DatabaseClient):
             properties["Mass Times"] = self._text_property(truncate(mass_json))
         if site and site.confession_times:
             properties["Confessions"] = self._text_property(truncate(conf_json))
-        if site and (site.adoration.times or site.adoration.is_perpetual):
+        if UPDATE_ADORATION and site and (site.adoration.times or site.adoration.is_perpetual):
             properties["Adoration"] = self._text_property(truncate(adore_json))
         if extraction.events:
             properties["Events"] = self._text_property(truncate(events_json))
