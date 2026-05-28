@@ -82,17 +82,26 @@ arrives pre-parsed.
 
 Entries are pre-sorted: by `mass_date` (regular masses first, holidays after), then by weekday, then by start time.
 
-### Holiday Mass handling
+### Holiday / dated Mass handling
 
 Regular weekly Mass → `mass_date: null`. Always show.
 
-Holiday Mass → `mass_date: "YYYY-MM-DD"`. Show only when the date is upcoming
+Dated Mass → `mass_date: "YYYY-MM-DD"`. Show only when the date is upcoming
 (suggested window: today through +7 days). Hide after the date passes. The
 `day` field still reflects the day of week the date falls on, so a Mass on
 Christmas Day 2025 has `day: "Thursday"` and `mass_date: "2025-12-25"`.
 
-This is the headline reason for the rewrite — holiday Masses were silently
+This is the headline reason for the rewrite — dated Masses were silently
 dropped by the old string formatter.
+
+**Privacy filter (server-side).** Dated Masses whose `notes` match
+private-event keywords (`wedding`, `funeral`, `nuptial`, `rehearsal`, with
+word boundaries) are removed from `export.json` by the scraper. The app
+should treat every remaining `mass_date` entry as publicly listable.
+"Memorial Day Mass", "Easter Vigil", "First Communion Mass", parish patron
+feasts etc. all pass through — only personal sacraments tied to specific
+families are stripped. If a wedding ever appears in the export, that's a
+scraper bug, not an app filtering responsibility.
 
 ### `schedules.confession` and `schedules.adoration.times`
 

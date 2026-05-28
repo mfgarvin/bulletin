@@ -9,7 +9,9 @@ See EXPORT_SHAPE_CHANGES.md for the migration notes handed to the Introibo app.
 
 import asyncio
 import json
+import logging
 import os
+import re
 from typing import Any
 
 from notion_client import AsyncClient
@@ -18,6 +20,30 @@ try:
     from .notion_to_json import FullParishData, fetch_all_parishes
 except ImportError:
     from notion_to_json import FullParishData, fetch_all_parishes
+
+logger = logging.getLogger(__name__)
+
+# Word-boundary keywords that mark a dated Mass entry as private (not for
+# public listing). Word boundaries matter: "memorial" alone would catch
+# "Memorial Day Mass", which IS public, so it's deliberately NOT on this list.
+# If we ever need to filter "Memorial Mass for <name>" specifically, do it
+# with a pattern, not a bare keyword.
+PRIVATE_MASS_KEYWORDS = ("wedding", "funeral", "nuptial", "rehearsal")
+_PRIVATE_RE = re.compile(
+    r"\b(" + "|".join(PRIVATE_MASS_KEYWORDS) + r")\b", re.IGNORECASE
+)
+
+
+def _is_private_mass(entry: dict) -> bool:
+    """True if this dated Mass entry looks private (wedding, funeral, etc).
+
+    Only inspects `notes`. Regular weekly Masses (mass_date == null) are
+    never considered private regardless of notes.
+    """
+    if not entry.get("mass_date"):
+        return False
+    notes = entry.get("notes") or ""
+    return bool(_PRIVATE_RE.search(notes))
 
 
 def _hhmm(t: int | None) -> str | None:
@@ -44,6 +70,12 @@ def _structured_mass(mass_times: list[dict]) -> list[dict[str, Any]]:
         day = m.get("day")
         time = m.get("time")
         if not day or time is None:
+            continue
+        if _is_private_mass(m):
+            logger.info(
+                "filtered private mass: %s %s — %s",
+                m.get("mass_date"), m.get("day"), m.get("notes"),
+            )
             continue
         out.append({
             "day": day,
@@ -150,6 +182,7 @@ async def main() -> str:
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s - %(message)s")
     try:
         from dotenv import load_dotenv
         load_dotenv()
