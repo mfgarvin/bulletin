@@ -91,56 +91,42 @@ class BulletinExtractor:
             return await self._extract_with_marker(content)
 
     @retry_async(max_attempts=3, retryable_exceptions=(APITimeoutError, APIConnectionError))
-    async def _extract_direct(self, pdf_bytes: bytes) -> BulletinExtraction:
-        """Send PDF directly to GPT-4o (native PDF support)."""
-        pdf_base64 = base64.standard_b64encode(pdf_bytes).decode("utf-8")
-
+    async def _call_llm(self, user_content) -> BulletinExtraction:
+        """Single point for the LLM call shared by all extraction paths."""
         response = await self.client.beta.chat.completions.parse(
             model=self.model,
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
-                {
-                    "role": "user",
-                    "content": [
-                        {
-                            "type": "file",
-                            "file": {
-                                "filename": "bulletin.pdf",
-                                "file_data": f"data:application/pdf;base64,{pdf_base64}",
-                            },
-                        },
-                        {
-                            "type": "text",
-                            "text": "Extract all parish information from this bulletin.",
-                        },
-                    ],
-                },
+                {"role": "user", "content": user_content},
             ],
             response_format=BulletinExtraction,
             service_tier="flex",
         )
+        parsed = response.choices[0].message.parsed
+        if parsed is None:
+            raise RuntimeError("LLM returned no parsed content (refusal or parse failure)")
+        return parsed
 
-        return response.choices[0].message.parsed
+    async def _extract_direct(self, pdf_bytes: bytes) -> BulletinExtraction:
+        """Send PDF directly to the model (native PDF support)."""
+        pdf_base64 = base64.standard_b64encode(pdf_bytes).decode("utf-8")
+        return await self._call_llm([
+            {
+                "type": "file",
+                "file": {
+                    "filename": "bulletin.pdf",
+                    "file_data": f"data:application/pdf;base64,{pdf_base64}",
+                },
+            },
+            {"type": "text", "text": "Extract all parish information from this bulletin."},
+        ])
 
-    @retry_async(max_attempts=3, retryable_exceptions=(APITimeoutError, APIConnectionError))
     async def _extract_with_marker(self, pdf_bytes: bytes) -> BulletinExtraction:
         """Convert PDF to markdown with Marker, then send to LLM."""
         markdown_text = await self._pdf_to_markdown(pdf_bytes)
-
-        response = await self.client.beta.chat.completions.parse(
-            model=self.model,
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {
-                    "role": "user",
-                    "content": f"Extract all parish information from this bulletin:\n\n{markdown_text}",
-                },
-            ],
-            response_format=BulletinExtraction,
-            service_tier="flex",
+        return await self._call_llm(
+            f"Extract all parish information from this bulletin:\n\n{markdown_text}"
         )
-
-        return response.choices[0].message.parsed
 
     async def _pdf_to_markdown(self, pdf_bytes: bytes) -> str:
         """Convert PDF to markdown using Marker."""
@@ -160,22 +146,9 @@ class BulletinExtractor:
             result = self._marker_converter(f.name)
             return result.markdown
 
-    @retry_async(max_attempts=3, retryable_exceptions=(APITimeoutError, APIConnectionError))
     async def _extract_from_text(self, text_bytes: bytes) -> BulletinExtraction:
         """Extract from text/markdown content (for webpage bulletins)."""
         text_content = text_bytes.decode("utf-8")
-
-        response = await self.client.beta.chat.completions.parse(
-            model=self.model,
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {
-                    "role": "user",
-                    "content": f"Extract all parish information from this bulletin webpage:\n\n{text_content}",
-                },
-            ],
-            response_format=BulletinExtraction,
-            service_tier="flex",
+        return await self._call_llm(
+            f"Extract all parish information from this bulletin webpage:\n\n{text_content}"
         )
-
-        return response.choices[0].message.parsed

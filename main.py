@@ -3,15 +3,17 @@
 import argparse
 import asyncio
 import logging
+import re
 import sys
 from dataclasses import dataclass, field
+from typing import cast
 
 from openai import AsyncOpenAI
 
 from database import NotionClient
 from definitions import SINGLE_SITE_PARISHES, SITE_MAPPINGS
 from extractor import BulletinExtractor, ExtractionMethod
-from schemas import BulletinExtraction, ParishRecord, SiteInfo
+from schemas import AdorationSchedule, BulletinExtraction, ParishRecord, SiteInfo
 from sources import get_source_for_publisher
 from utils.log_context import set_parish_context
 
@@ -57,31 +59,20 @@ def filter_and_merge_matching_sites(sites: list[SiteInfo], parish_name: str) -> 
     Example: For "St. Mary Parish", keeps "St. Mary - Church" and "St. Mary - Chapel"
     but discards "St. Joseph Mission", then merges the St. Mary sites into one.
     """
-    from schemas import AdorationSchedule
-
     if not sites:
         return SiteInfo(site_name=parish_name)
 
     if len(sites) == 1:
         return sites[0]
 
-    import re
-
-    # Words that don't help distinguish between parishes
     stop_words = {
         "st", "saint", "our", "lady", "of", "the", "parish",
         "church", "catholic", "roman", "mission", "chapel", "oh",
     }
 
-    # Extract only alphanumeric words, lowercased
     words = re.findall(r"[a-zA-Z]+", parish_name.lower())
-
-    # Filter to distinctive words (not stop words, length > 2)
-    parish_words = [w for w in words if w not in stop_words and len(w) > 2]
-
-    # Deduplicate while preserving order
-    seen = set()
-    parish_words = [w for w in parish_words if not (w in seen or seen.add(w))]
+    distinctive = [w for w in words if w not in stop_words and len(w) > 2]
+    parish_words = list(dict.fromkeys(distinctive))
 
     # Score each site by how many distinctive words match
     scored_sites = []
@@ -172,8 +163,8 @@ async def process_parish(
             return ProcessResult(parish_id, parish_name, success=True)
 
         # Skip unsupported publishers
-        if publisher in ["Other", ""]:
-            return ProcessResult(parish_id, parish_name, success=False, error=f"Unsupported publisher: {publisher}")
+        if not publisher or publisher == "Other":
+            return ProcessResult(parish_id, parish_name, success=False, error=f"Unsupported publisher: {publisher!r}")
 
         # Get all parishes in this bulletin group (for multi-site matching)
         group_parishes: list[ParishRecord] = []
@@ -336,7 +327,7 @@ async def main():
     try:
         openai_client = AsyncOpenAI()
         extractor = BulletinExtractor(
-            openai_client, method=args.method  # type: ignore
+            openai_client, method=cast(ExtractionMethod, args.method)
         )
         db = NotionClient.from_environment()
     except Exception as e:
@@ -399,7 +390,10 @@ async def main():
         for r in failed:
             logger.error(f"  [{r.parish_id}] {r.parish_name}: {r.error}")
             if not args.dry_run:
-                await db.save_issue(r.parish_id, error=r.error, warnings=r.warnings)
+                try:
+                    await db.save_issue(r.parish_id, error=r.error, warnings=r.warnings)
+                except Exception as e:
+                    logger.error(f"  [{r.parish_id}] save_issue failed: {e}")
 
     # Report warnings and save to Notion
     if with_warnings:
@@ -410,7 +404,10 @@ async def main():
             for w in r.warnings:
                 logger.warning(f"    - {w}")
             if not args.dry_run:
-                await db.save_issue(r.parish_id, warnings=r.warnings)
+                try:
+                    await db.save_issue(r.parish_id, warnings=r.warnings)
+                except Exception as e:
+                    logger.error(f"  [{r.parish_id}] save_issue failed: {e}")
 
 
 if __name__ == "__main__":
