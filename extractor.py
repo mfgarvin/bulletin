@@ -49,6 +49,31 @@ Extract the following information:
    (e.g. Thanksgiving Day has a 9:30am Mass not normally offered) — those ARE dated one-offs
    and need `mass_date`.
 
+   WORKED EXAMPLE. Suppose the bulletin contains:
+
+     This Week's Liturgy
+     ───────────────────
+     Sun 1/11   8:00 AM  — †Mary Smith
+     Sun 1/11  10:00 AM  — People of the Parish
+     Sun 1/11  12:00 PM  — †John Doe
+     Mon 1/12   7:00 PM  — †Anna Brown
+     Tue 1/13   7:00 AM  — †Robert White
+     ... (and so on for every day of the week)
+
+   The CORRECT extraction is the recurring weekly schedule, with NO mass_date set on any
+   of these entries:
+     [{day:"Sunday", time:800, mass_date:null}, {day:"Sunday", time:1000, mass_date:null},
+      {day:"Sunday", time:1200, mass_date:null}, {day:"Monday", time:1900, mass_date:null},
+      {day:"Tuesday", time:700, mass_date:null}, ...]
+
+   The INCORRECT extraction (do NOT do this) would be seven dated one-offs:
+     [{day:"Sunday", time:800, mass_date:"2026-01-11"}, {day:"Monday", time:1900,
+      mass_date:"2026-01-12"}, ...] — these are the standard weekly Masses, not one-offs.
+
+   Only add `mass_date` if a row in that listing shows a time or day that ISN'T part of
+   the standing schedule (e.g. "Thu 11/27 9:30 AM — Thanksgiving Day Mass" when the parish
+   doesn't normally have a 9:30am Thursday Mass).
+
    **Cancellations.** If a recurring Mass is cancelled on a specific date ("No 7pm Mass on
    Sept 5 due to Labor Day"), do not add a separate cancellation entry — just note it in
    extraction_notes. The recurring Mass entry remains.
