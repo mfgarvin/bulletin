@@ -1,0 +1,31 @@
+name: Check parish issues
+run-name: Notify on parish Issues field
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Bulletin processor"]
+    types:
+      - completed
+env:
+  NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+  PARISH_DB_ID: ${{ secrets.PARISH_DB_ID }}
+  NOTIFY_WEBHOOK_URL: ${{ secrets.NOTIFY_WEBHOOK_URL }}
+jobs:
+  Check-Issues:
+    runs-on: ubuntu-latest
+    # Run after manual dispatch, or after the Bulletin processor finishes
+    # (success or failure — we still want a digest if the run partially failed).
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'workflow_run'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - name: Notify on issues
+        run: python -m utils.check_issues
