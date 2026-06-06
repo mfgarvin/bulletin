@@ -9,8 +9,8 @@
     "website": "https://www.stsebastian.org",
     "latitude": null,
     "longitude": null,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0689/20260517B.pdf",
-    "timestamp": "2026-05-23",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0689/20260531B.pdf",
+    "timestamp": "2026-06-06",
     "schedules": {
       "mass": [
         {
@@ -32,49 +32,49 @@
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass"
+          "notes": null
         },
         {
           "day": "Tuesday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass"
+          "notes": null
         },
         {
           "day": "Wednesday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass"
+          "notes": null
         },
         {
           "day": "Thursday",
           "start": "08:05",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass (listed separately in bulletin schedule)"
+          "notes": null
         },
         {
           "day": "Friday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass"
+          "notes": null
         },
         {
           "day": "Saturday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass"
+          "notes": null
         },
         {
           "day": "Saturday",
           "start": "16:30",
           "mass_date": null,
           "language": null,
-          "notes": "Saturday Vigil Mass"
+          "notes": "Vigil Mass"
         }
       ],
       "confession": [
@@ -109,7 +109,7 @@
         ]
       }
     },
-    "events_summary": "St. Sebastian has several upcoming opportunities for prayer and community, including Theology on the Rocks on Monday, May 18 (speaker at 7:30 p.m.) and the Memorial Day Potluck Breakfast right after the 9:00 a.m. Mass on Monday, May 25. Mark your calendar for a farewell gathering for Fr. Marcelli on Sunday, June 7 from 10:30 a.m.–12:30 p.m. in Zwisler Hall, and the BrickStreet Jazz & Wine Festival on Thursday, June 25 (Patron 5–9 p.m.; General Admission 6–9 p.m.). Weekly Tuesday Adoration runs 8:30 a.m.–7:40 p.m. with Benediction at 7:40 p.m., and volunteers are welcome for the parish Grounds Crew on Thursdays and Saturdays."
+    "events_summary": "St. Sebastian will celebrate Corpus Christi on Sunday, June 7 with a Eucharistic procession and Benediction after the 9:00 a.m. Mass (you can also come around 9:50 a.m. to join). A farewell reception for Fr. Marcelli follows in Zwisler Hall from 10:30 a.m.–12:30 p.m. Upcoming summer activities include Tuesday “Pray and Play” at 10:00 a.m., Vacation Bible School July 20–24, and the Brickstreet Jazz & Wine Festival on Thursday, June 25 (Patron 5–9 p.m.; General Admission 6–9 p.m.)."
   },
   {
     "name": "Communion of Saints Parish - Saint Philomena",
