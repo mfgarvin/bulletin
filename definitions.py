@@ -18,6 +18,17 @@ SINGLE_SITE_PARISHES: set[str] = {
     "st-matthew-akron-oh",
     "st-vitus-cleveland-oh",
     "29182",
+    "0244",
+    "nativity-of-blessed-virgin-mary-lorain-oh",
+    "our-lady-of-lourdes-cleveland-oh",
+    "sem-c",
+    "st-mel-cleveland-oh",
+    "0069",
+    "1548",
+    "0138",
+    "20812",
+    "st-jerome-cleveland-oh",
+    "0342",
 }
 
 # Format:
@@ -98,4 +109,12 @@ SITE_MAPPINGS: dict[str, dict[str, str]] = {
 	"ann": "0414",
 	"philomena": "0414-sp",
     },
+    "1259": {
+	"cathedral": "1259",
+	"immaculate": "immat-con-cle",
+    },
+    "0147": {
+	"anthony": "0147",
+	"teresa": "1786",
+    }.
 }
