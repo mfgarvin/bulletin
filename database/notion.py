@@ -229,8 +229,11 @@ class NotionClient(DatabaseClient):
         properties = {
             "Issues": {"status": {"name": status}},
             "Issue Log": self._text_property(issue_log),
-            "GPT Timestamp": self._text_property(date.today().isoformat()),
         }
+        # Only refresh the timestamp on clean runs, so parishes with
+        # errors/warnings stay stale and are retried on the next run.
+        if status == "No Issues":
+            properties["GPT Timestamp"] = self._text_property(date.today().isoformat())
 
         await self._update_page(page_id=page_id, properties=properties)
         logger.info(f"Saved issue status ({status}) for parish: {parish_id}")
