@@ -7,10 +7,10 @@
     "zip_code": "44320",
     "phone": "(330)836-2233",
     "website": "https://www.stsebastian.org",
-    "latitude": null,
-    "longitude": null,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0689/20260628B.pdf",
-    "timestamp": "2026-07-04",
+    "latitude": 41099421.0,
+    "longitude": -81.5669225,
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0689/20260712B.pdf",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -32,63 +32,49 @@
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass"
         },
         {
           "day": "Tuesday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass"
         },
         {
           "day": "Wednesday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass"
         },
         {
           "day": "Thursday",
           "start": "08:05",
           "mass_date": null,
           "language": null,
-          "notes": null
-        },
-        {
-          "day": "Thursday",
-          "start": "08:05",
-          "mass_date": null,
-          "language": null,
-          "notes": "Listed separately in sacrament schedule (Thursday 8:05am)"
+          "notes": "Weekday Mass"
         },
         {
           "day": "Friday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass"
         },
         {
           "day": "Saturday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass (Mon–Sat) per sacrament schedule"
+          "notes": "Weekday Mass"
         },
         {
           "day": "Saturday",
           "start": "16:30",
           "mass_date": null,
           "language": null,
-          "notes": "Saturday Vigil Mass"
-        },
-        {
-          "day": "Saturday",
-          "start": "09:00",
-          "mass_date": "2026-07-04",
-          "language": null,
-          "notes": "Independence Day Mass (Parish offices closed)"
+          "notes": "Vigil Mass"
         }
       ],
       "confession": [
@@ -123,7 +109,7 @@
         ]
       }
     },
-    "events_summary": "Adoration for vocations is held every Tuesday from 8:30 AM to 7:40 PM, ending with Benediction at 7:40 PM. Youth Ministry has summer kickoff nights on Tuesday, June 30 (high school) and Tuesday, July 7 (middle school), both 6:30–8:00 PM starting in Byrider Hall. Upcoming parish social events include the Young Adult Kickoff on Sunday, July 12 from 7:00–9:00 PM (outside Zwisler Hall) and Summer Fest events July 30–31 and August 1 (including Ladies Night Out, Bourbon Tasting & Pig Roast, and the Parish Festival after the 4:30 PM Mass)."
+    "events_summary": "This week includes a Baptism class on Monday, July 13 from 7:00–8:00 PM in the Byrider Hall Meeting Room, and Ladies Coffee & Fellowship on Wednesday, July 15 after the 8:00 AM Mass in the church basement. Youth Ministry has a high school game night Tuesday, July 14 (6:30–8:00 PM) and a middle school movie night Tuesday, July 21 (6:30–8:00 PM). Summer Fest is coming up July 30–August 1 with special ticketed events on Thursday and Friday evenings and the festival starting Saturday after the 4:30 PM Mass."
   },
   {
     "name": "Communion of Saints Parish - Saint Philomena",
@@ -1241,8 +1227,8 @@
     "website": "http://stspeterpaul.weconnect.com/",
     "latitude": 41.4305067,
     "longitude": -81.6168576,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0069/20260111B.pdf",
-    "timestamp": "2026-07-11",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0069/20260712B.pdf",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -1272,6 +1258,13 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
+        },
+        {
+          "day": "Saturday",
+          "start": "16:00",
+          "mass_date": "2026-08-15",
+          "language": null,
+          "notes": "Centennial celebration Mass (followed by reception)"
         }
       ],
       "confession": [
@@ -1293,7 +1286,7 @@
         "times": []
       }
     },
-    "events_summary": "This month includes several parish community gatherings, including a pre-order Pork & Sauerkraut Dinner with curbside pickup on Wednesday, January 21 (4:00–6:00 PM) and the 9th Annual Soup & Chili Cook-off on Sunday, January 25 (doors open after the 10:30 AM Mass). A Divine Mercy Holy Hour is offered at 2:30 PM on Sunday, January 11 at St. Monica Church and again on Sunday, January 25 at St. Therese Church. The Annual Pork Chop Dinner is coming up on Saturday, February 14, with doors opening at 4:30 PM and dinner served 5:30–6:30 PM."
+    "events_summary": "Upcoming events include Bible Study on Tuesdays at 6:30 PM at Saint Therese Rectory and the Catholic Renewal Ministries Charismatic Conference on Saturday, July 25, 2026 (registration required). The Knights of Columbus will host a pre-order, take-out Chicken Tender Dinner with curbside pickup on Wednesday, August 5 from 4:00–6:00 PM at the K of C Club 4130 Hall. Saints Peter and Paul will kick off its Centennial Celebration with a 4:00 PM Mass and reception on Saturday, August 15, and Saint Therese’s Centennial Celebration event is set for Sunday, September 13, 2026."
   },
   {
     "name": "Saints Cosmas & Damian Catholic Church",
@@ -1980,10 +1973,10 @@
     "zip_code": "44054",
     "phone": "(440) 934-4227",
     "website": "https://stteresaparish.com/",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 41.466168,
+    "longitude": -82.076171,
     "bulletin_url": "https://container.parishesonline.com/bulletins/14/1786/20260301B.pdf",
-    "timestamp": "2026-07-11",
+    "timestamp": null,
     "schedules": {
       "mass": [
         {
@@ -2119,8 +2112,8 @@
     "website": "www.ststephen.ws",
     "latitude": 40.9733311,
     "longitude": -82.1053785,
-    "bulletin_url": "https://files.ecatholic.com/20812/bulletins/20260621.pdf",
-    "timestamp": "2026-07-11",
+    "bulletin_url": "https://files.ecatholic.com/20812/bulletins/20260712.pdf",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -2179,7 +2172,7 @@
         ]
       }
     },
-    "events_summary": "Eucharistic Adoration is held every Wednesday from 1:00–8:00 p.m., and the Men’s Prayer Group meets Mondays at 6:00 p.m. The Ladies Guild is hosting a Father’s Day brunch and basket raffle on Sunday, June 21 after the 10:30 a.m. Mass. Looking ahead, “Par for the Parish” golf outing is Friday, July 31 at Brookside Golf Course in Ashland."
+    "events_summary": "Eucharistic Adoration is held every Wednesday from 1:00–8:00 PM at St. Stephen. The “Par for the Parish” Golf Outing is Friday, July 31 at Brookside Golf Course in Ashland (breakfast and dinner included, plus raffles and prizes). This weekend’s Mission Co-Op features visiting priests speaking about the Latin Archdiocese of Trivandrum in India."
   },
   {
     "name": "Saint Stephen Roman Catholic Church",
@@ -3458,7 +3451,7 @@
     "latitude": 41.175007,
     "longitude": -82.2167846,
     "bulletin_url": "https://shoj.cc/PDFs/Bulletins/CurrentBulletin.pdf",
-    "timestamp": "2026-07-11",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -3473,14 +3466,14 @@
           "start": "08:45",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass mentioned in intentions list; noted as cancelled this week (July 6)"
+          "notes": null
         },
         {
           "day": "Wednesday",
           "start": "18:30",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass mentioned in intentions list; noted as cancelled this week (July 8)"
+          "notes": null
         },
         {
           "day": "Saturday",
@@ -3510,7 +3503,7 @@
         ]
       }
     },
-    "events_summary": "Coffee & Donuts will be served Sunday, July 19 after the 10:30 a.m. Mass at Sacred Heart in the Education Building. The 43rd Cleveland Charismatic Conference is Saturday, July 25 at St. Albert the Great Hall in North Royalton (advance registration deadline is July 15). Save the date for the Sacred Heart Parish Council summer picnic on Sunday, August 16 immediately after the 10:30 a.m. liturgy."
+    "events_summary": "Coffee & Donuts will be served Sunday, July 19 after the 10:30 AM Mass at Sacred Heart in the Education Building. The Helping Hands pantry will be open Saturday, July 18 from 10:00 AM–1:00 PM and Tuesday, July 21 from 6:00–8:00 PM. Save the date for the Sacred Heart summer picnic on Sunday, August 16 immediately after the 10:30 AM liturgy; “Digging Deeper into Scripture” Bible study continues Sundays at 9:30 AM."
   },
   {
     "name": "Saint Patrick Church",
@@ -4171,8 +4164,8 @@
     "website": "http://www.stmel.net",
     "latitude": 41.4614558,
     "longitude": -81.7954471,
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=n5WizbQLfQceazCcvMOlfWltKqp7F7Xhdhny7UhLxHD2kGsE8kRIrf7qjWb0EFzk4wUZb%2FyuLf4HS3hddyKkVLJjTvYDnpWrC07YsrxpXEM%3D",
-    "timestamp": "2026-07-11",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=1vuzq4zQcezw0G7n%2BfYZv0uPRLfUDD5rOZicD4yuDQeeHtrAT2v5rfaYNm10RBZU2Igzy%2BhGiieDCourY1gfwXpH5WGY7QeH5Ygz0U%2FKxT4%3D",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -4194,14 +4187,21 @@
           "start": "06:45",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass"
         },
         {
           "day": "Friday",
           "start": "06:45",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass"
+        },
+        {
+          "day": "Wednesday",
+          "start": "08:30",
+          "mass_date": "2026-07-22",
+          "language": null,
+          "notes": "No Mass (cancellation noted in liturgy schedule)"
         }
       ],
       "confession": [
@@ -4209,7 +4209,7 @@
           "day": "Saturday",
           "start": "15:00",
           "end": "16:00",
-          "notes": null
+          "notes": "Saturdays @ St. Mark"
         }
       ],
       "adoration": {
@@ -4217,7 +4217,7 @@
         "times": []
       }
     },
-    "events_summary": "St. Mel is hosting a Rosary on Wednesday, May 20 at 10:00 AM. Families are invited to a Guardians vs. Tigers outing at Progressive Field on Friday, June 12 at 7:15 PM ($26/ticket), and volunteers are needed for the St. Mark/St. Mel Habitat for Humanity Faith Build on May 29 and June 27. Ongoing opportunities include the Share-a-Meal program (1st & 3rd Wednesdays at St. Ignatius, dinner at 5:30 PM) and PSR classes on Mondays from 6:30–7:30 PM at St. Mark."
+    "events_summary": "Rosary is scheduled on Wednesday, July 22 at 10:00 AM. St. Mel is collecting school supplies for Orchard Park Academy (drop donations in the bins at the back of church). Mark your calendar for “An Evening of Psalms, 2026” on Sunday, August 16 at 4:00 PM at St. Mel Church; Share-a-Meal continues on the 1st and 3rd Wednesdays at St. Ignatius (doors 5:00 PM, dinner 5:30 PM)."
   },
   {
     "name": "Saint Matthias the Apostle Catholic Church",
@@ -4419,8 +4419,8 @@
     "website": "https://htavon.org/",
     "latitude": 41.4525818,
     "longitude": -81.9896477,
-    "bulletin_url": "https://files.ecatholic.com/33997/bulletins/20260118.pdf",
-    "timestamp": "2026-05-16",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1071/20260712B.pdf",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -4477,14 +4477,7 @@
           "start": "17:00",
           "mass_date": null,
           "language": null,
-          "notes": "Vigil"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2025-01-19",
-          "language": null,
-          "notes": "MLK Day (Mass moved to 9:00 a.m. at Holy Trinity)"
+          "notes": "Vigil Mass"
         }
       ],
       "confession": [
@@ -4492,7 +4485,7 @@
           "day": "Saturday",
           "start": "15:30",
           "end": "16:30",
-          "notes": "Extended to begin at 3:30 p.m. on Saturdays starting 1/28 (previous start time not stated)"
+          "notes": null
         }
       ],
       "adoration": {
@@ -4513,7 +4506,7 @@
         ]
       }
     },
-    "events_summary": "Avon Catholic Community has several ways to grow in faith and fellowship, including the Grief Recovery Program starting Thursday, January 22 from 6:00–7:30 p.m. at Holy Trinity and ongoing Saturday-morning groups at St. Mary: Magnify 90 (women) at 7:00 a.m. and Exodus 90 (men) at 7:00 a.m. Youth and community highlights include the EDGE Winter Kick-Off at St. Mary on Sunday, January 26 at 7:00 p.m., plus opportunities like Grandparents@Prayer (second Tuesdays, 9:30–10:30 a.m.) and monthly First Friday nursing home Mass at Avon Oaks."
+    "events_summary": "This July, enjoy Sundae Vespers on Sunday evenings at 7:00 PM at St. Mary’s, and join Summer in Cana on Wednesday, July 15 from 6:30–8:30 PM at St. Mary’s. Life Teen meets for Bible Study in the Park on Tuesdays from 1:00–2:30 PM at Schwartz Park, and Edge hosts Bonfire Nights on Monday evenings in July from 7:00–8:30 PM at St. Mary’s. Volunteers are invited to a Volunteer Appreciation BBQ on Sunday, July 19 at 2:00 PM at Tom’s Country Place (registration required)."
   },
   {
     "name": "Saint Mary of the Falls",
@@ -6690,8 +6683,8 @@
     "website": "stjosephavonlake.org",
     "latitude": 41.5104968,
     "longitude": -82.026321,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0138/20260621B.pdf",
-    "timestamp": "2026-07-11",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0138/20260712B.pdf",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -6749,13 +6742,7 @@
           "day": "Wednesday",
           "start": "08:45",
           "end": "09:30",
-          "notes": null
-        },
-        {
-          "day": "Friday",
-          "start": "00:00",
-          "end": "00:00",
-          "notes": "Before First Friday only (time not specified)"
+          "notes": "In the confessional"
         },
         {
           "day": "Saturday",
@@ -6782,7 +6769,7 @@
         ]
       }
     },
-    "events_summary": "St. Joseph Campus Day of Clean Up is Saturday, June 27 at 9:00 AM, and middle school sALt Lite Night meets Sunday, June 28 from 6:00–8:00 PM in the Social Hall. Server training sessions run June 24 and June 28 from 5:00–6:30 PM in the church. Coming up, there’s a choir concert on Wednesday, July 1 at 7:00 PM, plus a bus tour pilgrimage on Wednesday, July 15 from 9:15 AM–3:00 PM and a retreat July 17–19 at the Jesuit Retreat Center."
+    "events_summary": "St. Joseph’s Lake Breeze Festival is coming up August 6–8 and volunteers are needed. A small-group retreat, “Consoling the Heart of Jesus,” runs July 17–19 (arrive after 4:00 p.m. Friday; depart by 1:00 p.m. Sunday). Adult Singles have events July 18 at 5:00 p.m. (wine tasting) and July 24 at 6:00 p.m. (potluck & game night), and Confirmation is scheduled for Sunday, October 11 at 2:00 p.m."
   },
   {
     "name": "Saint Joseph",
@@ -7539,8 +7526,8 @@
     "website": "https://www.stjeromecleveland.org/church",
     "latitude": 41.573047,
     "longitude": -81.576606,
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=LQyWyd3WS8GHq0ogRbpYrSA67T2zRB8TJ5NPKyganrvbjj8Gvpd%2B6pWugptYROU8gEd8vC8f6L%2Bfi81dYYz9LycC28fDex6S%2FC00AT7aH4c%3D",
-    "timestamp": "2026-07-11",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=yv0357lfn5bBnRQ1YTxpj8IreQxRKhn6gv02%2B3ijHKDCLUFr26A%2F5Z9VwHTApmLMduss4bKB3TarXq3P9VPHiGPnLWKvPzAES12ByCxnlzA%3D",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -7551,6 +7538,13 @@
           "notes": null
         },
         {
+          "day": "Monday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "Mass at Holy Redeemer"
+        },
+        {
           "day": "Wednesday",
           "start": "08:30",
           "mass_date": null,
@@ -7558,14 +7552,14 @@
           "notes": null
         },
         {
-          "day": "Friday",
-          "start": "08:30",
+          "day": "Thursday",
+          "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Mass at Holy Redeemer"
         },
         {
-          "day": "Saturday",
+          "day": "Friday",
           "start": "08:30",
           "mass_date": null,
           "language": null,
@@ -7584,7 +7578,7 @@
           "day": "Saturday",
           "start": "15:00",
           "end": "15:30",
-          "notes": "Before Mass"
+          "notes": "Saturday before Mass"
         }
       ],
       "adoration": {
@@ -7599,7 +7593,7 @@
         ]
       }
     },
-    "events_summary": "Parish Picnic is Sunday, June 28 from 1–5 p.m., with raffle tickets available and a potluck by last name (A–F side dish, G–M dessert, N–Z snack). A Holy Hour with Fr. Anthony begins a weekly Wednesday rotation between Holy Redeemer and St. Jerome at 7:00 p.m. (confessions at 6:30 p.m. when offered). The Divine Mercy Chaplet is Fridays at 9:00 a.m., and the Rosary is Tuesdays at 7:00 p.m. in the church."
+    "events_summary": "This Tuesday, the Rosary is prayed in the church at 7:00pm. Holy Hour with Fr. Anthony is held on Wednesday evenings at 7:00pm, now weekly and alternating between St. Jerome and Holy Redeemer (July 22 at St. Jerome; July 29 at Holy Redeemer). Also coming up: Rosary at Euclid Health Care on Wednesday, July 22 at 11:15am, and Bible Study (Gospel of John) on Friday, July 24 at 7:00pm at the Holy Redeemer Rectory."
   },
   {
     "name": "Saint Ignatius of Antioch",
@@ -8512,17 +8506,10 @@
     "website": "https://stemeric.com",
     "latitude": 41.486465,
     "longitude": -81.7022332,
-    "bulletin_url": "https://stemeric.com/the-most-holy-body-and-blood-of-christ-corpus-christi-june-7-2025/",
-    "timestamp": "2026-07-11",
+    "bulletin_url": "https://stemeric.com/fifteenth-sunday-in-ordinary-time-july-12-2026/",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
-        {
-          "day": "Sunday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": "English",
-          "notes": "Regular Sunday Mass (not offered while Fr. Bona is away; last at St. Emeric on 2026-06-07; will move to St. Elizabeth starting 2026-06-28)"
-        },
         {
           "day": "Sunday",
           "start": "11:00",
@@ -8535,7 +8522,35 @@
           "start": "09:00",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass (not offered while Fr. Bona is away; no weekday Masses until 2026-06-29)"
+          "notes": null
+        },
+        {
+          "day": "Tuesday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Wednesday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
         },
         {
           "day": "Saturday",
@@ -8558,7 +8573,7 @@
         "times": []
       }
     },
-    "events_summary": "This Sunday (June 7), join the Corpus Christi outdoor procession (weather permitting) after the 11:00 AM Mass, and participate in the Catholic Charities Follow-Up In-Pew Appeal with envelopes available at the church doors. Fr. Bona will be away until June 26; there will be no weekday Masses until June 29 and no 9:00 AM Sunday Mass while he is away. The 11:00 AM Sunday Mass is livestreamed at facebook.com/saintemeric/."
+    "events_summary": "The St. Stephen Day Parish Picnic/Hungarian Festival is coming up on August 16, and volunteers are needed for food service, ticket sales, and set-up/clean-up. The FEST is on Saturday, August 15 at ForeFront Field in Avon; tickets are $10 at www.TheFEST.us."
   },
   {
     "name": "Saint Edward, Parkman",
@@ -8571,7 +8586,7 @@
     "latitude": 41.3725416,
     "longitude": -81.0656905,
     "bulletin_url": "https://www.ssedwardlucy.com/uploads/1/3/2/1/132124471/july_12_2026.pdf",
-    "timestamp": "2026-07-11",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -8594,7 +8609,7 @@
           "day": "Saturday",
           "start": "16:00",
           "end": "16:45",
-          "notes": "At St. Edward"
+          "notes": "Confession @ St. Edward"
         }
       ],
       "adoration": {
@@ -8609,7 +8624,7 @@
         ]
       }
     },
-    "events_summary": "SS. Edward & Lucy’s “Praise in the Park” is Friday, July 24, 7:00–9:30 PM at Burton Park. Vacation Bible School runs July 27–31 from 9:00 AM to Noon at St. Lucy (registration deadline is July 15), and Youth Group meets Wednesdays from 6:30–8:00 PM at St. Edward. Note: there will be no public Masses July 13–17 (intentions will be offered privately)."
+    "events_summary": "Praise in the Park is Friday, July 24, 2026 from 7:00–9:30 PM at Burton Park. Vacation Bible School runs July 27–31 from 9:00 AM–12:00 PM at St. Lucy (registration deadline July 15). Note: there will be no public Masses July 13–17, and Bible Study on July 15 is canceled (resumes July 22)."
   },
   {
     "name": "Saint Edward Roman Catholic Parish",
@@ -8863,7 +8878,7 @@
     "latitude": 41.7782328,
     "longitude": -81.1354655,
     "bulletin_url": "https://www.stcypriansparish.com/weekly-bulletin",
-    "timestamp": "2026-07-11",
+    "timestamp": null,
     "schedules": {
       "mass": [
         {
@@ -10334,7 +10349,7 @@
     "latitude": 41.3255562,
     "longitude": -81.6277639,
     "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=Bj1rXi4%2FZBJOQo83Cay6QPguoYGwnnx5iUK%2BhiT6tPQPnN3CLCvM4LlqDmkUwNfhlqFM4RxwdLjisx%2BFnKSo6PoSw14U82k%2BV7VIRoTglcM%3D",
-    "timestamp": "2026-07-11",
+    "timestamp": null,
     "schedules": {
       "mass": [
         {
@@ -10784,7 +10799,7 @@
     "latitude": 41.475318,
     "longitude": -82.160151,
     "bulletin_url": "https://container.parishesonline.com/bulletins/14/0147/20260301B.pdf",
-    "timestamp": "2026-07-11",
+    "timestamp": null,
     "schedules": {
       "mass": [
         {
@@ -11858,7 +11873,7 @@
     "latitude": 41.5108245,
     "longitude": -81.6441796,
     "bulletin_url": "https://www.saolf.org/_files/ugd/3c9f78_6611426883f64f5db197a8cd964b8737.pdf",
-    "timestamp": "2026-07-11",
+    "timestamp": null,
     "schedules": {
       "mass": [
         {
@@ -11951,7 +11966,7 @@
     "latitude": null,
     "longitude": null,
     "bulletin_url": null,
-    "timestamp": "2026-07-11",
+    "timestamp": null,
     "schedules": {
       "mass": [],
       "confession": [],
@@ -12467,7 +12482,7 @@
     "latitude": 41.2949906,
     "longitude": -82.23259,
     "bulletin_url": "https://shoj.cc/PDFs/Bulletins/CurrentBulletin.pdf",
-    "timestamp": "2026-07-11",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -12482,14 +12497,21 @@
           "start": "08:45",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass mentioned in intentions list; noted as cancelled this week (July 9)"
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "08:45",
+          "mass_date": null,
+          "language": null,
+          "notes": null
         },
         {
           "day": "Saturday",
           "start": "16:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Vigil Mass"
         }
       ],
       "confession": [
@@ -12512,7 +12534,7 @@
         ]
       }
     },
-    "events_summary": "Coffee & Donuts will be served Sunday, July 19 after the 10:30 a.m. Mass at Sacred Heart in the Education Building. The 43rd Cleveland Charismatic Conference is Saturday, July 25 at St. Albert the Great Hall in North Royalton (advance registration deadline is July 15). Save the date for the Sacred Heart Parish Council summer picnic on Sunday, August 16 immediately after the 10:30 a.m. liturgy."
+    "events_summary": "Coffee & Donuts will be served Sunday, July 19 after the 10:30 AM Mass at Sacred Heart in the Education Building. The Helping Hands pantry will be open Saturday, July 18 from 10:00 AM–1:00 PM and Tuesday, July 21 from 6:00–8:00 PM. Save the date for the Sacred Heart summer picnic on Sunday, August 16 immediately after the 10:30 AM liturgy; “Digging Deeper into Scripture” Bible study continues Sundays at 9:30 AM."
   },
   {
     "name": "Church of the Resurrection",
@@ -13179,8 +13201,8 @@
     "website": "www.ourladyoflourdes-cle.com",
     "latitude": 41.4655976,
     "longitude": -81.6521799,
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=yqBviwe4UWTa%2FoyWDWSmzqRYK88yRXkKXmpTkR54eyxQDK0EOFMEKQjO4znfZpxXrdv5PVxn%2FCVmB3J4ks6KyfcNJ7yWFKvDPngOpTXl8qo%3D",
-    "timestamp": "2026-07-11",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=PQQHtFa5c8nrwbxL43eEeaAhrhsFN8Xbz1dGski5u1%2B5dTNUyPIIRx9Iwnrw5JkS8cY3BZyks2ujRKbfF0qfbIleqjGJr13AZrj3X8yreNc%3D",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -13194,7 +13216,7 @@
           "day": "Sunday",
           "start": "12:30",
           "mass_date": null,
-          "language": "Spanish",
+          "language": null,
           "notes": null
         },
         {
@@ -13225,7 +13247,7 @@
         ]
       }
     },
-    "events_summary": "This week includes the Activities Committee meeting and a Retreat Closing Mass on Sunday, June 28 at 2:00 PM and 4:00 PM. The Food Pantry meets Wednesdays at 3:00 PM, and John XXIII meets Wednesdays at 7:00 PM; choir practice is Thursdays at 7:00 PM. Save the dates for the Parish Picnic (Saturday, August 8) and the Flea Market and Money Raffle (Sunday, August 16)."
+    "events_summary": "Our Lady of Lourdes will host a Mission Appeal with Fr. Sleeva Raju Kala, OSFS the weekend of July 25–26 with a special second collection. Regular weekly activities include Prayer Group on Tuesdays at 11:00am, Food Pantry on Wednesdays at 3:00pm, and Choir on Thursdays at 7:00pm. Coming up: the Parish Picnic on Saturday, August 8, and the Flea Market & Money Raffle on Sunday, August 16 (8:00am–3:00pm; raffle at 2:30pm)."
   },
   {
     "name": "Our Lady of Guadalupe Parish",
@@ -14684,7 +14706,7 @@
   },
   {
     "name": "Immaculate Conception, Cleveland",
-    "parish_id": "",
+    "parish_id": "immat-con-cle",
     "address": "4129 Superior Avenue",
     "city": "Cleveland",
     "zip_code": "44103",
@@ -14715,7 +14737,7 @@
     "latitude": 41.0464564,
     "longitude": -81.5609709,
     "bulletin_url": "https://ickenmore.org/wp-content/uploads/simple-file-list/bulletin-2026-01-11.pdf",
-    "timestamp": "2026-07-11",
+    "timestamp": null,
     "schedules": {
       "mass": [
         {
@@ -14778,7 +14800,7 @@
   },
   {
     "name": "Avon Catholic Community - Saint Mary of the Immaculate Conception",
-    "parish_id": "33997-MIC",
+    "parish_id": "1071-MIC",
     "address": "2640 Stoney Ridge Road",
     "city": "Avon",
     "zip_code": "44011",
@@ -14786,8 +14808,8 @@
     "website": "https://stmaryavon.org/",
     "latitude": 41.449693,
     "longitude": -82.033951,
-    "bulletin_url": "https://files.ecatholic.com/33997/bulletins/20260118.pdf",
-    "timestamp": "2026-02-07",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1071/20260712B.pdf",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -14844,7 +14866,7 @@
           "start": "16:00",
           "mass_date": null,
           "language": null,
-          "notes": "Vigil"
+          "notes": "Vigil Mass"
         }
       ],
       "confession": [
@@ -14891,7 +14913,7 @@
         ]
       }
     },
-    "events_summary": "Avon Catholic Community has several ways to grow in faith and fellowship, including the Grief Recovery Program starting Thursday, January 22 from 6:00–7:30 p.m. at Holy Trinity and ongoing Saturday-morning groups at St. Mary: Magnify 90 (women) at 7:00 a.m. and Exodus 90 (men) at 7:00 a.m. Youth and community highlights include the EDGE Winter Kick-Off at St. Mary on Sunday, January 26 at 7:00 p.m., plus opportunities like Grandparents@Prayer (second Tuesdays, 9:30–10:30 a.m.) and monthly First Friday nursing home Mass at Avon Oaks."
+    "events_summary": "This July, enjoy Sundae Vespers on Sunday evenings at 7:00 PM at St. Mary’s, and join Summer in Cana on Wednesday, July 15 from 6:30–8:30 PM at St. Mary’s. Life Teen meets for Bible Study in the Park on Tuesdays from 1:00–2:30 PM at Schwartz Park, and Edge hosts Bonfire Nights on Monday evenings in July from 7:00–8:30 PM at St. Mary’s. Volunteers are invited to a Volunteer Appreciation BBQ on Sunday, July 19 at 2:00 PM at Tom’s Country Place (registration required)."
   },
   {
     "name": "Holy Spirit Catholic Church",
@@ -15252,8 +15274,8 @@
     "website": "www.holynamecleveland.org",
     "latitude": 41.4496327,
     "longitude": -81.6297092,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0691/20260104B.pdf",
-    "timestamp": null,
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0691/20260712B.pdf",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -15332,7 +15354,7 @@
           "day": "Saturday",
           "start": "14:30",
           "end": "15:30",
-          "notes": "Or by appointment (bulletin notes appointment with Msgr. Antall)"
+          "notes": "Or by appointment with Fr. Jasany"
         }
       ],
       "adoration": {
@@ -15347,7 +15369,7 @@
         ]
       }
     },
-    "events_summary": "Holy Name Church offers regular weekday Masses at 08:00, weekend Masses (Saturday vigil at 16:00; Sundays at 08:30, 11:00, and 18:00), Saturday confessions 14:30–15:30, and a Thursday 18:00 Holy Hour in the church (pages 1–2). Upcoming items include a Baptism Preparation Class on Sunday, 2026-01-18 at 13:00, plus ongoing Thursday hot meals (16:00–17:30 in Haren Hall) and multiple weekly AA meetings (page 2–3)."
+    "events_summary": "Holy Name’s regular schedule includes Thursday Holy Hour/adoration at 6:00 PM and Saturday confessions from 2:30–3:30 PM. A baptism preparation class is coming up on Sunday, August 2 at 1:30 PM at Immaculate Heart (call 216-341-2734). Upcoming summer events include the combined St. John Nepomucene & Holy Name picnic on August 23 and the golf outing on August 29 at Mallard Creek Golf Course."
   },
   {
     "name": "Holy Martyrs Catholic Church",
@@ -16216,7 +16238,7 @@
     "latitude": 41.5030193,
     "longitude": -81.6881019,
     "bulletin_url": "https://container.parishesonline.com/bulletins/14/1259/20260412B.pdf",
-    "timestamp": "2026-07-11",
+    "timestamp": null,
     "schedules": {
       "mass": [
         {
@@ -16416,8 +16438,8 @@
     "website": "www.blessedtrinitycleveland.org",
     "latitude": 41.4339645,
     "longitude": -81.7915284,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0244/20260607B.pdf",
-    "timestamp": "2026-07-11",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0244/20260712B.pdf",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -16461,13 +16483,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "11:00",
-          "mass_date": "2026-06-08",
-          "language": null,
-          "notes": "All Souls Mass at West Park Health Center (off-site); listed in 'Worship' schedule for the week"
         }
       ],
       "confession": [],
@@ -16476,7 +16491,7 @@
         "times": []
       }
     },
-    "events_summary": "On Sunday, June 7, there’s Breaking Open the Word at 10:00 a.m. and a Spring Clothing Giveaway at 12:30 p.m. (donations accepted starting at 12:00 p.m.; rain date June 14). Monday, June 8 includes Legion of Mary at 9:00 a.m., plus Theology on the Rocks West from 7:00–8:30 p.m. Tai Chi meets Wednesdays 7:00–8:00 p.m. (outdoors through August, weather permitting)."
+    "events_summary": "This week includes the parish Community Meal and Classic Car Show on Sunday, July 12 from 12:00–1:00 p.m. (meal) and 12:00–5:00 p.m. (car show). Ongoing weekly groups include Witness for Ukraine on Wednesdays at 3:00 p.m. and Tai Chi on Wednesdays from 7:00–8:00 p.m. On Monday, July 13, “Theology on the Rocks West” meets at 7:00 p.m. (doors open at 6:30 p.m.) at the Westside Irish American Club in Olmsted Township."
   },
   {
     "name": "Blessed Trinity Parish",

@@ -13,7 +13,6 @@
         800
       ],
       "Thursday": [
-        805,
         805
       ],
       "Friday": [
@@ -924,20 +923,20 @@
     "ID": 27,
     "Name": "Saint Stephen Catholic Church",
     "Mass Times": {
-      "Saturday": [
-        1600
-      ],
-      "Sunday": [
-        1030
-      ],
       "Monday": [
+        800
+      ],
+      "Thursday": [
         800
       ],
       "Wednesday": [
         1600
       ],
-      "Thursday": [
-        800
+      "Saturday": [
+        1600
+      ],
+      "Sunday": [
+        1030
       ]
     },
     "Confessions": {
@@ -1493,17 +1492,17 @@
     "ID": 40,
     "Name": "Saint Patrick, Wellington",
     "Mass Times": {
-      "Saturday": [
-        1800
-      ],
-      "Sunday": [
-        815
-      ],
       "Monday": [
         845
       ],
       "Wednesday": [
         1830
+      ],
+      "Saturday": [
+        1800
+      ],
+      "Sunday": [
+        815
       ]
     },
     "Confessions": {
@@ -3003,11 +3002,6 @@
         {
           "1500": 60
         }
-      ],
-      "Friday": [
-        {
-          "0": 0
-        }
       ]
     },
     "Adoration": {
@@ -3361,14 +3355,19 @@
     "Name": "Saint Jerome Church",
     "Mass Times": {
       "Saturday": [
-        830,
         1600
       ],
       "Sunday": [
         900
       ],
+      "Monday": [
+        800
+      ],
       "Wednesday": [
         830
+      ],
+      "Thursday": [
+        800
       ],
       "Friday": [
         830
@@ -3765,10 +3764,21 @@
     "Name": "Saint Emeric Parish",
     "Mass Times": {
       "Sunday": [
-        900,
         1100
       ],
       "Monday": [
+        900
+      ],
+      "Tuesday": [
+        900
+      ],
+      "Wednesday": [
+        900
+      ],
+      "Thursday": [
+        900
+      ],
+      "Friday": [
         900
       ],
       "Saturday": [
@@ -5480,14 +5490,17 @@
     "ID": 143,
     "Name": "Sacred Heart, Oberlin",
     "Mass Times": {
+      "Thursday": [
+        845
+      ],
+      "Friday": [
+        845
+      ],
       "Saturday": [
         1600
       ],
       "Sunday": [
         1030
-      ],
-      "Thursday": [
-        845
       ]
     },
     "Confessions": {
@@ -6763,6 +6776,15 @@
     "ID": 177,
     "Name": "Holy Name Church",
     "Mass Times": {
+      "Saturday": [
+        800,
+        1600
+      ],
+      "Sunday": [
+        830,
+        1100,
+        1800
+      ],
       "Monday": [
         800
       ],
@@ -6777,15 +6799,6 @@
       ],
       "Friday": [
         800
-      ],
-      "Saturday": [
-        800,
-        1600
-      ],
-      "Sunday": [
-        830,
-        1100,
-        1800
       ]
     },
     "Confessions": {
