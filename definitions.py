@@ -111,7 +111,10 @@ SITE_MAPPINGS: dict[str, dict[str, str]] = {
     },
     "1259": {
 	"cathedral": "1259",
+	# "immaculate" must stay before "chapel": the Oratory site name
+	# contains both ("temporary weekday chapel"), first match wins
 	"immaculate": "immat-con-cle",
+	"chapel": "1259",
     },
     "0147": {
 	"anthony": "0147",

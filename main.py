@@ -89,14 +89,21 @@ def filter_and_merge_matching_sites(sites: list[SiteInfo], parish_name: str) -> 
     if len(matching_sites) == 1:
         return matching_sites[0]
 
-    # Merge all matching sites into one
-    base = matching_sites[0]
+    return merge_sites(matching_sites, parish_name)
+
+
+def merge_sites(sites: list[SiteInfo], site_name: str) -> SiteInfo:
+    """Merge multiple sites into one, combining all schedules.
+
+    Address info is taken from the first site.
+    """
+    base = sites[0]
     all_masses = []
     all_confessions = []
     all_adoration_times = []
     is_perpetual = False
 
-    for site in matching_sites:
+    for site in sites:
         all_masses.extend(site.mass_times)
         all_confessions.extend(site.confession_times)
         all_adoration_times.extend(site.adoration.times)
@@ -104,7 +111,7 @@ def filter_and_merge_matching_sites(sites: list[SiteInfo], parish_name: str) -> 
             is_perpetual = True
 
     return SiteInfo(
-        site_name=parish_name,
+        site_name=site_name,
         address=base.address,
         city=base.city,
         state=base.state,
@@ -246,22 +253,42 @@ async def process_parish(
                     extraction.sites, group_parishes, parish.bulletin_group_id
                 )
 
+                # Group sites by matched parish, so multiple sites mapping to
+                # the same parish (e.g., Church + temporary chapel) are merged
+                # instead of overwriting each other.
+                sites_by_parish: dict[str, list[tuple[int, SiteInfo]]] = {}
+                parish_by_id = {}
                 for site_idx, (site, matched_parish) in enumerate(matches):
                     if matched_parish:
-                        await db.save_extraction(
-                            parish_id=matched_parish.parish_id,
-                            extraction=extraction,
-                            bulletin_url=result.url,
-                            log=log_entries,
-                            site_index=site_idx,
-                            skip_name_update=True,
+                        sites_by_parish.setdefault(matched_parish.parish_id, []).append(
+                            (site_idx, site)
                         )
-                        log(f"Saved site '{site.site_name}' → {matched_parish.name}")
+                        parish_by_id[matched_parish.parish_id] = matched_parish
                     else:
                         warn(f"No match for site '{site.site_name}'")
 
+                for pid, indexed_sites in sites_by_parish.items():
+                    matched_parish = parish_by_id[pid]
+                    if len(indexed_sites) > 1:
+                        site_names = [s.site_name for _, s in indexed_sites]
+                        merged = merge_sites([s for _, s in indexed_sites], matched_parish.name)
+                        extraction.sites.append(merged)
+                        site_idx = len(extraction.sites) - 1
+                        log(f"Merged sites {site_names} → {matched_parish.name}")
+                    else:
+                        site_idx = indexed_sites[0][0]
+                    await db.save_extraction(
+                        parish_id=matched_parish.parish_id,
+                        extraction=extraction,
+                        bulletin_url=result.url,
+                        log=log_entries,
+                        site_index=site_idx,
+                        skip_name_update=True,
+                    )
+                    log(f"Saved site '{extraction.sites[site_idx].site_name}' → {matched_parish.name}")
+
                 # Check for unmatched parishes
-                matched_ids = {m.parish_id for _, m in matches if m}
+                matched_ids = set(sites_by_parish)
                 for p in group_parishes:
                     if p.parish_id not in matched_ids:
                         warn(f"No site matched parish '{p.name}'")
