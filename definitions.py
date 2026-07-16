@@ -52,9 +52,9 @@ SITE_MAPPINGS: dict[str, dict[str, str]] = {
         "nova": "olhc-nova",
         "seville": "olhc-seville",
     },
-    "33997": {
-	"holy trinity": "33997",
-	"st. mary": "33997-MIC",
+    "1071": {
+	"holy trinity": "1071",
+	"st. mary": "1071-MIC",
     },
     "0141": {
 	"st. peter": "0141",
