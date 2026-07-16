@@ -10340,7 +10340,7 @@
   },
   {
     "name": "Saint Basil the Great Catholic Church",
-    "parish_id": "https://basilthegreat.org/bulletin/",
+    "parish_id": "st-basil-the-g",
     "address": "8700 Brecksville Road",
     "city": "Brecksville",
     "zip_code": "44141",
@@ -16202,8 +16202,8 @@
     "website": "SaintJohnCathedral.com",
     "latitude": 41.5030193,
     "longitude": -81.6881019,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1259/20260412B.pdf",
-    "timestamp": null,
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1259/20260712B.pdf",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -16215,10 +16215,10 @@
         },
         {
           "day": "Sunday",
-          "start": "11:00",
+          "start": "10:30",
           "mass_date": null,
           "language": null,
-          "notes": "Live-streamed (†)"
+          "notes": null
         },
         {
           "day": "Sunday",
@@ -16232,70 +16232,77 @@
           "start": "07:15",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "In the Chapel"
         },
         {
           "day": "Monday",
           "start": "12:00",
           "mass_date": null,
           "language": null,
-          "notes": "Live-streamed (†)"
+          "notes": "In the Chapel"
         },
         {
           "day": "Tuesday",
           "start": "07:15",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "In the Chapel"
         },
         {
           "day": "Tuesday",
           "start": "12:00",
           "mass_date": null,
           "language": null,
-          "notes": "Live-streamed (†)"
+          "notes": "In the Chapel"
         },
         {
           "day": "Wednesday",
           "start": "07:15",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "In the Chapel"
         },
         {
           "day": "Wednesday",
           "start": "12:00",
           "mass_date": null,
           "language": null,
-          "notes": "Live-streamed (†)"
+          "notes": "In the Chapel"
+        },
+        {
+          "day": "Wednesday",
+          "start": "18:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "Wednesday Evening Live (July & August)"
         },
         {
           "day": "Thursday",
           "start": "07:15",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "In the Chapel"
         },
         {
           "day": "Thursday",
           "start": "12:00",
           "mass_date": null,
           "language": null,
-          "notes": "Live-streamed (†)"
+          "notes": "In the Chapel"
         },
         {
           "day": "Friday",
           "start": "07:15",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "In the Chapel"
         },
         {
           "day": "Friday",
           "start": "12:00",
           "mass_date": null,
           "language": null,
-          "notes": "Live-streamed (†)"
+          "notes": "In the Chapel"
         },
         {
           "day": "Saturday",
@@ -16308,74 +16315,38 @@
       "confession": [
         {
           "day": "Monday",
-          "start": "06:30",
-          "end": "07:00",
-          "notes": null
-        },
-        {
-          "day": "Monday",
-          "start": "11:30",
-          "end": "12:00",
-          "notes": null
+          "start": "07:45",
+          "end": "11:30",
+          "notes": "In the Chapel"
         },
         {
           "day": "Tuesday",
-          "start": "06:30",
-          "end": "07:00",
-          "notes": null
-        },
-        {
-          "day": "Tuesday",
-          "start": "11:30",
-          "end": "12:00",
-          "notes": null
-        },
-        {
-          "day": "Wednesday",
-          "start": "06:30",
-          "end": "07:00",
-          "notes": null
-        },
-        {
-          "day": "Wednesday",
-          "start": "11:30",
-          "end": "12:00",
-          "notes": null
+          "start": "07:45",
+          "end": "11:30",
+          "notes": "In the Chapel"
         },
         {
           "day": "Wednesday",
           "start": "17:00",
           "end": "17:30",
-          "notes": null
+          "notes": "In the Chapel (followed by Vespers at 5:30pm)"
         },
         {
           "day": "Thursday",
-          "start": "06:30",
-          "end": "07:00",
-          "notes": null
-        },
-        {
-          "day": "Thursday",
-          "start": "11:30",
-          "end": "12:00",
-          "notes": null
+          "start": "07:45",
+          "end": "11:30",
+          "notes": "In the Chapel"
         },
         {
           "day": "Friday",
-          "start": "06:30",
-          "end": "07:00",
-          "notes": null
-        },
-        {
-          "day": "Friday",
-          "start": "11:30",
-          "end": "12:00",
-          "notes": null
+          "start": "07:45",
+          "end": "11:30",
+          "notes": "In the Chapel"
         },
         {
           "day": "Saturday",
-          "start": "15:00",
-          "end": "16:00",
+          "start": "15:30",
+          "end": "16:30",
           "notes": null
         }
       ],
@@ -16391,7 +16362,7 @@
         ]
       }
     },
-    "events_summary": "This week at the Cathedral includes Wednesday Eucharistic Adoration (12:30–5:30 PM) with Confessions at 5:00 PM and Vespers/Benediction at 5:30 PM, plus the Young Adult Book Study on Wednesday evenings. Next Sunday, April 19, there will be communal Anointing of the Sick at 9:45 AM and a Confirmation liturgy at 2:30 PM. Upcoming highlights include the Tallis Scholars concert on Monday, April 20 at 7:30 PM and a Parish Pastoral Council information/discernment evening on Tuesday, May 12 at 6:00 PM."
+    "events_summary": "Weekly Eucharistic Adoration is held every Wednesday from 12:30–5:30 p.m., with Confession at 5:00 p.m. and Vespers by 5:30 p.m. The “Wednesday Evenings Live” summer concert series runs each Wednesday evening in July and August at 6:00 p.m. in the Cathedral Courtyard. The 5th Annual Cathedral Golf Outing is Saturday, August 15 (registration at 8:00 a.m., shotgun start at 9:00 a.m.), and there’s an SVdP informational presentation Tuesday, August 4 at 5:30 p.m. in the Lower Sacristy."
   },
   {
     "name": "Blessed Trinity Catholic Church",
