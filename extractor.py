@@ -6,6 +6,7 @@ from typing import Literal
 from openai import APIConnectionError, APITimeoutError, AsyncOpenAI
 
 from schemas import BulletinExtraction
+from utils.pdf_compress import compress_if_needed
 from utils.retry import retry_async
 
 ExtractionMethod = Literal["direct_pdf", "marker_ocr"]
@@ -155,6 +156,7 @@ class BulletinExtractor:
 
     async def _extract_direct(self, pdf_bytes: bytes) -> BulletinExtraction:
         """Send PDF directly to the model (native PDF support)."""
+        pdf_bytes = await compress_if_needed(pdf_bytes)
         pdf_base64 = base64.standard_b64encode(pdf_bytes).decode("utf-8")
         return await self._call_llm([
             {
