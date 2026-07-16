@@ -858,18 +858,18 @@
     "ID": 25,
     "Name": "Saint Teresa of Avila Parish",
     "Mass Times": {
+      "Wednesday": [
+        830
+      ],
+      "Friday": [
+        830
+      ],
       "Saturday": [
         1630
       ],
       "Sunday": [
         830,
         1100
-      ],
-      "Wednesday": [
-        830
-      ],
-      "Friday": [
-        830
       ]
     },
     "Confessions": {
@@ -4760,28 +4760,23 @@
     "ID": 124,
     "Name": "Saint Anthony of Padua Roman Catholic Church",
     "Mass Times": {
-      "Saturday": [
-        1600
-      ],
-      "Sunday": [
-        1000
-      ],
       "Monday": [
         830
       ],
       "Tuesday": [
         830
+      ],
+      "Saturday": [
+        1600
+      ],
+      "Sunday": [
+        1000
       ]
     },
     "Confessions": {
       "Saturday": [
         {
-          "1500": 60
-        }
-      ],
-      "Wednesday": [
-        {
-          "1830": 90
+          "1500": 30
         }
       ]
     },
@@ -5235,30 +5230,21 @@
     "ID": 136,
     "Name": "Saint Agnes + Our Lady of Fatima Catholic Church",
     "Mass Times": {
+      "Saturday": [
+        1600
+      ],
       "Sunday": [
         830,
-        1030
-      ],
-      "Monday": [
-        1800
-      ],
-      "Tuesday": [
-        1800
-      ],
-      "Wednesday": [
-        1800
-      ],
-      "Thursday": [
-        1800
-      ],
-      "Friday": [
-        1800
-      ],
-      "Saturday": [
+        1030,
         1800
       ]
     },
     "Confessions": {
+      "Saturday": [
+        {
+          "1500": 45
+        }
+      ],
       "Sunday": [
         {
           "745": 30

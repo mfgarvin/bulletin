@@ -1975,8 +1975,8 @@
     "website": "https://stteresaparish.com/",
     "latitude": 41.466168,
     "longitude": -82.076171,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1786/20260301B.pdf",
-    "timestamp": null,
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0147/20260712B.pdf",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -2012,7 +2012,7 @@
           "start": "16:30",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Vigil Mass"
         }
       ],
       "confession": [
@@ -2020,7 +2020,7 @@
           "day": "Saturday",
           "start": "15:30",
           "end": "16:00",
-          "notes": null
+          "notes": "or by appointment"
         }
       ],
       "adoration": {
@@ -2035,7 +2035,7 @@
         ]
       }
     },
-    "events_summary": "St. Teresa of Avila has Fish Fry every Friday of Lent from 4:30–7:00 PM in Avila Hall, plus Stations of the Cross on Wednesdays at 1:00 PM. This week includes a Night of Confession on Wednesday, March 4 from 5:00–6:30 PM and Bible Study on Thursday, March 5 at 7:00 PM in the St. John Room. Mark your calendar for the combined Lenten Parish Mission (March 15–17) from 6:30–7:30 PM at St. Teresa of Avila Church."
+    "events_summary": "Upcoming parish activities include the St. Anthony Senior Sociables lunch on Wednesday, July 15 at 12:30 PM and Eucharistic Adoration at St. Teresa on July 15 from 9:00 AM–1:00 PM. St. Teresa will host “Music Bingo” on Saturday, August 1 at 5:30 PM in the Parish Life Center (tickets $20). St. Anthony is also hosting a Hands-On Cement Leaf Craft workshop on Tuesday, August 4 at 6:30 PM outside the Social Hall (registration due by July 24)."
   },
   {
     "name": "Saint Therese Parish",
@@ -10340,7 +10340,7 @@
   },
   {
     "name": "Saint Basil the Great Catholic Church",
-    "parish_id": "st-basil-the-great-brecksville-oh",
+    "parish_id": "https://basilthegreat.org/bulletin/",
     "address": "8700 Brecksville Road",
     "city": "Brecksville",
     "zip_code": "44141",
@@ -10798,8 +10798,8 @@
     "website": "www.stanthonylorain.org/our-parish",
     "latitude": 41.475318,
     "longitude": -82.160151,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0147/20260301B.pdf",
-    "timestamp": null,
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0147/20260712B.pdf",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -10828,20 +10828,14 @@
           "start": "16:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Vigil Mass"
         }
       ],
       "confession": [
         {
-          "day": "Wednesday",
-          "start": "18:30",
-          "end": "20:00",
-          "notes": "Diocesan Night of Confession (per bulletin events listing)"
-        },
-        {
           "day": "Saturday",
           "start": "15:00",
-          "end": "16:00",
+          "end": "15:30",
           "notes": "or by appointment"
         }
       ],
@@ -10881,7 +10875,7 @@
         ]
       }
     },
-    "events_summary": "This Lent, join Stations of the Cross every Friday at 1:15 PM (with the school) and 7:00 PM (with Deacon Paul), and stop by the pierogi sale every Friday during Lent from 3:00–7:00 PM in the Social Hall. Coming up soon are the Diocesan Night of Confession on Wednesday, March 4 (6:30–8:00 PM at St. Anthony), the First Saturday Spaghetti Dinner on Saturday, March 7 (4:45–6:30 PM), and a Palm Weaving Workshop after the 4:00 PM Mass on Saturday, March 21. Also, don’t miss the Marian Guild Mini Retreat after the 10:00 AM Mass on Sunday, March 15 and the combined Lenten Mission March 15–17 at 6:30 PM at St. Teresa Church."
+    "events_summary": "Upcoming parish activities include the St. Anthony Senior Sociables lunch on Wednesday, July 15 at 12:30 PM and Eucharistic Adoration at St. Teresa on July 15 from 9:00 AM–1:00 PM. St. Teresa will host “Music Bingo” on Saturday, August 1 at 5:30 PM in the Parish Life Center (tickets $20). St. Anthony is also hosting a Hands-On Cement Leaf Craft workshop on Tuesday, August 4 at 6:30 PM outside the Social Hall (registration due by July 24)."
   },
   {
     "name": "Saint Anthony of Padua Parish",
@@ -11864,7 +11858,7 @@
   },
   {
     "name": "Saint Agnes + Our Lady of Fatima Catholic Church",
-    "parish_id": "salf-c",
+    "parish_id": "1883",
     "address": "6800 Lexington Avenue",
     "city": "Cleveland",
     "zip_code": "44103",
@@ -11872,8 +11866,8 @@
     "website": "https://www.saolf.org",
     "latitude": 41.5108245,
     "longitude": -81.6441796,
-    "bulletin_url": "https://www.saolf.org/_files/ugd/3c9f78_6611426883f64f5db197a8cd964b8737.pdf",
-    "timestamp": null,
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1883/20260712B.pdf",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -11891,53 +11885,18 @@
           "notes": null
         },
         {
-          "day": "Monday",
+          "day": "Sunday",
           "start": "18:00",
           "mass_date": null,
           "language": null,
-          "notes": "Holy Days of Obligation Mass time (held when applicable)"
-        },
-        {
-          "day": "Tuesday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Days of Obligation Mass time (held when applicable)"
-        },
-        {
-          "day": "Wednesday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Days of Obligation Mass time (held when applicable)"
-        },
-        {
-          "day": "Thursday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Days of Obligation Mass time (held when applicable)"
-        },
-        {
-          "day": "Friday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Days of Obligation Mass time (held when applicable)"
+          "notes": "Holy Days of Obligation Mass time (when applicable)"
         },
         {
           "day": "Saturday",
-          "start": "18:00",
+          "start": "16:00",
           "mass_date": null,
           "language": null,
-          "notes": "Holy Days of Obligation Mass time (held when applicable)"
-        },
-        {
-          "day": "Wednesday",
-          "start": "18:00",
-          "mass_date": "2026-01-21",
-          "language": null,
-          "notes": "Parish celebration of patron St. Agnes of Rome (Mass)"
+          "notes": "Vigil Mass"
         }
       ],
       "confession": [
@@ -11946,6 +11905,12 @@
           "start": "07:45",
           "end": "08:15",
           "notes": "or by appointment"
+        },
+        {
+          "day": "Saturday",
+          "start": "15:00",
+          "end": "15:45",
+          "notes": null
         }
       ],
       "adoration": {
@@ -11953,7 +11918,7 @@
         "times": []
       }
     },
-    "events_summary": "St. Agnes + Our Lady of Fatima has several upcoming parish events, including the Week of Prayer for Christian Unity (Jan. 18–25) and a parish council meeting on Thursday, Jan. 22 at 6:00 PM. The parish will celebrate its patron, St. Agnes of Rome, with Mass and a dinner on Wednesday, Jan. 21 at 6:00 PM. On Sunday, Feb. 8, there will be a Social Justice Committee-sponsored presentation on human trafficking from 1:30–3:30 PM."
+    "events_summary": "Line Dancing Classes are held Saturdays from 2:00–4:00 PM (starting July 11), with an invitation to stay for the 4:00 PM Mass. Upcoming events include the Parish Picnic on Sunday, July 19 from 1:00–5:00 PM and a Fatima Center Concert on Thursday, July 23 from 5:30–7:00 PM. A Grief Support Session will be held Saturday, July 25 at 11:00 AM, and a Marriage Enrichment Seminar is scheduled for Saturday, September 26 from 9:00 AM–3:00 PM."
   },
   {
     "name": "Saint Adalbert, Cleveland",
@@ -13952,8 +13917,8 @@
     "website": "nativitybvmlorain.org",
     "latitude": 41.4560215,
     "longitude": -82.1724515,
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=OaDVH6USMAGTTPpKcVGWubU5lBj2ZYSTpJ45tCHaPudZh4vAOKALjnburSN1Ozx2wY9Z4c%2BCz6mzti5gx5GNCPIXMN455Unjq78NWLj%2BTY4%3D",
-    "timestamp": "2026-07-11",
+    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=oz6SxSuoNsdMLn3WW9rtqPWfrZfo9GBZe7wgt%2FGhK6Vt%2BAemRYe%2BXdkZlQ2NHqZu2RgAUG1MhDsMRwNZpNQjmH7ngYaD34%2FrUGcIQ536VHQ%3D",
+    "timestamp": "2026-07-16",
     "schedules": {
       "mass": [
         {
@@ -14004,7 +13969,7 @@
           "day": "Saturday",
           "start": "14:30",
           "end": "15:00",
-          "notes": null
+          "notes": "Or call parish office for an appointment"
         }
       ],
       "adoration": {
@@ -14019,7 +13984,7 @@
         ]
       }
     },
-    "events_summary": "Prayer Group meets the third Monday of the month at 7:00pm in the church, and a Saturday Eucharistic Holy Hour is held weekly from 2:30–3:30pm with Confession from 2:30–3:00pm. The parish picnic is Sunday, July 12, with an outdoor Mass at 12:00pm at St. Peter Pavilion (3655 Oberlin Ave., Lorain) followed by the picnic from 1:00–7:00pm; donations and volunteers are still needed. Women Answer Yes meets the 2nd and 4th Wednesdays from 6:30–8:00pm at St. Peter Parish Center."
+    "events_summary": "Prayer Group meets on the third Monday of the month at 7:00pm in the church, and there is a Eucharistic Holy Hour every Saturday from 2:30–3:30pm. The Rummage Sale Blowout Days run July 17–19 from 8:00am–2:00pm. The FEST is Saturday, August 15 with an outdoor Mass at 8:00pm, and VIRTUS Training is offered Wednesday, September 16 from 6:00–9:00pm at St. Peter’s Parish."
   },
   {
     "name": "Mother of Sorrows Parish",
