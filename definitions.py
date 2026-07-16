@@ -116,5 +116,5 @@ SITE_MAPPINGS: dict[str, dict[str, str]] = {
     "0147": {
 	"anthony": "0147",
 	"teresa": "1786",
-    }.
+    },
 }
