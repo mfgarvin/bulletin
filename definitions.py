@@ -109,11 +109,12 @@ SITE_MAPPINGS: dict[str, dict[str, str]] = {
 	"ann": "0414",
 	"philomena": "0414-sp",
     },
+    # Cathedral + temporary chapel merge into one row. Immaculate Conception
+    # (immat-con-cle) is deliberately NOT routed here: its only Mass (Sat 6pm
+    # vigil) is manually pinned in Notion and the row is disabled.
     "1259": {
 	"cathedral": "1259",
-	# "immaculate" must stay before "chapel": the Oratory site name
-	# contains both ("temporary weekday chapel"), first match wins
-	"immaculate": "immat-con-cle",
+	"immaculate": "1259",
 	"chapel": "1259",
     },
     "0147": {
