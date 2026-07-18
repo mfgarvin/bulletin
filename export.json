@@ -14680,9 +14680,17 @@
     "latitude": 41.5147794,
     "longitude": -81.6609434,
     "bulletin_url": null,
-    "timestamp": null,
+    "timestamp": "2026-07-16",
     "schedules": {
-      "mass": [],
+      "mass": [
+        {
+          "day": "Saturday",
+          "start": "18:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "Sunday Vigil"
+        }
+      ],
       "confession": [],
       "adoration": {
         "is_perpetual": false,

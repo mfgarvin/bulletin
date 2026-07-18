@@ -6521,7 +6521,11 @@
   "2df29b8f-0e6e-815c-838f-e65b319eb239": {
     "ID": 170,
     "Name": "Immaculate Conception, Cleveland",
-    "Mass Times": {},
+    "Mass Times": {
+      "Saturday": [
+        1800
+      ]
+    },
     "Confessions": {},
     "Adoration": {}
   },
