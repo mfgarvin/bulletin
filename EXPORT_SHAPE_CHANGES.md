@@ -87,7 +87,9 @@ Entries are pre-sorted: by `mass_date` (regular masses first, holidays after), t
 Regular weekly Mass → `mass_date: null`. Always show.
 
 Dated Mass → `mass_date: "YYYY-MM-DD"`. Show only when the date is upcoming
-(suggested window: today through +7 days). Hide after the date passes. The
+(suggested window: today through +7 days). Dated Masses whose date has already
+passed are now dropped at export time, so the app will not receive last
+December's Christmas schedule from a parish that hasn't re-scraped. The
 `day` field still reflects the day of week the date falls on, so a Mass on
 Christmas Day 2025 has `day: "Thursday"` and `mass_date: "2025-12-25"`.
 
@@ -105,7 +107,22 @@ scraper bug, not an app filtering responsibility.
 
 ### `schedules.confession` and `schedules.adoration.times`
 
-Same shape: `{day, start, end, notes}`. Both `start` and `end` are `"HH:MM"`.
+Same shape: `{day, start, end, end_next_day, notes}`. Both `start` and `end`
+are `"HH:MM"`.
+
+**`end_next_day`** (bool) marks a slot that runs past midnight. `day` is always
+the day the slot *starts*. An overnight adoration slot is:
+
+```json
+{"day": "Friday", "start": "22:00", "end": "06:00", "end_next_day": true, "notes": null}
+```
+
+and a slot that runs until midnight is `"end": "00:00"` with
+`end_next_day: true`. Do not infer this from `end < start` — read the flag. It
+is always present, and is `false` for ordinary same-day slots.
+
+Slots with no stated time are omitted entirely rather than emitted as
+`00:00–00:00`, so an all-zero slot no longer means "time unknown".
 
 ### `schedules.adoration`
 
@@ -126,6 +143,12 @@ the times array (it'll be empty). Otherwise enumerate `times` like confessions.
 
 Plain floats. Either may be `null` if the parish has no geocoded address.
 The old `lonlat` comma-string is removed.
+
+Coordinates outside Ohio's bounding box (lat 38.4–42.3, lon −84.8…−80.5) are
+rejected at export time and emitted as `null` — every parish in this database
+is in the Diocese of Cleveland, so an out-of-range value is a typo (a dropped
+decimal point, usually), not a distant parish. The app should keep handling
+`null` coords rather than trusting whatever arrives.
 
 ### Unchanged
 

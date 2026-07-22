@@ -16,6 +16,7 @@ from extractor import BulletinExtractor, ExtractionMethod
 from schemas import AdorationSchedule, BulletinExtraction, ParishRecord, SiteInfo
 from sources import get_source_for_publisher
 from utils.log_context import set_parish_context
+from utils.sanitize import sanitize_extraction
 
 logging.basicConfig(
     level=logging.INFO,
@@ -210,6 +211,13 @@ async def process_parish(
             merged = filter_and_merge_matching_sites(extraction.sites, parish_name)
             log(f"Result: {merged.site_name}")
             extraction.sites = [merged]
+
+        # Clean up known LLM failure modes before anything is logged or saved
+        report = sanitize_extraction(extraction, parish_id)
+        for msg in report.repairs:
+            log(f"Sanitized: {msg}")
+        for msg in report.flags:
+            warn(msg)
 
         # Log extraction summary
         total_masses = sum(len(s.mass_times) for s in extraction.sites)

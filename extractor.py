@@ -36,8 +36,12 @@ Extract the following information:
      - Dated (YYYY-MM-DD): holidays (Christmas, Easter), Holy Days of Obligation, civic-day Masses
        (Memorial Day, Labor Day, Thanksgiving), one-off parish Masses (First Communion, graduations,
        jubilees), and ANY Mass listed under a date-specific heading or "this week's schedule" block.
-   - `language`: only set if explicitly identified (Spanish, Latin, Polish, Vietnamese, etc.)
+   - `language`: set whenever the bulletin identifies one (Spanish, Latin, Polish, Slovenian,
+     Vietnamese, "bilingual," "English & Spanish"…). Put it in this structured field — not only
+     in `notes`.
    - `notes`: brief description ("Vigil Mass", "Christmas Eve", "Holy Day of Obligation")
+   - A Vigil Mass is always an evening Mass. If you are about to record a vigil before noon,
+     you have flipped AM/PM — a "Saturday Vigil at 5:00" means 1700, not 500.
 
    **DO NOT include private Masses** — weddings, funerals, baptism Masses, ordination Masses
    tied to specific families. Even if dated, these are not part of the public parish schedule.
@@ -77,15 +81,32 @@ Extract the following information:
 
    **Cancellations.** If a recurring Mass is cancelled on a specific date ("No 7pm Mass on
    Sept 5 due to Labor Day"), do not add a separate cancellation entry — just note it in
-   extraction_notes. The recurring Mass entry remains.
+   extraction_notes. The recurring Mass entry remains. NEVER encode a cancellation as a Mass
+   entry (e.g. a Mass at time 0 with the note "No Mass") — that reads downstream as a real
+   midnight Mass.
+
+   **Do not emit duplicates.** One entry per (day, time, language, mass_date). If the bulletin
+   prints the same Mass in two places (a schedule box and a "this week" listing), extract it once.
 
 4. **Confession schedule** (per site): day, start_time, end_time.
+   - If two listings share a day and start time and one is only an addendum ("or by appointment,"
+     "or call the parish office"), emit ONE slot and put the addendum in `notes`.
 
 5. **Adoration schedule** (per site):
    - Set `is_perpetual: true` ONLY if the bulletin explicitly uses the words "perpetual adoration"
      or describes 24-hour / 24/7 / round-the-clock adoration. Do NOT infer it from First Friday
-     adoration, weekly Holy Hour, or post-Mass adoration.
+     adoration, weekly Holy Hour, or post-Mass adoration. If the bulletin says the chapel closes
+     overnight, or lists specific hours, it is NOT perpetual.
    - Otherwise list specific time slots.
+
+**TIME ENCODING RULES (all schedules):**
+- Midnight is `0`, never `2400` and never `240`. A slot running "8:30 PM until Midnight" is
+  `start_time: 2030, end_time: 0, end_next_day: true`.
+- Set `end_next_day: true` on any slot that crosses midnight (overnight adoration, all-night
+  vigils). An overnight slot ending at 6 AM is `start_time: 2200, end_time: 600,
+  end_next_day: true`.
+- If a time is genuinely not stated, OMIT the entry entirely. Never use `0` or `00:00` as a
+  placeholder for "time unknown" — downstream that becomes a real midnight event.
 
 6. **Parish events** (shared across all sites): retreats, fish fries, bible studies, RCIA,
    youth group, Knights of Columbus, fundraisers, etc.

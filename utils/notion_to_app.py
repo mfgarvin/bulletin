@@ -12,6 +12,7 @@ import json
 import logging
 import os
 import re
+from datetime import date
 from typing import Any
 
 from notion_client import AsyncClient
@@ -53,11 +54,12 @@ def _hhmm(t: int | None) -> str | None:
     return f"{t // 100:02d}:{t % 100:02d}"
 
 
-def _structured_mass(mass_times: list[dict]) -> list[dict[str, Any]]:
+def _structured_mass(mass_times: list[dict], today: str) -> list[dict[str, Any]]:
     """Structured mass entries.
 
     Regular weekly masses have mass_date == null.
-    Holiday/special-occasion masses carry a YYYY-MM-DD mass_date.
+    Holiday/special-occasion masses carry a YYYY-MM-DD mass_date; those in the
+    past are dropped so a stale bulletin can't keep advertising last Christmas.
     Sorted by (mass_date or far-past, weekday-order, time) so the app can
     iterate without re-sorting.
     """
@@ -77,10 +79,17 @@ def _structured_mass(mass_times: list[dict]) -> list[dict[str, Any]]:
                 m.get("mass_date"), m.get("day"), m.get("notes"),
             )
             continue
+        mass_date = m.get("mass_date")
+        if mass_date and mass_date < today:
+            logger.info(
+                "filtered past-dated mass: %s %s — %s",
+                mass_date, m.get("day"), m.get("notes"),
+            )
+            continue
         out.append({
             "day": day,
             "start": _hhmm(time),
-            "mass_date": m.get("mass_date"),  # null or "YYYY-MM-DD"
+            "mass_date": mass_date,  # null or "YYYY-MM-DD"
             "language": m.get("language"),
             "notes": m.get("notes"),
         })
@@ -93,7 +102,12 @@ def _structured_mass(mass_times: list[dict]) -> list[dict[str, Any]]:
 
 
 def _structured_ranges(items: list[dict]) -> list[dict[str, Any]]:
-    """Shared shape for confessions and adoration time slots."""
+    """Shared shape for confessions and adoration time slots.
+
+    `end_next_day` marks a slot that crosses midnight, so the app never has to
+    infer it from `end < start`. Rows written before that field existed are
+    backfilled here from the same comparison.
+    """
     weekday_order = {
         "Sunday": 0, "Monday": 1, "Tuesday": 2, "Wednesday": 3,
         "Thursday": 4, "Friday": 5, "Saturday": 6,
@@ -109,6 +123,7 @@ def _structured_ranges(items: list[dict]) -> list[dict[str, Any]]:
             "day": day,
             "start": _hhmm(start),
             "end": _hhmm(end),
+            "end_next_day": bool(item.get("end_next_day", end < start)),
             "notes": item.get("notes"),
         })
     out.sort(key=lambda e: (weekday_order.get(e["day"], 99), e["start"] or ""))
@@ -141,9 +156,34 @@ def _split_lonlat(lonlat: str | None) -> tuple[float | None, float | None]:
         return None, None
 
 
-def format_parish_for_app(parish: FullParishData) -> dict[str, Any]:
+# Every parish in this database is in the Diocese of Cleveland, so anything
+# outside Ohio's bounding box is a data-entry error, not a distant parish.
+# A dropped decimal point (41099421.0 for 41.099421) fails this handily, and
+# shipping it would put a pin somewhere off the map.
+OHIO_BOUNDS = (38.4, 42.3, -84.8, -80.5)  # lat_min, lat_max, lon_min, lon_max
+
+
+def _validated_coords(
+    latitude: float | None, longitude: float | None, name: str
+) -> tuple[float | None, float | None]:
+    """Drop coordinates that can't be real, logging what was rejected."""
+    if latitude is None or longitude is None:
+        return latitude, longitude
+
+    lat_min, lat_max, lon_min, lon_max = OHIO_BOUNDS
+    if not (lat_min <= latitude <= lat_max and lon_min <= longitude <= lon_max):
+        logger.warning(
+            "dropped out-of-range coordinates for %s: %s, %s", name, latitude, longitude
+        )
+        return None, None
+    return latitude, longitude
+
+
+def format_parish_for_app(parish: FullParishData, today: str) -> dict[str, Any]:
     """Convert parish data to the structured app-friendly format."""
-    latitude, longitude = _split_lonlat(parish.lonlat)
+    latitude, longitude = _validated_coords(
+        *_split_lonlat(parish.lonlat), parish.name or parish.parish_id
+    )
 
     return {
         "name": parish.name or "",
@@ -158,7 +198,7 @@ def format_parish_for_app(parish: FullParishData) -> dict[str, Any]:
         "bulletin_url": parish.bulletin_url,
         "timestamp": parish.last_run,
         "schedules": {
-            "mass": _structured_mass(parish.mass_times),
+            "mass": _structured_mass(parish.mass_times, today),
             "confession": _structured_ranges(parish.confessions),
             "adoration": _structured_adoration(parish.adoration),
         },
@@ -173,7 +213,8 @@ async def main() -> str:
     client = AsyncClient(auth=api_key)
 
     parishes = await fetch_all_parishes(client, database_id)
-    export_data = [format_parish_for_app(p) for p in parishes]
+    today = date.today().isoformat()
+    export_data = [format_parish_for_app(p, today) for p in parishes]
 
     with open("export.json", "w", encoding="utf-8") as f:
         json.dump(export_data, f, ensure_ascii=False, indent=2)

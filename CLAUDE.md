@@ -250,6 +250,47 @@ GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/
 
 ## Changelog
 
+### v2.5.0 (2026-07-22) - Extraction Sanitizer
+
+**New:** `utils/sanitize.py` runs on every extraction before it's logged or saved,
+from a validation pass over 189 records in `export.json`. Findings split two ways:
+unambiguous **repairs** (applied, written to `GPT Logs`) and **flags** (become
+warnings, land in `Issue Log` for manual triage).
+
+**Repairs:**
+- Bogus midnight end-times (`240`/`2400`) → `00:00` + `end_next_day: true`
+- `00:00–00:00` "time not specified" slots → dropped (read as real midnight downstream)
+- Cancellations encoded as Masses (note leading with "No Mass") → dropped
+- Duplicate entries on `(day, time, language, mass_date)` → merged, notes joined
+- Appointment-style addenda ("or by appointment") at the same `(day, start)` →
+  folded into the primary slot instead of a second entry
+- Dated Masses that merely restate the recurring weekly Mass → dropped
+  (kept when notes show a real difference: outdoor, festival, dedication, …)
+- `language` backfilled from note keywords (Spanish, Latin, Slovenian, bilingual, …)
+
+**Flags (never auto-repaired — only the bulletin can settle them):**
+- A Mass described as a vigil at a morning time (AM/PM flip)
+- `is_perpetual: true` with no hours, closure notes, or a handful of slots
+- Confession/adoration notes referencing a Mass time the site's own Mass list
+  lacks (missing Masses, or cross-site bleed from a shared bulletin)
+
+**Schema:** `ConfessionTime`/`AdorationTime` gain `end_next_day: bool`. Midnight
+is `0` with the flag set; `2400` and `240` are never valid.
+
+**Export (`utils/notion_to_app.py`):**
+- `end_next_day` emitted on all range entries (backfilled from `end < start`
+  for rows written before the field existed)
+- Dated Masses in the past are dropped at export time
+- Coordinates outside Ohio's bounding box are emitted as `null` and logged
+
+**Prompt (`extractor.py`):** explicit time-encoding rules (midnight, overnight
+spans, never `0` as a placeholder), no-duplicates rule, appointment-addendum
+rule, vigil-is-evening rule, and `language` into the structured field.
+
+**`VERIFIED_PERPETUAL_PARISHES`** (in `definitions.py`): parishes hand-verified
+as genuine 24/7 adoration chapels. Exempt from the `is_perpetual` flag so they
+don't reappear in the Issue Log every week.
+
 ### v2.4.3 (2026-01-11) - Issue Tracking
 
 **New feature:** Automatic issue tracking in Notion database.

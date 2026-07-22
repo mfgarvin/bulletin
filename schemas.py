@@ -55,7 +55,16 @@ class ConfessionTime(BaseModel):
 
     day: DayOfWeek
     start_time: int = Field(..., ge=0, le=2359, description="24hr format")
-    end_time: int = Field(..., ge=0, le=2359, description="24hr format")
+    end_time: int = Field(
+        ...,
+        ge=0,
+        le=2359,
+        description="24hr format. Midnight is 0 with end_next_day=true, never 2400.",
+    )
+    end_next_day: bool = Field(
+        False,
+        description="True if end_time falls on the following day (slot crosses midnight)",
+    )
     notes: Optional[str] = None
 
     @field_validator("start_time", "end_time")
@@ -72,7 +81,16 @@ class AdorationTime(BaseModel):
 
     day: DayOfWeek
     start_time: int = Field(..., ge=0, le=2359, description="24hr format")
-    end_time: int = Field(..., ge=0, le=2359, description="24hr format")
+    end_time: int = Field(
+        ...,
+        ge=0,
+        le=2359,
+        description="24hr format. Midnight is 0 with end_next_day=true, never 2400.",
+    )
+    end_next_day: bool = Field(
+        False,
+        description="True if end_time falls on the following day (slot crosses midnight)",
+    )
     notes: Optional[str] = None
 
     @field_validator("start_time", "end_time")

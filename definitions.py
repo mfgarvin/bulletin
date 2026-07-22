@@ -1,5 +1,16 @@
 """Explicit site-to-parish mappings for multi-site bulletins."""
 
+# Parishes with genuine 24/7 perpetual adoration, verified by hand against
+# their bulletins. The sanitizer normally flags `is_perpetual: true` with no
+# listed hours as suspect; these are the real thing, so they're exempt and
+# won't clutter the Issue Log every week.
+VERIFIED_PERPETUAL_PARISHES: set[str] = {
+    "21865",  # Queen of Heaven
+    "st-martin-of-tours-maple-heights-oh",  # Saint Martin of Tours
+    "sc-p",  # Saint Columbkille
+    "our-lady-of-mount-carmel-wickliffe-oh",  # Our Lady of Mt. Carmel
+}
+
 # Parishes that should always be treated as single-site.
 # When multiple sites are extracted:
 # 1. Filters to sites matching the parish name (discards unrelated parishes)
