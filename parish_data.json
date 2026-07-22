@@ -4252,11 +4252,7 @@
       ]
     },
     "Adoration": {
-      "Thursday": [
-        {
-          "1900": 460
-        }
-      ]
+      "Is24Hour": true
     }
   },
   "2df29b8f-0e6e-81ce-bb19-d214c32ef1f9": {

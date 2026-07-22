@@ -9632,7 +9632,7 @@
         }
       ],
       "adoration": {
-        "is_perpetual": false,
+        "is_perpetual": true,
         "times": [
           {
             "day": "Thursday",
