@@ -43,7 +43,17 @@ python -m utils.notion_to_json
 
 # Export app-friendly format (12hr times, weekday groupings)
 python -m utils.notion_to_app
+
+# Repair stored Notion data (dry run, then apply)
+python -m utils.notion_fixes
+python -m utils.notion_fixes --apply
 ```
+
+`utils/notion_fixes.py` replays the sanitizer over schedules already stored in
+Notion and applies a table of per-record manual corrections. It writes directly,
+bypassing the `UPDATE_*` locks in `database/notion.py` — that's the point of it,
+since `UPDATE_ADORATION = False` means a normal run never rewrites adoration.
+Idempotent and dry-run by default.
 
 ## Architecture
 
@@ -286,6 +296,11 @@ is `0` with the flag set; `2400` and `240` are never valid.
 **Prompt (`extractor.py`):** explicit time-encoding rules (midnight, overnight
 spans, never `0` as a placeholder), no-duplicates rule, appointment-addendum
 rule, vigil-is-evening rule, and `language` into the structured field.
+
+**Data repair:** `utils/notion_fixes.py` applied the same cleanup to the rows
+already in Notion (35 parishes written on 2026-07-22). `UPDATE_ADORATION` is
+`False`, so adoration rows are never rewritten by a normal run — that script is
+the way to touch them.
 
 **`VERIFIED_PERPETUAL_PARISHES`** (in `definitions.py`): parishes hand-verified
 as genuine 24/7 adoration chapels. Exempt from the `is_perpetual` flag so they
