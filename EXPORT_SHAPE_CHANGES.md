@@ -41,6 +41,7 @@ arrives pre-parsed.
   "longitude": -81.5446,
   "bulletin_url": "...",
   "timestamp": "2026-05-27",
+  "invite_feedback": false,
   "schedules": {
     "mass": [
       {"day": "Sunday",   "start": "09:00", "mass_date": null,         "language": null,      "notes": null},
@@ -150,6 +151,24 @@ is in the Diocese of Cleveland, so an out-of-range value is a typo (a dropped
 decimal point, usually), not a distant parish. The app should keep handling
 `null` coords rather than trusting whatever arrives.
 
+### `invite_feedback`
+
+Boolean, always present. `true` means this parish's schedule was **never
+machine-verified from a bulletin** — either it's hand-maintained static info
+(no bulletin exists to scrape) or the scraper can't read the parish's website
+(JS-heavy pages, Google Drive-hosted PDFs).
+
+These are the records where a churchgoer looking at the screen knows more than
+we do, so the app should surface a "are these times right? let us know"
+affordance on them. It's currently `true` for 13 of 189 parishes.
+
+`false` means the times came from a parsed bulletin on the `timestamp` shown.
+That's not a correctness guarantee, so feedback is still welcome everywhere —
+this flag is about where to *encourage* it.
+
+Derived from the `Issues` status in Notion (`Manual` or `Unsupported`); the app
+never sees the underlying status.
+
 ### Unchanged
 
 - `name`, `parish_id`, `address`, `city`, `zip_code`, `phone`, `website`,
@@ -168,6 +187,8 @@ decimal point, usually), not a distant parish. The app should keep handling
 4. Adoration view: branch on `is_perpetual` before rendering.
 5. Drop the legacy `www` key tolerance — the scraper has only emitted
    `website` for a while.
+6. Read `invite_feedback` and show a feedback prompt on parishes where it's
+   `true`.
 
 ## Not yet addressed (future work)
 

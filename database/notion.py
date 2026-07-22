@@ -32,6 +32,20 @@ UPDATE_WEBSITE = False
 # refresh run if you've manually updated Adoration in Notion and want it pushed.
 UPDATE_ADORATION = False
 
+# Notion caps a single rich_text block at 2000 characters, but a property can
+# hold an array of them. Splitting across blocks is what lets a long JSON
+# schedule round-trip intact; truncating to one block corrupted it (a sliced
+# JSON string is unparseable, and readers then saw an empty schedule).
+NOTION_BLOCK_LIMIT = 2000
+NOTION_MAX_BLOCKS = 100
+
+# Issue statuses set by hand that the pipeline must never overwrite.
+# "Manual" marks a parish whose data is maintained by hand (no bulletin to
+# scrape); "Unsupported" marks one the scraper can't read. Both survive a run
+# that would otherwise stamp "No Issues"/"Warning"/"Error" over them — the
+# status is a human's classification of the parish, not a run outcome.
+PROTECTED_STATUSES = frozenset({"Manual", "Unsupported"})
+
 
 class NotionClient(DatabaseClient):
     """Notion database client implementation."""
@@ -120,13 +134,10 @@ class NotionClient(DatabaseClient):
             site_index: Which site to save (default 0 = first/primary site)
             skip_name_update: If True, don't overwrite the Name field (for multi-site)
         """
-        page_id = await self._get_parish_page_id(parish_id)
-        if not page_id:
+        row = await self._get_parish_row(parish_id)
+        if not row:
             raise ValueError(f"Parish not found: {parish_id}")
-
-        # Notion rich_text has a 2000 character limit per block
-        def truncate(s: str, limit: int = 2000) -> str:
-            return s if len(s) <= limit else s[: limit - 3] + "..."
+        page_id = row["id"]
 
         # Get the specific site's data (or empty if no sites)
         site = extraction.sites[site_index] if extraction.sites else None
@@ -153,16 +164,16 @@ class NotionClient(DatabaseClient):
         }
 
         if site and site.mass_times:
-            properties["Mass Times"] = self._text_property(truncate(mass_json))
+            properties["Mass Times"] = self._text_property(mass_json)
         if site and site.confession_times:
-            properties["Confessions"] = self._text_property(truncate(conf_json))
+            properties["Confessions"] = self._text_property(conf_json)
         if UPDATE_ADORATION and site and (site.adoration.times or site.adoration.is_perpetual):
-            properties["Adoration"] = self._text_property(truncate(adore_json))
+            properties["Adoration"] = self._text_property(adore_json)
         if extraction.events:
-            properties["Events"] = self._text_property(truncate(events_json))
+            properties["Events"] = self._text_property(events_json)
         if extraction.events_summary:
             properties["Events Summary"] = self._text_property(
-                truncate(extraction.events_summary)
+                extraction.events_summary
             )
 
         # Update parish contact info (parish-level)
@@ -183,9 +194,16 @@ class NotionClient(DatabaseClient):
             if UPDATE_ZIPCODE and site.zipcode:
                 properties["Zip Code"] = self._text_property(site.zipcode)
 
-        # Clear any previous issues on successful save
-        properties["Issues"] = {"status": {"name": "No Issues"}}
-        properties["Issue Log"] = self._text_property("")
+        # Clear any previous issues on successful save, unless a human has
+        # classified this parish (Manual/Unsupported) — that outranks a run.
+        current_status = self._current_status(row)
+        if current_status in PROTECTED_STATUSES:
+            logger.info(
+                f"Preserving '{current_status}' status for parish: {parish_id}"
+            )
+        else:
+            properties["Issues"] = {"status": {"name": "No Issues"}}
+            properties["Issue Log"] = self._text_property("")
 
         await self._update_page(page_id=page_id, properties=properties)
         logger.info(f"Saved extraction to Notion for parish: {parish_id}")
@@ -203,10 +221,16 @@ class NotionClient(DatabaseClient):
             error: Error message if processing failed
             warnings: List of warning messages
         """
-        page_id = await self._get_parish_page_id(parish_id)
-        if not page_id:
+        row = await self._get_parish_row(parish_id)
+        if not row:
             logger.warning(f"Cannot save issue - parish not found: {parish_id}")
             return
+        page_id = row["id"]
+
+        # A hand-set classification outranks whatever this run concluded. The
+        # Issue Log is still written, so the detail isn't lost.
+        current_status = self._current_status(row)
+        protected = current_status in PROTECTED_STATUSES
 
         # Build issue log
         log_parts = []
@@ -226,17 +250,21 @@ class NotionClient(DatabaseClient):
         else:
             status = "No Issues"
 
-        properties = {
-            "Issues": {"status": {"name": status}},
-            "Issue Log": self._text_property(issue_log),
-        }
+        properties: dict = {"Issue Log": self._text_property(issue_log)}
+        if not protected:
+            properties["Issues"] = {"status": {"name": status}}
         # Only refresh the timestamp on clean runs, so parishes with
         # errors/warnings stay stale and are retried on the next run.
         if status == "No Issues":
             properties["GPT Timestamp"] = self._text_property(date.today().isoformat())
 
         await self._update_page(page_id=page_id, properties=properties)
-        logger.info(f"Saved issue status ({status}) for parish: {parish_id}")
+        if protected:
+            logger.info(
+                f"Logged issues for parish {parish_id}, kept '{current_status}' status"
+            )
+        else:
+            logger.info(f"Saved issue status ({status}) for parish: {parish_id}")
 
     # Private helpers
 
@@ -254,14 +282,23 @@ class NotionClient(DatabaseClient):
 
         return results
 
-    async def _get_parish_page_id(self, parish_id: str) -> Optional[str]:
-        """Get the Notion page ID for a parish."""
+    async def _get_parish_row(self, parish_id: str) -> Optional[dict]:
+        """Get the full Notion row for a parish."""
         response = await self._query_database(
             filter={"property": "ParishID", "rich_text": {"equals": parish_id}},
         )
         if response["results"]:
-            return response["results"][0]["id"]
+            return response["results"][0]
         return None
+
+    @staticmethod
+    def _current_status(row: dict) -> str:
+        """Read the current `Issues` status name, or '' if unset."""
+        prop = row["properties"].get("Issues")
+        if not prop or prop.get("type") != "status":
+            return ""
+        status = prop["status"]
+        return status["name"] if status else ""
 
     def _row_to_parish_record(self, row: dict) -> ParishRecord:
         """Convert a Notion row to a ParishRecord."""
@@ -299,8 +336,8 @@ class NotionClient(DatabaseClient):
         prop_type = prop["type"]
 
         if prop_type in ["rich_text", "title"]:
-            items = prop[prop_type]
-            return items[0]["plain_text"] if items else ""
+            # Join every block: long values are written across several.
+            return "".join(item["plain_text"] for item in prop[prop_type])
         elif prop_type == "checkbox":
             return prop["checkbox"]
         elif prop_type == "url":
@@ -313,5 +350,28 @@ class NotionClient(DatabaseClient):
 
     @staticmethod
     def _text_property(text: str) -> dict:
-        """Create a Notion rich_text property value."""
-        return {"rich_text": [{"text": {"content": text}}]}
+        """Create a Notion rich_text property value, split across blocks.
+
+        Notion rejects any single block over 2000 characters, so long values
+        are chunked. Readers concatenate every block, so the original string
+        round-trips exactly — which matters most for the JSON schedule fields,
+        where losing the tail makes the whole value unparseable.
+
+        Only a value too long for even the maximum number of blocks is cut,
+        and that is logged rather than passing silently.
+        """
+        if not text:
+            return {"rich_text": []}
+
+        chunks = [
+            text[i : i + NOTION_BLOCK_LIMIT]
+            for i in range(0, len(text), NOTION_BLOCK_LIMIT)
+        ]
+        if len(chunks) > NOTION_MAX_BLOCKS:
+            logger.error(
+                f"Value of {len(text)} chars exceeds Notion's maximum "
+                f"({NOTION_MAX_BLOCKS * NOTION_BLOCK_LIMIT}); dropping the tail"
+            )
+            chunks = chunks[:NOTION_MAX_BLOCKS]
+
+        return {"rich_text": [{"text": {"content": c}} for c in chunks]}

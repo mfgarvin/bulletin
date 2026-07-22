@@ -102,9 +102,22 @@ Idempotent and dry-run by default.
 The system automatically tracks processing issues in Notion:
 
 **Status values (`Issues` field):**
+
+Set by the pipeline:
 - **No Issues** - Set on successful extraction (clears previous issues)
 - **Warning** - Extraction succeeded but with warnings (e.g., no mass times found, unmatched sites)
 - **Error** - Processing failed (e.g., download error, unsupported publisher)
+
+Set by hand, and **never overwritten by a run** (see `PROTECTED_STATUSES` in
+`database/notion.py`):
+- **Manual** - Data is hand-maintained; no bulletin exists to scrape
+- **Unsupported** - The scraper can't read this parish's site (JS-heavy page,
+  Google Drive, etc.)
+
+A run against a protected parish still writes its `Issue Log`, so the detail is
+kept — only the status is left alone. Both protected statuses set
+`invite_feedback: true` in `export.json`, which tells the app to encourage users
+to report the real times.
 
 **Issue Log field** contains details:
 ```
@@ -260,6 +273,36 @@ GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/
 
 ## Changelog
 
+### v2.5.1 (2026-07-22) - Fix silent JSON truncation
+
+**Bug:** Every JSON field over 2000 characters was being stored corrupt, and the
+corruption was invisible. `save_extraction()` truncated values to fit Notion's
+2000-char limit, which sliced JSON mid-token; `_parse_json_field()` then caught
+the `JSONDecodeError` and returned `[]`. The parish exported with an empty
+schedule while its run reported "No Issues".
+
+Found via Saint Paschal Baylon (`5493`), which extracted 18 Masses and exported
+zero. A scan then found **153 of 189 rows** with unparseable JSON — 152 of them
+in `Events` (latent, since `Events` isn't exported yet) and one in `Mass Times`.
+
+**Cause:** Notion's 2000-char cap is *per rich-text block*, not per property. A
+property holds an array of blocks, so the data always fit — it was being written
+into a single block.
+
+**Fixes:**
+- `_text_property()` splits values across as many blocks as needed (verified
+  round-tripping 15,750 chars byte-identical against the live API)
+- Both `_get_property()` readers join all blocks instead of taking `items[0]` —
+  without this the writer fix alone would still truncate on read
+- Removed the `truncate()` helper from `save_extraction()`
+- `_parse_json_field()` and the adoration parse now log `CORRUPT <field> for
+  parish <name>` instead of silently yielding an empty list
+
+**Recovery:** 5493 was re-run and is correct (16 Masses; its Events now spans 3
+blocks). The other 152 rows have truncated `Events` stored from before the fix —
+unrecoverable in place, but each is rewritten by the next successful run, so the
+weekly job repairs them. Nothing else reads `Events` today.
+
 ### v2.5.0 (2026-07-22) - Extraction Sanitizer
 
 **New:** `utils/sanitize.py` runs on every extraction before it's logged or saved,
@@ -305,6 +348,15 @@ the way to touch them.
 **`VERIFIED_PERPETUAL_PARISHES`** (in `definitions.py`): parishes hand-verified
 as genuine 24/7 adoration chapels. Exempt from the `is_perpetual` flag so they
 don't reappear in the Issue Log every week.
+
+**Protected statuses:** `Manual` and `Unsupported` are hand-set classifications
+that `save_extraction()` and `save_issue()` now preserve instead of stamping
+over. They drive the new `invite_feedback` boolean in `export.json`.
+
+**Dependency:** `python-dotenv` added to `requirements.txt` — the export
+utilities and `utils/notion_fixes.py` call `load_dotenv()` inside a
+`try/ImportError`, so without it they'd fail with a bare `KeyError` on
+`NOTION_API_KEY` instead of loading `.env`.
 
 ### v2.4.3 (2026-01-11) - Issue Tracking
 

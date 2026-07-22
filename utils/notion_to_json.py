@@ -2,12 +2,15 @@
 
 import asyncio
 import json
+import logging
 import os
 from collections import defaultdict
 from dataclasses import dataclass
 from typing import Any, Optional
 
 from notion_client import AsyncClient
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -19,6 +22,7 @@ class FullParishData:
     name: str
     enabled: bool
     publisher: str
+    issues: str
     last_run: Optional[str]
     bulletin_url: Optional[str]
     address: Optional[str]
@@ -66,8 +70,8 @@ def _get_property(row: dict, name: str) -> Any:
     prop_type = prop["type"]
 
     if prop_type in ["rich_text", "title"]:
-        items = prop[prop_type]
-        return items[0]["plain_text"] if items else ""
+        # Join every block: values over 2000 chars are written across several.
+        return "".join(item["plain_text"] for item in prop[prop_type])
     elif prop_type == "checkbox":
         return prop["checkbox"]
     elif prop_type == "url":
@@ -75,29 +79,45 @@ def _get_property(row: dict, name: str) -> Any:
     elif prop_type == "select":
         select = prop["select"]
         return select["name"] if select else ""
+    elif prop_type == "status":
+        status = prop["status"]
+        return status["name"] if status else ""
 
     return ""
 
 
-def _parse_json_field(value: str) -> Any:
-    """Parse a JSON string field, returning empty structure on failure."""
+def _parse_json_field(value: str, field: str = "?", parish: str = "?") -> Any:
+    """Parse a JSON string field, returning an empty structure on failure.
+
+    A parse failure means stored data is corrupt and the parish silently loses
+    that schedule, so it is logged loudly. This is exactly how truncated
+    schedules went unnoticed: the export just showed an empty list.
+    """
     if not value or not value.strip():
         return []
     try:
         return json.loads(value)
-    except json.JSONDecodeError:
+    except json.JSONDecodeError as e:
+        logger.error(
+            "CORRUPT %s for parish %s (%d chars): %s - exporting as empty",
+            field, parish, len(value), e,
+        )
         return []
 
 
 def _row_to_full_parish(row: dict) -> FullParishData:
     """Convert a Notion row to FullParishData."""
+    name = _get_property(row, "Name")
     adoration_raw = _get_property(row, "Adoration")
     adoration = {"is_perpetual": False, "times": []}
     if adoration_raw:
         try:
             adoration = json.loads(adoration_raw)
-        except json.JSONDecodeError:
-            pass
+        except json.JSONDecodeError as e:
+            logger.error(
+                "CORRUPT Adoration for parish %s (%d chars): %s - exporting as empty",
+                name, len(adoration_raw), e,
+            )
 
     return FullParishData(
         notion_id=row["id"],
@@ -105,6 +125,7 @@ def _row_to_full_parish(row: dict) -> FullParishData:
         name=_get_property(row, "Name"),
         enabled=_get_property(row, "Enable"),
         publisher=_get_property(row, "Bulletin Publisher"),
+        issues=_get_property(row, "Issues"),
         last_run=_get_property(row, "GPT Timestamp") or None,
         bulletin_url=_get_property(row, "Link to latest bulletin") or None,
         address=_get_property(row, "Street Address") or None,
@@ -113,10 +134,10 @@ def _row_to_full_parish(row: dict) -> FullParishData:
         phone=_get_property(row, "Phone Number") or None,
         website=_get_property(row, "Website") or None,
         lonlat=_get_property(row, "LonLat") or None,
-        mass_times=_parse_json_field(_get_property(row, "Mass Times")),
-        confessions=_parse_json_field(_get_property(row, "Confessions")),
+        mass_times=_parse_json_field(_get_property(row, "Mass Times"), "Mass Times", name),
+        confessions=_parse_json_field(_get_property(row, "Confessions"), "Confessions", name),
         adoration=adoration,
-        events=_parse_json_field(_get_property(row, "Events")),
+        events=_parse_json_field(_get_property(row, "Events"), "Events", name),
         events_summary=_get_property(row, "Events Summary") or None,
     )
 

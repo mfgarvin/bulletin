@@ -30,6 +30,13 @@ logger = logging.getLogger(__name__)
 # If we ever need to filter "Memorial Mass for <name>" specifically, do it
 # with a pattern, not a bare keyword.
 PRIVATE_MASS_KEYWORDS = ("wedding", "funeral", "nuptial", "rehearsal")
+
+# Issue statuses meaning "this parish's schedule was never machine-verified":
+# "Manual" is hand-entered static info (no bulletin to scrape), "Unsupported"
+# is a parish whose site the scraper can't read (JS-heavy pages, Google Drive).
+# Both are exactly the cases where a user in the app is a better source of
+# truth than we are, so the export invites feedback on them.
+FEEDBACK_STATUSES = frozenset({"Manual", "Unsupported"})
 _PRIVATE_RE = re.compile(
     r"\b(" + "|".join(PRIVATE_MASS_KEYWORDS) + r")\b", re.IGNORECASE
 )
@@ -197,6 +204,7 @@ def format_parish_for_app(parish: FullParishData, today: str) -> dict[str, Any]:
         "longitude": longitude,
         "bulletin_url": parish.bulletin_url,
         "timestamp": parish.last_run,
+        "invite_feedback": parish.issues in FEEDBACK_STATUSES,
         "schedules": {
             "mass": _structured_mass(parish.mass_times, today),
             "confession": _structured_ranges(parish.confessions),
