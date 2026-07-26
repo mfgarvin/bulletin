@@ -1,7 +1,7 @@
 """Self-hosted bulletin source - generic scraper for parish websites."""
 
 import re
-from datetime import date
+from datetime import date, timedelta
 from typing import Optional
 from urllib.parse import urljoin, urlparse
 
@@ -19,6 +19,11 @@ BULLETIN_PATTERNS = [
     r"parish.*news",
     r"sunday.*mass",
 ]
+
+_MONTHS = {
+    "jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
+    "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12,
+}
 
 # Date patterns in filenames (to identify recent bulletins)
 DATE_PATTERNS = [
@@ -149,17 +154,68 @@ class SelfHostedSource(BulletinSource):
         if not candidates:
             return None
 
-        # Sort by score (descending), then by extracted date (descending)
-        # This ensures that when scores are tied, we pick the most recent bulletin
-        candidates.sort(key=lambda x: (x[1], self._extract_date(x[0])), reverse=True)
-        return candidates[0][0]
+        # Rank by keyword score plus a recency bonus, then by date. Recency
+        # dominates so a fresh dated bulletin beats a stale file that merely has
+        # "bulletin" in its name; but it's only a bonus, so undated
+        # "CurrentBulletin"-style links (score-driven) still win when nothing is
+        # dated. Implausible future dates (typo'd filenames) score 0 recency
+        # rather than sorting to the top.
+        ranked = [
+            (url, kw + self._recency_bonus(self._extract_date(url)), self._extract_date(url))
+            for url, kw in candidates
+        ]
+        ranked.sort(key=lambda x: (x[1], x[2]), reverse=True)
+        return ranked[0][0]
+
+    @staticmethod
+    def _recency_bonus(d: date) -> int:
+        """Bonus favoring recent bulletins. Future-dated parses are distrusted."""
+        if d == date.min:
+            return 0
+        days = (date.today() - d).days
+        if days < -14:      # more than two weeks ahead => almost certainly a bad parse
+            return 0
+        if days < 0:        # dated up to ~2 weeks ahead (next Sunday's bulletin)
+            return 90
+        if days <= 30:
+            return 100
+        if days <= 120:
+            return 60
+        if days <= 400:
+            return 25
+        return 5            # dated, but old
 
     def _extract_date(self, url: str) -> date:
-        """Extract date from URL for sorting. Returns min date if not found."""
-        url_lower = url.lower()
+        """Best-effort date for a PDF URL, distrusting implausible future parses.
 
-        # Try full date patterns first (MM-DD-YY, YYYY-MM-DD, etc.)
-        # Pattern: MM-DD-YY or M-D-YY (e.g., bulletin_1-4-26.pdf)
+        A bulletin dated more than two weeks ahead of today is almost always a
+        mis-parsed filename (a bare "October3" read as this year, a typo'd
+        "21021" read as 2102). Those must not win the recency bonus *or* the
+        date tiebreak, so they collapse to `date.min`.
+        """
+        d = self._extract_date_raw(url)
+        if d != date.min and d > date.today() + timedelta(days=14):
+            return date.min
+        return d
+
+    def _extract_date_raw(self, url: str) -> date:
+        """Best-effort date for a PDF URL, for recency ranking. `date.min` if none.
+
+        Handles clean filenames (YYYY-MM-DD, MM-DD-YY), textual names
+        ("July 19 2026", even when mistyped as "JFuly 19. 2026"), and the
+        eCatholic `/documents/YYYY/M/` layout where the only reliable
+        year+month lives in the path and the day is buried in a human-typed
+        filename.
+        """
+        url_lower = url.lower()
+        fname = url_lower.rsplit("/", 1)[-1]
+
+        # Year+month from an eCatholic-style /YYYY/M/ path segment.
+        path_match = re.search(r"/(\d{4})/(\d{1,2})/", url_lower)
+        path_year = int(path_match.group(1)) if path_match else None
+        path_month = int(path_match.group(2)) if path_match else None
+
+        # 1. MM-DD-YY(YY).pdf (e.g., bulletin_1-4-26.pdf)
         match = re.search(r"[-_](\d{1,2})[-_](\d{1,2})[-_](\d{2,4})\.pdf", url_lower)
         if match:
             month, day, year = int(match.group(1)), int(match.group(2)), int(match.group(3))
@@ -170,8 +226,8 @@ class SelfHostedSource(BulletinSource):
             except ValueError:
                 pass
 
-        # Try YYYY-MM-DD pattern
-        match = re.search(r"(\d{4})[-_]?(\d{2})[-_]?(\d{2})", url_lower)
+        # 2. YYYY-MM-DD or YYYYMMDD in the filename
+        match = re.search(r"(20\d{2})[-_]?(\d{2})[-_]?(\d{2})", fname)
         if match:
             year, month, day = int(match.group(1)), int(match.group(2)), int(match.group(3))
             try:
@@ -179,24 +235,42 @@ class SelfHostedSource(BulletinSource):
             except ValueError:
                 pass
 
-        # Try month-day only with year from path (e.g., /2025/12/file-1-4.pdf)
-        year_month_match = re.search(r"/(\d{4})/(\d{1,2})/", url_lower)
-        filename_match = re.search(r"[-_](\d{1,2})[-_](\d{1,2})\.pdf", url_lower)
-        if filename_match:
-            month = int(filename_match.group(1))
-            day = int(filename_match.group(2))
-            if year_month_match:
-                year = int(year_month_match.group(1))
-                path_month = int(year_month_match.group(2))
-                # Handle Dec->Jan rollover
-                if month < path_month:
-                    year += 1
-            else:
-                year = date.today().year
+        # 3. Textual "Month DD [YYYY]" (year falls back to the path's)
+        match = re.search(
+            r"(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s*"
+            r"(\d{1,2})(?:st|nd|rd|th)?[.,\s]*(\d{4})?",
+            fname,
+        )
+        if match:
+            month = _MONTHS[match.group(1)]
+            day = int(match.group(2))
+            year = int(match.group(3)) if match.group(3) else (path_year or date.today().year)
             try:
                 return date(year, month, day)
             except ValueError:
                 pass
+
+        # 4. month-day only with year from path (e.g., /2025/12/file-1-4.pdf)
+        filename_match = re.search(r"[-_](\d{1,2})[-_](\d{1,2})\.pdf", url_lower)
+        if filename_match and path_year:
+            month, day = int(filename_match.group(1)), int(filename_match.group(2))
+            year = path_year
+            if path_month and month < path_month:  # Dec->Jan rollover
+                year += 1
+            try:
+                return date(year, month, day)
+            except ValueError:
+                pass
+
+        # 5. eCatholic fallback: path gives year+month, scan the filename for the
+        #    day (first 1-31 number once the 4-digit year is removed).
+        if path_year and path_month:
+            stripped = re.sub(r"20\d{2}", "", fname)
+            days = [int(n) for n in re.findall(r"\d{1,2}", stripped) if 1 <= int(n) <= 31]
+            try:
+                return date(path_year, path_month, days[0] if days else 1)
+            except ValueError:
+                return date(path_year, path_month, 1)
 
         return date.min
 
