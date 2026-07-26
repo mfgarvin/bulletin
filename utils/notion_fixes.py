@@ -82,6 +82,11 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         reason="Saturday Vigil recorded as 04:00; a vigil is an evening Mass",
         mass_time_fixes={("Saturday", 400): 1600},
     ),
+    "0512": ManualFix(
+        reason="Saturday 'Vigil Mass' recorded as 05:30; a vigil is an evening "
+        "Mass and confession runs 16:00-17:00 right before it, so 17:30",
+        mass_time_fixes={("Saturday", 530): 1730},
+    ),
     "ss-cosmas-damian-twinsburg-oh": ManualFix(
         reason="flagged perpetual, but every note says the chapel closes "
         "overnight 7pm-9am",

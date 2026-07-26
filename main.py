@@ -204,12 +204,26 @@ async def process_parish(
             result.pdf_bytes, content_type=result.content_type
         )
 
-        # Force single-site if parish is in SINGLE_SITE_PARISHES
-        if parish_id in SINGLE_SITE_PARISHES and len(extraction.sites) > 1:
+        # Collapse to a single site when there is only one destination row.
+        #
+        # Two cases land here:
+        #  - parish is in SINGLE_SITE_PARISHES: a shared bulletin lists other
+        #    parishes too, so filter to the sites belonging to this one.
+        #  - the bulletin group has exactly one parish: every extracted site
+        #    belongs to it, so merge them all. The LLM routinely splits a
+        #    bulletin into a main campus plus a chapel or summer-pavilion
+        #    "site"; without this they fall into the multi-site matcher below,
+        #    find no SITE_MAPPINGS entry, match nothing, and the parish
+        #    silently saves an empty schedule.
+        if len(extraction.sites) > 1 and (
+            parish_id in SINGLE_SITE_PARISHES or len(group_parishes) == 1
+        ):
             site_names = [s.site_name for s in extraction.sites]
-            log(f"Filtering {len(extraction.sites)} sites: {site_names} (SINGLE_SITE_PARISHES)")
-            merged = filter_and_merge_matching_sites(extraction.sites, parish_name)
-            log(f"Result: {merged.site_name}")
+            if parish_id in SINGLE_SITE_PARISHES:
+                merged = filter_and_merge_matching_sites(extraction.sites, parish_name)
+            else:
+                merged = merge_sites(extraction.sites, parish_name)
+            log(f"Collapsed {len(extraction.sites)} sites {site_names} → '{merged.site_name}'")
             extraction.sites = [merged]
 
         # Clean up known LLM failure modes before anything is logged or saved
