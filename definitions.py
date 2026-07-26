@@ -124,12 +124,15 @@ SITE_MAPPINGS: dict[str, dict[str, str]] = {
 	"ann": "0414",
 	"philomena": "0414-sp",
     },
-    # Cathedral + temporary chapel merge into one row. Immaculate Conception
-    # (immat-con-cle) is deliberately NOT routed here: its only Mass (Sat 6pm
-    # vigil) is manually pinned in Notion and the row is disabled.
+    # The Cathedral (1259) is a single-row bulletin group: its main space plus a
+    # temporary weekday-Mass chapel both belong in the 1259 row. Because the
+    # group has one destination, the single-site collapse in main.py already
+    # merges every extracted site into 1259, so these keys are belt-and-braces.
+    # Immaculate Conception is NOT routed here anymore — it is its own enabled
+    # Self-Hosted ICKSP oratory (institute-christ-king.org/cleveland-bulletins),
+    # distinct from the Cathedral.
     "1259": {
 	"cathedral": "1259",
-	"immaculate": "1259",
 	"chapel": "1259",
     },
     "0147": {
