@@ -1,5 +1,36 @@
 [
   {
+    "name": "Saint Anne, Rittman",
+    "parish_id": "st-anne-rittman-oh",
+    "address": "40 S First St",
+    "city": "Rittman",
+    "zip_code": "44270",
+    "phone": "(330) 658-2145",
+    "website": null,
+    "latitude": 40.9725548,
+    "longitude": -81.7840221,
+    "bulletin_url": null,
+    "timestamp": null,
+    "invite_feedback": true,
+    "schedules": {
+      "mass": [
+        {
+          "day": "Saturday",
+          "start": "18:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "Vigil (only Mass)"
+        }
+      ],
+      "confession": [],
+      "adoration": {
+        "is_perpetual": false,
+        "times": []
+      }
+    },
+    "events_summary": null
+  },
+  {
     "name": "Saint Sebastian Parish",
     "parish_id": "0689",
     "address": "476 Mull Avenue",
@@ -200,17 +231,17 @@
         },
         {
           "day": "Saturday",
-          "start": "05:30",
-          "mass_date": null,
-          "language": null,
-          "notes": "Vigil Mass"
-        },
-        {
-          "day": "Saturday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
           "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "17:30",
+          "mass_date": null,
+          "language": null,
+          "notes": "Vigil Mass"
         }
       ],
       "confession": [
@@ -2080,7 +2111,7 @@
     "address": "715 Harris Road",
     "city": "Sheffield Lake",
     "zip_code": "44054",
-    "phone": null,
+    "phone": "(440) 949-7744",
     "website": "http://saintthomaschurch.net/",
     "latitude": 41.4868078,
     "longitude": -82.0945173,
@@ -2088,7 +2119,71 @@
     "timestamp": null,
     "invite_feedback": true,
     "schedules": {
-      "mass": [],
+      "mass": [
+        {
+          "day": "Sunday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "11:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Monday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Tuesday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Wednesday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "16:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "Vigil"
+        }
+      ],
       "confession": [],
       "adoration": {
         "is_perpetual": false,
@@ -2325,8 +2420,8 @@
     "website": "ststephencleveland.org",
     "latitude": 41.478899,
     "longitude": -81.7240446,
-    "bulletin_url": "https://ststephencleveland.org/wp-content/uploads/bsk-pdf-manager/2026/07/26_07_12_bulletin.pdf",
-    "timestamp": "2026-07-11",
+    "bulletin_url": "https://ststephencleveland.org/wp-content/uploads/bsk-pdf-manager/2026/07/26_07_26_bulletin.pdf",
+    "timestamp": "2026-07-26",
     "invite_feedback": false,
     "schedules": {
       "mass": [
@@ -2336,13 +2431,6 @@
           "mass_date": null,
           "language": null,
           "notes": null
-        },
-        {
-          "day": "Sunday",
-          "start": "09:30",
-          "mass_date": null,
-          "language": null,
-          "notes": "Mentioned: 'All Sundays at 9:30am & Holy Days' (unclear if additional Mass or legacy note)"
         },
         {
           "day": "Sunday",
@@ -2395,6 +2483,13 @@
         },
         {
           "day": "Saturday",
+          "start": "09:30",
+          "mass_date": null,
+          "language": "Latin",
+          "notes": "1st Saturday only"
+        },
+        {
+          "day": "Saturday",
           "start": "17:00",
           "mass_date": null,
           "language": null,
@@ -2407,7 +2502,14 @@
           "start": "09:00",
           "end": "09:30",
           "end_next_day": false,
-          "notes": "Before 9:30am Mass; Church—Confessional box"
+          "notes": "Before 9:30am (per bulletin) Mass; Church—Confessional box; or by appointment"
+        },
+        {
+          "day": "Wednesday",
+          "start": "19:00",
+          "end": "20:00",
+          "end_next_day": false,
+          "notes": "During Holy Hour & Benediction"
         },
         {
           "day": "Saturday",
@@ -2430,7 +2532,7 @@
         ]
       }
     },
-    "events_summary": "Weekly opportunities include Sunday Rosary at 9:00am and a Wednesday Holy Hour with Confession and Benediction from 7:00–8:00pm. This week features Schola Practice at 8:00am and a Latin Social after the 9:30am Mass on Sunday, July 12, plus Parish Council on Monday, July 13 at 7:00pm. Looking ahead, the Missionary Sisters of the Holy Rosary will be with the parish for a mission appeal the weekend of August 8–9, and The FEST is Saturday, August 15 in Avon."
+    "events_summary": "Holy Hour with Confession and Benediction is Wednesdays at 7:00pm, and Rosary is Sundays at 9:00am. A Mass of Thanksgiving (Solemn Latin Traditional Mass) will be held Friday, August 7, 2026 at 6:30pm with a reception afterward. The St. Stephen Parish Picnic is Sunday, August 9, 2026 from 11:00am–4:00pm at Edgewater Park (Upper Shelter West)."
   },
   {
     "name": "The Shrine Church of Saint Stanislaus, Bishop & Martyr",
@@ -3214,8 +3316,8 @@
     "website": "www.loudonvillecatholic.org",
     "latitude": 40.6366145,
     "longitude": -82.2308743,
-    "bulletin_url": "https://s3.amazonaws.com/media.cloversites.com/0d/0d6bd6e3-1576-4167-a49f-e74e8a3d534e/documents/5-11-25_bulletin.pdf",
-    "timestamp": "2026-07-25",
+    "bulletin_url": "https://s3.amazonaws.com/media.cloversites.com/0d/0d6bd6e3-1576-4167-a49f-e74e8a3d534e/documents/7-26-26.pdf",
+    "timestamp": "2026-07-26",
     "invite_feedback": false,
     "schedules": {
       "mass": [
@@ -3227,18 +3329,18 @@
           "notes": null
         },
         {
-          "day": "Wednesday",
-          "start": "16:00",
+          "day": "Tuesday",
+          "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass"
         },
         {
           "day": "Friday",
           "start": "12:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass"
         },
         {
           "day": "Saturday",
@@ -3270,7 +3372,7 @@
         ]
       }
     },
-    "events_summary": "This week includes a Holy Hour with Adoration on Monday, May 12 from 7–8pm, plus Morning Prayer (Liturgy of the Hours and Divine Mercy Chaplet) on Monday and Tuesday at 8:00–8:30am. The Men’s Group Spring Cleanup service day is Saturday, May 17 from 9:00am–12:00pm, and the PSR end-of-year party/training is Sunday, May 18 from 5:00–7:00pm. Upcoming fundraisers include a pancake breakfast on Sunday, May 25 at 10:00am and a freewill-offering spaghetti dinner after Mass on May 25."
+    "events_summary": "St. Peter’s Parish Picnic is Sunday, August 9 from 2:00–6:00 PM at the Riverside Park Pavilion in Loudonville (bring a side dish or dessert). Youth Group Praise & Worship meets on Wednesdays July 29, August 12, and August 26 from 7:30–9:30 PM. There’s also a Back-to-School Supply drive-through event on Tuesday, August 4 from 10:00 AM–12:00 PM at the LHS stadium, and a parent meeting for Faith Formation on Sunday, August 2 after the 9:00 AM Mass (about 10:00 AM)."
   },
   {
     "name": "Saint Peter Parish",
@@ -3367,7 +3469,7 @@
     "address": "1533 E. 17th Street",
     "city": "Cleveland",
     "zip_code": "44114",
-    "phone": null,
+    "phone": "(216) 344-2999",
     "website": "https://www.stpetercleveland.org/",
     "latitude": 41.5054988,
     "longitude": -81.6811037,
@@ -3375,7 +3477,22 @@
     "timestamp": null,
     "invite_feedback": true,
     "schedules": {
-      "mass": [],
+      "mass": [
+        {
+          "day": "Sunday",
+          "start": "11:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "12:15",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        }
+      ],
       "confession": [],
       "adoration": {
         "is_perpetual": false,
@@ -5255,7 +5372,7 @@
     "address": "209 W. 7th Street",
     "city": "Lorain",
     "zip_code": "44052",
-    "phone": null,
+    "phone": "(440) 245-5283",
     "website": "https://lorainstmarychurch.org/",
     "latitude": 41.4639406,
     "longitude": -82.176617,
@@ -5263,7 +5380,50 @@
     "timestamp": null,
     "invite_feedback": true,
     "schedules": {
-      "mass": [],
+      "mass": [
+        {
+          "day": "Sunday",
+          "start": "10:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "19:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "September-June"
+        },
+        {
+          "day": "Monday",
+          "start": "08:15",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Tuesday",
+          "start": "08:15",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "08:15",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "16:30",
+          "mass_date": null,
+          "language": null,
+          "notes": "Vigil"
+        }
+      ],
       "confession": [],
       "adoration": {
         "is_perpetual": false,
@@ -10039,13 +10199,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Saturday",
-          "start": "17:00",
-          "mass_date": "2026-07-25",
-          "language": null,
-          "notes": "Outdoor Mass (weather permitting) in Centennial Park"
         }
       ],
       "confession": [
@@ -10550,7 +10703,7 @@
     "address": "3545 W. 54th Street",
     "city": "Cleveland",
     "zip_code": "44102",
-    "phone": null,
+    "phone": "(216) 961-2713",
     "website": "https://www.dioceseofcleveland.org/parishes/directory/st-boniface",
     "latitude": 41.4577576,
     "longitude": -81.7247014,
@@ -10558,7 +10711,57 @@
     "timestamp": null,
     "invite_feedback": true,
     "schedules": {
-      "mass": [],
+      "mass": [
+        {
+          "day": "Sunday",
+          "start": "11:00",
+          "mass_date": null,
+          "language": "Vietnamese",
+          "notes": null
+        },
+        {
+          "day": "Monday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": "English/Vietnamese",
+          "notes": null
+        },
+        {
+          "day": "Tuesday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": "English/Vietnamese",
+          "notes": null
+        },
+        {
+          "day": "Wednesday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": "English/Vietnamese",
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": "English/Vietnamese",
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": "English/Vietnamese",
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "17:00",
+          "mass_date": null,
+          "language": "English",
+          "notes": "Vigil"
+        }
+      ],
       "confession": [],
       "adoration": {
         "is_perpetual": false,
@@ -10878,8 +11081,8 @@
     "website": "https://basilthegreat.org",
     "latitude": 41.3255562,
     "longitude": -81.6277639,
-    "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=Bj1rXi4%2FZBJOQo83Cay6QPguoYGwnnx5iUK%2BhiT6tPQPnN3CLCvM4LlqDmkUwNfhlqFM4RxwdLjisx%2BFnKSo6PoSw14U82k%2BV7VIRoTglcM%3D",
-    "timestamp": null,
+    "bulletin_url": "https://basilthegreat.org/wp-content/uploads/2026/07/20260726B-compressed.pdf",
+    "timestamp": "2026-07-26",
     "invite_feedback": false,
     "schedules": {
       "mass": [
@@ -10916,35 +11119,35 @@
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass (Mon–Fri)"
         },
         {
           "day": "Tuesday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass (Mon–Fri)"
         },
         {
           "day": "Wednesday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass (Mon–Fri)"
         },
         {
           "day": "Thursday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass (Mon–Fri)"
         },
         {
           "day": "Friday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass (Mon–Fri)"
         },
         {
           "day": "Saturday",
@@ -10952,6 +11155,13 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
+        },
+        {
+          "day": "Saturday",
+          "start": "10:00",
+          "mass_date": "2026-08-15",
+          "language": null,
+          "notes": "Feast of the Assumption of Mary (not a Holy Day of Obligation this year)"
         }
       ],
       "confession": [
@@ -10983,7 +11193,7 @@
         ]
       }
     },
-    "events_summary": "St. Michael statue dedication honoring first responders is Monday, June 29, with Mass at 8:00am followed by the 8:30am dedication and a reception. A hearing-health presentation will be held Wednesday, June 24 at 9:00am in the Parish Center, and the Senior Cook-Out takes place Wednesday, July 1 at 12:00pm (Parish Center; $5 suggested donation, reservations due June 26). Golf Outing is Thursday, July 16 (check-in 7:30am; shotgun start 9:00am), and Vacation Bible School runs July 19–23 from 5:30–8:30pm."
+    "events_summary": "Adoration is available Mondays and Wednesdays from 8:30am–9:00pm, with weekend Reconciliation on Saturdays from 8:30–9:30am. Upcoming youth events include the Life Teen “Splish Splash Bash” on Saturday, August 15 (1–5pm, back field) and the Parent Kickoff on September 3 from 7–8:30pm in the Parish Center. Families are also invited to the Basil Family Camp Out August 14–15 (Friday 6:00pm through Saturday 10:00am) and monthly “Sandwich Saturday” (9–10am in the Parish Center)."
   },
   {
     "name": "Saint Bartholomew Parish",
@@ -11997,13 +12207,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Saturday",
-          "start": "18:00",
-          "mass_date": "2026-07-25",
-          "language": null,
-          "notes": "Outdoor Mass at the Grotto"
         }
       ],
       "confession": [
@@ -12547,7 +12750,7 @@
     "longitude": -81.6292108,
     "bulletin_url": null,
     "timestamp": null,
-    "invite_feedback": false,
+    "invite_feedback": true,
     "schedules": {
       "mass": [],
       "confession": [],
@@ -12788,8 +12991,8 @@
     "website": "www.shofjesus.com",
     "latitude": 41.0258816,
     "longitude": -81.7230331,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1608/20260705B.pdf",
-    "timestamp": "2026-07-11",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1608/20260726B.pdf",
+    "timestamp": "2026-07-26",
     "invite_feedback": false,
     "schedules": {
       "mass": [
@@ -12863,7 +13066,7 @@
           "start": "11:00",
           "end": "12:00",
           "end_next_day": false,
-          "notes": "Or by appointment"
+          "notes": "or by appointment"
         }
       ],
       "adoration": {
@@ -12893,7 +13096,7 @@
         ]
       }
     },
-    "events_summary": "Sacred Heart hosts the Public Pro-Life Rosary on Saturday, July 11 at 10:30am on Broad Street in front of Sacred Heart School, and confessions are offered Saturdays from 11:00am–12:00pm. The Spiritans’ Missionary Cooperation Plan speaker, Fr. Lazarus Langbiir, will visit and speak the weekend of July 18–19. Ongoing opportunities include the Latin Rosary for Priests every Wednesday at 7:30pm and regular parish groups such as Men’s Group and SVDP Food Pantry."
+    "events_summary": "Sacred Heart offers perpetual adoration in the Divine Mercy Chapel; adorers are especially needed Mondays 2–3pm and Saturdays 11pm–midnight. A VIRTUS “Protecting God’s Children” workshop will be held Wednesday, August 12 at 3:00pm in McMahon Hall (register in advance). Upcoming parish activities include the Patriotic Rosary & Divine Mercy Chaplet on Sunday, August 2 from 6:15–7:15pm and the weekly Latin Rosary for Priests on Wednesdays at 7:30pm."
   },
   {
     "name": "Sacred Heart of Jesus Parish",
@@ -13156,8 +13359,8 @@
     "website": "https://www.churchofresurrection.org/",
     "latitude": 41.4102989,
     "longitude": -81.4523014,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1733/20260705B.pdf",
-    "timestamp": "2026-07-11",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1733/20260726B.pdf",
+    "timestamp": "2026-07-26",
     "invite_feedback": false,
     "schedules": {
       "mass": [
@@ -13197,6 +13400,13 @@
           "notes": null
         },
         {
+          "day": "Wednesday",
+          "start": "19:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "Men’s Summer Masses (Harper Ridge Pavilion) - followed by potluck dinner"
+        },
+        {
           "day": "Friday",
           "start": "08:30",
           "mass_date": null,
@@ -13208,21 +13418,21 @@
           "start": "17:00",
           "mass_date": null,
           "language": null,
-          "notes": "Vigil Mass"
+          "notes": null
         },
         {
           "day": "Friday",
           "start": "19:00",
           "mass_date": "2026-08-14",
           "language": null,
-          "notes": "Outdoor Mass (tentative); Feast of the Assumption"
+          "notes": "Outdoor Mass (tentative schedule); Feast of the Assumption celebration"
         },
         {
           "day": "Sunday",
           "start": "11:00",
           "mass_date": "2026-08-30",
           "language": null,
-          "notes": "Outdoor Mass (tentative)"
+          "notes": "Outdoor Mass (tentative schedule)"
         }
       ],
       "confession": [
@@ -13247,7 +13457,7 @@
         ]
       }
     },
-    "events_summary": "Vacation Bible School runs July 13–17 (9:00am–12:00pm). Eucharistic Adoration is scheduled Friday, July 24 from 9:00am–5:00pm, and Anointing of the Sick will be offered at all Masses the weekend of July 25–26. Mark your calendar for Parish Service Day on Saturday, September 12 from 8:00am–1:00pm, and the Medjugorje informational session on Tuesday, July 28 at 7:00pm in the Upper Room."
+    "events_summary": "Parish Picnic is Friday, August 7 from 6:00–7:30pm, followed by a Solon Community Band concert from 7:30–8:30pm. OCIA begins with a “What is OCIA?” inquiry session on Monday, August 17 at 6:30pm, and Parish Service Day is Saturday, September 12 from 8:00am–1:00pm. Upcoming formation and service opportunities include weekly Introduction to Centering Prayer (Sundays 10:00–11:00am through Aug. 2) and Voter Registration Training on Saturday, August 1 from 9:00–11:00am."
   },
   {
     "name": "Prince of Peace - Barberton",
@@ -13607,26 +13817,76 @@
   },
   {
     "name": "Our Lady of Peace, Cleveland",
-    "parish_id": "",
+    "parish_id": "olp-cle",
     "address": "12601 Shaker Blvd",
     "city": "Cleveland",
     "zip_code": "44120",
-    "phone": null,
+    "phone": "(216) 421-4211",
     "website": "https://olpchurch.com/",
     "latitude": 41.4848922,
     "longitude": -81.5961778,
-    "bulletin_url": null,
-    "timestamp": null,
-    "invite_feedback": true,
+    "bulletin_url": "https://files.ecatholic.com/2224/documents/2026/7/JFuly 19. 2026.pdf?t=1784393625000",
+    "timestamp": "2026-07-26",
+    "invite_feedback": false,
     "schedules": {
-      "mass": [],
+      "mass": [
+        {
+          "day": "Sunday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "11:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Tuesday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Wednesday",
+          "start": "17:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "17:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "16:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "Vigil Mass"
+        }
+      ],
       "confession": [],
       "adoration": {
         "is_perpetual": false,
         "times": []
       }
     },
-    "events_summary": null
+    "events_summary": "Patio Parties at the Rectory are coming up on Wednesday, July 29 at 6:30pm (and again on Wednesday, August 19 at 6:30pm)—RSVP by email or call the parish office. Plan ahead for The FEST on Saturday, August 15 in Avon (tickets $10 at TheFEST.us). Next weekend is “Giving Bread,” so bring food donations for Our Lady’s Pantry and place them in the baskets at the back of church."
   },
   {
     "name": "Our Lady of Mt. Carmel Church",
@@ -13740,8 +14000,8 @@
     "website": "www.olmccleveland.org",
     "latitude": 41.4836489,
     "longitude": -81.7330876,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0582/20260705B.pdf",
-    "timestamp": "2026-07-11",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/0582/20260726B.pdf",
+    "timestamp": "2026-07-26",
     "invite_feedback": false,
     "schedules": {
       "mass": [
@@ -13757,7 +14017,7 @@
           "start": "11:30",
           "mass_date": null,
           "language": "English & Italian",
-          "notes": "English & Italian"
+          "notes": null
         },
         {
           "day": "Sunday",
@@ -13807,6 +14067,20 @@
           "mass_date": null,
           "language": null,
           "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "22:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "First Friday monthly: 10:00pm Mass mentioned as preceding all-night adoration (Mass itself not otherwise listed in weekly schedule)."
+        },
+        {
+          "day": "Sunday",
+          "start": "09:00",
+          "mass_date": "2026-08-02",
+          "language": null,
+          "notes": "Temporary schedule change shown in Mass Intentions listing; differs from standing Sunday schedule in bulletin."
         }
       ],
       "confession": [
@@ -13831,7 +14105,7 @@
         ]
       }
     },
-    "events_summary": "OLMC’s 100th Annual Italian Festival runs July 8–12, 2026, with multiple live music sets (e.g., Wed 5:00 PM, Thu 7:00 PM, Fri 8:00 PM, Sat 8:00 PM, and Sun at 5:00 PM & 8:00 PM). The 3rd Annual Bocce Tournament is July 10–11 (Fri 5:00 PM start; Sat noon start) in the OLMC Gym, and the Scopa Classic takes place Wednesday, July 8. A Theology on the Rocks West talk (“Angels in the Bible”) is Monday, July 13 (doors 6:30 PM; program 7:00 PM) at the Westside Irish American Club."
+    "events_summary": "Beginning the weekend of August 1–2, 2026, the parish is adjusting its Mass schedule (including Sunday Mass at 9:00am and 5:00pm). A Parish Social will be held on Sunday, August 9, 2026 after the 9:00am Mass in the school cafeteria (details forthcoming). OLMC is also seeking volunteer coaches for the 2026–2027 school year, and multiple summer sports camps are being offered in the school gym."
   },
   {
     "name": "Our Lady of Lourdes Parish",
@@ -15118,7 +15392,7 @@
     "address": "6700 Lansing Avenue",
     "city": "Cleveland",
     "zip_code": "44105",
-    "phone": null,
+    "phone": "(216) 341-2734",
     "website": "http://www.immaculateheartchurch.org/",
     "latitude": 41.4522422,
     "longitude": -81.6425933,
@@ -15126,7 +15400,78 @@
     "timestamp": null,
     "invite_feedback": true,
     "schedules": {
-      "mass": [],
+      "mass": [
+        {
+          "day": "Sunday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "10:00",
+          "mass_date": null,
+          "language": "Polish",
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "12:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Monday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Tuesday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Wednesday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "16:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "Vigil"
+        }
+      ],
       "confession": [],
       "adoration": {
         "is_perpetual": false,
@@ -15407,72 +15752,160 @@
     "website": "https://www.facebook.com/TheMacCleveland",
     "latitude": 41.5147794,
     "longitude": -81.6609434,
-    "bulletin_url": null,
-    "timestamp": "2026-07-16",
-    "invite_feedback": false,
-    "schedules": {
-      "mass": [
-        {
-          "day": "Saturday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Sunday Vigil"
-        }
-      ],
-      "confession": [],
-      "adoration": {
-        "is_perpetual": false,
-        "times": []
-      }
-    },
-    "events_summary": null
-  },
-  {
-    "name": "Immaculate Conception of Mary",
-    "parish_id": "ic-a",
-    "address": "2101 17th Street, SW",
-    "city": "Akron",
-    "zip_code": "44314",
-    "phone": "330-753-8429",
-    "website": "www.ickenmore.org",
-    "latitude": 41.0464564,
-    "longitude": -81.5609709,
-    "bulletin_url": "https://ickenmore.org/wp-content/uploads/simple-file-list/bulletin-2026-01-11.pdf",
-    "timestamp": null,
+    "bulletin_url": "https://institute-christ-king.org/images/cleveland/bulletins/Cleveland_Bulletin_2026-07-26.pdf",
+    "timestamp": "2026-07-26",
     "invite_feedback": false,
     "schedules": {
       "mass": [
         {
           "day": "Sunday",
-          "start": "10:00",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "10:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Monday",
+          "start": "07:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Tuesday",
+          "start": "07:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Wednesday",
+          "start": "07:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "07:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "18:30",
           "mass_date": null,
           "language": null,
           "notes": null
         },
         {
           "day": "Saturday",
-          "start": "17:00",
+          "start": "09:00",
           "mass_date": null,
           "language": null,
           "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "18:00",
+          "mass_date": null,
+          "language": "English",
+          "notes": "Novus Ordo"
+        },
+        {
+          "day": "Saturday",
+          "start": "08:00",
+          "mass_date": "2026-08-15",
+          "language": null,
+          "notes": "Assumption of the Blessed Virgin Mary (Low Mass)"
+        },
+        {
+          "day": "Saturday",
+          "start": "10:30",
+          "mass_date": "2026-08-15",
+          "language": null,
+          "notes": "Assumption of the Blessed Virgin Mary (Solemn Mass)"
         }
       ],
-      "confession": [],
+      "confession": [
+        {
+          "day": "Sunday",
+          "start": "07:30",
+          "end": "08:00",
+          "end_next_day": false,
+          "notes": "30 minutes prior to Holy Mass"
+        },
+        {
+          "day": "Sunday",
+          "start": "10:00",
+          "end": "10:30",
+          "end_next_day": false,
+          "notes": "30 minutes prior to Holy Mass"
+        },
+        {
+          "day": "Monday",
+          "start": "07:00",
+          "end": "07:30",
+          "end_next_day": false,
+          "notes": "30 minutes prior to Holy Mass"
+        },
+        {
+          "day": "Tuesday",
+          "start": "07:00",
+          "end": "07:30",
+          "end_next_day": false,
+          "notes": "30 minutes prior to Holy Mass"
+        },
+        {
+          "day": "Wednesday",
+          "start": "07:00",
+          "end": "07:30",
+          "end_next_day": false,
+          "notes": "30 minutes prior to Holy Mass"
+        },
+        {
+          "day": "Thursday",
+          "start": "07:00",
+          "end": "07:30",
+          "end_next_day": false,
+          "notes": "30 minutes prior to Holy Mass"
+        },
+        {
+          "day": "Friday",
+          "start": "18:00",
+          "end": "18:30",
+          "end_next_day": false,
+          "notes": "30 minutes prior to Holy Mass"
+        },
+        {
+          "day": "Saturday",
+          "start": "08:30",
+          "end": "09:00",
+          "end_next_day": false,
+          "notes": "30 minutes prior to Holy Mass"
+        },
+        {
+          "day": "Saturday",
+          "start": "17:30",
+          "end": "18:00",
+          "end_next_day": false,
+          "notes": "30 minutes prior to Holy Mass"
+        }
+      ],
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Friday",
-            "start": "13:00",
-            "end": "14:00",
-            "end_next_day": false,
-            "notes": "Exposition and Adoration in the church"
-          }
-        ]
+        "times": []
       }
     },
-    "events_summary": "The Kenmore Free Store is open every Tuesday from 4:00–7:00 p.m. and Saturdays from 9:00 a.m.–noon in the School Basement, and volunteers are welcome. St. Vincent de Paul is also seeking volunteers on Thursdays from noon–2:00 p.m. to help distribute food and hygiene items. Parishioners can turn in Acme Cashback receipts at the rectory through January, and 2025 contribution statement requests are due by January 21."
+    "events_summary": "Upcoming highlights: a First Saturday pilgrimage on Saturday, August 1 (Mass at 9:00am), and the Knights of Columbus meet Monday, August 3 at 6:00pm (rosary in church, then meeting in the Thorpe Club). First Friday Mass is Friday, August 7 at 6:30pm, and the Assumption Masses are Saturday, August 15 at 8:00am (Low Mass) and 10:30am (Solemn Mass). Please note there is no Thursday holy hour/adoration at this time (including no 5:30pm adoration on Thursday, July 30)."
   },
   {
     "name": "Avon Catholic Community - Saint Mary of the Immaculate Conception",
@@ -16184,8 +16617,8 @@
     "website": "https://www.holyfamilystow.org",
     "latitude": 41.158383,
     "longitude": -81.444991,
-    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1236/20260705B.pdf",
-    "timestamp": "2026-07-11",
+    "bulletin_url": "https://container.parishesonline.com/bulletins/14/1236/20260726B.pdf",
+    "timestamp": "2026-07-26",
     "invite_feedback": false,
     "schedules": {
       "mass": [
@@ -16236,7 +16669,7 @@
           "start": "18:30",
           "mass_date": null,
           "language": null,
-          "notes": "Evening Mass"
+          "notes": null
         },
         {
           "day": "Thursday",
@@ -16265,13 +16698,20 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
+        },
+        {
+          "day": "Sunday",
+          "start": "17:00",
+          "mass_date": "2026-07-26",
+          "language": null,
+          "notes": "All-Parish Outdoor Mass ('Mass on the Grass') at Silver Springs Park, Leona Farris Lodge; All-Parish Outdoor Mass ('Mass on the Grass')"
         }
       ],
       "confession": [
         {
           "day": "Wednesday",
           "start": "18:00",
-          "end": "18:30",
+          "end": "19:00",
           "end_next_day": false,
           "notes": null
         },
@@ -16280,7 +16720,7 @@
           "start": "15:00",
           "end": "16:00",
           "end_next_day": false,
-          "notes": null
+          "notes": "or by appointment"
         }
       ],
       "adoration": {
@@ -16310,7 +16750,7 @@
         ]
       }
     },
-    "events_summary": "This week includes several youth and parish gatherings: Healing Prayer Class meets Monday at 10:00am and 7:00pm in the chapel, and LifeTeen meets Monday at 7:00pm for Ultimate Frisbee at Silver Springs Park. On Wednesday at 7:00pm, ACTS 29 hosts a Fireside Rosary and bonfire at the parish firepit. The American Red Cross Blood Drive is Tuesday at 12:00pm at the FSPC, and Healing Prayers are offered Saturday at 6:00pm in the chapel."
+    "events_summary": "Holy Family’s “Mass on the Grass” outdoor Mass is Sunday, July 26 at Silver Springs Park—gather at 4:30 p.m. and Mass begins at 5:00 p.m., followed by fellowship and a picnic. This week includes several ministry gatherings, including LifeTeen Ultimate Frisbee on Monday at 7:00 p.m. and Young Adult Bible Study Tuesday at 8:30 p.m. Mark your calendar for the Summer Service Project July 31–Aug. 1 (9:00 a.m.–3:00 p.m.) at the Bishop Pilla Family Center in East Cleveland."
   },
   {
     "name": "Holy Family Parish",
@@ -16949,21 +17389,7 @@
           "start": "07:15",
           "mass_date": null,
           "language": null,
-          "notes": null
-        },
-        {
-          "day": "Monday",
-          "start": "07:15",
-          "mass_date": null,
-          "language": null,
           "notes": "Weekday Mass in chapel during renovations"
-        },
-        {
-          "day": "Monday",
-          "start": "12:00",
-          "mass_date": null,
-          "language": null,
-          "notes": null
         },
         {
           "day": "Monday",
@@ -16977,21 +17403,7 @@
           "start": "07:15",
           "mass_date": null,
           "language": null,
-          "notes": null
-        },
-        {
-          "day": "Tuesday",
-          "start": "07:15",
-          "mass_date": null,
-          "language": null,
           "notes": "Weekday Mass in chapel during renovations"
-        },
-        {
-          "day": "Tuesday",
-          "start": "12:00",
-          "mass_date": null,
-          "language": null,
-          "notes": null
         },
         {
           "day": "Tuesday",
@@ -17005,21 +17417,7 @@
           "start": "07:15",
           "mass_date": null,
           "language": null,
-          "notes": null
-        },
-        {
-          "day": "Wednesday",
-          "start": "07:15",
-          "mass_date": null,
-          "language": null,
           "notes": "Weekday Mass in chapel during renovations"
-        },
-        {
-          "day": "Wednesday",
-          "start": "12:00",
-          "mass_date": null,
-          "language": null,
-          "notes": null
         },
         {
           "day": "Wednesday",
@@ -17033,21 +17431,7 @@
           "start": "07:15",
           "mass_date": null,
           "language": null,
-          "notes": null
-        },
-        {
-          "day": "Thursday",
-          "start": "07:15",
-          "mass_date": null,
-          "language": null,
           "notes": "Weekday Mass in chapel during renovations"
-        },
-        {
-          "day": "Thursday",
-          "start": "12:00",
-          "mass_date": null,
-          "language": null,
-          "notes": null
         },
         {
           "day": "Thursday",
@@ -17061,21 +17445,7 @@
           "start": "07:15",
           "mass_date": null,
           "language": null,
-          "notes": null
-        },
-        {
-          "day": "Friday",
-          "start": "07:15",
-          "mass_date": null,
-          "language": null,
           "notes": "Weekday Mass in chapel during renovations"
-        },
-        {
-          "day": "Friday",
-          "start": "12:00",
-          "mass_date": null,
-          "language": null,
-          "notes": null
         },
         {
           "day": "Friday",
