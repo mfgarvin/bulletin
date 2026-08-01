@@ -4010,8 +4010,8 @@
     "website": "https://church.saintpaschal.com",
     "latitude": 41.5380938,
     "longitude": -81.4854892,
-    "bulletin_url": "https://files.ecatholic.com/5493/bulletins/20260719.pdf",
-    "timestamp": "2026-07-22",
+    "bulletin_url": "https://files.ecatholic.com/5493/bulletins/20260726.pdf",
+    "timestamp": "2026-08-01",
     "invite_feedback": false,
     "schedules": {
       "mass": [
@@ -4020,114 +4020,121 @@
           "start": "08:30",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "(in church)"
         },
         {
           "day": "Sunday",
           "start": "10:30",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "(in church)"
         },
         {
           "day": "Sunday",
           "start": "18:30",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "(in church)"
         },
         {
           "day": "Monday",
           "start": "09:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass (in church)"
         },
         {
           "day": "Monday",
           "start": "11:30",
           "mass_date": null,
           "language": null,
-          "notes": "in Saint Ann Shrine"
+          "notes": "Weekday Mass (Saint Ann Shrine)"
         },
         {
           "day": "Tuesday",
           "start": "09:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass (in church)"
         },
         {
           "day": "Tuesday",
           "start": "11:30",
           "mass_date": null,
           "language": null,
-          "notes": "in Saint Ann Shrine"
+          "notes": "Weekday Mass (Saint Ann Shrine)"
         },
         {
           "day": "Wednesday",
           "start": "09:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass (in church)"
         },
         {
           "day": "Wednesday",
           "start": "11:30",
           "mass_date": null,
           "language": null,
-          "notes": "in Saint Ann Shrine"
+          "notes": "Weekday Mass (Saint Ann Shrine)"
         },
         {
           "day": "Thursday",
           "start": "09:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass (in church)"
         },
         {
           "day": "Thursday",
           "start": "11:30",
           "mass_date": null,
           "language": null,
-          "notes": "in Saint Ann Shrine"
+          "notes": "Weekday Mass (Saint Ann Shrine)"
         },
         {
           "day": "Friday",
           "start": "09:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Weekday Mass (in church)"
         },
         {
           "day": "Friday",
           "start": "11:30",
           "mass_date": null,
           "language": null,
-          "notes": "in Saint Ann Shrine"
+          "notes": "Weekday Mass (Saint Ann Shrine)"
         },
         {
           "day": "Saturday",
           "start": "09:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "(in church)"
         },
         {
           "day": "Saturday",
           "start": "16:30",
           "mass_date": null,
           "language": null,
-          "notes": "Vigil Mass"
+          "notes": "Vigil Mass (in church)"
         }
       ],
       "confession": [
+        {
+          "day": "Monday",
+          "start": "18:00",
+          "end": "18:30",
+          "end_next_day": false,
+          "notes": null
+        },
         {
           "day": "Saturday",
           "start": "15:30",
           "end": "16:15",
           "end_next_day": false,
-          "notes": "in church; or by appointment"
+          "notes": "In church; or by appointment"
         }
       ],
       "adoration": {
@@ -4143,7 +4150,7 @@
         ]
       }
     },
-    "events_summary": "Saint Ann Triduum runs July 24–26 with a special 6:30 pm Mass on Friday, and the Sunday 6:30 pm Mass includes a procession with the Blessed Sacrament. A Holy Hour is scheduled Thursday, July 23 at 7:00 pm. Looking ahead, the Spring Fling/Parish Picnic is Saturday, August 8 with 4:30 pm Mass and dinner following, and a Red Cross Blood Drive takes place Sunday, August 9 from 7:00 am–2:30 pm."
+    "events_summary": "Weekly Eucharistic Exposition is held Thursdays from 9:30 a.m. to 8:00 p.m., with Confession on Saturdays from 3:30–4:15 p.m. (and Mondays 6:00–6:30 p.m.). The combined Spring Fling and Parish Picnic is Saturday, August 8 following the 4:30 p.m. Mass, and the Red Cross Blood Drive is Sunday, August 9 from 7:00 a.m.–2:30 p.m. The Aggregation of the Blessed Sacrament Promise Ceremony will take place at the 10:30 a.m. Mass on Sunday, August 9, and Aggregation Day is Tuesday, August 4 beginning at 11:00 a.m."
   },
   {
     "name": "Saint Noel Parish",
@@ -11685,13 +11692,6 @@
           "notes": "Weekend Mass (Vigil)"
         },
         {
-          "day": "Sunday",
-          "start": "10:00",
-          "mass_date": "2026-07-26",
-          "language": null,
-          "notes": "Outdoor Mass"
-        },
-        {
           "day": "Saturday",
           "start": "16:00",
           "mass_date": "2026-08-08",
@@ -12060,13 +12060,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "19:00",
-          "mass_date": "2026-07-27",
-          "language": null,
-          "notes": "Installation Mass for Fr. Richard J. Samide"
         }
       ],
       "confession": [
@@ -16698,13 +16691,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Sunday",
-          "start": "17:00",
-          "mass_date": "2026-07-26",
-          "language": null,
-          "notes": "All-Parish Outdoor Mass ('Mass on the Grass') at Silver Springs Park, Leona Farris Lodge; All-Parish Outdoor Mass ('Mass on the Grass')"
         }
       ],
       "confession": [
@@ -16829,13 +16815,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass (also live-streamed on YouTube)"
-        },
-        {
-          "day": "Sunday",
-          "start": "11:30",
-          "mass_date": "2026-07-26",
-          "language": null,
-          "notes": "Outdoor Mass (Parish Grounds)"
         }
       ],
       "confession": [
