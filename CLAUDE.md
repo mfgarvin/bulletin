@@ -273,6 +273,28 @@ GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/
 
 ## Changelog
 
+### v2.5.2 (2026-08-03) - Fix mapboard export losing 24-hour slots
+
+**Bug:** `utils/notion_to_json.py` (the mapboard export) never learned about the
+`end_next_day` flag that v2.5.0 introduced. It inferred overnight spans from
+`end < start` alone, which is correct for `20:00 → 00:00` but wrong for a full
+24-hour span, where `end == start` — those exported as a duration of **0** and
+the LED stayed dark all day. Hit St. Albert the Great (Tue/Wed/Thu) and
+St. Edward (Thu). `utils/notion_to_app.py` got the `end_next_day` handling in
+v2.5.0; this file was missed.
+
+**Fixes:**
+- `_calculate_duration()` takes `end_next_day` and adds 24h when it is set
+- New `_has_end_time()` drops slots where `start == end` and the flag is false —
+  those are open-ended extractions ("after the 8:15am Mass"), not zero-length
+  slots, and the mapboard has no way to render an unknown end. Applied in
+  `_group_confessions()` and `_format_adoration()`; `is_perpetual`
+  short-circuits before the guard, so 24/7 chapels are unaffected.
+
+Affected: 3 open-ended slots dropped (St. Peter North Ridgeville,
+St. Joseph, St. Columbkille), 4 restored to 1440. Zero-duration slots in the
+export are now 0.
+
 ### v2.5.1 (2026-07-22) - Fix silent JSON truncation
 
 **Bug:** Every JSON field over 2000 characters was being stored corrupt, and the

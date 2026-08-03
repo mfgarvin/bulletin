@@ -159,14 +159,29 @@ def _group_mass_times(mass_times: list[dict]) -> dict[str, list[int]]:
     return {day: sorted(times) for day, times in grouped.items()}
 
 
-def _calculate_duration(start: int, end: int) -> int:
-    """Calculate duration in minutes between two 24hr times."""
+def _calculate_duration(start: int, end: int, end_next_day: bool = False) -> int:
+    """Calculate duration in minutes between two 24hr times.
+
+    `end_next_day` cannot be inferred from `end < start` alone: a full 24hr
+    span has `end == start`, which would otherwise measure as zero.
+    """
     start_mins = (start // 100) * 60 + (start % 100)
     end_mins = (end // 100) * 60 + (end % 100)
     # Handle overnight (e.g., 2300 to 0100)
-    if end_mins < start_mins:
+    if end_next_day or end_mins < start_mins:
         end_mins += 24 * 60
     return end_mins - start_mins
+
+
+def _has_end_time(start: int, end: int, end_next_day: bool) -> bool:
+    """Whether a slot states an end time.
+
+    `start == end` without `end_next_day` means the extraction never found one
+    ("after the 8:15am Mass"), not a zero-length slot. The mapboard has no way
+    to show an open-ended window, so those are dropped rather than exported as
+    a duration of 0 — which reads as "nothing here" anyway.
+    """
+    return start != end or end_next_day
 
 
 def _group_confessions(confessions: list[dict]) -> dict[str, list[dict[str, int]]]:
@@ -181,7 +196,10 @@ def _group_confessions(confessions: list[dict]) -> dict[str, list[dict[str, int]
         start = conf.get("start_time")
         end = conf.get("end_time")
         if day and start is not None and end is not None:
-            duration = _calculate_duration(start, end)
+            next_day = bool(conf.get("end_next_day"))
+            if not _has_end_time(start, end, next_day):
+                continue
+            duration = _calculate_duration(start, end, next_day)
             grouped[day].append({str(start): duration})
     return dict(grouped)
 
@@ -205,7 +223,10 @@ def _format_adoration(adoration: dict) -> dict:
         start = slot.get("start_time")
         end = slot.get("end_time")
         if day and start is not None and end is not None:
-            duration = _calculate_duration(start, end)
+            next_day = bool(slot.get("end_next_day"))
+            if not _has_end_time(start, end, next_day):
+                continue
+            duration = _calculate_duration(start, end, next_day)
             grouped[day].append({str(start): duration})
     return dict(grouped)
 
