@@ -295,6 +295,43 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.3 (2026-08-04) - Browser-TLS fallback; fix weekly job skipping itself
+
+**Bug 1 — the weekly run silently processed nothing.** The 2026-08-01 Actions
+run reported success in 1m7s (vs 11m29s the week before) having found *2*
+parishes to process. `get_parishes_to_process()` computed
+`cutoff = today - 7 days` and kept rows where `last_run < cutoff`. The job runs
+every 7 days, so a row stamped by last Saturday's run lands *exactly* on the
+cutoff, fails the strict `<`, and is skipped — every parish refreshing every 14
+days instead of 7, with `Issues` still reading "No Issues" from the stale run.
+
+Fix: `stale_days` defaults to **6** in `database/notion.py`, `main.py`, and the
+worker's `STALE_DAYS` (`docker/run-worker.sh`, `docker-compose.yml`).
+
+**Bug 2 — a 403 that no User-Agent could fix.** `basilthegreat.org` sits behind
+a Cloudflare **managed challenge** (`cf-mitigated: challenge`), which
+fingerprints the TLS/JA3 handshake, not the headers. Every header combination
+tested returned 403 from a residential IP — current Safari UA, a full Chrome
+header set with `Sec-Fetch-*`, and no UA at all. A browser UA over a Python TLS
+stack is a *detectable mismatch*, so it was slightly worse than sending nothing.
+
+Fix: new `sources/fetch.py` with a `Fetcher` async context manager. It fetches
+via httpx as before, and only on a "refused" status (403/429/503 — never a 404)
+retries through `curl_cffi`, which replays a real browser's TLS and HTTP/2
+fingerprint. Used by `sources/self_hosted.py` and `sources/webpage.py`, the two
+scrapers that hit arbitrary parish sites. Verified: `st-basil-the-g` goes
+403 → fallback → 200 and now pulls its PDF; `ss-c` and the three Webpage
+parishes never leave the httpx path.
+
+The fallback is second, not first, so the ~190 parishes that answer plain httpx
+keep their existing path and cost. `curl_cffi>=0.16.0` added to
+`requirements.txt`; if it's missing the fetch degrades to the original 403
+rather than crashing.
+
+**Possible follow-up:** St. Basil may have been a TLS block all along rather
+than an IP block, in which case it no longer needs the local worker. Worth
+confirming from an Actions run before shrinking `PARISHES`.
+
 ### v2.5.2 (2026-08-03) - Fix mapboard export losing 24-hour slots
 
 **Bug:** `utils/notion_to_json.py` (the mapboard export) never learned about the

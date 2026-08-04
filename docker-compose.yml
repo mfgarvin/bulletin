@@ -28,7 +28,7 @@ services:
       # MODE=all  → process every enabled parish with data older than STALE_DAYS
       MODE: ids
       PARISHES: "ss-c st-basil-the-g"
-      STALE_DAYS: "7"
+      STALE_DAYS: "6"
 
       # --- optional ---
       RUN_ON_START: "false"     # true = also run once at container start

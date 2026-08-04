@@ -91,8 +91,14 @@ class NotionClient(DatabaseClient):
             self._client.pages.update(page_id=page_id, properties=properties)
         )
 
-    async def get_parishes_to_process(self, stale_days: int = 7) -> list[ParishRecord]:
-        """Get enabled parishes with data older than stale_days."""
+    async def get_parishes_to_process(self, stale_days: int = 6) -> list[ParishRecord]:
+        """Get enabled parishes with data older than stale_days.
+
+        `stale_days` defaults to 6 rather than 7 so the weekly Saturday job
+        doesn't skip its own previous run: at 7, a row stamped last Saturday
+        sits exactly on the cutoff, fails the strict `<`, and refreshes only
+        every other week.
+        """
         all_parishes = await self._get_all_parishes()
         cutoff = date.today() - timedelta(days=stale_days)
         return [

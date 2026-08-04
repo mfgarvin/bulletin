@@ -28,7 +28,7 @@ settings page.
 | `TZ` | `America/New_York` | Timezone the schedule is read in. |
 | `MODE` | `ids` | `ids` = process exactly `PARISHES`; `all` = every enabled stale parish. |
 | `PARISHES` | — | IDs for `MODE=ids`, space- or comma-separated (e.g. `ss-c st-basil-the-g`). |
-| `STALE_DAYS` | `7` | For `MODE=all`: age before a parish is reprocessed. |
+| `STALE_DAYS` | `6` | For `MODE=all`: age before a parish is reprocessed. |
 | `RUN_ON_START` | `false` | `true` runs once at container start, then follows the schedule. |
 | `DRY_RUN` | `false` | `true` extracts but writes nothing to Notion. |
 | `VERBOSE` | `false` | Debug logging. |

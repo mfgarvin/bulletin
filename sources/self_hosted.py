@@ -9,8 +9,7 @@ import httpx
 from bs4 import BeautifulSoup
 
 from .base import BulletinSource, DownloadResult
-
-USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15"
+from .fetch import Fetcher
 
 # Patterns that indicate a bulletin PDF
 BULLETIN_PATTERNS = [
@@ -60,14 +59,10 @@ class SelfHostedSource(BulletinSource):
                 error="No bulletin_url provided for self-hosted source",
             )
 
-        async with httpx.AsyncClient(timeout=30.0) as client:
+        async with Fetcher(timeout=30.0) as fetch:
             try:
                 # Fetch the bulletin page
-                response = await client.get(
-                    bulletin_url,
-                    headers={"User-Agent": USER_AGENT},
-                    follow_redirects=True,
-                )
+                response = await fetch(bulletin_url)
                 if response.status_code != 200:
                     return DownloadResult(
                         success=False,
@@ -83,11 +78,7 @@ class SelfHostedSource(BulletinSource):
                     )
 
                 # Download the PDF
-                pdf_response = await client.get(
-                    pdf_url,
-                    headers={"User-Agent": USER_AGENT},
-                    follow_redirects=True,
-                )
+                pdf_response = await fetch(pdf_url)
                 if pdf_response.status_code != 200:
                     return DownloadResult(
                         success=False,

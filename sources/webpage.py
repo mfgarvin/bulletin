@@ -9,8 +9,7 @@ from bs4 import BeautifulSoup, Comment
 from markdownify import markdownify as md
 
 from .base import BulletinSource, DownloadResult
-
-USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15"
+from .fetch import Fetcher
 
 # Elements to remove (navigation, headers, footers, sidebars)
 REMOVE_SELECTORS = [
@@ -70,13 +69,9 @@ class WebpageSource(BulletinSource):
                 error="No bulletin_url provided for webpage source",
             )
 
-        async with httpx.AsyncClient(timeout=30.0) as client:
+        async with Fetcher(timeout=30.0) as fetch:
             try:
-                response = await client.get(
-                    bulletin_url,
-                    headers={"User-Agent": USER_AGENT},
-                    follow_redirects=True,
-                )
+                response = await fetch(bulletin_url)
                 if response.status_code != 200:
                     return DownloadResult(
                         success=False,
@@ -90,11 +85,7 @@ class WebpageSource(BulletinSource):
                 follow_url = self._find_continue_reading_link(html, bulletin_url)
                 if follow_url:
                     # Follow the link to get full content
-                    follow_response = await client.get(
-                        follow_url,
-                        headers={"User-Agent": USER_AGENT},
-                        follow_redirects=True,
-                    )
+                    follow_response = await fetch(follow_url)
                     if follow_response.status_code == 200:
                         html = follow_response.text
                         final_url = follow_url

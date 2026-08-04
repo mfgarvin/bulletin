@@ -33,8 +33,8 @@ fi
 # ---- build the main.py argument list --------------------------------------
 args=()
 if [ "${MODE:-ids}" = "all" ]; then
-    args+=(--all --stale-days "${STALE_DAYS:-7}")
-    target="all stale parishes (>${STALE_DAYS:-7} days)"
+    args+=(--all --stale-days "${STALE_DAYS:-6}")
+    target="all stale parishes (>${STALE_DAYS:-6} days)"
 else
     # Accept either commas or spaces between IDs: "ss-c,st-basil" or "ss-c st-basil"
     read -ra ids <<< "${PARISHES//,/ }"

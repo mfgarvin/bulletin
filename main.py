@@ -353,8 +353,10 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument(
         "--stale-days",
         type=int,
-        default=7,
-        help="Days before data is considered stale (default: 7)",
+        default=6,
+        # 6, not 7: the weekly job would otherwise land exactly on its own
+        # cutoff (last_run == today - 7) and skip everything it ran last week.
+        help="Days before data is considered stale (default: 6)",
     )
     parser.add_argument(
         "-v",
