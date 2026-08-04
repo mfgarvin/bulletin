@@ -271,6 +271,28 @@ Options for JS-heavy sites:
 
 GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/workflows/gh-actions.yml`)
 
+**Local worker.** A few parish sites block GitHub Actions' datacenter IPs but
+load fine from a residential connection, so those parishes are processed from
+home instead. Two equivalent ways to do that:
+
+- `local_worker.sh` — bare script; pulls, manages a venv, reads `.env`.
+- `Dockerfile` + `docker-compose.yml` + `docker/` — the same thing as a
+  container with an internal cron (built for Unraid; see `docker/README.md`).
+  Code is baked into the image, so updating means rebuilding.
+
+Neither regenerates `export.json` — they only refresh those parishes' Notion
+rows. The Saturday Actions job still rebuilds `export.json` / `parish_data.json`
+from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
+
+## Repo layout notes
+
+- `docs/integration/` — how downstream consumers read the export (Flutter app).
+- `docs/notes/` — **gitignored.** Local working notes and source data for
+  hand-verification.
+- `temp/`, `reference.py` — gitignored local scratch. `reference.py` is the LED
+  mapboard driver, kept as a reference for what `export.json` has to feed; the
+  mapboard repo owns it.
+
 ## Changelog
 
 ### v2.5.2 (2026-08-03) - Fix mapboard export losing 24-hour slots

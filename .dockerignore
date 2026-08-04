@@ -1,0 +1,18 @@
+.git
+.github
+venv
+__pycache__
+**/__pycache__
+*.pyc
+
+# Secrets never belong in the image — they come in as container env vars.
+.env
+
+# Local scratch / large reference material the worker doesn't need.
+temp
+worker-logs
+docs
+*.pdf
+reference.py
+.DS_Store
+docker-compose.yml

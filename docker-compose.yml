@@ -1,0 +1,39 @@
+# Local / non-Unraid usage:
+#   docker compose up -d --build
+#   docker compose logs -f
+#   docker compose exec worker run-worker.sh     # run once, right now
+#
+# Secrets come from a .env file next to this one (same keys as .env.template).
+
+services:
+  worker:
+    build: .
+    image: bulletin-worker
+    container_name: bulletin-worker
+    restart: unless-stopped
+    environment:
+      # --- required secrets (from .env) ---
+      OPENAI_API_KEY: ${OPENAI_API_KEY:?set OPENAI_API_KEY in .env}
+      NOTION_API_KEY: ${NOTION_API_KEY:?set NOTION_API_KEY in .env}
+      PARISH_DB_ID: ${PARISH_DB_ID:?set PARISH_DB_ID in .env}
+
+      # --- schedule ---
+      TZ: America/New_York
+      # Saturday 09:00 local — before the 14:00 UTC Actions export.
+      CRON_SCHEDULE: "0 9 * * 6"
+
+      # --- what to process ---
+      # MODE=ids  → process exactly the PARISHES listed (the local-worker case:
+      #             sites that block GitHub Actions' datacenter IPs)
+      # MODE=all  → process every enabled parish with data older than STALE_DAYS
+      MODE: ids
+      PARISHES: "ss-c st-basil-the-g"
+      STALE_DAYS: "7"
+
+      # --- optional ---
+      RUN_ON_START: "false"     # true = also run once at container start
+      DRY_RUN: "false"          # true = extract but don't write to Notion
+      VERBOSE: "false"
+      LOG_RETENTION_DAYS: "30"
+    volumes:
+      - ./worker-logs:/logs

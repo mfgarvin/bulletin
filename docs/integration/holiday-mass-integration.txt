@@ -1,0 +1,103 @@
+# Holiday Mass Integration Instructions
+
+## Overview
+
+The bulletin extraction system outputs mass times with an optional `mass_date` field that distinguishes between regular weekly masses and special one-time masses (holidays, holy days).
+
+## Data Model
+
+Each mass time object has these relevant fields:
+
+```
+{
+  "day": "Sunday",           // Day of week: "Sunday", "Monday", etc.
+  "time": 900,               // 24hr format integer (900 = 9:00am, 1630 = 4:30pm)
+  "mass_date": null,         // null for weekly, "YYYY-MM-DD" for one-time
+  "language": "Spanish",     // Optional: null means English
+  "notes": "Christmas Eve"   // Optional: descriptive text
+}
+```
+
+## Two Types of Masses
+
+1. **Regular weekly masses**: `mass_date` is null
+   - These repeat every week on the specified `day`
+   - Always show them in the schedule
+
+2. **Holiday/special masses**: `mass_date` contains a date string
+   - One-time masses for Christmas, Easter, Holy Days of Obligation, etc.
+   - Only show when the date is upcoming or current
+   - Hide after the date has passed
+
+## Implementation
+
+### Filtering Logic
+
+```javascript
+function shouldShowMass(mass, today) {
+  if (mass.mass_date === null) {
+    return true; // Regular weekly mass - always show
+  }
+
+  const massDate = new Date(mass.mass_date);
+  const weekFromNow = new Date(today);
+  weekFromNow.setDate(weekFromNow.getDate() + 7);
+
+  // Show holiday masses within the next 7 days
+  return massDate >= today && massDate <= weekFromNow;
+}
+```
+
+### Sorting
+
+When displaying masses for a given day:
+1. Sort by time ascending
+2. Holiday masses with `mass_date` matching today should appear alongside regular masses for that day of week
+
+### UI Recommendations
+
+- Badge or highlight masses where `mass_date` is not null (e.g., "Special" or "Holiday" tag)
+- Show the specific date for holiday masses (e.g., "Dec 24" or "Christmas Eve")
+- Use the `notes` field for display - it often contains the occasion name
+- Consider a separate "Upcoming Special Masses" section
+
+### Date Matching
+
+To show masses for a specific calendar date:
+
+```javascript
+function getMassesForDate(allMasses, targetDate) {
+  const dayOfWeek = targetDate.toLocaleDateString('en-US', { weekday: 'long' });
+  const dateString = targetDate.toISOString().split('T')[0]; // "YYYY-MM-DD"
+
+  return allMasses.filter(mass => {
+    if (mass.mass_date === dateString) {
+      return true; // Holiday mass on this exact date
+    }
+    if (mass.mass_date === null && mass.day === dayOfWeek) {
+      return true; // Regular weekly mass on this day of week
+    }
+    return false;
+  });
+}
+```
+
+## Example Data
+
+```json
+[
+  {"day": "Sunday", "time": 900, "mass_date": null, "language": null, "notes": null},
+  {"day": "Sunday", "time": 1100, "mass_date": null, "language": "Spanish", "notes": null},
+  {"day": "Saturday", "time": 1700, "mass_date": null, "language": null, "notes": "Vigil Mass"},
+  {"day": "Tuesday", "time": 1600, "mass_date": "2025-12-24", "language": null, "notes": "Christmas Eve Vigil"},
+  {"day": "Tuesday", "time": 2400, "mass_date": "2025-12-24", "language": null, "notes": "Midnight Mass"},
+  {"day": "Wednesday", "time": 1000, "mass_date": "2025-12-25", "language": null, "notes": "Christmas Day"}
+]
+```
+
+## Edge Cases
+
+- A holiday can fall on any day, so `day` and `mass_date` are both present for holiday masses
+- Multiple holiday masses can occur on the same date (e.g., Christmas Eve has vigil + midnight)
+- The `time` 2400 represents midnight (end of day) - treat as 0000 of the next day if needed
+- Some parishes may have holiday masses extracted without notes - the date alone indicates it's special

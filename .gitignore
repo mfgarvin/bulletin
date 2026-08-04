@@ -5,6 +5,17 @@ notes
 venv/
 bulletins/
 
+# Local scratch: downloaded bulletins, one-off extraction harnesses, backups
+temp/
+
+# Working notes and source data for hand-verification. Local only — these are
+# working documents, not part of the project's docs.
+docs/notes/
+
+# LED mapboard driver. Lives in the mapboard repo; kept here as a local
+# reference for what export.json has to feed.
+reference.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

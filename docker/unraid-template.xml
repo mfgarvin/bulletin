@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!--
+  Unraid template for the bulletin worker.
+
+  Install: copy this file to /boot/config/plugins/dockerMan/templates-user/
+  on the Unraid box, then Docker tab → ADD CONTAINER → select
+  "bulletin-worker" from the template dropdown at the top.
+
+  The image is built locally (see docker/README.md) — this template does not
+  pull from a registry, so build it before hitting Apply.
+-->
+<Container version="2">
+  <Name>bulletin-worker</Name>
+  <Repository>bulletin-worker:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/mfgarvin/bulletin</Project>
+  <Overview>
+    Processes Catholic parish bulletins with GPT and writes mass/confession/adoration
+    times to Notion. Runs on a cron schedule inside the container.
+
+    Exists to cover the parishes whose websites block GitHub Actions' datacenter IPs
+    but load fine from a residential connection. It does NOT regenerate export.json —
+    the weekly GitHub Actions job rebuilds that from Notion.
+  </Overview>
+  <Category>Productivity: Tools:</Category>
+  <WebUI/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Scheduled Catholic parish bulletin scraper feeding Notion.</Description>
+
+  <Config Name="OpenAI API key" Target="OPENAI_API_KEY" Default="" Mode=""
+          Description="Required. From https://platform.openai.com/api-keys"
+          Type="Variable" Display="always" Required="true" Mask="true"/>
+
+  <Config Name="Notion API key" Target="NOTION_API_KEY" Default="" Mode=""
+          Description="Required. From https://www.notion.so/my-integrations"
+          Type="Variable" Display="always" Required="true" Mask="true"/>
+
+  <Config Name="Notion parish DB ID" Target="PARISH_DB_ID" Default="" Mode=""
+          Description="Required. The Notion database ID holding the parishes."
+          Type="Variable" Display="always" Required="true" Mask="true"/>
+
+  <Config Name="Schedule (cron)" Target="CRON_SCHEDULE" Default="0 9 * * 6" Mode=""
+          Description="Five-field cron expression in the container's timezone. Default: Saturday 09:00, before the 14:00 UTC GitHub Actions export. Examples: '0 3 * * *' = daily 3am; '0 9 * * 6' = Saturdays 9am."
+          Type="Variable" Display="always" Required="true" Mask="false"/>
+
+  <Config Name="Timezone" Target="TZ" Default="America/New_York" Mode=""
+          Description="Timezone the schedule is interpreted in."
+          Type="Variable" Display="always" Required="true" Mask="false"/>
+
+  <Config Name="Mode" Target="MODE" Default="ids" Mode=""
+          Description="'ids' = process exactly the parishes listed below. 'all' = process every enabled parish with data older than Stale days."
+          Type="Variable" Display="always" Required="true" Mask="false"/>
+
+  <Config Name="Parishes" Target="PARISHES" Default="ss-c st-basil-the-g" Mode=""
+          Description="Parish IDs to process when Mode=ids. Separate with spaces or commas."
+          Type="Variable" Display="always" Required="false" Mask="false"/>
+
+  <Config Name="Stale days" Target="STALE_DAYS" Default="7" Mode=""
+          Description="When Mode=all, only reprocess parishes whose data is older than this many days."
+          Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="Run on start" Target="RUN_ON_START" Default="false" Mode=""
+          Description="'true' runs the worker once immediately when the container starts, then follows the schedule. Handy for testing."
+          Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="Dry run" Target="DRY_RUN" Default="false" Mode=""
+          Description="'true' downloads and extracts but writes nothing to Notion."
+          Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="Verbose" Target="VERBOSE" Default="false" Mode=""
+          Description="'true' enables debug logging."
+          Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="Log retention (days)" Target="LOG_RETENTION_DAYS" Default="30" Mode=""
+          Description="Delete per-run logs older than this. 0 disables pruning."
+          Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="Logs" Target="/logs" Default="/mnt/user/appdata/bulletin-worker/logs"
+          Mode="rw"
+          Description="Per-run logs (run-YYYYMMDD-HHMMSS.log)."
+          Type="Path" Display="always" Required="true" Mask="false"/>
+</Container>
