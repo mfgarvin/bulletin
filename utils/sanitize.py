@@ -35,6 +35,15 @@ LONG_CONFESSION_MINUTES = 120
 _APPOINTMENT_RE = re.compile(
     r"\b(appointment|call the (parish )?office|by request)\b", re.IGNORECASE
 )
+# A note that *leads* with appointment language describes an availability, not a
+# scheduled slot. St. Columbkille prints "…and by appointment" as the tail of its
+# Reconciliation sentence, and the model has turned that trailing clause into a
+# slot of its own with an invented day and time.
+_APPOINTMENT_ONLY_RE = re.compile(
+    r"^\s*\(?\s*(and |or )?(by )?(appointment|arrangement)"
+    r"|^\s*\(?\s*(please )?call the|^\s*\(?\s*(available )?(up)?on request",
+    re.IGNORECASE,
+)
 # Only a note that *leads* with the cancellation describes its own entry.
 # "Dedication of the Altar; no 9:00 AM Mass this day" is a real 11:00 Mass
 # whose note happens to mention a different, cancelled one.
@@ -380,6 +389,45 @@ def _cross_check_mass_references(site: SiteInfo, report: SanitizeReport) -> None
             )
 
 
+def _fold_appointment_only(items: list, label: str, report: SanitizeReport) -> list:
+    """Drop slots that are really just "…and by appointment", keeping the note.
+
+    A bulletin's "Saturday 2:30-3:45 PM … and by appointment" is two facts: a
+    scheduled window, and a standing availability with no day or time. When the
+    model emits the availability as its own slot it has to invent both, so the
+    entry is a fabricated time wearing a real note.
+
+    Deliberately narrow: only a slot whose note *opens* with appointment
+    language, that states no end, and that is not the only slot left. A real
+    window annotated "or by appointment" keeps its stated end and is untouched.
+    """
+    if len(items) < 2:
+        return items
+
+    keep, folded = [], []
+    for item in items:
+        if (
+            item.end_time is None
+            and item.notes
+            and _APPOINTMENT_ONLY_RE.search(item.notes)
+        ):
+            folded.append(item)
+        else:
+            keep.append(item)
+
+    if not keep:  # every slot looked like an addendum; trust the extraction
+        return items
+
+    for item in folded:
+        for survivor in keep:
+            survivor.notes = _merge_notes(survivor.notes, item.notes)
+        report.repair(
+            f"{label}: dropped {item.day.value} {item.start_time:04d} slot that was "
+            f"only an appointment note - folded into the scheduled slots"
+        )
+    return keep
+
+
 def _check_confession_spans(
     confessions: list[ConfessionTime], report: SanitizeReport
 ) -> None:
@@ -422,6 +470,9 @@ def sanitize_extraction(
 
         site.mass_times = _clean_masses(site.mass_times, report)
         site.confession_times = _clean_ranges(
+            site.confession_times, "confession", report
+        )
+        site.confession_times = _fold_appointment_only(
             site.confession_times, "confession", report
         )
         _check_confession_spans(site.confession_times, report)

@@ -101,6 +101,15 @@ Extract the following information:
      the slot and OMIT `end_time` entirely. Never invent an end time, never stretch the slot to
      the next listed start, and never repeat the start as the end - a slot from 16:00 to 16:00
      means something different downstream.
+   - **"By appointment" is never its own slot.** A clause like "and by appointment", "or call
+     the parish office", "available upon request" carries no day and no time. Attach it to the
+     `notes` of the confession slots that are listed, and do not invent a day or time for it.
+     "Saturday, 2:30-3:45 PM, the Thursday before First Friday 7:00-8:00 PM and by appointment"
+     is TWO slots, both noting that appointments are also available - not three.
+   - **Do not anchor a confession to a Mass the bulletin didn't tie it to.** A Mass time listed
+     elsewhere on the page (a Mass schedule sidebar, a vigil time) is not evidence of confession
+     at or after that Mass. Only emit a slot when the bulletin says confession happens then.
+     Never pull a time in from a different sacrament's paragraph (baptism, anointing, marriage).
    - **A day-specific line ADDS to a day-range line; it does not replace it.** Given
      "Monday-Friday: 7:45 am & 11:30 am" followed by "Wednesday: 5:00-5:25 pm", Wednesday has
      THREE slots (7:45, 11:30, and 5:00-5:25) - the second line is an extra Wednesday offering,
@@ -132,6 +141,15 @@ Extract the following information:
   placeholder for "time unknown" — downstream that becomes a real midnight event. This is about
   a missing *start*: a slot with a known start and an unknown end is still worth having, so keep
   it and omit only `end_time`.
+- **How long a Mass runs**, when the bulletin doesn't say: about 1 hour for a Sunday Mass or a
+  Saturday vigil, about 30 minutes for a weekday Mass. Use this for ONE purpose — to place the
+  start of something the bulletin schedules relative to a Mass. "Confessions after the 8:00 AM
+  Sunday Mass" starts at about 9:00; "confessions after the 8:15 AM weekday Mass" at about 8:45.
+  Never use the Mass's own start as the start of what follows it, and put the bulletin's wording
+  ("After the 8:00 AM Mass") in `notes` so the anchor is visible.
+  This is NOT a licence to compute an end time. An event that follows a Mass still has no stated
+  end, so `end_time` is still omitted. Never write a note saying an end was estimated, assumed,
+  or inferred — if you find yourself wanting to, omit `end_time` instead.
 
 6. **Parish events** (shared across all sites): retreats, fish fries, bible studies, RCIA,
    youth group, Knights of Columbus, fundraisers, etc.

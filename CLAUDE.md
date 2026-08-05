@@ -368,6 +368,50 @@ now reads `end_next_day` from the JSON instead of inferring it from
 `end <= start`, which was the root cause of the 24-hour in-progress bug. The two
 repos can ship in either order.
 
+**A/B validation.** The prompt changes were checked against 20 parishes
+(stratified by publisher, plus the 8 this work touched), extracting the *same
+cached PDF bytes* under the old and new prompt/schema pairs. The new prompt was
+run twice to establish a noise floor, which turned out to matter: two runs of the
+identical prompt agree on only 65-80% of parishes, so a raw old-vs-new diff
+mostly measures model nondeterminism. Judge prompt changes by systematic
+metrics, not diff counts.
+
+| metric | old | new | new (2nd) | final |
+|---|---|---|---|---|
+| confession spans ≥2h (the `&`-as-range tell) | 8 | 0 | 0 | 0 |
+| notes admitting an estimated end | 2 | 0 | 0 | 0 |
+| appointment-only slots (invented day/time) | 0 | 1 | 0 | 0 |
+| open-ended slots | 3 | 27 | 26 | 25 |
+
+Every "lost" end time checked by hand was the old prompt *inventing* one:
+St. Joseph 13722 `9:30am - Adoration` became `9:30-10:30`; `0141` "After the
+8:15am Mass" became `9:00-9:30`; `0054` gained an adoration slot the bulletin
+never mentions (that text is its confession schedule). One old note said the
+quiet part out loud: *"end time estimated by bulletin context."*
+
+**Two fixes came out of the A/B:**
+
+- *"By appointment" was becoming its own slot.* St. Columbkille prints
+  "Saturday, 2:30-3:45 PM, the Thursday before the First Friday 7:00-8:00 PM and
+  by appointment" — two slots and a trailing availability. The model invented a
+  day and time for the availability, and separately anchored a confession to a
+  Vigil Mass time lifted from the Mass sidebar. Making "no end" a legal encoding
+  had lowered the cost of emitting a slot from a vague anchor. The prompt now
+  says an appointment clause is a note on the listed slots, and that a Mass time
+  elsewhere on the page is not evidence of confession at that Mass.
+  `_fold_appointment_only()` in `utils/sanitize.py` is the backstop: it drops a
+  slot whose note *opens* with appointment language and states no end, folding
+  the note into the real slots. Narrow by design — a real window annotated "or
+  by appointment" keeps its stated end.
+
+- *Mass durations, scoped to placing starts.* The bulletins say "confessions
+  after the 8:00 AM Mass" without saying when Mass ends. The prompt now supplies
+  the presumption (~1 hour Sunday/vigil, ~30 min weekday) for the single purpose
+  of placing a start that is anchored to a Mass, with an explicit prohibition on
+  using it to synthesize an end. St. Vincent de Paul went `9:00-9:30` (old,
+  invented end) → `8:00` open-ended (wrong start, during Mass) → `9:00`
+  open-ended (correct).
+
 ### v2.5.3 (2026-08-04) - Browser-TLS fallback; fix weekly job skipping itself
 
 **Bug 1 — the weekly run silently processed nothing.** The 2026-08-01 Actions
