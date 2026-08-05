@@ -1,7 +1,7 @@
 {
   "3a929b8f-0e6e-8124-97b7-ff7454279e9c": {
     "ID": 1,
-    "Name": "Saint Anne, Rittman",
+    "Name": "Saint Anne",
     "Mass Times": {
       "Saturday": [
         1800
@@ -764,7 +764,7 @@
   },
   "2df29b8f-0e6e-8198-b44a-ecb8501e19c5": {
     "ID": 22,
-    "Name": "Saint Vincent de Paul Catholic Church (Saint Vincent de Paul Catholic Parish)",
+    "Name": "Saint Vincent de Paul Catholic Church - Akron",
     "Mass Times": {
       "Saturday": [
         1700
@@ -1134,7 +1134,7 @@
   },
   "2df29b8f-0e6e-81c4-a283-dac7310c10f5": {
     "ID": 31,
-    "Name": "Saint Rocco Catholic Church (Saint Rocco Parish)",
+    "Name": "Saint Rocco Catholic Church",
     "Mass Times": {
       "Saturday": [
         645,
@@ -1691,7 +1691,7 @@
   },
   "2df29b8f-0e6e-8179-a9a5-ea00e4206a69": {
     "ID": 45,
-    "Name": "Saint Paschal Baylon (Saint Paschal Baylon Church)",
+    "Name": "Saint Paschal Baylon",
     "Mass Times": {
       "Saturday": [
         900,
@@ -3582,7 +3582,7 @@
   },
   "2df29b8f-0e6e-8178-b473-d98ff8e84300": {
     "ID": 88,
-    "Name": "Saint Helen, Newbury",
+    "Name": "Saint Helen",
     "Mass Times": {
       "Saturday": [
         800,
@@ -3665,7 +3665,38 @@
   "2df29b8f-0e6e-810e-bde9-dbf004496439": {
     "ID": 90,
     "Name": "Saint Francis of Assissi",
-    "Mass Times": {},
+    "Mass Times": {
+      "Sunday": [
+        800,
+        1000,
+        1200,
+        1800
+      ],
+      "Monday": [
+        630,
+        900
+      ],
+      "Tuesday": [
+        630,
+        900
+      ],
+      "Wednesday": [
+        630,
+        900
+      ],
+      "Thursday": [
+        630,
+        900
+      ],
+      "Friday": [
+        630,
+        900
+      ],
+      "Saturday": [
+        815,
+        1630
+      ]
+    },
     "Confessions": {},
     "Adoration": {}
   },
@@ -3795,7 +3826,34 @@
   "2df29b8f-0e6e-8151-ab18-e5ffb7ce8c25": {
     "ID": 94,
     "Name": "Saint Francis de Sales",
-    "Mass Times": {},
+    "Mass Times": {
+      "Sunday": [
+        730,
+        900,
+        1100
+      ],
+      "Monday": [
+        815
+      ],
+      "Tuesday": [
+        815
+      ],
+      "Wednesday": [
+        815
+      ],
+      "Thursday": [
+        815,
+        1830
+      ],
+      "Friday": [
+        815,
+        900
+      ],
+      "Saturday": [
+        815,
+        1700
+      ]
+    },
     "Confessions": {},
     "Adoration": {}
   },
@@ -3841,7 +3899,7 @@
   },
   "2df29b8f-0e6e-81cf-aae4-ef161a4d16fd": {
     "ID": 96,
-    "Name": "Saint Elizabeth of Hungary, Cleveland",
+    "Name": "Saint Elizabeth of Hungary",
     "Mass Times": {},
     "Confessions": {},
     "Adoration": {}
@@ -4074,9 +4132,30 @@
       "Sunday": [
         900,
         1100
+      ],
+      "Monday": [
+        830
+      ],
+      "Tuesday": [
+        830
+      ],
+      "Wednesday": [
+        830
+      ],
+      "Thursday": [
+        830
+      ],
+      "Friday": [
+        700
       ]
     },
-    "Confessions": {},
+    "Confessions": {
+      "Saturday": [
+        {
+          "1600": 45
+        }
+      ]
+    },
     "Adoration": {
       "Tuesday": [
         {
@@ -4087,7 +4166,7 @@
   },
   "2df29b8f-0e6e-8104-8424-c7773b03b3a2": {
     "ID": 103,
-    "Name": "Saint Columbkille Parish (Roman Catholic Church)",
+    "Name": "Saint Columbkille Parish",
     "Mass Times": {
       "Saturday": [
         815,
@@ -4214,7 +4293,7 @@
   },
   "2df29b8f-0e6e-8114-8f74-e9e85ba3c4d6": {
     "ID": 106,
-    "Name": "The Church of Saint Clarence (Saint Clarence Church)",
+    "Name": "The Church of Saint Clarence",
     "Mass Times": {
       "Saturday": [
         1630
@@ -4543,7 +4622,7 @@
   },
   "2df29b8f-0e6e-81b2-88c7-e60f58e7ab91": {
     "ID": 114,
-    "Name": "Saint Boniface, Cleveland",
+    "Name": "Saint Boniface",
     "Mass Times": {
       "Saturday": [
         1700
@@ -4614,7 +4693,7 @@
   },
   "2df29b8f-0e6e-8112-bdcd-c502ed4c9799": {
     "ID": 116,
-    "Name": "Saint Bernadette Parish (Saint Bernadette Church)",
+    "Name": "Saint Bernadette Parish",
     "Mass Times": {
       "Saturday": [
         800,
@@ -4786,15 +4865,63 @@
   },
   "2df29b8f-0e6e-813f-a774-fc6471f0e007": {
     "ID": 120,
-    "Name": "Saint Barnabas, Northfield",
-    "Mass Times": {},
+    "Name": "Saint Barnabas",
+    "Mass Times": {
+      "Sunday": [
+        830,
+        1030,
+        1730
+      ],
+      "Monday": [
+        830
+      ],
+      "Tuesday": [
+        830
+      ],
+      "Wednesday": [
+        700
+      ],
+      "Thursday": [
+        700
+      ],
+      "Friday": [
+        830
+      ],
+      "Saturday": [
+        830,
+        1630
+      ]
+    },
     "Confessions": {},
     "Adoration": {}
   },
   "2df29b8f-0e6e-818c-84c2-e78c3e9bc0fe": {
     "ID": 121,
-    "Name": "Saint Barbara, Cleveland",
-    "Mass Times": {},
+    "Name": "Saint Barbara",
+    "Mass Times": {
+      "Sunday": [
+        900,
+        1100
+      ],
+      "Monday": [
+        730
+      ],
+      "Tuesday": [
+        730
+      ],
+      "Wednesday": [
+        730
+      ],
+      "Thursday": [
+        730
+      ],
+      "Friday": [
+        730
+      ],
+      "Saturday": [
+        1630
+      ]
+    },
     "Confessions": {},
     "Adoration": {}
   },
@@ -4837,7 +4964,33 @@
   "2df29b8f-0e6e-81c4-84e2-cba95eaada54": {
     "ID": 123,
     "Name": "Saint Augustine, Barberton",
-    "Mass Times": {},
+    "Mass Times": {
+      "Sunday": [
+        800,
+        1030,
+        1715
+      ],
+      "Monday": [
+        1205
+      ],
+      "Tuesday": [
+        830,
+        1715
+      ],
+      "Wednesday": [
+        1205
+      ],
+      "Thursday": [
+        1205
+      ],
+      "Friday": [
+        1205
+      ],
+      "Saturday": [
+        830,
+        1600
+      ]
+    },
     "Confessions": {},
     "Adoration": {}
   },
@@ -5010,7 +5163,7 @@
   },
   "2df29b8f-0e6e-8167-abd2-d96cab7fd861": {
     "ID": 128,
-    "Name": "Saint Anselm Catholic Church (The Church of Saint Anselm)",
+    "Name": "Saint Anselm Catholic Church",
     "Mass Times": {
       "Monday": [
         830
@@ -5130,8 +5283,18 @@
   },
   "2df29b8f-0e6e-8154-b85c-ef5c39efad90": {
     "ID": 131,
-    "Name": "Saint Andrew Kim, Cleveland",
-    "Mass Times": {},
+    "Name": "Saint Andrew Kim",
+    "Mass Times": {
+      "Sunday": [
+        1000
+      ],
+      "Thursday": [
+        1930
+      ],
+      "Friday": [
+        1930
+      ]
+    },
     "Confessions": {},
     "Adoration": {}
   },
@@ -5387,13 +5550,23 @@
   "2df29b8f-0e6e-812d-83a0-f06c6ab0c47f": {
     "ID": 138,
     "Name": "Saint Adalbert, Cleveland",
-    "Mass Times": {},
+    "Mass Times": {
+      "Sunday": [
+        1100
+      ],
+      "Thursday": [
+        915
+      ],
+      "Saturday": [
+        1600
+      ]
+    },
     "Confessions": {},
     "Adoration": {}
   },
   "2df29b8f-0e6e-814a-b187-f2a13f8de764": {
     "ID": 139,
-    "Name": "Saint Adalbert Roman Catholic Parish (Saint Adalbert Church)",
+    "Name": "Saint Adalbert Roman Catholic Parish",
     "Mass Times": {
       "Saturday": [
         1630
@@ -5567,7 +5740,7 @@
   },
   "2df29b8f-0e6e-8139-a1fd-ebcf3dd284a9": {
     "ID": 143,
-    "Name": "Sacred Heart Chapel, Lorain",
+    "Name": "Sacred Heart Chapel",
     "Mass Times": {
       "Saturday": [
         1700
@@ -5849,7 +6022,7 @@
   },
   "2df29b8f-0e6e-8146-8010-f8884fda41cb": {
     "ID": 150,
-    "Name": "Our Lady of Peace, Cleveland",
+    "Name": "Our Lady of Peace",
     "Mass Times": {
       "Sunday": [
         900,
@@ -6328,7 +6501,7 @@
   },
   "2df29b8f-0e6e-817a-b836-df0687dff586": {
     "ID": 163,
-    "Name": "Nativity of the Blessed Virgin Mary Parish (Roman Catholic Church)",
+    "Name": "Nativity of the Blessed Virgin Mary Parish",
     "Mass Times": {
       "Saturday": [
         1600

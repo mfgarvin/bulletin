@@ -1,6 +1,6 @@
 [
   {
-    "name": "Saint Anne, Rittman",
+    "name": "Saint Anne",
     "parish_id": "st-anne-rittman-oh",
     "address": "40 S First St",
     "city": "Rittman",
@@ -423,7 +423,7 @@
     "parish_id": "1137-svdp",
     "address": "13400 Lorain Avenue",
     "city": "Cleveland",
-    "zip_code": "44111-3432",
+    "zip_code": "44111",
     "phone": "216-251-1200; 216-252-2626",
     "website": "https://www.2parishes1faithcle.org",
     "latitude": 41.457458,
@@ -559,7 +559,7 @@
     "parish_id": "saint-agnes-elyria-oh-ola",
     "address": "611 Lake Avenue",
     "city": "Elyria",
-    "zip_code": "44035-3541",
+    "zip_code": "44035",
     "phone": "440-323-5539",
     "website": "www.stmaryelyria.org",
     "latitude": 41.3645301,
@@ -1701,11 +1701,11 @@
     "events_summary": "Weekly parish picnic planning meetings are held Tuesdays at 6:00 PM in the SVDP Social Hall. Upcoming group gatherings include SVDP A&R on Sunday, Aug. 2 at the 10:00 AM Mass with Donut Sunday, and the SVDP Pro-Life meeting on Thursday, Aug. 13 at 3:00 PM. Faith Formation (PSR) registration is open for 2026–2027; the first class meets Monday, Sept. 14 at 6:30 PM."
   },
   {
-    "name": "Saint Vincent de Paul Catholic Church (Saint Vincent de Paul Catholic Parish)",
+    "name": "Saint Vincent de Paul Catholic Church - Akron",
     "parish_id": "1794",
     "address": "164 West Market Street",
     "city": "Akron",
-    "zip_code": "44303-2373",
+    "zip_code": "44303",
     "phone": "330-535-3135",
     "website": "https://www.stvincentchurch.com",
     "latitude": 41.087309,
@@ -2107,7 +2107,7 @@
   },
   {
     "name": "Saint Thomas, Sheffield Lake",
-    "parish_id": "",
+    "parish_id": "st-thomas-sheffield-lake-oh",
     "address": "715 Harris Road",
     "city": "Sheffield Lake",
     "zip_code": "44054",
@@ -2687,7 +2687,7 @@
     "events_summary": "This Sunday, July 19, there’s an Alumni Picnic at the Ironman Center, and a pre-baptism class at St. John Nepomucene at 11:30 AM. The Taste of St. Casimir Polish Festival runs Saturday, July 25 from 2:00–10:00 PM and Sunday, July 26 from 12:30–7:00 PM at St. Casimir Church. The St. John Paul II Ozanam Center continues its weekly Hot Meal Program every Thursday from 4:00–5:30 PM, and volunteers are needed the last Saturday of each month from 8:00 AM–Noon."
   },
   {
-    "name": "Saint Rocco Catholic Church (Saint Rocco Parish)",
+    "name": "Saint Rocco Catholic Church",
     "parish_id": "1841",
     "address": "3205 Fulton Road",
     "city": "Cleveland",
@@ -3279,7 +3279,7 @@
         {
           "day": "Wednesday",
           "start": "09:00",
-          "end": "09:00",
+          "end": null,
           "end_next_day": false,
           "notes": "After the 8:15am Mass (end time not specified)"
         },
@@ -3465,7 +3465,7 @@
   },
   {
     "name": "Saint Peter, Cleveland",
-    "parish_id": "",
+    "parish_id": "st-peter-cleveland-oh",
     "address": "1533 E. 17th Street",
     "city": "Cleveland",
     "zip_code": "44114",
@@ -3855,7 +3855,7 @@
     "parish_id": "1137",
     "address": "4427 Rocky River Drive",
     "city": "Cleveland",
-    "zip_code": "44135-2551",
+    "zip_code": "44135",
     "phone": "216-251-1200",
     "website": "https://www.2parishes1faithcle.org",
     "latitude": 41.434398,
@@ -4001,7 +4001,7 @@
     "events_summary": "This week includes Coffee Hour on Sunday at 11:00am and the Rosary for Peace & Life Sundays at 5:00pm at the St. Patrick rectory. Eucharistic Adoration is held Wednesdays after the 5:30pm Mass in the rectory chapel until 8:00pm. Mark your calendar for the Food Truck Festival on Saturday, July 25 (12:00–8:00pm) and the Parish Outdoor Mass & Picnic Palooza on Sunday, August 30 at 10:30am."
   },
   {
-    "name": "Saint Paschal Baylon (Saint Paschal Baylon Church)",
+    "name": "Saint Paschal Baylon",
     "parish_id": "5493",
     "address": "5384 Wilson Mills Road",
     "city": "Highland Heights",
@@ -4548,7 +4548,7 @@
     "parish_id": "st-mel-cleveland-oh",
     "address": "14436 Triskett Road",
     "city": "Cleveland",
-    "zip_code": "44111-2263",
+    "zip_code": "44111",
     "phone": "216-941-4313",
     "website": "http://www.stmel.net",
     "latitude": 41.4614558,
@@ -5375,7 +5375,7 @@
   },
   {
     "name": "Saint Mary",
-    "parish_id": "",
+    "parish_id": "st-mary-lorain-oh",
     "address": "209 W. 7th Street",
     "city": "Lorain",
     "zip_code": "44052",
@@ -7397,7 +7397,7 @@
           {
             "day": "Friday",
             "start": "09:00",
-            "end": "09:00",
+            "end": null,
             "end_next_day": false,
             "notes": "First Fridays: begins 9:00 and continues overnight until Saturday 9:00"
           }
@@ -8241,7 +8241,7 @@
     "parish_id": "1311",
     "address": "10205 Lorain Avenue",
     "city": "Cleveland",
-    "zip_code": "44111-5435",
+    "zip_code": "44111",
     "phone": "216-251-0300",
     "website": "www.sioaparish.org",
     "latitude": 41.4656844,
@@ -8443,7 +8443,7 @@
     "events_summary": "St. Hilary’s parish picnic is Sunday, September 6, beginning with an outdoor Mass at 5:30 PM, followed by dinner, a movie, and fireworks. The Classic Sabers 50+ Ministry has an Amish Country trip to Holmes County on Thursday, August 27 ($140), and the Holy Spirit Prayer Group meets the 2nd and 4th Tuesdays from 7:00–8:30 PM (next noted date: July 28). The 12-week “Build a New Life” workshop begins September 3 (7:00–9:30 PM ET) with early-bird registration through August 1."
   },
   {
-    "name": "Saint Helen, Newbury",
+    "name": "Saint Helen",
     "parish_id": "sh-n",
     "address": "12060 Kinsman Rd.",
     "city": "Newbury",
@@ -8660,7 +8660,7 @@
     "address": "6850 Mayfield Road",
     "city": "Gates Mills",
     "zip_code": "44040",
-    "phone": null,
+    "phone": "(440) 461-0066",
     "website": "https://www.stfrancisgm.org/",
     "latitude": 41.5194991,
     "longitude": -81.4302456,
@@ -8668,7 +8668,120 @@
     "timestamp": null,
     "invite_feedback": true,
     "schedules": {
-      "mass": [],
+      "mass": [
+        {
+          "day": "Sunday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "10:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "12:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "18:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "Life Teen"
+        },
+        {
+          "day": "Monday",
+          "start": "06:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Monday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Tuesday",
+          "start": "06:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Tuesday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Wednesday",
+          "start": "06:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Wednesday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "06:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "06:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "08:15",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "16:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        }
+      ],
       "confession": [],
       "adoration": {
         "is_perpetual": false,
@@ -8860,7 +8973,7 @@
     "parish_id": "0523",
     "address": "3434 George Avenue",
     "city": "Parma",
-    "zip_code": "44134-2904",
+    "zip_code": "44134",
     "phone": "(440) 884-2319",
     "website": "stfrancisdesales-church.org",
     "latitude": 41.404652,
@@ -8950,7 +9063,7 @@
     "address": "4019 Manchester Road",
     "city": "Akron",
     "zip_code": "44319",
-    "phone": null,
+    "phone": "(330) 644-2225",
     "website": "https://stfparish.com/",
     "latitude": 40.9928459,
     "longitude": -81.5564463,
@@ -8958,7 +9071,92 @@
     "timestamp": null,
     "invite_feedback": true,
     "schedules": {
-      "mass": [],
+      "mass": [
+        {
+          "day": "Sunday",
+          "start": "07:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "11:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Monday",
+          "start": "08:15",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Tuesday",
+          "start": "08:15",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Wednesday",
+          "start": "08:15",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "08:15",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "18:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "08:15",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "during school year only"
+        },
+        {
+          "day": "Saturday",
+          "start": "08:15",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "17:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        }
+      ],
       "confession": [],
       "adoration": {
         "is_perpetual": false,
@@ -9064,8 +9262,8 @@
     "events_summary": "This week St. Eugene welcomes Fr. Sibi Micheal, MS for the La Salette Mission Appeal, and Holy Land Gifts will be for sale after all Masses in the South Wing. The Prayer Quilt Ministry meets Tuesday, July 21 at 6:30 PM, and High School Youth Group continues Tuesdays at 7:00 PM in the North Wing. Jr. High Youth Group begins Wednesday, July 29 from 7:00–8:30 PM, and a Holy Cross Cemetery pre-planning seminar is offered Wednesday, August 5 at 5:30 PM."
   },
   {
-    "name": "Saint Elizabeth of Hungary, Cleveland",
-    "parish_id": "",
+    "name": "Saint Elizabeth of Hungary",
+    "parish_id": "st-elizabeth-of-hungary-cleveland-oh",
     "address": null,
     "city": "Cleveland",
     "zip_code": "44104",
@@ -9594,8 +9792,8 @@
     "website": "https://www.stcypriansparish.com/",
     "latitude": 41.7782328,
     "longitude": -81.1354655,
-    "bulletin_url": "https://www.stcypriansparish.com/weekly-bulletin",
-    "timestamp": null,
+    "bulletin_url": "https://www.stcypriansparish.com/upcoming-events",
+    "timestamp": "2026-08-04",
     "invite_feedback": false,
     "schedules": {
       "mass": [
@@ -9614,14 +9812,57 @@
           "notes": null
         },
         {
+          "day": "Monday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": "Weekday Mass"
+        },
+        {
+          "day": "Tuesday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": "Weekday Mass"
+        },
+        {
+          "day": "Wednesday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": "Weekday Mass"
+        },
+        {
+          "day": "Thursday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": "Weekday Mass"
+        },
+        {
+          "day": "Friday",
+          "start": "07:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "Weekday Mass"
+        },
+        {
           "day": "Saturday",
           "start": "17:00",
           "mass_date": null,
           "language": null,
+          "notes": "Vigil Mass"
+        }
+      ],
+      "confession": [
+        {
+          "day": "Saturday",
+          "start": "16:00",
+          "end": "16:45",
+          "end_next_day": false,
           "notes": null
         }
       ],
-      "confession": [],
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -9635,10 +9876,10 @@
         ]
       }
     },
-    "events_summary": "This month at St. Cyprian includes the St. Blaise throat blessing after all Masses (Jan 31/Feb 1) and a Knights of Columbus meeting on Wednesday, Feb. 4 at 7:00 p.m. Upcoming highlights include the Super Bowl Pancake Breakfast on Sunday, Feb. 8 (9:00 a.m.–1:00 p.m.) and the Mardi Gras Dinner Dance on Saturday, Feb. 14 at 6:00 p.m. Ongoing opportunities include Eucharistic Adoration & Vespers every Tuesday from 9:00 a.m.–6:30 p.m., plus PSR and OCIA on Mondays from 6:15–7:30 p.m."
+    "events_summary": "Upcoming dates: Rosary for our Country is Aug. 1 at 4:30 p.m., and Missionary Sunday is Aug. 1–2 at all Masses. The St. Cyprian Blood Drive is Aug. 6 from 1:00–6:00 p.m., and Fr. George’s Anniversary Celebration is Aug. 23 at 11:00 a.m. St. Cyprian Reverse Raffle is scheduled for Oct. 17."
   },
   {
-    "name": "Saint Columbkille Parish (Roman Catholic Church)",
+    "name": "Saint Columbkille Parish",
     "parish_id": "sc-p",
     "address": "6740 Broadview Road",
     "city": "Parma",
@@ -9741,7 +9982,7 @@
         {
           "day": "Saturday",
           "start": "16:00",
-          "end": "16:00",
+          "end": null,
           "end_next_day": false,
           "notes": "Confessions available after the 4:00 PM Vigil Mass (end time not stated)."
         }
@@ -9952,7 +10193,7 @@
     "events_summary": "St. Colette has Eucharistic Adoration on Mondays from 9:30 a.m.–6:00 p.m. in the church, and OCIA (Becoming Catholic) meets Tuesdays at 6:30 p.m. in the Atrium. Upcoming events include a Baptism Class on Sunday, August 16 (after the 11:45 a.m. Mass) plus “Hot Dog Sunday” after the 10:00 a.m. and 11:45 a.m. Masses, and a Kevin Matthews presentation on Tuesday, August 18 at 6:30 p.m. Fundraisers include the Spaghetti Dinner on Sunday, August 30 at 1:00 p.m. in Corbie Hall and the Pig Roast on Saturday, September 26 (doors 5:00 p.m., dinner 6:15 p.m.)."
   },
   {
-    "name": "The Church of Saint Clarence (Saint Clarence Church)",
+    "name": "The Church of Saint Clarence",
     "parish_id": "0678",
     "address": "30106 Lorain Rd.",
     "city": "North Olmsted",
@@ -10705,8 +10946,8 @@
     "events_summary": "The St. Kizito Foundation annual fundraiser is Sunday, July 26, beginning with Mass at 11:30am, followed by a luncheon and program in the Kenny Center (tickets $45). The Suburban West Deanery “Night at the Drive-In” is Sunday, August 2 with Mass at 6:30pm, then food and fun and a 9:00pm movie. St. Brendan’s monthly Ox-Cart Food Pantry collection continues on the second weekend of each month, with the next collection on the weekend of August 8–9."
   },
   {
-    "name": "Saint Boniface, Cleveland",
-    "parish_id": "",
+    "name": "Saint Boniface",
+    "parish_id": "st-boniface-cleveland-oh",
     "address": "3545 W. 54th Street",
     "city": "Cleveland",
     "zip_code": "44102",
@@ -10880,7 +11121,7 @@
     "events_summary": "Youth Group Kickoff at Get Air is Friday, July 24 from 5:45–8:00 p.m. ($10; ages 11–18). Catholic faith inquiry meetings (for those interested in becoming Catholic or completing initiation sacraments) are Thursday, July 30 and Thursday, August 27 at 7:00 p.m. in the church. Summer Youth Group gatherings continue in St. Mary’s Social Hall on July 24, Aug. 7, Aug. 8 (Game Night), and Aug. 21."
   },
   {
-    "name": "Saint Bernadette Parish (Saint Bernadette Church)",
+    "name": "Saint Bernadette Parish",
     "parish_id": "st-bernadette-westlake-oh",
     "address": "2256 Clague Road",
     "city": "Westlake",
@@ -11299,12 +11540,12 @@
     "events_summary": "St. Vincent de Paul meets Tuesday, July 21 at 7:30pm in the RMR. The Pastor Installation Mass for Fr. Patrick Schultz is Saturday, August 1 at 4:00pm, with a reception afterward in Saunders Hall. A St. Vincent de Paul clothing drive will be held the weekend of August 1–2 (drop off donations before each Mass), and a new 55+ ministry kicks off Tuesday, August 18 at 6:30pm by the Mary Grotto."
   },
   {
-    "name": "Saint Barnabas, Northfield",
+    "name": "Saint Barnabas",
     "parish_id": "0509",
     "address": "9451 Brandywine Road",
     "city": "Northfield",
     "zip_code": "44067",
-    "phone": null,
+    "phone": "(330) 467-7959",
     "website": "https://www.stbarnabasfamily.org/",
     "latitude": 41.3112067,
     "longitude": -81.5378666,
@@ -11312,7 +11553,78 @@
     "timestamp": null,
     "invite_feedback": true,
     "schedules": {
-      "mass": [],
+      "mass": [
+        {
+          "day": "Sunday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "10:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "17:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Monday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Tuesday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Wednesday",
+          "start": "07:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "07:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "16:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        }
+      ],
       "confession": [],
       "adoration": {
         "is_perpetual": false,
@@ -11322,12 +11634,12 @@
     "events_summary": null
   },
   {
-    "name": "Saint Barbara, Cleveland",
+    "name": "Saint Barbara",
     "parish_id": "sbar-c",
     "address": "1505 Denison Avenue",
     "city": "Cleveland",
     "zip_code": "44109",
-    "phone": null,
+    "phone": "(216) 661-1191",
     "website": "https://www.facebook.com/p/St-Barbara-Church-Cleveland-Ohio-100068192565775/",
     "latitude": 41.4513158,
     "longitude": -81.6913123,
@@ -11335,7 +11647,64 @@
     "timestamp": null,
     "invite_feedback": true,
     "schedules": {
-      "mass": [],
+      "mass": [
+        {
+          "day": "Sunday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "11:00",
+          "mass_date": null,
+          "language": "Polish",
+          "notes": null
+        },
+        {
+          "day": "Monday",
+          "start": "07:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Tuesday",
+          "start": "07:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Wednesday",
+          "start": "07:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "07:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "07:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "16:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        }
+      ],
       "confession": [],
       "adoration": {
         "is_perpetual": false,
@@ -11432,7 +11801,7 @@
     "address": "204 6th Street NW",
     "city": "Barberton",
     "zip_code": "44203",
-    "phone": null,
+    "phone": "(330) 745-0011",
     "website": "https://www.staugustinebarberton.org/",
     "latitude": 41.0163218,
     "longitude": -81.6127217,
@@ -11440,7 +11809,85 @@
     "timestamp": null,
     "invite_feedback": true,
     "schedules": {
-      "mass": [],
+      "mass": [
+        {
+          "day": "Sunday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "10:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "17:15",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Monday",
+          "start": "12:05",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Tuesday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": "School Mass"
+        },
+        {
+          "day": "Tuesday",
+          "start": "17:15",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Wednesday",
+          "start": "12:05",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "12:05",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "12:05",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "16:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        }
+      ],
       "confession": [],
       "adoration": {
         "is_perpetual": false,
@@ -11813,7 +12260,7 @@
     "events_summary": "Eucharistic Adoration begins Mondays at 4:30pm starting August 3, with Confession and Mass held at the usual times. The parish will celebrate the Assumption of the Blessed Virgin Mary on Friday, August 14 at 5:30pm. A Holy Cross Cemetery pre-planning seminar is Wednesday, August 5 at 5:30pm, and a Wednesday 6:30pm group study meets Aug. 12, 19, 26 and Sept. 2, 9, 16 at St. Joseph Church (Nolan Hall)."
   },
   {
-    "name": "Saint Anselm Catholic Church (The Church of Saint Anselm)",
+    "name": "Saint Anselm Catholic Church",
     "parish_id": "1736",
     "address": "12969 Chillicothe Rd.",
     "city": "Chesterland",
@@ -12087,7 +12534,7 @@
     "events_summary": "On Monday, July 27 at 7:00 p.m., Bishop Michael Woost will celebrate the Installation Mass for Fr. Rich Samide, followed by a reception in Centennial Hall. Tuesday evenings in July at 7:00 p.m., join Fr. Rich for “Tuesday Nights on the Lawn” (rain location: the Merici Room). Mark your calendars for the Parish Picnic/Welcome Back Day on Sunday, August 23 from 10:00 a.m.–1:00 p.m., when the 50/50 summer drawing winner will be selected."
   },
   {
-    "name": "Saint Andrew Kim, Cleveland",
+    "name": "Saint Andrew Kim",
     "parish_id": "sak-cle",
     "address": "2310 W. 14th Street",
     "city": "Cleveland",
@@ -12100,7 +12547,29 @@
     "timestamp": null,
     "invite_feedback": true,
     "schedules": {
-      "mass": [],
+      "mass": [
+        {
+          "day": "Sunday",
+          "start": "10:00",
+          "mass_date": null,
+          "language": "Korean",
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "19:30",
+          "mass_date": null,
+          "language": "Korean",
+          "notes": null
+        },
+        {
+          "day": "Friday",
+          "start": "19:30",
+          "mass_date": null,
+          "language": "Korean",
+          "notes": null
+        }
+      ],
       "confession": [],
       "adoration": {
         "is_perpetual": false,
@@ -12231,7 +12700,7 @@
     "parish_id": "1472",
     "address": "10932 St. Clair Avenue",
     "city": "Cleveland",
-    "zip_code": "44108-1939",
+    "zip_code": "44108",
     "phone": "216-451-3262",
     "website": "www.saintaloysiuscleveland.com",
     "latitude": 41.5397129,
@@ -12580,7 +13049,7 @@
     "parish_id": "saint-agnes-elyria-oh",
     "address": "320 Middle Avenue",
     "city": "Elyria",
-    "zip_code": "44035-5733",
+    "zip_code": "44035",
     "phone": "440-322-5622",
     "website": "www.saintagneselyria.church",
     "latitude": 41.377289,
@@ -12737,7 +13206,7 @@
     "address": "2347 E. 83rd Street",
     "city": "Cleveland",
     "zip_code": "44104",
-    "phone": null,
+    "phone": "(216) 881-7647",
     "website": "https://olpchurch.com/st-adalbertolbs",
     "latitude": 41.4950223,
     "longitude": -81.6292108,
@@ -12745,7 +13214,29 @@
     "timestamp": null,
     "invite_feedback": true,
     "schedules": {
-      "mass": [],
+      "mass": [
+        {
+          "day": "Sunday",
+          "start": "11:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Thursday",
+          "start": "09:15",
+          "mass_date": null,
+          "language": null,
+          "notes": "During School Year"
+        },
+        {
+          "day": "Saturday",
+          "start": "16:00",
+          "mass_date": null,
+          "language": "Swahili",
+          "notes": "Last Saturday of the Month"
+        }
+      ],
       "confession": [],
       "adoration": {
         "is_perpetual": false,
@@ -12755,7 +13246,7 @@
     "events_summary": null
   },
   {
-    "name": "Saint Adalbert Roman Catholic Parish (Saint Adalbert Church)",
+    "name": "Saint Adalbert Roman Catholic Parish",
     "parish_id": "0090",
     "address": "66 Adalbert Street",
     "city": "Berea",
@@ -13173,7 +13664,7 @@
     "events_summary": "Sacred Heart of Jesus Parish is holding its Annual Parish Picnic on Sunday, August 9, 2026 from 11:00 AM–2:00 PM (after the 10:00 AM Mass), with a potluck starting at 11:30 AM. The Cares Outreach Ministry planning committee meets Wednesday, August 12 at 1:00 PM in Mary’s Room, and the Cares Military “Christmas in July” Giving Tree donations are due by Sunday, August 2. Upcoming summer opportunities include The FEST on Saturday, August 15 (outdoor Mass at 8:00 PM) and a Catholic Cemeteries pre-planning seminar on Wednesday, July 29 at 5:30 PM at All Souls Cemetery."
   },
   {
-    "name": "Sacred Heart Chapel, Lorain",
+    "name": "Sacred Heart Chapel",
     "parish_id": "1823",
     "address": "4301 Pearl Avenue",
     "city": "Lorain",
@@ -13809,7 +14300,7 @@
     "events_summary": "Parish Breakfast is Saturday, July 25 at 10:30am in the rectory—please RSVP to Deborah (ext. 14). A book discussion on The Gales of November will be held Tuesday, September 29 at 7:00pm at the rectory. Ongoing: Parish School of Religion meets Sundays from 9:45–10:45am, and the parish continues collecting food pantry donations."
   },
   {
-    "name": "Our Lady of Peace, Cleveland",
+    "name": "Our Lady of Peace",
     "parish_id": "olp-cle",
     "address": "12601 Shaker Blvd",
     "city": "Cleveland",
@@ -14866,7 +15357,7 @@
     "events_summary": "Eucharistic Adoration is available at Nativity BVM Monday–Friday from 11:00 a.m. to 10:00 p.m. Upcoming gatherings include Knights of Columbus on Tuesday, July 28 at 7:00 p.m. and Holy Ground Youth Group on Sunday, August 2 at 6:00 p.m. First Saturday Rosary will be Saturday, August 1 at 9:00 a.m. at St. Joseph, and the Men’s Group has a one-time moved meeting on Tuesday, August 11 at 7:00 p.m."
   },
   {
-    "name": "Nativity of the Blessed Virgin Mary Parish (Roman Catholic Church)",
+    "name": "Nativity of the Blessed Virgin Mary Parish",
     "parish_id": "nativity-of-blessed-virgin-mary-lorain-oh",
     "address": "418 West 15th Street",
     "city": "Lorain",
@@ -15374,7 +15865,7 @@
   },
   {
     "name": "Immaculate Heart of Mary, Cleveland",
-    "parish_id": "",
+    "parish_id": "immaculate-heart-of-mary-cleveland-oh",
     "address": "6700 Lansing Avenue",
     "city": "Cleveland",
     "zip_code": "44105",
@@ -16598,7 +17089,7 @@
     "parish_id": "1236",
     "address": "3450 Sycamore Drive",
     "city": "Stow",
-    "zip_code": "44224-4421",
+    "zip_code": "44224",
     "phone": "330-688-6412",
     "website": "https://www.holyfamilystow.org",
     "latitude": 41.158383,
@@ -16949,7 +17440,7 @@
     "parish_id": "0077",
     "address": "1686 South Cleveland-Massillon Road",
     "city": "Copley",
-    "zip_code": "44321-1956",
+    "zip_code": "44321",
     "phone": "(330) 666-1373",
     "website": "www.copleyangels.org",
     "latitude": 41.0915674,
@@ -17325,7 +17816,7 @@
     "parish_id": "1259",
     "address": "1007 Superior Avenue E",
     "city": "Cleveland",
-    "zip_code": "44114-2582",
+    "zip_code": "44114",
     "phone": "216-771-6666",
     "website": "SaintJohnCathedral.com",
     "latitude": 41.5030193,
