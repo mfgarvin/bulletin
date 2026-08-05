@@ -101,6 +101,15 @@ Extract the following information:
      the slot and OMIT `end_time` entirely. Never invent an end time, never stretch the slot to
      the next listed start, and never repeat the start as the end - a slot from 16:00 to 16:00
      means something different downstream.
+   - **A day-specific line ADDS to a day-range line; it does not replace it.** Given
+     "Monday-Friday: 7:45 am & 11:30 am" followed by "Wednesday: 5:00-5:25 pm", Wednesday has
+     THREE slots (7:45, 11:30, and 5:00-5:25) - the second line is an extra Wednesday offering,
+     not a correction of the first. Only drop the general line's times for that day when the
+     bulletin says so explicitly ("no morning confessions on Wednesday", "Wednesday: 5:00 pm
+     only", "except Wednesday"). The same applies to Mass and adoration listings.
+   - When the bulletin prints an explicit range, use its stated end verbatim. Do not round it to
+     the next half hour or extend it to a following event: "5:00-5:25 pm" followed by "Vespers
+     at 5:30" is a slot ending at 5:25, not 5:30.
 
 5. **Adoration schedule** (per site):
    - Set `is_perpetual: true` ONLY if the bulletin explicitly uses the words "perpetual adoration"

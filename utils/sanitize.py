@@ -202,6 +202,22 @@ def _dedupe_ranges(items: list, label: str, report: SanitizeReport) -> list:
             continue
 
         notes_pair = (prev.notes or "", item.notes or "")
+
+        # Same (day, start), one with a stated end and one without. The
+        # bulletin printed the same slot in two places — a schedule box giving
+        # "5:00-5:25 pm" and a "this week" listing giving only "5:00 pm
+        # Confession". The open-ended one adds nothing, so keep the end.
+        if (prev.end_time is None) != (item.end_time is None):
+            prev.notes = _merge_notes(*notes_pair)
+            if prev.end_time is None:
+                prev.end_time = item.end_time
+                prev.end_next_day = item.end_next_day
+            report.repair(
+                f"{label}: merged open-ended duplicate of {item.day.value} "
+                f"{item.start_time:04d} into the slot that states an end"
+            )
+            continue
+
         if any(_APPOINTMENT_RE.search(n) for n in notes_pair):
             prev.notes = _merge_notes(*notes_pair)
             # Keep the widest window. With one end unknown there is no widest,
