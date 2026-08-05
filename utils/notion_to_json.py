@@ -173,14 +173,20 @@ def _calculate_duration(start: int, end: int, end_next_day: bool = False) -> int
     return end_mins - start_mins
 
 
-def _has_end_time(start: int, end: int, end_next_day: bool) -> bool:
+def _has_end_time(start: int, end: int | None, end_next_day: bool) -> bool:
     """Whether a slot states an end time.
 
-    `start == end` without `end_next_day` means the extraction never found one
-    ("after the 8:15am Mass"), not a zero-length slot. The mapboard has no way
-    to show an open-ended window, so those are dropped rather than exported as
-    a duration of 0 — which reads as "nothing here" anyway.
+    A null `end` means the extraction never found one ("after the 8:15am Mass").
+    The mapboard has no way to show an open-ended window, so those are dropped
+    rather than exported as a duration of 0 — which reads as "nothing here"
+    anyway.
+
+    `start == end` is also treated as open-ended, for rows written before the
+    schema allowed a null end. With `end_next_day` set those same endpoints mean
+    a full 24 hours instead, which is a real window and is kept.
     """
+    if end is None:
+        return False
     return start != end or end_next_day
 
 
@@ -195,7 +201,7 @@ def _group_confessions(confessions: list[dict]) -> dict[str, list[dict[str, int]
         day = conf.get("day")
         start = conf.get("start_time")
         end = conf.get("end_time")
-        if day and start is not None and end is not None:
+        if day and start is not None:
             next_day = bool(conf.get("end_next_day"))
             if not _has_end_time(start, end, next_day):
                 continue
@@ -222,7 +228,7 @@ def _format_adoration(adoration: dict) -> dict:
         day = slot.get("day")
         start = slot.get("start_time")
         end = slot.get("end_time")
-        if day and start is not None and end is not None:
+        if day and start is not None:
             next_day = bool(slot.get("end_next_day"))
             if not _has_end_time(start, end, next_day):
                 continue

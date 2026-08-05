@@ -91,6 +91,16 @@ Extract the following information:
 4. **Confession schedule** (per site): day, start_time, end_time.
    - If two listings share a day and start time and one is only an addendum ("or by appointment,"
      "or call the parish office"), emit ONE slot and put the addendum in `notes`.
+   - **A list of times is not a range.** "7:45 am & 11:30 am" is TWO slots, not one slot running
+     7:45-11:30. Same for "7:45, 11:30" and "7:45 and 11:30". Only an explicit range marker - a
+     dash, "to", "until", "-" - joins two times into one slot. This applies inside a day range
+     too: "Monday-Friday: 7:45 am & 11:30 am" is two slots on each of the five days, ten in all.
+     Parishes commonly schedule confessions in short blocks bracketing a weekday Mass, so a
+     multi-hour confession window is the rare case, not the default.
+   - If a start is given with no end ("Confessions at 5:00 pm", "after the 8:00 am Mass"), keep
+     the slot and OMIT `end_time` entirely. Never invent an end time, never stretch the slot to
+     the next listed start, and never repeat the start as the end - a slot from 16:00 to 16:00
+     means something different downstream.
 
 5. **Adoration schedule** (per site):
    - Set `is_perpetual: true` ONLY if the bulletin explicitly uses the words "perpetual adoration"
@@ -98,6 +108,10 @@ Extract the following information:
      adoration, weekly Holy Hour, or post-Mass adoration. If the bulletin says the chapel closes
      overnight, or lists specific hours, it is NOT perpetual.
    - Otherwise list specific time slots.
+   - Same end-time rule as confessions: if adoration has a stated start and no stated end
+     ("adoration begins after the 9:00 Mass"), keep the slot and omit `end_time`.
+   - A day covered from midnight to midnight (a middle day of a multi-day adoration) is
+     `start_time: 0, end_time: 0, end_next_day: true` - a full 24 hours, not an unknown end.
 
 **TIME ENCODING RULES (all schedules):**
 - Midnight is `0`, never `2400` and never `240`. A slot running "8:30 PM until Midnight" is
@@ -105,8 +119,10 @@ Extract the following information:
 - Set `end_next_day: true` on any slot that crosses midnight (overnight adoration, all-night
   vigils). An overnight slot ending at 6 AM is `start_time: 2200, end_time: 600,
   end_next_day: true`.
-- If a time is genuinely not stated, OMIT the entry entirely. Never use `0` or `00:00` as a
-  placeholder for "time unknown" — downstream that becomes a real midnight event.
+- If a slot has NO usable time at all, OMIT the entry entirely. Never use `0` or `00:00` as a
+  placeholder for "time unknown" — downstream that becomes a real midnight event. This is about
+  a missing *start*: a slot with a known start and an unknown end is still worth having, so keep
+  it and omit only `end_time`.
 
 6. **Parish events** (shared across all sites): retreats, fish fries, bible studies, RCIA,
    youth group, Knights of Columbus, fundraisers, etc.

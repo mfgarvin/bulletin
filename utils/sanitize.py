@@ -26,6 +26,12 @@ from schemas import (
 # bound, so it only appears if that bound is ever loosened).
 MIDNIGHT_SENTINELS = (240, 2400)
 
+# A confession slot at or above this many minutes gets flagged for review. Set
+# at two hours: it catches both known instances of the ampersand-as-range
+# misread (3h45m at the Cathedral, 2h00m at St. Vincent de Paul Elyria) and
+# accepts one standing false positive, St. Brendan's genuine 3-hour Saturday.
+LONG_CONFESSION_MINUTES = 120
+
 _APPOINTMENT_RE = re.compile(
     r"\b(appointment|call the (parish )?office|by request)\b", re.IGNORECASE
 )
@@ -96,16 +102,26 @@ def _merge_notes(*notes: str | None) -> str | None:
     return "; ".join(seen) or None
 
 
+def _minutes_between(start: int, end: int) -> int:
+    """Length of a same-day HHMM slot, in minutes."""
+    return (end // 100 * 60 + end % 100) - (start // 100 * 60 + start % 100)
+
+
 def _clean_ranges(
     items: list[ConfessionTime] | list[AdorationTime],
     label: str,
     report: SanitizeReport,
 ) -> list:
-    """Normalize, deduplicate and merge a list of start/end slots."""
+    """Normalize, deduplicate and merge a list of start/end slots.
+
+    `end_time` is optional: None means the bulletin stated a start and no end.
+    Every check below either skips those or handles them explicitly - a slot
+    with no end has nothing to compare against.
+    """
     cleaned: list = []
 
     for item in items:
-        if item.end_time in MIDNIGHT_SENTINELS:
+        if item.end_time is not None and item.end_time in MIDNIGHT_SENTINELS:
             report.repair(
                 f"{label}: repaired bogus end time {item.end_time} on "
                 f"{item.day.value} -> midnight (00:00 next day)"
@@ -114,7 +130,8 @@ def _clean_ranges(
             item.end_next_day = True
 
         # start == end == 0 is the model's way of saying "time not specified".
-        # It reads downstream as a real midnight slot, so drop it.
+        # It reads downstream as a real midnight slot, so drop it. A genuinely
+        # covered day is 00:00-00:00 with end_next_day set, and is kept.
         if item.start_time == 0 and item.end_time == 0 and not item.end_next_day:
             report.repair(
                 f"{label}: dropped {item.day.value} slot with unspecified time"
@@ -122,8 +139,26 @@ def _clean_ranges(
             )
             continue
 
+        # An end repeating the start is how the model used to say "no end
+        # stated". That collides with a real 24-hour span (same endpoints,
+        # end_next_day set), so normalize it to the unambiguous encoding.
+        if (
+            item.end_time == item.start_time
+            and not item.end_next_day
+            and item.start_time != 0
+        ):
+            report.repair(
+                f"{label}: {item.day.value} {item.start_time:04d} repeats its start "
+                "as its end - recorded as having no stated end time"
+            )
+            item.end_time = None
+
         # A slot that ends before it starts crosses midnight by definition.
-        if item.end_time < item.start_time and not item.end_next_day:
+        if (
+            item.end_time is not None
+            and item.end_time < item.start_time
+            and not item.end_next_day
+        ):
             report.repair(
                 f"{label}: {item.day.value} {item.start_time:04d}-{item.end_time:04d} "
                 "ends before it starts - marked as crossing midnight"
@@ -169,7 +204,10 @@ def _dedupe_ranges(items: list, label: str, report: SanitizeReport) -> list:
         notes_pair = (prev.notes or "", item.notes or "")
         if any(_APPOINTMENT_RE.search(n) for n in notes_pair):
             prev.notes = _merge_notes(*notes_pair)
-            prev.end_time = max(prev.end_time, item.end_time)
+            # Keep the widest window. With one end unknown there is no widest,
+            # so a stated end wins over None rather than being discarded by it.
+            ends = [e for e in (prev.end_time, item.end_time) if e is not None]
+            prev.end_time = max(ends) if ends else None
             report.repair(
                 f"{label}: merged appointment addendum into {item.day.value} "
                 f"{item.start_time:04d} slot"
@@ -326,6 +364,31 @@ def _cross_check_mass_references(site: SiteInfo, report: SanitizeReport) -> None
             )
 
 
+def _check_confession_spans(
+    confessions: list[ConfessionTime], report: SanitizeReport
+) -> None:
+    """Flag confession windows long enough to suggest a misread time list.
+
+    Parishes schedule confessions in short blocks, usually bracketing a Mass.
+    A multi-hour window is occasionally real (a long Saturday afternoon), but
+    it is also what "7:45 am & 11:30 am" turns into when the model reads an
+    ampersand as a range — which is how the Cathedral of St. John came to
+    advertise 3h45m of weekday confessions. Only the bulletin can tell the two
+    apart, so this flags rather than repairs.
+    """
+    for item in confessions:
+        if item.end_time is None or item.end_next_day:
+            continue
+        minutes = _minutes_between(item.start_time, item.end_time)
+        if minutes < LONG_CONFESSION_MINUTES:
+            continue
+        report.flag(
+            f"confession: {item.day.value} {item.start_time:04d}-{item.end_time:04d} "
+            f"spans {minutes // 60}h{minutes % 60:02d}m - verify it is one window "
+            "and not two separate times read as a range"
+        )
+
+
 def sanitize_extraction(
     extraction: BulletinExtraction, parish_id: str | None = None
 ) -> SanitizeReport:
@@ -345,6 +408,7 @@ def sanitize_extraction(
         site.confession_times = _clean_ranges(
             site.confession_times, "confession", report
         )
+        _check_confession_spans(site.confession_times, report)
         site.adoration.times = _clean_ranges(site.adoration.times, "adoration", report)
         _check_adoration(site, report, verified_perpetual)
         _cross_check_mass_references(site, report)

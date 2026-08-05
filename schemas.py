@@ -55,11 +55,15 @@ class ConfessionTime(BaseModel):
 
     day: DayOfWeek
     start_time: int = Field(..., ge=0, le=2359, description="24hr format")
-    end_time: int = Field(
-        ...,
+    end_time: Optional[int] = Field(
+        default=None,
         ge=0,
         le=2359,
-        description="24hr format. Midnight is 0 with end_next_day=true, never 2400.",
+        description=(
+            "24hr format. Midnight is 0 with end_next_day=true, never 2400. "
+            "None when the bulletin gives a start but no end ('confessions after "
+            "the 8:15 Mass') - never equal to start_time to mean the same thing."
+        ),
     )
     end_next_day: bool = Field(
         False,
@@ -69,7 +73,9 @@ class ConfessionTime(BaseModel):
 
     @field_validator("start_time", "end_time")
     @classmethod
-    def validate_time_format(cls, v: int) -> int:
+    def validate_time_format(cls, v: Optional[int]) -> Optional[int]:
+        if v is None:
+            return v
         minutes = v % 100
         if minutes > 59:
             raise ValueError(f"Invalid time {v}: minutes must be 0-59")
@@ -81,11 +87,15 @@ class AdorationTime(BaseModel):
 
     day: DayOfWeek
     start_time: int = Field(..., ge=0, le=2359, description="24hr format")
-    end_time: int = Field(
-        ...,
+    end_time: Optional[int] = Field(
+        default=None,
         ge=0,
         le=2359,
-        description="24hr format. Midnight is 0 with end_next_day=true, never 2400.",
+        description=(
+            "24hr format. Midnight is 0 with end_next_day=true, never 2400. "
+            "None when the bulletin gives a start but no end ('adoration begins "
+            "after Mass') - never equal to start_time to mean the same thing."
+        ),
     )
     end_next_day: bool = Field(
         False,
@@ -95,7 +105,9 @@ class AdorationTime(BaseModel):
 
     @field_validator("start_time", "end_time")
     @classmethod
-    def validate_time_format(cls, v: int) -> int:
+    def validate_time_format(cls, v: Optional[int]) -> Optional[int]:
+        if v is None:
+            return v
         minutes = v % 100
         if minutes > 59:
             raise ValueError(f"Invalid time {v}: minutes must be 0-59")

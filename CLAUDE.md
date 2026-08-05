@@ -295,6 +295,79 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.4 (2026-08-05) - Confession time lists; optional `end_time`
+
+**Bug 1 — a list of times read as a range.** The Cathedral of St. John (`1259`)
+prints "Monday-Friday in the Chapel: 7:45 am & 11:30 am" — two short slots
+bracketing the 12:00 Mass. The extraction read the `&` as a range and stored one
+slot of `07:45 → 11:30`, advertising 3h45m of weekday confessions on four days.
+`st-vincent-de-paul-elyria-oh` had the same misread (`09:00 → 11:00`, note
+"After the 8:00 AM & 10:00 AM Masses").
+
+Fix: the confession rules in `extractor.py` now state that `&`/`and`/`,` between
+times means separate slots, that only a dash / "to" / "until" makes a range,
+that a day range distributes ("Monday-Friday: 7:45 & 11:30" is ten slots), and
+that a multi-hour confession window is the rare case. Verified by re-extraction:
+Mon/Tue/Thu/Fri now come back as separate `07:45` and `11:30` entries.
+
+`utils/sanitize.py` gains `_check_confession_spans()`, which **flags** (never
+repairs) any confession slot ≥ `LONG_CONFESSION_MINUTES` (120). Only the
+bulletin can settle whether a long window is real, so it lands in `Issue Log`
+for triage. St. Brendan's (`0290`) genuine 3-hour Saturday is a known standing
+false positive; if that gets noisy, add a `definitions.py` exemption set rather
+than raising the threshold — 150 would stop catching the St. Vincent case, which
+is exactly 120.
+
+**Bug 2 — `start == end` meant two opposite things.** `ConfessionTime.end_time`
+and `AdorationTime.end_time` were required, so a bulletin giving a start and no
+end ("confessions after the 8:15 Mass") had nowhere to put it. The model
+repeated the start, and the two consumers disagreed about what that meant:
+
+- the mapboard (`utils/notion_to_json.py`) read it as "no end stated" and
+  dropped the slot;
+- the Introibo app read it as a **24-hour window** — it rendered "All day", and
+  because identical endpoints also made its `crossesMidnight` true, those slots
+  reported themselves *in progress for a full day*. Saint Columbkille's
+  "confessions after the 4:00 PM Vigil" claimed confession was underway at 3 AM.
+
+Both were right about their own data, because `00:00 → 00:00` with
+`end_next_day: true` **is** a real covered day — that's how the middle days of a
+multi-day adoration arrive (St. Albert the Great Tue/Wed/Thu, St. Edward Thu).
+`end_next_day` is what separates the two cases, and it always did.
+
+Fix: `end_time` is now `Optional[int]`, defaulting to `None`, on both models.
+Null means "start known, end unknown"; `start == end` no longer carries meaning
+anywhere.
+
+- `extractor.py`: omit `end_time` rather than repeating the start, for both
+  confessions and adoration. The global "omit the entry if a time isn't stated"
+  rule was reworded — it is about a missing *start*; a slot with a known start
+  and unknown end is kept.
+- `utils/sanitize.py`: null guards throughout `_clean_ranges()` and the
+  appointment merge (a stated end wins over `None` rather than being discarded
+  by it), plus a repair that normalizes a legacy `start == end` to `None`.
+  Guarded on `end_next_day` being false and the start being non-zero, so a
+  covered day is never touched.
+- `utils/notion_to_app.py`: emits `"end": null` and keeps the slot. It
+  previously required an end and would have **dropped every open-ended slot**
+  under the new schema. The app already handles a null end — same path every
+  Mass entry takes — rendering a bare start time and never counting it as in
+  progress.
+- `utils/notion_to_json.py`: `_has_end_time()` handles null. No midnight
+  special-case; `end_next_day` is the signal, and a covered day still exports
+  at 1440.
+
+**Data repair:** `python -m utils.notion_fixes --apply` rewrote the three
+affected rows on 2026-08-05 — St. Peter North Ridgeville (`0141`), St. Joseph
+(`0138`, adoration, which `UPDATE_ADORATION = False` means a normal run would
+never fix), and St. Columbkille (`sc-p`). The four covered-day adoration rows
+were correctly left alone.
+
+**App side** (`~/Code/massgpt_app_o1_preview`, separate repo): `ScheduleEntry`
+now reads `end_next_day` from the JSON instead of inferring it from
+`end <= start`, which was the root cause of the 24-hour in-progress bug. The two
+repos can ship in either order.
+
 ### v2.5.3 (2026-08-04) - Browser-TLS fallback; fix weekly job skipping itself
 
 **Bug 1 — the weekly run silently processed nothing.** The 2026-08-01 Actions

@@ -114,6 +114,11 @@ def _structured_ranges(items: list[dict]) -> list[dict[str, Any]]:
     `end_next_day` marks a slot that crosses midnight, so the app never has to
     infer it from `end < start`. Rows written before that field existed are
     backfilled here from the same comparison.
+
+    `end` is null when the bulletin gave a start and no end ("confessions after
+    the 8:15 Mass"). The app renders those as a bare start time and never counts
+    them as in progress. Only `start` is required — dropping the slot for want
+    of an end would lose a real, scheduled confession.
     """
     weekday_order = {
         "Sunday": 0, "Monday": 1, "Tuesday": 2, "Wednesday": 3,
@@ -124,13 +129,15 @@ def _structured_ranges(items: list[dict]) -> list[dict[str, Any]]:
         day = item.get("day")
         start = item.get("start_time")
         end = item.get("end_time")
-        if not day or start is None or end is None:
+        if not day or start is None:
             continue
         out.append({
             "day": day,
             "start": _hhmm(start),
             "end": _hhmm(end),
-            "end_next_day": bool(item.get("end_next_day", end < start)),
+            "end_next_day": bool(
+                item.get("end_next_day", end < start if end is not None else False)
+            ),
             "notes": item.get("notes"),
         })
     out.sort(key=lambda e: (weekday_order.get(e["day"], 99), e["start"] or ""))
