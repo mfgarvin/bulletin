@@ -123,6 +123,40 @@ def merge_sites(sites: list[SiteInfo], site_name: str) -> SiteInfo:
     )
 
 
+def collapse_sites(
+    extraction: BulletinExtraction,
+    parish_id: str,
+    parish_name: str,
+    group_size: int,
+) -> str | None:
+    """Collapse an extraction to a single site when there is one destination row.
+
+    Mutates ``extraction.sites`` in place. Returns a log line describing the
+    collapse, or None if nothing was collapsed.
+
+    Two cases land here:
+     - parish is in SINGLE_SITE_PARISHES: a shared bulletin lists other
+       parishes too, so filter to the sites belonging to this one.
+     - the bulletin group has exactly one parish: every extracted site
+       belongs to it, so merge them all. The LLM routinely splits a
+       bulletin into a main campus plus a chapel or summer-pavilion
+       "site"; without this they fall into the multi-site matcher,
+       find no SITE_MAPPINGS entry, match nothing, and the parish
+       silently saves an empty schedule.
+    """
+    if len(extraction.sites) > 1 and (
+        parish_id in SINGLE_SITE_PARISHES or group_size == 1
+    ):
+        site_names = [s.site_name for s in extraction.sites]
+        if parish_id in SINGLE_SITE_PARISHES:
+            merged = filter_and_merge_matching_sites(extraction.sites, parish_name)
+        else:
+            merged = merge_sites(extraction.sites, parish_name)
+        extraction.sites = [merged]
+        return f"Collapsed {len(site_names)} sites {site_names} → '{merged.site_name}'"
+    return None
+
+
 @dataclass
 class ProcessResult:
     """Result of processing a parish."""
@@ -205,26 +239,11 @@ async def process_parish(
         )
 
         # Collapse to a single site when there is only one destination row.
-        #
-        # Two cases land here:
-        #  - parish is in SINGLE_SITE_PARISHES: a shared bulletin lists other
-        #    parishes too, so filter to the sites belonging to this one.
-        #  - the bulletin group has exactly one parish: every extracted site
-        #    belongs to it, so merge them all. The LLM routinely splits a
-        #    bulletin into a main campus plus a chapel or summer-pavilion
-        #    "site"; without this they fall into the multi-site matcher below,
-        #    find no SITE_MAPPINGS entry, match nothing, and the parish
-        #    silently saves an empty schedule.
-        if len(extraction.sites) > 1 and (
-            parish_id in SINGLE_SITE_PARISHES or len(group_parishes) == 1
-        ):
-            site_names = [s.site_name for s in extraction.sites]
-            if parish_id in SINGLE_SITE_PARISHES:
-                merged = filter_and_merge_matching_sites(extraction.sites, parish_name)
-            else:
-                merged = merge_sites(extraction.sites, parish_name)
-            log(f"Collapsed {len(extraction.sites)} sites {site_names} → '{merged.site_name}'")
-            extraction.sites = [merged]
+        collapsed = collapse_sites(
+            extraction, parish_id, parish_name, len(group_parishes)
+        )
+        if collapsed:
+            log(collapsed)
 
         # Clean up known LLM failure modes before anything is logged or saved
         report = sanitize_extraction(extraction, parish_id)

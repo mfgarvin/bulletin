@@ -12,6 +12,13 @@ temp/
 # working documents, not part of the project's docs.
 docs/notes/
 
+# Noise study working data: cached bulletin bytes (~1GB) and the raw extraction
+# dumps each condition produces (~5MB apiece). Both are regenerable and neither
+# belongs in the repo. `roster.json` IS committed — it is the frozen sample that
+# makes conditions comparable.
+studies/noise/cache/
+studies/noise/results/
+
 # LED mapboard driver. Lives in the mapboard repo; kept here as a local
 # reference for what export.json has to feed.
 reference.py

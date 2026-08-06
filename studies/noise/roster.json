@@ -1,0 +1,1070 @@
+[
+  {
+    "parish_id": "0036",
+    "name": "Holy Spirit Catholic Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [
+      "single_site_override"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "0138",
+    "name": "Saint Joseph Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [
+      "single_site_override"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "1259",
+    "name": "The Cathedral of Saint John the Evangelist",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": "1259",
+    "group_size": 1,
+    "reasons": [
+      "site_mappings"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "0141",
+    "name": "Saint Peter Parish North Ridgeville",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": "0141",
+    "group_size": 2,
+    "reasons": [
+      "site_mappings"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "sc-p",
+    "name": "Saint Columbkille Parish",
+    "publisher": "Self-Hosted",
+    "bulletin_url": "https://www.stcolumbkilleparish.org/bulletins",
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [
+      "verified_perpetual"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "0290",
+    "name": "Saint Brendan Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "st-vincent-de-paul-elyria-oh",
+    "name": "Saint Vincent de Paul Catholic Church",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": "st-vincent-de-paul-elyria-oh",
+    "group_size": 2,
+    "reasons": [
+      "site_mappings"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "13722",
+    "name": "Our Lady Queen of Peace Church",
+    "publisher": "eCatholic",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0054",
+    "name": "Saint Anthony of Padua Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "our-lady-help-of-christians-litchfield-oh",
+    "name": "Our Lady Help of Christians Catholic Church - Litchfield",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": "our-lady-help-of-christians-litchfield-oh",
+    "group_size": 4,
+    "reasons": [
+      "site_mappings"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "1285",
+    "name": "Saint Edward Roman Catholic Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": "1285",
+    "group_size": 1,
+    "reasons": [
+      "single_site_override"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "0039",
+    "name": "Blessed Trinity Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0042",
+    "name": "Nativity of the Lord Jesus",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0069",
+    "name": "Saints Peter and Paul Catholic Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [
+      "single_site_override"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "0077",
+    "name": "Guardian Angels Catholic Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [
+      "single_site_override"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "0080",
+    "name": "Saint Richard Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0083",
+    "name": "Saint Christopher Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0085",
+    "name": "Saint Paul Croatian Church (Hrvatska Crkva Sv. Pavla)",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0090",
+    "name": "Saint Adalbert Roman Catholic Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0116",
+    "name": "Saint Joseph Catholic Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0131",
+    "name": "La Sagrada Familia Catholic Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0134",
+    "name": "Saint Victor Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0147",
+    "name": "Saint Anthony of Padua Roman Catholic Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": "0147",
+    "group_size": 2,
+    "reasons": [
+      "site_mappings"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "0164",
+    "name": "Saint John Neumann Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0199",
+    "name": "Saint Anthony of Padua Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0216",
+    "name": "Saint Joan of Arc Catholic Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0240",
+    "name": "Transfiguration Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0241",
+    "name": "Saint Bridget of Kildare Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0242",
+    "name": "The Shrine Church of Saint Stanislaus, Bishop & Martyr",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0244",
+    "name": "Blessed Trinity Catholic Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [
+      "single_site_override"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "0288",
+    "name": "Saint Bartholomew Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0342",
+    "name": "Holy Redeemer Roman Catholic Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [
+      "single_site_override"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "0414",
+    "name": "Communion of Saints Parish - Saint Ann",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": "0414",
+    "group_size": 2,
+    "reasons": [
+      "site_mappings"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "holy-family-parma-oh",
+    "name": "Holy Family Parish",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "immaculate-heart-of-mary-cuyahoga-falls-oh",
+    "name": "Immaculate Heart of Mary Church",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "nativity-of-blessed-virgin-mary-lorain-oh",
+    "name": "Nativity of the Blessed Virgin Mary Parish",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [
+      "single_site_override"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "our-lady-of-angels-cleveland-oh",
+    "name": "Our Lady of Angels",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "our-lady-of-lourdes-cleveland-oh",
+    "name": "Our Lady of Lourdes Parish",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [
+      "single_site_override"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "our-lady-of-mount-carmel-wickliffe-oh",
+    "name": "Our Lady of Mt. Carmel Church",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [
+      "verified_perpetual"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "our-lady-of-victory-tallmadge-oh",
+    "name": "Our Lady of Victory Church",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [
+      "single_site_override"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "15918",
+    "name": "Church of the Holy Angels",
+    "publisher": "eCatholic",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "20812",
+    "name": "Saint Stephen Catholic Church",
+    "publisher": "eCatholic",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [
+      "single_site_override"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "20822",
+    "name": "Saint Michael the Archangel Parish",
+    "publisher": "eCatholic",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "21865",
+    "name": "Queen of Heaven Parish",
+    "publisher": "eCatholic",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [
+      "verified_perpetual"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "amherst",
+    "name": "Saint Joseph",
+    "publisher": "Self-Hosted",
+    "bulletin_url": "https://stjosephamherst.com/bulletins/",
+    "bulletin_group_id": "amherst",
+    "group_size": 2,
+    "reasons": [
+      "site_mappings"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "bearer",
+    "name": "Saint Edward, Parkman",
+    "publisher": "Self-Hosted",
+    "bulletin_url": "https://www.ssedwardlucy.com/weekly-bulletin.html",
+    "bulletin_group_id": "bearer",
+    "group_size": 2,
+    "reasons": [
+      "site_mappings"
+    ],
+    "batch": 1
+  },
+  {
+    "parish_id": "hs-gh",
+    "name": "Holy Spirit Catholic Church",
+    "publisher": "Self-Hosted",
+    "bulletin_url": "https://www.holyspiritcleveland.org/publications/bulletin/",
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "immat-con-cle",
+    "name": "Immaculate Conception, Cleveland",
+    "publisher": "Self-Hosted",
+    "bulletin_url": "https://institute-christ-king.org/cleveland-bulletins",
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "scas-e",
+    "name": "Church of Saint Casimir / Parafia Sw. Kazimierza",
+    "publisher": "Webpage",
+    "bulletin_url": "http://www.saintcasimirparish.org/main-en/bulletin-en.html",
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "scy-perry",
+    "name": "Saint Cyprian Parish",
+    "publisher": "Webpage",
+    "bulletin_url": "https://www.stcypriansparish.com/upcoming-events",
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "reasons": [],
+    "batch": 1
+  },
+  {
+    "parish_id": "0512",
+    "name": "Saint Andrew the Apostle - Norton",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": "0512",
+    "group_size": 2,
+    "batch": 2,
+    "reasons": [
+      "site_mappings"
+    ]
+  },
+  {
+    "parish_id": "0523",
+    "name": "Saint Francis de Sales",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": [
+      "single_site_override"
+    ]
+  },
+  {
+    "parish_id": "0571",
+    "name": "Mary Queen of the Apostles Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "0582",
+    "name": "Our Lady of Mount Carmel Roman Catholic Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "0599",
+    "name": "Saint Hilary Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "0670",
+    "name": "Saint Thomas More Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "0674",
+    "name": "Our Lady of the Lake Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": [
+      "single_site_override"
+    ]
+  },
+  {
+    "parish_id": "0678",
+    "name": "The Church of Saint Clarence",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "0689",
+    "name": "Saint Sebastian Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "0691",
+    "name": "Holy Name Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "0875",
+    "name": "Mary Queen of Peace",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "0882",
+    "name": "Saint Colman Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "0884",
+    "name": "Divine Word Catholic Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "0885",
+    "name": "Sacred Heart of Jesus Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": [
+      "verified_perpetual"
+    ]
+  },
+  {
+    "parish_id": "0886",
+    "name": "Saint Mary of the Assumption Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "0920",
+    "name": "Saints Peter and Paul",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "1060",
+    "name": "Saint Angela Merici Roman Catholic Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "1071",
+    "name": "Avon Catholic Community - Holy Trinity",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": "1071",
+    "group_size": 2,
+    "batch": 2,
+    "reasons": [
+      "site_mappings"
+    ]
+  },
+  {
+    "parish_id": "1088",
+    "name": "Saint Colette Catholic Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "1094",
+    "name": "The Parish of Saint Bede the Venerable",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "1101",
+    "name": "Saint Mary of the Immaculate Conception",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "1130",
+    "name": "Saint John Cantius Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "1136",
+    "name": "Saint Mary of the Immaculate Conception",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "1137",
+    "name": "Saint Patrick Church West Park ",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": "1137",
+    "group_size": 2,
+    "batch": 2,
+    "reasons": [
+      "site_mappings"
+    ]
+  },
+  {
+    "parish_id": "1142",
+    "name": "Saint John Vianney Catholic Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "1170",
+    "name": "Immaculate Conception Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "1236",
+    "name": "Holy Family Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": [
+      "verified_perpetual"
+    ]
+  },
+  {
+    "parish_id": "1241",
+    "name": "Saint Francis Xavier Parish",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "1286",
+    "name": "The Catholic Community of Saint Gabriel",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "1311",
+    "name": "Saint Ignatius of Antioch",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "saint-agnes-elyria-oh",
+    "name": "Saint Agnes - Elyria",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": "saint-agnes-elyria-oh",
+    "group_size": 2,
+    "batch": 2,
+    "reasons": [
+      "site_mappings"
+    ]
+  },
+  {
+    "parish_id": "saint-albert-the-great-north-royalton-oh",
+    "name": "Saint Albert the Great Roman Catholic Parish",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "saint-john-bosco-parma-heights-oh",
+    "name": "Saint John Bosco Church",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "ss-cosmas-damian-twinsburg-oh",
+    "name": "Saints Cosmas & Damian Catholic Church",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "st-anthony-of-padua-akron-oh",
+    "name": "Saint Anthony of Padua Parish & School",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "st-bernadette-westlake-oh",
+    "name": "Saint Bernadette Parish",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "st-jerome-cleveland-oh",
+    "name": "Saint Jerome Church",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": [
+      "single_site_override"
+    ]
+  },
+  {
+    "parish_id": "st-martin-of-tours-maple-heights-oh",
+    "name": "Saint Martin of Tours",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": [
+      "verified_perpetual"
+    ]
+  },
+  {
+    "parish_id": "st-mary-berea-oh",
+    "name": "Saint Mary",
+    "publisher": "Discover Mass",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "22544",
+    "name": "Saint Bernard Parish",
+    "publisher": "eCatholic",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "23926",
+    "name": "Saint Mary Parish",
+    "publisher": "eCatholic",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "2452",
+    "name": "Saint John Nepomucene Parish",
+    "publisher": "eCatholic",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "2492",
+    "name": "Saint Charles Borromeo Parish",
+    "publisher": "eCatholic",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "26778",
+    "name": "Saint Patrick Church",
+    "publisher": "eCatholic",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "olg-m",
+    "name": "Our Lady of Guadalupe Parish",
+    "publisher": "Self-Hosted",
+    "bulletin_url": "https://olg.cc/bulletins/",
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": [
+      "verified_perpetual"
+    ]
+  },
+  {
+    "parish_id": "olp-cle",
+    "name": "Our Lady of Peace",
+    "publisher": "Self-Hosted",
+    "bulletin_url": "https://olpchurch.com/bulletins-2",
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "sa-o",
+    "name": "Saint Agnes Church (Orrville, Ohio)",
+    "publisher": "Self-Hosted",
+    "bulletin_url": "https://www.stagnesorrville.org/bulletin",
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "sc-c",
+    "name": "St. Casimir Parish",
+    "publisher": "Self-Hosted",
+    "bulletin_url": "https://www.stcasimir.com/bulletin",
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": []
+  },
+  {
+    "parish_id": "sem-c",
+    "name": "Saint Emeric Parish",
+    "publisher": "Webpage",
+    "bulletin_url": "https://stemeric.com/category/bulletins/",
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 2,
+    "reasons": [
+      "single_site_override"
+    ]
+  },
+  {
+    "parish_id": "1318",
+    "name": "Immaculate Conception Catholic Church",
+    "publisher": "Parishes Online",
+    "bulletin_url": null,
+    "bulletin_group_id": null,
+    "group_size": 1,
+    "batch": 3,
+    "reasons": []
+  }
+]
