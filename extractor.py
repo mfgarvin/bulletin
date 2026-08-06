@@ -101,6 +101,11 @@ Extract the following information:
      the slot and OMIT `end_time` entirely. Never invent an end time, never stretch the slot to
      the next listed start, and never repeat the start as the end - a slot from 16:00 to 16:00
      means something different downstream.
+   - **A stated duration IS a stated end.** "Confessions 30 minutes before each Mass" bounds the
+     slot at both ends: before an 8:00 am Mass it runs 7:30-8:00. Likewise "one hour before Mass"
+     or "for a half hour following the vigil". Here the bulletin states the length of the window,
+     so emit `end_time`. The rule above is about a window whose length the bulletin never states
+     ("confessions after the 8:15 Mass") - that one keeps its `end_time` omitted.
    - **"By appointment" is never its own slot.** A clause like "and by appointment", "or call
      the parish office", "available upon request" carries no day and no time. Attach it to the
      `notes` of the confession slots that are listed, and do not invent a day or time for it.
@@ -124,7 +129,16 @@ Extract the following information:
    - Set `is_perpetual: true` ONLY if the bulletin explicitly uses the words "perpetual adoration"
      or describes 24-hour / 24/7 / round-the-clock adoration. Do NOT infer it from First Friday
      adoration, weekly Holy Hour, or post-Mass adoration. If the bulletin says the chapel closes
-     overnight, or lists specific hours, it is NOT perpetual.
+     overnight, or gives the hours it is open, it is NOT perpetual.
+   - **When adoration is perpetual, `is_perpetual: true` IS the whole schedule — leave `times`
+     empty.** A chapel open 24/7 has no hours to enumerate.
+   - **Hours listed as needing adorers are NOT the schedule.** "Hours needing coverage", "open
+     hours", "adorers needed: Mon 4 AM, Fri 10 AM", a sign-up sheet or commitment list — these
+     name the hours the chapel is *thinly attended* and is appealing for volunteers. Emitting
+     them as adoration times says adoration happens ONLY then, which is the opposite of the
+     truth, and it is most misleading at exactly the perpetual chapels that run such appeals.
+     Never turn them into adoration slots. A perpetual chapel that lists ten hours needing
+     coverage still has `is_perpetual: true` and an empty `times`.
    - Otherwise list specific time slots.
    - Same end-time rule as confessions: if adoration has a stated start and no stated end
      ("adoration begins after the 9:00 Mass"), keep the slot and omit `end_time`.
@@ -150,6 +164,8 @@ Extract the following information:
   This is NOT a licence to compute an end time. An event that follows a Mass still has no stated
   end, so `end_time` is still omitted. Never write a note saying an end was estimated, assumed,
   or inferred — if you find yourself wanting to, omit `end_time` instead.
+  The one exception is a duration the bulletin itself states ("30 minutes before each Mass"),
+  which bounds the window and gives you a real `end_time` — see the confession rules above.
 
 6. **Parish events** (shared across all sites): retreats, fish fries, bible studies, RCIA,
    youth group, Knights of Columbus, fundraisers, etc.

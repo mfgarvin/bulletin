@@ -61,6 +61,10 @@ class ManualFix:
     address: str | None = None
     is_perpetual: bool | None = None
     mass_time_fixes: dict[tuple[str, int], int] = field(default_factory=dict)
+    # Replaces the adoration slots outright. For a schedule the bulletin states
+    # in prose ("Adoration is Thurs-Sun") while printing only a list of hours it
+    # needs covered - there is nothing in the stored data to derive it from.
+    adoration_times: list[AdorationTime] | None = None
 
 
 # Keyed by ParishID, or by exact Name for rows whose ParishID is still empty.
@@ -86,6 +90,29 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         reason="Saturday 'Vigil Mass' recorded as 05:30; a vigil is an evening "
         "Mass and confession runs 16:00-17:00 right before it, so 17:30",
         mass_time_fixes={("Saturday", 530): 1730},
+    ),
+    "1285": ManualFix(
+        reason="stored adoration was the bulletin's 'adorers are needed' list - "
+        "eight overnight coverage slots plus a lone Thursday. The bulletin says "
+        "'Adoration is Thurs-Sun'; the other adoration lines on that page belong "
+        "to the other parishes sharing the bulletin (confirmed by hand 2026-08-05)",
+        adoration_times=[
+            AdorationTime(day=day, start_time=0, end_time=0, end_next_day=True,
+                          notes="Adoration runs continuously Thursday through Sunday")
+            for day in ("Thursday", "Friday", "Saturday")
+        ] + [
+            AdorationTime(day="Sunday", start_time=0, end_time=None,
+                          notes="Adoration runs continuously Thursday through "
+                                "Sunday; the bulletin does not state when it ends")
+        ],
+    ),
+    "2492": ManualFix(
+        reason="perpetual chapel carrying one stale slot - a Holy Thursday "
+        "one-off ('Adoration in church until Midnight after the Mass of the "
+        "Lord's Supper') stored as a recurring weekly Thursday, so it "
+        "advertised 7pm-midnight every Thursday of the year (confirmed by hand "
+        "2026-08-05)",
+        adoration_times=[],
     ),
     "ss-cosmas-damian-twinsburg-oh": ManualFix(
         reason="flagged perpetual, but every note says the chapel closes "
@@ -169,6 +196,15 @@ def plan_fixes(parish: FullParishData) -> tuple[dict[str, Any], list[str]]:
                     f"({manual.reason})"
                 )
                 mass.time = new_time
+
+    # Stated before the sanitizer runs, so the replacement is validated and
+    # deduplicated on the same path as anything the extractor produced.
+    if manual and manual.adoration_times is not None:
+        notes.append(
+            f"adoration: replaced {len(site.adoration.times)} stored slot(s) with "
+            f"{len(manual.adoration_times)} stated slot(s) ({manual.reason})"
+        )
+        site.adoration.times = [t.model_copy(deep=True) for t in manual.adoration_times]
 
     if manual and manual.is_perpetual is not None:
         if site.adoration.is_perpetual != manual.is_perpetual:

@@ -50,6 +50,16 @@ _APPOINTMENT_ONLY_RE = re.compile(
 _CANCELLED_RE = re.compile(r"^\s*\(?\s*(no mass|mass cancel|cancelled)", re.IGNORECASE)
 _VIGIL_RE = re.compile(r"\bvigil\b", re.IGNORECASE)
 _CLOSED_RE = re.compile(r"\bclosed\b|\bnot available\b", re.IGNORECASE)
+# An adoration chapel's "hours needing coverage" list is a staffing appeal, not
+# its schedule — those are the hours it is *thinly attended*. St. Columbkille
+# prints one, and the model has emitted its thirteen open hours as the adoration
+# schedule, which advertises a perpetual chapel as adoring only at 4 AM Monday.
+_COVERAGE_RE = re.compile(
+    r"needing coverage|need(s|ed)? (an )?adorer|adorers? (are )?needed|"
+    r"open hour|hour of need|hours? (still )?(open|available|to fill|uncovered)|"
+    r"sign[- ]?up|commit(ment)? (to|for) (an )?hour|substitute",
+    re.IGNORECASE,
+)
 # Markers that a dated Mass really is a one-off rather than the weekly Mass
 # restated under a date heading.
 _DISTINCT_MASS_RE = re.compile(
@@ -359,6 +369,61 @@ def _check_adoration(
         )
 
 
+def _drop_coverage_hours(site: SiteInfo, report: SanitizeReport) -> None:
+    """Drop adoration slots that are really a request for adorers.
+
+    A perpetual chapel appealing for volunteers prints the hours it is thinly
+    covered. Read as a schedule those hours invert the truth: a 24/7 chapel
+    ends up advertising adoration *only* at 4 AM Monday and 10 AM Friday.
+
+    Coverage hours are only safe to drop when we independently know when
+    adoration actually happens, or when there is no schedule to lose:
+
+    - a perpetual chapel — `is_perpetual` already says "always", so an
+      enumerated hour is redundant;
+    - a listing that also carries a covered day (`0->0` with `end_next_day`),
+      which is how continuous multi-day adoration is encoded. St. Edward runs
+      Thursday-Sunday and prints the hours it is short-handed *within* that
+      span; the span is the schedule and the appeal is noise inside it;
+    - a listing that is *entirely* coverage requests — the bulletin printed an
+      appeal and no schedule at all.
+
+    Anything else is left alone. A real schedule that annotates one hour
+    "adorers needed for 3 PM" keeps every slot, because there the bulletin is
+    telling us both when adoration happens and where it is short-handed.
+    """
+    adoration = site.adoration
+    if not adoration.times:
+        return
+
+    coverage = [t for t in adoration.times if _COVERAGE_RE.search(t.notes or "")]
+    if not coverage:
+        return
+
+    covered_day = any(
+        t.start_time == 0 and t.end_time == 0 and t.end_next_day
+        for t in adoration.times
+    )
+    if adoration.is_perpetual:
+        keep = [t for t in adoration.times if t not in coverage]
+        where = "at a perpetual chapel"
+    elif covered_day:
+        keep = [t for t in adoration.times if t not in coverage]
+        where = "inside a continuously covered day"
+    elif len(coverage) == len(adoration.times):
+        keep = []
+        where = "that were the entire adoration listing"
+    else:
+        return  # a real schedule with a shortfall noted on some hours
+
+    dropped = len(adoration.times) - len(keep)
+    adoration.times = keep
+    report.repair(
+        f"adoration: dropped {dropped} slot(s) {where} whose notes describe hours "
+        "needing adorers - a staffing appeal, not the schedule"
+    )
+
+
 def _cross_check_mass_references(site: SiteInfo, report: SanitizeReport) -> None:
     """Flag confession/adoration notes that key off a Mass the site lacks.
 
@@ -477,6 +542,7 @@ def sanitize_extraction(
         )
         _check_confession_spans(site.confession_times, report)
         site.adoration.times = _clean_ranges(site.adoration.times, "adoration", report)
+        _drop_coverage_hours(site, report)
         _check_adoration(site, report, verified_perpetual)
         _cross_check_mass_references(site, report)
 

@@ -295,6 +295,135 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.5 (2026-08-05) - Noise study; adorer-coverage hours; stated durations
+
+**New: `studies/noise/`** — a repeatable harness for measuring how much the
+extraction disagrees with itself. See its README for the method. Three scripts:
+`sample.py` freezes a roster, `run.py` prefetches bulletins once then extracts N
+times per condition, `analyze.py` scores stability. `roster.json` is committed —
+it is the frozen sample that makes conditions comparable. `cache/` (~1GB of
+bulletin bytes) and `results/` (~5MB per condition) are gitignored working data.
+
+Three design points carry the whole thing:
+
+- **It measures the production layer.** The v2.5.4 pilot measured raw
+  `extract()` and *overstated* the noise: `0036` and `0138` scored 30%/41% on
+  recurring Masses because the model couldn't decide between one site and
+  three, but both are in `SINGLE_SITE_PARISHES` and the collapse step resolves
+  exactly that. So the collapse block was lifted out of `process_parish` into
+  **`main.collapse_sites()`**, and the harness calls it and then
+  `sanitize_extraction()` — production's two steps, in order.
+  `process_parish` calls the same function, so the two cannot drift.
+- **The bytes are held fixed.** Bulletins change weekly, so re-downloading would
+  measure the parish, not the model. Every bulletin is cached once and every
+  repeat of every condition reads those exact bytes.
+- **Downloads are serial**, with a delay, in their own phase. Only Discover Mass
+  self-limits; PO and eCatholic would otherwise take a concurrent burst per
+  host. It runs once for the whole study — every later condition is cache-only.
+
+**Baseline** (50 parishes x 5 repeats, 250/250 clean, 37 min, 3.6M prompt
+tokens) settled the pilot's open question immediately: **site-count churn was
+0/50**, and 0/100 on the wider run. The pilot's largest apparent instability was
+an artifact of the layer it measured, not a property of the model.
+
+| category | identical | jaccard | core |
+|---|---|---|---|
+| recurring Masses | 83% | 96% | 93% |
+| dated Masses | 72% | 84% | 67% |
+| confession | 91% | 87% | 70% |
+| adoration | 86% | 83% | 68% |
+
+`jaccard` high with `core` well below it is the signature throughout: a typical
+run is mostly right, but ~30% of distinct confession/adoration slots flap at
+least once in five runs. Instability is *concentrated* — only ~32 unstable
+confession and ~34 adoration slots across 50 parishes.
+
+**Bug 1 — a request for adorers read as the adoration schedule.** St.
+Columbkille (`sc-p`) runs a perpetual chapel and prints the hours it is
+short-handed. In 3 of 5 runs the model published those 13 hours as the
+schedule, with `is_perpetual: true` set alongside — so a 24/7 chapel advertised
+adoration *only* at 4 AM Monday and 10 AM Friday. The notes said the quiet part
+out loud: *"Adoration chapel hour(s) needing coverage"*.
+
+Fix, in the prompt: when adoration is perpetual, `is_perpetual: true` **is** the
+whole schedule and `times` stays empty; and hours listed as needing adorers,
+open hours, or sign-up slots are a staffing appeal, never a schedule. The clause
+saying that listing specific hours disproves perpetual was softened to "gives
+the hours it is open", so a coverage list no longer defeats `is_perpetual`.
+
+`_drop_coverage_hours()` in `utils/sanitize.py` is the backstop, because a
+prompt rule cannot be trusted to hit 5/5. It drops coverage-noted slots in three
+shapes only: a perpetual chapel; a slot inside a **covered day** (`0->0` with
+`end_next_day`); or a listing that is *entirely* coverage requests. A genuinely
+mixed listing — a real schedule annotating one hour "adorers needed for 3 PM" —
+is left alone. Replayed over all 1,000 stored extractions it touches exactly two
+parishes.
+
+**Bug 2 — a stated duration is not an invented end.** Immaculate Conception
+(`immat-con-cle`) prints "30 minutes prior to Holy Mass". That states the length
+of the window, so the end is *given*: before an 8:00 Mass, 7:30-8:00. But
+v2.5.4's rule against computing an end from Mass timing did not distinguish a
+stated duration from a bare anchor ("confessions after the 8:15 Mass"), and one
+run in five dropped all nine end times. Fix: a "**a stated duration IS a stated
+end**" carve-out in the confession rules, with the matching exception added to
+the TIME ENCODING section so the two rules no longer contradict each other.
+
+**Validation, and a finding about validation.** A second condition re-ran the
+same 50 cached bulletins under the new prompt, plus 50 new parishes (500
+extractions, 0 errors, 49 min, 7.7M prompt tokens). The paired A/B showed
+confession jaccard +9% and core +22% — but a bootstrap over parishes put **every
+category delta inside the noise band**, the confession gain included (core CI
+-1% to +47%). Between-parish variance swamps aggregate metrics at n=50.
+
+This is v2.5.4's lesson one level up: it is not enough to have a same-prompt
+control, the *metric* has to be a targeted failure signature. Those resolve
+cleanly:
+
+| signature (batch 1, 5 runs) | before | after |
+|---|---|---|
+| perpetual chapels enumerating hours | 8 runs | 0 |
+| adoration slots at perpetual chapels | 49 | 0 |
+| open-ended confession slots | 143 | 133 |
+
+Per-parish, `sc-p` adoration went 44% -> 100% (and confession 87% -> 100%, a
+spurious vigil-anchored slot gone) and `immat-con-cle` confession 60% -> 100%
+with ends present 9/9 in all five runs. The adoration fix generalized to
+`21865`, a second perpetual chapel that was never targeted.
+
+The duration carve-out is surgical: of the 10 fewer open-ended confession slots,
+**9 are `immat-con-cle`**; every other parish moved +/-0.2-0.4 slots/run in both
+directions. Nothing here argues for loosening v2.5.4's Mass-timing rule.
+
+**Known unfixed — St. Edward (`1285`).** Its adoration genuinely runs
+Thursday-Sunday continuously and the bulletin lists the hours needing adorers
+*within* that span. The baseline published those 8 coverage hours as the
+schedule in all 5 runs; the new prompt correctly rejects them but emits **no
+adoration at all in 4 of 5 runs**, losing the Thu-Sun fact. Only the one run
+that also emitted a `Thursday 0->0 +1d` covered day is right, and that is the
+case `_drop_coverage_hours()` now handles. The remaining gap is a prompt one:
+connecting "adoration Thurs-Sun + a needed-hours list" to the covered-day
+encoding. Judge that change by a targeted metric, not an aggregate.
+
+**Data repair applied 2026-08-05** via `python -m utils.notion_fixes --apply`,
+which wrote three rows. `sc-p` turned out to be already clean. The sanitizer
+replay found **two parishes the study never sampled** carrying the same bug —
+`1608` Sacred Heart ("Adorers needed (Divine Mercy Chapel)") and `1236` Holy
+Family ("Open hour currently in need of committed adorers") — both perpetual
+chapels advertising three coverage hours as their entire schedule. Both now
+read `is_perpetual: true` with no enumerated hours.
+
+`ManualFix` gained an **`adoration_times`** field for `1285`, whose schedule
+could not be derived from anything stored: the bulletin states it in prose
+("Adoration is Thurs-Sun") while printing only the hours it needs covered, and
+the other adoration lines on that page belong to the other parishes sharing the
+bulletin. It is now Thursday/Friday/Saturday as covered days plus a Sunday slot
+with an open end, since the bulletin never says when Sunday's adoration stops.
+The replacement is stated before the sanitizer runs, so it is validated and
+deduplicated on the same path as anything the extractor produces.
+
+Downstream still shows the old values until `export.json` is rebuilt — the
+Saturday Actions job does that from Notion.
+
 ### v2.5.4 (2026-08-05) - Confession time lists; optional `end_time`
 
 **Bug 1 — a list of times read as a range.** The Cathedral of St. John (`1259`)
