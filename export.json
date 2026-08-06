@@ -9637,65 +9637,30 @@
           {
             "day": "Sunday",
             "start": "00:00",
-            "end": "06:00",
+            "end": null,
             "end_next_day": false,
-            "notes": "Adorers needed 12:00am–6:00am"
+            "notes": "Adoration runs continuously Thursday through Sunday; the bulletin does not state when it ends"
           },
           {
             "day": "Thursday",
             "start": "00:00",
             "end": "00:00",
             "end_next_day": true,
-            "notes": "Adoration is Thurs–Sun (exact hours not fully specified); bulletin lists needs for overnight hours"
+            "notes": "Adoration runs continuously Thursday through Sunday"
           },
           {
             "day": "Friday",
             "start": "00:00",
-            "end": "02:00",
-            "end_next_day": false,
-            "notes": "Adorers needed 12:00am–2:00am"
-          },
-          {
-            "day": "Friday",
-            "start": "03:00",
-            "end": "05:00",
-            "end_next_day": false,
-            "notes": "Adorers needed 3:00am–5:00am"
-          },
-          {
-            "day": "Friday",
-            "start": "23:00",
-            "end": "23:30",
-            "end_next_day": false,
-            "notes": "Adorers needed at 11:00pm (end time not specified)"
+            "end": "00:00",
+            "end_next_day": true,
+            "notes": "Adoration runs continuously Thursday through Sunday"
           },
           {
             "day": "Saturday",
             "start": "00:00",
-            "end": "06:00",
-            "end_next_day": false,
-            "notes": "Adorers needed 12:00am–6:00am"
-          },
-          {
-            "day": "Saturday",
-            "start": "10:00",
-            "end": "10:30",
-            "end_next_day": false,
-            "notes": "Adorers needed at 10:00am (end time not specified)"
-          },
-          {
-            "day": "Saturday",
-            "start": "18:30",
-            "end": "20:00",
-            "end_next_day": false,
-            "notes": "Adorers needed 6:30pm–8:00pm"
-          },
-          {
-            "day": "Saturday",
-            "start": "23:00",
-            "end": "23:30",
-            "end_next_day": false,
-            "notes": "Adorers needed at 11:00pm (end time not specified)"
+            "end": "00:00",
+            "end_next_day": true,
+            "notes": "Adoration runs continuously Thursday through Sunday"
           }
         ]
       }
@@ -10591,15 +10556,7 @@
       ],
       "adoration": {
         "is_perpetual": true,
-        "times": [
-          {
-            "day": "Thursday",
-            "start": "19:00",
-            "end": "00:00",
-            "end_next_day": true,
-            "notes": "Holy Thursday only: Adoration in church until Midnight (after Mass of the Lord’s Supper)"
-          }
-        ]
+        "times": []
       }
     },
     "events_summary": "Evening Vespers is held every Sunday from 5:45–6:15 p.m. at St. Charles Borromeo Church. A Pre-Baptism Parent Class meets next Sunday, July 26 from 1:30–2:30 p.m. in the Parish Activity Center (Pope John XXIII Room), and a Donut Social will be held after the 8:00 a.m. and 10:00 a.m. Masses. OCIA begins in September on Tuesdays at 7:00 p.m., and a parish pilgrimage with Fr. Sean Ralph is scheduled for Thursday, October 1 (8:00 a.m.–8:30 p.m.)."
@@ -13555,29 +13512,7 @@
       ],
       "adoration": {
         "is_perpetual": true,
-        "times": [
-          {
-            "day": "Monday",
-            "start": "03:00",
-            "end": "04:00",
-            "end_next_day": false,
-            "notes": "Adorers needed (Divine Mercy Chapel)"
-          },
-          {
-            "day": "Thursday",
-            "start": "03:00",
-            "end": "04:00",
-            "end_next_day": false,
-            "notes": "Adorers needed (Divine Mercy Chapel)"
-          },
-          {
-            "day": "Saturday",
-            "start": "13:00",
-            "end": "14:00",
-            "end_next_day": false,
-            "notes": "Every other Saturday; adorers needed (Divine Mercy Chapel)"
-          }
-        ]
+        "times": []
       }
     },
     "events_summary": "Sacred Heart offers perpetual adoration in the Divine Mercy Chapel; adorers are especially needed Mondays 2–3pm and Saturdays 11pm–midnight. A VIRTUS “Protecting God’s Children” workshop will be held Wednesday, August 12 at 3:00pm in McMahon Hall (register in advance). Upcoming parish activities include the Patriotic Rosary & Divine Mercy Chaplet on Sunday, August 2 from 6:15–7:15pm and the weekly Latin Rosary for Priests on Wednesdays at 7:30pm."
@@ -17195,29 +17130,7 @@
       ],
       "adoration": {
         "is_perpetual": true,
-        "times": [
-          {
-            "day": "Wednesday",
-            "start": "02:00",
-            "end": "03:00",
-            "end_next_day": false,
-            "notes": "Open hour currently in need of committed adorers (Perpetual Adoration Chapel)"
-          },
-          {
-            "day": "Thursday",
-            "start": "13:00",
-            "end": "14:00",
-            "end_next_day": false,
-            "notes": "Open hour currently in need of committed adorers (Perpetual Adoration Chapel)"
-          },
-          {
-            "day": "Friday",
-            "start": "20:00",
-            "end": "21:00",
-            "end_next_day": false,
-            "notes": "Open hour currently in need of committed adorers (Perpetual Adoration Chapel)"
-          }
-        ]
+        "times": []
       }
     },
     "events_summary": "Holy Family’s “Mass on the Grass” outdoor Mass is Sunday, July 26 at Silver Springs Park—gather at 4:30 p.m. and Mass begins at 5:00 p.m., followed by fellowship and a picnic. This week includes several ministry gatherings, including LifeTeen Ultimate Frisbee on Monday at 7:00 p.m. and Young Adult Bible Study Tuesday at 8:30 p.m. Mark your calendar for the Summer Service Project July 31–Aug. 1 (9:00 a.m.–3:00 p.m.) at the Bishop Pilla Family Center in East Cleveland."
