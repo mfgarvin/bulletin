@@ -17842,44 +17842,86 @@
         {
           "day": "Monday",
           "start": "07:45",
-          "end": "11:30",
+          "end": null,
           "end_next_day": false,
-          "notes": "In the Chapel (during renovations)"
+          "notes": "In the temporary Chapel at 1404 East 9th Street during renovations"
+        },
+        {
+          "day": "Monday",
+          "start": "11:30",
+          "end": null,
+          "end_next_day": false,
+          "notes": "In the temporary Chapel at 1404 East 9th Street during renovations"
         },
         {
           "day": "Tuesday",
           "start": "07:45",
-          "end": "11:30",
+          "end": null,
           "end_next_day": false,
-          "notes": "In the Chapel (during renovations)"
+          "notes": "In the temporary Chapel at 1404 East 9th Street during renovations"
+        },
+        {
+          "day": "Tuesday",
+          "start": "11:30",
+          "end": null,
+          "end_next_day": false,
+          "notes": "In the temporary Chapel at 1404 East 9th Street during renovations"
+        },
+        {
+          "day": "Wednesday",
+          "start": "07:45",
+          "end": null,
+          "end_next_day": false,
+          "notes": "In the temporary Chapel at 1404 East 9th Street during renovations"
+        },
+        {
+          "day": "Wednesday",
+          "start": "11:30",
+          "end": null,
+          "end_next_day": false,
+          "notes": "In the temporary Chapel at 1404 East 9th Street during renovations"
         },
         {
           "day": "Wednesday",
           "start": "17:00",
           "end": "17:25",
           "end_next_day": false,
-          "notes": "Confessions at 5:00 pm (followed by Vespers at 5:30 pm)"
+          "notes": "In the temporary Chapel at 1404 East 9th Street during renovations; Vespers follows at 5:30 pm"
         },
         {
           "day": "Thursday",
           "start": "07:45",
-          "end": "11:30",
+          "end": null,
           "end_next_day": false,
-          "notes": "In the Chapel (during renovations)"
+          "notes": "In the temporary Chapel at 1404 East 9th Street during renovations"
+        },
+        {
+          "day": "Thursday",
+          "start": "11:30",
+          "end": null,
+          "end_next_day": false,
+          "notes": "In the temporary Chapel at 1404 East 9th Street during renovations"
         },
         {
           "day": "Friday",
           "start": "07:45",
-          "end": "11:30",
+          "end": null,
           "end_next_day": false,
-          "notes": "In the Chapel (during renovations)"
+          "notes": "In the temporary Chapel at 1404 East 9th Street during renovations"
+        },
+        {
+          "day": "Friday",
+          "start": "11:30",
+          "end": null,
+          "end_next_day": false,
+          "notes": "In the temporary Chapel at 1404 East 9th Street during renovations"
         },
         {
           "day": "Saturday",
           "start": "15:00",
           "end": "16:00",
           "end_next_day": false,
-          "notes": null
+          "notes": "In the Cathedral"
         }
       ],
       "adoration": {
