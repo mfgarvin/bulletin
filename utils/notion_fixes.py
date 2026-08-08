@@ -61,6 +61,10 @@ class ManualFix:
     address: str | None = None
     is_perpetual: bool | None = None
     mass_time_fixes: dict[tuple[str, int], int] = field(default_factory=dict)
+    # Replaces the confession slots outright. For a listing the extractor
+    # misread structurally, where no per-time correction can express the fix
+    # (one slot has to become two).
+    confession_times: list[ConfessionTime] | None = None
     # Replaces the adoration slots outright. For a schedule the bulletin states
     # in prose ("Adoration is Thurs-Sun") while printing only a list of hours it
     # needs covered - there is nothing in the stored data to derive it from.
@@ -90,6 +94,28 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         reason="Saturday 'Vigil Mass' recorded as 05:30; a vigil is an evening "
         "Mass and confession runs 16:00-17:00 right before it, so 17:30",
         mass_time_fixes={("Saturday", 530): 1730},
+    ),
+    "1259": ManualFix(
+        reason="the v2.5.4 '&-as-range' misread, still stored because this row "
+        "has not been re-extracted since the prompt fix. 'Monday-Friday in the "
+        "Chapel: 7:45 am & 11:30 am' is two short slots bracketing the 7:15 and "
+        "12:00 Masses, not one 3h45m window - and Wednesday had lost both of "
+        "them to its 5:00 pm slot. Read from the 2 Aug 2026 bulletin by hand "
+        "2026-08-06; the weekday slots have no stated end",
+        confession_times=[
+            ConfessionTime(day=day, start_time=start, end_time=None,
+                           notes="In the temporary Chapel at 1404 East 9th "
+                                 "Street during renovations")
+            for day in ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+            for start in (745, 1130)
+        ] + [
+            ConfessionTime(day="Wednesday", start_time=1700, end_time=1725,
+                           notes="In the temporary Chapel at 1404 East 9th "
+                                 "Street during renovations; Vespers follows "
+                                 "at 5:30 pm"),
+            ConfessionTime(day="Saturday", start_time=1500, end_time=1600,
+                           notes="In the Cathedral"),
+        ],
     ),
     "1285": ManualFix(
         reason="stored adoration was the bulletin's 'adorers are needed' list - "
@@ -196,6 +222,15 @@ def plan_fixes(parish: FullParishData) -> tuple[dict[str, Any], list[str]]:
                     f"({manual.reason})"
                 )
                 mass.time = new_time
+
+    if manual and manual.confession_times is not None:
+        notes.append(
+            f"confession: replaced {len(site.confession_times)} stored slot(s) "
+            f"with {len(manual.confession_times)} stated slot(s) ({manual.reason})"
+        )
+        site.confession_times = [
+            t.model_copy(deep=True) for t in manual.confession_times
+        ]
 
     # Stated before the sanitizer runs, so the replacement is validated and
     # deduplicated on the same path as anything the extractor produced.
