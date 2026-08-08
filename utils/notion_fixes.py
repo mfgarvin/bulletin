@@ -117,6 +117,22 @@ MANUAL_FIXES: dict[str, ManualFix] = {
                            notes="In the Cathedral"),
         ],
     ),
+    "st-vincent-de-paul-elyria-oh": ManualFix(
+        reason="the second parish named in the v2.5.4 '&-as-range' misread, and "
+        "like 1259 it has not been re-extracted since the prompt fix. One stored "
+        "Sunday slot of 09:00-11:00 noted 'After the 8:00 AM & 10:00 AM Masses' - "
+        "the 11:00 is the second start read as the range end, not an end. The "
+        "site's own Mass list has Sunday 08:00 and 10:00, corroborating both "
+        "anchors; starts placed by the prompt's ~1hr Sunday Mass presumption, "
+        "ends unstated. Derived from the stored note and Mass list on 2026-08-07, "
+        "NOT from a fresh reading of the bulletin",
+        confession_times=[
+            ConfessionTime(day="Sunday", start_time=900, end_time=None,
+                           notes="After the 8:00 AM Mass"),
+            ConfessionTime(day="Sunday", start_time=1100, end_time=None,
+                           notes="After the 10:00 AM Mass"),
+        ],
+    ),
     "1285": ManualFix(
         reason="stored adoration was the bulletin's 'adorers are needed' list - "
         "eight overnight coverage slots plus a lone Thursday. The bulletin says "
