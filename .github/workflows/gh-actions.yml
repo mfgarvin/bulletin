@@ -22,3 +22,22 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Run processor
         run: python main.py --all
+      # TEMPORARY (2026-08-07): adoration is extracted but never written to
+      # Notion (UPDATE_ADORATION = False). Keep a copy for manual review.
+      # Remove this step once the captured data has been looked at.
+      - name: Commit adoration capture
+        if: always()
+        # Never let the capture fail the workflow: export-data.yml and
+        # check-issues.yml both gate on this job's conclusion == 'success'.
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add adoration_capture.json
+          if git diff --staged --quiet; then
+            echo "No adoration capture changes"
+          else
+            git commit -m "Update adoration_capture.json [skip ci]"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push
+          fi

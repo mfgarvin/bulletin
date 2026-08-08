@@ -15,6 +15,7 @@ from definitions import SINGLE_SITE_PARISHES, SITE_MAPPINGS
 from extractor import BulletinExtractor, ExtractionMethod
 from schemas import AdorationSchedule, BulletinExtraction, ParishRecord, SiteInfo
 from sources import get_source_for_publisher
+from utils import adoration_capture
 from utils.log_context import set_parish_context
 from utils.sanitize import sanitize_extraction
 
@@ -280,6 +281,10 @@ async def process_parish(
         if not dry_run:
             if len(extraction.sites) == 1 and len(group_parishes) == 1:
                 # Simple case: one site, one parish
+                # TEMPORARY: keep the adoration Notion won't be given
+                adoration_capture.record(
+                    parish_id, parish_name, extraction.sites[0], result.url
+                )
                 await db.save_extraction(
                     parish_id=parish_id,
                     extraction=extraction,
@@ -318,6 +323,13 @@ async def process_parish(
                         log(f"Merged sites {site_names} → {matched_parish.name}")
                     else:
                         site_idx = indexed_sites[0][0]
+                    # TEMPORARY: keep the adoration Notion won't be given
+                    adoration_capture.record(
+                        matched_parish.parish_id,
+                        matched_parish.name,
+                        extraction.sites[site_idx],
+                        result.url,
+                    )
                     await db.save_extraction(
                         parish_id=matched_parish.parish_id,
                         extraction=extraction,
@@ -334,6 +346,13 @@ async def process_parish(
                     if p.parish_id not in matched_ids:
                         warn(f"No site matched parish '{p.name}'")
         else:
+            # TEMPORARY: capture in dry run too, keyed by the primary parish, so
+            # the capture can be exercised without touching Notion.
+            for i, site in enumerate(extraction.sites):
+                adoration_capture.record(
+                    parish_id, parish_name, site, result.url,
+                    key=parish_id if len(extraction.sites) == 1 else f"{parish_id}#{i}",
+                )
             log("Dry run - skipping database save")
 
         return ProcessResult(parish_id, parish_name, success=True, warnings=warnings)
@@ -452,6 +471,12 @@ async def main():
     with_warnings = [r for r in succeeded if r.warnings]
 
     logger.info(f"Complete: {len(succeeded)} succeeded, {len(failed)} failed")
+
+    # TEMPORARY: dump the adoration this run extracted but did not save.
+    try:
+        adoration_capture.write()
+    except OSError as e:
+        logger.error(f"Failed to write adoration capture: {e}")
 
     # Report failures and save issues to Notion
     if failed:
