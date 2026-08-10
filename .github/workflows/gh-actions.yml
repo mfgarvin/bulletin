@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '0 14 * * SAT'
   workflow_dispatch:
+    inputs:
+      stale_days:
+        description: 'Days before data is considered stale (0 forces every parish)'
+        required: false
+        default: '6'
 env:
   OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
   NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
@@ -21,7 +26,8 @@ jobs:
           cache: 'pip'
       - run: pip install -r requirements.txt
       - name: Run processor
-        run: python main.py --all
+        # The scheduled run has no inputs, so it falls back to main.py's default.
+        run: python main.py --all --stale-days ${{ inputs.stale_days || 6 }}
       # TEMPORARY (2026-08-07): adoration is extracted but never written to
       # Notion (UPDATE_ADORATION = False). Keep a copy for manual review.
       # Remove this step once the captured data has been looked at.
