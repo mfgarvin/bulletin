@@ -11,6 +11,12 @@ ROOT_URL = "https://container.parishesonline.com/bulletins/14"
 DATE_FORMAT = "%Y%m%dB.pdf"
 LOOKBACK_DAYS = 30
 
+# See the note in sources/ecatholic.py — same filename convention, same fix.
+# The Sunday-dated bulletin is posted days early, so a Saturday run has to look
+# forward to see it. Three days reaches the coming Sunday without being able to
+# skip past a week's events.
+LOOKAHEAD_DAYS = 3
+
 
 class ParishesOnlineSource(BulletinSource):
     """Download bulletins from Parishes Online."""
@@ -22,12 +28,15 @@ class ParishesOnlineSource(BulletinSource):
     async def download(
         self, parish_id: str, bulletin_url: Optional[str] = None
     ) -> DownloadResult:
-        """Download the latest bulletin, searching back up to 30 days."""
+        """Download the latest bulletin, newest date first.
+
+        Searches from `LOOKAHEAD_DAYS` in the future back to `LOOKBACK_DAYS` ago.
+        """
         async with httpx.AsyncClient() as client:
             current_date = datetime.now()
 
-            for days_back in range(LOOKBACK_DAYS):
-                check_date = current_date - timedelta(days=days_back)
+            for offset in range(LOOKAHEAD_DAYS, -LOOKBACK_DAYS, -1):
+                check_date = current_date + timedelta(days=offset)
                 filename = check_date.strftime(DATE_FORMAT)
                 url = f"{ROOT_URL}/{parish_id}/{filename}"
 
@@ -44,5 +53,5 @@ class ParishesOnlineSource(BulletinSource):
 
             return DownloadResult(
                 success=False,
-                error=f"No bulletin found in the last {LOOKBACK_DAYS} days",
+                error=f"No bulletin found within {LOOKBACK_DAYS} days",
             )

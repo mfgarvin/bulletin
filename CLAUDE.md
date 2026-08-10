@@ -295,6 +295,41 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.6 (2026-08-10) - Date-walk looks forward; every PO/eCatholic parish was a week behind
+
+**Bug:** Parishes Online and eCatholic name each bulletin for the **Sunday it
+covers**, and parishes upload it days early. Both sources started their date
+walk at `datetime.now()` and only stepped *backwards*, so the coming Sunday's
+file was structurally unreachable. The weekly job runs Saturday ~13:00 UTC —
+one day before every filename it most wants.
+
+Found via St. Charles Borromeo (`2492`), serving the Aug 2 bulletin on Aug 10.
+The Aug 8 run walked `20260808` → `20260803` (all 403) and took `20260802`,
+while `20260809.pdf` had been sitting on the server since **Fri Aug 7 23:45
+GMT** — 13½ hours before the run started.
+
+**This was not one parish.** Of the 109 PO/eCatholic parishes that downloaded
+successfully in that run, **108 took the Aug 2 bulletin**. Re-probing all 109
+for their Aug 9 file: **106 were already uploaded before the run began**, 2
+landed after, 1 serves no `last-modified`. Effectively the entire PO/eCatholic
+set — the large majority of the database — had been publishing a week-old
+bulletin every week for as long as the scrapers have existed.
+
+**Fix:** `LOOKAHEAD_DAYS = 3` in `sources/ecatholic.py` and
+`sources/parishes_online.py`; the loop is now
+`range(LOOKAHEAD_DAYS, -LOOKBACK_DAYS, -1)`, newest date first, so the first
+200 still wins. Backward coverage is unchanged at 30 days.
+
+Three days is deliberate, not round. It reaches the coming Sunday from a
+Saturday run, but is too short to jump a whole week: a parish that posts
+unusually early can't pull a mid-week manual run onto the *following* Sunday's
+bulletin, which would silently skip the current week's events. Raising it to 7
+reintroduces exactly that risk.
+
+Verified by replaying the Aug 8 walk against the live server: `2492` now
+resolves `20260809.pdf`. `21865` correctly still takes Aug 2 — it genuinely has
+no Aug 9 file, and the fallback is unchanged.
+
 ### v2.5.5 (2026-08-05) - Noise study; adorer-coverage hours; stated durations
 
 **New: `studies/noise/`** — a repeatable harness for measuring how much the
