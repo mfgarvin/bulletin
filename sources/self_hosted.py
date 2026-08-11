@@ -24,6 +24,20 @@ _MONTHS = {
     "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12,
 }
 
+# Bulletins predating this are archive material, and a "year" outside it is a
+# misread run of digits rather than a date.
+_EARLIEST_YEAR = 2000
+
+
+def _safe_date(year: int, month: int, day: int) -> date:
+    """Build a date, or `date.min` if the numbers aren't a plausible one."""
+    if not _EARLIEST_YEAR <= year <= date.today().year + 1:
+        return date.min
+    try:
+        return date(year, month, day)
+    except ValueError:
+        return date.min
+
 # Date patterns in filenames (to identify recent bulletins)
 DATE_PATTERNS = [
     r"(\d{4})[-_]?(\d{2})[-_]?(\d{2})",  # 2024-01-15, 20240115
@@ -189,10 +203,54 @@ class SelfHostedSource(BulletinSource):
             return date.min
         return d
 
+    @staticmethod
+    def _parse_numeric_triple(fname: str, path_month: Optional[int]) -> date:
+        """Read a separated numeric date out of a filename. `date.min` if none.
+
+        Parishes write the same date every which way, and the ambiguous cases
+        can only be told apart by which reading yields a real date:
+
+            8-9-26.pdf                -> M-D-YY   -> 2026-08-09
+            5-11-25_bulletin.pdf      -> M-D-YY   -> 2025-05-11
+            26_08_09_bulletin.pdf     -> YY-MM-DD -> 2026-08-09  (month 26 is not)
+            2026-08-09.pdf            -> YYYY-M-D -> 2026-08-09
+
+        The date need not sit flush against `.pdf`, and need not be preceded by
+        a separator — `8-9-26.pdf` starts with it. Both were assumptions of the
+        older pattern, and both cost us a current bulletin.
+
+        M-D-YY is preferred over YY-MM-DD when a filename parses as both, since
+        these are US parish sites — unless the URL path states a month and only
+        one reading agrees with it.
+        """
+        for match in re.finditer(r"(?<!\d)(\d{1,4})[-_](\d{1,2})[-_](\d{1,4})(?!\d)", fname):
+            a, b, c = (int(g) for g in match.groups())
+
+            readings: list[date] = []
+            if len(match.group(1)) == 4:                    # YYYY-M-D
+                readings.append(_safe_date(a, b, c))
+            if len(match.group(3)) == 4:                    # M-D-YYYY
+                readings.append(_safe_date(c, a, b))
+            if len(match.group(3)) == 2:                    # M-D-YY
+                readings.append(_safe_date(2000 + c, a, b))
+            if len(match.group(1)) == 2:                    # YY-MM-DD
+                readings.append(_safe_date(2000 + a, b, c))
+
+            valid = [d for d in readings if d != date.min]
+            if not valid:
+                continue
+            if path_month is not None:
+                agreeing = [d for d in valid if d.month == path_month]
+                if agreeing:
+                    return agreeing[0]
+            return valid[0]
+
+        return date.min
+
     def _extract_date_raw(self, url: str) -> date:
         """Best-effort date for a PDF URL, for recency ranking. `date.min` if none.
 
-        Handles clean filenames (YYYY-MM-DD, MM-DD-YY), textual names
+        Handles clean filenames (YYYY-MM-DD, MM-DD-YY, YY-MM-DD), textual names
         ("July 19 2026", even when mistyped as "JFuly 19. 2026"), and the
         eCatholic `/documents/YYYY/M/` layout where the only reliable
         year+month lives in the path and the day is buried in a human-typed
@@ -206,16 +264,10 @@ class SelfHostedSource(BulletinSource):
         path_year = int(path_match.group(1)) if path_match else None
         path_month = int(path_match.group(2)) if path_match else None
 
-        # 1. MM-DD-YY(YY).pdf (e.g., bulletin_1-4-26.pdf)
-        match = re.search(r"[-_](\d{1,2})[-_](\d{1,2})[-_](\d{2,4})\.pdf", url_lower)
-        if match:
-            month, day, year = int(match.group(1)), int(match.group(2)), int(match.group(3))
-            if year < 100:
-                year += 2000
-            try:
-                return date(year, month, day)
-            except ValueError:
-                pass
+        # 1. A separated numeric triple anywhere in the filename.
+        triple = self._parse_numeric_triple(fname, path_month)
+        if triple != date.min:
+            return triple
 
         # 2. YYYY-MM-DD or YYYYMMDD in the filename
         match = re.search(r"(20\d{2})[-_]?(\d{2})[-_]?(\d{2})", fname)
@@ -227,9 +279,13 @@ class SelfHostedSource(BulletinSource):
                 pass
 
         # 3. Textual "Month DD [YYYY]" (year falls back to the path's)
+        # Separators here are whatever the parish secretary typed: a space, a
+        # dot, or the underscore a CMS substituted for one ("august_9_2026").
+        # The day must not run into a longer number, or "bulletin_JULY-2026"
+        # reads as the 20th and a monthly bulletin acquires a fictional day.
         match = re.search(
-            r"(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s*"
-            r"(\d{1,2})(?:st|nd|rd|th)?[.,\s]*(\d{4})?",
+            r"(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?[\s._-]*"
+            r"(\d{1,2})(?!\d)(?:st|nd|rd|th)?[.,\s._-]*(\d{4})?",
             fname,
         )
         if match:

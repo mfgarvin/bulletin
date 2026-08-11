@@ -330,6 +330,42 @@ Verified by replaying the Aug 8 walk against the live server: `2492` now
 resolves `20260809.pdf`. `21865` correctly still takes Aug 2 — it genuinely has
 no Aug 9 file, and the fallback is unchanged.
 
+**Self-Hosted date parsing, found while auditing the above.** Two parishes were
+refreshing daily yet extracting a months-old PDF, because `_extract_date_raw()`
+couldn't read their filenames and ranking fell back to the keyword score. This
+is the same failure mode v2.5.3's predecessor (`03949b9`) fixed for
+`olpchurch.com` — two more filename dialects it didn't cover.
+
+- `sp-l` Saint Peter, Loudonville was serving a bulletin from **2025-05-11**,
+  456 days old. Its current `8-9-26.pdf` parsed as nothing: the old pattern
+  required a `-`/`_` *before* the month, and that filename opens with it.
+  Neither candidate parsed, so `5-11-25_bulletin.pdf` won on `bulletin`, +20.
+- `ss-c` Saint Stephen was serving **2026-07-26**. Its filenames are `YY_MM_DD`
+  (`26_08_09_bulletin.pdf`), which nothing handled, so it fell to the eCatholic
+  path fallback — that reads `/2026/08/` for year+month and the *first* number
+  in the name as the day, yielding **Aug 26**, a future date the parser rightly
+  distrusts and zeroes. The stale July file parsed cleanly and outranked it.
+
+`_parse_numeric_triple()` replaces the old single pattern. It finds any
+separated numeric triple, generates every reading the digit-widths permit
+(`YYYY-M-D`, `M-D-YYYY`, `M-D-YY`, `YY-MM-DD`), and keeps the ones that are real
+dates in 2000..next year. Ambiguity resolves to `M-D-YY` (US parish sites),
+unless the URL path states a month and only one reading agrees. `8-9-26` and
+`26_08_09` are each unambiguous once invalid readings are discarded.
+
+The textual-month pattern also learned that a CMS may substitute `_` or `-` for
+the space (`august_9_2026.pdf`, which never parsed). That widening immediately
+caused a regression the end-to-end check caught: `bulletin_JULY-2026.pdf` read
+the year's first two digits as the day, giving Jul 20 — and for the August file,
+a fictional Aug 20 that is >14 days out, zeroed, so a **monthly** bulletin
+ranked its July issue above its August one. The day now can't run into a longer
+number (`(\d{1,2})(?!\d)`), and both fall back to the 1st of their path month.
+
+Checked against all 14 enabled Self-Hosted parishes, live: 2 fixed, 0
+regressions, `hs-gh` back to its August issue. `ss-c` and `st-basil-the-g` are
+processed by the local worker, so they pick this up on the worker's next run,
+not from Actions.
+
 ### v2.5.5 (2026-08-05) - Noise study; adorer-coverage hours; stated durations
 
 **New: `studies/noise/`** — a repeatable harness for measuring how much the
