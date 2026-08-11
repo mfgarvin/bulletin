@@ -251,7 +251,9 @@ Five publisher types with different URL patterns:
 **Self-Hosted Setup:**
 1. Set `Bulletin Publisher` to "Self-Hosted"
 2. Set `Bulletin Page URL` to the page containing the bulletin PDF link
-3. The scraper finds PDF links on the page, prioritizing those with "bulletin" in the URL/text and recent dates
+3. The scraper finds PDF links on the page and ranks them — see
+   [Bulletin Freshness](#bulletin-freshness) for how, and for the failure mode
+   that ranking keeps producing
 
 **Webpage Setup:**
 1. Set `Bulletin Publisher` to "Webpage"
@@ -267,9 +269,134 @@ Options for JS-heavy sites:
 2. **Use a different page** - Sometimes `/mass-times` or similar pages are static even if the homepage isn't
 3. **Add headless browser support** - Would require adding Playwright/Selenium to render JS (not currently implemented due to complexity and resource requirements)
 
+## Bulletin Freshness
+
+**A successful run means "we downloaded *a* bulletin", never "we downloaded the
+current one."** Nothing in the pipeline compares the bulletin's date to today.
+A parish stuck on a months-old PDF extracts cleanly, saves cleanly, sets
+`Issues` to "No Issues", and stamps `GPT Timestamp` with today's date. The row
+looks healthier than one that honestly failed.
+
+This has now bitten four times in three different ways, and every instance was
+found by accident — never by the pipeline:
+
+| found | parishes | cause | fixed in |
+|---|---|---|---|
+| 2026-07-26 | `olp-cle`, `olg-m` | keyword score outranked recency; a "Christmas Bulletin 2022" beat the live PDF | `03949b9` |
+| 2026-08-10 | **108 of 109** PO/eCatholic | date walk only looked backwards; the Sunday-dated file is posted days early | v2.5.6 |
+| 2026-08-10 | `sp-l` (456 days stale), `ss-c` | filename dialects the date parser couldn't read, so ranking fell back to keywords | v2.5.6 |
+| 2026-08-10 | `hs-gh` (caught pre-merge) | a widened month-name pattern read a year as a day, ranking July above August | v2.5.6 |
+
+Assume there is a fifth. When touching any of this, the question to ask is not
+"does it download?" but "is what it downloaded the newest thing the site has?"
+
+### How each source decides
+
+- **Parishes Online / eCatholic** — construct `YYYYMMDD` filenames and probe.
+  The walk runs from `LOOKAHEAD_DAYS` (3) in the future back to `LOOKBACK_DAYS`
+  (30) ago, **newest first**, taking the first HTTP 200. The lookahead exists
+  because the filename is the Sunday the bulletin *covers* and parishes upload
+  days early; the Saturday cron would otherwise never see it. Don't raise it to
+  7 — a parish posting a fortnight ahead could pull a mid-week run onto the
+  following Sunday's file and skip a week of events. Note these hosts answer
+  **403, not 404**, for a file that doesn't exist; only a 200 counts.
+- **Discover Mass** — scrapes the parish page for its current-bulletin link.
+  The URL is an opaque token with no date in it, so freshness can't be checked
+  from the URL; compare tokens across runs instead (they rotate weekly).
+- **Self-Hosted** — ranks every `.pdf` link on the page. See below.
+- **Webpage** — no PDF; freshness is whatever the page currently renders.
+
+### The Self-Hosted ranking model
+
+Score = keyword score + recency bonus, sorted by that, then by parsed date.
+
+- Keywords (`_score_link`): `.pdf` +10, bulletin-ish word in the href +20 or
+  link text +15, any date-shaped run of digits +25, "current"/"latest"/"this
+  week" +30, `archive`/`past`/`old` −20.
+- Recency (`_recency_bonus`): ≤30 days old +100, ≤120 +60, ≤400 +25, older +5,
+  up to 14 days *future* +90, further future or unparseable **0**.
+
+Recency is deliberately larger than any keyword so a dated current bulletin
+beats a stale file merely named "bulletin" — but it is only a bonus, so undated
+`CurrentBulletin.pdf`-style links still win when nothing on the page parses.
+
+**This is why an unparseable filename is dangerous rather than merely
+unhelpful.** A date the parser can't read scores 0 recency, which is the same
+score as a date it reads as implausibly far in the future. Either way the
+current bulletin loses to any stale sibling that happens to parse — which is
+exactly what happened to `sp-l` and `ss-c`. A parsing gap doesn't degrade the
+pick; it inverts it.
+
+### Filename dialects the parser handles
+
+Real examples, all currently live. `_extract_date_raw()` tries these in order;
+`_parse_numeric_triple()` covers the separated-numeric family.
+
+| filename | reading | parishes |
+|---|---|---|
+| `20260809.pdf`, `20260726B-compressed.pdf` | `YYYYMMDD` | PO/EC, `st-basil-the-g` |
+| `Bulletin-English-2026-08-09.pdf` | `YYYY-M-D` | `sc-c` |
+| `8-9-26.pdf`, `bulletin_1-4-26.pdf` | `M-D-YY` | `sp-l` |
+| `26_08_09_bulletin.pdf` | `YY-MM-DD` | `ss-c` |
+| `August_9_bulletin_8x11.pdf`, `august_9_2026.pdf` | textual, `_` separator | `sp-l`, `bearer` |
+| `JFuly 19. 2026.pdf` | textual, typo'd, spaces | `olp-cle` |
+| `bulletin_AUGUST-2026.pdf` | month only → 1st of path month | `hs-gh` (monthly) |
+| `/2026/08/file-1-4.pdf` | day from name, year+month from path | eCatholic docs layout |
+| `CurrentBulletin.pdf`, `8-9.pdf`, `Clare8-9__178…pdf` | **undated** — keyword-ranked | `shc`, `sc-p`, `sc-l` |
+
+Ambiguous triples resolve to `M-D-YY` (these are US parish sites) unless the
+URL path names a month and only one reading agrees with it. Readings outside
+2000..next year are discarded, as is anything more than 14 days future-dated —
+a misread run of digits, not a bulletin.
+
+### Rules for editing the date parser
+
+1. **Widening a pattern is how you break a different parish.** Every separator
+   you add to a month-name pattern is a chance for the day group to swallow
+   part of a year (`bulletin_JULY-2026` → the 20th). Keep `(\d{1,2})(?!\d)`.
+2. **Run the end-to-end check, not just unit cases.** The `hs-gh` regression
+   passed every filename test written for it and only appeared when ranking the
+   whole page. Ranking is what matters; a correct parse that loses is still a
+   bug.
+3. **A future date is a parse failure, not a scoop.** Never let one sort to the
+   top on the theory that it's next week's bulletin.
+4. **Prefer failing to parse over parsing wrong.** `date.min` costs the recency
+   bonus; a wrong date can *win* it.
+
+### Auditing freshness
+
+Nothing does this automatically. After a full run, three checks in order of
+how much they're worth:
+
+```bash
+# 1. What bulletin date did PO/eCatholic actually fetch? (URLs carry the date)
+gh run view <run-id> --log | grep -E '(parishesonline|ecatholic)' | grep '200 OK' \
+  | grep -oE '2026[0-9]{4}B?\.pdf' | tr -d 'B' | sort | uniq -c | sort -rn
+# Expect one dominant date: the most recent Sunday, or the coming one.
+
+# 2. Which bulletin_url values did NOT change since the previous export?
+git diff <prev-export-commit> HEAD -- export.json | grep bulletin_url
+# Discover Mass tokens rotate weekly, so an unchanged DM URL is suspicious.
+# Unchanged is fine for CurrentBulletin.pdf-style and Webpage rows.
+
+# 3. For Self-Hosted, re-rank each page live and eyeball the parsed dates.
+#    SelfHostedSource()._find_best_pdf_link(html, page_url) plus
+#    ._extract_date(url) over the "Self-Hosted" rows in Notion.
+```
+
+The strongest signal is in the extraction itself: the model usually writes
+"Bulletin dated Sunday, August 9, 2026" into `GPT Logs` / `Notes`. Grepping
+that against today's date catches staleness for *every* publisher including
+Discover Mass, where the URL tells you nothing — but only ~1/3 of extractions
+state a date, so it's a spot-check, not a sweep.
+
 ## Automation
 
 GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/workflows/gh-actions.yml`)
+
+A dispatched run accepts a `stale_days` input (default 6); set it to `0` to
+force every parish, which is what a scraper fix needs — otherwise `--all` finds
+nothing stale and exits in 30 seconds. The scheduled run passes no inputs.
 
 **Local worker.** A few parish sites block GitHub Actions' datacenter IPs but
 load fine from a residential connection, so those parishes are processed from
