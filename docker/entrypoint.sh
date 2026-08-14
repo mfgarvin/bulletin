@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #
-# Container entrypoint: validate config, install the crontab, hand off to cron.
+# Container entrypoint: validate config, fetch the code, install the crontab,
+# hand off to cron.
 #
 # cron wipes the environment of the jobs it runs, so the container's env vars
 # (API keys, PARISHES, MODE, ...) are snapshotted to a file here and sourced
@@ -8,8 +9,11 @@
 
 set -euo pipefail
 
+BIN_DIR="${BIN_DIR:-$(cd "$(dirname "$0")" && pwd)}"
 APP_DIR="${APP_DIR:-/app}"
-ENV_SNAPSHOT="$APP_DIR/.docker-env"
+# Outside $APP_DIR: that directory is a git checkout that gets reset --hard on
+# every run, and a stray tracked-looking file in it is asking for trouble.
+ENV_SNAPSHOT="${ENV_SNAPSHOT:-/var/lib/bulletin-worker/env}"
 CRON_FILE="${CRON_FILE:-/etc/cron.d/bulletin-worker}"
 
 # ---- timezone -------------------------------------------------------------
@@ -52,9 +56,22 @@ if [ "$(echo "$CRON_SCHEDULE" | wc -w)" -ne 5 ]; then
     exit 1
 fi
 
+# ---- get the code ---------------------------------------------------------
+# The image ships no application code, so this is what makes the container
+# runnable at all. Doing it here rather than only in run-worker.sh means a bad
+# REPO_URL/BRANCH fails now, in plain sight, instead of on Saturday morning.
+# Exit 2 = nothing usable on disk; exit 1 = stale but runnable, which is the
+# scheduler's problem to report, not a reason to refuse to start.
+"$BIN_DIR/sync-code.sh" || rc=$?
+if [ "${rc:-0}" -eq 2 ]; then
+    echo "FATAL: could not obtain the application code from $REPO_URL" >&2
+    exit 1
+fi
+
 # ---- snapshot the environment for the cron job ----------------------------
 # printf %q quotes values so newlines/spaces in secrets survive the round trip.
 umask 077
+mkdir -p "$(dirname "$ENV_SNAPSHOT")"
 : > "$ENV_SNAPSHOT"
 while IFS='=' read -r -d '' name value; do
     case "$name" in
@@ -78,16 +95,18 @@ mkdir -p "${LOG_DIR:-/logs}"
 
 echo "$(date -Is) bulletin worker starting"
 echo "  schedule : $CRON_SCHEDULE  (TZ=${TZ:-UTC})"
+echo "  code     : ${REPO_URL:-https://github.com/mfgarvin/bulletin.git} @ ${BRANCH:-main} — $(git -C "$APP_DIR" rev-parse --short HEAD 2>/dev/null || echo unknown)"
+echo "  update   : ${AUTO_UPDATE:-true} (before each run)"
 echo "  mode     : $MODE"
 [ "$MODE" = "ids" ] \
     && echo "  parishes : $PARISHES" \
-    || echo "  stale    : >${STALE_DAYS:-7} days"
+    || echo "  stale    : >${STALE_DAYS:-6} days"
 echo "  logs     : ${LOG_DIR:-/logs}"
 
 # ---- optional immediate run ----------------------------------------------
 if [ "${RUN_ON_START:-false}" = "true" ]; then
     echo "$(date -Is) RUN_ON_START=true — running once now"
-    /usr/local/bin/run-worker.sh || echo "$(date -Is) startup run failed (continuing to schedule)"
+    "$BIN_DIR/run-worker.sh" || echo "$(date -Is) startup run failed (continuing to schedule)"
 fi
 
 exec cron -f -L 2

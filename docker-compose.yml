@@ -22,12 +22,21 @@ services:
       # Saturday 09:00 local — before the 14:00 UTC Actions export.
       CRON_SCHEDULE: "0 9 * * 6"
 
+      # --- code ---
+      # The image ships no application code; /app is cloned at start and
+      # re-synced with origin/BRANCH before every run, so pushing to main is
+      # how a fix reaches this container. AUTO_UPDATE=false pins it to whatever
+      # it last checked out (debugging only).
+      REPO_URL: https://github.com/mfgarvin/bulletin.git
+      BRANCH: main
+      AUTO_UPDATE: "true"
+
       # --- what to process ---
       # MODE=ids  → process exactly the PARISHES listed (the local-worker case:
       #             sites that block GitHub Actions' datacenter IPs)
       # MODE=all  → process every enabled parish with data older than STALE_DAYS
       MODE: ids
-      PARISHES: "ss-c st-basil-the-g"
+      PARISHES: "ss-c st-basil-the-g olp-cle"
       STALE_DAYS: "6"
 
       # --- optional ---

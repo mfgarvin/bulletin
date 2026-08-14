@@ -405,7 +405,17 @@ home instead. Two equivalent ways to do that:
 - `local_worker.sh` — bare script; pulls, manages a venv, reads `.env`.
 - `Dockerfile` + `docker-compose.yml` + `docker/` — the same thing as a
   container with an internal cron (built for Unraid; see `docker/README.md`).
-  Code is baked into the image, so updating means rebuilding.
+  The image carries dependencies and the worker scripts only: `/app` is cloned
+  at container start and re-synced with `origin/main` before every run
+  (`docker/sync-code.sh`), so **a code fix reaches the worker by being pushed,
+  not by rebuilding**. Rebuild only for the base image, the worker scripts, or
+  the dependency baseline. Each run logs the commit it executes; a failed
+  update logs `STALE code` and runs the previous commit rather than skipping
+  the week.
+
+Both workers currently process `ss-c`, `st-basil-the-g`, and `olp-cle` — the
+last two 403 from Actions' datacenter IPs but return 200 from a residential
+connection.
 
 Neither regenerates `export.json` — they only refresh those parishes' Notion
 rows. The Saturday Actions job still rebuilds `export.json` / `parish_data.json`
@@ -421,6 +431,76 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.7 (2026-08-14) - The Docker worker tracks GitHub instead of a frozen copy
+
+**Problem:** the image was built with `COPY . .`, so the container ran whatever
+the working tree held at build time. That made v2.5.6's Self-Hosted date-parser
+fix **structurally unreachable by the machine that needed it most**: `ss-c` and
+`st-basil-the-g` are processed only by the local worker, precisely because they
+403 from Actions' datacenter IPs — and the fix for their filename dialects
+could not reach that worker without someone remembering to rebuild the image.
+The container would have kept downloading `26_07_26_bulletin.pdf` every
+Saturday and stamping it with the current date, which is this project's
+signature failure: a run that looks healthy while serving stale data.
+
+**Fix:** the image now carries dependencies and the three worker scripts only.
+`/app` is cloned at container start and re-synced with `origin/$BRANCH`
+immediately before every run, by new **`docker/sync-code.sh`** (called from both
+`entrypoint.sh` and `run-worker.sh`). Shipping a scraper fix is a `git push`;
+rebuild only for the base image, the worker scripts, or the dependency
+baseline. `local_worker.sh` already worked this way — the container was the
+outlier.
+
+Degraded modes are distinguished, because they call for different behavior:
+
+| situation | exit | behavior |
+|---|---|---|
+| synced with origin | 0 | runs; logs `code: <old> -> <new>` and the subject line |
+| fetch failed, checkout present | 1 | **runs anyway** on the old commit, logging `WARNING: update FAILED` and `continuing with STALE code` |
+| no usable checkout | 2 | runs nothing |
+
+Running last week's scraper beats skipping the week, but silently is how this
+project gets bitten, so it is loud and greppable. Every run logs the commit it
+is about to execute (`worker start — … @ 9f44ac5`).
+
+Dependencies reinstall only when the pulled `requirements.txt` no longer
+matches the hash in `/var/lib/bulletin-worker/requirements.sha256`. That marker
+lives in the container, not in `/app`: stored alongside the code it would go
+stale the moment a container is recreated against a persistent `/app` mount,
+and a needed install would be skipped. `.docker-env` moved out of `/app` for
+the related reason that the directory now gets `reset --hard` on every run.
+
+**`olp-cle`** (Our Lady of Peace) joined `ss-c` and `st-basil-the-g` in the
+worker's parish list — it started returning 403 to Actions and had been stuck
+on its July 19 bulletin. Re-ranked live from a residential connection it
+resolves `August 9 2026-1.pdf` correctly. The Unraid template also had
+`STALE_DAYS` defaulting to 7, which v2.5.3 established is the off-by-one that
+makes a weekly job skip itself; it is 6 now, like everywhere else.
+
+Verified against the real repo with a scratch `APP_DIR` and stubbed
+`pip`/`python`: fresh clone, already-current, behind-by-N, `AUTO_UPDATE=false`,
+unreachable branch, bad repo URL, non-empty non-git directory, and
+requirements-changed all produce the right output and exit code; `entrypoint.sh`
+writes the crontab and a `-rw-------` env snapshot, and refuses to start on an
+unreachable repo.
+
+**Install notes** (`docker/README.md`) were rewritten for an actual Unraid
+install. The build no longer opens with `git clone` — stock Unraid 6.x has no
+`git` — so the tarball route is primary. Outbound HTTPS to github.com is now a
+runtime dependency, not just a build one. Added the expected startup output to
+check against, and corrected the first-run advice: `DRY_RUN=true` still
+downloads bulletins and calls OpenAI, so it costs the same as a real run.
+
+**Data: `GPT Timestamp` shifted back 2 days on 156 enabled rows** (154 from
+`2026-08-10`, 2 from `2026-07-26`). A dispatched run on Monday 2026-08-10 had
+re-stamped nearly the whole database, and with `stale_days=6` the Saturday
+2026-08-15 job computes a cutoff of `2026-08-09` — every one of those rows
+would have failed the strict `<` and been skipped, leaving the weekly run to
+process the two parishes it cannot reach anyway. Confirmed through
+`get_parishes_to_process()` itself: 2 rows before the shift, 156 after. This is
+the v2.5.3 off-by-one wearing different clothes — any out-of-band run moves
+every row it touches onto a cadence the scheduled job can miss.
 
 ### v2.5.6 (2026-08-10) - Date-walk looks forward; every PO/eCatholic parish was a week behind
 

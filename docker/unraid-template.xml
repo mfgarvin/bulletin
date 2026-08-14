@@ -62,11 +62,23 @@
           Description="'ids' = process exactly the parishes listed below. 'all' = process every enabled parish with data older than Stale days."
           Type="Variable" Display="always" Required="true" Mask="false"/>
 
-  <Config Name="Parishes" Target="PARISHES" Default="ss-c st-basil-the-g" Mode=""
+  <Config Name="Parishes" Target="PARISHES" Default="ss-c st-basil-the-g olp-cle" Mode=""
           Description="Parish IDs to process when Mode=ids. Separate with spaces or commas."
           Type="Variable" Display="always" Required="false" Mask="false"/>
 
-  <Config Name="Stale days" Target="STALE_DAYS" Default="7" Mode=""
+  <Config Name="Git repository" Target="REPO_URL" Default="https://github.com/mfgarvin/bulletin.git" Mode=""
+          Description="The container clones this at start and re-syncs it before every run, so pushing to the branch below is how a code fix reaches the worker. No rebuild needed."
+          Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="Branch" Target="BRANCH" Default="main" Mode=""
+          Description="Branch to track. 'main' is what GitHub Actions runs."
+          Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="Auto-update code" Target="AUTO_UPDATE" Default="true" Mode=""
+          Description="'true' pulls the latest commit before each scheduled run. 'false' pins the container to whatever it last checked out — debugging only."
+          Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="Stale days" Target="STALE_DAYS" Default="6" Mode=""
           Description="When Mode=all, only reprocess parishes whose data is older than this many days."
           Type="Variable" Display="advanced" Required="false" Mask="false"/>
 

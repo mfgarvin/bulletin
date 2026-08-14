@@ -32,7 +32,7 @@ set -euo pipefail
 # ---- config ---------------------------------------------------------------
 REPO_DIR="${REPO_DIR:-$HOME/bulletin-v2}"     # where the repo is cloned
 BRANCH="${BRANCH:-main}"                       # what GitHub Actions runs on
-PARISHES=(ss-c st-basil-the-g)                 # parish IDs to process locally
+PARISHES=(ss-c st-basil-the-g olp-cle)         # parish IDs to process locally
 LOG_DIR="${LOG_DIR:-$REPO_DIR/worker-logs}"    # per-run logs live here
 # ---------------------------------------------------------------------------
 
