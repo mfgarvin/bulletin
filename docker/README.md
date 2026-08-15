@@ -196,7 +196,27 @@ going when the next one is due is skipped, not stacked.
 
 **Updating.** Code changes need nothing here — push to `main` and the next run
 has them. Rebuild the image only for the base image, the worker scripts
-(`docker/*.sh`), or the dependency baseline: re-download or `git pull`, then
-`docker build -t bulletin-worker .` and restart the container from the Unraid
-UI. Editing `docker/unraid-template.xml` in the repo does not touch the copy in
-`/boot/...`; re-copy it if you want the new defaults in the UI.
+(`docker/*.sh`), or the dependency baseline:
+
+```bash
+cd /mnt/user/appdata/bulletin-worker/src/bulletin-main   # or your checkout
+curl -L https://github.com/mfgarvin/bulletin/archive/refs/heads/main.tar.gz | tar xz --strip-components=1
+docker build -t bulletin-worker .
+```
+
+Then **recreate** the container — Unraid: **Edit → Apply** on it. A restart is
+not enough: a container is bound to the image *ID* it was created from, so
+rebuilding the `bulletin-worker` tag leaves the running container on the old
+image until it is recreated. `docker ps --no-trunc --format '{{.Image}}'`
+against `docker images -q bulletin-worker` tells you which one it is on.
+
+Two things that do **not** need a rebuild, since both are read at container
+start or run time: changing any env var (edit it in the UI and Apply), and
+anything in the application code.
+
+Editing `docker/unraid-template.xml` in the repo does not touch the copy in
+`/boot/config/plugins/dockerMan/templates-user/`, and neither one retroactively
+changes a container that already exists — dockerMan copied the template into
+that container's own `my-bulletin-worker.xml` when it was created. Re-copy the
+repo template only to refresh the defaults offered to *future* containers;
+adjust an existing one by editing it in the UI.
