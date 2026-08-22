@@ -217,6 +217,47 @@ SINGLE_SITE_PARISHES: set[str] = {
 - Address info is taken from the first extracted site
 - The merged site uses the parish name from Notion
 
+## Site Exclusions
+
+Sometimes a bulletin lists a worship site that belongs to a **different
+parish's row** — a neighbouring parish, or an oratory that has since acquired
+its own bulletin. Merging it in publishes that parish's Masses under the wrong
+name and address.
+
+`SINGLE_SITE_PARISHES` cannot express this. Its name filter keeps only the
+best-scoring sites, so it also discards *legitimate* secondary sites whose
+names don't share distinctive words with the parish name. Add the parish to
+`SITE_EXCLUSIONS` in `definitions.py` instead:
+
+```python
+SITE_EXCLUSIONS: dict[str, list[str]] = {
+    "1259": ["oratory of the immaculate conception"],
+}
+```
+
+- Keyed by `ParishID`; patterns match case-insensitively as substrings of the
+  extracted site name
+- Applied in `collapse_sites()` **before** either collapse branch, so an
+  excluded site can never be merged in
+- Ignored if it would drop *every* site — saving an empty schedule over a good
+  one is worse than the bleed
+
+**Worked example (the Cathedral).** `1259`'s bulletin lists three sites: the
+Cathedral, its temporary weekday chapel during renovations, and the Oratory of
+the Immaculate Conception. The first two are one parish and must merge — 10 of
+its 15 Masses are the chapel's. The third is `immat-con-cle`, its own parish
+with its own ICKSP bulletin that already publishes the same Saturday vigil.
+`SINGLE_SITE_PARISHES` would have fixed the leak by dropping the chapel and
+losing every weekday Mass; the exclusion drops only the Oratory.
+
+Choosing between the three mechanisms:
+
+| situation | mechanism |
+|---|---|
+| one bulletin, many rows that should each get data | `Bulletin Group ID` + `SITE_MAPPINGS` |
+| bulletin lists other parishes; only this row matters | `SINGLE_SITE_PARISHES` |
+| bulletin lists another parish's site, but this row has real secondary sites too | `SITE_EXCLUSIONS` |
+
 ## Environment Variables
 
 Required in `.env`:
@@ -431,6 +472,55 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.9 (2026-08-21) - Site exclusions; the Cathedral and the Oratory
+
+**`SITE_EXCLUSIONS`** in `definitions.py`, applied by `_apply_site_exclusions()`
+from `collapse_sites()` before either collapse branch. See the **Site
+Exclusions** section above for the mechanism and when to reach for it over
+`SINGLE_SITE_PARISHES`.
+
+The Cathedral (`1259`) was publishing the Oratory of the Immaculate
+Conception's Saturday 18:00 vigil under its own name and address.
+`immat-con-cle` is its own parish with its own ICKSP bulletin that already
+publishes that Mass, so this was a duplicate at the wrong location. It is
+dropped rather than re-noted as a Cathedral Mass, because IC owns that row.
+
+The Cathedral's **temporary weekday chapel still merges** — that was the whole
+constraint. 10 of its 15 Masses are the chapel's weekday 7:15 and 12:00, so the
+`SINGLE_SITE_PARISHES` name filter would have traded one wrong Mass for ten
+missing ones plus most of the weekday confessions.
+
+**`ManualFix.drop_masses`** — a new `set[(day, time)]` field for removing a Mass
+outright, alongside the existing `mass_time_fixes` remap. Applied before the
+remap and before the sanitizer.
+
+It exists because the Aug 23 re-run gave `1259` a spurious 15th Mass: `Saturday
+16:00 "Special Mass: Passion of St. John the Baptist"`. That is the feast kept
+at the normal 4:30pm vigil, not an extra 4:00pm Mass — the extractor read a
+day-by-day feast heading as its own celebration. Remapping 1600 -> 1630 would
+have worked mechanically (the sanitizer merges duplicates on
+`(day, time, language, mass_date)`) but `_merge_notes` would have folded a
+week-specific feast name into the recurring vigil entry and republished it every
+Saturday. Deleting is the correct shape, and nothing expressed it.
+
+`drop_masses` is deliberately narrower than a whole-schedule replacement: a
+stated 14-Mass list would go stale the moment the parish changed anything,
+whereas this removes one entry and leaves the rest to the extractor.
+
+**Watch `1259` — two consecutive runs produced a different spurious 15th Mass**
+(the Oratory vigil, then the feast heading). Its bulletin prints a day-by-day
+Mass-intentions listing with liturgical titles, and the extractor keeps reading
+parts of it as the recurring schedule. The structural fix is a prompt change,
+not another manual entry.
+
+Guard: an exclusion matching *every* site is ignored and logged, not applied.
+Verified against the real site names (Oratory present, Oratory absent,
+Oratory-only, and an unrelated parish) plus a live re-run of `1259`, which
+cleared the stray vigil. Note the model does not split the same way every week:
+on the 2026-08-23 bulletin it folded the chapel into the Cathedral site itself
+and emitted only two sites, so no collapse was needed — the exclusion still
+fired correctly.
 
 ### v2.5.8 (2026-08-21) - Cluster bleed: one parish publishing another's schedule
 

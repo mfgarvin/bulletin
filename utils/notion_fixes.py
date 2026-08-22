@@ -61,6 +61,12 @@ class ManualFix:
     address: str | None = None
     is_perpetual: bool | None = None
     mass_time_fixes: dict[tuple[str, int], int] = field(default_factory=dict)
+    # (day, time) entries to remove outright. For a Mass the extractor invented
+    # rather than mistimed — a feast heading read as its own celebration, a
+    # neighbouring parish's Mass — where remapping the time would merge a
+    # week-specific note into the recurring entry and repeat it forever.
+    # Matched against the stored time, before mass_time_fixes runs.
+    drop_masses: set[tuple[str, int]] = field(default_factory=set)
     # Replaces the confession slots outright. For a listing the extractor
     # misread structurally, where no per-time correction can express the fix
     # (one slot has to become two).
@@ -123,6 +129,16 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         "advertised 7pm-midnight every Thursday of the year (confirmed by hand "
         "2026-08-05)",
         adoration_times=[],
+    ),
+    "1259": ManualFix(
+        reason="the extractor read a feast heading as its own celebration. The "
+        "Aug 23 2026 bulletin's day-by-day listing titles Saturday with the "
+        "Passion of St. John the Baptist and its readings; that is the feast "
+        "kept at the normal 4:30pm vigil, not an extra 4:00pm Mass. Confirmed "
+        "by the pastor's account 2026-08-21. Dropped rather than remapped to "
+        "1630 - remapping would merge the week-specific feast note into the "
+        "recurring vigil entry and republish it every Saturday",
+        drop_masses={("Saturday", 1600)},
     ),
     "sc-c": ManualFix(
         reason="stored adoration was Lent-only, published year-round. The single "
@@ -218,6 +234,20 @@ def plan_fixes(parish: FullParishData) -> tuple[dict[str, Any], list[str]]:
     )
 
     manual = MANUAL_FIXES.get(parish.parish_id) or MANUAL_FIXES.get(parish.name)
+
+    # Drops run first, so a dropped entry is matched on its stored time and
+    # never picked up by a remapping below.
+    if manual and manual.drop_masses:
+        kept = []
+        for mass in site.mass_times:
+            if (mass.day.value, mass.time) in manual.drop_masses:
+                notes.append(
+                    f"mass: dropped {mass.day.value} {mass.time:04d} "
+                    f"({manual.reason})"
+                )
+            else:
+                kept.append(mass)
+        site.mass_times = kept
 
     # Manual Mass-time corrections run before the sanitizer, so a repaired
     # vigil is deduplicated against the rest of the schedule normally.

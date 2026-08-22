@@ -49,6 +49,42 @@ SINGLE_SITE_PARISHES: set[str] = {
     "0342",
 }
 
+# Sites to drop from a parish's extraction before any collapse happens.
+#
+# For a bulletin that lists a worship site belonging to a DIFFERENT parish's
+# row. SINGLE_SITE_PARISHES cannot express this: its name filter keeps only the
+# best-scoring sites, so it would also discard legitimate secondary sites (a
+# chapel, a temporary worship space) whose names don't share distinctive words
+# with the parish name.
+#
+# Each rule is {"match": substring, "unless": (substrings,)}. All matched
+# case-insensitively against the extracted site name; a site is dropped when
+# `match` is present and no `unless` term is. Ignored if it would drop every
+# site.
+#
+# The `unless` guard is not optional bookkeeping. The extracted site name is
+# free text the model writes fresh each run, and it does NOT name a site the
+# same way twice — see studies/noise/signature_recurring.py. Always check a
+# new rule against the site names a real bulletin actually produces.
+SITE_EXCLUSIONS: dict[str, list[dict]] = {
+    # The Cathedral bulletin lists the Oratory of the Immaculate Conception
+    # with its own address and Saturday vigil. IC is its own parish with its
+    # own ICKSP bulletin (immat-con-cle), which already publishes that Mass -
+    # merging it here duplicated it onto the Cathedral's address.
+    #
+    # The guard matters more than the match. In 4 of 10 recorded runs the model
+    # used the SAME name for the Cathedral's own temporary renovation chapel
+    # ("The Oratory of the Immaculate Conception (Temporary Weekday Chapel)"),
+    # which supplies 10 of the parish's 15 Masses. A bare substring match drops
+    # those and leaves the parish with Sundays only.
+    "1259": [
+        {
+            "match": "oratory of the immaculate conception",
+            "unless": ("chapel", "temporary", "weekday", "renovation"),
+        },
+    ],
+}
+
 # Format:
 # "primary-parish-id": {
 #     "pattern in extracted name": "target-parish-id",

@@ -11,7 +11,7 @@ from typing import cast
 from openai import AsyncOpenAI
 
 from database import NotionClient
-from definitions import SINGLE_SITE_PARISHES, SITE_MAPPINGS
+from definitions import SINGLE_SITE_PARISHES, SITE_EXCLUSIONS, SITE_MAPPINGS
 from extractor import BulletinExtractor, ExtractionMethod
 from schemas import AdorationSchedule, BulletinExtraction, ParishRecord, SiteInfo
 from sources import get_source_for_publisher
@@ -124,6 +124,47 @@ def merge_sites(sites: list[SiteInfo], site_name: str) -> SiteInfo:
     )
 
 
+def _apply_site_exclusions(
+    extraction: BulletinExtraction, parish_id: str
+) -> str | None:
+    """Drop sites that belong to a different parish's row.
+
+    Runs before any collapse, so an excluded site can never be merged in.
+    Ignored if it would drop every site — an empty schedule saved over a good
+    one is worse than the bleed it was meant to prevent.
+    """
+    rules = SITE_EXCLUSIONS.get(parish_id)
+    if not rules or not extraction.sites:
+        return None
+
+    def excluded(name: str) -> bool:
+        for rule in rules:
+            if rule["match"] not in name:
+                continue
+            if any(term in name for term in rule.get("unless", ())):
+                continue  # a guard term means this is our own site, not theirs
+            return True
+        return False
+
+    kept, dropped = [], []
+    for site in extraction.sites:
+        if excluded((site.site_name or "").lower()):
+            dropped.append(site.site_name)
+        else:
+            kept.append(site)
+
+    if not dropped:
+        return None
+    if not kept:
+        return (
+            f"Site exclusion for '{parish_id}' matched every site {dropped} - "
+            f"ignored rather than saving an empty schedule"
+        )
+
+    extraction.sites = kept
+    return f"Excluded {len(dropped)} site(s) {dropped} - another parish's row owns them"
+
+
 def collapse_sites(
     extraction: BulletinExtraction,
     parish_id: str,
@@ -135,6 +176,9 @@ def collapse_sites(
     Mutates ``extraction.sites`` in place. Returns a log line describing the
     collapse, or None if nothing was collapsed.
 
+    Sites listed in SITE_EXCLUSIONS are dropped first, so a site owned by
+    another parish's row is never merged in by either branch below.
+
     Two cases land here:
      - parish is in SINGLE_SITE_PARISHES: a shared bulletin lists other
        parishes too, so filter to the sites belonging to this one.
@@ -145,6 +189,12 @@ def collapse_sites(
        find no SITE_MAPPINGS entry, match nothing, and the parish
        silently saves an empty schedule.
     """
+    notes: list[str] = []
+
+    excluded = _apply_site_exclusions(extraction, parish_id)
+    if excluded:
+        notes.append(excluded)
+
     if len(extraction.sites) > 1 and (
         parish_id in SINGLE_SITE_PARISHES or group_size == 1
     ):
@@ -154,8 +204,11 @@ def collapse_sites(
         else:
             merged = merge_sites(extraction.sites, parish_name)
         extraction.sites = [merged]
-        return f"Collapsed {len(site_names)} sites {site_names} → '{merged.site_name}'"
-    return None
+        notes.append(
+            f"Collapsed {len(site_names)} sites {site_names} → '{merged.site_name}'"
+        )
+
+    return "; ".join(notes) if notes else None
 
 
 @dataclass
