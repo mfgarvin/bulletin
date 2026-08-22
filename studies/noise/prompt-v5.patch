@@ -1,0 +1,71 @@
+# Prompt v5 — NOT DEPLOYED (2026-08-21)
+#
+# Four rules validated wide (50 parishes x 5 repeats, 4 conditions, ~16M tokens).
+# They fix what they target and degrade adoration monotonically. See the v2.5.10
+# changelog entry in CLAUDE.md for the full evidence before reapplying any of this.
+#
+# Reapply with:  git apply studies/noise/prompt-v5.patch
+#
+diff --git a/extractor.py b/extractor.py
+index a0b6532..29a81b7 100644
+--- a/extractor.py
++++ b/extractor.py
+@@ -29,6 +29,29 @@ Extract the following information:
+    main church are NOT separate sites — fold their schedules into the main site. Most
+    bulletins have exactly one site.
+ 
++   A **temporary worship space** used while the main church is under renovation is NOT a
++   separate site. Fold its schedule into the main site and note the location on the entries.
++
++   **Never build a site name out of two things on the page.** If a location is identified only
++   by a description ("the Chapel at 1404 E 9th St."), use that description verbatim as the
++   site_name. Do NOT borrow a proper name printed nearby: a masthead often stacks a second,
++   separately-addressed parish next to a key or a note, and pairing that parish's name with the
++   description invents a site that does not exist. Two headers with two different addresses are
++   two different places — keep them apart.
++
++   **A Mass held at another named church is that church's Mass.** When the bulletin marks a
++   Mass as taking place somewhere it names — "6:00 pm (Sunday Vigil at Immaculate Conception)",
++   "10:30 AM (Mass at St. Matthew)" — put that Mass in THAT church's site entry, creating the
++   site if it does not exist yet. Never leave it in this parish's schedule. Clustered parishes
++   routinely print each other's Masses in one shared listing, and the annotation is what tells
++   you whose Mass it is. This applies even when the listing is headed as this parish's own
++   schedule.
++
++   **Typographic keys.** Bulletins mark a subset of entries with a colour, a symbol or a
++   footnote and explain the key nearby ("Items in Red will be in the Chapel at 1404 E 9th St.",
++   "† = live-streamed"). Apply the key to the marked entries. A key that names a place changes
++   only WHERE that entry happens — never its day or its time.
++
+ 3. **Mass schedule** (per site):
+    - Day of week + time (24hr, e.g. 1630 for 4:30pm)
+    - **`mass_date`** — set on every non-recurring Mass; leave null only for truly recurring weekly Masses.
+@@ -42,6 +65,11 @@ Extract the following information:
+    - `notes`: brief description ("Vigil Mass", "Christmas Eve", "Holy Day of Obligation")
+    - A Vigil Mass is always an evening Mass. If you are about to record a vigil before noon,
+      you have flipped AM/PM — a "Saturday Vigil at 5:00" means 1700, not 500.
++   - **A parenthetical describes a Mass; it does not move it.** Under a "Saturday:" heading,
++     "6:00 pm (Sunday Vigil at Immaculate Conception)" is a SATURDAY Mass at 1800 — the words
++     "Sunday" and the place name say what the Mass is FOR and WHERE it is held, not what day it
++     is celebrated. Never move a Mass to another day, or flip its AM/PM, because its description
++     names one.
+ 
+    **DO NOT include private Masses** — weddings, funerals, baptism Masses, ordination Masses
+    tied to specific families. Even if dated, these are not part of the public parish schedule.
+@@ -146,6 +174,16 @@ Extract the following information:
+      `start_time: 0, end_time: 0, end_next_day: true` - a full 24 hours, not an unknown end.
+ 
+ **TIME ENCODING RULES (all schedules):**
++- **Transcribe, never normalise.** Every time you READ off the page must appear there, in those
++  digits. Do not round a time, and do not adjust one toward what a parish schedule "usually"
++  looks like. 8:30/10:30 is an extremely common Sunday pairing, but a common pattern is not
++  evidence: if the page says "8:30, 11:00 am", the times are 830 and 1100. If you cannot read a
++  time confidently, omit that entry rather than supplying a plausible one.
++  This governs times you READ. It does NOT override the Mass-duration rule below: placing a
++  START from an anchor the bulletin states ("adoration after the 9:00 am Mass") is derived from
++  the page, not normalised. **That carve-out is for STARTS ONLY, and is never licence to compute
++  an END.** If the bulletin does not state when something finishes, omit `end_time` — "7:45 am
++  & 11:30 am" is two slots with no ends, not two half-hour slots.
+ - Midnight is `0`, never `2400` and never `240`. A slot running "8:30 PM until Midnight" is
+   `start_time: 2030, end_time: 0, end_next_day: true`.
+ - Set `end_next_day: true` on any slot that crosses midnight (overnight adoration, all-night

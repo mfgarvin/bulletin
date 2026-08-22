@@ -473,6 +473,276 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.10 (2026-08-21) - The compression ladder started too low; a targeted study of 1259
+
+**`utils/pdf_compress.py` first rung was 150 DPI.** The Cathedral's bulletin is
+47.7MB against a 47.2MB limit — it needed a **1.1%** reduction and got a **91%**
+one, rasterized to 4.4MB. 300 DPI/q90 fits at 17.3MB. `_COMPRESSION_STEPS` now
+starts at `(300, 90)` and steps down gently.
+
+**This is free.** Both conditions billed *exactly* 144,010 prompt tokens — the
+API's image tokenization does not depend on the file's byte size — so the old
+ladder was paying full price for a quarter of the linear resolution. The only
+cost is wall time (243s -> 400s for 10 extractions). Three of 100 cached
+bulletins are over the limit (`1259`, `1241`, `1236`).
+
+Every step still **destroys the text layer**: `_rasterize()` rebuilds each page
+as a JPEG, so a bulletin whose text layer says `Sunday: 8:30, 11:00 am †; 5:30 pm`
+arrives as pixels. Resolution is the only defence, which is why the mildest
+step that fits is the right one.
+
+**New: `studies/noise/signature_recurring.py` and `studies/noise/truth.json`.**
+The aggregate table cannot say whether a row is *right* — only whether it is
+*stable*, and a parish can be stably wrong. `truth.json` holds hand-read
+schedules with the exact cached bulletin cited; the signature scores each run
+against it. This immediately showed something 5 repeats of self-agreement had
+hidden: the `baseline` condition got Sunday 11:00 wrong in **5 of 5** runs.
+
+**What the 1259 study found** (4 conditions, 30 runs, same cached 2 Aug 2026
+bulletin). Truth is 14 recurring Masses: Sat 16:30; Sun 8:30, 11:00, 17:30;
+Mon-Fri 7:15 and 12:00.
+
+| condition | DPI | exactly correct | Sunday 11:00 right | core slots always present |
+|---|---|---|---|---|
+| baseline (5) | 150 | 0/5 | 0/5 | 13/16 |
+| promptfix (5) | 150 | 1/5 | 4/5 | 13/18 |
+| sitexcl (10) | 150 | 0/10 | 1/10 | 7/21 |
+| dpi300 (10) | 300 | 0/10 | 3/10 | 13/19 |
+
+Two conclusions, one of which killed a theory:
+
+- **Resolution fixes structure, not the Sunday line.** At 300 DPI the schedule
+  stops falling apart — Masses/run tightened from 11-16 to 14-15 and the core
+  went 7 -> 13 — but Sunday 11:00 stayed wrong 7/10.
+- **`promptfix`'s 4/5 was luck.** The prompt has not changed since it ran, and
+  `SITE_EXCLUSIONS` fired in only 1 of 10 runs, so `sitexcl` is a same-prompt
+  replay at n=10 sixteen days later. Pooled, Sunday 11:00 is right in 8 of 30.
+  n=5 on an unstable slot will happily show a gain that is not there — the
+  v2.5.5 lesson, again.
+
+**The errors are not perceptual.** Grepping the bulletin's own text layer:
+
+- `10:30` — the single most common error (6/10 at 300 DPI) — **appears nowhere
+  in the document**. The model is not misreading it, it is inventing it.
+  `8:30/10:30` is an extremely common parish Sunday pattern; this looks like a
+  prior overriding the page.
+- `11:30` appears only under `Confessions: 7:45 am & 11:30 am` — confession
+  bleed into the Mass list.
+- `Sunday 06:00 "Sunday Vigil (early)"` is `6:00 pm (Sunday Vigil at Immaculate
+  Conception)`, printed under the `Saturday:` heading, relocated to Sunday and
+  flipped to AM.
+
+So the remaining lever is the prompt, and the targets are transcription
+fidelity, day-heading scoping, and confession/Mass separation — not legibility.
+
+**Prompt v3 (`promptv3`), four rules added to `extractor.py`:**
+
+1. *Transcribe, never normalise* (TIME ENCODING) — every recorded time must
+   appear in those digits on the page; a common pattern is not evidence.
+2. *A time belongs to the heading it is printed under* (TIME ENCODING) — day
+   labels scope times; a time under Confessions is never a Mass.
+3. *A parenthetical describes a Mass, it does not move it* (Mass rules) — under
+   `Saturday:`, "6:00 pm (Sunday Vigil at Immaculate Conception)" is Saturday
+   1800.
+4. *Sites* — a temporary renovation worship space is not a separate site; never
+   build a site name from two things on the page; typographic keys change only
+   WHERE an entry happens.
+
+Result on the same cached bulletin, all conditions scored against `truth.json`:
+
+| condition | DPI | exactly correct | Sun 11:00 | Sun 10:30 | Sun 06:00 | Sat 18:00 leak |
+|---|---|---|---|---|---|---|
+| baseline | 150 | 0/5 | 0/5 | 3/5 | 0/5 | 4/5 |
+| promptfix | 150 | 1/5 | 4/5 | 1/5 | 2/5 | 1/5 |
+| sitexcl | 150 | 0/10 | 1/10 | 3/10 | 1/10 | 1/10 |
+| dpi300 | 300 | 0/10 | 3/10 | 6/10 | 4/10 | 2/10 |
+| **promptv3** | 300 | **7/10** | **10/10** | **0/10** | **0/10** | 5/10 |
+
+**Exactly correct went 1-in-30 to 7-in-10**, and the two fabrications the
+signature was built to catch went to zero. Sunday 11:00 — wrong in 22 of the
+previous 30 runs — is now right every time. Site naming also settled: 9/10 runs
+emit the Oratory cleanly as its own site (so `SITE_EXCLUSIONS` drops it) and
+fold the temporary chapel, which is rule 4 working as intended.
+
+**One regression, and it is real: the Saturday 18:00 leak doubled, 2/10 -> 5/10.**
+Rule 4 made the model better at separating the Oratory *as a site* while it
+still copies the 6:00 pm vigil into the Cathedral's own Mass list — which is
+what the bulletin literally prints ("Saturday: 4:30 pm (Sunday Vigil) / 6:00 pm
+(Sunday Vigil at Immaculate Conception)"). `SITE_EXCLUSIONS` works at site
+level and cannot see an inline Mass, so half of runs put an 18:00 Mass on the
+Cathedral row.
+
+Fighting this in the prompt means arguing with the page: from the Cathedral
+parish's point of view that Mass *is* theirs, held at IC. The product decision
+(IC owns it) is ours, so enforce it in our layer — extend `SITE_EXCLUSIONS` to
+also drop Masses whose `notes` name an excluded site. Not yet implemented.
+
+**Wide regression: 50 parishes x 5 repeats (`promptv3-wide`), paired against
+`promptfix` on batch 1. Verdict: do NOT ship v3 as it stands.**
+
+Aggregates behaved exactly as the README predicts — every category inside the
+noise band, so they settle nothing:
+
+| category | promptfix | promptv3 | delta | bootstrap CI | |
+|---|---|---|---|---|---|
+| mass | 94% | 96% | +1.9% | [-0.1%, +4.0%] | noise |
+| confession | 98% | 98% | -0.3% | [-4.0%, +2.9%] | noise |
+| adoration | 93% | 95% | +2.3% | [-3.5%, +7.6%] | noise |
+
+The pre-registered signatures barely moved either: `vigil_before_noon` 4 -> 2
+(n too small to mean anything), `mass_noted_confession` **0 -> 0**,
+`sites_total` 295 -> 295, `repairs` 118 -> 107, `flags` 4 -> 6.
+
+So the per-parish movers were checked **against their actual bulletins**, which
+is the only thing that can tell "found more truth" from "hallucinated more".
+Three of the negative movers are real, and each has a mechanism:
+
+- **`0080` confession 100% -> 43%.** Its bulletin (an image-only scan; the text
+  layer is just the ad pages) reads `Confession / Saturday: 3 - 4p.m. Church /
+  and by Appointment` — **Saturday only**. v3 invented Mon/Tue/Thu/Fri
+  15:00-16:00 in 2 of 5 runs. `promptfix` was right 5/5. Suspect **rule 2**,
+  whose "a day label governs every time beneath it" interacts badly with the
+  v2.5.4 day-range distribution rule.
+- **`our-lady-of-victory-tallmadge-oh` mass 80% -> 59%.** v3 pulled in
+  `Sun 10:30` (3/5) and `Sat 16:00` (2/5), which the bulletin prints as
+  `10:30 AM: (Mass at St. Matthew)` and `4:00 PM: (Mass at Saint Matthew)` —
+  **the partner parish's Masses**. `promptfix` never did this. One v3 run
+  correctly split St. Matthew into its own site (and `SINGLE_SITE_PARISHES`
+  dropped it); the other four folded them inline where nothing can catch them.
+  This is the v2.5.8 cluster-bleed class, made *worse*.
+- **`0216` adoration 100% -> 20%.** The bulletin states it twice and
+  inconsistently: "every Wednesday after the 9:00am Mass till 8:30pm" in prose,
+  "9am-8:30pm: Adoration" in the calendar. `promptfix` was stably 09:30 (the
+  v2.5.4 weekday-Mass presumption); v3 flaps 09:00/09:30/10:00. **Rule 1
+  contradicts the Mass-duration rule** — "transcribe, never normalise" reads as
+  a prohibition on computing a start from a stated anchor.
+
+**What to keep.** Rule 1 is the one that produced the 1259 win (10:30
+fabrication 6/10 -> 0/10) and rule 3 removed the relocated vigil (4/10 -> 0/10).
+Rule 2 fixed nothing measurable and is the prime suspect for `0080`.
+
+Proposed v4, not yet run:
+1. Keep rule 1, with an explicit carve-out: a start computed from a stated
+   anchor ("after the 9:00 am Mass") is not a normalisation.
+2. **Drop rule 2.**
+3. Keep rule 3 unchanged.
+4. Keep rule 4, plus a new clause that also fixes the Saturday 18:00 leak: *a
+   Mass held at a different named parish belongs in THAT parish's site entry,
+   not this one.* At 1259 that routes the 6:00 pm IC vigil into the Oratory
+   site, where `SITE_EXCLUSIONS` already drops it.
+
+**Prompt v4** — rule 1 given a carve-out (a start placed from a stated anchor is
+derived, not normalised), **rule 2 deleted**, rule 3 unchanged, rule 4 extended
+with *a Mass held at another named church belongs in THAT church's site entry*.
+Run wide (`promptv4-wide`, 50 x 5, 0 errors, 23 min).
+
+**Both v3 regressions fixed, and the first aggregate win this project has
+recorded:**
+
+| check | truth | promptfix | v3 | v4 |
+|---|---|---|---|---|
+| `0080` weekday confession slots | 0 | 0 | 8 | **0** |
+| `our-lady-of-victory` runs w/ St. Matthew Masses | 0 | 0/5 | 4/5 | **0/5** |
+| `vigil_before_noon` (roster total) | 0 | 4 | 2 | **0** |
+| `sites_total` (spurious-site canary) | — | 295 | 295 | **295** |
+| `1259` runs exactly correct | — | 1/5 | 5/5 | 4/5 |
+| `1259` IC vigil leak | absent | 1/5 | 4/5 | 2/5 |
+
+Mass jaccard **94% -> 96%, CI [+0.3%, +4.1%] — RESOLVES.** Every aggregate
+delta previously measured in this project spanned zero; this is the first that
+does not. Confession (-0.9%) and adoration (+2.7%) remain noise.
+
+Rule 4 works the way it was meant to: `runs_collapsed` rose 39 -> 50 (the model
+splits another parish's Masses into their own site more often) while
+`sites_total` held at 295 (our layer then routes or drops them). It did **not**
+invent sites, which was the stated risk.
+
+**One new regression, and it is mine: the rule 1 carve-out licensed inventing
+end times.** `1259` confession stability fell 94% -> 37%; its open-ended
+confession slots went 50/60 -> 20/60, the model emitting `Mon 745-800`,
+`Mon 1130-1200` where the bulletin says only "Monday-Friday in the Chapel: 7:45
+am & 11:30 am". That is exactly the v2.5.4 bug. The carve-out says a value
+"derived from the page stays derived", and the model generalised it from starts
+to ends.
+
+It is **concentrated, not systemic**: of the roster-wide -34 open-ended slots,
+-30 are `1259` and no other parish moves by more than 2. v3 did not have it
+(50/60), so the carve-out is the cause.
+
+**v5 (`promptv5-wide`) tightened the carve-out to STARTS ONLY. It fixed its
+target and the prompt line of work was then STOPPED. `extractor.py` is
+unchanged on disk; the four rules are preserved in
+`studies/noise/prompt-v5.patch`.**
+
+v5 did what it was asked: roster-wide open-ended confession slots went back to
+**29%** (promptfix 30%, v4 23%), and every earlier win held — `0080` weekday
+confessions 0, `our-lady-of-victory` St. Matthew Masses 0/5,
+`vigil_before_noon` 0, `sites_total` 295, `1259` exact 4/5 against 1/5 for
+promptfix.
+
+**But adoration degrades monotonically with each iteration**, and every case
+was confirmed by reading the bulletin:
+
+| check (of 5 runs) | truth | promptfix | v3 | v4 | v5 |
+|---|---|---|---|---|---|
+| `0042` Holy-Thursday 19:00-22:00 slot as recurring | 0 | 0 | 2 | 2 | **5** |
+| `0069` runs with adoration dropped entirely | 0 | 0 | 0 | 0 | **4** |
+| `21865` perpetual chapel enumerating hours | 0 | 0 | 0 | 0 | **1** |
+| `0080` duplicate Wednesday sub-slot | 0 | 0 | 0 | 1 | **3** |
+
+`0042`'s bulletin lists "Adoration/Exposition - Thursdays from Noon - 7PM"
+under recurring items and "Adoration after the Mass of the Lord's Supper (7 PM)
+until 10 PM" under **DATED EVENTS** (Holy Thursday). v5 pulls the Triduum
+one-off into the weekly schedule in all five runs. `21865` is the v2.5.5
+perpetual-chapel bug returning, with First Friday/First Saturday devotions
+recorded as weekly.
+
+**The aggregate called all of this noise** (adoration v4->v5 -1.9%, CI
+[-5.4%, +1.1%]). Only the bulletins showed it.
+
+**Why stop rather than write v6.** Each iteration fixed its target and broke
+something adjacent — rule 2 broke `0080` confessions, the v4 carve-out broke
+`1259` ends, v5 broke adoration in four parishes. That is not convergence. And
+the headline gain does not survive scrutiny: mass jaccard was +2.1% CI
+[+0.3%, +4.1%] for v4 but +1.2% CI [-0.6%, +3.3%] for v5, while **v4 vs v5 is
+-0.9% CI [-2.5%, +0.6%] — the two are statistically indistinguishable.** At
+n=50 this harness cannot separate them from each other or reliably from zero,
+so further prompt tuning cannot be judged, only guessed at.
+
+Four wide conditions, ~16M prompt tokens. What it bought is not a shipped
+prompt but a set of findings that were invisible before and three of which were
+live in production data: fabricated Sunday times, cluster bleed at
+`our-lady-of-victory`, invented weekday confessions at `0080`, and the `1259`
+masthead conflation.
+
+Two residues v5 should not chase in the prompt:
+- The `1259` IC vigil leak is down to 2/5 but not gone. The deterministic fix is
+  the note-level `SITE_EXCLUSIONS` extension, which does not depend on the model
+  agreeing with us.
+- `0216` adoration is stable again (1 distinct start, so the carve-out did its
+  job) but settles on 10:00, which matches neither the prose ("after the 9:00am
+  Mass", ~09:30 by the weekday presumption) nor the calendar ("9am-8:30pm").
+  The bulletin contradicts itself; only a `notion_fixes` entry can settle it.
+
+**Narrow regression check** (14 parishes x 3 repeats, `promptv3-reg`, vs `promptfix`):
+8 of 14 unchanged across all three categories, and 7 of the 9 stable canaries
+held at 100% on Masses. Mean deltas were mass +2.4%, confession -4.5%,
+adoration +8.9% — **all inside the noise band**, and n=3 gives three pairs per
+parish, so those numbers carry even less weight than the n=5 aggregates v2.5.5
+warned about. No systematic breakage detected; nothing here is evidence of a
+confession regression either.
+
+**Why the masthead is hard**, for whoever edits that prompt: it is a single
+narrow column carrying two separately-addressed parish headers (the Cathedral,
+and the Oratory of the Immaculate Conception at 4129 Superior), a colour key
+(`Items in Red will be in the Chapel at 1404 E 9th St.`), a `†` livestream
+marker, and a Masses block whose Sunday line mixes black and green ink. The
+temporary chapel has **no proper name** — only that description. Asked to name
+the site the weekday Masses belong to, the model reaches up the column and
+borrows the Oratory's name, producing "The Oratory of the Immaculate Conception
+(Temporary Weekday Chapel)" — a site that does not exist. The bulletin never
+says it. This is why `SITE_EXCLUSIONS` needs its `unless` guard.
+
 ### v2.5.9 (2026-08-21) - Site exclusions; the Cathedral and the Oratory
 
 **`SITE_EXCLUSIONS`** in `definitions.py`, applied by `_apply_site_exclusions()`
