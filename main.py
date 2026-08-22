@@ -285,13 +285,14 @@ async def process_parish(
                 adoration_capture.record(
                     parish_id, parish_name, extraction.sites[0], result.url
                 )
-                await db.save_extraction(
+                for retraction in await db.save_extraction(
                     parish_id=parish_id,
                     extraction=extraction,
                     bulletin_url=result.url,
                     log=log_entries,
                     site_index=0,
-                )
+                ):
+                    warn(retraction)
                 log("Saved to database")
             else:
                 # Multi-site: match sites to parishes
@@ -330,14 +331,15 @@ async def process_parish(
                         extraction.sites[site_idx],
                         result.url,
                     )
-                    await db.save_extraction(
+                    for retraction in await db.save_extraction(
                         parish_id=matched_parish.parish_id,
                         extraction=extraction,
                         bulletin_url=result.url,
                         log=log_entries,
                         site_index=site_idx,
                         skip_name_update=True,
-                    )
+                    ):
+                        warn(retraction)
                     log(f"Saved site '{extraction.sites[site_idx].site_name}' → {matched_parish.name}")
 
                 # Check for unmatched parishes

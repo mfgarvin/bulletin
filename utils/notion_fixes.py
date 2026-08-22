@@ -72,6 +72,12 @@ class ManualFix:
 
 
 # Keyed by ParishID, or by exact Name for rows whose ParishID is still empty.
+#
+# Retired 2026-08-21: the 1259 and st-vincent-de-paul-elyria-oh entries (both
+# the v2.5.4 "&-as-range" confession misread) are gone. Both rows re-extracted
+# on 2026-08-15 under the fixed prompt and the pipeline produced the corrected
+# slots on its own, with better notes than the hand-stated ones - so keeping
+# the fixes would have overwritten good live data with staler text.
 MANUAL_FIXES: dict[str, ManualFix] = {
     "0689": ManualFix(
         reason="latitude lost its decimal point (41099421 -> 41.099421)",
@@ -95,44 +101,6 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         "Mass and confession runs 16:00-17:00 right before it, so 17:30",
         mass_time_fixes={("Saturday", 530): 1730},
     ),
-    "1259": ManualFix(
-        reason="the v2.5.4 '&-as-range' misread, still stored because this row "
-        "has not been re-extracted since the prompt fix. 'Monday-Friday in the "
-        "Chapel: 7:45 am & 11:30 am' is two short slots bracketing the 7:15 and "
-        "12:00 Masses, not one 3h45m window - and Wednesday had lost both of "
-        "them to its 5:00 pm slot. Read from the 2 Aug 2026 bulletin by hand "
-        "2026-08-06; the weekday slots have no stated end",
-        confession_times=[
-            ConfessionTime(day=day, start_time=start, end_time=None,
-                           notes="In the temporary Chapel at 1404 East 9th "
-                                 "Street during renovations")
-            for day in ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-            for start in (745, 1130)
-        ] + [
-            ConfessionTime(day="Wednesday", start_time=1700, end_time=1725,
-                           notes="In the temporary Chapel at 1404 East 9th "
-                                 "Street during renovations; Vespers follows "
-                                 "at 5:30 pm"),
-            ConfessionTime(day="Saturday", start_time=1500, end_time=1600,
-                           notes="In the Cathedral"),
-        ],
-    ),
-    "st-vincent-de-paul-elyria-oh": ManualFix(
-        reason="the second parish named in the v2.5.4 '&-as-range' misread, and "
-        "like 1259 it has not been re-extracted since the prompt fix. One stored "
-        "Sunday slot of 09:00-11:00 noted 'After the 8:00 AM & 10:00 AM Masses' - "
-        "the 11:00 is the second start read as the range end, not an end. The "
-        "site's own Mass list has Sunday 08:00 and 10:00, corroborating both "
-        "anchors; starts placed by the prompt's ~1hr Sunday Mass presumption, "
-        "ends unstated. Derived from the stored note and Mass list on 2026-08-07, "
-        "NOT from a fresh reading of the bulletin",
-        confession_times=[
-            ConfessionTime(day="Sunday", start_time=900, end_time=None,
-                           notes="After the 8:00 AM Mass"),
-            ConfessionTime(day="Sunday", start_time=1100, end_time=None,
-                           notes="After the 10:00 AM Mass"),
-        ],
-    ),
     "1285": ManualFix(
         reason="stored adoration was the bulletin's 'adorers are needed' list - "
         "eight overnight coverage slots plus a lone Thursday. The bulletin says "
@@ -155,6 +123,30 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         "advertised 7pm-midnight every Thursday of the year (confirmed by hand "
         "2026-08-05)",
         adoration_times=[],
+    ),
+    "sc-c": ManualFix(
+        reason="stored adoration was Lent-only, published year-round. The single "
+        "Sunday 12:30-13:00 slot's own note reads 'Sundays in Lent; includes "
+        "Gorzkie Zale' - and 'Exact times not explicitly stated; estimated as "
+        "immediately following Mass', so the end was invented too. Adoration has "
+        "no seasonal encoding (no mass_date equivalent), so the schedule cannot "
+        "be stated correctly; an empty adoration is closer to the truth than one "
+        "advertising a Lenten devotion on an August Sunday. UPDATE_ADORATION is "
+        "False, so no normal run would ever correct it (2026-08-21)",
+        adoration_times=[],
+    ),
+    "st-mel-cleveland-oh": ManualFix(
+        reason="stored confession was St. Mark's, not St. Mel's - one Saturday "
+        "15:00-16:00 slot whose own note reads 'Saturdays @ St. Mark'. St. Mel "
+        "and St. Mark are a cluster; each bulletin prints the combined "
+        "schedule. The 2026-08-10 extraction already had this right - it put "
+        "the confession in the St. Mark site, which SINGLE_SITE_PARISHES then "
+        "correctly filtered out, leaving the St. Mel site with zero "
+        "confessions. It could not be written back because save_extraction() "
+        "only writes a non-empty list, so the wrong value from an earlier run "
+        "survived every correct run since. Pastor confirmed no confessions are "
+        "heard at St. Mel (2026-08-21)",
+        confession_times=[],
     ),
     "ss-cosmas-damian-twinsburg-oh": ManualFix(
         reason="flagged perpetual, but every note says the chapel closes "

@@ -39,6 +39,8 @@ SINGLE_SITE_PARISHES: set[str] = {
     "our-lady-of-lourdes-cleveland-oh",
     "sem-c",
     "st-mel-cleveland-oh",
+    "1776",  # Saint Mark — shares a cluster schedule with St. Mel
+    "sc-c",  # St. Casimir — bulletin also carries St. Stanislaus (its own row, 0242)
     "0069",
     "1548",
     "0138",

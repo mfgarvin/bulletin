@@ -432,6 +432,90 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.8 (2026-08-21) - Cluster bleed: one parish publishing another's schedule
+
+**Reported by St. Mark's pastor:** "Mel's has the right times limited to Mel's
+but lists confessions which are at Mark's. Mark's has all the mass times for
+both places." Two different bugs, and in both the extractor had already done
+the right thing — the pipeline discarded it.
+
+St. Mark (`1776`) and St. Mel (`st-mel-cleveland-oh`) are a cluster with
+*separate* bulletins from *different* publishers (PO and Discover Mass), each
+printing the combined schedule. That is not the `Bulletin Group ID` case (one
+bulletin, many rows); it is the `SINGLE_SITE_PARISHES` case.
+
+**Bug 1 — the blind-merge branch.** The model correctly split Mark's bulletin
+into two sites. `collapse_sites()` then hit the `group_size == 1` branch, which
+calls `merge_sites()` with **no name filtering**, folding St. Mel's four Masses
+into St. Mark's row. Mel escaped only because it was already in
+`SINGLE_SITE_PARISHES`, which routes to the filtering branch instead.
+
+Fix: `1776` added to `SINGLE_SITE_PARISHES`. Verified end-to-end against the
+Aug 23 bulletin — Mark now returns its own four (Sat 16:30 vigil, Sun/Mon/Thu
+8:30) and its own Sat 15:00-15:45 confession, with no St. Mel entries.
+
+**Bug 2 — a correct extraction that could not be written.** Mel's stored
+confession was St. Mark's, its own note reading "Saturdays @ St. Mark". But the
+2026-08-10 run *already had this right*: it put that confession in the St. Mark
+site, which the filter then correctly discarded, leaving Mel with zero
+confessions. `save_extraction()` guards every field with `if site and
+site.confession_times:` — an empty list is never written — so the wrong value
+from an earlier run survived every correct run that followed. Repaired via
+`utils.notion_fixes` (Mel's `Confessions` is now `[]`).
+
+**This is a general hole, so runs now say what they declined to overwrite.**
+Blanking automatically is not safe — one bad scan would wipe a good schedule —
+but silence is how a wrong value lives for months while the row reads "No
+Issues". `save_extraction()` now returns a list of retraction warnings for any
+field the extraction came back empty on while Notion still holds a value;
+`process_parish` feeds them through `warn()`, so they reach `Issue Log` and the
+end-of-run summary. Adoration is deliberately excluded — `UPDATE_ADORATION` is
+a standing lock, so it would warn on every parish every week. Corrupt stored
+JSON counts as "present" so this warning never stands in for the v2.5.1 alarm.
+
+**Sweep of every other `Collapsed N sites` row** (189 rows, checking which took
+the blind-merge path): 17 were on the safe filtering path, 3 were blind merges.
+
+- `2452` St. John Nepomucene — the two "sites" are its church and its
+  mailing/rectory address. Merging is correct; this is what the branch is for.
+- `sc-c` St. Casimir — merges in "Shrine Church of Saint Stanislaus", which is
+  its own row (`0242`, 16 Masses). Added to `SINGLE_SITE_PARISHES`.
+- `1259` Cathedral of St. John — **left alone, needs a decision.** It absorbs
+  the Oratory of the Immaculate Conception's Saturday 18:00 vigil, which
+  belongs to `immat-con-cle`. But `SINGLE_SITE_PARISHES` is the wrong tool: the
+  name filter would keep only the main Cathedral site and **drop the "Cathedral
+  Weekday Worship Space (Temporary Chapel)" site that supplies all its weekday
+  Masses and most of its confessions.** Correct behavior is "merge sites 1+2,
+  drop site 3", which neither branch expresses. Needs a per-parish site
+  exclusion.
+
+**Two stale `ManualFix` entries retired** (`1259`, `st-vincent-de-paul-elyria-oh`,
+the v2.5.4 "&-as-range" confession misread). Both rows re-extracted 2026-08-15
+under the fixed prompt and the pipeline produced the corrected slots on its own,
+with better notes than the hand-stated ones — applying the fixes would have
+overwritten good live data with staler text. Worth noting the general lesson:
+a `notion_fixes` entry showing "would write" does **not** mean the data is still
+broken, only that stored differs from stated. Check which one is right first.
+
+**Also applied:** `0512` St. Andrew the Apostle, Saturday "Vigil Mass" stored as
+05:30 -> 17:30. That one is a treadmill — the sanitizer only *flags* a vigil at a
+morning time, so the extractor keeps reproducing it and the next run will undo
+the repair.
+
+**`scas-e` and `sc-c` are NOT duplicates** — an earlier read of this was wrong.
+Two distinct Cleveland parishes: `scas-e` at 18022 Neff Road (44119,
+Collinwood, saintcasimirparish.org, Webpage) and `sc-c` at 8223 Sowinski Avenue
+(44103, St. Clair-Superior, stcasimir.com, Self-Hosted). Six miles apart,
+separate bulletins, disjoint schedules.
+
+**`sc-c` adoration dropped.** Its single Sunday 12:30-13:00 slot was Lent-only
+published year-round - its own note read "Sundays in Lent; includes Gorzkie
+Zale", and "Exact times not explicitly stated; estimated as immediately
+following Mass", so the end was invented too. Adoration has no seasonal
+encoding, so it cannot be stated correctly; empty beats advertising a Lenten
+devotion on an August Sunday. `UPDATE_ADORATION = False` meant no normal run
+would ever have corrected it.
+
 ### v2.5.7 (2026-08-14) - The Docker worker tracks GitHub instead of a frozen copy
 
 **Problem:** the image was built with `COPY . .`, so the container ran whatever

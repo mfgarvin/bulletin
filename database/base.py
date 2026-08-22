@@ -28,6 +28,10 @@ class DatabaseClient(ABC):
         log: list[str],
         site_index: int = 0,
         skip_name_update: bool = False,
-    ) -> None:
-        """Save extraction results to database."""
+    ) -> list[str]:
+        """Save extraction results to database.
+
+        Returns warnings about fields the extraction came back empty on while
+        the database still holds a value (which is kept, not overwritten).
+        """
         ...

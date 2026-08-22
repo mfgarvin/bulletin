@@ -129,8 +129,11 @@ class NotionClient(DatabaseClient):
         log: list[str],
         site_index: int = 0,
         skip_name_update: bool = False,
-    ) -> None:
+    ) -> list[str]:
         """Save extraction results to Notion.
+
+        Returns a list of warnings about fields the extraction came back empty
+        on while Notion still holds a value — see `retractions` below.
 
         Args:
             parish_id: The parish/site ID to update
@@ -147,6 +150,26 @@ class NotionClient(DatabaseClient):
 
         # Get the specific site's data (or empty if no sites)
         site = extraction.sites[site_index] if extraction.sites else None
+
+        # A field the extractor came back empty on is never written (see the
+        # guards below), so a wrong value can outlive every correct run that
+        # followed it. Blanking it automatically is not safe — one bad scan
+        # would wipe a good schedule — but staying silent is how a stale value
+        # survives for months, so the run says what it declined to overwrite.
+        # Adoration is excluded: UPDATE_ADORATION is a deliberate lock, so it
+        # is never written and would warn on every parish, every week.
+        retractions: list[str] = []
+        for label, prop, found in (
+            ("mass times", "Mass Times", site.mass_times if site else []),
+            ("confession times", "Confessions", site.confession_times if site else []),
+        ):
+            if not found and self._has_stored_entries(row, prop):
+                retractions.append(
+                    f"No {label} extracted for '{parish_id}', but Notion still "
+                    f"holds a previous value, which was kept rather than "
+                    f"overwritten. Check it against the bulletin; if the parish "
+                    f"really dropped them, clear the field via utils.notion_fixes."
+                )
 
         # Serialize site-specific data
         if site:
@@ -213,6 +236,7 @@ class NotionClient(DatabaseClient):
 
         await self._update_page(page_id=page_id, properties=properties)
         logger.info(f"Saved extraction to Notion for parish: {parish_id}")
+        return retractions
 
     async def save_issue(
         self,
@@ -332,6 +356,18 @@ class NotionClient(DatabaseClient):
             bulletin_url=bulletin_url,
             bulletin_group_id=bulletin_group_id,
         )
+
+    def _has_stored_entries(self, row: dict, prop: str) -> bool:
+        """True if `prop` currently holds a non-empty JSON collection."""
+        raw = self._get_property(row, prop)
+        if not raw:
+            return False
+        try:
+            return bool(json.loads(raw))
+        except json.JSONDecodeError:
+            # Corrupt stored JSON is its own alarm (v2.5.1). Treat it as
+            # present so this warning doesn't quietly stand in for that one.
+            return True
 
     def _get_property(self, row: dict, name: str):
         """Extract a property value from a Notion row."""
