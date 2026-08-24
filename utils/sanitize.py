@@ -60,6 +60,63 @@ _COVERAGE_RE = re.compile(
     r"sign[- ]?up|commit(ment)? (to|for) (an )?hour|substitute",
     re.IGNORECASE,
 )
+# `notes` is published text - it renders in the app under the parish's own
+# name. Anything about how the extraction went belongs in `extraction_notes`,
+# which stays internal. St. Eugene shipped "Holy Day schedule lists 11:00 AM &
+# 7:00 PM (day not specified); see extraction_notes." to end users.
+_META_NOTE_RE = re.compile(
+    r"extraction[_ ]notes?|\bsee notes?\b|per (the )?rules?\b|"
+    r"(day|date|time|year|start|end|start time|end time)s?\s+"
+    r"(is |are |was |were )?(not|never)\s+(explicitly\s+|clearly\s+)?"
+    r"(specified|stated|given|provided|listed|indicated)|"
+    r"not (explicitly |clearly )?(specified|stated|given|provided|listed) "
+    r"(in|by) the bulletin|"
+    r"\b(estimated|assumed|inferred|approximated|guessed)\b|"
+    r"bulletin (does not|doesn't|never) (state|say|specify|list|give)|"
+    r"see (the )?extraction|as extracted|per schema|\bLLM\b|"
+    r"needs? confirmation|may need confirmation|unclear from the bulletin",
+    re.IGNORECASE,
+)
+# Scrubbing works at two granularities so a note that is half useful keeps its
+# useful half: parentheticals come off first (that is where the apology usually
+# lives - "(start time estimated ~30 minutes after Mass)"), then whatever is
+# left is split into sentences and clauses.
+_NOTE_PAREN_RE = re.compile(r"\s*\([^()]*\)")
+_NOTE_SEGMENT_RE = re.compile(r"[^.;]+[.;]?")
+
+# A "Holy Day of Obligation" line is a standing policy ("on Holy Days we offer
+# 8:15, 11:15 and 6:45"), not a Mass that happens every week. With no date the
+# extractor has to pick a weekday, and it picks one essentially at random - so
+# the parish ends up advertising three phantom Masses every Thursday.
+_HOLY_DAY_RE = re.compile(r"\bholy\s?day", re.IGNORECASE)
+# ...but a parish's standing Saturday vigil is often *also* its Holy Day vigil,
+# and the note then says both ("Vigil Mass; Vigil of Holy Day", "Weekday Mass;
+# Holy Day"). That entry is a real weekly Mass carrying an extra label, so it
+# must survive. Only a note that describes the Mass as Holy-Day-only is safe to
+# drop.
+_WEEKDAYS = frozenset({"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"})
+_ORDINARY_MASS_RE = re.compile(
+    r"vigil mass|weekday mass|daily mass|sunday mass|weekend mass|"
+    r"regular(ly scheduled)? mass|usual mass",
+    re.IGNORECASE,
+)
+
+# Adoration tied to a season or to the Triduum, which the schema cannot encode.
+# `MassTime` has `mass_date` for a one-off; `AdorationTime` has nothing - so a
+# Holy Thursday slot is stored as a recurring weekly Thursday and republished
+# every Thursday of the year. Deliberately does NOT match "First Friday" or
+# "First Saturday": those recur genuinely, and though the schema encodes them
+# just as poorly, they are a different problem (a monthly slot published
+# weekly), not stale data.
+_SEASONAL_ADORATION_RE = re.compile(
+    r"holy\s?thursday|good\s?friday|holy\s?saturday|maundy|triduum|holy\s?week|"
+    r"easter\s?vigil|palm\s?sunday|(mass of the )?(lord.s|last)\s?supper|"
+    r"\brepository\b|\blent(en)?\b|\badvent\b|ash\s?wednesday|"
+    r"forty\s?hours|\b40\s?hours\b|corpus\s?christi|divine\s?mercy\s?sunday|"
+    r"\bchristmas\b|\beaster\b",
+    re.IGNORECASE,
+)
+
 # Markers that a dated Mass really is a one-off rather than the weekly Mass
 # restated under a date heading.
 _DISTINCT_MASS_RE = re.compile(
@@ -424,6 +481,188 @@ def _drop_coverage_hours(site: SiteInfo, report: SanitizeReport) -> None:
     )
 
 
+def _drop_clauses(note: str | None, pattern: re.Pattern) -> str | None:
+    """Remove the parts of a note that match `pattern`, keeping the rest.
+
+    Parentheticals are considered first, then sentences and clauses, because a
+    note is usually a real fact with an aside bolted on in brackets. Returns
+    None if nothing publishable survives.
+    """
+    if not note or not pattern.search(note):
+        return note
+
+    text = _NOTE_PAREN_RE.sub(
+        lambda m: "" if pattern.search(m.group()) else m.group(), note
+    )
+    kept = [
+        seg.strip()
+        for seg in _NOTE_SEGMENT_RE.findall(text)
+        if seg.strip(" .;,") and not pattern.search(seg)
+    ]
+    if not kept:
+        return None
+    out = re.sub(r"\s+", " ", " ".join(kept)).strip()
+    return out.strip(" ;,-").rstrip(";,") or None
+
+
+def _scrub_note(note: str | None) -> str | None:
+    """Strip extraction commentary from a note, keeping the publishable part.
+
+    "After Mass (start time estimated ~30 minutes after Mass)." keeps "After
+    Mass". A note that is entirely commentary becomes None.
+    """
+    return _drop_clauses(note, _META_NOTE_RE)
+
+
+def _scrub_meta_notes(site: SiteInfo, report: SanitizeReport) -> None:
+    """Remove extraction commentary from every published `notes` field.
+
+    `notes` renders in the app beneath the parish's own name; `extraction_notes`
+    is the internal channel and is never published. The prompt now says so, but
+    a prompt rule is not enforcement - St. Eugene published "(day not
+    specified); see extraction_notes." to end users for months.
+    """
+    scrubbed = 0
+    for item in (
+        list(site.mass_times)
+        + list(site.confession_times)
+        + list(site.adoration.times)
+    ):
+        cleaned = _scrub_note(item.notes)
+        if cleaned != item.notes:
+            item.notes = cleaned
+            scrubbed += 1
+    if scrubbed:
+        report.repair(
+            f"notes: scrubbed extraction commentary from {scrubbed} published "
+            "note(s) - that text belongs in extraction_notes"
+        )
+
+
+def _drop_undated_holy_day_masses(
+    masses: list[MassTime], report: SanitizeReport
+) -> list[MassTime]:
+    """Drop recurring Masses that are really the parish's Holy Day policy.
+
+    Bulletins print a standing line - "Holy Days of Obligation: 8:15 am, 11:15
+    am, 6:45 pm" - with no date, because the date changes every year. It is not
+    a weekly Mass, but `mass_date` is the only way to say "one specific day",
+    so an extractor that keeps the line has to invent a weekday for it. It
+    picks one arbitrarily, and the parish then advertises three Masses every
+    Thursday that nobody celebrates.
+
+    Only *undated* entries are dropped. A Holy Day Mass that carries a
+    `mass_date` is a real dated Mass (the Assumption on Aug 15) and is correct
+    as-is - that is exactly what the extractor should be producing instead.
+    """
+    # Weekdays on which each time is offered as a plain recurring Mass. A Holy
+    # Day entry landing on a time the parish already says it offers most
+    # weekdays is very likely the daily Mass with the Holy Day label merged
+    # onto it - `_dedupe_masses` merges on (day, time, language, mass_date) and
+    # joins the notes, so the plain entry's empty note loses to the Holy Day
+    # one and the only surviving evidence is the label. St. Eugene's Monday
+    # 11:00 is exactly this: its own GPT log reads "merged duplicate Monday
+    # 1100 entry", and dropping it would have deleted a real daily Mass.
+    plain_weekdays: dict[int, set[str]] = {}
+    plain_slots: set[tuple[str, int]] = set()
+    for mass in masses:
+        if mass.mass_date is None and not _HOLY_DAY_RE.search(mass.notes or ""):
+            plain_slots.add((mass.day.value, mass.time))
+            if mass.day.value in _WEEKDAYS:
+                plain_weekdays.setdefault(mass.time, set()).add(mass.day.value)
+
+    kept, dropped, ambiguous = [], [], []
+    for mass in masses:
+        note = mass.notes or ""
+        if mass.mass_date is not None or not _HOLY_DAY_RE.search(note):
+            kept.append(mass)
+            continue
+
+        if _ORDINARY_MASS_RE.search(note):
+            # Doubles as a real weekly Mass - keep it, but say so, because the
+            # extractor conflated two schedules into one entry.
+            kept.append(mass)
+            ambiguous.append((mass, "is labelled both a regular Mass and a Holy Day Mass"))
+        elif (mass.day.value, mass.time) in plain_slots:
+            # The plain daily Mass is still here as its own entry, so this is
+            # just the Holy Day listing restating it. Drop the copy; the real
+            # one survives untouched. (Only reachable before dedupe runs.)
+            dropped.append(mass)
+        elif len(plain_weekdays.get(mass.time, set()) - {mass.day.value}) >= 2:
+            # Keeping it means calling it the daily Mass, so the Holy Day label
+            # has to go with that decision - leaving it would publish "Holy Day
+            # schedule lists 11:00 AM & 7:00 PM" under an ordinary Monday Mass.
+            mass.notes = _drop_clauses(mass.notes, _HOLY_DAY_RE)
+            kept.append(mass)
+            ambiguous.append(
+                (mass, "carries a Holy Day label but matches this parish's daily "
+                       "Mass time on other weekdays, so it may be the daily Mass "
+                       "with the label merged in")
+            )
+        else:
+            dropped.append(mass)
+
+    for mass, why in ambiguous:
+        report.flag(
+            f"mass: {mass.day.value} {mass.time:04d} {why}; kept as recurring. "
+            "Confirm the parish really offers it every week"
+        )
+
+    if dropped:
+        shown = ", ".join(f"{m.day.value} {m.time:04d}" for m in dropped)
+        report.repair(
+            f"mass: dropped {len(dropped)} undated Holy Day entr(y/ies) ({shown}) - "
+            "a Holy Day schedule with no date is a standing policy, not a weekly "
+            "Mass, and was being published on an arbitrary weekday"
+        )
+    return kept
+
+
+def _drop_seasonal_adoration(site: SiteInfo, report: SanitizeReport) -> None:
+    """Drop adoration slots that only happen in one season or on one feast.
+
+    `AdorationTime` has no `mass_date` and no season field, so a Holy Thursday
+    slot can only be stored as a recurring weekly Thursday - and is then
+    republished every Thursday of the year. Nineteen parishes in the diocese
+    were advertising their Holy Thursday 2026 adoration as their standing
+    schedule, and because `UPDATE_ADORATION = False` no ordinary run would ever
+    have corrected it.
+
+    The guard matches `_drop_coverage_hours`: only drop when there is no real
+    schedule to lose - a perpetual chapel, or a listing that is *entirely*
+    seasonal. A mixed listing (a genuine weekly Holy Hour plus a Lenten extra)
+    is flagged instead, because dropping into a live schedule on a note match
+    is how a good slot gets deleted.
+    """
+    adoration = site.adoration
+    if not adoration.times:
+        return
+
+    seasonal = [t for t in adoration.times if _SEASONAL_ADORATION_RE.search(t.notes or "")]
+    if not seasonal:
+        return
+
+    if adoration.is_perpetual:
+        where = "at a perpetual chapel"
+    elif len(seasonal) == len(adoration.times):
+        where = "that were the entire adoration listing"
+    else:
+        report.flag(
+            f"adoration: {len(seasonal)} of {len(adoration.times)} slot(s) are "
+            "described as seasonal or Triduum-only but sit alongside a real "
+            "schedule - adoration has no way to encode a season, so these will "
+            "publish year-round. Verify against the bulletin"
+        )
+        return
+
+    adoration.times = [t for t in adoration.times if t not in seasonal]
+    report.repair(
+        f"adoration: dropped {len(seasonal)} seasonal/Triduum slot(s) {where} - "
+        "adoration has no date or season encoding, so they were being published "
+        "every week of the year"
+    )
+
+
 def _cross_check_mass_references(site: SiteInfo, report: SanitizeReport) -> None:
     """Flag confession/adoration notes that key off a Mass the site lacks.
 
@@ -533,6 +772,11 @@ def sanitize_extraction(
         prefix = f"[{site.site_name}] " if len(extraction.sites) > 1 else ""
         report = SanitizeReport()
 
+        # Before _clean_masses, whose dedupe would otherwise merge a Holy Day
+        # entry into the real Mass at the same (day, time) and leave the Holy
+        # Day note as the only survivor - which is how 1734's genuine Monday
+        # 11:00 daily Mass ended up labelled a Holy Day Mass.
+        site.mass_times = _drop_undated_holy_day_masses(site.mass_times, report)
         site.mass_times = _clean_masses(site.mass_times, report)
         site.confession_times = _clean_ranges(
             site.confession_times, "confession", report
@@ -543,6 +787,11 @@ def sanitize_extraction(
         _check_confession_spans(site.confession_times, report)
         site.adoration.times = _clean_ranges(site.adoration.times, "adoration", report)
         _drop_coverage_hours(site, report)
+        _drop_seasonal_adoration(site, report)
+        # Last of the content passes: it only rewrites `notes`, and the passes
+        # above match on note text, so scrubbing earlier would hide a slot from
+        # the check that is meant to catch it.
+        _scrub_meta_notes(site, report)
         _check_adoration(site, report, verified_perpetual)
         _cross_check_mass_references(site, report)
 

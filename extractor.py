@@ -85,6 +85,32 @@ Extract the following information:
    entry (e.g. a Mass at time 0 with the note "No Mass") — that reads downstream as a real
    midnight Mass.
 
+   **Holy Days of Obligation.** Bulletins print a standing line - "Holy Days: 8:15 am, 11:15 am
+   and 6:45 pm", "Holy Day Vigil 7:00 pm" - with NO date, because the date moves every year.
+   That line is a policy, not a Mass that happens every week. Never emit it as a recurring
+   Mass: it has no weekday, so recording one means inventing a weekday, and the parish then
+   advertises Masses every Thursday that nobody celebrates.
+
+   Two correct outcomes, in order of preference:
+   - **If the bulletin shows the Holy Day actually falling within its own week**, emit dated
+     Masses with `mass_date` set. The day-by-day Mass intentions / "This Week's Liturgy"
+     listing is the authority for what really happens: if the Assumption falls on Friday
+     August 15 and the intentions listing shows "Fri 8/15 9:00 AM - Assumption" and
+     "Fri 8/15 7:00 PM", those are two dated Masses on 2026-08-15.
+   - **Otherwise omit the Holy Day times entirely** and describe the policy in
+     `extraction_notes`. There is no Holy Day this week, so there is nothing to publish.
+
+   **When the standing schedule box and the intentions listing disagree, the intentions
+   listing wins.** The box states policy across the year (including Holy Days, seasonal
+   changes and "when applicable" Masses); the listing states what is celebrated in the week
+   the bulletin covers. Use the box for the shape of the recurring week, but do not promote a
+   time to a recurring Mass when the intentions listing shows no Mass on that day at all -
+   that time belongs to a Holy Day or seasonal schedule.
+
+   Never write a single entry that means both. If the parish's daily 11:00 am Mass and its
+   Holy Day 11:00 am Mass are the same slot, emit the daily Mass with its ordinary note and
+   leave the Holy Day out; do not label the daily Mass "Holy Day".
+
    **Do not emit duplicates.** One entry per (day, time, language, mass_date). If the bulletin
    prints the same Mass in two places (a schedule box and a "this week" listing), extract it once.
 
@@ -139,11 +165,35 @@ Extract the following information:
      truth, and it is most misleading at exactly the perpetual chapels that run such appeals.
      Never turn them into adoration slots. A perpetual chapel that lists ten hours needing
      coverage still has `is_perpetual: true` and an empty `times`.
+   - **Adoration that happens in only one season, or on one feast, is NOT the schedule.**
+     Holy Thursday adoration at the altar of repose, "Thursdays during Lent", a Forty Hours
+     devotion, Advent or Christmas exposition - these are real, but `AdorationTime` has no
+     date and no season field (unlike Masses, which have `mass_date`), so anything recorded
+     here is published as happening every week of the year. A Holy Thursday slot becomes
+     "adoration every Thursday, 8-10 pm" forever. Leave them out and describe them in
+     `extraction_notes`; only record adoration the parish holds year-round.
+     A bulletin printed during Holy Week or Lent often shows ONLY the seasonal adoration. In
+     that case the correct adoration is empty - do not promote the seasonal one to fill it.
    - Otherwise list specific time slots.
    - Same end-time rule as confessions: if adoration has a stated start and no stated end
      ("adoration begins after the 9:00 Mass"), keep the slot and omit `end_time`.
    - A day covered from midnight to midnight (a middle day of a multi-day adoration) is
      `start_time: 0, end_time: 0, end_next_day: true` - a full 24 hours, not an unknown end.
+
+**`notes` IS PUBLISHED TEXT — `extraction_notes` IS NOT.**
+Every `notes` field on a Mass, confession or adoration slot renders in the app underneath the
+parish's own name, to people deciding when to show up. Write it as the parish would: a short
+description of the slot ("Vigil Mass", "In the chapel", "Spanish", "Enter by the side door").
+
+NEVER put commentary about the extraction in `notes`. No "day not specified", "year not
+stated", "time estimated", "assumed", "inferred", "see extraction_notes", "per the rules",
+"needs confirmation", "the bulletin does not say". A reader does not know what a bulletin is
+or that a model read it, and text like that reads as the parish being unsure when its own
+Masses are. All of it belongs in `extraction_notes`, which stays internal.
+
+If a note would consist only of such commentary, emit no note at all. If the uncertainty is
+bad enough that you want to warn the reader, that is a sign the entry should be omitted -
+omit it and explain in `extraction_notes`.
 
 **TIME ENCODING RULES (all schedules):**
 - Midnight is `0`, never `2400` and never `240`. A slot running "8:30 PM until Midnight" is
