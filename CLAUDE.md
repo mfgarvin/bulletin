@@ -7,6 +7,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **~40-50 parishes need self-hosted setup** - These parishes either don't have bulletins on the major publishers or self-host on their own websites. They need `Bulletin Page URL` configured in Notion.
 - **Address discrepancies file** - `address_discrepancies.txt` contains 9 parishes with missing or incorrect addresses in Notion (verified 2026-01-06). Not committed to git.
 - **Self-Hosted scraper enhancement** - Some parish bulletin pages (e.g., sfds-a, sak-cle) link to weekly subpages that contain the actual PDF, rather than having PDF links directly on the main page. A potential enhancement would be to follow links one level deep to find PDFs. Affected parishes: sfa-gm (Google Drive), sfds-a (weekly subpages), sak-cle (dated subpages in Korean).
+- **Monthly-ordinal schedules ("First Friday")** - 60 slots across ~40 parishes
+  recur on an ordinal weekday but are stored as weekly, so anything that
+  *computes* (the mapboard, "what's on today/soonest") treats them as every
+  week. Design written up in `docs/design/monthly-recurrence.md`; not
+  implemented. Key finding: the ordinal can be parsed deterministically from the
+  `notes` the extractor already writes (50/60 in a prototype), so this needs no
+  new LLM output.
 - **GitHub integration** - Integrate Claude with GitHub for automated workflows or issue tracking.
 - **Data change safety** - Add safeguards for when extracted data changes significantly (e.g., mass times suddenly very different). Could warn or require confirmation before overwriting.
 - **Adoration in Events** - Sometimes adoration schedule appears in the Events listing instead of the dedicated Adoration field. May need extraction prompt adjustment or post-processing.
@@ -464,6 +471,7 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Repo layout notes
 
+- `docs/design/` — design notes for planned work, written before implementation.
 - `docs/integration/` — how downstream consumers read the export (Flutter app).
 - `docs/notes/` — **gitignored.** Local working notes and source data for
   hand-verification.
