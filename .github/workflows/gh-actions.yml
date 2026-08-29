@@ -2,7 +2,11 @@ name: Bulletin processor
 run-name: Extract parish information from bulletins
 on:
   schedule:
-    - cron: '0 14 * * SAT'
+    # 14:37, not 14:00. Actions cron is best-effort and the top of the hour is
+    # the most congested minute on the platform; the 2026-08-29 run was dropped
+    # outright, and a dropped run is silent -- no run record is created at all.
+    # An odd minute is materially less likely to be skipped.
+    - cron: '37 14 * * SAT'
   workflow_dispatch:
     inputs:
       stale_days:

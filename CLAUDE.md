@@ -433,7 +433,21 @@ state a date, so it's a spot-check, not a sweep.
 
 ## Automation
 
-GitHub Actions runs `python main.py --all` every Saturday at 2 PM UTC (`.github/workflows/gh-actions.yml`)
+GitHub Actions runs `python main.py --all` every Saturday at 14:37 UTC
+(`.github/workflows/gh-actions.yml`).
+
+**A scheduled run can be dropped, and it is silent when it is.** Actions cron is
+best-effort; on 2026-08-29 the trigger never fired and *no run record was
+created at all*, so the failure is invisible in the run list — it looks
+identical to a quiet week. The workflow was enabled, the cron was intact on
+`main`, there was no GitHub incident, and the repo was well inside the 60-day
+inactivity window. The schedule was simply skipped.
+
+The time is 14:37 rather than 14:00 because the top of the hour is the most
+congested minute on the platform. That lowers the odds; it does not remove
+them. Nothing alerts on a missed run today — if `export.json`'s `timestamp`
+values are more than a week old, check `gh run list` before assuming the
+pipeline ran and found nothing.
 
 A dispatched run accepts a `stale_days` input (default 6); set it to `0` to
 force every parish, which is what a scraper fix needs — otherwise `--all` finds
