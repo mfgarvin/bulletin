@@ -7,6 +7,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **~40-50 parishes need self-hosted setup** - These parishes either don't have bulletins on the major publishers or self-host on their own websites. They need `Bulletin Page URL` configured in Notion.
 - **Address discrepancies file** - `address_discrepancies.txt` contains 9 parishes with missing or incorrect addresses in Notion (verified 2026-01-06). Not committed to git.
 - **Self-Hosted scraper enhancement** - Some parish bulletin pages (e.g., sfds-a, sak-cle) link to weekly subpages that contain the actual PDF, rather than having PDF links directly on the main page. A potential enhancement would be to follow links one level deep to find PDFs. Affected parishes: sfa-gm (Google Drive), sfds-a (weekly subpages), sak-cle (dated subpages in Korean).
+- **Two known gaps in the v2.5.10 sanitizer** (found 2026-08-29, not fixed):
+  1. `_SEASONAL_ADORATION_RE` matches liturgical *names* only, so a one-off
+     identified by a bare date in the note — `(May 4, 2026)`, `(April 8)`,
+     `(listed Jan 21)` — still publishes weekly. **22 slots across ~17
+     parishes**, mostly adoration. Not all are wrong: `scas-e`'s "Daily morning
+     Mass (starting week of Aug 2)" is a genuine recurring entry with a start
+     date, so this needs the same refuse-rather-than-guess handling.
+  2. `_META_NOTE_RE` enumerates the subject word (`day|date|time|year|start|
+     end`), so "location not specified in bulletin" and "exact hours not listed
+     in bulletin" survive (3 slots). Generalise to `\w+`.
 - **Monthly-ordinal schedules ("First Friday")** - 60 slots across ~40 parishes
   recur on an ordinal weekday but are stored as weekly, so anything that
   *computes* (the mapboard, "what's on today/soonest") treats them as every

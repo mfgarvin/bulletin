@@ -193,3 +193,20 @@ parser has no input if it does, and that failure would be silent.
   a `season` field is a separate design.
 - `excluded_weeks` (the St. Colman inverse). Refuse-and-flag for now.
 - Anchored recurrences ("the Thursday before the First Friday").
+
+---
+
+## Addendum 2026-08-29 — state on pause
+
+Nothing here is implemented, and **the v2.5.10 work this builds on is still on
+branch `holy-day-and-seasonal-cleanup`, not `main`.** The Notion data repair was
+applied, so live data is clean while the code that keeps it clean is not
+deployed — any parish re-extracted from `main` can reintroduce the bugs. Merging
+that branch is the prerequisite for starting this.
+
+The app-side impact assessment is written and lives (uncommitted) at
+`~/Code/massgpt_app_o1_preview/docs/incoming-scraper-changes-2026-08.md`.
+Its conclusion, verified against the app source: `ScheduleEntry.fromJson`
+ignores unknown keys, so both `weeks_of_month` and `occurrences` can ship
+before the app updates with no regression — a First Friday slot simply keeps
+rendering weekly, which is today's behaviour.
