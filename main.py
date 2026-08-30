@@ -18,6 +18,7 @@ from sources import get_source_for_publisher
 from utils import adoration_capture
 from utils.log_context import set_parish_context
 from utils.sanitize import sanitize_extraction
+from utils.verify_times import verify_times_against_source
 
 logging.basicConfig(
     level=logging.INFO,
@@ -304,6 +305,14 @@ async def process_parish(
         for msg in report.repairs:
             log(f"Sanitized: {msg}")
         for msg in report.flags:
+            warn(msg)
+
+        # Flag recurring Mass times the bulletin's own text never prints
+        # (fabrication check). Uses the downloaded bytes, not what the LLM
+        # saw - compression rasterizes the text layer away.
+        for msg in verify_times_against_source(
+            extraction, result.pdf_bytes, result.content_type
+        ):
             warn(msg)
 
         # Log extraction summary

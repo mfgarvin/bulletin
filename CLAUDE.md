@@ -532,6 +532,56 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.14 (2026-08-30) - Fabrication check: extracted Mass times verified against the bulletin's own text
+
+**The worst extraction failures are fabrications, not misreadings** — `1259`
+published a Sunday 10:30 Mass whose digits appear nowhere in its bulletin
+(`8:30/10:30` is the diocese's most common Sunday pattern; the prior overrode
+the page), and the run said "No Issues". Prompt tuning against this class was
+tried wide and stopped (v2.5.10): every rule fixed its target and broke a
+neighbour. This check attacks it from outside the model: a time the document
+never prints is checkable by looking.
+
+**`utils/verify_times.py`**, called from `process_parish` after the sanitizer.
+It renders each recurring Mass time the way a bulletin prints it ("10:30",
+"10.30", "8:30am" glued, "11 :00" split by PDF extraction, bare "9 and 11
+a.m." lists, "noon") and greps the PDF text layer via PyMuPDF. Masses only
+(confession/adoration starts are legally *derived* under v2.5.4 rules),
+recurring only, **flags only** — nothing is dropped, so it cannot cause the
+regressions that stopped the prompt work. It checks the *downloaded* bytes,
+not what the LLM saw: `compress_if_needed` rasterizes oversized PDFs, and
+`1259` is one of the three it compresses.
+
+**The design that makes it shippable is the self-gate.** A first measurement
+flagged 23% of all recurring Masses — because a bulletin masthead is very
+often an image even when the body has a good text layer, so "absent from the
+text" usually means "the schedule block is a scan". Instead of a hand-kept
+allowlist, the check gates on the bulletin's own hit rate: misses are reported
+only when >= 80% of the extraction's recurring times (and >= 5 of them) ARE
+found in the text — proof the schedule lives in the text layer, making a
+missing time a real signal. Below the gate it logs and stays silent; an
+unverifiable document is a property of the parish, not a weekly warning.
+
+Two pattern bugs accounted for most of the original 23%: a trailing `\b`
+fails on "8:30am" (digit→letter is not a word boundary — replaced with
+`(?!\d)`), and "11 :00" (a real artifact of PyMuPDF extraction at
+`our-lady-help-of-christians`) needed optional spaces around the separator.
+
+**Validated over 1,250 parish-runs** (4 noise-study conditions x cached
+bulletins, driven through the production function on Pydantic models): 7
+warnings total, on exactly 3 slots — `1259` Sunday 10:30, `0670` Thursday
+11:15, `2452` Sunday 19:00 — **each hand-verified as a time its bulletin never
+prints** (0670's Thursday Mass is 8:15am; 2452's only Sunday Mass is 10:00am).
+**Zero false positives.** The decisive test from the prototype session also
+passed: against the Aug 30 `1259` bulletin (intact 36k-char text layer), all
+14 true recurring Masses verify and the fabricated 10:30 does not. A live
+`--dry-run` of `1259` through the full pipeline ran the check clean end-to-end.
+
+**Known limit:** a *wholly* fabricated schedule is indistinguishable from an
+image-only bulletin, so the gate catches isolated fabrication inside an
+otherwise-verifiable document — which is the failure mode the model actually
+exhibits. Image-only scans (`0080`, `13722`) remain uncheckable without OCR.
+
 ### v2.5.13 (2026-08-30) - A restorable archive; the export docs were inverted
 
 **There was no way to revert a bad run, and the two files that looked like an
