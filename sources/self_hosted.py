@@ -1,9 +1,12 @@
 """Self-hosted bulletin source - generic scraper for parish websites."""
 
+import base64
+import json
+import logging
 import re
 from datetime import date, timedelta
 from typing import Optional
-from urllib.parse import urljoin, urlparse
+from urllib.parse import parse_qs, urljoin, urlparse
 
 import httpx
 from bs4 import BeautifulSoup
@@ -27,6 +30,13 @@ _MONTHS = {
 # Bulletins predating this are archive material, and a "year" outside it is a
 # misread run of digits rather than a date.
 _EARLIEST_YEAR = 2000
+
+# When the bulletin page holds no PDF at all, how many of its subpages to try
+# before giving up. They are tried newest-first, so this is a floor on how far
+# back a run of PDF-less posts can push us, not a sample of the page.
+SUBPAGE_FETCH_LIMIT = 3
+
+logger = logging.getLogger(__name__)
 
 
 def _safe_date(year: int, month: int, day: int) -> date:
@@ -85,6 +95,12 @@ class SelfHostedSource(BulletinSource):
 
                 # Find the best PDF link
                 pdf_url = self._find_best_pdf_link(response.text, bulletin_url)
+                if not pdf_url:
+                    # Some parishes give each week its own page and link only
+                    # to that, so the PDF is one level down.
+                    pdf_url = await self._find_pdf_in_subpages(
+                        fetch, response.text, bulletin_url
+                    )
                 if not pdf_url:
                     return DownloadResult(
                         success=False,
@@ -151,9 +167,10 @@ class SelfHostedSource(BulletinSource):
         # Also check for embedded PDFs (iframes, embeds)
         for embed in soup.find_all(["iframe", "embed", "object"]):
             src = embed.get("src") or embed.get("data")
-            if src and ".pdf" in src.lower():
-                full_url = urljoin(base_url, src)
-                score = self._score_link(src, "")
+            resolved = self._resolve_embedded_pdf(src) if src else None
+            if resolved:
+                full_url = urljoin(base_url, resolved)
+                score = self._score_link(resolved, "")
                 candidates.append((full_url, score))
 
         if not candidates:
@@ -171,6 +188,85 @@ class SelfHostedSource(BulletinSource):
         ]
         ranked.sort(key=lambda x: (x[1], x[2]), reverse=True)
         return ranked[0][0]
+
+    @staticmethod
+    def _resolve_embedded_pdf(src: str) -> Optional[str]:
+        """Pull the real PDF out of a viewer's embed URL, if there is one.
+
+        Viewer plugins hide the file behind a page of their own, so the
+        `.pdf` test alone reads the parish as having no bulletin at all.
+        PDFEmbedder base64s a JSON blob into `?pdfemb-data=`; PDF.js and the
+        Google/Office viewers pass the file in a query parameter.
+        """
+        params = parse_qs(urlparse(src).query)
+
+        for blob in params.get("pdfemb-data", []):
+            try:
+                padded = blob + "=" * (-len(blob) % 4)
+                url = json.loads(base64.urlsafe_b64decode(padded)).get("url")
+            except (ValueError, AttributeError):
+                continue
+            if isinstance(url, str) and ".pdf" in url.lower():
+                return url
+
+        for key in ("file", "url", "pdf", "src"):
+            for value in params.get(key, []):
+                if ".pdf" in value.lower():
+                    return value
+
+        return src if ".pdf" in src.lower() else None
+
+    async def _find_pdf_in_subpages(
+        self, fetch, html: str, base_url: str
+    ) -> Optional[str]:
+        """Follow the bulletin page's own subpages looking for the PDF.
+
+        Parishes running a blog-style bulletin archive link to a page per
+        week and put the PDF only on that page. Subpages are tried
+        newest-first by the date in their slug and the *first* one holding a
+        PDF wins, rather than pooling every PDF found: the post's date is the
+        trustworthy one, while the files behind them are often named alike
+        (`Bulletin-8-30-compressed.pdf` in a `/2026/08/` folder), so pooling
+        would rank three consecutive weeks as a tie and pick arbitrarily.
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        page_host = urlparse(base_url).netloc
+        seen: set[str] = {base_url.rstrip("/")}
+        candidates: list[tuple[str, int, date]] = []
+
+        for link in soup.find_all("a", href=True):
+            full_url = urljoin(base_url, link["href"]).split("#")[0]
+            if urlparse(full_url).netloc != page_host:
+                continue
+            # Pagination walks the archive backwards - the wrong direction.
+            if re.search(r"/page/\d+/?$", full_url) or full_url.rstrip("/") in seen:
+                continue
+
+            when = self._extract_date(full_url)
+            score = self._score_link(full_url, link.get_text().lower())
+            score += self._recency_bonus(when)
+            if score <= 0:
+                continue
+
+            seen.add(full_url.rstrip("/"))
+            candidates.append((full_url, score, when))
+
+        candidates.sort(key=lambda c: (c[1], c[2]), reverse=True)
+
+        for sub_url, _, _ in candidates[:SUBPAGE_FETCH_LIMIT]:
+            try:
+                response = await fetch(sub_url)
+            except httpx.RequestError as e:
+                logger.warning("Subpage fetch failed for %s: %s", sub_url, e)
+                continue
+            if response.status_code != 200:
+                continue
+            pdf_url = self._find_best_pdf_link(response.text, sub_url)
+            if pdf_url:
+                logger.info("Found bulletin PDF via subpage %s", sub_url)
+                return pdf_url
+
+        return None
 
     @staticmethod
     def _recency_bonus(d: date) -> int:
@@ -257,7 +353,9 @@ class SelfHostedSource(BulletinSource):
         filename.
         """
         url_lower = url.lower()
-        fname = url_lower.rsplit("/", 1)[-1]
+        # A subpage slug ("/august-30-2026-twenty-second-sunday/") dates the
+        # bulletin just as a filename does, so ignore a trailing slash.
+        fname = url_lower.rstrip("/").rsplit("/", 1)[-1]
 
         # Year+month from an eCatholic-style /YYYY/M/ path segment.
         path_match = re.search(r"/(\d{4})/(\d{1,2})/", url_lower)

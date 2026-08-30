@@ -6,7 +6,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - **~40-50 parishes need self-hosted setup** - These parishes either don't have bulletins on the major publishers or self-host on their own websites. They need `Bulletin Page URL` configured in Notion.
 - **Address discrepancies file** - `address_discrepancies.txt` contains 9 parishes with missing or incorrect addresses in Notion (verified 2026-01-06). Not committed to git.
-- **Self-Hosted scraper enhancement** - Some parish bulletin pages (e.g., sfds-a, sak-cle) link to weekly subpages that contain the actual PDF, rather than having PDF links directly on the main page. A potential enhancement would be to follow links one level deep to find PDFs. Affected parishes: sfa-gm (Google Drive), sfds-a (weekly subpages), sak-cle (dated subpages in Korean).
+- **Self-Hosted scraper enhancement** - *Done for the subpage case in v2.5.12*
+  (`_find_pdf_in_subpages`), which unblocked `sfds-a`. Still open: **`sfa-gm`**
+  (bulletin lives in Google Drive - not a PDF link at all) and **`sak-cle`**
+  (dated subpages in Korean, so the slug carries no parseable date and the
+  subpage ranking has nothing to sort on).
+- **`sfds-a` adoration is extracted but not stored** - its Mon-Fri schedule
+  (Mon 7-8 and 18-22, Tue-Fri 7-22 "breaking for Masses") comes back on every
+  run and is discarded, because `UPDATE_ADORATION = False` is a standing lock.
+  It is in `adoration_capture.json`; getting it into Notion needs
+  `utils/notion_fixes.py`, as with `1285`.
 - **Workflow action versions** (bumped 2026-08-29, `ce6a7f4`) - All three
   workflows moved from `actions/checkout@v4` / `actions/setup-python@v5` to
   `@v5` / `@v6`. Runners had begun force-running the old pins on Node 24
@@ -498,6 +507,66 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.12 (2026-08-30) - Self-Hosted follows subpages; PDF viewers decoded
+
+**St. Francis de Sales, Akron (`sfds-a`) was unreachable for two separate
+reasons, and either one alone was enough to hide the bulletin.**
+
+1. *The PDF is one level down.* `stfparish.com/our-message/bulletins/` is a
+   WordPress post grid - one post per Sunday, and **not a single `.pdf` on the
+   page**. `_find_best_pdf_link()` correctly returned nothing, and the parish
+   read as having no bulletin at all.
+2. *The PDF is behind a viewer.* Each post embeds it with PDFEmbedder Premium,
+   whose iframe `src` is `https://stfparish.com/?pdfemb-data=<base64>` - a
+   base64url'd JSON blob holding the real URL. The existing iframe branch tests
+   for `.pdf` in the `src`, which that string does not contain. So even after
+   following the link, the subpage would still have looked empty.
+
+**`_find_pdf_in_subpages()`** runs only when the page itself yields no PDF, so
+the ~14 parishes that already resolve keep their exact path and request count.
+It ranks same-host links by the usual keyword score plus recency bonus, skips
+pagination (`/page/N/` walks the archive *backwards*), and fetches at most
+`SUBPAGE_FETCH_LIMIT` (3) of them newest-first.
+
+**It returns the first subpage that has a PDF rather than pooling the PDFs it
+finds**, and that is the freshness-critical decision. These files are named
+alike within a month - `Francis-Akron-8-30-compressed.pdf`,
+`-8-23-`, `-8-16-`, all sitting in `/2026/08/` - and none of those filenames
+parses. All three fall to the eCatholic path fallback, which reads the *first*
+number in the name as the day and returns **2026-08-08 for all three**. Pooled,
+that is a three-way tie broken arbitrarily; a run could serve a fortnight-old
+bulletin and report "No Issues". The post slug
+(`/august-30-2026-twenty-second-sunday-in-ordinary-time/`) is the only
+trustworthy date on the site, so the ordering of the *subpages* is what decides,
+and the PDF's own filename never gets a vote.
+
+`_extract_date_raw()` now strips a trailing slash before taking the last path
+segment, or every slug would date to the empty string.
+
+**`_resolve_embedded_pdf()`** decodes what a viewer wraps around the file:
+`pdfemb-data` (base64 JSON), and a `file`/`url`/`pdf`/`src` query parameter,
+which covers PDF.js and the Google/Office viewers. Bad base64 or bad JSON is
+skipped, not raised - a broken embed must not take down a page that also has a
+working link.
+
+**Verified end-to-end against all 15 live Self-Hosted pages, before and after.
+The only line that changed was `sfds-a`'s**, from "none found" to the Aug 30
+PDF; the other 14 resolve byte-identical URLs. Ranking is what matters here, so
+this is the check that counts - see the freshness rules above.
+
+A real extraction off the Aug 30 bulletin gives one site, the correct Manchester
+Road address, 12 recurring Masses matching the hand-entered directory data, a
+dated Sept 12 festival vigil (4:00pm replacing the 5:00pm), two confession
+slots, and a genuine Mon-Fri adoration schedule - none of which the row had.
+
+**Live as of 2026-08-30.** The row moved `Webpage` -> `Self-Hosted`, was
+enabled, and had `Issues` moved off **Unsupported** by hand - that is a
+`PROTECTED_STATUSES` value, so a successful run would never have cleared it and
+the row would have kept `invite_feedback: true` while publishing good data. A
+real run then saved 12 Masses, 2 confessions and 18 events with no warnings.
+
+Its adoration was **not** saved: `UPDATE_ADORATION = False`. See Pending Work.
 
 ### v2.5.9 (2026-08-21) - Site exclusions; the Cathedral and the Oratory
 
