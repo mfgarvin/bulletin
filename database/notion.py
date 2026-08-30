@@ -121,6 +121,31 @@ class NotionClient(DatabaseClient):
         )
         return [self._row_to_parish_record(row) for row in response["results"]]
 
+    async def get_stored_schedules(
+        self, parish_id: str
+    ) -> Optional[tuple[Optional[list], Optional[list]]]:
+        """(Mass Times, Confessions) as stored, for change verification.
+
+        Returns None when the row can't be found. Either element is None when
+        its stored JSON is corrupt — that is the v2.5.1 alarm's territory, not
+        a diffable schedule.
+        """
+        row = await self._get_parish_row(parish_id)
+        if not row:
+            return None
+
+        def parse(prop: str) -> Optional[list]:
+            raw = self._get_property(row, prop)
+            if not raw:
+                return []
+            try:
+                value = json.loads(raw)
+                return value if isinstance(value, list) else None
+            except json.JSONDecodeError:
+                return None
+
+        return parse("Mass Times"), parse("Confessions")
+
     async def save_extraction(
         self,
         parish_id: str,

@@ -562,6 +562,54 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.16 (2026-08-30) - Change verification: diff, reproduce, check the page
+
+**Nothing asked whether a schedule change was real before it overwrote the
+stored value.** The two failure modes pull opposite ways: ~17% of parishes show
+a recurring-Mass diff from extraction noise alone (studies/noise), while a
+fabricated time *is* a change from a correct stored value (1259's 10:30
+replaced a right 11:00). An LLM judging "does this change make sense?" fails
+both at once — the fabricated 10:30 is the most plausible time in the diocese,
+and the stored value is not ground truth either (St. Mel). So the arbiters are
+cheaper and grounded:
+
+**`utils/verify_changes.py`**, called from `process_parish` before the save,
+flag-only:
+
+1. **Diff** the new recurring Masses and confessions against what Notion holds
+   (`NotionClient.get_stored_schedules()`; adoration excluded — the
+   `UPDATE_ADORATION` lock means a diff there would warn forever). A side that
+   is empty or corrupt is not diffable: first extractions, retractions, and
+   the v2.5.1 alarm each have their own handling.
+2. **Reproduce.** On any diff, re-extract once from the same downloaded bytes
+   through the same collapse + sanitize path (`_pair_sites()` mirrors the save
+   step's site-parish pairing read-only, for both runs). A change the second
+   run does not reproduce is labelled noise — "distrust this week's value".
+   Budgeted (`REEXTRACT_BUDGET` = 40/run) so a prompt regression that changes
+   everything cannot double the OpenAI bill; over budget still warns,
+   labelled unverified.
+3. **Check the page.** Changed slots are looked up in the text layer with the
+   verify_times renderings, gated the same way (the page must verify >=80% of
+   its own Mass times before any absence claim is made). Old time printed +
+   new time absent is the damning combination and says so.
+
+**Measured over the study corpus** (run 0 as "stored", run 1 as "new", run 2 as
+the re-extraction — same bytes, so every diff is pure noise): 26 warnings
+across 100 parishes, 20 correctly self-labelled as noise, and the 6
+"reproduced" ones are real instabilities worth seeing (`sa-o`'s Monday
+05:15/17:15 AM-PM flap among them). **Expect roughly 35-50 warned parishes per
+week at 189 parishes; that rate is the point of the flag-only phase.** It is
+the extractor's true noise floor made visible, and the argument for the
+natural next step once trusted: gating the write on reproducibility instead of
+saving whichever sample arrived first.
+
+**Live validation on `1259`**: the dry run extracted Saturday confession at
+14:30 (the stored, hand-verified value is 15:00; the bulletin prints
+"3:00-4:00 pm") and the check flagged it triple-labelled: `added Saturday 1430
+(not printed in bulletin - suspicious), removed Saturday 1500 (still printed
+in bulletin) [NOT reproduced on a second extraction - likely extraction
+noise]`. The Mass schedule matched stored exactly and produced no warning.
+
 ### v2.5.15 (2026-08-30) - Note-level site exclusions; the IC vigil leak
 
 The deterministic fix v2.5.10 proposed and never implemented. The Cathedral's

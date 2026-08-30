@@ -19,6 +19,7 @@ from utils import adoration_capture
 from utils.log_context import set_parish_context
 from utils.sanitize import sanitize_extraction
 from utils.verify_times import verify_times_against_source
+from utils.verify_changes import verify_schedule_changes
 
 logging.basicConfig(
     level=logging.INFO,
@@ -253,6 +254,36 @@ def collapse_sites(
     return "; ".join(notes) if notes else None
 
 
+def _pair_sites(
+    extraction: BulletinExtraction,
+    parish: ParishRecord,
+    group_parishes: list[ParishRecord],
+) -> dict[str, SiteInfo]:
+    """parish_id -> the (possibly merged) site the save step would give it.
+
+    Mirrors the pairing logic of step 4 in `process_parish` without mutating
+    the extraction, so change verification can compare exactly what would be
+    written — for both the first extraction and the reproducibility re-run.
+    Read-only: drift from the save path only mis-scopes a warning, never data.
+    """
+    if len(extraction.sites) == 1 and len(group_parishes) == 1:
+        return {parish.parish_id: extraction.sites[0]}
+
+    by_parish: dict[str, list[SiteInfo]] = {}
+    names: dict[str, str] = {}
+    for site, matched in match_sites_to_parishes(
+        extraction.sites, group_parishes, parish.bulletin_group_id
+    ):
+        if matched:
+            by_parish.setdefault(matched.parish_id, []).append(site)
+            names[matched.parish_id] = matched.name
+
+    return {
+        pid: sites[0] if len(sites) == 1 else merge_sites(sites, names[pid])
+        for pid, sites in by_parish.items()
+    }
+
+
 @dataclass
 class ProcessResult:
     """Result of processing a parish."""
@@ -353,6 +384,30 @@ async def process_parish(
         # saw - compression rasterizes the text layer away.
         for msg in verify_times_against_source(
             extraction, result.pdf_bytes, result.content_type
+        ):
+            warn(msg)
+
+        # Diff against the stored schedule and verify any change: one
+        # re-extraction to separate real changes from noise, then the
+        # bulletin's own text to see which side is printed. Flag-only.
+        pairings = _pair_sites(extraction, parish, group_parishes)
+        stored_schedules = {}
+        for pid in pairings:
+            stored_row = await db.get_stored_schedules(pid)
+            if stored_row is not None:
+                stored_schedules[pid] = stored_row
+
+        async def _reextract():
+            second = await extractor.extract(
+                result.pdf_bytes, content_type=result.content_type
+            )
+            collapse_sites(second, parish_id, parish_name, len(group_parishes))
+            sanitize_extraction(second, parish_id)
+            return _pair_sites(second, parish, group_parishes)
+
+        for msg in await verify_schedule_changes(
+            pairings, stored_schedules, _reextract,
+            result.pdf_bytes, result.content_type,
         ):
             warn(msg)
 
