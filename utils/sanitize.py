@@ -100,6 +100,24 @@ _ORDINARY_MASS_RE = re.compile(
     r"regular(ly scheduled)? mass|usual mass",
     re.IGNORECASE,
 )
+# ...unless the ordinary words are *governed by* the Holy Day modifier rather
+# than standing on their own. Sacred Heart Chapel prints "Solemnity / Holy Day
+# Mass - Vigil Mass 7:00 pm", and the note "Holy Day Vigil Mass" contains the
+# substring "vigil mass" while describing no weekly vigil at all: the parish
+# has no Thursday Mass, and it was publishing one every week. Word order is
+# what separates the two - in the genuine double label the ordinary word comes
+# first ("Vigil Mass; Vigil of Holy Day"), so only a Holy Day modifier
+# *preceding* the ordinary phrase, within the same clause, disqualifies it.
+_HOLY_DAY_QUALIFIED_RE = re.compile(
+    r"\b(?:holy\s?day|solemnity)\b[^.;]{0,24}?\b"
+    r"(?:vigil|weekday|daily|sunday|weekend|regular(?:ly scheduled)?|usual)\s+mass",
+    re.IGNORECASE,
+)
+
+
+def _has_independent_ordinary_label(note: str) -> bool:
+    """True when the note calls this an ordinary Mass in its own right."""
+    return bool(_ORDINARY_MASS_RE.search(_HOLY_DAY_QUALIFIED_RE.sub(" ", note)))
 
 # Adoration tied to a season or to the Triduum, which the schema cannot encode.
 # `MassTime` has `mass_date` for a one-off; `AdorationTime` has nothing - so a
@@ -578,7 +596,7 @@ def _drop_undated_holy_day_masses(
             kept.append(mass)
             continue
 
-        if _ORDINARY_MASS_RE.search(note):
+        if _has_independent_ordinary_label(note):
             # Doubles as a real weekly Mass - keep it, but say so, because the
             # extractor conflated two schedules into one entry.
             kept.append(mass)

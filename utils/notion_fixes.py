@@ -224,6 +224,82 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         "heard at St. Mel (2026-08-21)",
         confession_times=[],
     ),
+    # Four rows from the 2026-08-29 run's retraction warnings. In every case
+    # the fresh extraction correctly returned NO confessions and the stored
+    # value is the wrong one being kept - the v2.5.8 St. Mel shape, where
+    # save_extraction() never writes an empty list so a bad value outlives
+    # every correct run after it. Each was checked against the bulletin.
+    "0582": ManualFix(
+        reason="the bulletin's entire Confessions entry reads 'Please ask a "
+        "priest before or after Mass' - an availability statement with no "
+        "times at all (read off the 2026-08-30 cover, which is an image; the "
+        "text layer is nothing but the ad pages). The four stored slots "
+        "(Sun 08:00, Sun 18:00, Tue 09:00, Thu 09:00, all noted 'Please ask a "
+        "priest before or after Mass') were manufactured by anchoring that "
+        "clause to Mass times, and to times this parish does not even use - "
+        "its Masses are Sun 09:00/17:00 and Tue/Thu 08:30. _fold_appointment_"
+        "only() misses it because the note does not open with appointment "
+        "language (2026-08-30)",
+        confession_times=[],
+    ),
+    "0414-sp": ManualFix(
+        reason="St. Philomena has no confessions of its own. The shared "
+        "Communion of Saints bulletin states 'Reconciliation: Saturday 3pm, "
+        "the first Wednesday of each month at 7pm IN ST. ANN CHURCH, and any "
+        "time upon request' - both slots belong to the St. Ann row (0414), "
+        "which holds them correctly. The stored slot even carries the note "
+        "'St. Ann Church' (2026-08-30)",
+        confession_times=[],
+    ),
+    "1855-james": ManualFix(
+        reason="St. James has no confessions of its own. The shared bulletin "
+        "lists 'Confessions: Saturday 3:00-4:00pm at St. Luke / Saturday "
+        "3:00-3:30pm at St. Clement' - the two stored slots are those, with "
+        "their own notes saying 'at St. Luke' and 'at St. Clement'. Both "
+        "belong to 1855 and 1855-clem, which hold them (2026-08-30)",
+        confession_times=[],
+    ),
+    "our-lady-help-of-christians-litchfield-oh": ManualFix(
+        reason="the stored confession is the Lodi worship site's, and says so "
+        "itself: 'First Monday of the month; after 6:00PM Mass (listed as Lodi "
+        "Site in bulletin)'. The bulletin's schedule puts the Monday 6:00 pm "
+        "Mass at Lodi, and olhc-lodi already holds this slot. No confession "
+        "time is printed for Litchfield anywhere in the bulletin (2026-08-30)",
+        confession_times=[],
+    ),
+    "scas-e": ManualFix(
+        reason="the Monday 19:00-20:00 slot is a one-off event published "
+        "weekly - its own note reads 'Collinwood Cluster Penance Service "
+        "(held at St. Casimir's)', which is a seasonal communal service, not a "
+        "standing Monday confession. Same shape as the seasonal-adoration "
+        "class in v2.5.11, which the sanitizer only covers for adoration. The "
+        "Saturday 16:00-17:00 slot is kept: it sits directly before the 17:00 "
+        "vigil and has no such marker (2026-08-30)",
+        confession_times=[
+            ConfessionTime(day="Saturday", start_time=1600, end_time=1700),
+        ],
+    ),
+    "sem-c": ManualFix(
+        reason="the single stored confession is Lent-only published in "
+        "August: its own note reads 'In preparation for Easter; before Sunday "
+        "Mass', and the end time was invented on top of that ('also said to be "
+        "available even during Stations of the Cross'). Same class as sc-c's "
+        "Lenten adoration in v2.5.8. The current bulletin page contains no "
+        "confession language at all (2026-08-30)",
+        confession_times=[],
+    ),
+    "1823": ManualFix(
+        reason="the bulletin says 'Thursdays no Mass / no hay misa los "
+        "jueves', but the row published two Thursday Masses. Both come from "
+        "the undated Holy Day policy line ('Solemnity/Holy Day Mass: Vigil "
+        "Mass 7:00 pm; Holy Day 9:30 am'): the 07:00 is that 7:00 PM vigil, "
+        "AM/PM-flipped, and the 09:30 is the Holy Day morning Mass landed on "
+        "the one weekday with no Mass. The sanitizer now drops the 07:00 on "
+        "its own (its 'Holy Day Vigil Mass' note no longer reads as a weekly "
+        "vigil), but the 09:30 carries no note at all, so nothing can catch "
+        "it. Weekday Masses are Mon/Tue/Fri 09:30 and Wed 18:00 (2026-08-30)",
+        drop_masses={("Thursday", 700), ("Thursday", 930)},
+    ),
     "ss-cosmas-damian-twinsburg-oh": ManualFix(
         reason="flagged perpetual, but every note says the chapel closes "
         "overnight 7pm-9am",

@@ -46,6 +46,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   same two steps. **`checkout@v7` and `setup-python@v7` already exist**
   (2026-07-20); v5/v6 clear the deprecation, so this is a treadmill, not a
   finished job.
+- **Open from the 2026-08-29 warning triage** (v2.5.18) - three items left
+  deliberately unfixed. (1) `1485` publishes a **monthly** reconciliation
+  service as weekly; its note says "Monthly Reconciliation" with no ordinal, so
+  the ordinal parser refuses it - confirm the ordinal with the parish and state
+  it, or teach the extractor to read the calendar date. Its 2-hour span flag is
+  a standing false positive, the second known one after St. Brendan's (`0290`);
+  a `definitions.py` exemption set is the agreed fix if it gets noisy. (2)
+  `ss-c`'s Sunday confession note "Before 9:30am Mass" is fabricated (Sunday
+  Masses are 8:00 and 11:00) and `notes` is published text. (3) `0512`'s
+  adoration is Prince of Peace's, on St. Andrew's row - harmless only because
+  `UPDATE_ADORATION = False`.
 - **GitHub integration** - Integrate Claude with GitHub for automated workflows or issue tracking.
 - **Data change safety** - Add safeguards for when extracted data changes significantly (e.g., mass times suddenly very different). Could warn or require confirmation before overwriting.
 - **Adoration in Events** - Sometimes adoration schedule appears in the Events listing instead of the dedicated Adoration field. May need extraction prompt adjustment or post-processing.
@@ -563,6 +574,68 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.18 (2026-08-30) - Triaging the 2026-08-29 run's warnings
+
+Eleven rows carried warnings. Every one was checked against its own bulletin;
+**nine were true positives**, and the two that were not are documented below.
+Six of the seven confession retraction warnings turned out to be the *stored*
+value being wrong while the fresh extraction was right — the v2.5.8 St. Mel
+shape, where `save_extraction()` never writes an empty list, so a bad value
+outlives every correct run after it.
+
+**Code fix — the Holy Day "labelled both" guard misfired on word order.**
+`_drop_undated_holy_day_masses()` keeps a Mass whose note names both an
+ordinary Mass and a Holy Day, because a parish's standing Saturday vigil is
+often also its Holy Day vigil. But it tested for the ordinary phrase as a bare
+substring, so Sacred Heart Chapel's `Thursday 07:00 "Holy Day Vigil Mass"` was
+kept — "Holy Day **Vigil Mass**" contains `vigil mass` while describing no
+weekly vigil at all. The bulletin says *"Thursdays no Mass / no hay misa los
+jueves"*, and the row was publishing a Thursday Mass every week.
+
+Word order separates them: in the genuine double label the ordinary word comes
+first ("Vigil Mass; Vigil of Holy Day"). `_has_independent_ordinary_label()`
+strips phrases where a Holy Day modifier *precedes* the ordinary words in the
+same clause, then tests. Replayed over all 189 stored rows: **exactly one entry
+changes** — 1823's — and every genuine double label is untouched.
+
+**Data repaired** (`notion_fixes --apply`, 7 rows, verified after write):
+
+| row | what was stored | why it was wrong |
+|---|---|---|
+| `0582` | 4 confession slots | The bulletin's whole Confessions entry is *"Please ask a priest before or after Mass"* — no times. The slots were manufactured by anchoring that clause to Mass times, and to times the parish doesn't use. Read off the cover image; its text layer is nothing but ad pages. |
+| `0414-sp` | Sat 15:00, noted "St. Ann Church" | The bulletin puts Reconciliation *in St. Ann Church*; `0414` holds it. |
+| `1855-james` | 2 slots, noted "at St. Luke"/"at St. Clement" | Both belong to `1855` and `1855-clem`, which hold them. |
+| `olhc-litchfield` | Mon 18:00, noted "(listed as Lodi Site in bulletin)" | It is Lodi's; `olhc-lodi` holds it. |
+| `sem-c` | Sun 10:20, "In preparation for Easter" | Lent-only, published in August; the end was invented too. |
+| `scas-e` | Mon 19:00 "Collinwood Cluster Penance Service" | A seasonal communal service published weekly. Saturday 16:00 kept. |
+| `1823` | Thu 07:00 + Thu 09:30 | Both from the undated Holy Day policy line ("Vigil 7:00 pm; Holy Day 9:30 am") on the one weekday with no Mass. The sanitizer now drops the 07:00 itself; the 09:30 carries no note, so nothing can catch it. |
+
+Three of these — `0414-sp`, `1855-james`, `olhc-litchfield` — are the same
+cluster-bleed shape, and each stored note *named the other parish*. That is a
+usable signal: a confession whose note names a sibling row in the same bulletin
+group is almost certainly that sibling's.
+
+**The two non-bugs, and what they actually point at:**
+
+- **`1485` "confession spans 2h00m"** is a genuine window — the bulletin's
+  calendar prints *"4:30 pm monthly reconciliation (church)"* alongside a
+  separate *"6:00 pm weekly sacrament of reconciliation"*. The flag is a false
+  positive, but the row has a real defect the flag doesn't name: the monthly
+  service is stored as **weekly**. Its note says "Monthly Reconciliation" with
+  no ordinal, so `monthly_recurrence.py` correctly refuses it.
+- **`0512` cross-site bleed** is real but currently harmless: the Mon/Tue/Wed
+  notes referencing an 8:00 AM Mass are **adoration** entries, and those 8:00
+  Masses are at Prince of Peace (`0512-peace`), not St. Andrew. `UPDATE_ADORATION
+  = False` means nothing was written. It matters when the adoration capture is
+  reviewed.
+
+Also found, not repaired: **`ss-c`'s Sunday confession note "Before 9:30am
+Mass"** is fabricated — the bulletin gives Sunday Masses as 8:00 and 11:00 and
+the confession as "Sunday: 9-9:30am". The times are right; only the published
+note invents a Mass. **`bearer`'s bulletin is a pure image** (1-char text
+layer), which is why no site matched `Saint Lucy Mission`; that row is holding
+Aug 16 data.
 
 ### v2.5.17 (2026-08-30) - export.json emits weeks_of_month / excluded_weeks
 
