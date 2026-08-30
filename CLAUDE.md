@@ -16,6 +16,23 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   run and is discarded, because `UPDATE_ADORATION = False` is a standing lock.
   It is in `adoration_capture.json`; getting it into Notion needs
   `utils/notion_fixes.py`, as with `1285`.
+- **Two known gaps in the v2.5.11 sanitizer** (found 2026-08-29, not fixed):
+  1. `_SEASONAL_ADORATION_RE` matches liturgical *names* only, so a one-off
+     identified by a bare date in the note — `(May 4, 2026)`, `(April 8)`,
+     `(listed Jan 21)` — still publishes weekly. **22 slots across ~17
+     parishes**, mostly adoration. Not all are wrong: `scas-e`'s "Daily morning
+     Mass (starting week of Aug 2)" is a genuine recurring entry with a start
+     date, so this needs the same refuse-rather-than-guess handling.
+  2. `_META_NOTE_RE` enumerates the subject word (`day|date|time|year|start|
+     end`), so "location not specified in bulletin" and "exact hours not listed
+     in bulletin" survive (3 slots). Generalise to `\w+`.
+- **Monthly-ordinal schedules ("First Friday")** - 60 slots across ~40 parishes
+  recur on an ordinal weekday but are stored as weekly, so anything that
+  *computes* (the mapboard, "what's on today/soonest") treats them as every
+  week. Design written up in `docs/design/monthly-recurrence.md`; not
+  implemented. Key finding: the ordinal can be parsed deterministically from the
+  `notes` the extractor already writes (50/60 in a prototype), so this needs no
+  new LLM output.
 - **Workflow action versions** (bumped 2026-08-29, `ce6a7f4`) - All three
   workflows moved from `actions/checkout@v4` / `actions/setup-python@v5` to
   `@v5` / `@v6`. Runners had begun force-running the old pins on Node 24
@@ -499,6 +516,7 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Repo layout notes
 
+- `docs/design/` — design notes for planned work, written before implementation.
 - `docs/integration/` — how downstream consumers read the export (Flutter app).
 - `docs/notes/` — **gitignored.** Local working notes and source data for
   hand-verification.
@@ -567,6 +585,102 @@ the row would have kept `invite_feedback: true` while publishing good data. A
 real run then saved 12 Masses, 2 confessions and 18 events with no warnings.
 
 Its adoration was **not** saved: `UPDATE_ADORATION = False`. See Pending Work.
+
+### v2.5.11 (2026-08-24) - Published notes, Holy Day policy lines, seasonal adoration
+
+Three problems found from one parish (St. Eugene, `1734`), all diocese-wide.
+
+**1. `notes` is published text; the extractor was writing extraction commentary
+into it.** St. Eugene shipped `Holy Day schedule lists 11:00 AM & 7:00 PM (day
+not specified); see extraction_notes.` to end users. `notes` renders in the app
+under the parish's own name — "see extraction_notes" is meaningless to a reader
+and the hedging reads as the parish being unsure when its own Masses are.
+`extraction_notes` already exists for this and stays internal.
+
+Prompt now says so explicitly, and `_scrub_meta_notes()` in `utils/sanitize.py`
+is the backstop. It works through `_drop_clauses()`, which removes matching
+parentheticals first and then matching sentences/clauses, so a note that is
+half fact and half apology keeps the fact: *"After Mass (start time estimated
+~30 minutes after Mass)"* → *"After Mass"*. A note that is entirely commentary
+becomes `None`. 7 rows scrubbed.
+
+**2. Holy Day schedules published as weekly Masses — 12 parishes, 27 phantom
+Masses.** A bulletin prints a standing line ("Holy Days: 8:15, 11:15, 6:45 pm")
+with no date, because the date moves every year. `mass_date` is the only way to
+say "one specific day", so an extractor that keeps the line must invent a
+weekday — and picks one arbitrarily. St. Thomas More was advertising three
+Masses every Thursday, on a day it has no weekday Mass at all.
+
+The prompt now answers the user's question directly: **when the standing
+schedule box and the day-by-day Mass intentions listing disagree, the intentions
+listing wins.** The box states policy across the year; the listing states what is
+actually celebrated in the week the bulletin covers. So — emit dated Masses with
+`mass_date` if the intentions listing shows the Holy Day falling inside this
+bulletin's week, otherwise omit the times entirely and describe the policy in
+`extraction_notes`. There is no Holy Day this week; there is nothing to publish.
+
+`_drop_undated_holy_day_masses()` enforces it, and **it needed three guards
+before it was safe** — the first two drafts each deleted real Masses:
+
+- A dated Holy Day Mass is never touched. That is the correct output.
+- A note saying *both* ("Vigil Mass; Vigil of Holy Day", "Weekday Mass; Holy
+  Day") describes a real weekly Mass carrying an extra label. Kept and flagged.
+  Without this, St. John Nepomucene lost its genuine Saturday 4pm vigil.
+- **A Holy Day entry at a time the parish offers as a plain Mass on ≥2 other
+  weekdays is probably the daily Mass with the label merged onto it.** Kept,
+  label stripped, flagged. `_dedupe_masses` merges on
+  `(day, time, language, mass_date)` and joins notes, so when the extractor
+  emits both the daily Mass and the Holy Day line at the same slot, the plain
+  entry's empty note loses and the Holy Day label is the only survivor.
+  St. Eugene's own `GPT Logs` read *"merged duplicate Monday 1100 entry"*.
+  **7 of the 12 parishes hit this**, and without the guard each would have lost
+  a real daily Mass.
+
+The pass therefore runs **before** `_clean_masses`, so a fresh extraction drops
+the Holy Day entry before dedupe can merge it into anything; an exact plain twin
+at the same `(day, time)` is dropped outright rather than kept, since the real
+Mass is right there.
+
+**3. Seasonal and Triduum adoration published year-round — 24 parishes.**
+`AdorationTime` has no `mass_date` and no season field, so a Holy Thursday slot
+can only be stored as a recurring weekly Thursday. **19 parishes were
+advertising their Holy Thursday 2026 adoration as their standing schedule** —
+"Thursday 8:00–10:00 pm, adoration at the repository", every Thursday of the
+year — plus 5 more on Lenten or Divine Mercy schedules. `UPDATE_ADORATION` is
+`False`, so no ordinary run would ever have corrected any of them.
+
+This is the *fifth* instance of the same class: `2492` (v2.5.5, Holy Thursday)
+and `sc-c` (v2.5.8, Lent-only) were each fixed by hand as one-offs. They were
+not one-offs.
+
+`_drop_seasonal_adoration()` uses the same conservative guard as
+`_drop_coverage_hours`: drop only when there is no real schedule to lose (a
+perpetual chapel, or a listing that is *entirely* seasonal); flag otherwise. A
+mixed listing is a judgement call, and deleting into a live schedule on a note
+match is how a good slot disappears. Two rows flagged; `1071-MIC` got a
+`ManualFix` (three Lent-only slots whose notes state their own end, "until
+Easter Day", alongside one genuine Thursday).
+
+The pattern deliberately does **not** match "First Friday"/"First Saturday" —
+see below.
+
+**Applied 2026-08-24** via `python -m utils.notion_fixes --apply` (two passes,
+48 rows). No parish lost its whole Mass schedule; every drop was checked against
+what the day retained.
+
+**Known false positive:** `st-mary-painesville-oh` has a genuine weekly Monday
+silent adoration whose note reads "preparing for Corpus Christi". It flags every
+week. Treat like St. Brendan's long confession span — add a `definitions.py`
+exemption if it gets noisy, don't narrow the pattern.
+
+**Unfixed and larger: monthly slots published weekly.** The same scan found
+**44 slots across 34 parishes** noted "First Friday", "First Saturday",
+"Thursday before First Friday" — 20 confessions, 13 adoration, 11 Masses. These
+are not stale; they recur genuinely. But nothing in the schema expresses "the
+first Friday of the month", so each is stored as *every* Friday. St. Leo the
+Great publishes a 6-hour First Friday adoration as a weekly one. This needs a
+recurrence field, not a note pattern, and is deliberately out of scope here —
+the seasonal regex excludes it so a later fix can address it properly.
 
 ### v2.5.10 (2026-08-21) - The compression ladder started too low; a targeted study of 1259
 

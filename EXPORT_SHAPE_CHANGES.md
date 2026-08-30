@@ -140,6 +140,151 @@ Or for perpetual:
 If `is_perpetual: true`, render a single "Perpetual Adoration" card and skip
 the times array (it'll be empty). Otherwise enumerate `times` like confessions.
 
+### Monthly-ordinal recurrence — `weeks_of_month` / `excluded_weeks`
+
+**Status: specified and frozen; not yet emitted.** Additive — no existing key
+changes. This section is normative and **supersedes the `occurrences` proposal
+in `docs/design/monthly-recurrence.md`**, which is withdrawn (see *Why no
+resolved dates* below).
+
+60 slots across ~40 parishes recur on an **ordinal weekday of the month** —
+"First Friday", "Last Sunday", "2nd and 4th Saturday" — and today every one is
+exported as recurring *every* week. The `notes` text already says the ordinal,
+so a human reading the card is not misled; everything that **computes** — "on
+now", "what's next", the LED mapboard — is wrong.
+
+Two optional keys carry the rule. They may appear on **any** schedule entry:
+`schedules.mass[]`, `schedules.confession[]`, and `schedules.adoration.times[]`.
+
+```json
+{
+  "day": "Friday",
+  "start": "17:30",
+  "end": "18:15",
+  "end_next_day": false,
+  "notes": "First Friday of the month",
+
+  "weeks_of_month": [1]
+}
+```
+
+```json
+{
+  "day": "Friday",
+  "start": "08:15",
+  "notes": "Weekday Mass (except on First Fridays)",
+
+  "excluded_weeks": [1]
+}
+```
+
+#### Semantics
+
+| key | type | meaning |
+|---|---|---|
+| `weeks_of_month` | `int[]` or absent | The slot occurs **only** in these ordinal weeks |
+| `excluded_weeks` | `int[]` or absent | The slot occurs **every** week **except** these |
+
+- **Absent means every week.** The keys are emitted **only when non-null**, so
+  every entry in today's export keeps exactly its current meaning and byte-level
+  shape. Absent, `null`, and `[]` are all "weekly" — the app must not
+  distinguish them.
+- **Value domain: `1`–`5`, and `-1` for last.** `1` = the first such weekday of
+  the month, `-1` = the last. Values are sorted ascending and de-duplicated
+  (`-1` sorts first). Nothing else is ever emitted; anything else is malformed
+  and must be discarded.
+- **`5` and `-1` are different.** A 5th Friday exists in only some months, and
+  when it doesn't the slot simply doesn't occur that month. `-1` always exists,
+  and in a 5-Friday month it is the 5th, not the 4th. Both are real in the data.
+- **The two keys are mutually exclusive.** Never both non-null on one entry. If
+  a consumer ever sees both, `weeks_of_month` wins.
+- **Mutually exclusive with `mass_date`.** A dated one-off is a date, not a
+  rule; it never carries either key.
+- **`notes` keeps stating the ordinal.** That is a guarantee, not a
+  coincidence: the scraper *derives* these fields from the note text, so the
+  human-readable form can't silently diverge from the machine-readable one, and
+  a consumer that ignores both keys still renders something truthful.
+
+#### Coverage — refuse rather than guess
+
+The ordinal is derived deterministically by the scraper from `notes`, not asked
+of the LLM (a parser bug is fixed once in code; an LLM field re-rolls its
+mistakes every week). Prototype coverage over all stored rows: **50 of 60
+derived, 10 refused, 0 wrong.**
+
+**No entry will ever carry a *wrong* ordinal, but not every monthly slot will
+carry one.** The residue stays weekly-with-a-note, which is today's behaviour.
+The known refusals:
+
+- **8 slots read "the Thursday before the First Friday."** That is genuinely
+  not an ordinal of the month — when the first Friday falls on the 1st or 2nd,
+  the Thursday before it is in the *previous* month. Approximating it as "first
+  Thursday" would be wrong about a third of the year. These stay `null`
+  deliberately; do not special-case them in the app.
+- Notes naming two subjects (one bulletin listing two parishes' ordinals) are
+  refused rather than merged.
+
+#### Why no resolved dates
+
+An earlier draft also emitted `occurrences` — a rolling 90-day array of
+resolved ISO dates — so the app would need no calendar arithmetic. It is
+dropped for three reasons:
+
+1. **It goes stale, in the direction that matters.** The app is offline-first
+   and can be showing a cached export of arbitrary age. Past the horizon the
+   array empties, and the fallback is a choice between "renders weekly again"
+   (the bug being fixed) and "never happens" (hiding a real Mass). A rule has no
+   horizon.
+2. **Two representations of one fact can disagree**, and nothing said which
+   wins.
+3. **`export.json` is committed on every rebuild and diffed as a freshness
+   audit** (see *Auditing freshness* in `CLAUDE.md`). Rolling date arrays would
+   rewrite themselves for 60 entries every Saturday whether or not anything real
+   changed, adding permanent noise to that signal.
+
+The arithmetic this pushes to the consumer is ten lines, has no timezone or
+locale dimension, and is fully unit-testable with no data dependency.
+
+#### Consumer contract
+
+The whole rule reduces to one predicate — *does this entry occur on this
+calendar day?* Given a `DateTime day` already known to be the right weekday:
+
+```dart
+// Which ordinal weekday-of-month is this date? 1st..5th.
+final n = ((day.day - 1) ~/ 7) + 1;
+// Is it the last one of its weekday in this month?
+final daysInMonth = DateTime(day.year, day.month + 1, 0).day;
+final isLast = day.day + 7 > daysInMonth;
+
+if (weeksOfMonth != null) {
+  return weeksOfMonth.contains(n) || (weeksOfMonth.contains(-1) && isLast);
+}
+if (excludedWeeks != null) {
+  return !(excludedWeeks.contains(n) || (excludedWeeks.contains(-1) && isLast));
+}
+return true; // weekly
+```
+
+Required behaviour:
+
+1. **Parse defensively.** Not a list, or empty after discarding non-integers and
+   out-of-domain values, → treat as weekly. A cached export predating this
+   change must behave exactly as it does today.
+2. **Route every recurrence decision through the one predicate.** Any place
+   that answers "is it on today" or "when is it next" from `day` alone is wrong
+   for these entries. Rolling forward to the next occurrence means scanning
+   candidate days rather than adding `7`; a `[5]`-only slot can be ~3 months
+   out, so bound the scan (400 days is safe) and fall back to weekly if the scan
+   finds nothing.
+3. **Don't collapse a monthly entry with a weekly one.** Any UI that groups
+   entries sharing a time and note into a single multi-day row must include the
+   ordinal in its grouping key, or "First Friday 5:30pm" and a weekly "Tuesday
+   5:30pm" merge into one row that reads as both being weekly.
+4. **The weekday filter is fine unchanged.** A First Friday entry does occur on
+   Fridays; it is the *date* questions ("today", "tomorrow", "this week",
+   "soonest") that need the predicate.
+
 ### `latitude` / `longitude`
 
 Plain floats. Either may be `null` if the parish has no geocoded address.

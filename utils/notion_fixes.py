@@ -151,6 +151,19 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         "False, so no normal run would ever correct it (2026-08-21)",
         adoration_times=[],
     ),
+    "1071-MIC": ManualFix(
+        reason="three of four adoration slots were Lent-only, published "
+        "year-round: Mon/Wed/Fri 7-8am 'with Fr. Anthony; offered ... until "
+        "Easter Day'. Easter 2026 has passed, so they advertise a devotion "
+        "that ended in April. The sanitizer flags rather than drops a seasonal "
+        "slot sitting alongside a real one, which is right in general - here "
+        "the notes state the end themselves, so it can be stated. The Thursday "
+        "17:00-19:00 slot is the genuine year-round adoration and is kept "
+        "(2026-08-24)",
+        adoration_times=[
+            AdorationTime(day="Thursday", start_time=1700, end_time=1900),
+        ],
+    ),
     "st-mel-cleveland-oh": ManualFix(
         reason="stored confession was St. Mark's, not St. Mel's - one Saturday "
         "15:00-16:00 slot whose own note reads 'Saturdays @ St. Mark'. St. Mel "
