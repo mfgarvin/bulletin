@@ -400,8 +400,7 @@
         800
       ],
       "Thursday": [
-        800,
-        1200
+        800
       ],
       "Friday": [
         800
@@ -730,9 +729,7 @@
         1100
       ],
       "Monday": [
-        628,
-        900,
-        1730
+        628
       ],
       "Tuesday": [
         628
@@ -2242,14 +2239,11 @@
     "Mass Times": {
       "Saturday": [
         745,
-        1700,
-        1900
+        1700
       ],
       "Sunday": [
-        800,
         830,
-        1015,
-        1930
+        1015
       ],
       "Monday": [
         745
@@ -2411,11 +2405,6 @@
         900,
         1700
       ],
-      "Tuesday": [
-        830,
-        900,
-        1900
-      ],
       "Wednesday": [
         830,
         900
@@ -2423,6 +2412,9 @@
       "Friday": [
         900,
         930
+      ],
+      "Tuesday": [
+        900
       ],
       "Thursday": [
         900
@@ -3057,8 +3049,7 @@
     "Name": "Saint John Neumann Church",
     "Mass Times": {
       "Monday": [
-        900,
-        1830
+        900
       ],
       "Tuesday": [
         900
@@ -3195,9 +3186,6 @@
       ],
       "Thursday": [
         900
-      ],
-      "Monday": [
-        1900
       ],
       "Wednesday": [
         900
@@ -3630,6 +3618,10 @@
     "ID": 94,
     "Name": "Saint Francis de Sales",
     "Mass Times": {
+      "Saturday": [
+        815,
+        1700
+      ],
       "Sunday": [
         730,
         900,
@@ -3649,16 +3641,51 @@
         1830
       ],
       "Friday": [
-        815,
-        900
-      ],
-      "Saturday": [
-        815,
-        1700
+        815
       ]
     },
-    "Confessions": {},
-    "Adoration": {}
+    "Confessions": {
+      "Thursday": [
+        {
+          "1730": 45
+        }
+      ],
+      "Saturday": [
+        {
+          "900": 45
+        }
+      ]
+    },
+    "Adoration": {
+      "Monday": [
+        {
+          "700": 60
+        },
+        {
+          "1800": 240
+        }
+      ],
+      "Tuesday": [
+        {
+          "700": 900
+        }
+      ],
+      "Wednesday": [
+        {
+          "700": 900
+        }
+      ],
+      "Thursday": [
+        {
+          "700": 900
+        }
+      ],
+      "Friday": [
+        {
+          "700": 900
+        }
+      ]
+    }
   },
   "2df29b8f-0e6e-81bc-a078-f953cb64d946": {
     "ID": 95,
@@ -4323,16 +4350,14 @@
     "Name": "Saint Brendan Parish",
     "Mass Times": {
       "Saturday": [
-        1700,
-        1900
+        1700
       ],
       "Sunday": [
         900,
         1130
       ],
       "Monday": [
-        830,
-        1900
+        830
       ],
       "Tuesday": [
         830
@@ -5163,8 +5188,7 @@
     "Name": "Saint Agnes Church (Orrville, Ohio)",
     "Mass Times": {
       "Saturday": [
-        1700,
-        1900
+        1700
       ],
       "Sunday": [
         900,
@@ -5173,8 +5197,7 @@
         1300
       ],
       "Monday": [
-        815,
-        1715
+        815
       ],
       "Tuesday": [
         815
@@ -5243,28 +5266,11 @@
     "Name": "Saint Agnes + Our Lady of Fatima Catholic Church",
     "Mass Times": {
       "Saturday": [
-        1600,
-        1800
+        1600
       ],
       "Sunday": [
         830,
-        1030,
-        1800
-      ],
-      "Monday": [
-        1800
-      ],
-      "Tuesday": [
-        1800
-      ],
-      "Wednesday": [
-        1800
-      ],
-      "Thursday": [
-        1800
-      ],
-      "Friday": [
-        1800
+        1030
       ]
     },
     "Confessions": {
@@ -6099,9 +6105,7 @@
         1100
       ],
       "Monday": [
-        700,
-        800,
-        1900
+        800
       ],
       "Wednesday": [
         800
@@ -7170,13 +7174,12 @@
     "Name": "The Cathedral of Saint John the Evangelist",
     "Mass Times": {
       "Saturday": [
-        1630,
-        1800
+        1630
       ],
       "Sunday": [
         830,
-        1030,
-        1530
+        1100,
+        1730
       ],
       "Monday": [
         715,
@@ -7202,7 +7205,7 @@
     "Confessions": {
       "Saturday": [
         {
-          "1530": 30
+          "1500": 60
         }
       ],
       "Wednesday": [

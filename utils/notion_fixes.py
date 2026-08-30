@@ -149,14 +149,43 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         ],
     ),
     "1259": ManualFix(
-        reason="the extractor read a feast heading as its own celebration. The "
-        "Aug 23 2026 bulletin's day-by-day listing titles Saturday with the "
-        "Passion of St. John the Baptist and its readings; that is the feast "
-        "kept at the normal 4:30pm vigil, not an extra 4:00pm Mass. Confirmed "
-        "by the pastor's account 2026-08-21. Dropped rather than remapped to "
-        "1630 - remapping would merge the week-specific feast note into the "
-        "recurring vigil entry and republish it every Saturday",
-        drop_masses={("Saturday", 1600)},
+        reason="the Cathedral is the hardest row in the database and its errors "
+        "are fabrication rather than misreading - see cathedral-1259 notes in "
+        "CLAUDE.md. Against the 2026-08-30 bulletin, whose masthead reads "
+        "'Saturday: 4:30 pm (Sunday Vigil) / 6:00 pm (Sunday Vigil at Immaculate "
+        "Conception) / Sunday: 8:30, 11:00 am; 5:30 pm / Monday-Friday in the "
+        "Chapel: 7:15 am, 12:00 pm' and 'Confessions ... Saturday: 3:00-4:00 pm': "
+        "(1) a Sunday 10:30 Mass that appears NOWHERE in the document, standing "
+        "in for the real 11:00 - the parish's live-streamed principal Mass, which "
+        "was missing entirely; (2) Sunday 15:30 for the stated 5:30 pm; (3) the "
+        "Oratory of the Immaculate Conception's 18:00 vigil folded inline (it "
+        "belongs to immat-con-cle, and SITE_EXCLUSIONS cannot catch it because "
+        "the model emitted no Oratory site to exclude), carrying a fabricated "
+        "'(in the Chapel)' note - the chapel is a weekday space; (4) Saturday "
+        "confession starting 15:30 against a stated 3:00 pm. Verified against "
+        "the bulletin text layer 2026-08-30",
+        mass_time_fixes={
+            ("Sunday", 1030): 1100,
+            ("Sunday", 1530): 1730,
+        },
+        # 1800 is the Oratory's vigil. 1600 was last year's shape of the same
+        # recurring bug (a feast heading read as its own celebration) and is
+        # inert this week - kept because the spurious 15th Mass has taken a
+        # different form three weeks running, and an unmatched drop costs
+        # nothing.
+        drop_masses={("Saturday", 1800), ("Saturday", 1600)},
+        # Only the Saturday start is wrong, but there is no per-slot confession
+        # remap, so the full masthead listing is stated. Stable enough to state:
+        # these times have not moved through the whole renovation.
+        confession_times=[
+            ConfessionTime(day="Saturday", start_time=1500, end_time=1600),
+            ConfessionTime(day="Wednesday", start_time=1700, end_time=1725,
+                           notes="Confession in the Chapel"),
+        ] + [
+            ConfessionTime(day=day, start_time=start, end_time=None)
+            for day in ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+            for start in (745, 1130)
+        ],
     ),
     "sc-c": ManualFix(
         reason="stored adoration was Lent-only, published year-round. The single "

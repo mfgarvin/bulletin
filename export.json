@@ -953,13 +953,6 @@
           "notes": "Weekday Mass (Rectory Chapel)"
         },
         {
-          "day": "Thursday",
-          "start": "12:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Day Masses (time listed as 12 NOON; day varies)"
-        },
-        {
           "day": "Friday",
           "start": "08:00",
           "mass_date": null,
@@ -1739,20 +1732,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Weekday Mass; Holy Day Mass time (Holy Days)"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Day Mass time (Holy Days) "
-        },
-        {
-          "day": "Monday",
-          "start": "17:30",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Day Mass time (Holy Days) "
         },
         {
           "day": "Tuesday",
@@ -5550,13 +5529,6 @@
       "mass": [
         {
           "day": "Sunday",
-          "start": "08:00",
-          "mass_date": null,
-          "language": "Slovenian",
-          "notes": "Holy Day"
-        },
-        {
-          "day": "Sunday",
           "start": "08:30",
           "mass_date": null,
           "language": null,
@@ -5568,13 +5540,6 @@
           "mass_date": null,
           "language": "Slovenian",
           "notes": null
-        },
-        {
-          "day": "Sunday",
-          "start": "19:30",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Day"
         },
         {
           "day": "Monday",
@@ -5624,13 +5589,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Sunday Vigil"
-        },
-        {
-          "day": "Saturday",
-          "start": "19:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Day Vigil"
         }
       ],
       "confession": [
@@ -5998,24 +5956,10 @@
         },
         {
           "day": "Tuesday",
-          "start": "08:30",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Day of Obligation Mass (morning)"
-        },
-        {
-          "day": "Tuesday",
           "start": "09:00",
           "mass_date": null,
           "language": null,
           "notes": "Federal Holiday Mass (when a federal holiday falls on Tuesday; bulletin lists 'Federal Holiday 9:00 a.m.')"
-        },
-        {
-          "day": "Tuesday",
-          "start": "19:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Day of Obligation Mass (evening)"
         },
         {
           "day": "Wednesday",
@@ -7568,14 +7512,7 @@
           "start": "09:00",
           "mass_date": null,
           "language": null,
-          "notes": "Holy Day schedule lists 9:00am & 6:30pm (date not specified)"
-        },
-        {
-          "day": "Monday",
-          "start": "18:30",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Day schedule lists 9:00am & 6:30pm (date not specified)"
+          "notes": null
         },
         {
           "day": "Tuesday",
@@ -7812,13 +7749,6 @@
           "notes": null
         },
         {
-          "day": "Monday",
-          "start": "19:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Days"
-        },
-        {
           "day": "Tuesday",
           "start": "09:00",
           "mass_date": null,
@@ -7830,7 +7760,7 @@
           "start": "09:00",
           "mass_date": null,
           "language": null,
-          "notes": "Holy Days"
+          "notes": null
         },
         {
           "day": "Thursday",
@@ -8945,9 +8875,9 @@
     "website": "https://stfparish.com/",
     "latitude": 40.9928459,
     "longitude": -81.5564463,
-    "bulletin_url": null,
-    "timestamp": null,
-    "invite_feedback": true,
+    "bulletin_url": "https://stfparish.com/wp-content/uploads/2026/08/Francis-Akron-8-30-compressed.pdf",
+    "timestamp": "2026-08-30",
+    "invite_feedback": false,
     "schedules": {
       "mass": [
         {
@@ -9014,13 +8944,6 @@
           "notes": null
         },
         {
-          "day": "Friday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "during school year only"
-        },
-        {
           "day": "Saturday",
           "start": "08:15",
           "mass_date": null,
@@ -9032,16 +8955,81 @@
           "start": "17:00",
           "mass_date": null,
           "language": null,
-          "notes": null
+          "notes": "Vigil Mass"
+        },
+        {
+          "day": "Saturday",
+          "start": "16:00",
+          "mass_date": "2026-09-12",
+          "language": null,
+          "notes": "Vigil Mass time change / Opening Mass for Parish Festival (replaces 5:00 p.m. Vigil)"
         }
       ],
-      "confession": [],
+      "confession": [
+        {
+          "day": "Thursday",
+          "start": "17:30",
+          "end": "18:15",
+          "end_next_day": false,
+          "notes": null
+        },
+        {
+          "day": "Saturday",
+          "start": "09:00",
+          "end": "09:45",
+          "end_next_day": false,
+          "notes": "Or call the office to make an appointment"
+        }
+      ],
       "adoration": {
         "is_perpetual": false,
-        "times": []
+        "times": [
+          {
+            "day": "Monday",
+            "start": "07:00",
+            "end": "08:00",
+            "end_next_day": false,
+            "notes": null
+          },
+          {
+            "day": "Monday",
+            "start": "18:00",
+            "end": "22:00",
+            "end_next_day": false,
+            "notes": null
+          },
+          {
+            "day": "Tuesday",
+            "start": "07:00",
+            "end": "22:00",
+            "end_next_day": false,
+            "notes": "Breaking for Masses"
+          },
+          {
+            "day": "Wednesday",
+            "start": "07:00",
+            "end": "22:00",
+            "end_next_day": false,
+            "notes": "Breaking for Masses"
+          },
+          {
+            "day": "Thursday",
+            "start": "07:00",
+            "end": "22:00",
+            "end_next_day": false,
+            "notes": "Breaking for Masses"
+          },
+          {
+            "day": "Friday",
+            "start": "07:00",
+            "end": "22:00",
+            "end_next_day": false,
+            "notes": "Breaking for Masses"
+          }
+        ]
       }
     },
-    "events_summary": null
+    "events_summary": "St. Francis de Sales Parish Festival is Saturday, September 12, with an opening Mass at 4:00 p.m. and the festival running until 9:00 p.m.; the regular 5:00 p.m. Vigil Mass is not held that day. Upcoming groups and ministries include The Wild Goose on Tuesdays at 7:00 p.m., Men’s Group on Saturdays at 7:00 a.m., and the Women’s Study Group beginning Tuesday, September 8 from 9:00–11:00 a.m. in the Memorare Center. The Young at Heart (Queen of Heaven) meeting is Monday, September 14 at 1:00 p.m., and a Parish Craft Day is planned for Saturday, October 17 from 10:00 a.m.–3:00 p.m. (RSVP by Sept. 23)."
   },
   {
     "name": "Saint Eugene Catholic Church",
@@ -10563,7 +10551,7 @@
           "start": "10:30",
           "end": "11:30",
           "end_next_day": false,
-          "notes": "\"Before Mass\" (estimated as 1 hour before the 11:30am Sunday Mass); also after Mass and by request/appointment"
+          "notes": "\"Before Mass\"; also after Mass and by request/appointment"
         }
       ],
       "adoration": {
@@ -10710,14 +10698,7 @@
           "start": "08:30",
           "mass_date": null,
           "language": null,
-          "notes": "Daily Mass (Mon–Fri); Holy Day (morning Mass; date not specified)"
-        },
-        {
-          "day": "Monday",
-          "start": "19:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Day (evening Mass; date not specified)"
+          "notes": "Daily Mass (Mon–Fri); Holy Day"
         },
         {
           "day": "Tuesday",
@@ -10753,13 +10734,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Saturday",
-          "start": "19:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Day Vigil (time listed in schedule box; date not specified)"
         }
       ],
       "confession": [
@@ -12807,14 +12781,7 @@
           "start": "08:15",
           "mass_date": null,
           "language": null,
-          "notes": "Holy Day Mass (time listed; date depends on holy day)"
-        },
-        {
-          "day": "Monday",
-          "start": "17:15",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Day Mass (time listed; date depends on holy day)"
+          "notes": null
         },
         {
           "day": "Tuesday",
@@ -12850,13 +12817,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Saturday",
-          "start": "19:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Day Vigil (time listed; date depends on holy day)"
         }
       ],
       "confession": [
@@ -12995,60 +12955,11 @@
           "notes": null
         },
         {
-          "day": "Sunday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Days of Obligation"
-        },
-        {
-          "day": "Monday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Days of Obligation"
-        },
-        {
-          "day": "Tuesday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Days of Obligation"
-        },
-        {
-          "day": "Wednesday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Days of Obligation"
-        },
-        {
-          "day": "Thursday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Days of Obligation"
-        },
-        {
-          "day": "Friday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Days of Obligation"
-        },
-        {
           "day": "Saturday",
           "start": "16:00",
           "mass_date": null,
           "language": null,
           "notes": null
-        },
-        {
-          "day": "Saturday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Days of Obligation"
         }
       ],
       "confession": [
@@ -13598,7 +13509,7 @@
           "start": "09:30",
           "mass_date": null,
           "language": "Spanish",
-          "notes": "Holy Day Mass (Solemnity/Holy Day Mass schedule)"
+          "notes": null
         },
         {
           "day": "Friday",
@@ -14679,7 +14590,7 @@
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass inferred from weekly schedule block listing (Mass intentions page shows no Wednesday Mass this week; may be a cancellation or not scheduled weekly)"
+          "notes": "may be a cancellation or not scheduled weekly)"
         },
         {
           "day": "Friday",
@@ -15086,24 +14997,10 @@
         },
         {
           "day": "Monday",
-          "start": "07:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Day Mass (time given in sacraments box) - day varies"
-        },
-        {
-          "day": "Monday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
           "notes": null
-        },
-        {
-          "day": "Monday",
-          "start": "19:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Holy Day Mass (time given in sacraments box) - day varies"
         },
         {
           "day": "Wednesday",
@@ -17753,14 +17650,14 @@
         },
         {
           "day": "Sunday",
-          "start": "10:30",
+          "start": "11:00",
           "mass_date": null,
           "language": null,
           "notes": null
         },
         {
           "day": "Sunday",
-          "start": "15:30",
+          "start": "17:30",
           "mass_date": null,
           "language": null,
           "notes": null
@@ -17841,13 +17738,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Sunday Vigil"
-        },
-        {
-          "day": "Saturday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Sunday Vigil (in the Chapel)"
         },
         {
           "day": "Monday",
@@ -17937,7 +17827,7 @@
         },
         {
           "day": "Saturday",
-          "start": "15:30",
+          "start": "15:00",
           "end": "16:00",
           "end_next_day": false,
           "notes": null

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T14:43:07+00:00",
+  "generated_at": "2026-08-30T14:48:16+00:00",
   "database_id": "2de29b8f-0e6e-801a-bd81-db3ade199a45",
   "parish_count": 189,
   "parishes": [
@@ -6289,7 +6289,7 @@
     {
       "parish_id": "1259",
       "page_id": "2df29b8f-0e6e-81c6-9100-ce9b22c7f19d",
-      "last_edited_time": "2026-08-29T16:42:00.000Z",
+      "last_edited_time": "2026-08-30T14:48:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -6313,7 +6313,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Monday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Monday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Tuesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Tuesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Friday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Friday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 1700, \"end_time\": 1725, \"end_next_day\": false, \"notes\": \"Confession in the Chapel\"}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 1700, \"end_time\": 1725, \"end_next_day\": false, \"notes\": \"Confession in the Chapel\"}, {\"day\": \"Monday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Monday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Tuesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Tuesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Friday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Friday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
         },
         "Enable": {
           "type": "checkbox",
@@ -6357,7 +6357,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Sunday Vigil\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1530, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Tuesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Wednesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Thursday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Friday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": \"Labor Day Mass for Human Labor\"}, {\"day\": \"Monday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Tuesday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Wednesday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Thursday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Friday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Saturday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": \"Sunday Vigil (in the Chapel)\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Sunday Vigil\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Tuesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Wednesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Thursday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Friday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": \"Labor Day Mass for Human Labor\"}, {\"day\": \"Monday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Tuesday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Wednesday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Thursday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}, {\"day\": \"Friday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the Chapel\"}]"
         },
         "Name": {
           "type": "title",
@@ -16074,7 +16074,7 @@
     {
       "parish_id": "sfds-a",
       "page_id": "2df29b8f-0e6e-8151-ab18-e5ffb7ce8c25",
-      "last_edited_time": "2026-08-30T14:34:00.000Z",
+      "last_edited_time": "2026-08-30T14:44:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
