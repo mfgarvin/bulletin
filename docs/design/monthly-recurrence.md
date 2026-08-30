@@ -189,7 +189,7 @@ parser has no input if it does, and that failure would be silent.
 
 ## Out of scope
 
-- Seasonal recurrence (Lent-only adoration). Handled in v2.5.10 by dropping it;
+- Seasonal recurrence (Lent-only adoration). Handled in v2.5.11 by dropping it;
   a `season` field is a separate design.
 - `excluded_weeks` (the St. Colman inverse). Refuse-and-flag for now.
 - Anchored recurrences ("the Thursday before the First Friday").
@@ -198,7 +198,7 @@ parser has no input if it does, and that failure would be silent.
 
 ## Addendum 2026-08-29 — state on pause
 
-Nothing here is implemented, and **the v2.5.10 work this builds on is still on
+Nothing here is implemented, and **the v2.5.11 work this builds on is still on
 branch `holy-day-and-seasonal-cleanup`, not `main`.** The Notion data repair was
 applied, so live data is clean while the code that keeps it clean is not
 deployed — any parish re-extracted from `main` can reintroduce the bugs. Merging

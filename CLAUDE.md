@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **~40-50 parishes need self-hosted setup** - These parishes either don't have bulletins on the major publishers or self-host on their own websites. They need `Bulletin Page URL` configured in Notion.
 - **Address discrepancies file** - `address_discrepancies.txt` contains 9 parishes with missing or incorrect addresses in Notion (verified 2026-01-06). Not committed to git.
 - **Self-Hosted scraper enhancement** - Some parish bulletin pages (e.g., sfds-a, sak-cle) link to weekly subpages that contain the actual PDF, rather than having PDF links directly on the main page. A potential enhancement would be to follow links one level deep to find PDFs. Affected parishes: sfa-gm (Google Drive), sfds-a (weekly subpages), sak-cle (dated subpages in Korean).
-- **Two known gaps in the v2.5.10 sanitizer** (found 2026-08-29, not fixed):
+- **Two known gaps in the v2.5.11 sanitizer** (found 2026-08-29, not fixed):
   1. `_SEASONAL_ADORATION_RE` matches liturgical *names* only, so a one-off
      identified by a bare date in the note — `(May 4, 2026)`, `(April 8)`,
      `(listed Jan 21)` — still publishes weekly. **22 slots across ~17
@@ -491,7 +491,7 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
-### v2.5.10 (2026-08-24) - Published notes, Holy Day policy lines, seasonal adoration
+### v2.5.11 (2026-08-24) - Published notes, Holy Day policy lines, seasonal adoration
 
 Three problems found from one parish (St. Eugene, `1734`), all diocese-wide.
 
