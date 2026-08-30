@@ -1,6 +1,6 @@
 {
   "note": "Adoration extracted per run and NOT written to Notion (UPDATE_ADORATION = False). Temporary capture for manual review.",
-  "updated_at": "2026-08-29T16:42:59+00:00",
+  "updated_at": "2026-08-30T14:07:22+00:00",
   "parishes": [
     {
       "parish_id": "0036",
@@ -2938,6 +2938,60 @@
       "adoration": {
         "is_perpetual": false,
         "times": []
+      }
+    },
+    {
+      "parish_id": "sfds-a",
+      "parish_name": "Saint Francis de Sales",
+      "site_name": "St. Francis de Sales Church",
+      "bulletin_url": "https://stfparish.com/wp-content/uploads/2026/08/Francis-Akron-8-30-compressed.pdf",
+      "captured_at": "2026-08-30T14:07:20+00:00",
+      "adoration": {
+        "is_perpetual": false,
+        "times": [
+          {
+            "day": "Monday",
+            "start_time": 700,
+            "end_time": 800,
+            "end_next_day": false,
+            "notes": null
+          },
+          {
+            "day": "Monday",
+            "start_time": 1800,
+            "end_time": 2200,
+            "end_next_day": false,
+            "notes": null
+          },
+          {
+            "day": "Tuesday",
+            "start_time": 700,
+            "end_time": 2200,
+            "end_next_day": false,
+            "notes": "Breaking for Masses"
+          },
+          {
+            "day": "Wednesday",
+            "start_time": 700,
+            "end_time": 2200,
+            "end_next_day": false,
+            "notes": "Breaking for Masses"
+          },
+          {
+            "day": "Thursday",
+            "start_time": 700,
+            "end_time": 2200,
+            "end_next_day": false,
+            "notes": "Breaking for Masses"
+          },
+          {
+            "day": "Friday",
+            "start_time": 700,
+            "end_time": 2200,
+            "end_next_day": false,
+            "notes": "Breaking for Masses"
+          }
+        ]
       }
     },
     {
