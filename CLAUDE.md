@@ -28,10 +28,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   `weeks_of_month` / `excluded_weeks` section of `EXPORT_SHAPE_CHANGES.md`, and
   the app is being built against it - that section is normative and must not
   change. `docs/design/monthly-recurrence.md` is SUPERSEDED (its `occurrences`
-  array was withdrawn); keep it for the problem statement only. The scraper side
-  is not implemented. Key finding: the ordinal is parsed deterministically from
-  the `notes` the extractor already writes (50/60 in a prototype, 0 wrong), so
-  this needs no new LLM output.
+  array was withdrawn); keep it for the problem statement only. **The
+  export.json side is implemented (v2.5.17): `utils/monthly_recurrence.py`
+  derives the ordinal from `notes` at export time** — 58 derived, 14 refused,
+  0 wrong, no new LLM output. Still open: the mapboard (`notion_to_json` /
+  `parish_data.json`) does not carry the rule yet, so the LED board still
+  renders these slots weekly.
 - **Workflow action versions** (bumped 2026-08-29, `ce6a7f4`) - All three
   workflows moved from `actions/checkout@v4` / `actions/setup-python@v5` to
   `@v5` / `@v6`. Runners had begun force-running the old pins on Node 24
@@ -561,6 +563,41 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.17 (2026-08-30) - export.json emits weeks_of_month / excluded_weeks
+
+The scraper side of the frozen spec (see the normative section in
+`EXPORT_SHAPE_CHANGES.md`; the app is built against it). **Derived at export
+time, not stored**: `utils/monthly_recurrence.py` parses the ordinal from each
+entry's `notes` inside `notion_to_app`'s emitters. Export-time is load-bearing
+twice over — a parser fix reaches every stored row on the next rebuild without
+re-running parishes, and the ~13 monthly adoration slots benefit despite
+`UPDATE_ADORATION = False` meaning their rows are never rewritten.
+
+Refuse-rather-than-guess, validated against every note in the live export and
+hand-reviewed: **58 derived, 14 refused, 0 wrong.** Two refusal guards came
+from that review, each catching a live entry the naive parser got wrong:
+
+- **Multiple ordinal-weekday phrases refuse** — `our-lady-of-victory`'s
+  "at Saint Matthew on the 1st and 3rd Saturdays; at Our Lady of Victory on
+  the 2nd and 4th" would have merged to `[1,2,3,4]` ≈ weekly, the exact bug
+  being fixed. ("2nd and 4th Saturday" is one phrase and still derives.)
+- **A clause labelling the slot weekly refuses inclusions** — `0116`'s
+  "Weekday Mass; First Saturday" is the v2.5.11 merged-label case; emitting
+  `[1]` would hide a real weekly Mass three weeks a month. Exclusions stay
+  coherent ("Weekday Mass (except on First Fridays)" → `excluded_weeks: [1]`).
+
+Also refused, per spec: every "Thursday before First Friday" variant (the
+phrase's weekday must be the entry's own day), and "4th of July" never parses
+(the ordinal must attach to a weekday).
+
+Verified: regenerating the export and stripping the two new keys reproduces
+the previous export exactly (purely additive), and all 58 carrying entries
+hold the spec invariants (domain 1-5/-1, sorted, deduped, keys mutually
+exclusive, never on a dated Mass).
+
+**The mapboard is still weekly** — `notion_to_json` does not carry the rule;
+`reference.py` would need the same predicate. Deliberately left for later.
 
 ### v2.5.16 (2026-08-30) - Change verification: diff, reproduce, check the page
 

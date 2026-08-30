@@ -142,7 +142,9 @@ the times array (it'll be empty). Otherwise enumerate `times` like confessions.
 
 ### Monthly-ordinal recurrence — `weeks_of_month` / `excluded_weeks`
 
-**Status: specified and frozen; not yet emitted.** Additive — no existing key
+**Status: specified and frozen; emitted since v2.5.17 (2026-08-30) by
+`utils/monthly_recurrence.py` at export time — 58 entries derived, 14 refused,
+hand-reviewed.** Additive — no existing key
 changes. This section is normative and **supersedes the `occurrences` proposal
 in `docs/design/monthly-recurrence.md`**, which is withdrawn (see *Why no
 resolved dates* below).

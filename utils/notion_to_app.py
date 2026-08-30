@@ -19,8 +19,10 @@ from notion_client import AsyncClient
 
 try:
     from .notion_to_json import FullParishData, fetch_all_parishes
+    from .monthly_recurrence import derive_ordinal
 except ImportError:
     from notion_to_json import FullParishData, fetch_all_parishes
+    from monthly_recurrence import derive_ordinal
 
 logger = logging.getLogger(__name__)
 
@@ -93,13 +95,18 @@ def _structured_mass(mass_times: list[dict], today: str) -> list[dict[str, Any]]
                 mass_date, m.get("day"), m.get("notes"),
             )
             continue
-        out.append({
+        entry = {
             "day": day,
             "start": _hhmm(time),
             "mass_date": mass_date,  # null or "YYYY-MM-DD"
             "language": m.get("language"),
             "notes": m.get("notes"),
-        })
+        }
+        # weeks_of_month / excluded_weeks: emitted only when derived, and
+        # never on a dated Mass (mutually exclusive with mass_date per spec).
+        if not mass_date:
+            entry.update(derive_ordinal(day, m.get("notes")) or {})
+        out.append(entry)
     out.sort(key=lambda e: (
         e["mass_date"] or "",
         weekday_order.get(e["day"], 99),
@@ -131,7 +138,7 @@ def _structured_ranges(items: list[dict]) -> list[dict[str, Any]]:
         end = item.get("end_time")
         if not day or start is None:
             continue
-        out.append({
+        entry = {
             "day": day,
             "start": _hhmm(start),
             "end": _hhmm(end),
@@ -139,7 +146,10 @@ def _structured_ranges(items: list[dict]) -> list[dict[str, Any]]:
                 item.get("end_next_day", end < start if end is not None else False)
             ),
             "notes": item.get("notes"),
-        })
+        }
+        # weeks_of_month / excluded_weeks, emitted only when derived.
+        entry.update(derive_ordinal(day, item.get("notes")) or {})
+        out.append(entry)
     out.sort(key=lambda e: (weekday_order.get(e["day"], 99), e["start"] or ""))
     return out
 

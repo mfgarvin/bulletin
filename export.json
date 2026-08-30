@@ -350,7 +350,10 @@
             "start": "19:00",
             "end": "20:00",
             "end_next_day": false,
-            "notes": "Second Tuesday; at St. Luke"
+            "notes": "Second Tuesday; at St. Luke",
+            "weeks_of_month": [
+              2
+            ]
           }
         ]
       }
@@ -922,7 +925,10 @@
           "start": "12:00",
           "mass_date": null,
           "language": "Swahili",
-          "notes": "Last Sunday of the month only"
+          "notes": "Last Sunday of the month only",
+          "weeks_of_month": [
+            -1
+          ]
         },
         {
           "day": "Monday",
@@ -1157,7 +1163,10 @@
           "start": "15:15",
           "end": "15:45",
           "end_next_day": false,
-          "notes": "First Saturday of the month. Or call the Parish Office for an appointment."
+          "notes": "First Saturday of the month. Or call the Parish Office for an appointment.",
+          "weeks_of_month": [
+            1
+          ]
         }
       ],
       "adoration": {
@@ -1298,7 +1307,10 @@
           "start": "17:00",
           "end": "18:00",
           "end_next_day": false,
-          "notes": "1st Thursday of the month"
+          "notes": "1st Thursday of the month",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -2538,7 +2550,10 @@
           "start": "08:30",
           "end": null,
           "end_next_day": false,
-          "notes": "First Saturdays of each month"
+          "notes": "First Saturdays of each month",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -3528,7 +3543,10 @@
             "start": "17:00",
             "end": "18:00",
             "end_next_day": false,
-            "notes": "First Friday of the month"
+            "notes": "First Friday of the month",
+            "weeks_of_month": [
+              1
+            ]
           }
         ]
       }
@@ -3897,7 +3915,10 @@
           "start": "17:30",
           "mass_date": null,
           "language": null,
-          "notes": "First Friday only"
+          "notes": "First Friday only",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -4385,7 +4406,10 @@
             "start": "19:00",
             "end": "20:00",
             "end_next_day": false,
-            "notes": "Holy Hour (1st Friday of the month)"
+            "notes": "Holy Hour (1st Friday of the month)",
+            "weeks_of_month": [
+              1
+            ]
           }
         ]
       }
@@ -4704,7 +4728,10 @@
           "start": "08:30",
           "mass_date": null,
           "language": null,
-          "notes": "First Saturday Mass"
+          "notes": "First Saturday Mass",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -5290,7 +5317,10 @@
           "start": "13:00",
           "end": "13:30",
           "end_next_day": false,
-          "notes": "First Friday of the month"
+          "notes": "First Friday of the month",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -5683,7 +5713,10 @@
           "start": "08:30",
           "mass_date": null,
           "language": null,
-          "notes": "First Saturday of the Month"
+          "notes": "First Saturday of the Month",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -5699,7 +5732,10 @@
           "start": "18:00",
           "end": null,
           "end_next_day": false,
-          "notes": "Last Wednesday of each month at 6:00 p.m.; confessions also available by appointment with a priest."
+          "notes": "Last Wednesday of each month at 6:00 p.m.; confessions also available by appointment with a priest.",
+          "weeks_of_month": [
+            -1
+          ]
         },
         {
           "day": "Saturday",
@@ -6268,7 +6304,10 @@
             "start": "16:00",
             "end": "17:00",
             "end_next_day": false,
-            "notes": "First Friday (Family Holy Hour); Fr. Adam available for Confession"
+            "notes": "First Friday (Family Holy Hour); Fr. Adam available for Confession",
+            "weeks_of_month": [
+              1
+            ]
           }
         ]
       }
@@ -6390,7 +6429,10 @@
           "start": "08:15",
           "mass_date": null,
           "language": null,
-          "notes": "First Saturday only"
+          "notes": "First Saturday only",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -6424,7 +6466,10 @@
             "start": "19:00",
             "end": "20:00",
             "end_next_day": false,
-            "notes": "Second Tuesday of the month"
+            "notes": "Second Tuesday of the month",
+            "weeks_of_month": [
+              2
+            ]
           }
         ]
       }
@@ -6511,7 +6556,10 @@
           "start": "17:00",
           "mass_date": null,
           "language": null,
-          "notes": "2nd Sunday (monthly) Mass in the Chapel (F3 Ministry) — listed under ministries"
+          "notes": "2nd Sunday (monthly) Mass in the Chapel (F3 Ministry) — listed under ministries",
+          "weeks_of_month": [
+            2
+          ]
         },
         {
           "day": "Monday",
@@ -6569,7 +6617,10 @@
           "start": "16:15",
           "end": "17:00",
           "end_next_day": false,
-          "notes": "Every 2nd Sunday; or by appointment: koalendar.com/e/frjps"
+          "notes": "Every 2nd Sunday; or by appointment: koalendar.com/e/frjps",
+          "weeks_of_month": [
+            2
+          ]
         },
         {
           "day": "Saturday",
@@ -6587,7 +6638,10 @@
             "start": "09:00",
             "end": "15:00",
             "end_next_day": false,
-            "notes": "First Friday of every month; held in the Chapel; begins immediately after morning Mass and ends with Benediction at 3:00pm"
+            "notes": "First Friday of every month; held in the Chapel; begins immediately after morning Mass and ends with Benediction at 3:00pm",
+            "weeks_of_month": [
+              1
+            ]
           }
         ]
       }
@@ -6697,7 +6751,10 @@
             "start": "09:00",
             "end": "10:00",
             "end_next_day": false,
-            "notes": "Second Tuesday of the month"
+            "notes": "Second Tuesday of the month",
+            "weeks_of_month": [
+              2
+            ]
           }
         ]
       }
@@ -7253,7 +7310,10 @@
             "start": "09:00",
             "end": null,
             "end_next_day": false,
-            "notes": "First Fridays: begins 9:00 and continues overnight until Saturday 9:00"
+            "notes": "First Fridays: begins 9:00 and continues overnight until Saturday 9:00",
+            "weeks_of_month": [
+              1
+            ]
           }
         ]
       }
@@ -8759,7 +8819,10 @@
           "start": "08:00",
           "end": null,
           "end_next_day": false,
-          "notes": "Reconciliation (confessions) listed on First Friday liturgy schedule; no end time given."
+          "notes": "Reconciliation (confessions) listed on First Friday liturgy schedule; no end time given.",
+          "weeks_of_month": [
+            1
+          ]
         }
       ],
       "adoration": {
@@ -8770,14 +8833,20 @@
             "start": "08:00",
             "end": "08:45",
             "end_next_day": false,
-            "notes": "Second Thursdays of each month"
+            "notes": "Second Thursdays of each month",
+            "weeks_of_month": [
+              2
+            ]
           },
           {
             "day": "Friday",
             "start": "19:30",
             "end": "07:00",
             "end_next_day": true,
-            "notes": "Nocturnal Adoration on First Fridays of each month (overnight into Saturday)"
+            "notes": "Nocturnal Adoration on First Fridays of each month (overnight into Saturday)",
+            "weeks_of_month": [
+              1
+            ]
           }
         ]
       }
@@ -9477,7 +9546,10 @@
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "1st Saturday Mass also listed"
+          "notes": "1st Saturday Mass also listed",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -9872,7 +9944,10 @@
           "start": "18:30",
           "mass_date": null,
           "language": null,
-          "notes": "First Fridays only (Mass only)"
+          "notes": "First Fridays only (Mass only)",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -9888,7 +9963,10 @@
           "start": "19:00",
           "end": "20:00",
           "end_next_day": false,
-          "notes": "Private confessions on First Fridays (or by appointment)"
+          "notes": "Private confessions on First Fridays (or by appointment)",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -10317,7 +10395,10 @@
             "start": "12:00",
             "end": "15:30",
             "end_next_day": false,
-            "notes": "First Friday Adoration (Prayer Room); listed for May 1"
+            "notes": "First Friday Adoration (Prayer Room); listed for May 1",
+            "weeks_of_month": [
+              1
+            ]
           }
         ]
       }
@@ -10407,7 +10488,10 @@
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "Mass and Rosary for Life (last Saturday of every month)"
+          "notes": "Mass and Rosary for Life (last Saturday of every month)",
+          "weeks_of_month": [
+            -1
+          ]
         },
         {
           "day": "Saturday",
@@ -10508,14 +10592,20 @@
             "start": "17:00",
             "end": "18:00",
             "end_next_day": false,
-            "notes": "Second Tuesday of each month"
+            "notes": "Second Tuesday of each month",
+            "weeks_of_month": [
+              2
+            ]
           },
           {
             "day": "Friday",
             "start": "08:00",
             "end": "09:00",
             "end_next_day": false,
-            "notes": "First Friday of each month"
+            "notes": "First Friday of each month",
+            "weeks_of_month": [
+              1
+            ]
           }
         ]
       }
@@ -10946,7 +11036,10 @@
           "start": "11:30",
           "end": null,
           "end_next_day": false,
-          "notes": "First Sunday of the month, before and after the noon Mass; and by appointment"
+          "notes": "First Sunday of the month, before and after the noon Mass; and by appointment",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Wednesday",
@@ -10960,7 +11053,10 @@
           "start": "11:00",
           "end": null,
           "end_next_day": false,
-          "notes": "Every 1st Friday; and by appointment"
+          "notes": "Every 1st Friday; and by appointment",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -11073,7 +11169,10 @@
             "start": "10:00",
             "end": "17:00",
             "end_next_day": false,
-            "notes": "First Friday Adoration (May 1, 2026); Benediction at 17:00"
+            "notes": "First Friday Adoration (May 1, 2026); Benediction at 17:00",
+            "weeks_of_month": [
+              1
+            ]
           }
         ]
       }
@@ -11142,7 +11241,10 @@
           "start": "19:00",
           "mass_date": null,
           "language": null,
-          "notes": "First Friday only"
+          "notes": "First Friday only",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -12246,7 +12348,10 @@
           "start": "09:00",
           "end": "10:00",
           "end_next_day": false,
-          "notes": "1st Saturday only; also available by appointment"
+          "notes": "1st Saturday only; also available by appointment",
+          "weeks_of_month": [
+            1
+          ]
         }
       ],
       "adoration": {
@@ -13019,7 +13124,10 @@
           "start": "16:00",
           "mass_date": null,
           "language": "Swahili",
-          "notes": "Last Saturday of the Month"
+          "notes": "Last Saturday of the Month",
+          "weeks_of_month": [
+            -1
+          ]
         }
       ],
       "confession": [],
@@ -13106,7 +13214,10 @@
           "start": "09:00",
           "mass_date": null,
           "language": null,
-          "notes": "First Saturday Mass (recurring monthly)"
+          "notes": "First Saturday Mass (recurring monthly)",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -13333,7 +13444,10 @@
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "First Saturday of the month only"
+          "notes": "First Saturday of the month only",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -13849,7 +13963,10 @@
           "start": "18:30",
           "mass_date": null,
           "language": null,
-          "notes": "3rd Wednesday of the month only (Church), following Adoration"
+          "notes": "3rd Wednesday of the month only (Church), following Adoration",
+          "weeks_of_month": [
+            3
+          ]
         },
         {
           "day": "Thursday",
@@ -14196,7 +14313,10 @@
           "start": "15:00",
           "end": "16:00",
           "end_next_day": false,
-          "notes": "First Fridays (Chapel)"
+          "notes": "First Fridays (Chapel)",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -14302,7 +14422,10 @@
             "start": "22:00",
             "end": "08:15",
             "end_next_day": true,
-            "notes": "First Fridays following the 10:00 pm Mass until Benediction at 8:15 am preceding the Saturday 8:15 am Mass"
+            "notes": "First Fridays following the 10:00 pm Mass until Benediction at 8:15 am preceding the Saturday 8:15 am Mass",
+            "weeks_of_month": [
+              1
+            ]
           }
         ]
       }
@@ -14482,7 +14605,10 @@
           "start": "18:30",
           "end": "19:30",
           "end_next_day": false,
-          "notes": "1st Tuesday of each month; or by appointment; Or by appointment"
+          "notes": "1st Tuesday of each month; or by appointment; Or by appointment",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -14888,7 +15014,10 @@
           "start": "19:00",
           "end": null,
           "end_next_day": false,
-          "notes": "First Monday of the month; after 6:00 PM daily Mass. By appointment—call the parish office. Seasonally in Advent & Lent."
+          "notes": "First Monday of the month; after 6:00 PM daily Mass. By appointment—call the parish office. Seasonally in Advent & Lent.",
+          "weeks_of_month": [
+            1
+          ]
         }
       ],
       "adoration": {
@@ -14932,7 +15061,10 @@
           "start": "19:00",
           "mass_date": null,
           "language": null,
-          "notes": "First Friday of the month Mass"
+          "notes": "First Friday of the month Mass",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -14948,7 +15080,10 @@
           "start": "18:00",
           "end": "19:00",
           "end_next_day": false,
-          "notes": "First Monday of the month; after 6:00PM Mass (listed as Lodi Site in bulletin)"
+          "notes": "First Monday of the month; after 6:00PM Mass (listed as Lodi Site in bulletin)",
+          "weeks_of_month": [
+            1
+          ]
         }
       ],
       "adoration": {
@@ -14959,7 +15094,10 @@
             "start": "18:00",
             "end": "19:00",
             "end_next_day": false,
-            "notes": "First Friday of the month (before Mass)"
+            "notes": "First Friday of the month (before Mass)",
+            "weeks_of_month": [
+              1
+            ]
           }
         ]
       }
@@ -15044,7 +15182,10 @@
           "start": "18:00",
           "end": "18:45",
           "end_next_day": false,
-          "notes": "First Tuesday of the month; also listed as Confession (CH) in weekly schedule"
+          "notes": "First Tuesday of the month; also listed as Confession (CH) in weekly schedule",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -15390,7 +15531,10 @@
           "start": "19:00",
           "mass_date": null,
           "language": "Latin",
-          "notes": "First Friday; Latin N.O."
+          "notes": "First Friday; Latin N.O.",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -15441,14 +15585,20 @@
           "start": "05:50",
           "end": null,
           "end_next_day": false,
-          "notes": "First Friday (listed in 'This Week At Mary Queen of Peace')"
+          "notes": "First Friday (listed in 'This Week At Mary Queen of Peace')",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Friday",
           "start": "07:30",
           "end": null,
           "end_next_day": false,
-          "notes": "First Friday (listed in 'This Week At Mary Queen of Peace')"
+          "notes": "First Friday (listed in 'This Week At Mary Queen of Peace')",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Friday",
@@ -15462,14 +15612,20 @@
           "start": "20:00",
           "end": null,
           "end_next_day": false,
-          "notes": "First Friday (listed in 'This Week At Mary Queen of Peace')"
+          "notes": "First Friday (listed in 'This Week At Mary Queen of Peace')",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
           "start": "07:30",
           "end": null,
           "end_next_day": false,
-          "notes": "First Saturday (listed in 'This Week At Mary Queen of Peace')"
+          "notes": "First Saturday (listed in 'This Week At Mary Queen of Peace')",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -15494,7 +15650,10 @@
             "start": "06:45",
             "end": "07:00",
             "end_next_day": false,
-            "notes": "First Friday schedule includes Adoration (additional times listed in weekly calendar)"
+            "notes": "First Friday schedule includes Adoration (additional times listed in weekly calendar)",
+            "weeks_of_month": [
+              1
+            ]
           }
         ]
       }
@@ -15849,7 +16008,10 @@
           "start": "19:00",
           "mass_date": null,
           "language": null,
-          "notes": "First Friday Mass (monthly)"
+          "notes": "First Friday Mass (monthly)",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -15872,7 +16034,10 @@
           "start": "18:00",
           "end": "19:00",
           "end_next_day": false,
-          "notes": "First Friday"
+          "notes": "First Friday",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -16543,7 +16708,10 @@
           "start": "08:30",
           "mass_date": null,
           "language": null,
-          "notes": "First Saturday of the month"
+          "notes": "First Saturday of the month",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -16598,7 +16766,10 @@
             "start": "12:15",
             "end": "13:45",
             "end_next_day": false,
-            "notes": "First Friday: Exposition after 12:15 p.m. Mass until 1:45 p.m."
+            "notes": "First Friday: Exposition after 12:15 p.m. Mass until 1:45 p.m.",
+            "weeks_of_month": [
+              1
+            ]
           }
         ]
       }
@@ -17601,7 +17772,10 @@
           "start": "19:00",
           "end": null,
           "end_next_day": false,
-          "notes": "First Wednesday of each month; in St. Ann Church; and any time upon request."
+          "notes": "First Wednesday of each month; in St. Ann Church; and any time upon request.",
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
