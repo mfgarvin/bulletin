@@ -128,24 +128,44 @@ def merge_sites(sites: list[SiteInfo], site_name: str) -> SiteInfo:
 def _apply_site_exclusions(
     extraction: BulletinExtraction, parish_id: str
 ) -> str | None:
-    """Drop sites that belong to a different parish's row.
+    """Drop sites — and inline Masses — that belong to a different parish's row.
 
     Runs before any collapse, so an excluded site can never be merged in.
     Ignored if it would drop every site — an empty schedule saved over a good
     one is worse than the bleed it was meant to prevent.
+
+    The model does not always split the other parish out as a site: about half
+    the time it copies the Mass inline instead, with the other parish's name in
+    the note — the Cathedral's masthead literally prints "Saturday: 6:00 pm
+    (Sunday Vigil at Immaculate Conception)", so from the page's point of view
+    that Mass IS the Cathedral's. The product decision (IC's row owns it) is
+    ours, so after the site pass, a *recurring* Mass on a kept site whose note
+    matches a rule's `note_match` is dropped too. Notes get their own pattern
+    and guard rather than reusing the site-name ones: notes rarely spell the
+    full site name ("Sunday Vigil at Immaculate Conception", no "Oratory of
+    the"), and they mention the parish's own chapel incidentally, which would
+    trip a site-name `unless` term. Dated Masses are never touched — a Holy
+    Day note naming the excluded parish's *feast* is this parish's own Mass.
     """
     rules = SITE_EXCLUSIONS.get(parish_id)
     if not rules or not extraction.sites:
         return None
 
-    def excluded(name: str) -> bool:
+    def _matches(text: str, match_key: str, unless_key: str) -> bool:
         for rule in rules:
-            if rule["match"] not in name:
+            pattern = rule.get(match_key)
+            if not pattern or pattern not in text:
                 continue
-            if any(term in name for term in rule.get("unless", ())):
-                continue  # a guard term means this is our own site, not theirs
+            if any(term in text for term in rule.get(unless_key, ())):
+                continue  # a guard term means this is our own, not theirs
             return True
         return False
+
+    def excluded(name: str) -> bool:
+        return _matches(name, "match", "unless")
+
+    def note_excluded(note: str) -> bool:
+        return _matches(note, "note_match", "note_unless")
 
     kept, dropped = [], []
     for site in extraction.sites:
@@ -154,16 +174,37 @@ def _apply_site_exclusions(
         else:
             kept.append(site)
 
-    if not dropped:
-        return None
     if not kept:
         return (
             f"Site exclusion for '{parish_id}' matched every site {dropped} - "
             f"ignored rather than saving an empty schedule"
         )
-
     extraction.sites = kept
-    return f"Excluded {len(dropped)} site(s) {dropped} - another parish's row owns them"
+
+    dropped_masses = []
+    for site in extraction.sites:
+        drops = [
+            m for m in site.mass_times
+            if m.mass_date is None and note_excluded((m.notes or "").lower())
+        ]
+        if not drops or len(drops) == len(site.mass_times):
+            # A full match is not bleed - isolated bleed is one or two entries -
+            # and blanking a whole schedule over a note pattern is worse.
+            continue
+        dropped_masses += [f"{m.day.value} {m.time:04d} '{m.notes}'" for m in drops]
+        site.mass_times = [m for m in site.mass_times if m not in drops]
+
+    notes = []
+    if dropped:
+        notes.append(
+            f"Excluded {len(dropped)} site(s) {dropped} - another parish's row owns them"
+        )
+    if dropped_masses:
+        notes.append(
+            f"Excluded {len(dropped_masses)} Mass(es) noted at an excluded site: "
+            + "; ".join(dropped_masses)
+        )
+    return "; ".join(notes) if notes else None
 
 
 def collapse_sites(

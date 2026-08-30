@@ -77,10 +77,20 @@ SITE_EXCLUSIONS: dict[str, list[dict]] = {
     # ("The Oratory of the Immaculate Conception (Temporary Weekday Chapel)"),
     # which supplies 10 of the parish's 15 Masses. A bare substring match drops
     # those and leaves the parish with Sundays only.
+    # The model splits the Oratory out as a site in only ~half of runs; in the
+    # rest it copies the vigil inline into the Cathedral's own Mass list, note
+    # reading "Sunday Vigil at Immaculate Conception" (usually without
+    # "Oratory of the", and sometimes mentioning the Cathedral's own chapel in
+    # passing - so notes need their own pattern and guard). `note_match` drops
+    # a recurring Mass whose note names the excluded parish; `note_unless`
+    # keeps the Cathedral's own Masses for the *feast* of the Immaculate
+    # Conception (Dec 8), whose notes carry the same words.
     "1259": [
         {
             "match": "oratory of the immaculate conception",
             "unless": ("chapel", "temporary", "weekday", "renovation"),
+            "note_match": "immaculate conception",
+            "note_unless": ("solemnity", "feast", "holy day", "holyday"),
         },
     ],
 }

@@ -274,17 +274,35 @@ names don't share distinctive words with the parish name. Add the parish to
 `SITE_EXCLUSIONS` in `definitions.py` instead:
 
 ```python
-SITE_EXCLUSIONS: dict[str, list[str]] = {
-    "1259": ["oratory of the immaculate conception"],
+SITE_EXCLUSIONS: dict[str, list[dict]] = {
+    "1259": [
+        {
+            "match": "oratory of the immaculate conception",
+            "unless": ("chapel", "temporary", "weekday", "renovation"),
+            "note_match": "immaculate conception",
+            "note_unless": ("solemnity", "feast", "holy day", "holyday"),
+        },
+    ],
 }
 ```
 
 - Keyed by `ParishID`; patterns match case-insensitively as substrings of the
-  extracted site name
+  extracted site name (`match`), unless a guard term (`unless`) also matches —
+  the model has been seen welding the excluded site's name onto the parish's
+  own unnamed chapel
+- `note_match`/`note_unless` (optional) extend the exclusion to **inline
+  Masses**: a *recurring* Mass on a kept site whose `notes` match is dropped.
+  This catches the other half of the leak, where the model never emits the
+  other parish as a site but copies its Mass into this parish's list with the
+  name in the note ("Sunday Vigil at Immaculate Conception"). Notes need their
+  own pattern and guard: they rarely spell the full site name, and they mention
+  the parish's own chapel incidentally. Dated Masses are never touched — a
+  Holy Day note naming the excluded parish's *feast* is this parish's own Mass
 - Applied in `collapse_sites()` **before** either collapse branch, so an
   excluded site can never be merged in
 - Ignored if it would drop *every* site — saving an empty schedule over a good
-  one is worse than the bleed
+  one is worse than the bleed; likewise a note rule matching every Mass on a
+  site is ignored (isolated bleed is one or two entries, not a whole schedule)
 
 **Worked example (the Cathedral).** `1259`'s bulletin lists three sites: the
 Cathedral, its temporary weekday chapel during renovations, and the Oratory of
@@ -531,6 +549,30 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.15 (2026-08-30) - Note-level site exclusions; the IC vigil leak
+
+The deterministic fix v2.5.10 proposed and never implemented. The Cathedral's
+masthead prints "Saturday: 6:00 pm (Sunday Vigil at Immaculate Conception)",
+and in about half of runs the model never emits the Oratory as a site — it
+copies that Mass inline into the Cathedral's own list, where site-level
+`SITE_EXCLUSIONS` cannot see it, and the Cathedral publishes IC's vigil at the
+wrong address (IC's own row already publishes it).
+
+`SITE_EXCLUSIONS` rules gain optional `note_match`/`note_unless`:
+`_apply_site_exclusions()` now also drops a **recurring** Mass on a kept site
+whose note matches. Notes get their own pattern and guard because they rarely
+spell the full site name and mention the parish's own chapel incidentally
+(which would trip the site-name `unless` terms). Dated Masses are exempt, and
+`note_unless` covers the feast-name collision — a December "Solemnity of the
+Immaculate Conception" Mass is the Cathedral's own.
+
+Validated over all 50 stored `1259` study runs across 7 conditions: the raw
+extractions carry the Sat 18:00 leak in 16; the pipeline now removes every one
+whose note names IC (16 -> 8 survivors, all with no-signal notes like "Sunday
+Vigil" — those remain `notion_fixes` territory via `drop_masses`). Zero
+firings on any other parish; a unit check confirms the dated Dec 8 feast Mass
+and a "Holy Day"-noted Mass survive.
 
 ### v2.5.14 (2026-08-30) - Fabrication check: extracted Mass times verified against the bulletin's own text
 
