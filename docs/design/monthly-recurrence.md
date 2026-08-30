@@ -1,6 +1,17 @@
 # Monthly-ordinal schedules ("First Friday") — design
 
-**Status:** planned, not implemented. Written 2026-08-24.
+**Status:** SUPERSEDED. Written 2026-08-24; the `occurrences` half was
+withdrawn on 2026-08-30.
+
+**The normative spec is the `weeks_of_month` / `excluded_weeks` section of
+`EXPORT_SHAPE_CHANGES.md`, and the app is being built against it. Do not
+implement from this document.** What survives here is the problem statement,
+the shape counts, and the refuse-rather-than-guess parser reasoning — all still
+accurate. What does *not* is `occurrences`, the rolling array of resolved ISO
+dates: it goes stale in an offline-first app with no safe fallback, it is a
+second representation of a fact that can disagree with the first, and it would
+rewrite 60 entries of `export.json` every Saturday, adding permanent noise to
+the freshness diff that `CLAUDE.md` documents as an audit signal.
 
 ## The problem
 

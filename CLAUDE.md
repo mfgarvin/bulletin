@@ -29,10 +29,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Monthly-ordinal schedules ("First Friday")** - 60 slots across ~40 parishes
   recur on an ordinal weekday but are stored as weekly, so anything that
   *computes* (the mapboard, "what's on today/soonest") treats them as every
-  week. Design written up in `docs/design/monthly-recurrence.md`; not
-  implemented. Key finding: the ordinal can be parsed deterministically from the
-  `notes` the extractor already writes (50/60 in a prototype), so this needs no
-  new LLM output.
+  week. **The export shape is specified and frozen** in the
+  `weeks_of_month` / `excluded_weeks` section of `EXPORT_SHAPE_CHANGES.md`, and
+  the app is being built against it - that section is normative and must not
+  change. `docs/design/monthly-recurrence.md` is SUPERSEDED (its `occurrences`
+  array was withdrawn); keep it for the problem statement only. The scraper side
+  is not implemented. Key finding: the ordinal is parsed deterministically from
+  the `notes` the extractor already writes (50/60 in a prototype, 0 wrong), so
+  this needs no new LLM output.
 - **Workflow action versions** (bumped 2026-08-29, `ce6a7f4`) - All three
   workflows moved from `actions/checkout@v4` / `actions/setup-python@v5` to
   `@v5` / `@v6`. Runners had begun force-running the old pins on Node 24
