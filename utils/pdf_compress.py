@@ -15,8 +15,17 @@ logger = logging.getLogger(__name__)
 # OpenAI rejects files over 50MB; leave headroom.
 MAX_PDF_BYTES = 45 * 1024 * 1024
 
-# (dpi, jpeg_quality) steps, tried in order until the result fits
-_COMPRESSION_STEPS = [(150, 75), (120, 65), (100, 50)]
+# (dpi, jpeg_quality) steps, tried in order until the result fits.
+#
+# Start gently. A bulletin only 1% over the limit used to be rasterized
+# straight to 150 DPI — a 91% size cut to buy 1% — which is how the Cathedral
+# (1259) lost the small coloured type in its masthead that states the Sunday
+# Mass times. Every step here still destroys the text layer, so the only
+# defence is resolution: take the mildest step that fits.
+_COMPRESSION_STEPS = [
+    (300, 90), (300, 80), (250, 85), (200, 80),
+    (150, 75), (120, 65), (100, 50),
+]
 
 
 def _rasterize(pdf_bytes: bytes, dpi: int, quality: int) -> bytes:

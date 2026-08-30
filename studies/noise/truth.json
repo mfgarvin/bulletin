@@ -1,0 +1,21 @@
+{
+  "_about": "Hand-read recurring schedules for parishes under targeted study. Each entry must cite the exact cached bulletin it was read from — the cache is frozen, so a truth set read from a different week is worse than none. 'excluded' holds slots the bulletin genuinely states but that belong on another parish's row; they are reported separately from real errors.",
+  "1259": {
+    "source": "studies/noise/cache/1259.bin — 2 August 2026, Ordinary Time XVIII, masthead 'Masses' block",
+    "read_on": "2026-08-21",
+    "verbatim": "Saturday: 4:30 pm (Sunday Vigil) / 6:00 pm (Sunday Vigil at Immaculate Conception) / Sunday: 8:30, 11:00 am +; 5:30 pm / Monday - Friday in the Chapel: 7:15 am, 12:00 pm +",
+    "recurring": [
+      ["Saturday", 1630],
+      ["Sunday", 830], ["Sunday", 1100], ["Sunday", 1730],
+      ["Monday", 715], ["Monday", 1200],
+      ["Tuesday", 715], ["Tuesday", 1200],
+      ["Wednesday", 715], ["Wednesday", 1200],
+      ["Thursday", 715], ["Thursday", 1200],
+      ["Friday", 715], ["Friday", 1200]
+    ],
+    "excluded": {
+      "slots": [["Saturday", 1800]],
+      "why": "'6:00 pm (Sunday Vigil at Immaculate Conception)' is printed in the Cathedral's own Masses list, but the Mass belongs to immat-con-cle, which publishes it in its own ICKSP bulletin as Saturday 18:00. SITE_EXCLUSIONS drops it when the model emits the Oratory as its own site; when the model folds it into the Cathedral's Mass list instead, nothing catches it."
+    }
+  }
+}
