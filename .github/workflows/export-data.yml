@@ -32,14 +32,18 @@ jobs:
         run: python -m utils.notion_to_app
       - name: Export data for mapboard
         run: python -m utils.notion_to_json
+      # Raw property dump. The two exports above are lossy derived views and
+      # cannot be restored from; this is what makes a bad run recoverable.
+      - name: Snapshot Notion
+        run: python -m utils.notion_snapshot
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add export.json parish_data.json
+          git add export.json parish_data.json notion_snapshot.json
           if git diff --staged --quiet; then
             echo "No changes to export files"
           else
-            git commit -m "Update export.json and parish_data.json [skip ci]"
+            git commit -m "Update export.json, parish_data.json and notion_snapshot.json [skip ci]"
             git push
           fi

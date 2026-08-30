@@ -75,11 +75,16 @@ python main.py --method marker_ocr --all
 
 **Export utilities:**
 ```bash
-# Export raw Notion data to export.json (all fields as-is)
+# App-facing export -> export.json (12hr times, weekday groupings)
+python -m utils.notion_to_app
+
+# Mapboard export -> parish_data.json (keyed by Notion page ID, durations)
 python -m utils.notion_to_json
 
-# Export app-friendly format (12hr times, weekday groupings)
-python -m utils.notion_to_app
+# Raw property dump -> notion_snapshot.json (the only restorable archive)
+python -m utils.notion_snapshot
+python -m utils.notion_snapshot --restore notion_snapshot.json          # dry run
+python -m utils.notion_snapshot --restore notion_snapshot.json --apply
 
 # Repair stored Notion data (dry run, then apply)
 python -m utils.notion_fixes
@@ -105,8 +110,10 @@ Idempotent and dry-run by default.
 - `database/` - Database abstraction (Notion implementation, easy to swap)
 - `utils/retry.py` - Async retry with exponential backoff
 - `utils/log_context.py` - Parish context for concurrent logging
-- `utils/notion_to_json.py` - Export raw Notion data to JSON
-- `utils/notion_to_app.py` - Export app-friendly formatted data
+- `utils/notion_to_app.py` - App-facing export -> `export.json`
+- `utils/notion_to_json.py` - Mapboard export -> `parish_data.json`
+- `utils/notion_snapshot.py` - Raw Notion dump -> `notion_snapshot.json`, and
+  the restore path back into Notion
 
 **Key design decisions:**
 - Single LLM call extracts everything (mass, confession, adoration, events, parish info, events summary)
@@ -524,6 +531,51 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.13 (2026-08-30) - A restorable archive; the export docs were inverted
+
+**There was no way to revert a bad run, and the two files that looked like an
+archive could not provide one.** `export.json` and `parish_data.json` are
+committed every Saturday (61 snapshots back to 2024-07-10), but both are
+*derived* views. `notion_to_app` drops `Events`, every log field, the publisher
+and enable flags — and, decisively, it drops dated Masses already in the past
+and nulls coordinates outside Ohio. You cannot restore from a file that
+discarded the data on the way out. Nothing in the repo read either file back
+into Notion; the data flowed one way only.
+
+**`utils/notion_snapshot.py`** writes the properties as Notion holds them (189
+parishes, 24 properties, ~1.8MB), and restores from one. It runs in
+`export-data.yml` after the two exports, so git history is the archive — the
+arrangement `export.json` already uses, which keeps diffs meaningful and avoids
+a file per week. Rows are sorted by `ParishID` (page id breaking ties, so rows
+with no ParishID still order stably) and properties by key, so a week-to-week
+diff shows real changes rather than reordering. Long values are joined across
+blocks on read and re-chunked on write — the v2.5.1 rule, or a schedule field
+comes back unparseable.
+
+**Restore is deliberately partial, and today proved why.** `OPERATIONAL_FIELDS`
+— `Enable`, `Issues`, `Bulletin Publisher`, `Bulletin Page URL`, `Bulletin
+Group ID` — are a human's classification of a parish, not data a run produced.
+Replaying a week-old snapshot over `sfds-a` would have re-disabled it and
+restored its `Unsupported` status, undoing the work of enabling it that same
+morning, and `Unsupported` is exactly what `PROTECTED_STATUSES` exists to
+defend. They are held back unless `--all-fields` is passed, which is the flag
+to use when undoing such a change *is* the point.
+
+Dry-run by default like `notion_fixes`, `--parish` to scope to one row, and a
+property whose type has changed underneath is refused rather than guessed at.
+
+Verified: a restore from a just-taken snapshot is a no-op; a tampered snapshot
+is detected field-by-field with the data fields caught and the operational ones
+held; `--all-fields` catches all four; and a live write round-trip (set a value,
+read it back from Notion, restore it to empty) works in both directions.
+
+**Docs corrected: the two export utilities were described the wrong way round.**
+CLAUDE.md said `notion_to_json` exports "raw Notion data to export.json (all
+fields as-is)". It writes `parish_data.json` (mapboard format, keyed by page
+ID); `notion_to_app` writes `export.json`; and **neither is raw**. That matters
+more than a naming slip, because someone reaching for an archive would have
+reached for the wrong file and believed it held everything.
 
 ### v2.5.12 (2026-08-30) - Self-Hosted follows subpages; PDF viewers decoded
 
