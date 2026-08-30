@@ -130,6 +130,24 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         "2026-08-05)",
         adoration_times=[],
     ),
+    "sfds-a": ManualFix(
+        reason="the extraction is correct and reproducible - the bulletin's "
+        "masthead states 'Adoration / Monday: 7:00-8:00 a.m., 6:00-10:00 p.m., "
+        "Tuesday-Friday: 7:00 a.m.-10:00 p.m. (breaking for Masses)' and every "
+        "run returns exactly that. It is stated here only because "
+        "UPDATE_ADORATION = False means no ordinary run will ever write it. "
+        "Re-check against the masthead if the parish changes its hours - this "
+        "entry will keep restoring these times (read from the 2026-08-30 "
+        "bulletin)",
+        adoration_times=[
+            AdorationTime(day="Monday", start_time=700, end_time=800),
+            AdorationTime(day="Monday", start_time=1800, end_time=2200),
+        ] + [
+            AdorationTime(day=day, start_time=700, end_time=2200,
+                          notes="Breaking for Masses")
+            for day in ("Tuesday", "Wednesday", "Thursday", "Friday")
+        ],
+    ),
     "1259": ManualFix(
         reason="the extractor read a feast heading as its own celebration. The "
         "Aug 23 2026 bulletin's day-by-day listing titles Saturday with the "

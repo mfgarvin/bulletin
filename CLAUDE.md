@@ -11,11 +11,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   (bulletin lives in Google Drive - not a PDF link at all) and **`sak-cle`**
   (dated subpages in Korean, so the slug carries no parseable date and the
   subpage ranking has nothing to sort on).
-- **`sfds-a` adoration is extracted but not stored** - its Mon-Fri schedule
-  (Mon 7-8 and 18-22, Tue-Fri 7-22 "breaking for Masses") comes back on every
-  run and is discarded, because `UPDATE_ADORATION = False` is a standing lock.
-  It is in `adoration_capture.json`; getting it into Notion needs
-  `utils/notion_fixes.py`, as with `1285`.
 - **Two known gaps in the v2.5.11 sanitizer** (found 2026-08-29, not fixed):
   1. `_SEASONAL_ADORATION_RE` matches liturgical *names* only, so a one-off
      identified by a bare date in the note — `(May 4, 2026)`, `(April 8)`,
