@@ -7,6 +7,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **~40-50 parishes need self-hosted setup** - These parishes either don't have bulletins on the major publishers or self-host on their own websites. They need `Bulletin Page URL` configured in Notion.
 - **Address discrepancies file** - `address_discrepancies.txt` contains 9 parishes with missing or incorrect addresses in Notion (verified 2026-01-06). Not committed to git.
 - **Self-Hosted scraper enhancement** - Some parish bulletin pages (e.g., sfds-a, sak-cle) link to weekly subpages that contain the actual PDF, rather than having PDF links directly on the main page. A potential enhancement would be to follow links one level deep to find PDFs. Affected parishes: sfa-gm (Google Drive), sfds-a (weekly subpages), sak-cle (dated subpages in Korean).
+- **Workflow action versions** (bumped 2026-08-29, `ce6a7f4`) - All three
+  workflows moved from `actions/checkout@v4` / `actions/setup-python@v5` to
+  `@v5` / `@v6`. Runners had begun force-running the old pins on Node 24
+  because Node 20 is deprecated; that was a warning, but it becomes a failure
+  of *all three workflows at once* whenever the forcing stops. Both majors are
+  Node 24 bumps and nothing else, and `cache: 'pip'` restored from the same key
+  afterwards. Verified by a dispatched `export-data.yml` run (deprecation
+  warnings 1 -> 0); `gh-actions.yml` was not dispatched, since a full run costs
+  ~12 min of OpenAI spend and would select no parishes anyway — it uses the
+  same two steps. **`checkout@v7` and `setup-python@v7` already exist**
+  (2026-07-20); v5/v6 clear the deprecation, so this is a treadmill, not a
+  finished job.
 - **GitHub integration** - Integrate Claude with GitHub for automated workflows or issue tracking.
 - **Data change safety** - Add safeguards for when extracted data changes significantly (e.g., mass times suddenly very different). Could warn or require confirmation before overwriting.
 - **Adoration in Events** - Sometimes adoration schedule appears in the Events listing instead of the dedicated Adoration field. May need extraction prompt adjustment or post-processing.
