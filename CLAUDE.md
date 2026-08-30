@@ -507,9 +507,21 @@ inactivity window. The schedule was simply skipped.
 
 The time is 14:37 rather than 14:00 because the top of the hour is the most
 congested minute on the platform. That lowers the odds; it does not remove
-them. Nothing alerts on a missed run today — if `export.json`'s `timestamp`
-values are more than a week old, check `gh run list` before assuming the
-pipeline ran and found nothing.
+them — it happened again the very next week (2026-08-30 session found no
+scheduled run for 2026-08-29's slot; a manual dispatch covered it).
+
+**`check-freshness.yml`** (Saturdays 17:07 UTC, added 2026-08-30) watches for
+exactly this: `utils/check_freshness.py` asks the Actions API whether a
+schedule-triggered processor run started today, and asks Notion whether the
+enabled parishes were actually re-stamped (>25% of countable rows with a
+`GPT Timestamp` older than 3 days = the run was skipped, died early, or an
+out-of-band run moved rows off the Saturday cadence). It posts to
+`NOTIFY_WEBHOOK_URL` only when something is wrong; a quiet week posts nothing.
+It is deliberately its own workflow on its own cron — every other downstream
+job chains off the processor via `workflow_run`, so they all go silent
+together when the cron is dropped. The watcher can be dropped too, but two
+independent schedules dropping the same Saturday is a much smaller
+coincidence.
 
 A dispatched run accepts a `stale_days` input (default 6); set it to `0` to
 force every parish, which is what a scraper fix needs — otherwise `--all` finds

@@ -1,0 +1,33 @@
+name: Check pipeline freshness
+run-name: Watch for a silently dropped Saturday run
+# The Bulletin processor's cron has been silently dropped by Actions twice
+# (2026-08-22 was fine; 2026-08-29 and the week after were skipped with no run
+# record at all). Everything downstream chains off it via workflow_run, so a
+# dropped cron makes the whole Saturday look like a quiet healthy week. This
+# is a second, independent cron that checks after the fact and pings the
+# webhook only when something is wrong. 17:07 UTC: 2.5h after the processor's
+# 14:37 start (a full run takes ~12 min), off the top of the hour like
+# everything else here.
+on:
+  schedule:
+    - cron: '7 17 * * SAT'
+  workflow_dispatch:
+env:
+  NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+  PARISH_DB_ID: ${{ secrets.PARISH_DB_ID }}
+  NOTIFY_WEBHOOK_URL: ${{ secrets.NOTIFY_WEBHOOK_URL }}
+  GITHUB_TOKEN: ${{ github.token }}
+jobs:
+  Check-Freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - name: Check freshness
+        run: python -m utils.check_freshness
