@@ -575,6 +575,53 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.20 (2026-08-30) - The partial-retraction guard: a run can no longer gut a schedule
+
+The gap v2.5.19 measured and named. `save_extraction()` writes **any non-empty
+list**, so an extraction that comes back with a fraction of the schedule
+silently replaces a correct one. `37345` demonstrated it live: 8 recurring
+Masses to 3 on an edition that was a newsletter with no schedule block, every
+weekday Mass gone, and the row would have reported "No Issues".
+
+The empty case has been guarded since v2.5.8 — an empty list is never written,
+and the run says what it declined to overwrite. **This is the same guard for
+the partial case**, and it deliberately behaves identically: when a fresh
+extraction drops more than `PARTIAL_RETRACTION_RATIO` (half) of the stored
+*recurring* entries, the field is not written and a warning goes to `Issue Log`
+and the run summary naming every dropped slot.
+
+**It does not try to decide which side is right, and that is the design.**
+v2.5.19 established that a large drop is sometimes a genuine correction —
+`1584` shedding seven phantom "Federal Holiday" Masses was one — and that no
+cheap signal separates the two (both reproduced on a second extraction; the
+text-layer check is unavailable on exactly the bulletins that cause the
+problem). So the guard makes the loss impossible to take silently and puts both
+lists in front of a human, who settles it in one look and applies it with
+`utils.notion_fixes`. Holding a correct change for one review cycle is a much
+cheaper error than destroying a correct schedule.
+
+Details that matter:
+
+- **Dated Masses are excluded** from the comparison. A one-off legitimately
+  disappears once its date passes, and counting that as a retraction would fire
+  on every parish that had a holiday Mass last week.
+- **`PARTIAL_RETRACTION_MIN_STORED` (3)** keeps it off small rows, where one
+  slot flapping is already half the schedule.
+- **Corrupt stored JSON never blocks a write** — that is the v2.5.1 alarm's
+  business, and overwriting corruption with a good extraction is the repair
+  path, not a loss.
+- Masses and confessions are guarded independently; adoration is not written at
+  all (`UPDATE_ADORATION = False`).
+
+Verified: the two real cases from the 50-parish study are both held (`37345`
+8→3, `1584` 13→7); a single flapping slot, an exactly-half drop, a 2-Mass row,
+and an expiring dated Mass are all still written; a stored schedule reproduced
+exactly is never held (checked against the live rows for `37345`, `1584`,
+`1259` and `0582`, which also exercises multi-block JSON reads).
+
+Expected rate: **2 of 50 parishes** in the study sample, so roughly 8 a week
+across 189 — each one a schedule that would otherwise have been quietly cut.
+
 ### v2.5.19 (2026-08-30) - Measuring the verification layer; civil-holiday policy lines
 
 **`studies/verification/`** answers the question v2.5.16 deferred: what does the
@@ -1400,6 +1447,8 @@ from an earlier run survived every correct run that followed. Repaired via
 `utils.notion_fixes` (Mel's `Confessions` is now `[]`).
 
 **This is a general hole, so runs now say what they declined to overwrite.**
+(v2.5.20 extends the same guard to the *partial* case — a run that drops more
+than half the stored recurring entries no longer writes that field either.)
 Blanking automatically is not safe — one bad scan would wipe a good schedule —
 but silence is how a wrong value lives for months while the row reads "No
 Issues". `save_extraction()` now returns a list of retraction warnings for any

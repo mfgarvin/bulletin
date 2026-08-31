@@ -46,6 +46,28 @@ NOTION_MAX_BLOCKS = 100
 # status is a human's classification of the parish, not a run outcome.
 PROTECTED_STATUSES = frozenset({"Manual", "Unsupported"})
 
+# An extraction that comes back with a *fraction* of the stored schedule is
+# usually a bulletin that didn't print one this week, not a parish that
+# cancelled most of its Masses. St. Justin Martyr (`37345`) went from 9 stored
+# Masses to 4 on an edition that was a newsletter with no schedule block: every
+# weekday Mass vanished, and because `save_extraction` writes any non-empty
+# list, a correct schedule would have been replaced by a quarter of one.
+#
+# This is the empty-extraction retraction guard generalised to the partial
+# case, and it behaves the same way: the field is NOT written and the run says
+# what it declined to overwrite. It is not trying to decide which side is
+# right — a large drop is sometimes a genuine correction (`1584` shedding seven
+# phantom "Federal Holiday" Masses was one). It is making the loss impossible
+# to take silently, and putting both lists in front of a human who can settle
+# it in one look and apply it with `utils.notion_fixes`.
+#
+# Measured over the 50-parish sample in `studies/verification/`: 2 rows trip it
+# (4%), which is a readable rate for a guard that stops real data loss.
+PARTIAL_RETRACTION_RATIO = 0.5
+# Below this many stored entries a "half the schedule" ratio is meaningless -
+# one slot flapping on a 2-Mass row would hold the write every week.
+PARTIAL_RETRACTION_MIN_STORED = 3
+
 
 class NotionClient(DatabaseClient):
     """Notion database client implementation."""
@@ -217,10 +239,31 @@ class NotionClient(DatabaseClient):
             "Link to latest bulletin": {"url": bulletin_url},
         }
 
+        # A large drop is held back rather than written; see
+        # PARTIAL_RETRACTION_RATIO. Only recurring entries are compared.
         if site and site.mass_times:
-            properties["Mass Times"] = self._text_property(mass_json)
+            stored = self._stored_schedule(row, "Mass Times")
+            warning = self._partial_retraction(
+                row, "Mass Times", "Mass times",
+                self._recurring_keys(stored or [], "mass_date", "day", "time"),
+                self._recurring_keys(site.mass_times, "mass_date", "day", "time"),
+            ) if stored else None
+            if warning:
+                retractions.append(warning)
+            else:
+                properties["Mass Times"] = self._text_property(mass_json)
+
         if site and site.confession_times:
-            properties["Confessions"] = self._text_property(conf_json)
+            stored = self._stored_schedule(row, "Confessions")
+            warning = self._partial_retraction(
+                row, "Confessions", "confession slots",
+                self._recurring_keys(stored or [], None, "day", "start_time"),
+                self._recurring_keys(site.confession_times, None, "day", "start_time"),
+            ) if stored else None
+            if warning:
+                retractions.append(warning)
+            else:
+                properties["Confessions"] = self._text_property(conf_json)
         if UPDATE_ADORATION and site and (site.adoration.times or site.adoration.is_perpetual):
             properties["Adoration"] = self._text_property(adore_json)
         if extraction.events:
@@ -380,6 +423,57 @@ class NotionClient(DatabaseClient):
             last_run=last_run,
             bulletin_url=bulletin_url,
             bulletin_group_id=bulletin_group_id,
+        )
+
+    @staticmethod
+    def _recurring_keys(entries, mass_date_key: str | None, day_key: str,
+                        time_key: str) -> set[tuple]:
+        """(day, time) keys for comparing two versions of one schedule.
+
+        Accepts either stored JSON dicts or the extraction's Pydantic models.
+        Dated Masses are excluded: a one-off legitimately disappears once its
+        date passes, and counting that as a retraction would fire every week.
+        """
+        keys: set[tuple] = set()
+        for e in entries:
+            get = e.get if isinstance(e, dict) else lambda k, _e=e: getattr(_e, k, None)
+            if mass_date_key and get(mass_date_key) is not None:
+                continue
+            day, time = get(day_key), get(time_key)
+            day = getattr(day, "value", day)
+            if day is not None and time is not None:
+                keys.add((day, time))
+        return keys
+
+    def _stored_schedule(self, row: dict, prop: str) -> list | None:
+        """Stored JSON list for `prop`, or None when absent/corrupt."""
+        raw = self._get_property(row, prop)
+        if not raw:
+            return None
+        try:
+            value = json.loads(raw)
+        except json.JSONDecodeError:
+            # Corrupt stored JSON is the v2.5.1 alarm's business, and it is not
+            # a schedule we can compare against. Never block a write on it -
+            # overwriting corruption with a good extraction is the repair path.
+            return None
+        return value if isinstance(value, list) else None
+
+    def _partial_retraction(self, row: dict, prop: str, label: str,
+                            stored_keys: set, new_keys: set) -> str | None:
+        """Warning text when the new schedule would gut the stored one."""
+        if len(stored_keys) < PARTIAL_RETRACTION_MIN_STORED:
+            return None
+        removed = stored_keys - new_keys
+        if not removed or len(removed) / len(stored_keys) <= PARTIAL_RETRACTION_RATIO:
+            return None
+        shown = ", ".join(f"{d} {t:04d}" for d, t in sorted(removed, key=str))
+        return (
+            f"Extraction dropped {len(removed)} of {len(stored_keys)} stored "
+            f"{label} ({shown}) - more than half the schedule, which is usually "
+            f"a bulletin that printed no schedule this week rather than a real "
+            f"change. The field was NOT overwritten. Check it against the "
+            f"bulletin; if the change is real, apply it via utils.notion_fixes."
         )
 
     def _has_stored_entries(self, row: dict, prop: str) -> bool:
