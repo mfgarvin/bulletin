@@ -575,6 +575,60 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.19 (2026-08-30) - Measuring the verification layer; civil-holiday policy lines
+
+**`studies/verification/`** answers the question v2.5.16 deferred: what does the
+verification layer actually *say* on a run, and how much of it is worth
+reading? 50 parishes sampled outside `studies/noise/roster.json` (those 100 are
+over-read and several were hand-repaired, so they would understate the rate),
+serial prefetch, production verification path, no writes. 0 extraction
+failures, 5.1 minutes.
+
+| | parishes |
+|---|---|
+| no warning of any kind | **40 (80%)** |
+| change warnings | 9 (18%) — 6 reproduced, 3 self-labelled noise |
+| fabrication warnings | **0** |
+| sanitizer flags | 2 (4%) |
+
+**All nine were then checked against their bulletins**, which produced the
+finding that matters: **"reproduced" does not mean "correct".** Seven of the
+nine read the *same bulletin file* the stored value came from, so a reproduced
+diff is two draws agreeing against a third, not evidence about truth. Of the
+six:
+
+- **`1584` today was right** — the stored row held **7 phantom Masses**, one
+  per weekday, from the masthead line "Federal Holiday 9:00 a.m." (see below).
+- **`1905` today was right** — recovered a Sunday 11:00 the masthead prints.
+- **`1548` today was right** — the Monday 6:30 pm novena-and-Mass is in the
+  bulletin.
+- **`1532` is a bulletin typo.** It prints `friday | 9:00pm` among Mon/Tue/Wed
+  `9:00am`; the stored value transcribed it literally and this run silently
+  corrected it to 09:00. Only the parish can settle it.
+- **`37345` today was wrong, and this is the case that justifies the check.**
+  Its stored 9 Masses became 4: the Aug 31 edition is a newsletter without a
+  schedule block, so every weekday Mass vanished, and the "sensory friendly
+  Mass at noon **on the second Sunday of each month**" was added as a *weekly*
+  Sunday noon Mass. `save_extraction` writes any non-empty list, so this would
+  have silently replaced a correct schedule with a quarter of one.
+- **`30803` is unverifiable** — an image-only bulletin (1,298 chars of text).
+
+**Two conclusions for the write-gating decision.** Gating on reproducibility
+alone would have blocked three genuine corrections while still admitting
+`37345`, which reproduced. The signal that separates `37345` is **how much was
+removed** — 9 Masses to 4, losing every weekday — which is the natural
+extension of the existing empty-extraction retraction warning to the *partial*
+case, and is not built.
+
+**Code — the Holy Day rule now covers civil holidays.** `1584` was publishing
+seven 9:00 Masses whose own notes read *"Federal Holiday Mass (when a federal
+holiday falls on Monday)"*. That is the v2.5.11 undated-policy-line bug exactly,
+but `_HOLY_DAY_RE` matched only "holy day". It now also matches
+`federal|legal|civic|national|public holiday`. Replayed over all 189 stored
+rows: **7 drops, all at `1584`**, everything else untouched. Repaired via
+`notion_fixes --apply`; the row now carries its 6 real Masses (its missing
+Tuesday 08:30 is what this run's extraction adds, so it self-heals).
+
 ### v2.5.18 (2026-08-30) - Triaging the 2026-08-29 run's warnings
 
 Eleven rows carried warnings. Every one was checked against its own bulletin;

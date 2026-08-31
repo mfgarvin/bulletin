@@ -88,7 +88,16 @@ _NOTE_SEGMENT_RE = re.compile(r"[^.;]+[.;]?")
 # 8:15, 11:15 and 6:45"), not a Mass that happens every week. With no date the
 # extractor has to pick a weekday, and it picks one essentially at random - so
 # the parish ends up advertising three phantom Masses every Thursday.
-_HOLY_DAY_RE = re.compile(r"\bholy\s?day", re.IGNORECASE)
+#
+# A *civil* holiday line does the same thing and is worse, because it has no
+# fixed weekday at all: St. Martin of Tours prints "Federal Holiday 9:00 a.m."
+# and the extractor enumerated it across all seven days, with notes reading
+# "when a federal holiday falls on Monday". That is seven phantom Masses from
+# one policy line - the same shape, so it takes the same handling.
+_HOLY_DAY_RE = re.compile(
+    r"\bholy\s?day|\b(?:federal|legal|civic|national|public)\s+holiday",
+    re.IGNORECASE,
+)
 # ...but a parish's standing Saturday vigil is often *also* its Holy Day vigil,
 # and the note then says both ("Vigil Mass; Vigil of Holy Day", "Weekday Mass;
 # Holy Day"). That entry is a real weekly Mass carrying an extra label, so it
