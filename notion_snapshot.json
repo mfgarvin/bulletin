@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T02:01:11+00:00",
+  "generated_at": "2026-09-02T02:27:09+00:00",
   "database_id": "2de29b8f-0e6e-801a-bd81-db3ade199a45",
   "parish_count": 189,
   "parishes": [
@@ -7216,7 +7216,7 @@
     {
       "parish_id": "1445",
       "page_id": "2df29b8f-0e6e-814f-80a6-eba0c5b588fa",
-      "last_edited_time": "2026-08-29T16:36:00.000Z",
+      "last_edited_time": "2026-09-02T02:26:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -7240,7 +7240,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"or by appointment: koalendar.com/e/frjps\"}, {\"day\": \"Sunday\", \"start_time\": 1000, \"end_time\": 1030, \"end_next_day\": false, \"notes\": \"or by appointment: koalendar.com/e/frjps\"}, {\"day\": \"Sunday\", \"start_time\": 1615, \"end_time\": 1700, \"end_next_day\": false, \"notes\": \"Every 2nd Sunday; or by appointment: koalendar.com/e/frjps\"}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"or by appointment\"}, {\"day\": \"Sunday\", \"start_time\": 1000, \"end_time\": 1030, \"end_next_day\": false, \"notes\": \"or by appointment\"}, {\"day\": \"Sunday\", \"start_time\": 1615, \"end_time\": 1700, \"end_next_day\": false, \"notes\": \"Every 2nd Sunday; or by appointment\"}]"
         },
         "Enable": {
           "type": "checkbox",
@@ -15559,7 +15559,7 @@
     {
       "parish_id": "sc-p",
       "page_id": "2df29b8f-0e6e-8104-8424-c7773b03b3a2",
-      "last_edited_time": "2026-08-29T16:38:00.000Z",
+      "last_edited_time": "2026-09-02T02:26:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -15583,7 +15583,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"Also available the Thursday before the First Friday of each month 19:00-20:00, and by appointment (call parish office or speak to a priest).\"}, {\"day\": \"Thursday\", \"start_time\": 1900, \"end_time\": 2000, \"end_next_day\": false, \"notes\": \"Thursday before the First Friday of each month; and by appointment (call parish office or speak to a priest).\"}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"by appointment (call parish office or speak to a priest).\"}, {\"day\": \"Thursday\", \"start_time\": 1900, \"end_time\": 2000, \"end_next_day\": false, \"notes\": \"Thursday before the First Friday of each month; and by appointment (call parish office or speak to a priest).\"}]"
         },
         "Enable": {
           "type": "checkbox",

@@ -6517,14 +6517,14 @@
           "start": "10:00",
           "end": "10:30",
           "end_next_day": false,
-          "notes": "or by appointment: koalendar.com/e/frjps"
+          "notes": "or by appointment"
         },
         {
           "day": "Sunday",
           "start": "16:15",
           "end": "17:00",
           "end_next_day": false,
-          "notes": "Every 2nd Sunday; or by appointment: koalendar.com/e/frjps",
+          "notes": "Every 2nd Sunday; or by appointment",
           "weeks_of_month": [
             2
           ]
@@ -6534,7 +6534,7 @@
           "start": "15:00",
           "end": "15:30",
           "end_next_day": false,
-          "notes": "or by appointment: koalendar.com/e/frjps"
+          "notes": "or by appointment"
         }
       ],
       "adoration": {
@@ -9771,7 +9771,7 @@
           "start": "14:30",
           "end": "15:45",
           "end_next_day": false,
-          "notes": "Also available the Thursday before the First Friday of each month 19:00-20:00, and by appointment (call parish office or speak to a priest)."
+          "notes": "by appointment (call parish office or speak to a priest)."
         }
       ],
       "adoration": {

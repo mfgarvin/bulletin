@@ -575,6 +575,48 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.21 (2026-09-01) - Notes: no URLs, and no describing a slot listed elsewhere
+
+Two note defects found by reading St. Columbkille and St. Leo in the app.
+
+**URLs are never published in a note.** `1445` carried a booking link on three
+confession slots — "or by appointment: koalendar.com/e/frjps". `notes` renders
+as plain text, so it isn't even clickable; it is just a string of characters
+under a confession time. `_strip_urls()` removes the URL and the connector that
+introduced it ("Register at <url> for details" → "Register for details"),
+keeping the sentence it was bolted onto: the three now read "or by
+appointment". A note that was *only* a URL becomes `None`.
+
+**A note must not describe a slot that is already its own entry.** St.
+Columbkille's bulletin prints one sentence covering two slots — "Saturday,
+2:30-3:45 PM, the Thursday before the First Friday 7:00-8:00 PM and by
+appointment". The extractor correctly emits two slots (v2.5.4) but copied the
+whole sentence into each, so the app's Saturday card described the Thursday
+slot listed directly above it. `_drop_duplicate_slot_notes()` removes such a
+clause, guarded twice: the clause must name a `(day, time)` that exists as
+**another** entry, and must **not** name this entry's own weekday. The second
+guard is what protects `olg-m`, whose Tuesday 00:00 covered-day adoration is
+legitimately noted "Continuation of Monday 9:00am - Tuesday 8:00am perpetual
+slot".
+
+**The first version of this silently rewrote 90 notes, and the corpus replay is
+the only reason that was caught.** Two bugs, both in the shared clause helper:
+
+1. `_drop_clauses_where()` reassembled and whitespace-normalised every note it
+   merely *inspected*, so "Vigil Mass (Eng.)" came back as "Vigil Mass (Eng. )"
+   and "Or by appointment" as "by appointment" with nothing dropped. It now
+   returns the note **verbatim unless a segment was actually dropped**.
+2. Splitting clauses on `.` shredded the abbreviations these notes are full of
+   ("(Eng.)", "St. Vitus", "H.S. Mass"). `_NOTE_CLAUSE_RE` splits on `;` and
+   `,` only.
+
+After both fixes the replay touches exactly the two intended rows. The lesson
+is the standing one: a note pass that *reads* every note can damage every note,
+so replay it over all 189 rows and read the before/after, not the count.
+
+Applied to Notion and carried into `export.json`; the only parishes that
+changed are `1445` and `sc-p`.
+
 ### v2.5.20 (2026-08-30) - The partial-retraction guard: a run can no longer gut a schedule
 
 The gap v2.5.19 measured and named. `save_extraction()` writes **any non-empty

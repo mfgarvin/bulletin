@@ -83,6 +83,48 @@ _META_NOTE_RE = re.compile(
 # left is split into sentences and clauses.
 _NOTE_PAREN_RE = re.compile(r"\s*\([^()]*\)")
 _NOTE_SEGMENT_RE = re.compile(r"[^.;]+[.;]?")
+# For the cross-slot check below: the duplicated slot and the real remainder
+# are usually joined by a comma ("…Thursday 7:00-8:00 PM, and by appointment"),
+# so sentence-level segments would take the whole note. Deliberately does NOT
+# split on "." - that shreds the abbreviations these notes are full of
+# ("(Eng.)", "St. Vitus", "H.S. Mass").
+_NOTE_CLAUSE_RE = re.compile(r"[^;,]+[;,]?")
+
+# A URL is never publishable in a schedule note. A booking link ("or by
+# appointment: koalendar.com/e/frjps") is the parish's scheduling tool, not
+# part of its schedule; `notes` renders as plain text in the app, so it isn't
+# even clickable - it is just a string of characters under a Mass time.
+_URL_RE = re.compile(
+    # An introducing connector goes with it, or "Register at <url>" would leave
+    # "Register at for details".
+    r"(?:\b(?:at|on|via|through|to|see|visit|register|book|sign\s*up)\s+)?"
+    r"(?:(?:https?://|www\.)\S+"
+    r"|\b[a-z0-9][a-z0-9-]*(?:\.[a-z0-9-]+)*"
+    r"\.(?:com|org|net|edu|gov|info|io|co|us|app|online)\b(?:/\S*)?)",
+    re.IGNORECASE,
+)
+# Left behind once the URL is cut: "or by appointment:" or "register at".
+_URL_DANGLE_RE = re.compile(
+    r"[\s:;,\-–—]+$|\b(?:at|on|via|through|to|see|visit|register|book|sign\s*up)\s*$",
+    re.IGNORECASE,
+)
+
+_NOTE_WEEKDAY_RE = re.compile(
+    r"\b(monday|tuesday|wednesday|thursday|friday|saturday|sunday)s?\b", re.IGNORECASE
+)
+_NOTE_TIME_RE = re.compile(
+    r"\b(\d{1,2})[:.](\d{2})\s*(a\.?m\.?|p\.?m\.?)?|\b(\d{1,2})\s*(a\.?m\.?|p\.?m\.?)",
+    re.IGNORECASE,
+)
+# How far after a weekday name a time may sit and still be describing it.
+_NOTE_REF_WINDOW = 70
+# "First Friday" names a monthly recurrence, not the day this note points at -
+# without this, a note reading "the Thursday before the First Friday ... 19:00"
+# also claims a reference to Friday 19:00.
+_ORDINAL_BEFORE_RE = re.compile(
+    r"\b(?:first|second|third|fourth|fifth|last|1st|2nd|3rd|4th|5th)\s+$",
+    re.IGNORECASE,
+)
 
 # A "Holy Day of Obligation" line is a standing policy ("on Holy Days we offer
 # 8:15, 11:15 and 6:45"), not a Mass that happens every week. With no date the
@@ -508,28 +550,49 @@ def _drop_coverage_hours(site: SiteInfo, report: SanitizeReport) -> None:
     )
 
 
-def _drop_clauses(note: str | None, pattern: re.Pattern) -> str | None:
-    """Remove the parts of a note that match `pattern`, keeping the rest.
+def _drop_clauses_where(
+    note: str | None,
+    drop,
+    segment_re: re.Pattern = _NOTE_SEGMENT_RE,
+) -> str | None:
+    """Remove the parts of a note for which `drop(segment)` is true.
 
     Parentheticals are considered first, then sentences and clauses, because a
     note is usually a real fact with an aside bolted on in brackets. Returns
     None if nothing publishable survives.
     """
-    if not note or not pattern.search(note):
+    if not note:
         return note
 
-    text = _NOTE_PAREN_RE.sub(
-        lambda m: "" if pattern.search(m.group()) else m.group(), note
-    )
-    kept = [
-        seg.strip()
-        for seg in _NOTE_SEGMENT_RE.findall(text)
-        if seg.strip(" .;,") and not pattern.search(seg)
-    ]
+    text = _NOTE_PAREN_RE.sub(lambda m: "" if drop(m.group()) else m.group(), note)
+    kept, dropped_any = [], text != note
+    for seg in segment_re.findall(text):
+        if not seg.strip(" .;,"):
+            continue
+        if drop(seg):
+            dropped_any = True
+        else:
+            kept.append(seg.strip())
+
+    # Reassembly normalises whitespace, so a note that loses nothing must be
+    # returned verbatim - otherwise every note it merely inspects comes back
+    # subtly rewritten ("Vigil Mass (Eng.)" -> "Vigil Mass (Eng. )").
+    if not dropped_any:
+        return note
     if not kept:
         return None
     out = re.sub(r"\s+", " ", " ".join(kept)).strip()
+    # A surviving clause can start with the conjunction that joined it to the
+    # one just removed ("…, and by appointment" -> "by appointment").
+    out = re.sub(r"^(?:and|or|also|but)\s+", "", out, flags=re.IGNORECASE)
     return out.strip(" ;,-").rstrip(";,") or None
+
+
+def _drop_clauses(note: str | None, pattern: re.Pattern) -> str | None:
+    """Remove the parts of a note that match `pattern`, keeping the rest."""
+    if not note or not pattern.search(note):
+        return note
+    return _drop_clauses_where(note, lambda seg: bool(pattern.search(seg)))
 
 
 def _scrub_note(note: str | None) -> str | None:
@@ -539,6 +602,107 @@ def _scrub_note(note: str | None) -> str | None:
     Mass". A note that is entirely commentary becomes None.
     """
     return _drop_clauses(note, _META_NOTE_RE)
+
+
+def _strip_urls(note: str | None) -> str | None:
+    """Remove any URL from a note, keeping the sentence it was bolted onto.
+
+    "or by appointment: koalendar.com/e/frjps" -> "or by appointment".
+    """
+    if not note or not _URL_RE.search(note):
+        return note
+    out = _URL_RE.sub("", note)
+    previous = None
+    while previous != out:  # a trailing "at" can hide behind trailing punctuation
+        previous = out
+        out = _URL_DANGLE_RE.sub("", out.strip()).strip()
+    out = re.sub(r"\s+", " ", out).strip(" ;,-–—:")
+    return out or None
+
+
+def _scrub_note_urls(site: SiteInfo, report: SanitizeReport) -> None:
+    """Strip URLs from every published `notes` field."""
+    stripped = 0
+    for item in (
+        list(site.mass_times)
+        + list(site.confession_times)
+        + list(site.adoration.times)
+    ):
+        cleaned = _strip_urls(item.notes)
+        if cleaned != item.notes:
+            item.notes = cleaned
+            stripped += 1
+    if stripped:
+        report.repair(f"notes: removed a URL from {stripped} note(s)")
+
+
+def _slot_refs(text: str) -> set[tuple[str, int]]:
+    """(weekday, 24hr time) pairs a note names, e.g. "Thursday ... 19:00"."""
+    refs: set[tuple[str, int]] = set()
+    for day in _NOTE_WEEKDAY_RE.finditer(text):
+        if _ORDINAL_BEFORE_RE.search(text[: day.start()]):
+            continue
+        window = text[day.end(): day.end() + _NOTE_REF_WINDOW]
+        for m in _NOTE_TIME_RE.finditer(window):
+            hour, minute, meridiem = (
+                (int(m.group(1)), int(m.group(2)), (m.group(3) or "").lower())
+                if m.group(1)
+                else (int(m.group(4)), 0, (m.group(5) or "").lower())
+            )
+            if meridiem.startswith("p") and hour < 12:
+                hour += 12
+            elif meridiem.startswith("a") and hour == 12:
+                hour = 0
+            if 0 <= hour <= 23 and 0 <= minute <= 59:
+                refs.add((day.group(1).capitalize(), hour * 100 + minute))
+    return refs
+
+
+def _drop_duplicate_slot_notes(entries: list, label: str, report: SanitizeReport) -> None:
+    """Remove a clause that describes a slot which is already its own entry.
+
+    St. Columbkille's bulletin prints one sentence covering two slots -
+    "Saturday, 2:30-3:45 PM, the Thursday before the First Friday 7:00-8:00 PM
+    and by appointment". The extractor correctly emits two slots (v2.5.4) but
+    copies the whole sentence into each, so the Saturday card in the app
+    describes a Thursday slot listed right above it.
+
+    Guarded two ways, because a note naming another day is often legitimate
+    context rather than a duplicate:
+
+    - the clause must name a (day, time) that exists as *another* entry here,
+      so an offering the parish only mentions in prose is never touched;
+    - and it must NOT name this entry's own weekday. Our Lady of the Most Holy
+      Rosary's covered-day adoration is noted "Continuation of Monday 9:00am -
+      Tuesday 8:00am perpetual slot" on its Tuesday 00:00 entry: it names
+      another slot, but it is explaining this one's overnight span.
+    """
+    slots = {
+        (e.day.value, getattr(e, "time", None) or getattr(e, "start_time", None))
+        for e in entries
+    }
+    changed = 0
+    for entry in entries:
+        if not entry.notes:
+            continue
+        own_time = getattr(entry, "time", None) or getattr(entry, "start_time", None)
+        own_day = entry.day.value
+
+        def drop(segment: str, _day=own_day, _time=own_time) -> bool:
+            if re.search(rf"\b{_day}s?\b", segment, re.IGNORECASE):
+                return False
+            return any(
+                ref in slots and ref != (_day, _time) for ref in _slot_refs(segment)
+            )
+
+        cleaned = _drop_clauses_where(entry.notes, drop, _NOTE_CLAUSE_RE)
+        if cleaned != entry.notes:
+            report.repair(
+                f"{label}: {own_day} {own_time:04d} note described another "
+                f"listed slot; removed that clause"
+            )
+            entry.notes = cleaned
+            changed += 1
 
 
 def _scrub_meta_notes(site: SiteInfo, report: SanitizeReport) -> None:
@@ -819,6 +983,10 @@ def sanitize_extraction(
         # above match on note text, so scrubbing earlier would hide a slot from
         # the check that is meant to catch it.
         _scrub_meta_notes(site, report)
+        _scrub_note_urls(site, report)
+        _drop_duplicate_slot_notes(site.mass_times, "mass", report)
+        _drop_duplicate_slot_notes(site.confession_times, "confession", report)
+        _drop_duplicate_slot_notes(site.adoration.times, "adoration", report)
         _check_adoration(site, report, verified_perpetual)
         _cross_check_mass_references(site, report)
 
