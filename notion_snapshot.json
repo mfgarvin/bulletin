@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T14:48:16+00:00",
+  "generated_at": "2026-09-02T02:01:11+00:00",
   "database_id": "2de29b8f-0e6e-801a-bd81-db3ade199a45",
   "parish_count": 189,
   "parishes": [
@@ -2890,7 +2890,7 @@
     {
       "parish_id": "0414-sp",
       "page_id": "2e529b8f-0e6e-804c-8847-db1eedddcf8d",
-      "last_edited_time": "2026-08-29T16:42:00.000Z",
+      "last_edited_time": "2026-08-30T21:56:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -2914,7 +2914,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"notes\": \"St. Ann Church\"}]"
+          "value": "[]"
         },
         "Enable": {
           "type": "checkbox",
@@ -3508,7 +3508,7 @@
     {
       "parish_id": "0582",
       "page_id": "2df29b8f-0e6e-81ef-b72d-d3e64b95baf6",
-      "last_edited_time": "2026-08-29T16:43:00.000Z",
+      "last_edited_time": "2026-08-30T21:56:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -3532,7 +3532,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Sunday\", \"start_time\": 800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Please ask a priest before or after Mass.\"}, {\"day\": \"Sunday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Please ask a priest before or after Mass.\"}, {\"day\": \"Tuesday\", \"start_time\": 900, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Please ask a priest before or after Mass.\"}, {\"day\": \"Thursday\", \"start_time\": 900, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Please ask a priest before or after Mass.\"}]"
+          "value": "[]"
         },
         "Enable": {
           "type": "checkbox",
@@ -7937,7 +7937,7 @@
     {
       "parish_id": "1584",
       "page_id": "2df29b8f-0e6e-81a0-a7ea-d9771ccce630",
-      "last_edited_time": "2026-08-30T14:25:00.000Z",
+      "last_edited_time": "2026-08-31T03:32:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -8005,7 +8005,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"Federal Holiday Mass (when a federal holiday falls on Monday; bulletin lists 'Federal Holiday 9:00 a.m.')\"}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"Federal Holiday Mass (when a federal holiday falls on Tuesday; bulletin lists 'Federal Holiday 9:00 a.m.')\"}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"Federal Holiday Mass (when a federal holiday falls on Wednesday; bulletin lists 'Federal Holiday 9:00 a.m.')\"}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"Federal Holiday Mass (when a federal holiday falls on Thursday; bulletin lists 'Federal Holiday 9:00 a.m.')\"}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"Federal Holiday Mass (when a federal holiday falls on Friday; bulletin lists 'Federal Holiday 9:00 a.m.')\"}, {\"day\": \"Saturday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"Federal Holiday Mass (when a federal holiday falls on Saturday; bulletin lists 'Federal Holiday 9:00 a.m.')\"}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"Federal Holiday Mass (when a federal holiday falls on Sunday; bulletin lists 'Federal Holiday 9:00 a.m.')\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -9894,7 +9894,7 @@
     {
       "parish_id": "1823",
       "page_id": "2df29b8f-0e6e-8139-a1fd-ebcf3dd284a9",
-      "last_edited_time": "2026-08-30T14:25:00.000Z",
+      "last_edited_time": "2026-08-30T21:56:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -9962,7 +9962,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 930, \"mass_date\": null, \"language\": \"English\", \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": null}, {\"day\": \"Monday\", \"time\": 930, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 930, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1800, \"mass_date\": null, \"language\": \"Bilingual\", \"notes\": null}, {\"day\": \"Friday\", \"time\": 930, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": null}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": \"Bilingual\", \"notes\": \"Holy Day Vigil Mass (Solemnity/Holy Day Mass schedule)\"}, {\"day\": \"Thursday\", \"time\": 930, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 930, \"mass_date\": null, \"language\": \"English\", \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": null}, {\"day\": \"Monday\", \"time\": 930, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 930, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1800, \"mass_date\": null, \"language\": \"Bilingual\", \"notes\": null}, {\"day\": \"Friday\", \"time\": 930, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -10409,7 +10409,7 @@
     {
       "parish_id": "1855-james",
       "page_id": "2e029b8f-0e6e-80a1-a790-d48824b5e2a8",
-      "last_edited_time": "2026-08-29T16:36:00.000Z",
+      "last_edited_time": "2026-08-30T21:56:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -10433,7 +10433,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"notes\": \"at St. Luke\"}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"notes\": \"at St. Clement\"}]"
+          "value": "[]"
         },
         "Enable": {
           "type": "checkbox",
@@ -14014,7 +14014,7 @@
     {
       "parish_id": "our-lady-help-of-christians-litchfield-oh",
       "page_id": "2df29b8f-0e6e-819d-b1b1-e98755961cdf",
-      "last_edited_time": "2026-08-29T16:43:00.000Z",
+      "last_edited_time": "2026-08-30T21:56:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -14038,7 +14038,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"start_time\": 1800, \"end_time\": 1900, \"notes\": \"First Monday of the month; after 6:00PM Mass (listed as Lodi Site in bulletin)\"}]"
+          "value": "[]"
         },
         "Enable": {
           "type": "checkbox",
@@ -15662,7 +15662,7 @@
     {
       "parish_id": "scas-e",
       "page_id": "2df29b8f-0e6e-81ce-bb19-d214c32ef1f9",
-      "last_edited_time": "2026-08-29T16:43:00.000Z",
+      "last_edited_time": "2026-08-30T21:56:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -15686,7 +15686,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": 1700, \"notes\": null}, {\"day\": \"Monday\", \"start_time\": 1900, \"end_time\": 2000, \"notes\": \"Collinwood Cluster Penance Service (held at St. Casimir\\u2019s)\"}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": 1700, \"end_next_day\": false, \"notes\": null}]"
         },
         "Enable": {
           "type": "checkbox",
@@ -15868,7 +15868,7 @@
     {
       "parish_id": "sem-c",
       "page_id": "2df29b8f-0e6e-8124-8205-ce587e7540f3",
-      "last_edited_time": "2026-08-29T16:43:00.000Z",
+      "last_edited_time": "2026-08-30T21:56:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -15892,7 +15892,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Sunday\", \"start_time\": 1020, \"end_time\": 1050, \"notes\": \"In preparation for Easter; before Sunday Mass; also said to be available even during Stations of the Cross. Location: Infant Jesus of Prague classroom (left of the sanctuary).\"}]"
+          "value": "[]"
         },
         "Enable": {
           "type": "checkbox",

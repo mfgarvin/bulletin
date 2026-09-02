@@ -170,15 +170,7 @@
           "notes": null
         }
       ],
-      "confession": [
-        {
-          "day": "Saturday",
-          "start": "15:00",
-          "end": "16:00",
-          "end_next_day": false,
-          "notes": "St. Ann Church"
-        }
-      ],
+      "confession": [],
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -326,22 +318,7 @@
           "notes": "Weekday Mass"
         }
       ],
-      "confession": [
-        {
-          "day": "Saturday",
-          "start": "15:00",
-          "end": "16:00",
-          "end_next_day": false,
-          "notes": "at St. Luke"
-        },
-        {
-          "day": "Saturday",
-          "start": "15:00",
-          "end": "15:30",
-          "end_next_day": false,
-          "notes": "at St. Clement"
-        }
-      ],
+      "confession": [],
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1875,20 +1852,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Sunday",
-          "start": "09:00",
-          "mass_date": "2026-08-30",
-          "language": null,
-          "notes": "Summer Sunday schedule (Memorial Day thru Labor Day)"
-        },
-        {
-          "day": "Sunday",
-          "start": "11:00",
-          "mass_date": "2026-08-30",
-          "language": null,
-          "notes": "Summer Sunday schedule (Memorial Day thru Labor Day)"
         },
         {
           "day": "Sunday",
@@ -4739,13 +4702,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Sunday",
-          "start": "10:00",
-          "mass_date": "2026-08-30",
-          "language": null,
-          "notes": "Mass time changes beginning Sunday, Sept. 6 (10:00am moves to 11:00am)"
         }
       ],
       "confession": [
@@ -5964,24 +5920,10 @@
         },
         {
           "day": "Sunday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Federal Holiday Mass (when a federal holiday falls on Sunday; bulletin lists 'Federal Holiday 9:00 a.m.')"
-        },
-        {
-          "day": "Sunday",
           "start": "10:30",
           "mass_date": null,
           "language": null,
           "notes": null
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Federal Holiday Mass (when a federal holiday falls on Monday; bulletin lists 'Federal Holiday 9:00 a.m.')"
         },
         {
           "day": "Monday",
@@ -5991,13 +5933,6 @@
           "notes": null
         },
         {
-          "day": "Tuesday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Federal Holiday Mass (when a federal holiday falls on Tuesday; bulletin lists 'Federal Holiday 9:00 a.m.')"
-        },
-        {
           "day": "Wednesday",
           "start": "08:30",
           "mass_date": null,
@@ -6005,39 +5940,11 @@
           "notes": null
         },
         {
-          "day": "Wednesday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Federal Holiday Mass (when a federal holiday falls on Wednesday; bulletin lists 'Federal Holiday 9:00 a.m.')"
-        },
-        {
-          "day": "Thursday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Federal Holiday Mass (when a federal holiday falls on Thursday; bulletin lists 'Federal Holiday 9:00 a.m.')"
-        },
-        {
-          "day": "Friday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Federal Holiday Mass (when a federal holiday falls on Friday; bulletin lists 'Federal Holiday 9:00 a.m.')"
-        },
-        {
           "day": "Friday",
           "start": "09:30",
           "mass_date": null,
           "language": null,
           "notes": null
-        },
-        {
-          "day": "Saturday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Federal Holiday Mass (when a federal holiday falls on Saturday; bulletin lists 'Federal Holiday 9:00 a.m.')"
         },
         {
           "day": "Saturday",
@@ -9358,15 +9265,7 @@
           "notes": "Vigil Mass"
         }
       ],
-      "confession": [
-        {
-          "day": "Sunday",
-          "start": "10:20",
-          "end": "10:50",
-          "end_next_day": false,
-          "notes": "In preparation for Easter; before Sunday Mass; also said to be available even during Stations of the Cross. Location: Infant Jesus of Prague classroom (left of the sanctuary)."
-        }
-      ],
+      "confession": [],
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -10364,13 +10263,6 @@
           "notes": "Saturday evening vigil"
         },
         {
-          "day": "Sunday",
-          "start": "11:30",
-          "mass_date": "2026-08-30",
-          "language": null,
-          "notes": "Outdoor Mass followed by brunch (SCP Weekend)"
-        },
-        {
           "day": "Saturday",
           "start": "10:00",
           "mass_date": "2026-09-05",
@@ -10569,13 +10461,6 @@
         }
       ],
       "confession": [
-        {
-          "day": "Monday",
-          "start": "19:00",
-          "end": "20:00",
-          "end_next_day": false,
-          "notes": "Collinwood Cluster Penance Service (held at St. Casimir’s)"
-        },
         {
           "day": "Saturday",
           "start": "16:00",
@@ -13612,20 +13497,6 @@
           "notes": null
         },
         {
-          "day": "Thursday",
-          "start": "07:00",
-          "mass_date": null,
-          "language": "Bilingual",
-          "notes": "Holy Day Vigil Mass (Solemnity/Holy Day Mass schedule)"
-        },
-        {
-          "day": "Thursday",
-          "start": "09:30",
-          "mass_date": null,
-          "language": "Spanish",
-          "notes": null
-        },
-        {
           "day": "Friday",
           "start": "09:30",
           "mass_date": null,
@@ -14384,36 +14255,7 @@
           "notes": "Special Padre Pio Mass in Italian"
         }
       ],
-      "confession": [
-        {
-          "day": "Sunday",
-          "start": "08:00",
-          "end": null,
-          "end_next_day": false,
-          "notes": "Please ask a priest before or after Mass."
-        },
-        {
-          "day": "Sunday",
-          "start": "18:00",
-          "end": null,
-          "end_next_day": false,
-          "notes": "Please ask a priest before or after Mass."
-        },
-        {
-          "day": "Tuesday",
-          "start": "09:00",
-          "end": null,
-          "end_next_day": false,
-          "notes": "Please ask a priest before or after Mass."
-        },
-        {
-          "day": "Thursday",
-          "start": "09:00",
-          "end": null,
-          "end_next_day": false,
-          "notes": "Please ask a priest before or after Mass."
-        }
-      ],
+      "confession": [],
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -15074,18 +14916,7 @@
           "notes": null
         }
       ],
-      "confession": [
-        {
-          "day": "Monday",
-          "start": "18:00",
-          "end": "19:00",
-          "end_next_day": false,
-          "notes": "First Monday of the month; after 6:00PM Mass (listed as Lodi Site in bulletin)",
-          "weeks_of_month": [
-            1
-          ]
-        }
-      ],
+      "confession": [],
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -18078,13 +17909,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "11:00",
-          "mass_date": "2026-08-31",
-          "language": null,
-          "notes": "All Souls at West Park Health Center (4401 West 150th St., Cleveland)"
         }
       ],
       "confession": [],

@@ -71,13 +71,7 @@
         1000
       ]
     },
-    "Confessions": {
-      "Saturday": [
-        {
-          "1500": 60
-        }
-      ]
-    },
+    "Confessions": {},
     "Adoration": {}
   },
   "2e029b8f-0e6e-80cd-b8c5-f2c997d60cda": {
@@ -145,16 +139,7 @@
         1030
       ]
     },
-    "Confessions": {
-      "Saturday": [
-        {
-          "1500": 60
-        },
-        {
-          "1500": 30
-        }
-      ]
-    },
+    "Confessions": {},
     "Adoration": {
       "Tuesday": [
         {
@@ -2393,31 +2378,20 @@
     "Name": "Saint Martin of Tours Parish",
     "Mass Times": {
       "Saturday": [
-        900,
         1700
       ],
       "Sunday": [
         800,
-        900,
         1030
       ],
       "Monday": [
-        900,
         1700
       ],
       "Wednesday": [
-        830,
-        900
+        830
       ],
       "Friday": [
-        900,
         930
-      ],
-      "Tuesday": [
-        900
-      ],
-      "Thursday": [
-        900
       ]
     },
     "Confessions": {
@@ -3792,13 +3766,7 @@
         1100
       ]
     },
-    "Confessions": {
-      "Sunday": [
-        {
-          "1020": 30
-        }
-      ]
-    },
+    "Confessions": {},
     "Adoration": {}
   },
   "2df29b8f-0e6e-81c9-a620-f7a8846c02d7": {
@@ -4270,11 +4238,6 @@
       "Saturday": [
         {
           "1600": 60
-        }
-      ],
-      "Monday": [
-        {
-          "1900": 60
         }
       ]
     },
@@ -5502,10 +5465,6 @@
       ],
       "Friday": [
         930
-      ],
-      "Thursday": [
-        700,
-        930
       ]
     },
     "Confessions": {},
@@ -6078,13 +6037,7 @@
         1900
       ]
     },
-    "Confessions": {
-      "Monday": [
-        {
-          "1800": 60
-        }
-      ]
-    },
+    "Confessions": {},
     "Adoration": {
       "Friday": [
         {
