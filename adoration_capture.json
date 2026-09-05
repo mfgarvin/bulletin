@@ -1,13 +1,13 @@
 {
   "note": "Adoration extracted per run and NOT written to Notion (UPDATE_ADORATION = False). Temporary capture for manual review.",
-  "updated_at": "2026-08-30T14:07:22+00:00",
+  "updated_at": "2026-09-05T17:08:46+00:00",
   "parishes": [
     {
       "parish_id": "0036",
       "parish_name": "Holy Spirit Catholic Parish",
       "site_name": "Holy Spirit Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0036/20260830B.pdf",
-      "captured_at": "2026-08-29T16:42:11+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0036/20260906B.pdf",
+      "captured_at": "2026-09-05T17:07:48+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -16,7 +16,7 @@
             "start_time": 1600,
             "end_time": 1900,
             "end_next_day": false,
-            "notes": "In chapel"
+            "notes": "Chapel"
           }
         ]
       }
@@ -25,8 +25,8 @@
       "parish_id": "0039",
       "parish_name": "Blessed Trinity Parish",
       "site_name": "Blessed Trinity Catholic Parish (Main Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0039/20260830B.pdf",
-      "captured_at": "2026-08-29T16:42:52+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0039/20260906B.pdf",
+      "captured_at": "2026-09-05T17:08:30+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -58,8 +58,8 @@
       "parish_id": "0042",
       "parish_name": "Nativity of the Lord Jesus",
       "site_name": "Nativity of the Lord Jesus Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0042/20260830B.pdf",
-      "captured_at": "2026-08-29T16:41:17+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0042/20260906B.pdf",
+      "captured_at": "2026-09-05T17:06:39+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -68,7 +68,7 @@
             "start_time": 1200,
             "end_time": 1900,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration/Exposition; Benediction at 18:50"
+            "notes": null
           }
         ]
       }
@@ -77,27 +77,19 @@
       "parish_id": "0054",
       "parish_name": "Saint Anthony of Padua Church",
       "site_name": "St. Anthony of Padua Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0054/20260830B.pdf",
-      "captured_at": "2026-08-29T16:39:00+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0054/20260906B.pdf",
+      "captured_at": "2026-09-05T17:03:59+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Wednesday",
-            "start_time": 1500,
-            "end_time": 1900,
-            "end_next_day": false,
-            "notes": "Eucharistic Devotions"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "0069",
       "parish_name": "Saints Peter and Paul Catholic Church",
       "site_name": "Saints Peter and Paul Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0069/20260830B.pdf",
-      "captured_at": "2026-08-29T16:32:46+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0069/20260906B.pdf",
+      "captured_at": "2026-09-05T16:56:40+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -107,34 +99,19 @@
       "parish_id": "0077",
       "parish_name": "Guardian Angels Catholic Church",
       "site_name": "Guardian Angels Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0077/20260830B.pdf",
-      "captured_at": "2026-08-29T16:42:24+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0077/20260906B.pdf",
+      "captured_at": "2026-09-05T17:08:05+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Tuesday",
-            "start_time": 1200,
-            "end_time": 1900,
-            "end_next_day": false,
-            "notes": "2nd Tuesday of the month"
-          },
-          {
-            "day": "Thursday",
-            "start_time": 830,
-            "end_time": 1700,
-            "end_next_day": false,
-            "notes": "4th Thursday of the month"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "0080",
       "parish_name": "Saint Richard Parish",
-      "site_name": "St. Richard Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0080/20260830B.pdf",
-      "captured_at": "2026-08-29T16:33:36+00:00",
+      "site_name": "Saint Richard Catholic Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0080/20260906B.pdf",
+      "captured_at": "2026-09-05T16:57:31+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -143,7 +120,7 @@
             "start_time": 730,
             "end_time": 1300,
             "end_next_day": false,
-            "notes": "Adoration; Benediction begins 12:30, closing at 1:00 p.m. (per bulletin week schedule)."
+            "notes": null
           }
         ]
       }
@@ -151,28 +128,20 @@
     {
       "parish_id": "0083",
       "parish_name": "Saint Christopher Parish",
-      "site_name": "St. Christopher Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0083/20260830B.pdf",
-      "captured_at": "2026-08-29T16:38:36+00:00",
+      "site_name": "St. Christopher Parish (Main Church)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0083/20260906B.pdf",
+      "captured_at": "2026-09-05T17:03:16+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Friday",
-            "start_time": 1130,
-            "end_time": 1530,
-            "end_next_day": false,
-            "notes": "First Friday Adoration (in the Prayer Room)"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "0085",
       "parish_name": "Saint Paul Croatian Church (Hrvatska Crkva Sv. Pavla)",
       "site_name": "St. Paul Croatian Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0085/20260830B.pdf",
-      "captured_at": "2026-08-29T16:33:43+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0085/20260906B.pdf",
+      "captured_at": "2026-09-05T16:57:43+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -190,8 +159,8 @@
       "parish_id": "0090",
       "parish_name": "Saint Adalbert Roman Catholic Parish",
       "site_name": "St. Adalbert Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0090/20260830B.pdf",
-      "captured_at": "2026-08-29T16:39:55+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0090/20260906B.pdf",
+      "captured_at": "2026-09-05T17:05:09+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -200,7 +169,7 @@
             "start_time": 900,
             "end_time": 1815,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration; Benediction at 6:15 PM followed by 6:30 PM Mass"
+            "notes": null
           }
         ]
       }
@@ -208,9 +177,9 @@
     {
       "parish_id": "0116",
       "parish_name": "Saint Joseph Catholic Church",
-      "site_name": "St. Joseph Catholic Church (Strongsville)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0116/20260830B.pdf",
-      "captured_at": "2026-08-29T16:36:54+00:00",
+      "site_name": "St. Joseph Catholic Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0116/20260906B.pdf",
+      "captured_at": "2026-09-05T17:01:09+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -219,28 +188,20 @@
     {
       "parish_id": "0131",
       "parish_name": "La Sagrada Familia Catholic Church",
-      "site_name": "La Sagrada Familia Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0131/20260830B.pdf",
-      "captured_at": "2026-08-29T16:40:00+00:00",
+      "site_name": "La Sagrada Familia (Main Church)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0131/20260906B.pdf",
+      "captured_at": "2026-09-05T17:05:10+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Thursday",
-            "start_time": 1730,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "Hora Santa (Holy Hour) listed at 5:30pm; end time not stated"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "0134",
       "parish_name": "Saint Victor Parish",
       "site_name": "Saint Victor Parish (Main Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0134/20260830B.pdf",
-      "captured_at": "2026-08-29T16:33:00+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0134/20260906B.pdf",
+      "captured_at": "2026-09-05T16:56:54+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -249,9 +210,9 @@
     {
       "parish_id": "0138",
       "parish_name": "Saint Joseph Parish",
-      "site_name": "St. Joseph Parish (Main Church/Campus)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0138/20260830B.pdf",
-      "captured_at": "2026-08-29T16:36:47+00:00",
+      "site_name": "Saint Joseph Parish (Main Campus)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0138/20260906B.pdf",
+      "captured_at": "2026-09-05T17:01:34+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -260,14 +221,14 @@
             "start_time": 900,
             "end_time": 2000,
             "end_next_day": false,
-            "notes": "Adoration in the chapel"
+            "notes": "In the chapel"
           },
           {
             "day": "Friday",
             "start_time": 900,
             "end_time": 900,
             "end_next_day": true,
-            "notes": "First Friday 24-hour adoration (through Saturday 9:00 AM)"
+            "notes": "First Fridays (overnight)"
           }
         ]
       }
@@ -276,8 +237,8 @@
       "parish_id": "0141",
       "parish_name": "Saint Peter Parish North Ridgeville",
       "site_name": "St. Peter Parish",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0141/20260830B.pdf",
-      "captured_at": "2026-08-29T16:33:49+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0141/20260906B.pdf",
+      "captured_at": "2026-09-05T16:58:03+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -286,7 +247,7 @@
             "start_time": 900,
             "end_time": 1815,
             "end_next_day": false,
-            "notes": "Evening Prayer begins at 6:00pm"
+            "notes": null
           }
         ]
       }
@@ -295,8 +256,8 @@
       "parish_id": "0141-JB",
       "parish_name": "Saint Julie Billiart ",
       "site_name": "St. Julie Billiart Parish",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0141/20260830B.pdf",
-      "captured_at": "2026-08-29T16:33:47+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0141/20260906B.pdf",
+      "captured_at": "2026-09-05T16:58:01+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -305,7 +266,7 @@
             "start_time": 1400,
             "end_time": 1700,
             "end_next_day": false,
-            "notes": "Evening Prayer begins at 4:45pm"
+            "notes": null
           }
         ]
       }
@@ -314,8 +275,8 @@
       "parish_id": "0147",
       "parish_name": "Saint Anthony of Padua Roman Catholic Church",
       "site_name": "St. Anthony of Padua Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0147/20260830B.pdf",
-      "captured_at": "2026-08-29T16:39:15+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0147/20260906B.pdf",
+      "captured_at": "2026-09-05T17:04:08+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -324,35 +285,35 @@
             "start_time": 900,
             "end_time": 1400,
             "end_next_day": false,
-            "notes": "St. Anthony Adoration Chapel (normally Mon\u2013Fri 9:00am\u20132:00pm). Chapel closed Tue, Sept 1 for repairs."
+            "notes": "St. Anthony Adoration Chapel"
           },
           {
             "day": "Tuesday",
             "start_time": 900,
             "end_time": 1400,
             "end_next_day": false,
-            "notes": "St. Anthony Adoration Chapel (normally Mon\u2013Fri 9:00am\u20132:00pm). Chapel closed Tue, Sept 1 for repairs."
+            "notes": "St. Anthony Adoration Chapel"
           },
           {
             "day": "Wednesday",
             "start_time": 900,
             "end_time": 1400,
             "end_next_day": false,
-            "notes": "St. Anthony Adoration Chapel (normally Mon\u2013Fri 9:00am\u20132:00pm). Chapel closed Tue, Sept 1 for repairs."
+            "notes": "St. Anthony Adoration Chapel"
           },
           {
             "day": "Thursday",
             "start_time": 900,
             "end_time": 1400,
             "end_next_day": false,
-            "notes": "St. Anthony Adoration Chapel (normally Mon\u2013Fri 9:00am\u20132:00pm). Chapel closed Tue, Sept 1 for repairs."
+            "notes": "St. Anthony Adoration Chapel"
           },
           {
             "day": "Friday",
             "start_time": 900,
             "end_time": 1400,
             "end_next_day": false,
-            "notes": "St. Anthony Adoration Chapel (normally Mon\u2013Fri 9:00am\u20132:00pm). Chapel closed Tue, Sept 1 for repairs."
+            "notes": "St. Anthony Adoration Chapel"
           }
         ]
       }
@@ -361,8 +322,8 @@
       "parish_id": "0164",
       "parish_name": "Saint John Neumann Church",
       "site_name": "Saint John Neumann Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0164/20260830B.pdf",
-      "captured_at": "2026-08-29T16:36:55+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0164/20260906B.pdf",
+      "captured_at": "2026-09-05T17:01:18+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -379,9 +340,9 @@
     {
       "parish_id": "0199",
       "parish_name": "Saint Anthony of Padua Parish",
-      "site_name": "St. Anthony of Padua Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0199/20260830B.pdf",
-      "captured_at": "2026-08-29T16:39:09+00:00",
+      "site_name": "St. Anthony of Padua Parish (Church)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0199/20260906B.pdf",
+      "captured_at": "2026-09-05T17:04:02+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -398,9 +359,9 @@
     {
       "parish_id": "0216",
       "parish_name": "Saint Joan of Arc Catholic Church",
-      "site_name": "Saint Joan of Arc Catholic Church (Main Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0216/20260830B.pdf",
-      "captured_at": "2026-08-29T16:37:16+00:00",
+      "site_name": "Saint Joan of Arc Catholic Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0216/20260906B.pdf",
+      "captured_at": "2026-09-05T17:01:40+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -409,7 +370,7 @@
             "start_time": 930,
             "end_time": 2030,
             "end_next_day": false,
-            "notes": "Will be held in the church every Wednesday after the 9:00am Mass till 8:30pm."
+            "notes": "In the church (after the 9:00am Mass)"
           }
         ]
       }
@@ -417,9 +378,9 @@
     {
       "parish_id": "0240",
       "parish_name": "Transfiguration Parish",
-      "site_name": "Transfiguration Parish (Main Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0240/20260830B.pdf",
-      "captured_at": "2026-08-29T16:32:39+00:00",
+      "site_name": "Transfiguration Parish Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0240/20260906B.pdf",
+      "captured_at": "2026-09-05T16:56:21+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -429,24 +390,17 @@
       "parish_id": "0241",
       "parish_name": "Saint Bridget of Kildare Parish",
       "site_name": "St. Bridget of Kildare Parish (Main Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0241/20260830B.pdf",
-      "captured_at": "2026-08-29T16:38:37+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0241/20260906B.pdf",
+      "captured_at": "2026-09-05T17:03:24+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
           {
             "day": "Wednesday",
             "start_time": 900,
-            "end_time": 1530,
-            "end_next_day": false,
-            "notes": "Summer hours; closing prayers begin at 15:10"
-          },
-          {
-            "day": "Wednesday",
-            "start_time": 900,
             "end_time": 1830,
             "end_next_day": false,
-            "notes": "Normal hours resume September 9; closing prayers at 18:10"
+            "notes": "Exposition of the Blessed Sacrament (regular hours); closing prayers begin at 18:10"
           }
         ]
       }
@@ -454,9 +408,9 @@
     {
       "parish_id": "0242",
       "parish_name": "The Shrine Church of Saint Stanislaus, Bishop & Martyr",
-      "site_name": "Shrine Church of Saint Stanislaus Bishop & Martyr",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0242/20260830B.pdf",
-      "captured_at": "2026-08-29T16:33:28+00:00",
+      "site_name": "Shrine Church of Saint Stanislaus (Main Church)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0242/20260906B.pdf",
+      "captured_at": "2026-09-05T16:57:19+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -465,9 +419,9 @@
     {
       "parish_id": "0244",
       "parish_name": "Blessed Trinity Catholic Church",
-      "site_name": "Blessed Trinity Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0244/20260830B.pdf",
-      "captured_at": "2026-08-29T16:42:49+00:00",
+      "site_name": "Blessed Trinity Catholic Church (Puritas)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0244/20260906B.pdf",
+      "captured_at": "2026-09-05T17:08:32+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -476,9 +430,9 @@
     {
       "parish_id": "0288",
       "parish_name": "Saint Bartholomew Parish",
-      "site_name": "St. Bartholomew Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0288/20260830B.pdf",
-      "captured_at": "2026-08-29T16:38:52+00:00",
+      "site_name": "St. Bartholomew Parish (Main Church)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0288/20260906B.pdf",
+      "captured_at": "2026-09-05T17:03:44+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -487,9 +441,9 @@
     {
       "parish_id": "0290",
       "parish_name": "Saint Brendan Parish",
-      "site_name": "St. Brendan Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0290/20260830B.pdf",
-      "captured_at": "2026-08-29T16:38:46+00:00",
+      "site_name": "Saint Brendan Catholic Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0290/20260906B.pdf",
+      "captured_at": "2026-09-05T17:03:31+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -535,8 +489,8 @@
       "parish_id": "0342",
       "parish_name": "Holy Redeemer Roman Catholic Parish",
       "site_name": "Holy Redeemer Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0342/20260830B.pdf",
-      "captured_at": "2026-08-29T16:42:03+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0342/20260906B.pdf",
+      "captured_at": "2026-09-05T17:07:41+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -545,9 +499,9 @@
     {
       "parish_id": "0414",
       "parish_name": "Communion of Saints Parish - Saint Ann",
-      "site_name": "Saint Ann Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0414/20260830B.pdf",
-      "captured_at": "2026-08-29T16:42:45+00:00",
+      "site_name": "Saint Ann Church (Communion of Saints Parish)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0414/20260906B.pdf",
+      "captured_at": "2026-09-05T17:08:32+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -556,9 +510,9 @@
     {
       "parish_id": "0414-sp",
       "parish_name": "Communion of Saints Parish - Saint Philomena",
-      "site_name": "Saint Philomena Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0414/20260830B.pdf",
-      "captured_at": "2026-08-29T16:42:47+00:00",
+      "site_name": "Saint Philomena Church (Communion of Saints Parish)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0414/20260906B.pdf",
+      "captured_at": "2026-09-05T17:08:33+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -567,9 +521,9 @@
     {
       "parish_id": "0512",
       "parish_name": "Saint Andrew the Apostle - Norton",
-      "site_name": "St. Andrew the Apostle Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0512/20260830B.pdf",
-      "captured_at": "2026-08-29T16:32:32+00:00",
+      "site_name": "St. Andrew the Apostle (Norton)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0512/20260906B.pdf",
+      "captured_at": "2026-09-05T16:56:09+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -578,35 +532,42 @@
             "start_time": 700,
             "end_time": 800,
             "end_next_day": false,
-            "notes": "Weekday adoration one hour prior to the 8:00 AM Mass"
+            "notes": "One hour prior to the 8:00 AM Mass"
           },
           {
             "day": "Tuesday",
             "start_time": 700,
             "end_time": 800,
             "end_next_day": false,
-            "notes": "Weekday adoration one hour prior to the 8:00 AM Mass"
+            "notes": "One hour prior to the 8:00 AM Mass"
           },
           {
             "day": "Wednesday",
             "start_time": 700,
             "end_time": 800,
             "end_next_day": false,
-            "notes": "Weekday adoration one hour prior to the 8:00 AM Mass"
+            "notes": "One hour prior to the 8:00 AM Mass"
           },
           {
             "day": "Thursday",
             "start_time": 700,
             "end_time": 800,
             "end_next_day": false,
-            "notes": "Weekday adoration one hour prior to the 8:00 AM Mass"
+            "notes": "One hour prior to the 8:00 AM Mass"
           },
           {
             "day": "Friday",
-            "start_time": 800,
+            "start_time": 700,
+            "end_time": 800,
+            "end_next_day": false,
+            "notes": "One hour prior to the 8:00 AM Mass"
+          },
+          {
+            "day": "Friday",
+            "start_time": 830,
             "end_time": 2100,
             "end_next_day": false,
-            "notes": "From the 8:00 AM Mass until 9:00 PM"
+            "notes": "From after the 8:00 AM Mass until 9:00 PM"
           }
         ]
       }
@@ -614,9 +575,9 @@
     {
       "parish_id": "0512-peace",
       "parish_name": "Prince of Peace - Barberton",
-      "site_name": "Prince of Peace Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0512/20260830B.pdf",
-      "captured_at": "2026-08-29T16:32:30+00:00",
+      "site_name": "Prince of Peace (Barberton)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0512/20260906B.pdf",
+      "captured_at": "2026-09-05T16:56:08+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -626,8 +587,8 @@
       "parish_id": "0523",
       "parish_name": "Saint Francis de Sales",
       "site_name": "St. Francis de Sales Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0523/20260830B.pdf",
-      "captured_at": "2026-08-29T16:37:39+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0523/20260906B.pdf",
+      "captured_at": "2026-09-05T17:02:08+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -637,17 +598,17 @@
       "parish_id": "0571",
       "parish_name": "Mary Queen of the Apostles Parish",
       "site_name": "Mary Queen of the Apostles Parish (Main Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0571/20260830B.pdf",
-      "captured_at": "2026-08-29T16:41:33+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0571/20260906B.pdf",
+      "captured_at": "2026-09-05T17:07:06+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
           {
             "day": "Thursday",
             "start_time": 830,
-            "end_time": 1530,
+            "end_time": 1830,
             "end_next_day": false,
-            "notes": "Through Labor Day; closing prayer at 3:10 PM"
+            "notes": "Closing prayer at 6:10 PM"
           }
         ]
       }
@@ -655,9 +616,9 @@
     {
       "parish_id": "0582",
       "parish_name": "Our Lady of Mount Carmel Roman Catholic Church",
-      "site_name": "Our Lady of Mount Carmel Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0582/20260830B.pdf",
-      "captured_at": "2026-08-29T16:40:43+00:00",
+      "site_name": "Our Lady of Mount Carmel Church (Main Church)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0582/20260906B.pdf",
+      "captured_at": "2026-09-05T17:06:09+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -667,8 +628,8 @@
       "parish_id": "0599",
       "parish_name": "Saint Hilary Parish",
       "site_name": "St. Hilary Parish (Main Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0599/20260830B.pdf",
-      "captured_at": "2026-08-29T16:37:27+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0599/20260906B.pdf",
+      "captured_at": "2026-09-05T17:02:19+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -686,8 +647,8 @@
       "parish_id": "0670",
       "parish_name": "Saint Thomas More Parish",
       "site_name": "St. Thomas More Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0670/20260830B.pdf",
-      "captured_at": "2026-08-29T16:33:13+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0670/20260906B.pdf",
+      "captured_at": "2026-09-05T16:57:03+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -696,9 +657,9 @@
     {
       "parish_id": "0674",
       "parish_name": "Our Lady of the Lake Parish",
-      "site_name": "Our Lady of the Lake Parish (Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0674/20260830B.pdf",
-      "captured_at": "2026-08-29T16:40:37+00:00",
+      "site_name": "Our Lady of the Lake Parish",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0674/20260906B.pdf",
+      "captured_at": "2026-09-05T17:06:23+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -708,8 +669,8 @@
       "parish_id": "0678",
       "parish_name": "The Church of Saint Clarence",
       "site_name": "St. Clarence Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0678/20260830B.pdf",
-      "captured_at": "2026-08-29T16:38:17+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0678/20260906B.pdf",
+      "captured_at": "2026-09-05T17:02:55+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -718,7 +679,7 @@
             "start_time": 900,
             "end_time": 1900,
             "end_next_day": false,
-            "notes": "In the Chapel; Chaplet of Divine Mercy prayed at 3:00pm"
+            "notes": "In the chapel; Chaplet of Divine Mercy at 3:00 PM"
           }
         ]
       }
@@ -727,8 +688,8 @@
       "parish_id": "0689",
       "parish_name": "Saint Sebastian Parish",
       "site_name": "St. Sebastian Parish (Main Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0689/20260830B.pdf",
-      "captured_at": "2026-08-29T16:32:34+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0689/20260906B.pdf",
+      "captured_at": "2026-09-05T16:56:34+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -746,8 +707,8 @@
       "parish_id": "0691",
       "parish_name": "Holy Name Church",
       "site_name": "Holy Name Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0691/20260830B.pdf",
-      "captured_at": "2026-08-29T16:42:05+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0691/20260906B.pdf",
+      "captured_at": "2026-09-05T17:07:49+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -765,55 +726,19 @@
       "parish_id": "0875",
       "parish_name": "Mary Queen of Peace",
       "site_name": "Mary Queen of Peace Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0875/20260830B.pdf",
-      "captured_at": "2026-08-29T16:41:33+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0875/20260906B.pdf",
+      "captured_at": "2026-09-05T17:07:16+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Friday",
-            "start_time": 645,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "Eucharistic Adoration (First Friday) - listed in 'This Week At Mary Queen of Peace'"
-          },
-          {
-            "day": "Friday",
-            "start_time": 845,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "Eucharistic Adoration (First Friday) - listed in 'This Week At Mary Queen of Peace'"
-          },
-          {
-            "day": "Friday",
-            "start_time": 2000,
-            "end_time": 0,
-            "end_next_day": true,
-            "notes": "All-Night Eucharistic Adoration for the Restoration of the Traditional Latin Mass and Greater Reverence for the Holy Eucharist (begins 8:00 PM Friday; continues overnight)"
-          },
-          {
-            "day": "Saturday",
-            "start_time": 0,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "Continuation of all-night adoration (listed at 12:00 AM on First Saturday in 'This Week At Mary Queen of Peace')"
-          },
-          {
-            "day": "Saturday",
-            "start_time": 845,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "Eucharistic Adoration (First Saturday) - listed in 'This Week At Mary Queen of Peace'"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "0882",
       "parish_name": "Saint Colman Church",
       "site_name": "Saint Colman Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0882/20260830B.pdf",
-      "captured_at": "2026-08-29T16:38:07+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0882/20260906B.pdf",
+      "captured_at": "2026-09-05T17:02:55+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -822,39 +747,31 @@
     {
       "parish_id": "0884",
       "parish_name": "Divine Word Catholic Church",
-      "site_name": "Divine Word Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0884/20260830B.pdf",
-      "captured_at": "2026-08-29T16:42:41+00:00",
-      "adoration": {
-        "is_perpetual": false,
-        "times": [
-          {
-            "day": "Monday",
-            "start_time": 900,
-            "end_time": 2100,
-            "end_next_day": false,
-            "notes": null
-          }
-        ]
-      }
-    },
-    {
-      "parish_id": "0885",
-      "parish_name": "Sacred Heart of Jesus Parish",
-      "site_name": "Sacred Heart of Jesus Parish (Main Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0885/20260830B.pdf",
-      "captured_at": "2026-08-29T16:40:13+00:00",
+      "site_name": "Divine Word Catholic Church (Main Church)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0884/20260906B.pdf",
+      "captured_at": "2026-09-05T17:08:25+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
       }
     },
     {
+      "parish_id": "0885",
+      "parish_name": "Sacred Heart of Jesus Parish",
+      "site_name": "Sacred Heart of Jesus Parish (Main Church)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0885/20260906B.pdf",
+      "captured_at": "2026-09-05T17:05:32+00:00",
+      "adoration": {
+        "is_perpetual": true,
+        "times": []
+      }
+    },
+    {
       "parish_id": "0886",
       "parish_name": "Saint Mary of the Assumption Church",
-      "site_name": "St. Mary of the Assumption Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0886/20260830B.pdf",
-      "captured_at": "2026-08-29T16:34:59+00:00",
+      "site_name": "St. Mary of the Assumption Church (Mentor)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0886/20260906B.pdf",
+      "captured_at": "2026-09-05T16:59:10+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -864,8 +781,8 @@
       "parish_id": "0920",
       "parish_name": "Saints Peter and Paul",
       "site_name": "SS. Peter & Paul Catholic Church (Doylestown)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0920/20260830B.pdf",
-      "captured_at": "2026-08-29T16:39:19+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0920/20260906B.pdf",
+      "captured_at": "2026-09-05T17:04:21+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -874,18 +791,18 @@
     {
       "parish_id": "1060",
       "parish_name": "Saint Angela Merici Roman Catholic Church",
-      "site_name": "St. Angela Merici Roman Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1060/20260830B.pdf",
-      "captured_at": "2026-08-29T16:39:28+00:00",
+      "site_name": "St. Angela Merici Catholic Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1060/20260906B.pdf",
+      "captured_at": "2026-09-05T17:04:18+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
           {
             "day": "Friday",
             "start_time": 915,
-            "end_time": 1500,
+            "end_time": null,
             "end_next_day": false,
-            "notes": "In the church (listed as Eucharistic Adoration; date-specific: Friday, Sept. 4, 2026)"
+            "notes": "Eucharistic Adoration"
           }
         ]
       }
@@ -894,8 +811,8 @@
       "parish_id": "1071",
       "parish_name": "Avon Catholic Community - Holy Trinity",
       "site_name": "Holy Trinity Parish",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1071/20260830B.pdf",
-      "captured_at": "2026-08-29T16:35:01+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1071/20260906B.pdf",
+      "captured_at": "2026-09-05T16:59:08+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -920,8 +837,8 @@
       "parish_id": "1071-MIC",
       "parish_name": "Avon Catholic Community - Saint Mary of the Immaculate Conception",
       "site_name": "St. Mary of the Immaculate Conception Parish",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1071/20260830B.pdf",
-      "captured_at": "2026-08-29T16:35:03+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1071/20260906B.pdf",
+      "captured_at": "2026-09-05T16:59:09+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -939,8 +856,8 @@
       "parish_id": "1088",
       "parish_name": "Saint Colette Catholic Church",
       "site_name": "St. Colette Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1088/20260830B.pdf",
-      "captured_at": "2026-08-29T16:38:18+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1088/20260906B.pdf",
+      "captured_at": "2026-09-05T17:03:16+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -949,14 +866,7 @@
             "start_time": 930,
             "end_time": 1600,
             "end_next_day": false,
-            "notes": "Unless parish office is closed"
-          },
-          {
-            "day": "Monday",
-            "start_time": 930,
-            "end_time": 1800,
-            "end_next_day": false,
-            "notes": "One-off listing in 'This Week at St. Colette' (Aug 31)"
+            "notes": "In the church (unless parish office is closed)"
           }
         ]
       }
@@ -965,8 +875,8 @@
       "parish_id": "1094",
       "parish_name": "The Parish of Saint Bede the Venerable",
       "site_name": "St. Bede the Venerable Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1094/20260830B.pdf",
-      "captured_at": "2026-08-29T16:38:54+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1094/20260906B.pdf",
+      "captured_at": "2026-09-05T17:03:43+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -975,7 +885,7 @@
             "start_time": 930,
             "end_time": 1600,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration (Chapel)"
+            "notes": "In the chapel"
           }
         ]
       }
@@ -983,25 +893,25 @@
     {
       "parish_id": "1101",
       "parish_name": "Saint Mary of the Immaculate Conception",
-      "site_name": "St. Mary of the Immaculate Conception",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1101/20260830B.pdf",
-      "captured_at": "2026-08-29T16:34:40+00:00",
+      "site_name": "St. Mary of the Immaculate Conception (Main Church)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1101/20260906B.pdf",
+      "captured_at": "2026-09-05T16:58:58+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
           {
             "day": "Tuesday",
             "start_time": 900,
-            "end_time": 2030,
+            "end_time": null,
             "end_next_day": false,
-            "notes": "Adoration opens Tuesday 9:00am; closes Wednesday 8:30pm with Night Prayer"
+            "notes": "Adoration opens"
           },
           {
-            "day": "Friday",
-            "start_time": 730,
-            "end_time": 1330,
+            "day": "Wednesday",
+            "start_time": 2030,
+            "end_time": null,
             "end_next_day": false,
-            "notes": "First Friday Adoration (until 1:30 pm)"
+            "notes": "Adoration closes, Night Prayer"
           }
         ]
       }
@@ -1009,28 +919,20 @@
     {
       "parish_id": "1130",
       "parish_name": "Saint John Cantius Church",
-      "site_name": "St. John Cantius Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1130/20260830B.pdf",
-      "captured_at": "2026-08-29T16:37:05+00:00",
+      "site_name": "St. John Cantius Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1130/20260906B.pdf",
+      "captured_at": "2026-09-05T17:01:40+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Monday",
-            "start_time": 1730,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "Mass at 5:30 pm with Exposition noted; bulletin lists 'Monday | 5:30 pm Exposition'"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "1136",
       "parish_name": "Saint Mary of the Immaculate Conception",
-      "site_name": "Saint Mary of the Immaculate Conception (Main Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1136/20260830B.pdf",
-      "captured_at": "2026-08-29T16:35:32+00:00",
+      "site_name": "Saint Mary of the Immaculate Conception Roman Catholic Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1136/20260906B.pdf",
+      "captured_at": "2026-09-05T16:59:59+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -1040,19 +942,27 @@
       "parish_id": "1137",
       "parish_name": "Saint Patrick Church West Park ",
       "site_name": "Saint Patrick West Park",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1137/20260830B.pdf",
-      "captured_at": "2026-08-29T16:34:07+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1137/20260906B.pdf",
+      "captured_at": "2026-09-05T16:58:00+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": []
+        "times": [
+          {
+            "day": "Tuesday",
+            "start_time": 1930,
+            "end_time": null,
+            "end_next_day": false,
+            "notes": null
+          }
+        ]
       }
     },
     {
       "parish_id": "1137-svdp",
       "parish_name": "Saint Vincent de Paul Church West Park",
       "site_name": "Saint Vincent de Paul",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1137/20260830B.pdf",
-      "captured_at": "2026-08-29T16:34:09+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1137/20260906B.pdf",
+      "captured_at": "2026-09-05T16:58:02+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1069,9 +979,9 @@
     {
       "parish_id": "1142",
       "parish_name": "Saint John Vianney Catholic Parish",
-      "site_name": "St. John Vianney Catholic Parish (Main Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1142/20260830B.pdf",
-      "captured_at": "2026-08-29T16:36:56+00:00",
+      "site_name": "St. John Vianney Catholic Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1142/20260906B.pdf",
+      "captured_at": "2026-09-05T17:01:23+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -1081,27 +991,19 @@
       "parish_id": "1170",
       "parish_name": "Immaculate Conception Church",
       "site_name": "Immaculate Conception Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1170/20260830B.pdf",
-      "captured_at": "2026-08-29T16:41:51+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1170/20260906B.pdf",
+      "captured_at": "2026-09-05T17:07:30+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Wednesday",
-            "start_time": 900,
-            "end_time": 1800,
-            "end_next_day": false,
-            "notes": "Exposition of the Blessed Sacrament; Benediction at 6:00pm (note: bulletin also states 'during Lent' in parish info box)"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "1236",
       "parish_name": "Holy Family Parish",
-      "site_name": "Holy Family Church (Holy Family Catholic Parish)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1236/20260830B.pdf",
-      "captured_at": "2026-08-29T16:42:39+00:00",
+      "site_name": "Holy Family Parish",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1236/20260906B.pdf",
+      "captured_at": "2026-09-05T17:08:15+00:00",
       "adoration": {
         "is_perpetual": true,
         "times": []
@@ -1110,42 +1012,20 @@
     {
       "parish_id": "1241",
       "parish_name": "Saint Francis Xavier Parish",
-      "site_name": "St. Francis Xavier Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1241/20260830B.pdf",
-      "captured_at": "2026-08-29T16:37:41+00:00",
+      "site_name": "St. Francis Xavier Catholic Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1241/20260906B.pdf",
+      "captured_at": "2026-09-05T17:02:03+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Friday",
-            "start_time": 1930,
-            "end_time": 700,
-            "end_next_day": true,
-            "notes": "Nocturnal Adoration (First Fridays of each month). Next time: Sept. 4."
-          },
-          {
-            "day": "Thursday",
-            "start_time": 800,
-            "end_time": 900,
-            "end_next_day": false,
-            "notes": "Second Thursdays with the Avilas. Next time: Sept. 10."
-          },
-          {
-            "day": "Monday",
-            "start_time": 1830,
-            "end_time": 1930,
-            "end_next_day": false,
-            "notes": "Third Mondays, Oremus evening prayer. Next time: Sept. 21."
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "1259",
       "parish_name": "The Cathedral of Saint John the Evangelist",
       "site_name": "The Cathedral of Saint John the Evangelist",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1259/20260830B.pdf",
-      "captured_at": "2026-08-29T16:42:54+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1259/20260906B.pdf",
+      "captured_at": "2026-09-05T17:08:45+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1163,74 +1043,30 @@
       "parish_id": "1285",
       "parish_name": "Saint Edward Roman Catholic Parish",
       "site_name": "St. Edward Catholic Church (Ashland)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1285/20260830B.pdf",
-      "captured_at": "2026-08-29T16:38:01+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1285/20260906B.pdf",
+      "captured_at": "2026-09-05T17:02:39+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Thursday",
-            "start_time": 900,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "Adoration is Thurs\u2013Sun (bulletin lists times where adorers are needed, not full hours)"
-          },
-          {
-            "day": "Friday",
-            "start_time": 0,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "Adoration is Thurs\u2013Sun (bulletin lists times where adorers are needed, not full hours)"
-          },
-          {
-            "day": "Saturday",
-            "start_time": 0,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "Adoration is Thurs\u2013Sun (bulletin lists times where adorers are needed, not full hours)"
-          },
-          {
-            "day": "Sunday",
-            "start_time": 0,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "Adoration is Thurs\u2013Sun (bulletin lists times where adorers are needed, not full hours)"
-          },
-          {
-            "day": "Saturday",
-            "start_time": 800,
-            "end_time": 900,
-            "end_next_day": false,
-            "notes": "First Saturday Devotion: Adoration until 9:00am (Sept 5, 2026)"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "1286",
       "parish_name": "The Catholic Community of Saint Gabriel",
-      "site_name": "St. Gabriel Church (Catholic Community of St. Gabriel)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1286/20260830B.pdf",
-      "captured_at": "2026-08-29T16:37:38+00:00",
+      "site_name": "St. Gabriel Catholic Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1286/20260906B.pdf",
+      "captured_at": "2026-09-05T17:02:16+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Friday",
-            "start_time": 1030,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "Weekly listing shows 'Divine Mercy Chaplet/Benediction' during Friday Eucharistic Adoration; exact adoration start/end not stated in bulletin."
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "1311",
       "parish_name": "Saint Ignatius of Antioch",
       "site_name": "St. Ignatius of Antioch Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1311/20260830B.pdf",
-      "captured_at": "2026-08-29T16:37:15+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1311/20260906B.pdf",
+      "captured_at": "2026-09-05T17:01:52+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1239,7 +1075,7 @@
             "start_time": 1530,
             "end_time": 1630,
             "end_next_day": false,
-            "notes": "Eucharistic Exposition"
+            "notes": "Eucharistic Exposition (in church)"
           }
         ]
       }
@@ -1248,69 +1084,19 @@
       "parish_id": "1318",
       "parish_name": "Immaculate Conception Catholic Church",
       "site_name": "Immaculate Conception Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1318/20260830B.pdf",
-      "captured_at": "2026-08-29T16:41:53+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1318/20260906B.pdf",
+      "captured_at": "2026-09-05T17:07:24+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Sunday",
-            "start_time": 600,
-            "end_time": 2300,
-            "end_next_day": false,
-            "notes": "Adoration Chapel hours (seven days a week)"
-          },
-          {
-            "day": "Monday",
-            "start_time": 600,
-            "end_time": 2300,
-            "end_next_day": false,
-            "notes": "Adoration Chapel hours (seven days a week)"
-          },
-          {
-            "day": "Tuesday",
-            "start_time": 600,
-            "end_time": 2300,
-            "end_next_day": false,
-            "notes": "Adoration Chapel hours (seven days a week)"
-          },
-          {
-            "day": "Wednesday",
-            "start_time": 600,
-            "end_time": 2300,
-            "end_next_day": false,
-            "notes": "Adoration Chapel hours (seven days a week)"
-          },
-          {
-            "day": "Thursday",
-            "start_time": 600,
-            "end_time": 2300,
-            "end_next_day": false,
-            "notes": "Adoration Chapel hours (seven days a week)"
-          },
-          {
-            "day": "Friday",
-            "start_time": 600,
-            "end_time": 2300,
-            "end_next_day": false,
-            "notes": "Adoration Chapel hours (seven days a week)"
-          },
-          {
-            "day": "Saturday",
-            "start_time": 600,
-            "end_time": 2300,
-            "end_next_day": false,
-            "notes": "Adoration Chapel hours (seven days a week)"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "1352",
       "parish_name": "Saint Jude Church",
       "site_name": "St. Jude Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1352/20260830B.pdf",
-      "captured_at": "2026-08-29T16:36:38+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1352/20260906B.pdf",
+      "captured_at": "2026-09-05T17:01:00+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1328,27 +1114,19 @@
       "parish_id": "13722",
       "parish_name": "Our Lady Queen of Peace Church",
       "site_name": "Our Lady Queen of Peace Church",
-      "bulletin_url": "https://files.ecatholic.com/13722/bulletins/20260830.pdf",
-      "captured_at": "2026-08-29T16:40:30+00:00",
+      "bulletin_url": "https://files.ecatholic.com/13722/bulletins/20260906.pdf",
+      "captured_at": "2026-09-05T17:05:45+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Wednesday",
-            "start_time": 1430,
-            "end_time": 1830,
-            "end_next_day": false,
-            "notes": "Adoration of the Blessed Sacrament (September 16 mentioned)"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "1397",
       "parish_name": "Holy Martyrs Catholic Church",
       "site_name": "Holy Martyrs Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1397/20260830B.pdf",
-      "captured_at": "2026-08-29T16:42:08+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1397/20260906B.pdf",
+      "captured_at": "2026-09-05T17:07:50+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1358,6 +1136,13 @@
             "end_time": null,
             "end_next_day": false,
             "notes": null
+          },
+          {
+            "day": "Friday",
+            "start_time": 800,
+            "end_time": null,
+            "end_next_day": false,
+            "notes": "Prayer in the Chapel"
           }
         ]
       }
@@ -1365,9 +1150,9 @@
     {
       "parish_id": "1414",
       "parish_name": "Saint Joseph Parish",
-      "site_name": "St. Joseph Parish (Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1414/20260830B.pdf",
-      "captured_at": "2026-08-29T16:36:28+00:00",
+      "site_name": "Saint Joseph Parish (Church)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1414/20260906B.pdf",
+      "captured_at": "2026-09-05T17:01:00+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -1376,9 +1161,9 @@
     {
       "parish_id": "1445",
       "parish_name": "Saint Leo the Great",
-      "site_name": "St. Leo the Great Church (Main Campus)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1445/20260830B.pdf",
-      "captured_at": "2026-08-29T16:36:14+00:00",
+      "site_name": "St. Leo the Great Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1445/20260906B.pdf",
+      "captured_at": "2026-09-05T17:00:37+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1387,7 +1172,7 @@
             "start_time": 900,
             "end_time": 1500,
             "end_next_day": false,
-            "notes": "First Friday of every month; held in the Chapel"
+            "notes": "First Friday of every month (in the Chapel)"
           }
         ]
       }
@@ -1395,9 +1180,9 @@
     {
       "parish_id": "1472",
       "parish_name": "Saint Aloysius Parish",
-      "site_name": "St. Aloysius Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1472/20260830B.pdf",
-      "captured_at": "2026-08-29T16:39:30+00:00",
+      "site_name": "Saint Aloysius Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1472/20260906B.pdf",
+      "captured_at": "2026-09-05T17:04:23+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -1407,27 +1192,19 @@
       "parish_id": "1485",
       "parish_name": "Saint Ambrose Catholic Parish",
       "site_name": "Saint Ambrose Catholic Parish (Main Campus)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1485/20260830B.pdf",
-      "captured_at": "2026-08-29T16:39:47+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1485/20260906B.pdf",
+      "captured_at": "2026-09-05T17:05:07+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Monday",
-            "start_time": 900,
-            "end_time": 1930,
-            "end_next_day": false,
-            "notes": "Eucharistic Adoration (Chapel); followed by Benediction at 7:30 pm"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "1494",
       "parish_name": "Church of the Assumption",
-      "site_name": "Church of the Assumption",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1494/20260830B.pdf",
-      "captured_at": "2026-08-29T16:42:57+00:00",
+      "site_name": "Church of the Assumption of the Blessed Virgin Mary",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1494/20260906B.pdf",
+      "captured_at": "2026-09-05T17:08:39+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1436,49 +1213,49 @@
             "start_time": 600,
             "end_time": 2100,
             "end_next_day": false,
-            "notes": "Divine Mercy Chapel open daily for Eucharistic Adoration"
+            "notes": "Divine Mercy Chapel"
           },
           {
             "day": "Monday",
             "start_time": 600,
             "end_time": 2100,
             "end_next_day": false,
-            "notes": "Divine Mercy Chapel open daily for Eucharistic Adoration"
+            "notes": "Divine Mercy Chapel"
           },
           {
             "day": "Tuesday",
             "start_time": 600,
             "end_time": 2100,
             "end_next_day": false,
-            "notes": "Divine Mercy Chapel open daily for Eucharistic Adoration"
+            "notes": "Divine Mercy Chapel"
           },
           {
             "day": "Wednesday",
             "start_time": 600,
             "end_time": 2100,
             "end_next_day": false,
-            "notes": "Divine Mercy Chapel open daily for Eucharistic Adoration"
+            "notes": "Divine Mercy Chapel"
           },
           {
             "day": "Thursday",
             "start_time": 600,
             "end_time": 2100,
             "end_next_day": false,
-            "notes": "Divine Mercy Chapel open daily for Eucharistic Adoration"
+            "notes": "Divine Mercy Chapel"
           },
           {
             "day": "Friday",
             "start_time": 600,
             "end_time": 2100,
             "end_next_day": false,
-            "notes": "Divine Mercy Chapel open daily for Eucharistic Adoration"
+            "notes": "Divine Mercy Chapel"
           },
           {
             "day": "Saturday",
             "start_time": 600,
             "end_time": 2100,
             "end_next_day": false,
-            "notes": "Divine Mercy Chapel open daily for Eucharistic Adoration"
+            "notes": "Divine Mercy Chapel"
           }
         ]
       }
@@ -1487,78 +1264,35 @@
       "parish_id": "1532",
       "parish_name": "Saint Mary Magdalene Catholic Community",
       "site_name": "St. Mary Magdalene Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1532/20260830B.pdf",
-      "captured_at": "2026-08-29T16:34:59+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1532/20260906B.pdf",
+      "captured_at": "2026-09-05T16:59:29+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Sunday",
-            "start_time": 830,
-            "end_time": 2100,
-            "end_next_day": false,
-            "notes": "Chapel hours listed as daily 8:30am-9:00pm (applies all days)"
-          },
-          {
-            "day": "Monday",
-            "start_time": 830,
-            "end_time": 2100,
-            "end_next_day": false,
-            "notes": "Chapel hours (daily)"
-          },
-          {
-            "day": "Tuesday",
-            "start_time": 830,
-            "end_time": 2100,
-            "end_next_day": false,
-            "notes": "Chapel hours (daily)"
-          },
-          {
-            "day": "Wednesday",
-            "start_time": 830,
-            "end_time": 2100,
-            "end_next_day": false,
-            "notes": "Chapel hours (daily)"
-          },
-          {
-            "day": "Thursday",
-            "start_time": 830,
-            "end_time": 2100,
-            "end_next_day": false,
-            "notes": "Chapel hours (daily)"
-          },
-          {
-            "day": "Friday",
-            "start_time": 830,
-            "end_time": 2100,
-            "end_next_day": false,
-            "notes": "Chapel hours (daily)"
-          },
-          {
-            "day": "Saturday",
-            "start_time": 830,
-            "end_time": 2100,
-            "end_next_day": false,
-            "notes": "Chapel hours (daily)"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "1548",
       "parish_name": "Saint Therese Parish",
-      "site_name": "St. Therese Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1548/20260830B.pdf",
-      "captured_at": "2026-08-29T16:33:16+00:00",
+      "site_name": "St. Therese Parish (Main Church)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1548/20260906B.pdf",
+      "captured_at": "2026-09-05T16:57:23+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
           {
-            "day": "Monday",
-            "start_time": 1800,
+            "day": "Sunday",
+            "start_time": 1000,
             "end_time": null,
             "end_next_day": false,
-            "notes": "Adoration and Rosary"
+            "notes": null
+          },
+          {
+            "day": "Monday",
+            "start_time": 830,
+            "end_time": null,
+            "end_next_day": false,
+            "notes": "Adoration & Rosary"
           }
         ]
       }
@@ -1567,8 +1301,8 @@
       "parish_id": "1572",
       "parish_name": "Saint Monica Catholic Church",
       "site_name": "St. Monica Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1572/20260830B.pdf",
-      "captured_at": "2026-08-29T16:34:22+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1572/20260906B.pdf",
+      "captured_at": "2026-09-05T16:58:16+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1577,7 +1311,7 @@
             "start_time": 830,
             "end_time": 900,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration following Mass (end time not specified)"
+            "notes": null
           }
         ]
       }
@@ -1585,9 +1319,9 @@
     {
       "parish_id": "1584",
       "parish_name": "Saint Martin of Tours Parish",
-      "site_name": "St. Martin of Tours Catholic Church (Main Campus)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1584/20260830B.pdf",
-      "captured_at": "2026-08-29T16:35:53+00:00",
+      "site_name": "St. Martin of Tours Catholic Church (Valley City)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1584/20260906B.pdf",
+      "captured_at": "2026-09-05T17:00:25+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1596,49 +1330,49 @@
             "start_time": 700,
             "end_time": 2100,
             "end_next_day": false,
-            "notes": "Adoration"
+            "notes": null
           },
           {
             "day": "Tuesday",
             "start_time": 700,
             "end_time": 2100,
             "end_next_day": false,
-            "notes": "Adoration"
+            "notes": null
           },
           {
             "day": "Wednesday",
             "start_time": 700,
             "end_time": 2100,
             "end_next_day": false,
-            "notes": "Adoration"
+            "notes": null
           },
           {
             "day": "Thursday",
             "start_time": 700,
             "end_time": 2100,
             "end_next_day": false,
-            "notes": "Adoration"
+            "notes": null
           },
           {
             "day": "Friday",
             "start_time": 700,
             "end_time": 2100,
             "end_next_day": false,
-            "notes": "Adoration"
+            "notes": null
           },
           {
             "day": "Saturday",
             "start_time": 700,
             "end_time": 1900,
             "end_next_day": false,
-            "notes": "Adoration"
+            "notes": null
           },
           {
             "day": "Sunday",
             "start_time": 700,
             "end_time": 1900,
             "end_next_day": false,
-            "notes": "Adoration"
+            "notes": null
           }
         ]
       }
@@ -1647,41 +1381,19 @@
       "parish_id": "15918",
       "parish_name": "Church of the Holy Angels",
       "site_name": "Church of the Holy Angels",
-      "bulletin_url": "https://files.ecatholic.com/15918/bulletins/20260823.pdf",
-      "captured_at": "2026-08-29T16:42:23+00:00",
+      "bulletin_url": "https://files.ecatholic.com/15918/bulletins/20260830.pdf",
+      "captured_at": "2026-09-05T17:08:10+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Monday",
-            "start_time": 1830,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": null
-          },
-          {
-            "day": "Friday",
-            "start_time": 930,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": null
-          },
-          {
-            "day": "Friday",
-            "start_time": 1900,
-            "end_time": 1000,
-            "end_next_day": true,
-            "notes": "Overnight Eucharistic Adoration (First Friday/Saturday); Mass held Saturday at 10:00am for First Saturday devotion"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "1608",
       "parish_name": "Sacred Heart of Jesus Catholic Church",
       "site_name": "Sacred Heart of Jesus Catholic Church (Wadsworth)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1608/20260830B.pdf",
-      "captured_at": "2026-08-29T16:40:10+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1608/20260906B.pdf",
+      "captured_at": "2026-09-05T17:05:44+00:00",
       "adoration": {
         "is_perpetual": true,
         "times": []
@@ -1691,8 +1403,8 @@
       "parish_id": "1639",
       "parish_name": "Saint Michael Catholic Church",
       "site_name": "St. Michael Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1639/20260830B.pdf",
-      "captured_at": "2026-08-29T16:34:30+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1639/20260906B.pdf",
+      "captured_at": "2026-09-05T16:58:50+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -1701,9 +1413,9 @@
     {
       "parish_id": "1687",
       "parish_name": "Church of the Gesu",
-      "site_name": "Church of the Gesu (main church & campus)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1687/20260830B.pdf",
-      "captured_at": "2026-08-29T16:42:34+00:00",
+      "site_name": "Church of the Gesu",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1687/20260906B.pdf",
+      "captured_at": "2026-09-05T17:08:14+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1712,7 +1424,7 @@
             "start_time": 1500,
             "end_time": 1600,
             "end_next_day": false,
-            "notes": null
+            "notes": "Marian Chapel"
           }
         ]
       }
@@ -1721,8 +1433,8 @@
       "parish_id": "1704",
       "parish_name": "Saint Ladislas Church",
       "site_name": "St. Ladislas Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1704/20260830B.pdf",
-      "captured_at": "2026-08-29T16:36:25+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1704/20260906B.pdf",
+      "captured_at": "2026-09-05T17:00:48+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1746,9 +1458,9 @@
     {
       "parish_id": "1714",
       "parish_name": "Saint Noel Parish",
-      "site_name": "Saint Noel Parish",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1714/20260830B.pdf",
-      "captured_at": "2026-08-29T16:34:19+00:00",
+      "site_name": "Saint Noel Parish (Main Church)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1714/20260906B.pdf",
+      "captured_at": "2026-09-05T16:58:15+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1757,7 +1469,7 @@
             "start_time": 900,
             "end_time": 1800,
             "end_next_day": false,
-            "notes": "Rosary following"
+            "notes": null
           }
         ]
       }
@@ -1765,9 +1477,9 @@
     {
       "parish_id": "1733",
       "parish_name": "Church of the Resurrection",
-      "site_name": "Church of the Resurrection",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1733/20260830B.pdf",
-      "captured_at": "2026-08-29T16:40:26+00:00",
+      "site_name": "Church of the Resurrection (Main Church)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1733/20260906B.pdf",
+      "captured_at": "2026-09-05T17:05:44+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -1777,8 +1489,8 @@
       "parish_id": "1734",
       "parish_name": "Saint Eugene Catholic Church",
       "site_name": "St. Eugene Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1734/20260830B.pdf",
-      "captured_at": "2026-08-29T16:37:46+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1734/20260906B.pdf",
+      "captured_at": "2026-09-05T17:02:15+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -1788,8 +1500,8 @@
       "parish_id": "1736",
       "parish_name": "Saint Anselm Catholic Church",
       "site_name": "St. Anselm Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1736/20260830B.pdf",
-      "captured_at": "2026-08-29T16:39:24+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1736/20260906B.pdf",
+      "captured_at": "2026-09-05T17:04:11+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1807,27 +1519,19 @@
       "parish_id": "1759",
       "parish_name": "Saint Elizabeth Ann Seton Roman Catholic Parish",
       "site_name": "St. Elizabeth Ann Seton Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1759/20260830B.pdf",
-      "captured_at": "2026-08-29T16:37:46+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1759/20260906B.pdf",
+      "captured_at": "2026-09-05T17:02:18+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Monday",
-            "start_time": 1200,
-            "end_time": 1300,
-            "end_next_day": false,
-            "notes": "Eucharistic Holy Hour (Sept. 14, 2026)"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "1772",
       "parish_name": "Saint Rita Parish",
-      "site_name": "Saint Rita Parish (Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1772/20260830B.pdf",
-      "captured_at": "2026-08-29T16:33:32+00:00",
+      "site_name": "Saint Rita Parish (Main Church Campus)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1772/20260906B.pdf",
+      "captured_at": "2026-09-05T16:57:32+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1844,28 +1548,20 @@
     {
       "parish_id": "1776",
       "parish_name": "Saint Mark Parish",
-      "site_name": "St. Mark Parish (Main Church)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1776/20260830B.pdf",
-      "captured_at": "2026-08-29T16:36:01+00:00",
+      "site_name": "St. Mark Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1776/20260906B.pdf",
+      "captured_at": "2026-09-05T17:00:17+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Friday",
-            "start_time": 1600,
-            "end_time": 1700,
-            "end_next_day": false,
-            "notes": "Eucharistic Adoration / First Friday 'Family Holy Hour' (confession available)"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "1786",
       "parish_name": "Saint Teresa of Avila Parish",
       "site_name": "St. Teresa of Avila Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0147/20260830B.pdf",
-      "captured_at": "2026-08-29T16:39:17+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/0147/20260906B.pdf",
+      "captured_at": "2026-09-05T17:04:10+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1883,8 +1579,8 @@
       "parish_id": "1794",
       "parish_name": "Saint Vincent de Paul Catholic Church - Akron",
       "site_name": "St. Vincent de Paul Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1794/20260830B.pdf",
-      "captured_at": "2026-08-29T16:33:02+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1794/20260906B.pdf",
+      "captured_at": "2026-09-05T16:57:09+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1902,57 +1598,49 @@
       "parish_id": "1806",
       "parish_name": "Saints Robert & William",
       "site_name": "Ss. Robert & William Catholic Parish",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1806/20260830B.pdf",
-      "captured_at": "2026-08-29T16:32:30+00:00",
-      "adoration": {
-        "is_perpetual": false,
-        "times": [
-          {
-            "day": "Thursday",
-            "start_time": 1800,
-            "end_time": 1900,
-            "end_next_day": false,
-            "notes": "First Thursdays; '250 hours of Adoration' holy hour for our nation (Ursuline Chapel)"
-          }
-        ]
-      }
-    },
-    {
-      "parish_id": "1806-sjc",
-      "parish_name": "Saint John of the Cross ",
-      "site_name": "St. John of the Cross Catholic Parish",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1806/20260830B.pdf",
-      "captured_at": "2026-08-29T16:32:31+00:00",
-      "adoration": {
-        "is_perpetual": false,
-        "times": [
-          {
-            "day": "Friday",
-            "start_time": 930,
-            "end_time": 1030,
-            "end_next_day": false,
-            "notes": "First Fridays; '250 hours of Adoration' holy hour for our nation"
-          }
-        ]
-      }
-    },
-    {
-      "parish_id": "1810",
-      "parish_name": "Mother of Sorrows Parish",
-      "site_name": "Mother of Sorrows Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1810/20260830B.pdf",
-      "captured_at": "2026-08-29T16:41:13+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1806/20260906B.pdf",
+      "captured_at": "2026-09-05T16:56:10+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
       }
     },
     {
+      "parish_id": "1806-sjc",
+      "parish_name": "Saint John of the Cross ",
+      "site_name": "St. John of the Cross Catholic Parish",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1806/20260906B.pdf",
+      "captured_at": "2026-09-05T16:56:14+00:00",
+      "adoration": {
+        "is_perpetual": false,
+        "times": []
+      }
+    },
+    {
+      "parish_id": "1810",
+      "parish_name": "Mother of Sorrows Parish",
+      "site_name": "Mother of Sorrows Catholic Church",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1810/20260906B.pdf",
+      "captured_at": "2026-09-05T17:06:46+00:00",
+      "adoration": {
+        "is_perpetual": false,
+        "times": [
+          {
+            "day": "Wednesday",
+            "start_time": 1800,
+            "end_time": null,
+            "end_next_day": false,
+            "notes": "Eucharistic Adoration"
+          }
+        ]
+      }
+    },
+    {
       "parish_id": "1814",
       "parish_name": "Saint Raphael Catholic Church",
-      "site_name": "St. Raphael Catholic Church (Main Campus)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1814/20260830B.pdf",
-      "captured_at": "2026-08-29T16:33:50+00:00",
+      "site_name": "St. Raphael Catholic Church (Bay Village)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1814/20260906B.pdf",
+      "captured_at": "2026-09-05T16:57:40+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -1961,7 +1649,7 @@
             "start_time": 1000,
             "end_time": 1600,
             "end_next_day": true,
-            "notes": "In the Franciscan Chapel (continues overnight into Saturday)"
+            "notes": "In the Franciscan Chapel (until Saturday 4:00pm)"
           }
         ]
       }
@@ -1969,9 +1657,9 @@
     {
       "parish_id": "1823",
       "parish_name": "Sacred Heart Chapel",
-      "site_name": "Sacred Heart Chapel (Capilla del Sagrado Corazon)",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1823/20260830B.pdf",
-      "captured_at": "2026-08-29T16:40:18+00:00",
+      "site_name": "Sacred Heart Chapel (Capilla del Sagrado Coraz\u00f3n)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1823/20260906B.pdf",
+      "captured_at": "2026-09-05T17:05:22+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -1981,8 +1669,8 @@
       "parish_id": "1831",
       "parish_name": "Church of Saint Dominic",
       "site_name": "Church of St. Dominic",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1831/20260830B.pdf",
-      "captured_at": "2026-08-29T16:38:03+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1831/20260906B.pdf",
+      "captured_at": "2026-09-05T17:02:48+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -1992,8 +1680,8 @@
       "parish_id": "1841",
       "parish_name": "Saint Rocco Catholic Church",
       "site_name": "Saint Rocco Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1841/20260830B.pdf",
-      "captured_at": "2026-08-29T16:33:27+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1841/20260906B.pdf",
+      "captured_at": "2026-09-05T16:57:22+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2002,14 +1690,14 @@
             "start_time": 700,
             "end_time": 1900,
             "end_next_day": false,
-            "notes": "Every Tuesday"
+            "notes": null
           },
           {
             "day": "Friday",
             "start_time": 1830,
             "end_time": 645,
             "end_next_day": true,
-            "notes": "Every First Friday 6:30pm to Saturday 6:45am (all night)"
+            "notes": "First Friday (all night) into Saturday"
           }
         ]
       }
@@ -2018,8 +1706,8 @@
       "parish_id": "1855",
       "parish_name": "Saint Luke",
       "site_name": "St. Luke Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1855/20260830B.pdf",
-      "captured_at": "2026-08-29T16:36:12+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1855/20260906B.pdf",
+      "captured_at": "2026-09-05T17:00:39+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2029,27 +1717,19 @@
       "parish_id": "1855-clem",
       "parish_name": "Saint Clement - Lakewood",
       "site_name": "St. Clement Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1855/20260830B.pdf",
-      "captured_at": "2026-08-29T16:36:14+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1855/20260906B.pdf",
+      "captured_at": "2026-09-05T17:00:41+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Sunday",
-            "start_time": 0,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "Daily at St. Clement Parish (Call office for info)"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "1855-james",
       "parish_name": "Saint James",
       "site_name": "St. James Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1855/20260830B.pdf",
-      "captured_at": "2026-08-29T16:36:16+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1855/20260906B.pdf",
+      "captured_at": "2026-09-05T17:00:43+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2059,8 +1739,8 @@
       "parish_id": "1883",
       "parish_name": "Saint Agnes + Our Lady of Fatima Catholic Church",
       "site_name": "St. Agnes + Our Lady of Fatima Catholic Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1883/20260830B.pdf",
-      "captured_at": "2026-08-29T16:39:44+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1883/20260906B.pdf",
+      "captured_at": "2026-09-05T17:04:39+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2070,8 +1750,8 @@
       "parish_id": "1900",
       "parish_name": "Saint Augustine Church",
       "site_name": "Saint Augustine Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1900/20260830B.pdf",
-      "captured_at": "2026-08-29T16:39:01+00:00",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1900/20260906B.pdf",
+      "captured_at": "2026-09-05T17:03:50+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2080,9 +1760,9 @@
     {
       "parish_id": "1905",
       "parish_name": "Saint Patrick Parish",
-      "site_name": "St. Patrick (STP) Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1905/20260830B.pdf",
-      "captured_at": "2026-08-29T16:34:13+00:00",
+      "site_name": "St. Patrick (STP)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1905/20260906B.pdf",
+      "captured_at": "2026-09-05T16:58:22+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2091,7 +1771,7 @@
             "start_time": 1800,
             "end_time": 2000,
             "end_next_day": false,
-            "notes": "After the 5:30pm Mass; in the Rectory Chapel"
+            "notes": "Rectory Chapel (after the 5:30pm Mass)"
           }
         ]
       }
@@ -2099,9 +1779,9 @@
     {
       "parish_id": "1905-smo",
       "parish_name": "Saint Malachi Oratory",
-      "site_name": "St. Malachi (SMO) Church",
-      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1905/20260830B.pdf",
-      "captured_at": "2026-08-29T16:34:15+00:00",
+      "site_name": "St. Malachi (SMO)",
+      "bulletin_url": "https://container.parishesonline.com/bulletins/14/1905/20260906B.pdf",
+      "captured_at": "2026-09-05T16:58:24+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2111,8 +1791,8 @@
       "parish_id": "20812",
       "parish_name": "Saint Stephen Catholic Church",
       "site_name": "St. Stephen Catholic Church (West Salem)",
-      "bulletin_url": "https://files.ecatholic.com/20812/bulletins/20260830.pdf",
-      "captured_at": "2026-08-29T16:33:19+00:00",
+      "bulletin_url": "https://files.ecatholic.com/20812/bulletins/20260906.pdf",
+      "captured_at": "2026-09-05T16:57:12+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2129,28 +1809,20 @@
     {
       "parish_id": "20822",
       "parish_name": "Saint Michael the Archangel Parish",
-      "site_name": "Saint Michael the Archangel Parish (Main Church & Chapel)",
+      "site_name": "Saint Michael the Archangel Parish (Main Church)",
       "bulletin_url": "https://files.ecatholic.com/20822/bulletins/20260830.pdf",
-      "captured_at": "2026-08-29T16:34:28+00:00",
+      "captured_at": "2026-09-05T16:58:34+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Friday",
-            "start_time": 1800,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "Eucharistic Adoration / Adoraci\u00f3n Eucar\u00edstica (listed in upcoming events)"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "21865",
       "parish_name": "Queen of Heaven Parish",
-      "site_name": "Queen of Heaven Parish (Main Church Campus)",
-      "bulletin_url": "https://files.ecatholic.com/21865/bulletins/20260830.pdf",
-      "captured_at": "2026-08-29T16:32:30+00:00",
+      "site_name": "Queen of Heaven Parish (Main Campus)",
+      "bulletin_url": "https://files.ecatholic.com/21865/bulletins/20260906.pdf",
+      "captured_at": "2026-09-05T16:56:10+00:00",
       "adoration": {
         "is_perpetual": true,
         "times": []
@@ -2159,9 +1831,9 @@
     {
       "parish_id": "22544",
       "parish_name": "Saint Bernard Parish",
-      "site_name": "St. Bernard Catholic Church (Saint Bernard Parish)",
-      "bulletin_url": "https://files.ecatholic.com/22544/bulletins/20260830.pdf",
-      "captured_at": "2026-08-29T16:38:45+00:00",
+      "site_name": "Saint Bernard Parish",
+      "bulletin_url": "https://files.ecatholic.com/22544/bulletins/20260906.pdf",
+      "captured_at": "2026-09-05T17:03:52+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2171,8 +1843,8 @@
       "parish_id": "23926",
       "parish_name": "Saint Mary Parish",
       "site_name": "St. Mary Parish (Main Church)",
-      "bulletin_url": "https://files.ecatholic.com/23926/bulletins/20260830.pdf",
-      "captured_at": "2026-08-29T16:35:21+00:00",
+      "bulletin_url": "https://files.ecatholic.com/23926/bulletins/20260906.pdf",
+      "captured_at": "2026-09-05T16:59:40+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2181,7 +1853,7 @@
             "start_time": 1230,
             "end_time": 1900,
             "end_next_day": false,
-            "notes": "Adoration follows the 12:00 p.m. Mass; Benediction 6:45-7:00 p.m."
+            "notes": "Benediction 6:45\u20137:00 p.m."
           }
         ]
       }
@@ -2190,8 +1862,8 @@
       "parish_id": "2452",
       "parish_name": "Saint John Nepomucene Parish",
       "site_name": "St. John Nepomucene Catholic Church",
-      "bulletin_url": "https://files.ecatholic.com/2452/bulletins/20260830.pdf",
-      "captured_at": "2026-08-29T16:37:02+00:00",
+      "bulletin_url": "https://files.ecatholic.com/2452/bulletins/20260906.pdf",
+      "captured_at": "2026-09-05T17:01:38+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2201,19 +1873,19 @@
       "parish_id": "2492",
       "parish_name": "Saint Charles Borromeo Parish",
       "site_name": "St. Charles Borromeo Church",
-      "bulletin_url": "https://files.ecatholic.com/2492/bulletins/20260823.pdf",
-      "captured_at": "2026-08-29T16:38:33+00:00",
+      "bulletin_url": "https://files.ecatholic.com/2492/bulletins/20260906.pdf",
+      "captured_at": "2026-09-05T17:03:18+00:00",
       "adoration": {
-        "is_perpetual": false,
+        "is_perpetual": true,
         "times": []
       }
     },
     {
       "parish_id": "26778",
       "parish_name": "Saint Patrick Church",
-      "site_name": "St. Patrick Church",
-      "bulletin_url": "https://files.ecatholic.com/26778/bulletins/20260830.pdf",
-      "captured_at": "2026-08-29T16:33:57+00:00",
+      "site_name": "St. Patrick Church (Thompson)",
+      "bulletin_url": "https://files.ecatholic.com/26778/bulletins/20260906.pdf",
+      "captured_at": "2026-09-05T16:57:52+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2222,9 +1894,9 @@
     {
       "parish_id": "29182",
       "parish_name": "Saint Mary",
-      "site_name": "St. Mary Parish (Akron)",
-      "bulletin_url": "https://files.ecatholic.com/29182/bulletins/20260830.pdf",
-      "captured_at": "2026-08-29T16:35:39+00:00",
+      "site_name": "St. Mary of the Assumption Parish",
+      "bulletin_url": "https://files.ecatholic.com/29182/bulletins/20260906.pdf",
+      "captured_at": "2026-09-05T17:00:08+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2234,8 +1906,8 @@
       "parish_id": "29676",
       "parish_name": "Saint Peter Parish",
       "site_name": "St. Peter Parish (Main Church & Parish Center Chapel)",
-      "bulletin_url": "https://files.ecatholic.com/29676/bulletins/20260830.pdf",
-      "captured_at": "2026-08-29T16:33:48+00:00",
+      "bulletin_url": "https://files.ecatholic.com/29676/bulletins/20260906.pdf",
+      "captured_at": "2026-09-05T16:57:40+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2245,8 +1917,8 @@
       "parish_id": "30803",
       "parish_name": "Our Lady of Grace Catholic Church",
       "site_name": "Our Lady of Grace Catholic Church",
-      "bulletin_url": "https://files.ecatholic.com/30803/bulletins/20260830.pdf",
-      "captured_at": "2026-08-29T16:40:55+00:00",
+      "bulletin_url": "https://files.ecatholic.com/30803/bulletins/20260906.pdf",
+      "captured_at": "2026-09-05T17:06:34+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2264,8 +1936,8 @@
       "parish_id": "37345",
       "parish_name": "Saint Justin Martyr Church",
       "site_name": "St. Justin Martyr Church",
-      "bulletin_url": "https://files.ecatholic.com/37345/bulletins/20260830.pdf",
-      "captured_at": "2026-08-29T16:36:34+00:00",
+      "bulletin_url": "https://files.ecatholic.com/37345/bulletins/20260831.pdf",
+      "captured_at": "2026-09-05T17:00:53+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2274,14 +1946,35 @@
             "start_time": 900,
             "end_time": 1500,
             "end_next_day": false,
-            "notes": "In the Chapel; scheduled hours adjusted due to business hours"
+            "notes": null
+          },
+          {
+            "day": "Tuesday",
+            "start_time": 900,
+            "end_time": 1500,
+            "end_next_day": false,
+            "notes": null
+          },
+          {
+            "day": "Wednesday",
+            "start_time": 900,
+            "end_time": 1500,
+            "end_next_day": false,
+            "notes": null
+          },
+          {
+            "day": "Thursday",
+            "start_time": 900,
+            "end_time": 1500,
+            "end_next_day": false,
+            "notes": null
           },
           {
             "day": "Friday",
             "start_time": 900,
             "end_time": 1500,
             "end_next_day": false,
-            "notes": "In the Chapel; scheduled hours adjusted due to business hours"
+            "notes": null
           }
         ]
       }
@@ -2291,7 +1984,7 @@
       "parish_name": "Holy Rosary Church",
       "site_name": "Holy Rosary Church",
       "bulletin_url": "https://files.ecatholic.com/5217/bulletins/20260830.pdf",
-      "captured_at": "2026-08-29T16:42:03+00:00",
+      "captured_at": "2026-09-05T17:07:45+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2307,7 +2000,7 @@
             "start_time": 1245,
             "end_time": 1345,
             "end_next_day": false,
-            "notes": "First Friday; Exposition after 12:15 p.m. Mass"
+            "notes": "First Friday (after 12:15 p.m. Mass)"
           }
         ]
       }
@@ -2316,8 +2009,8 @@
       "parish_id": "5493",
       "parish_name": "Saint Paschal Baylon",
       "site_name": "Saint Paschal Baylon Church",
-      "bulletin_url": "https://files.ecatholic.com/5493/bulletins/20260830.pdf",
-      "captured_at": "2026-08-29T16:34:08+00:00",
+      "bulletin_url": "https://files.ecatholic.com/5493/bulletins/20260906.pdf",
+      "captured_at": "2026-09-05T16:58:26+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2326,7 +2019,7 @@
             "start_time": 930,
             "end_time": 2000,
             "end_next_day": false,
-            "notes": "Exposition of the Blessed Sacrament (in church)"
+            "notes": "Exposition of the Blessed Sacrament"
           }
         ]
       }
@@ -2335,8 +2028,8 @@
       "parish_id": "amherst",
       "parish_name": "Saint Joseph",
       "site_name": "St. Joseph Parish",
-      "bulletin_url": "https://stjosephamherst.com/wp-content/uploads/2026/08/Joseph-Nativity-Amherst-8-23.pdf",
-      "captured_at": "2026-08-29T16:36:50+00:00",
+      "bulletin_url": "https://stjosephamherst.com/wp-content/uploads/2026/08/Joseph-Nativity-Amherst-8-30.pdf",
+      "captured_at": "2026-09-05T17:01:17+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2346,8 +2039,8 @@
       "parish_id": "amherst-bvm",
       "parish_name": "Nativity of the Blessed Virgin Mary, South Amherst.",
       "site_name": "Nativity of the Blessed Virgin Mary (BVM) Parish",
-      "bulletin_url": "https://stjosephamherst.com/wp-content/uploads/2026/08/Joseph-Nativity-Amherst-8-23.pdf",
-      "captured_at": "2026-08-29T16:36:52+00:00",
+      "bulletin_url": "https://stjosephamherst.com/wp-content/uploads/2026/08/Joseph-Nativity-Amherst-8-30.pdf",
+      "captured_at": "2026-09-05T17:01:19+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2356,35 +2049,35 @@
             "start_time": 1100,
             "end_time": 2200,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration (NBVM)"
+            "notes": null
           },
           {
             "day": "Tuesday",
             "start_time": 1100,
             "end_time": 2200,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration (NBVM)"
+            "notes": null
           },
           {
             "day": "Wednesday",
             "start_time": 1100,
             "end_time": 2200,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration (NBVM)"
+            "notes": null
           },
           {
             "day": "Thursday",
             "start_time": 1100,
             "end_time": 2200,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration (NBVM)"
+            "notes": null
           },
           {
             "day": "Friday",
             "start_time": 1100,
             "end_time": 2200,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration (NBVM)"
+            "notes": null
           }
         ]
       }
@@ -2393,8 +2086,8 @@
       "parish_id": "bearer",
       "parish_name": "Saint Edward, Parkman",
       "site_name": "Saint Edward, Parkman",
-      "bulletin_url": "https://www.ssedwardlucy.com/uploads/1/3/2/1/132124471/august_23_2026.pdf",
-      "captured_at": "2026-08-29T16:37:53+00:00",
+      "bulletin_url": "https://www.ssedwardlucy.com/uploads/1/3/2/1/132124471/august_30_2026.pdf",
+      "captured_at": "2026-09-05T17:02:31+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2403,7 +2096,7 @@
             "start_time": 1000,
             "end_time": 1800,
             "end_next_day": false,
-            "notes": "Adoration (in the chapel)"
+            "notes": "Chapel"
           },
           {
             "day": "Thursday",
@@ -2438,8 +2131,8 @@
       "parish_id": "holy-family-parma-oh",
       "parish_name": "Holy Family Parish",
       "site_name": "Holy Family Parish (Church & Chapel)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=NjAUUnX17sg9dyNY7MdNIsZybg4gww3sx3%2FW7Kv%2BRS9jpZEtFgTkIym%2Fw3PRvzqTo9hkjSrngeDE4ZmFQzbHfjSKldjLXDXYljwzlMvlxdA%3D",
-      "captured_at": "2026-08-29T16:42:33+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=%2BwrUFXpD%2BUZ4Sc8v3VXIKWFFjzqJFEDk03RXo6Y7GYEuOmxDcWFVYgeO7QOPniD5ZJTKhhomkSgg%2B9xX98SAjufl%2FVXu2nmGEIGXnyMwDkk%3D",
+      "captured_at": "2026-09-05T17:08:16+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2448,14 +2141,14 @@
             "start_time": 1900,
             "end_time": 2100,
             "end_next_day": false,
-            "notes": "Exposition in the Church"
+            "notes": "Exposition in the church"
           },
           {
             "day": "Wednesday",
             "start_time": 1330,
             "end_time": 1530,
             "end_next_day": false,
-            "notes": "Exposition in the Chapel"
+            "notes": "Exposition in the chapel"
           }
         ]
       }
@@ -2464,8 +2157,8 @@
       "parish_id": "hs-gh",
       "parish_name": "Holy Spirit Catholic Church",
       "site_name": "Holy Spirit Catholic Church",
-      "bulletin_url": "https://www.holyspiritcleveland.org/wp-content/uploads/2026/08/bulletin_SEPTEMBER.pdf",
-      "captured_at": "2026-08-29T16:41:50+00:00",
+      "bulletin_url": "https://www.holyspiritcleveland.org/wp-content/uploads/2026/09/bulletin_SEPTEMBER.pdf",
+      "captured_at": "2026-09-05T17:07:33+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2474,7 +2167,7 @@
             "start_time": 1600,
             "end_time": 1650,
             "end_next_day": false,
-            "notes": "Holy Rosary at 4:25pm during adoration"
+            "notes": "(Holy Rosary, 4:25 pm)"
           }
         ]
       }
@@ -2483,8 +2176,8 @@
       "parish_id": "immaculate-heart-of-mary-cuyahoga-falls-oh",
       "parish_name": "Immaculate Heart of Mary Church",
       "site_name": "Immaculate Heart of Mary Church",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=1Jh%2BZDe8LknxcdSyrab759IdAug6GBk7T7hENRFQIXz1gu0aCGn1Mn%2Frc0mbo4NN8SDD96WsqbuupXQyF3pLzOXj7OwyGTEK%2BOiOmniMHzs%3D",
-      "captured_at": "2026-08-29T16:41:52+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=dxc4U6rCCML0CB43zlpcILIAiF%2BV4tsDXBHeq%2BJSdXH%2FhNFvUnVxIp8hdOlB8jJiQhjx7muGsigOU%2BhBzfbKABVb5XG76aTQ8T2NV%2BVoGgk%3D",
+      "captured_at": "2026-09-05T17:07:32+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2502,8 +2195,8 @@
       "parish_id": "immat-con-cle",
       "parish_name": "Immaculate Conception, Cleveland",
       "site_name": "Immaculate Conception Oratory",
-      "bulletin_url": "https://institute-christ-king.org/images/cleveland/bulletins/Cleveland_Bulletin_2026-08-23.pdf",
-      "captured_at": "2026-08-29T16:41:44+00:00",
+      "bulletin_url": "https://institute-christ-king.org/images/cleveland/bulletins/Cleveland_Bulletin_2026-08-30.pdf",
+      "captured_at": "2026-09-05T17:07:27+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2513,8 +2206,8 @@
       "parish_id": "nativity-of-blessed-virgin-mary-lorain-oh",
       "parish_name": "Nativity of the Blessed Virgin Mary Parish",
       "site_name": "Nativity of the Blessed Virgin Mary Church",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=Y4QFeO3hw%2FqI2CJAs0icijbGerVasLiiez7u8dFKZdlGZHHeiNsgIAB9cpQTt9U1COhpVuVMZqgbWHPAJjj1jRHGfi95m87w%2BnFvnwbMm9c%3D",
-      "captured_at": "2026-08-29T16:41:40+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=Y6zLkUqoAxzyb60gZoCJXWt9c7jQ%2Fh85XUITeZytsWFVaAdrMBx1X%2BRuLxwjVXavDq%2B9q1H%2FCpm5rqoy4bEotdzgZwjxWoIsJ2f0FAwYH8Y%3D",
+      "captured_at": "2026-09-05T17:07:10+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2532,17 +2225,17 @@
       "parish_id": "olg-m",
       "parish_name": "Our Lady of Guadalupe Parish",
       "site_name": "Our Lady of Guadalupe Church",
-      "bulletin_url": "https://olg.cc/wp-content/uploads/2026/08/20260823-1.pdf",
-      "captured_at": "2026-08-29T16:40:59+00:00",
+      "bulletin_url": "https://olg.cc/wp-content/uploads/2026/08/20260830.pdf",
+      "captured_at": "2026-09-05T17:06:19+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
           {
             "day": "Monday",
             "start_time": 900,
-            "end_time": 800,
+            "end_time": 0,
             "end_next_day": true,
-            "notes": "Perpetual (weekly overnight) from Monday 9:00am to Tuesday 8:00am"
+            "notes": "Chapel (continues until Tuesday 8:00am)"
           },
           {
             "day": "Tuesday",
@@ -2578,9 +2271,9 @@
     {
       "parish_id": "olhc-lodi",
       "parish_name": "Our Lady Help of Christians Catholic Church - Lodi",
-      "site_name": "Lodi Worship Site (Our Lady Help of Christians)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=6Z3cbwBvc8ncj5bMS1fWlvGoQUVbdbUPTk98uUNfmlL8KyMSctK%2BZWUnjx0f6A%2BsSKxOPRuWqQBM5l73bztfbCjde4Uvl%2FSw2imeO8VWkXk%3D",
-      "captured_at": "2026-08-29T16:41:30+00:00",
+      "site_name": "Lodi Worship Site",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=LfSp2tAasQ1TKNKrnxoMi6C54wJkBEop%2FuLbsMD0gl415f03sQ9tNIzoMETxZdr2RewjJlGdacW%2BU%2BBDLlBLFr4HGKyyQOjk8HUJQiUlkHs%3D",
+      "captured_at": "2026-09-05T17:07:19+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2589,9 +2282,9 @@
     {
       "parish_id": "olhc-nova",
       "parish_name": "Our Lady Help of Christians Catholic Church - Nova",
-      "site_name": "Nova Worship Site (Our Lady Help of Christians)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=6Z3cbwBvc8ncj5bMS1fWlvGoQUVbdbUPTk98uUNfmlL8KyMSctK%2BZWUnjx0f6A%2BsSKxOPRuWqQBM5l73bztfbCjde4Uvl%2FSw2imeO8VWkXk%3D",
-      "captured_at": "2026-08-29T16:41:32+00:00",
+      "site_name": "Nova Worship Site",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=LfSp2tAasQ1TKNKrnxoMi6C54wJkBEop%2FuLbsMD0gl415f03sQ9tNIzoMETxZdr2RewjJlGdacW%2BU%2BBDLlBLFr4HGKyyQOjk8HUJQiUlkHs%3D",
+      "captured_at": "2026-09-05T17:07:20+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2600,9 +2293,9 @@
     {
       "parish_id": "olhc-seville",
       "parish_name": "Our Lady Help of Christians Catholic Church - Seville",
-      "site_name": "Seville Worship Site (Our Lady Help of Christians)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=6Z3cbwBvc8ncj5bMS1fWlvGoQUVbdbUPTk98uUNfmlL8KyMSctK%2BZWUnjx0f6A%2BsSKxOPRuWqQBM5l73bztfbCjde4Uvl%2FSw2imeO8VWkXk%3D",
-      "captured_at": "2026-08-29T16:41:33+00:00",
+      "site_name": "Seville Worship Site",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=LfSp2tAasQ1TKNKrnxoMi6C54wJkBEop%2FuLbsMD0gl415f03sQ9tNIzoMETxZdr2RewjJlGdacW%2BU%2BBDLlBLFr4HGKyyQOjk8HUJQiUlkHs%3D",
+      "captured_at": "2026-09-05T17:07:22+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2611,28 +2304,20 @@
     {
       "parish_id": "our-lady-help-of-christians-litchfield-oh",
       "parish_name": "Our Lady Help of Christians Catholic Church - Litchfield",
-      "site_name": "Litchfield Worship Site (Our Lady Help of Christians)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=6Z3cbwBvc8ncj5bMS1fWlvGoQUVbdbUPTk98uUNfmlL8KyMSctK%2BZWUnjx0f6A%2BsSKxOPRuWqQBM5l73bztfbCjde4Uvl%2FSw2imeO8VWkXk%3D",
-      "captured_at": "2026-08-29T16:41:26+00:00",
+      "site_name": "Litchfield Worship Site (and Administrative Offices)",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=LfSp2tAasQ1TKNKrnxoMi6C54wJkBEop%2FuLbsMD0gl415f03sQ9tNIzoMETxZdr2RewjJlGdacW%2BU%2BBDLlBLFr4HGKyyQOjk8HUJQiUlkHs%3D",
+      "captured_at": "2026-09-05T17:07:18+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Friday",
-            "start_time": 1800,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "First Friday of the month adoration"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "our-lady-of-angels-cleveland-oh",
       "parish_name": "Our Lady of Angels",
-      "site_name": "Our Lady of Angels Catholic Church",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=UtJEwG8wfiCncoCXSHQLHGfujYV5khMNbhKTkxDRDR87XBqn2gaMSOoq4R8fiSweJTqxKAePWubN2RTOFIvYQch2AAIFo7ns9HGIC9jwExc%3D",
-      "captured_at": "2026-08-29T16:41:16+00:00",
+      "site_name": "Our Lady of Angels Church",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=wZ8aDUXM5sreBHyDwIq632B%2BVuU3TbB8gXCWuIA0a1brdpxpawYOEUYQWqejHpzzFnkLa8PAyYgDrl1tRRPW0U71rM4qbWpDWWS0ZPah6aI%3D",
+      "captured_at": "2026-09-05T17:07:02+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2692,27 +2377,19 @@
       "parish_id": "our-lady-of-lourdes-cleveland-oh",
       "parish_name": "Our Lady of Lourdes Parish",
       "site_name": "Our Lady of Lourdes Parish",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=JoC%2F8X7Nw6ZoC9ySehA88EzlfofV%2F6OLtMzhI8FPQBpY%2FPNK6jEi0O6BdQPxXpUx1a5XItnCrznhXnEDKsGuQcoW2DaUM9qwS6PbxJTwcO0%3D",
-      "captured_at": "2026-08-29T16:41:01+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=ewqlwFkEvfdeevFH7XxUAzStw23gBp7PDR0bnye2bzC%2FaVzl8QH3TW8P8X%2BzIHuMKD8Hc4lZ523FESRz9%2B3a60ltr26rfgtgTuT%2BURc7rDo%3D",
+      "captured_at": "2026-09-05T17:06:30+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Thursday",
-            "start_time": 1900,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": "Hora Santa (Holy Hour) following the 7:00 PM Mass"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "our-lady-of-mount-carmel-wickliffe-oh",
       "parish_name": "Our Lady of Mt. Carmel Church",
       "site_name": "Our Lady of Mt. Carmel Church",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=QJ5%2Bbv%2FEAMwMWr91wZndzlzdcktXdMl%2FI63TPCzKmJZIAKbyaG98tUc86OU5%2Fr%2FqysGoWfH8FEsMXpyD3bviE0HDplE0by1duIehJdMVLhg%3D",
-      "captured_at": "2026-08-29T16:40:52+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=GFGUWI6Zc%2F8fbQP1VpevAALIO03PJGIQInXHv3pcGu2wdBWTDWT2dUAo4dMiWSLOnWP0T3lHd6tmcSMqcktTrZkYxMKTGzkUDdhXajv4xWc%3D",
+      "captured_at": "2026-09-05T17:06:20+00:00",
       "adoration": {
         "is_perpetual": true,
         "times": []
@@ -2722,8 +2399,8 @@
       "parish_id": "our-lady-of-victory-tallmadge-oh",
       "parish_name": "Our Lady of Victory Church",
       "site_name": "Our Lady of Victory Parish (Main Church)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=5qp187nPpphmz3j1zEgLULnf%2BnfZOHEiJ4vj5mUAGvrkPQNc0MIuiDWChJrETu%2B681eJTQybsP4H5VF3WpLAPzuDSVmHqUUmU9JZX2uu2R8%3D",
-      "captured_at": "2026-08-29T16:40:37+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=6D6KbwPwZFqoAe9Kbv6HzhXGeCvIGHuVem%2BKa%2FPF2qSfOy8UWcHz3pXN4MsRZA915na9iBSQSghLp9ofaZ3J103kbxzG3zc8Brz5XsibkoA%3D",
+      "captured_at": "2026-09-05T17:05:57+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2734,16 +2411,16 @@
       "parish_name": "Saint Agnes Church (Orrville, Ohio)",
       "site_name": "St. Agnes Church (Orrville)",
       "bulletin_url": "https://irp.cdn-website.com/e66a8a1f/files/uploaded/Agnes+Orrville+8-23.pdf",
-      "captured_at": "2026-08-29T16:39:38+00:00",
+      "captured_at": "2026-09-05T17:04:42+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
           {
             "day": "Thursday",
-            "start_time": 845,
+            "start_time": 900,
             "end_time": 2045,
             "end_next_day": false,
-            "notes": "Begins after the 8:15 a.m. Mass; concludes with Benediction at 8:45 p.m."
+            "notes": "After the 8:15 a.m. Mass; concludes with Benediction at 8:45 p.m."
           }
         ]
       }
@@ -2752,8 +2429,8 @@
       "parish_id": "saint-agnes-elyria-oh",
       "parish_name": "Saint Agnes - Elyria",
       "site_name": "Saint Agnes Catholic Church",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=45rNv%2BaPWFV9ZFtaJ4gU6CMqLxadJzDpKryMZ%2BQf%2BmmU6l5D4pECuNEB0ihxkfR8IdsKv9mSsXipod2Pvfhf4aXrcI6uD%2FQQLGqAFtc%2BZDU%3D",
-      "captured_at": "2026-08-29T16:40:10+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=M3dZpxuZgGsWPTyuQHOTiCYsy4NN6fnzzQLflyEC2ElxdQnHlzNNrqSfKMiS2yHoDGKM83Lhw4%2BpdzpPv46zSefCeYl0nV3IoKhhZ2qgsUA%3D",
+      "captured_at": "2026-09-05T17:05:01+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2771,8 +2448,8 @@
       "parish_id": "saint-agnes-elyria-oh-ola",
       "parish_name": "Saint Mary (Our Lady of the Assumption) - Elyria",
       "site_name": "Saint Mary Catholic Church (Our Lady of the Assumption)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=45rNv%2BaPWFV9ZFtaJ4gU6CMqLxadJzDpKryMZ%2BQf%2BmmU6l5D4pECuNEB0ihxkfR8IdsKv9mSsXipod2Pvfhf4aXrcI6uD%2FQQLGqAFtc%2BZDU%3D",
-      "captured_at": "2026-08-29T16:40:12+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=M3dZpxuZgGsWPTyuQHOTiCYsy4NN6fnzzQLflyEC2ElxdQnHlzNNrqSfKMiS2yHoDGKM83Lhw4%2BpdzpPv46zSefCeYl0nV3IoKhhZ2qgsUA%3D",
+      "captured_at": "2026-09-05T17:05:03+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2781,7 +2458,7 @@
             "start_time": 930,
             "end_time": 1130,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration (Lower Church)"
+            "notes": "Lower Church"
           }
         ]
       }
@@ -2790,17 +2467,24 @@
       "parish_id": "saint-albert-the-great-north-royalton-oh",
       "parish_name": "Saint Albert the Great Roman Catholic Parish",
       "site_name": "St. Albert the Great Church",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=H%2Bbdhgx1gYgsAKo7CN%2BNg6%2Fm2b0UjiHoKCA5eZ2n4n4KYnHvz6SgY1Mb3e%2FKrxo4TDh7Uraj0KLK8%2Fce%2FbxCuT0q4WaTh%2FTS%2BB1dWndOqQI%3D",
-      "captured_at": "2026-08-29T16:40:02+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=tDNHrWEv56krA6pghYrcdRRrkJErIz7lqWM%2F2NxOPX%2FmRzk6j1F1w3cmJTDGLum4gFhYcDQePJeWLg1v6rvCY1Ekx3fffVVb0r9exfHQ8PM%3D",
+      "captured_at": "2026-09-05T17:05:07+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
           {
             "day": "Monday",
             "start_time": 800,
+            "end_time": 0,
+            "end_next_day": true,
+            "notes": "Begins Monday 8:00am"
+          },
+          {
+            "day": "Friday",
+            "start_time": 0,
             "end_time": 1700,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration (runs through Friday 5:00pm)"
+            "notes": "Ends Friday 5:00pm"
           }
         ]
       }
@@ -2809,8 +2493,8 @@
       "parish_id": "saint-john-bosco-parma-heights-oh",
       "parish_name": "Saint John Bosco Church",
       "site_name": "St. John Bosco Church",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=%2BOztU4%2Fvg7xENdQO82jRFACJ1MQdLHZlj9dPN2JNZudeEGPquotNO8ot%2FA1WpIka%2FiuuZubVKIcNlJFaRfQhaDMpuBz1MLNgEvthnVjKWnc%3D",
-      "captured_at": "2026-08-29T16:37:18+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=Atb5uHXCZvQoR4kVHaOcoYD6epxsoDhauCvA4y6LSl6Lsur40RZkOrTcBrisEkDwwUp%2BHQIaA12Cj0L3o4gkM7eyGGTghPcwelB4f5MOBOg%3D",
+      "captured_at": "2026-09-05T17:01:42+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2819,49 +2503,56 @@
             "start_time": 600,
             "end_time": 2200,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration Chapel open all the time for prayer; Exposition 6:00am\u201310:00pm"
+            "notes": "Exposition (Adoration Chapel)"
           },
           {
             "day": "Monday",
             "start_time": 600,
             "end_time": 2200,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration Chapel open all the time for prayer; Exposition 6:00am\u201310:00pm"
+            "notes": "Exposition (Adoration Chapel)"
           },
           {
             "day": "Tuesday",
             "start_time": 600,
             "end_time": 2200,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration Chapel open all the time for prayer; Exposition 6:00am\u201310:00pm"
+            "notes": "Exposition (Adoration Chapel)"
           },
           {
             "day": "Wednesday",
             "start_time": 600,
             "end_time": 2200,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration Chapel open all the time for prayer; Exposition 6:00am\u201310:00pm"
+            "notes": "Exposition (Adoration Chapel)"
           },
           {
             "day": "Thursday",
             "start_time": 600,
             "end_time": 2200,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration Chapel open all the time for prayer; Exposition 6:00am\u201310:00pm"
+            "notes": "Exposition (Adoration Chapel)"
           },
           {
             "day": "Friday",
             "start_time": 600,
             "end_time": 2200,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration Chapel open all the time for prayer; Exposition 6:00am\u201310:00pm"
+            "notes": "Exposition (Adoration Chapel)"
           },
           {
             "day": "Saturday",
             "start_time": 600,
             "end_time": 2200,
             "end_next_day": false,
-            "notes": "Eucharistic Adoration Chapel open all the time for prayer; Exposition 6:00am\u201310:00pm"
+            "notes": "Exposition (Adoration Chapel)"
+          },
+          {
+            "day": "Thursday",
+            "start_time": 1800,
+            "end_time": null,
+            "end_next_day": false,
+            "notes": "Eucharistic Holy Hour before 7:00 PM Mass"
           }
         ]
       }
@@ -2869,9 +2560,9 @@
     {
       "parish_id": "sc-c",
       "parish_name": "St. Casimir Parish",
-      "site_name": "Church of St. Casimir (St. Casimir Parish)",
-      "bulletin_url": "https://www.stcasimir.com/s/Bulletin-English-2026-08-23.pdf",
-      "captured_at": "2026-08-29T16:38:29+00:00",
+      "site_name": "Church of St. Casimir (Parafia Sw. Kazimierza)",
+      "bulletin_url": "https://www.stcasimir.com/s/Bulletin-English-2026-08-30.pdf",
+      "captured_at": "2026-09-05T17:03:18+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2881,8 +2572,8 @@
       "parish_id": "sc-l",
       "parish_name": "Church of Saint Clare",
       "site_name": "Church of Saint Clare",
-      "bulletin_url": "https://clientsaintclarenet.blob.core.windows.net/site-saintclare-net/uploaded_media/saintclare_net/Bulletins/Clare8-30__1787944965.pdf",
-      "captured_at": "2026-08-29T16:38:20+00:00",
+      "bulletin_url": "https://clientsaintclarenet.blob.core.windows.net/site-saintclare-net/uploaded_media/saintclare_net/Bulletins/Clare9-6__1788558467.pdf",
+      "captured_at": "2026-09-05T17:03:04+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -2891,7 +2582,7 @@
             "start_time": 900,
             "end_time": 1300,
             "end_next_day": false,
-            "notes": "(CH)"
+            "notes": null
           }
         ]
       }
@@ -2899,9 +2590,9 @@
     {
       "parish_id": "sc-p",
       "parish_name": "Saint Columbkille Parish",
-      "site_name": "St. Columbkille Parish (Main Church Campus)",
-      "bulletin_url": "https://irp.cdn-website.com/b80bca3b/files/uploaded/8-30.pdf",
-      "captured_at": "2026-08-29T16:38:10+00:00",
+      "site_name": "St. Columbkille Parish (Main Church)",
+      "bulletin_url": "https://irp.cdn-website.com/b80bca3b/files/uploaded/9-6.pdf",
+      "captured_at": "2026-09-05T17:02:42+00:00",
       "adoration": {
         "is_perpetual": true,
         "times": []
@@ -2910,20 +2601,28 @@
     {
       "parish_id": "scas-e",
       "parish_name": "Church of Saint Casimir / Parafia Sw. Kazimierza",
-      "site_name": "St. Casimir Parish (Main Church)",
+      "site_name": "St. Casimir Church",
       "bulletin_url": "http://www.saintcasimirparish.org/main-en/bulletin-en.html",
-      "captured_at": "2026-08-29T16:38:26+00:00",
+      "captured_at": "2026-09-05T17:03:06+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": []
+        "times": [
+          {
+            "day": "Tuesday",
+            "start_time": 1700,
+            "end_time": 1800,
+            "end_next_day": false,
+            "notes": "Second Tuesday of each month; This coming Tuesday (September 8)"
+          }
+        ]
       }
     },
     {
       "parish_id": "scy-perry",
       "parish_name": "Saint Cyprian Parish",
-      "site_name": "St. Cyprian (Main Church)",
+      "site_name": "Parish (site name not provided)",
       "bulletin_url": "https://www.stcypriansparish.com/upcoming-events",
-      "captured_at": "2026-08-29T16:37:56+00:00",
+      "captured_at": "2026-09-05T17:02:28+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -2933,8 +2632,8 @@
       "parish_id": "sem-c",
       "parish_name": "Saint Emeric Parish",
       "site_name": "St. Emeric Church",
-      "bulletin_url": "https://stemeric.com/twenty-first-sunday-of-ordinary-time-august-23-2026/",
-      "captured_at": "2026-08-29T16:37:47+00:00",
+      "bulletin_url": "https://stemeric.com/twenty-second-sunday-of-ordinary-time-august-30-2026/",
+      "captured_at": "2026-09-05T17:02:20+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -3008,39 +2707,23 @@
     {
       "parish_id": "shc",
       "parish_name": "Sacred Heart, Oberlin",
-      "site_name": "Sacred Heart of Jesus Church",
+      "site_name": "Sacred Heart",
       "bulletin_url": "https://shoj.cc/PDFs/Bulletins/CurrentBulletin.pdf",
-      "captured_at": "2026-08-29T16:40:28+00:00",
+      "captured_at": "2026-09-05T17:05:36+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Friday",
-            "start_time": 700,
-            "end_time": 830,
-            "end_next_day": false,
-            "notes": null
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "shc-pat",
       "parish_name": "Saint Patrick, Wellington",
-      "site_name": "St. Patrick Parish",
+      "site_name": "St. Patrick",
       "bulletin_url": "https://shoj.cc/PDFs/Bulletins/CurrentBulletin.pdf",
-      "captured_at": "2026-08-29T16:40:27+00:00",
+      "captured_at": "2026-09-05T17:05:34+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Wednesday",
-            "start_time": 1730,
-            "end_time": 1820,
-            "end_next_day": false,
-            "notes": null
-          }
-        ]
+        "times": []
       }
     },
     {
@@ -3085,19 +2768,19 @@
       "parish_id": "ss-cosmas-damian-twinsburg-oh",
       "parish_name": "Saints Cosmas & Damian Catholic Church",
       "site_name": "Saints Cosmas & Damian Catholic Church",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=T9jdlHGdBEGwEpY2JNq93pm064EDTLNWQAJB6WZCQVR23z5%2FyBYkN1fTsEfFpiVtak496HW53Dno5JfgTF2PsSw7L%2BYZCDO5dJN9aAGe%2BzU%3D",
-      "captured_at": "2026-08-29T16:32:58+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=wKHpYrTYFgtqA33rvDo3EgNxRuMM9ghZByAHUwrHJrywQlFqnols74NENCv4RdLBXapatru7Ko7Ddrehk7OmCLo0lETJEV1ELLJ1erikTkM%3D",
+      "captured_at": "2026-09-05T16:56:46+00:00",
       "adoration": {
-        "is_perpetual": false,
+        "is_perpetual": true,
         "times": []
       }
     },
     {
       "parish_id": "st-anthony-of-padua-akron-oh",
       "parish_name": "Saint Anthony of Padua Parish & School",
-      "site_name": "St. Anthony of Padua Parish & School",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=ODmB%2FH8%2BBn58aAr3YnGAiaR%2FJd%2Bz%2FqPluXVucw0Y5iN3m6zlKbYiiTQT0fTJaLt5ywThQyOyX9wKIBRIxYol6Gi54AxPHNhAifuokp7x0dU%3D",
-      "captured_at": "2026-08-29T16:39:23+00:00",
+      "site_name": "St. Anthony of Padua Parish & School (Main Church)",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=tYj1nS%2Bfpx6bIEUSgayu04RDzFRN5ZVTf8R0tUru6g6Vb63DMOzKgbAmJjbc80n6tazfPj%2BSC4LL36lGGgw8WMgrFl66gJEa0ExCoZBE8XQ%3D",
+      "captured_at": "2026-09-05T17:04:15+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -3114,28 +2797,20 @@
     {
       "parish_id": "st-bernadette-westlake-oh",
       "parish_name": "Saint Bernadette Parish",
-      "site_name": "St. Bernadette Church",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=aE2HkwHkjDB%2B%2Fl%2BIH2ySDnuZnskUTVyrqXu%2BLjH%2BH2laxA0NNbNmRDS2uov5Msxfo1rQav4N3PMFG159rmcU5Z7Dl2iVmQ0guy%2FkvbB4cQ0%3D",
-      "captured_at": "2026-08-29T16:39:01+00:00",
+      "site_name": "Saint Bernadette Parish (Main Church)",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=wBvsXXjrOKLxFrfZ5Yq1F7B%2F5TJ%2FIpYW57jOSqYkafdSevkXAZbDVMgKUui4z7ms8Vf%2BPUMcFzKapro%2BVcvZbDDYMFsa4gv2MQEm4p584e0%3D",
+      "captured_at": "2026-09-05T17:03:45+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Friday",
-            "start_time": 1000,
-            "end_time": 1700,
-            "end_next_day": false,
-            "notes": "First Friday Adoration (Sept. 4, 2026); Benediction at 5:00 PM"
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "st-jerome-cleveland-oh",
       "parish_name": "Saint Jerome Church",
       "site_name": "St. Jerome Church",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=wVp2QmnVM2JLAgAvxl6xQLo93hXt%2Fvh9gr5Nww1%2BLSEuFJcO2cvXEE37ubEcEILnixPJ73ps4kJLh67D7EdrKuslvfUUze7Y3vqsWrWqurI%3D",
-      "captured_at": "2026-08-29T16:37:23+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=tXC86zVwFUaeZfqyPjV64DYIVTF%2BqUN5QLZkP58V65kOUt6BVCuiCQR5mvn%2B3w3OlHB5%2FVainLfb3vc7dFbUqqhe%2Ff%2Fiv2tuS7AeWbx7rXM%3D",
+      "captured_at": "2026-09-05T17:01:57+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -3144,9 +2819,9 @@
     {
       "parish_id": "st-martin-of-tours-maple-heights-oh",
       "parish_name": "Saint Martin of Tours",
-      "site_name": "Saint Martin of Tours Church (Main Campus)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=%2F6SjoF%2Bav3btc577Dr0SJ%2BXtLT3lYxTw1MxGcDFB3j1O3BoydCh%2B1%2FVxmVJc91pIHpaMy7rIM4nNzaXMVQMv4mE4yPZ%2FQv5AuiUqEceN8Hg%3D",
-      "captured_at": "2026-08-29T16:36:13+00:00",
+      "site_name": "Saint Martin of Tours Church",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=sBZ79rAw%2Fx%2FybENxw69yeAO2K5vka9f4hwxA0WeRYBxyjvBB8BN8CYUBq9aF1DjFoDqBHAa4po0A7G5dzGVaQO5gU7kXbZO5%2F76EJwsSsRk%3D",
+      "captured_at": "2026-09-05T17:00:31+00:00",
       "adoration": {
         "is_perpetual": true,
         "times": []
@@ -3156,8 +2831,8 @@
       "parish_id": "st-mary-berea-oh",
       "parish_name": "Saint Mary",
       "site_name": "Saint Mary Parish (Main Church)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=qwGABl6E5M0REA7yUmskL%2BBe3Q4sW0jvZOETtuKSbHdPlPY7EqJUMi3QsGPNUf9yCNG5lSvlY9lZ8iYZaf1gEr2BI3CY4hnU38MhXPpuHOk%3D",
-      "captured_at": "2026-08-29T16:35:52+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=VbnmsVHS8xm8UTHUPUnwAkPAoHbO%2FFTz2o1HqYnmZUXcCvo9HKWPHa%2FGoqhPIoD2a8qTGb6GLZLTbwIEuzl4muEiEAuF92K2ijVvBHrnDWw%3D",
+      "captured_at": "2026-09-05T17:00:12+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -3167,8 +2842,8 @@
       "parish_id": "st-mary-cleveland-oh",
       "parish_name": "Church of Saint Mary of the Assumption",
       "site_name": "Church of St. Mary of the Assumption",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=SKAhEEHvKkHNTVTBacHc0quqFbxFoE6P4IBAP5keAdIjPCTzUlZAXAVhh2uaaCV%2BwwxudEkjfGtrGmOD1pzal0zuKqwvpar1SSjrhq4an9s%3D",
-      "captured_at": "2026-08-29T16:35:45+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=wbeOYBsrdL7e4K8K1EURIJsYGQhq5JojAgwcQ%2BDAk%2FuB9JugjfggeQs3jFBtdTdV9heD1V8WPxee6DtTnl0%2FNf5DlF66%2Bws0T1N%2Fj3QthG4%3D",
+      "captured_at": "2026-09-05T17:00:00+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -3178,8 +2853,8 @@
       "parish_id": "st-mary-hudson-oh",
       "parish_name": "Saint Mary Parish",
       "site_name": "Saint Mary Parish (Main Church)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=qSHqcCraclvSZH3mob%2BLlkMamUimYeS%2Bf1A056WmsBz0Unod%2BlRyo9dcRWcSByVA9DCF7C%2F5qUSkRMw8Q6lLeg2LBpEGoJQmETf184zKExE%3D",
-      "captured_at": "2026-08-29T16:35:41+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=W76YwtkXyC03iYPIwRp1xQTRg9M8M65PdwqM%2BFp53EfKCUJHSc7Dyu45Eah%2F2jTY0KiH3g%2BS3vNj67Beg3tpVRQ%2FwqnoqYaRrZ2Y96Jfvgs%3D",
+      "captured_at": "2026-09-05T16:59:56+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -3204,27 +2879,19 @@
       "parish_id": "st-mary-of-the-falls-olmsted-falls-oh",
       "parish_name": "Saint Mary of the Falls",
       "site_name": "St. Mary of the Falls (Main Church)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=CGxE7B3GSyeQAj3JaUA1ndmZfE3A1idno50V0RONn6DTZQtcWpKRxPMMz%2FIi%2FsYaaERMMbcgJ%2Bd4RtAOB2S1e01MvXp16S%2FZVkQQSVc%2FaF0%3D",
-      "captured_at": "2026-08-29T16:35:10+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=UhGR7qUyU5D3h8y5N9aZvhQL7vfJAt4pdh037lkmGhG6zKSb2TjrT8c8fXykHgOpWeuacyHrr1UKnxcDzCbUZ4%2BFCByOBDYlASLNHvjGg5E%3D",
+      "captured_at": "2026-09-05T16:59:13+00:00",
       "adoration": {
         "is_perpetual": false,
-        "times": [
-          {
-            "day": "Tuesday",
-            "start_time": 1900,
-            "end_time": null,
-            "end_next_day": false,
-            "notes": null
-          }
-        ]
+        "times": []
       }
     },
     {
       "parish_id": "st-mary-painesville-oh",
       "parish_name": "Saint Mary Catholic Church",
-      "site_name": "St. Mary Catholic Church",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=KD3OyWrBtwLSil8Xf0P8CCWsqbO45v%2FmZIfLlJ9O7yDawgYRB%2Ft4TR9NJhVdfGbe3X6jpEvGWvzBUqq702dBWIB2oWXtgpsxn%2BWyXodJ6JY%3D",
-      "captured_at": "2026-08-29T16:35:22+00:00",
+      "site_name": "St. Mary Catholic Church (Painesville)",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=gN830wnKE9rbRYcZwt4fvaDVimLrp%2BmQxDzSR7uX0e2uJKOXwd6Gf%2BLY%2FsGEDq44%2BuWDhqM8i7dobFFp%2FxP7Sk21XOh1lIgmOZHokImrT6w%3D",
+      "captured_at": "2026-09-05T16:59:47+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -3234,8 +2901,8 @@
       "parish_id": "st-matthew-akron-oh",
       "parish_name": "Saint Matthew Parish",
       "site_name": "Saint Matthew Parish (Main Church)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=QFqyznWkGD84EwgozeRMweo2vl221e49%2FtsC%2F%2BzV0%2B%2FPIrhMgaMckiyjAFZamSeTvK0QCJJKFlytSGYhP5fjodYZsCJTGG4wKB33B1yESso%3D",
-      "captured_at": "2026-08-29T16:36:22+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=mLLhoak%2FljLqjuarcTHImdtX%2FZgnXaTXuNIfEEAb%2BpOjJXf8hckadfwV44oCSxw3WTMQMObGATbzsMioQQrJyyssGQOLOPlAbJwyKJAda1U%3D",
+      "captured_at": "2026-09-05T17:00:42+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -3245,8 +2912,8 @@
       "parish_id": "st-matthias-the-apostle-parma-oh",
       "parish_name": "Saint Matthias the Apostle Catholic Church",
       "site_name": "Saint Matthias the Apostle Catholic Church",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=5p%2FTurJ46q0XGKWkaJ8aqcK7xnbdP0NTwVQHmCnXkb01MbUKmVwTE3YQuNHfpnedNybVh9kv6w7OBbjH2y97l67Rao8xKYcFWk9E7ECi93Q%3D",
-      "captured_at": "2026-08-29T16:34:55+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=UkK3XCxkQNmJxQ%2B6Hc2WfXFMp4zl3lX%2BJ6%2BEAZXxPsSAIh%2F3Aq%2B8YJQI3gloUzD6zwoBl7YKZNiNylB4YPk0mLd8di4v4%2Bdb%2BKPQxYwlBTk%3D",
+      "captured_at": "2026-09-05T16:59:10+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -3264,8 +2931,8 @@
       "parish_id": "st-mel-cleveland-oh",
       "parish_name": "Saint Mel Catholic Church",
       "site_name": "St. Mel Catholic Church",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=ttnq%2FWlMbr15kIgYNxeGFoKcdWQ5BQ5VTv2D5vZPXu16d3boK92cIkTpeZDRJGw4Xtwy5nK9NONk2nDCNzbAyq3WF1oDv8oKaEvneq3x7Mk%3D",
-      "captured_at": "2026-08-29T16:34:38+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=x2Sga8fvbOeIT5JvAh6PGX9XuxNZftaW%2BXFhoXNdI9qEMO9xN3%2FSvXe6PxPl%2FeEZhwaW7EWXg3J%2FYYwSJwOPFad9xnwPgffcvUobtAgEHd4%3D",
+      "captured_at": "2026-09-05T16:58:40+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -3274,9 +2941,9 @@
     {
       "parish_id": "st-paul-akron-oh",
       "parish_name": "Saint Paul Catholic Parish",
-      "site_name": "St. Paul Church",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=CAdDZVCR3INzrXvHWfQMqR8pOkiFPhc47L9kFye%2BZHgxpVlvvORDAxXtDUTXKyXFuq8D8Zlj6NvOUTPRGTVQ%2F6GDiMEm3kMk8MHH0rSKOVw%3D",
-      "captured_at": "2026-08-29T16:34:07+00:00",
+      "site_name": "St. Paul Church (Main Campus)",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=hpSmKhSLwThpdM%2B9QX4TtM95g4iF70FomUW8MO07F2cg5GhFbR8OWYOZfjgOuI8FJYJrThC1fJONi7mHO75k%2FcW9X7A3I8zfMosrdgDHIvw%3D",
+      "captured_at": "2026-09-05T16:58:00+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -3286,8 +2953,8 @@
       "parish_id": "st-vincent-de-paul-elyria-oh",
       "parish_name": "Saint Vincent de Paul Catholic Church",
       "site_name": "St. Vincent de Paul (SVDP)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=vMFAWRgAPQmUo2ghcvF99fg6WZSIT%2F%2BLEtqokZ0takLEMjAiamTC2Qkg1t8WpTqGKUt0UQ4aysJUlQ%2F1hVn2PzeBOs1G%2FsiBjQv5upAXhtg%3D",
-      "captured_at": "2026-08-29T16:33:27+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=kCrabef6%2Fcb6gxKmLlrvVgZRcBqqISn2XNSBhbegKNN3P%2FIwZ064CuNbI9tyddL6p%2F7u518E7aJH8q5bB7GJeaYDkFHDShKfWUuiNzW7gEM%3D",
+      "captured_at": "2026-09-05T16:57:14+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -3305,8 +2972,8 @@
       "parish_id": "st-vincent-de-paul-elyria-oh-sfxc",
       "parish_name": "Saint Frances Xavier Cabrini Catholic Church",
       "site_name": "St. Frances Xavier Cabrini (SFXC)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=vMFAWRgAPQmUo2ghcvF99fg6WZSIT%2F%2BLEtqokZ0takLEMjAiamTC2Qkg1t8WpTqGKUt0UQ4aysJUlQ%2F1hVn2PzeBOs1G%2FsiBjQv5upAXhtg%3D",
-      "captured_at": "2026-08-29T16:33:26+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=kCrabef6%2Fcb6gxKmLlrvVgZRcBqqISn2XNSBhbegKNN3P%2FIwZ064CuNbI9tyddL6p%2F7u518E7aJH8q5bB7GJeaYDkFHDShKfWUuiNzW7gEM%3D",
+      "captured_at": "2026-09-05T16:57:11+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -3315,9 +2982,9 @@
     {
       "parish_id": "st-vitus-cleveland-oh",
       "parish_name": "Saint Vitus Parish - \u017dupnija Svetega Vida",
-      "site_name": "St. Vitus Parish (Main Church & The Village Chapel)",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=b48Uw1eisZhaK80NYZrJUxi7Uhu3UCwObd63ZFZuSUm6PJlxVgOCfPvbLuMBaBmmbWzNlnwyCKQ7BUiwoqvkbeonml4sTpVi%2BKbwdBTtsvQ%3D",
-      "captured_at": "2026-08-29T16:33:13+00:00",
+      "site_name": "St. Vitus Parish (Church & St. Vitus Village Chapel)",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=v6S78BjaR0XCZegnTcHQN%2Br2eQY5CN7ijAm18e%2BQ8aGh1MEKQFnywmNZ6NDDFL48NYlVIGTNIRrTNXqZZQnimpWAPbcj1y8jsGULQv0Pxj4%3D",
+      "captured_at": "2026-09-05T16:56:55+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -3328,7 +2995,7 @@
       "parish_name": "Saint Wendelin Catholic Church",
       "site_name": "St. Wendelin Catholic Church",
       "bulletin_url": "https://www.stwendelincleveland.org/",
-      "captured_at": "2026-08-29T16:32:43+00:00",
+      "captured_at": "2026-09-05T16:56:29+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -3338,8 +3005,8 @@
       "parish_id": "visitation-of-mary-parish-akron-oh",
       "parish_name": "Visitation of Mary Parish",
       "site_name": "Visitation of Mary Parish",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=a4sPK7b8t9Ytyb5vhK5%2FS04xZyPm9tqFXo3tGXmon36%2BvyRSsemrhWS06OQHLko5VgZqV2KhE1FUMK%2BqCWJDo%2Fq92qc8O9DpotSgUvzWSOU%3D",
-      "captured_at": "2026-08-29T16:32:39+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=4Ky3T%2BgBg7J4zbJV1zNtB1HiuIWsBtW70IzEBcE2z%2Bk32zZNkSB4FaepnhuACZGhuZ9WEozZm%2B%2BVBfWFMBHtGkBH4i3E4b%2BahGnLm1SLplQ%3D",
+      "captured_at": "2026-09-05T16:56:30+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -3348,7 +3015,7 @@
             "start_time": 1030,
             "end_time": 1130,
             "end_next_day": false,
-            "notes": "Holy Hour (in church) before St. Anne\u2019s Guild meeting"
+            "notes": "Holy Hour (in church)"
           }
         ]
       }
@@ -3357,8 +3024,8 @@
       "parish_id": "visitation-of-mary-parish-akron-oh-sjb",
       "parish_name": "Saint John the Baptist Parish",
       "site_name": "St. John the Baptist Parish",
-      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=a4sPK7b8t9Ytyb5vhK5%2FS04xZyPm9tqFXo3tGXmon36%2BvyRSsemrhWS06OQHLko5VgZqV2KhE1FUMK%2BqCWJDo%2Fq92qc8O9DpotSgUvzWSOU%3D",
-      "captured_at": "2026-08-29T16:32:40+00:00",
+      "bulletin_url": "https://bulletins.discovermass.com/download.php?bulletin=4Ky3T%2BgBg7J4zbJV1zNtB1HiuIWsBtW70IzEBcE2z%2Bk32zZNkSB4FaepnhuACZGhuZ9WEozZm%2B%2BVBfWFMBHtGkBH4i3E4b%2BahGnLm1SLplQ%3D",
+      "captured_at": "2026-09-05T16:56:31+00:00",
       "adoration": {
         "is_perpetual": false,
         "times": []
