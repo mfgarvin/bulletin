@@ -1571,13 +1571,6 @@
           "mass_date": null,
           "language": "English",
           "notes": "Vigil Mass (Eng.)"
-        },
-        {
-          "day": "Friday",
-          "start": "09:30",
-          "mass_date": "2026-09-04",
-          "language": null,
-          "notes": "St. Martin de Porres H.S. Mass of the Holy Spirit (not at St. Vitus; listed in 'Masses for the Week')"
         }
       ],
       "confession": [
@@ -2280,7 +2273,7 @@
     "latitude": 41.478899,
     "longitude": -81.7240446,
     "bulletin_url": "https://ststephencleveland.org/wp-content/uploads/bsk-pdf-manager/2026/08/26_08_23_bulletin.pdf",
-    "timestamp": "2026-08-29",
+    "timestamp": "2026-09-05",
     "invite_feedback": false,
     "schedules": {
       "mass": [
@@ -2354,21 +2347,21 @@
           "start": "09:00",
           "end": "09:30",
           "end_next_day": false,
-          "notes": "Before 9:30am Mass; Church—Confessional box; also by appointment"
+          "notes": "Before 9:30am Mass; in the church confessional box"
         },
         {
           "day": "Wednesday",
           "start": "19:00",
           "end": "20:00",
           "end_next_day": false,
-          "notes": "Confession during Holy Hour and Benediction"
+          "notes": "Confession, Holy Hour & Benediction"
         },
         {
           "day": "Saturday",
           "start": "16:15",
           "end": "16:45",
           "end_next_day": false,
-          "notes": "Church—Confessional box"
+          "notes": "In the church confessional box"
         }
       ],
       "adoration": {
@@ -2384,7 +2377,7 @@
         ]
       }
     },
-    "events_summary": "This week includes Schola Practice on Sunday, August 23 at 8:00am (Club Room) and a Parish Council Subcommittee meeting on Monday, August 24 at 7:00pm (St. Francis Room). Confirmation/First Communion classes begin Saturday, September 19 at 10:30am, with open registration the weekends of August 23 and August 30. The parish is also taking orders for 2027 liturgical calendars through September 30, and a new documentary on Fr. Stanley Rother will be in theaters August 25–27."
+    "events_summary": "This week includes Schola Practice on Sunday, August 23 at 8:00am (Club Room) and a Parish Council Subcommittee meeting on Monday, August 24 at 7:00pm (St. Francis Room). Confirmation/First Communion classes begin Saturday, September 19 at 10:30am; registration is open the weekends of August 23 and August 30. Orders for 2027 liturgical calendars are due to the parish office by September 30."
   },
   {
     "name": "The Shrine Church of Saint Stanislaus, Bishop & Martyr",
@@ -3205,8 +3198,8 @@
     "website": "www.loudonvillecatholic.org",
     "latitude": 40.6366145,
     "longitude": -82.2308743,
-    "bulletin_url": "https://s3.amazonaws.com/media.cloversites.com/0d/0d6bd6e3-1576-4167-a49f-e74e8a3d534e/documents/August_22_bulletin_8x11.pdf",
-    "timestamp": "2026-08-29",
+    "bulletin_url": "https://s3.amazonaws.com/media.cloversites.com/0d/0d6bd6e3-1576-4167-a49f-e74e8a3d534e/documents/August_30_bulletin_8x11.pdf",
+    "timestamp": "2026-09-05",
     "invite_feedback": false,
     "schedules": {
       "mass": [
@@ -3259,7 +3252,7 @@
           "start": "16:00",
           "end": "16:30",
           "end_next_day": false,
-          "notes": "Or by appointment."
+          "notes": "Or by appointment"
         }
       ],
       "adoration": {
@@ -3275,7 +3268,7 @@
         ]
       }
     },
-    "events_summary": "St. Peter offers a Tuesday evening virtual Bible study at 7:30pm (join via the parish website’s COVID-19 “Virtual Meeting Links”). The Chaplet of Divine Mercy is prayed after each daily Mass, and parishioners can also sign up for free FORMED access and submit prayer requests online through the parish website."
+    "events_summary": "St. Peter offers a weekly virtual Bible Study on Tuesdays at 7:30 PM (join via the parish website’s COVID-19 “Virtual Meeting Links”). The parish Mission Society is running a virtual silent auction to support parish and community needs, and parishioners can also sign up for free FORMED access and submit prayer requests online."
   },
   {
     "name": "Saint Peter Parish",
@@ -3473,13 +3466,6 @@
           "mass_date": null,
           "language": "English",
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Friday",
-          "start": "18:00",
-          "mass_date": "2026-09-04",
-          "language": null,
-          "notes": "First Friday Mass (listed in the dated weekly schedule)"
         },
         {
           "day": "Saturday",
@@ -11173,8 +11159,8 @@
     "website": "https://basilthegreat.org",
     "latitude": 41.3255562,
     "longitude": -81.6277639,
-    "bulletin_url": "https://basilthegreat.org/wp-content/uploads/2026/08/20260823B-compressed.pdf",
-    "timestamp": "2026-08-29",
+    "bulletin_url": "https://basilthegreat.org/wp-content/uploads/2026/08/20260830B-compressed.pdf",
+    "timestamp": "2026-09-05",
     "invite_feedback": false,
     "schedules": {
       "mass": [
@@ -11211,35 +11197,35 @@
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass (Mon–Fri)"
+          "notes": null
         },
         {
           "day": "Tuesday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass (Mon–Fri)"
+          "notes": null
         },
         {
           "day": "Wednesday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass (Mon–Fri)"
+          "notes": null
         },
         {
           "day": "Thursday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass (Mon–Fri)"
+          "notes": null
         },
         {
           "day": "Friday",
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass (Mon–Fri)"
+          "notes": null
         },
         {
           "day": "Saturday",
@@ -11262,7 +11248,7 @@
           "start": "08:30",
           "end": "09:30",
           "end_next_day": false,
-          "notes": "or by appointment"
+          "notes": "Or by appointment"
         }
       ],
       "adoration": {
@@ -11285,7 +11271,7 @@
         ]
       }
     },
-    "events_summary": "St. Basil the Great offers a special Labor Day Mass on Monday, September 7 at 9:00am (the Adoration Chapel and parish office will be closed). Upcoming parish life includes Life Teen kickoffs (Parent Night on Thursday, September 3 at 7:00pm; Teen Kickoff on Sunday, September 13 with 5:00pm Mass and 6:00pm in the Parish Center) and Play & Pray on Friday, September 11 from 9:00–10:30am. Mark your calendar for Sandwich Saturday (9:00–10:00am) and the St. Basil Oktoberfest on Friday, September 25 from 6:00–9:00pm in the Family Life Center."
+    "events_summary": "Labor Day Mass is Monday, September 7, 2026 at 9:00 AM (the Adoration Chapel and parish office will be closed). Men’s Ministry “Reorient” Kick Off Night is Thursday, September 10 at 7:00 PM, and Play and Pray meets Friday, September 11 from 9:00–10:30 AM. Upcoming parish events include Sandwich Saturday on September 19 (9:00–10:00 AM), Oktoberfest on Friday, September 25 (6:00–9:00 PM), and an offsite retreat October 2–4 at the Jesuit Retreat Center."
   },
   {
     "name": "Saint Bartholomew Parish",
@@ -13340,13 +13326,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Thursday",
-          "start": "10:00",
-          "mass_date": "2026-09-03",
-          "language": null,
-          "notes": "Extra Mass listed in Mass Intentions (not part of the standard weekly schedule)"
         }
       ],
       "confession": [
@@ -14029,8 +14008,8 @@
     "website": "https://olpchurch.com/",
     "latitude": 41.4848922,
     "longitude": -81.5961778,
-    "bulletin_url": "https://files.ecatholic.com/2224/documents/2026/8/8-23-2026.pdf?t=1787946307000",
-    "timestamp": "2026-08-29",
+    "bulletin_url": "https://files.ecatholic.com/2224/documents/2026/8/8-30-2026.pdf?t=1787946344000",
+    "timestamp": "2026-09-05",
     "invite_feedback": false,
     "schedules": {
       "mass": [
@@ -14047,6 +14026,27 @@
           "mass_date": null,
           "language": null,
           "notes": null
+        },
+        {
+          "day": "Sunday",
+          "start": "13:00",
+          "mass_date": null,
+          "language": "Igbo",
+          "notes": "Last Sunday of the month",
+          "weeks_of_month": [
+            -1
+          ]
+        },
+        {
+          "day": "Sunday",
+          "start": "16:00",
+          "mass_date": null,
+          "language": "Syro-Malabar",
+          "notes": "Holy Qurbana (1st & 3rd Sunday of the month)",
+          "weeks_of_month": [
+            1,
+            3
+          ]
         },
         {
           "day": "Monday",
@@ -14089,6 +14089,13 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
+        },
+        {
+          "day": "Monday",
+          "start": "09:00",
+          "mass_date": "2026-09-07",
+          "language": null,
+          "notes": "Labor Day"
         }
       ],
       "confession": [],
@@ -14097,7 +14104,7 @@
         "times": []
       }
     },
-    "events_summary": "The parish picnic is Sunday, September 13, 2026, after the 11:00 a.m. Mass. The Legion of Mary invites everyone to a Eucharistic Procession on Saturday, September 5, 2026 at 11:00 a.m. at the Cathedral of St. John the Evangelist in Cleveland. Save the date for the OGN Prayer Breakfast on Saturday, October 31, 2026 from 9:30 a.m. to 1:00 p.m. at St. Agnes + Our Lady of Fatima Legacy Hall."
+    "events_summary": "PSR registration is available after all Masses on the weekends of Aug. 29–30 and Sept. 12–13, and weekly PSR classes begin Sunday, Sept. 20 from 9:50–10:50 AM in the rectory. The parish picnic is Sunday, Sept. 13 after the 11:00 AM Mass. A diocesan Eucharistic Procession begins with an 11:00 AM Mass on Saturday, Sept. 5 at the Cathedral of St. John the Evangelist, and the OGN Prayer Breakfast is Saturday, Oct. 31 from 9:30 AM–1:00 PM at St. Agnes + Our Lady of Fatima Legacy Hall."
   },
   {
     "name": "Our Lady of Mt. Carmel Church",
@@ -14998,13 +15005,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass; Holy Day Vigil (time given in sacraments box) - day varies"
-        },
-        {
-          "day": "Tuesday",
-          "start": "08:00",
-          "mass_date": "2026-09-01",
-          "language": null,
-          "notes": "Morning Mass cancelled per weekly schedule: '*No morning Mass*' (date-specific change)"
         }
       ],
       "confession": [
@@ -16550,20 +16550,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Wednesday",
-          "start": "11:30",
-          "mass_date": "2026-09-02",
-          "language": null,
-          "notes": "Special Mass time; replaces usual 12:15"
-        },
-        {
-          "day": "Thursday",
-          "start": "12:15",
-          "mass_date": "2026-09-03",
-          "language": null,
-          "notes": "No public Mass (normally no public Mass on Thursdays)"
         }
       ],
       "confession": [
@@ -17402,7 +17388,7 @@
           "start": "08:30",
           "mass_date": null,
           "language": null,
-          "notes": "Weekday Mass (Marian Chapel); School Mass (in the Church)"
+          "notes": "School Mass (in the Church)"
         },
         {
           "day": "Saturday",

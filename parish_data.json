@@ -5686,27 +5686,29 @@
     "ID": 150,
     "Name": "Our Lady of Peace",
     "Mass Times": {
+      "Saturday": [
+        1600
+      ],
       "Sunday": [
         900,
-        1100
+        1100,
+        1300,
+        1600
       ],
       "Monday": [
+        1730
+      ],
+      "Wednesday": [
+        1730
+      ],
+      "Friday": [
         1730
       ],
       "Tuesday": [
         800
       ],
-      "Wednesday": [
-        1730
-      ],
       "Thursday": [
         800
-      ],
-      "Friday": [
-        1730
-      ],
-      "Saturday": [
-        1600
       ]
     },
     "Confessions": {},
