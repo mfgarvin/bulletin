@@ -67,6 +67,11 @@ class ManualFix:
     # week-specific note into the recurring entry and repeat it forever.
     # Matched against the stored time, before mass_time_fixes runs.
     drop_masses: set[tuple[str, int]] = field(default_factory=set)
+    # (day, time) -> replacement note, for a Mass whose time is right but whose
+    # published note is wrong. `notes` is user-facing text, so a note welded
+    # together by _dedupe_masses out of two contradictory labels is a defect
+    # even when every time on the row is correct. None clears the note.
+    mass_note_fixes: dict[tuple[str, int], str | None] = field(default_factory=dict)
     # Replaces the confession slots outright. For a listing the extractor
     # misread structurally, where no per-time correction can express the fix
     # (one slot has to become two).
@@ -101,6 +106,14 @@ MANUAL_FIXES: dict[str, ManualFix] = {
     "sc-p": ManualFix(
         reason="Saturday Vigil recorded as 04:00; a vigil is an evening Mass",
         mass_time_fixes={("Saturday", 400): 1600},
+    ),
+    "1687": ManualFix(
+        reason="Friday 08:30 note was two contradictory labels merged by "
+        "_dedupe_masses - the masthead's generic 'Mon/Wed/Fri 8:30 am in the "
+        "Marian Chapel' and the week's listing 'School Mass (Church)'. Verified "
+        "against the 2026-08-30 bulletin: Friday 08:30 is the school Mass and it "
+        "is in the Church, so the Marian Chapel half is masthead bleed",
+        mass_note_fixes={("Friday", 830): "School Mass (in the Church)"},
     ),
     "0512": ManualFix(
         reason="Saturday 'Vigil Mass' recorded as 05:30; a vigil is an evening "
@@ -396,6 +409,20 @@ def plan_fixes(parish: FullParishData) -> tuple[dict[str, Any], list[str]]:
                     f"({manual.reason})"
                 )
                 mass.time = new_time
+
+    # Note corrections run after the time remap, so a fix can be keyed to the
+    # corrected time rather than the stored one.
+    if manual and manual.mass_note_fixes:
+        for mass in site.mass_times:
+            key = (mass.day.value, mass.time)
+            if key in manual.mass_note_fixes:
+                new_note = manual.mass_note_fixes[key]
+                if mass.notes != new_note:
+                    notes.append(
+                        f"mass: {mass.day.value} {mass.time:04d} note "
+                        f"{mass.notes!r} -> {new_note!r} ({manual.reason})"
+                    )
+                    mass.notes = new_note
 
     if manual and manual.confession_times is not None:
         notes.append(

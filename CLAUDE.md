@@ -57,6 +57,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   Masses are 8:00 and 11:00) and `notes` is published text. (3) `0512`'s
   adoration is Prince of Peace's, on St. Andrew's row - harmless only because
   `UPDATE_ADORATION = False`.
+- **Note quality: two open `_merge_notes` fixes** (v2.5.22, 2026-09-05).
+  (1) A **generic label should lose to a specific one** when both are merged
+  onto the same slot - Gesu's "Weekday Mass (Marian Chapel); School Mass (in
+  the Church)". Fixed by hand via the new `ManualFix.mass_note_fixes`, but
+  that is a treadmill: the next extraction re-merges it. Would also clean up
+  the 4 Holy Day double labels the v2.5.11 guard keeps on purpose.
+  (2) `_merge_notes` dedupes **case-sensitively** (`utils/sanitize.py:245`),
+  so `olg-m` publishes "or by appointment; Or by appointment". One line.
+  Both need a replay over all 189 rows first - a note pass that *reads* every
+  note can damage every note.
 - **GitHub integration** - Integrate Claude with GitHub for automated workflows or issue tracking.
 - **Data change safety** - Add safeguards for when extracted data changes significantly (e.g., mass times suddenly very different). Could warn or require confirmation before overwriting.
 - **Adoration in Events** - Sometimes adoration schedule appears in the Events listing instead of the dedicated Adoration field. May need extraction prompt adjustment or post-processing.
@@ -574,6 +584,71 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.22 (2026-09-05) - A merged note that contradicts itself; ManualFix can fix a note
+
+Found by reading Church of the Gesu (`1687`) in the app. Its Friday 08:30 Mass
+published the note **"Weekday Mass (Marian Chapel); School Mass (in the
+Church)"** - one slot claiming two locations.
+
+**Cause is structural, not a fluke.** Gesu prints its schedule twice, as most
+parishes do: a masthead box ("Weekdays in the Marian Chapel, Monday-Friday 7:30
+am / Monday, Wednesday, Friday 8:30 am") and a day-by-day "This Week" listing
+("FRIDAY 9/4 ... 8:30 am School Mass (Church)"). The extractor emits both,
+`_dedupe_masses` merges them on `(day, time, language, mass_date)`, and
+`_merge_notes` joins the two surviving labels with `; `. The generic masthead
+label and the specific weekly one disagreed about where the Mass is.
+
+**The rest of the row is correct** - verified line by line against the Aug 30
+bulletin's text layer (Sun 8:00/10:00/11:30; Sat 16:30 vigil; Mon-Fri 7:30;
+Mon/Wed/Fri 8:30 and *not* Tue/Thu; confession Sat 15:00-16:00 "in the Church
+(or by appointment)"; adoration Sat 15:00-16:00 Marian Chapel). Confession and
+adoration sharing 15:00-16:00 looks like a conflation and is not: the parish
+runs both at once, confession in the Church and adoration in the Marian Chapel.
+
+**`ManualFix.mass_note_fixes`** - `(day, time) -> note | None`. There was no way
+to correct a *note* before: only a time (`mass_time_fixes`), a whole list
+(`confession_times`/`adoration_times`), or the entry outright (`drop_masses`).
+`notes` is published text, so a note welded out of two contradictory labels is a
+defect even when every time on the row is right. Runs after the time remap, so a
+fix can key on the corrected time. Applied to `1687`; the dry run writes exactly
+that one row and a re-run is a no-op.
+
+**How common is this?** Scanned all 889 published notes across the 189 rows:
+
+| | rows |
+|---|---|
+| notes carrying a `;` join | 96 (11%) |
+| two clauses naming **conflicting locations** for one slot | 2 |
+| duplicate clause differing only in case | 1 |
+| Holy Day / ordinary double labels | 4 |
+
+Only Gesu is a defect. The other location conflict - `29676` Saint Peter,
+"Daily Mass (celebrated in the Parish Center Chapel; when school is in session,
+Tuesday Mass is in the Main Church)" - is a single extractor-written note that
+legitimately *explains* the conditional, and is the same real-world situation
+Gesu has, stated properly in one sentence.
+
+**So the shape is rare but the mechanism is not.** Gesu is unusual only in that
+its two labels *disagree*; normally one is blank or they say the same thing. Any
+parish with a weekly school Mass, a rotating location, or a chapel/church split
+is a candidate, and there is nothing stopping the next one.
+
+**Open, deliberately not done here** (both need a corpus replay over all 189
+rows before shipping - v2.5.21's lesson is that a note pass which *reads* every
+note can damage every note):
+
+1. **The durable fix is in `_merge_notes`**: when two clauses describe the same
+   slot and one is a bare generic label ("Weekday Mass", "Daily Mass") while the
+   other is specific, keep the specific one. Until then this is a **treadmill** -
+   `MANUAL_FIXES` only applies when `notion_fixes` is run by hand, so the next
+   extraction re-merges Gesu's note and it comes back. Same shape as `0512`'s
+   vigil time (v2.5.8). That change would also clean up the 4 Holy Day double
+   labels ("Weekday Mass; Holy Day Mass time (Holy Days)"), which are kept
+   deliberately by the v2.5.11 guard but read badly as published text.
+2. **`_merge_notes` dedupes case-sensitively** (`utils/sanitize.py:245`), which
+   is why `olg-m` publishes "1st Tuesday of each month; or by appointment; Or by
+   appointment". One line.
 
 ### v2.5.21 (2026-09-01) - Notes: no URLs, and no describing a slot listed elsewhere
 
