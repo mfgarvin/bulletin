@@ -225,12 +225,13 @@ Idempotent and dry-run by default.
 - `LonLat` (rich_text) - Longitude,latitude coordinates for mapping
 - `Issues` (status) - Issue tracking: "No Issues", "Warning", or "Error"
 - `Issue Log` (rich_text) - Details of errors/warnings from last run
-- `Content Fingerprint` (rich_text) - **optional**; hash + length + first-seen
-  date of a Webpage row's extracted text. Webpage bulletins have no date, so
-  this is what stands in for one. If the property doesn't exist on the database
-  the fingerprint is computed and logged but not stored - the write is guarded,
-  because Notion rejects an update naming a property its schema lacks and that
-  would fail every parish. Add it as a rich_text property to turn it on.
+- `Content Fingerprint` (rich_text) - hash + length + first-seen date of a
+  Webpage row's extracted text. Webpage bulletins have no date, so this is what
+  stands in for one. **Live since 2026-09-09.** The write is still guarded on
+  the property existing, and should stay that way: Notion rejects an update
+  naming a property its schema lacks, so a hard dependency here would fail
+  every parish at once if the property were ever renamed or removed. Without
+  it the fingerprint is computed and logged but not stored.
 
 ## Issue Tracking
 
@@ -712,11 +713,20 @@ byte-identical and the extraction still differs, the difference *cannot* be
 real - which is the conclusion `verify_changes` spends one of its 40 budgeted
 re-extractions to approximate.
 
-Storage is `Content Fingerprint`, a rich_text property, and the write is
-**guarded on the property existing**: Notion rejects an update naming a property
-its schema lacks, which would fail every parish, so this must never be a hard
-dependency. Until the property is added the fingerprint is computed and logged
-but not stored, and "unchanged since" cannot fire.
+Storage is `Content Fingerprint`, a rich_text property **created on the
+database 2026-09-09** (via `databases.update`, which touches only the property
+named - 24 properties before, 25 after, none lost). The write stays **guarded on
+the property existing** and should: Notion rejects an update naming a property
+its schema lacks, so a hard dependency would fail every parish at once if it
+were ever renamed.
+
+The four working Webpage rows were **seeded by hand** the same day, writing only
+that one property - not `GPT Timestamp`, not the schedules - so no row was moved
+off the Saturday staleness cadence (the v2.5.7 hazard, where an out-of-band run
+re-stamps rows and the next scheduled job then skips them). `sh-n` has no
+fingerprint because it 404s; it gets one when its page comes back. A second pass
+over all four then reported *"page content unchanged since 2026-09-09"*, which
+is the full round trip.
 
 Checked live against all 10 Webpage rows (5 enabled). Content is stable across
 repeat fetches for all four working rows - no per-request variation to defeat
