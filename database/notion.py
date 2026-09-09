@@ -39,6 +39,16 @@ UPDATE_ADORATION = False
 NOTION_BLOCK_LIMIT = 2000
 NOTION_MAX_BLOCKS = 100
 
+# Where the Webpage content fingerprint lives. A parish website has no edition
+# and no date, so this is what stands in for one - see utils/content_fingerprint.
+#
+# OPTIONAL BY DESIGN: if the property does not exist on the database, the
+# fingerprint is simply not written. Notion rejects an update naming a property
+# its schema doesn't have, and that would fail *every* parish, so this must
+# never be a hard dependency. To enable it, add a rich_text property named
+# exactly this; nothing else changes.
+CONTENT_FINGERPRINT_PROP = "Content Fingerprint"
+
 # Issue statuses set by hand that the pipeline must never overwrite.
 # "Manual" marks a parish whose data is maintained by hand (no bulletin to
 # scrape); "Unsupported" marks one the scraper can't read. Both survive a run
@@ -168,6 +178,13 @@ class NotionClient(DatabaseClient):
 
         return parse("Mass Times"), parse("Confessions")
 
+    async def get_content_fingerprint(self, parish_id: str) -> Optional[str]:
+        """The stored Webpage content fingerprint, or None if absent."""
+        row = await self._get_parish_row(parish_id)
+        if not row:
+            return None
+        return self._get_property(row, CONTENT_FINGERPRINT_PROP) or None
+
     async def save_extraction(
         self,
         parish_id: str,
@@ -176,6 +193,7 @@ class NotionClient(DatabaseClient):
         log: list[str],
         site_index: int = 0,
         skip_name_update: bool = False,
+        content_fingerprint: Optional[str] = None,
     ) -> list[str]:
         """Save extraction results to Notion.
 
@@ -266,6 +284,11 @@ class NotionClient(DatabaseClient):
                 properties["Confessions"] = self._text_property(conf_json)
         if UPDATE_ADORATION and site and (site.adoration.times or site.adoration.is_perpetual):
             properties["Adoration"] = self._text_property(adore_json)
+        # Guarded on the property existing - see CONTENT_FINGERPRINT_PROP.
+        if content_fingerprint and CONTENT_FINGERPRINT_PROP in row["properties"]:
+            properties[CONTENT_FINGERPRINT_PROP] = self._text_property(
+                content_fingerprint
+            )
         if extraction.events:
             properties["Events"] = self._text_property(events_json)
         if extraction.events_summary:

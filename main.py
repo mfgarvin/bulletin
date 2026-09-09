@@ -20,6 +20,7 @@ from utils.log_context import set_parish_context
 from utils.sanitize import sanitize_extraction
 from utils.verify_times import verify_times_against_source
 from utils.bulletin_week import staleness_warning
+from utils.content_fingerprint import compare as compare_content
 from utils.verify_changes import verify_schedule_changes
 
 logging.basicConfig(
@@ -376,6 +377,20 @@ async def process_parish(
         if stale:
             warn(stale)
 
+        # A parish website has no edition and no date, so `bulletin_date` is
+        # None for these rows and always will be. Fingerprinting the extracted
+        # text answers what the date was standing in for - whether the page
+        # changed since last week - and, when it has not, says how long it has
+        # said the same thing. See utils/content_fingerprint.
+        content_fingerprint: str | None = None
+        if publisher == "Webpage" and result.pdf_bytes:
+            content_fingerprint, note, collapsed = compare_content(
+                await db.get_content_fingerprint(parish_id), result.pdf_bytes
+            )
+            log(note)
+            if collapsed:
+                warn(collapsed)
+
         # 2. Extract (single LLM call)
         log("Extracting information...")
         extraction: BulletinExtraction = await extractor.extract(
@@ -466,6 +481,7 @@ async def process_parish(
                     bulletin_url=result.url,
                     log=log_entries,
                     site_index=0,
+                    content_fingerprint=content_fingerprint,
                 ):
                     warn(retraction)
                 log("Saved to database")
@@ -513,6 +529,13 @@ async def process_parish(
                         log=log_entries,
                         site_index=site_idx,
                         skip_name_update=True,
+                        # The fingerprint describes the one page we fetched, so
+                        # it belongs on the row that page was fetched for.
+                        content_fingerprint=(
+                            content_fingerprint
+                            if matched_parish.parish_id == parish_id
+                            else None
+                        ),
                     ):
                         warn(retraction)
                     log(f"Saved site '{extraction.sites[site_idx].site_name}' → {matched_parish.name}")

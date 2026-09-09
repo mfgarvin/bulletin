@@ -33,12 +33,22 @@ logger = logging.getLogger(__name__)
 # with a pattern, not a bare keyword.
 PRIVATE_MASS_KEYWORDS = ("wedding", "funeral", "nuptial", "rehearsal")
 
-# Issue statuses meaning "this parish's schedule was never machine-verified":
-# "Manual" is hand-entered static info (no bulletin to scrape), "Unsupported"
-# is a parish whose site the scraper can't read (JS-heavy pages, Google Drive).
-# Both are exactly the cases where a user in the app is a better source of
-# truth than we are, so the export invites feedback on them.
-FEEDBACK_STATUSES = frozenset({"Manual", "Unsupported"})
+# Issue statuses meaning "this parish's schedule is not currently being
+# machine-verified": "Manual" is hand-entered static info (no bulletin to
+# scrape), "Unsupported" is a parish whose site the scraper can't read
+# (JS-heavy pages, Google Drive), and "Error" is a row whose last run failed.
+# All three are cases where a user in the app is a better source of truth than
+# we are, so the export invites feedback on them.
+#
+# "Error" was added 2026-09-09 because a failed row is otherwise invisible
+# downstream. `sh-n`'s webpage had been 404ing for over a week: the row kept
+# publishing the 10 Masses from its last good run, its GPT Timestamp simply
+# stopped advancing, and `invite_feedback` stayed false - so in the app it was
+# indistinguishable from a healthy parish whose data happened to be old.
+# Nothing read the timestamp then and nothing does now; this is what acts on it.
+# Note the data itself is still published, which is right - a stale schedule
+# beats no schedule. The flag only says "and we know we are not checking it".
+FEEDBACK_STATUSES = frozenset({"Manual", "Unsupported", "Error"})
 _PRIVATE_RE = re.compile(
     r"\b(" + "|".join(PRIVATE_MASS_KEYWORDS) + r")\b", re.IGNORECASE
 )

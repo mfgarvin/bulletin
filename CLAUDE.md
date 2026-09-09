@@ -225,6 +225,12 @@ Idempotent and dry-run by default.
 - `LonLat` (rich_text) - Longitude,latitude coordinates for mapping
 - `Issues` (status) - Issue tracking: "No Issues", "Warning", or "Error"
 - `Issue Log` (rich_text) - Details of errors/warnings from last run
+- `Content Fingerprint` (rich_text) - **optional**; hash + length + first-seen
+  date of a Webpage row's extracted text. Webpage bulletins have no date, so
+  this is what stands in for one. If the property doesn't exist on the database
+  the fingerprint is computed and logged but not stored - the write is guarded,
+  because Notion rejects an update naming a property its schema lacks and that
+  would fail every parish. Add it as a rich_text property to turn it on.
 
 ## Issue Tracking
 
@@ -247,6 +253,14 @@ A run against a protected parish still writes its `Issue Log`, so the detail is
 kept — only the status is left alone. Both protected statuses set
 `invite_feedback: true` in `export.json`, which tells the app to encourage users
 to report the real times.
+
+**`Error` sets `invite_feedback` too** (since 2026-09-09). A failed row is
+otherwise invisible downstream: `sh-n`'s webpage had been 404ing for over a
+week while the row kept publishing the 10 Masses from its last good run, its
+`GPT Timestamp` simply stopped advancing, and nothing read that timestamp - so
+in the app it was indistinguishable from a healthy parish whose data happened
+to be old. The data is still published, which is right (a stale schedule beats
+no schedule); the flag only adds "and we know we are not checking it".
 
 **Issue Log field** contains details:
 ```
@@ -497,7 +511,17 @@ Assume there is a fifth. When touching any of this, the question to ask is not
   `bulletin_date`, so these ~28 parishes are freshness-checkable like any
   other; diffing tokens across runs is no longer the only option.
 - **Self-Hosted** — ranks every `.pdf` link on the page. See below.
-- **Webpage** — no PDF; freshness is whatever the page currently renders.
+- **Webpage** — no PDF, no edition, and no date on the page to read, so
+  `bulletin_date` is None for these rows and always will be. What stands in for
+  it is a **content fingerprint** (`utils/content_fingerprint.py`): the hash and
+  length of the extracted text, with the date that content was first seen. That
+  answers what the date was standing in for — unchanged since when, edited this
+  week, or collapsed. The last is the Webpage failure that matters: a site moves
+  to a JS-rendered template, the scraper starts seeing navigation chrome, and
+  the run still succeeds. **Unchanged is a strong signal in its own right** — if
+  the page is byte-identical and the extraction still differs, the difference
+  cannot be real, which is the same conclusion `verify_changes` spends a
+  re-extraction to reach.
 
 ### The Self-Hosted ranking model
 
@@ -653,6 +677,53 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.25 (2026-09-09) - A failed row now says so; fingerprinting Webpage content
+
+**`Error` joins `FEEDBACK_STATUSES`.** `sh-n`'s webpage has been returning 404
+since at least 2026-09-05. The row behaved exactly as designed - the run
+errored, `Issues` went to `Error`, the last good schedule was kept rather than
+blanked - and yet `export.json` published its 10 Masses with
+`invite_feedback: false`. Downstream it was indistinguishable from a healthy
+parish whose data happened to be 11 days old, because **nothing reads
+`timestamp`**. Recording the date the data was pulled only helps if something
+acts on it; this is the something. One row is newly affected (14 invite
+feedback now, 13 of them already `Manual`/`Unsupported`).
+
+**`utils/content_fingerprint.py`** - what a Webpage row has instead of a date.
+Parishes Online and eCatholic name each file for its Sunday, Discover Mass
+prints the date in the link text, Self-Hosted usually has it in the filename. A
+parish website is a living document with no edition, so `bulletin_date` is None
+for these rows and always will be. Hashing the extracted text answers the
+question the date was standing in for:
+
+- **unchanged** - the normal condition, and the useful report is not "fetched
+  today" but *"unchanged since 2026-07-12"*, which the record carries forward.
+- **changed** - somebody edited the page; this week's schedule diff could be
+  real.
+- **collapsed** - the page lost more than half its text (`COLLAPSE_RATIO`,
+  deliberately the same shape as `PARTIAL_RETRACTION_RATIO`). This is the
+  Webpage failure that matters, and it is otherwise silent: a site moves to a
+  JS-rendered template, the scraper starts reading navigation chrome, and the
+  run succeeds.
+
+**The unchanged case is worth more than it looks.** If the page is
+byte-identical and the extraction still differs, the difference *cannot* be
+real - which is the conclusion `verify_changes` spends one of its 40 budgeted
+re-extractions to approximate.
+
+Storage is `Content Fingerprint`, a rich_text property, and the write is
+**guarded on the property existing**: Notion rejects an update naming a property
+its schema lacks, which would fail every parish, so this must never be a hard
+dependency. Until the property is added the fingerprint is computed and logged
+but not stored, and "unchanged since" cannot fire.
+
+Checked live against all 10 Webpage rows (5 enabled). Content is stable across
+repeat fetches for all four working rows - no per-request variation to defeat
+the hash - and a `--dry-run` of `scy-perry` logs
+`page content fingerprinted (661 chars)` with the property still absent, which
+is the guard working. Worth recording that the thin pages are **not** broken:
+`scy-perry` fits its whole schedule into 695 characters.
 
 ### v2.5.24 (2026-09-09) - The full Labor Day sweep; ManualFix can add a Mass; Discover Mass dates
 
