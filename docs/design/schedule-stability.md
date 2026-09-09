@@ -88,6 +88,14 @@ weekly warning into a promotion accelerator, which is a better job for it.
 
 ## Holidays: suppress the evidence, don't hold the write
 
+> **Status: shipped as the weekday hold in v2.5.26** (`utils/holidays.py` +
+> `_splice_held_weekdays`), in the "splice the displaced weekday" form described
+> below rather than as ledger evidence-suppression, because the hold turns out
+> to *be* the memory: Notion keeps the pre-holiday value, so next week's diff
+> already runs against a correct baseline. The ledger below is still the answer
+> for the general noise case and for displacement no calendar can predict (a
+> parish mission, a funeral, a priest away).
+
 `definitions.py` gains `displaced_weekdays(week_start: date) -> dict[int, str]`
 over the seven days a bulletin covers, from two computable sources:
 

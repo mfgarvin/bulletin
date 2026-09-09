@@ -79,6 +79,100 @@ PARTIAL_RETRACTION_RATIO = 0.5
 PARTIAL_RETRACTION_MIN_STORED = 3
 
 
+def _splice_held_weekdays(
+    stored: Optional[list[dict]],
+    new: list[dict],
+    held: dict[str, str],
+    key_fields: tuple[str, ...] = ("time", "language"),
+    day_key: str = "day",
+    dated_key: Optional[str] = "mass_date",
+) -> tuple[Optional[list[dict]], list[str]]:
+    """Keep the stored *recurring* entries on a displaced weekday; take the rest.
+
+    On a holiday week the bulletin's day-by-day listing has no ordinary Mass on
+    the displaced weekday, so the extraction retracts or replaces a standing
+    Mass that is gone for exactly one week (2026-09-05: 15 parishes). This
+    freezes that one weekday and lets everything else through.
+
+    **Splice, not veto.** Declining to write the whole field - the v2.5.20
+    shape - would be wrong here: at Christmas it would discard the genuine
+    Christmas Masses along with the damage. Dated entries are always taken from
+    the new extraction, on every weekday, which is what keeps the holiday
+    liturgies flowing while the recurring schedule stays frozen.
+
+    **The hold is also the memory.** Because the stored value survives, next
+    week's comparison runs against a correct baseline and a genuine holiday-week
+    change simply reappears with no hold and writes normally. It is deferred by
+    one week, never lost - which is why holding is the cheap side of the trade.
+
+    **Only the times decide whether to hold** (`key_fields`), not the whole
+    entry. Comparing entries wholesale means note drift counts as a change, and
+    notes churn constantly - a first cut of this held 55 rows on a simulated
+    quiet Tuesday where not one Mass time had moved, which would defer every
+    legitimate note improvement by a week and bury the real holds in log noise.
+    All 14 rows of the 2026-09-05 damage differ in their *times*, so the
+    narrower rule loses nothing. The residue it accepts: a holiday label welded
+    onto a recurring entry's note by `_dedupe_masses` still gets through, which
+    is `_merge_notes`' problem (v2.5.22) rather than this one.
+
+    Returns `(spliced, notes)`, or `(None, notes)` when there is nothing to do,
+    in which case the caller writes the new value unchanged. Note this is a
+    no-op whenever the weekday's times did not change, so quiet holidays like
+    MLK or Presidents' Day cost nothing for the parishes that don't move a Mass.
+    """
+    if not held or stored is None:
+        # Corrupt stored JSON is not spliceable - that is the v2.5.1 alarm's
+        # business, and overwriting corruption with a good extraction is the
+        # repair path rather than a loss.
+        return None, []
+    if not stored:
+        # A row with no schedule at all is a first extraction; holding would
+        # block it from ever being populated.
+        return None, []
+
+    def recurring(entry: dict) -> bool:
+        return dated_key is None or entry.get(dated_key) is None
+
+    def slots(entries: list[dict], weekday: str) -> set[tuple]:
+        return {
+            tuple(e.get(f) for f in key_fields)
+            for e in entries
+            if e.get(day_key) == weekday and recurring(e)
+        }
+
+    notes: list[str] = []
+    kept: list[str] = []
+    for weekday, observance in sorted(held.items()):
+        was = [e for e in stored if e.get(day_key) == weekday and recurring(e)]
+        now = [e for e in new if e.get(day_key) == weekday and recurring(e)]
+        if slots(stored, weekday) == slots(new, weekday):
+            continue  # nothing to hold; the usual case even on a holiday week
+        kept.append(weekday)
+        notes.append(
+            f"held {weekday} ({observance}): kept {len(was)} stored entr"
+            f"{'y' if len(was) == 1 else 'ies'} "
+            f"{sorted(_slot_label(e, day_key) for e in was)} and declined "
+            f"{sorted(_slot_label(e, day_key) for e in now)} - a displaced "
+            f"weekday is not evidence. Reconsidered next week."
+        )
+
+    if not kept:
+        return None, notes
+
+    spliced = [
+        e for e in new if not (e.get(day_key) in kept and recurring(e))
+    ] + [
+        e for e in stored if e.get(day_key) in kept and recurring(e)
+    ]
+    return spliced, notes
+
+
+def _slot_label(entry: dict, day_key: str) -> str:
+    """'0830' for a schedule entry, for the held-weekday log line."""
+    time = entry.get("time", entry.get("start_time"))
+    return f"{time:04d}" if isinstance(time, int) else str(time)
+
+
 class NotionClient(DatabaseClient):
     """Notion database client implementation."""
 
@@ -194,6 +288,7 @@ class NotionClient(DatabaseClient):
         site_index: int = 0,
         skip_name_update: bool = False,
         content_fingerprint: Optional[str] = None,
+        held_weekdays: Optional[dict[str, str]] = None,
     ) -> list[str]:
         """Save extraction results to Notion.
 
@@ -259,12 +354,25 @@ class NotionClient(DatabaseClient):
 
         # A large drop is held back rather than written; see
         # PARTIAL_RETRACTION_RATIO. Only recurring entries are compared.
+        #
+        # The weekday splice runs first and feeds the retraction check the list
+        # that would actually be written: a holiday that removes half a small
+        # schedule should not also trip the retraction guard once the displaced
+        # weekday has been put back.
         if site and site.mass_times:
             stored = self._stored_schedule(row, "Mass Times")
+            entries = [m.model_dump(mode="json") for m in site.mass_times]
+            spliced, notes = _splice_held_weekdays(
+                stored, entries, held_weekdays or {}
+            )
+            for note in notes:
+                log.append(f"Holiday week: {note}")
+            if spliced is not None:
+                entries, mass_json = spliced, json.dumps(spliced)
             warning = self._partial_retraction(
                 row, "Mass Times", "Mass times",
                 self._recurring_keys(stored or [], "mass_date", "day", "time"),
-                self._recurring_keys(site.mass_times, "mass_date", "day", "time"),
+                self._recurring_keys(entries, "mass_date", "day", "time"),
             ) if stored else None
             if warning:
                 retractions.append(warning)
@@ -273,10 +381,20 @@ class NotionClient(DatabaseClient):
 
         if site and site.confession_times:
             stored = self._stored_schedule(row, "Confessions")
+            entries = [c.model_dump(mode="json") for c in site.confession_times]
+            spliced, notes = _splice_held_weekdays(
+                stored, entries, held_weekdays or {},
+                key_fields=("start_time", "end_time", "end_next_day"),
+                dated_key=None,
+            )
+            for note in notes:
+                log.append(f"Holiday week (confessions): {note}")
+            if spliced is not None:
+                entries, conf_json = spliced, json.dumps(spliced)
             warning = self._partial_retraction(
                 row, "Confessions", "confession slots",
                 self._recurring_keys(stored or [], None, "day", "start_time"),
-                self._recurring_keys(site.confession_times, None, "day", "start_time"),
+                self._recurring_keys(entries, None, "day", "start_time"),
             ) if stored else None
             if warning:
                 retractions.append(warning)

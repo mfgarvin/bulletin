@@ -129,6 +129,7 @@ async def verify_schedule_changes(
     reextract: Callable[[], Awaitable[Optional[Pairings]]],
     source_bytes: bytes,
     content_type: str = "pdf",
+    held_weekdays: Optional[dict[str, str]] = None,
 ) -> list[str]:
     """Compare each site about to be saved against what Notion holds.
 
@@ -141,6 +142,13 @@ async def verify_schedule_changes(
             returns fresh pairings; called at most once, only when something
             changed, and only while the run's budget lasts.
         source_bytes/content_type: the downloaded bulletin, for the text check.
+        held_weekdays: weekdays the save step is freezing because the covered
+            week contains a holiday. Changes there are EXPECTED - the listing
+            disagreeing with the standing schedule is what a holiday week looks
+            like - and they are not being written, so warning about them is
+            pure noise. 22 of the 79 warnings on the 2026-09-05 run were this.
+            They are dropped from the diff, and a parish left with nothing else
+            produces no warning at all.
 
     Returns warning strings for `warn()`. Empty when nothing changed.
     """
@@ -156,16 +164,25 @@ async def verify_schedule_changes(
         # A side that is empty (or corrupt) is not a diffable schedule: a first
         # extraction "adds" everything, an empty new one is already covered by
         # the retraction warnings, and corrupt JSON is the v2.5.1 alarm's job.
+        def unheld(slots: set[tuple[str, int]]) -> set[tuple[str, int]]:
+            if not held_weekdays:
+                return slots
+            return {s for s in slots if s[0] not in held_weekdays}
+
         if stored_masses:
             old = _stored_mass_slots(stored_masses)
             new = _mass_slots(site)
             if new and old != new:
-                per_kind["Recurring Masses"] = (new - old, old - new)
+                added, removed = unheld(new - old), unheld(old - new)
+                if added or removed:
+                    per_kind["Recurring Masses"] = (added, removed)
         if stored_confessions:
             old = _stored_confession_slots(stored_confessions)
             new = _confession_slots(site)
             if new and old != new:
-                per_kind["Confessions"] = (new - old, old - new)
+                added, removed = unheld(new - old), unheld(old - new)
+                if added or removed:
+                    per_kind["Confessions"] = (added, removed)
 
         if per_kind:
             diffs[pid] = per_kind

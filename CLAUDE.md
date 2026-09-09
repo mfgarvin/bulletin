@@ -679,6 +679,94 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.26 (2026-09-09) - The holiday-week hold: freeze the displaced weekday, let the liturgy through
+
+The fix for the class that started this: on a holiday week the day-by-day Mass
+intentions listing has no ordinary Mass on the displaced weekday, and the
+v2.5.11 rule (listing beats the standing schedule box) makes the model retract
+or replace a Mass that is gone for exactly one week. 15 parishes damaged on
+2026-09-05.
+
+**The calendar has to be external, and that was measured, not assumed.** The
+attractive calendar-free tell - *a dated Mass on the holiday plus a recurring
+change on that weekday* - was scored against the 14 hand-verified damaged rows:
+
+| shape | caught | missed |
+|---|---|---|
+| dropped | 5 | 5 |
+| invented (`0244`) | 1 | 0 |
+| **replaced** (`0691`, `1170`, `st-matthias`) | **0** | **3** |
+
+6 of 14, one false positive (`1548`), and it misses **every** replaced row -
+the only shape that never self-heals. That is structural: when the model
+replaces, it has decided the holiday Mass *is* the recurring Mass, so it emits
+no dated Mass at all. **The tell is absent exactly when it is needed**, and any
+signature read off the extraction's own output inherits that flaw - you cannot
+ask an extraction to flag the case where it was confidently wrong.
+
+**`utils/holidays.py`** - US civil holidays (including the observed weekday when
+a fixed date falls on a weekend, and the Friday after Thanksgiving) plus Holy
+Days of obligation, Ash Wednesday and the Triduum, from Easter by Butcher's
+algorithm. No dependency. `displaced_weekdays(start, end)` returns the weekday
+names in the covered week; `obligations_in()` backs the not-yet-built inverse
+check. Ascension is transferred to Sunday (Province of Cincinnati) so it
+displaces nothing; the Jan 1 / Aug 15 / Nov 1 abrogation when they fall on a
+Saturday or Monday is recorded on the `Observance` but does not affect holding.
+
+**`_splice_held_weekdays()` splices, it does not veto.** Declining to write the
+whole field - the v2.5.20 shape - would be wrong here: at Christmas it would
+discard the genuine Christmas Masses along with the damage. So recurring entries
+on the displaced weekday come from *stored*, and everything else - other
+weekdays, and **every dated Mass on every weekday** - comes from the new
+extraction. That is what lets the holiday liturgy publish while the weekly
+schedule stays frozen.
+
+**The hold is also the memory.** The stored value survives, so next week's diff
+runs against a correct baseline and a genuine holiday-week change simply
+reappears unheld and writes normally. Deferred one week, never lost - which is
+why holding is the cheap side of the trade, and why no ledger is needed for
+*this* case.
+
+**Only times decide whether to hold**, not whole entries. The first cut compared
+entries wholesale and held **55 rows on a simulated quiet Tuesday where not one
+Mass time had moved** - note text churns constantly. All 14 damaged rows differ
+in their times, so the narrower key loses nothing.
+
+**Replayed against the actual 2026-09-05 run** (snapshot `625769f` as stored,
+`38382f4` as extracted):
+
+| | |
+|---|---|
+| rows spliced | **20 - exactly the 20 whose Monday changed, no collateral** |
+| damaged rows caught | **14 / 14** |
+| spliced Monday matching the hand-verified repair | **14 / 14** |
+| correct changes held (deferred a week) | 4 |
+| unverifiable rows held | 2 (`1130`, `0141-JB`) |
+| confession rows spliced | 0 (no confession damage that week) |
+
+That the splice independently reproduces all 14 repairs derived by reading
+mastheads is the strongest check available here.
+
+**Quiet holidays cost almost nothing**, which was the open question. Simulating
+a hold on a weekday with no holiday displacement splices **8 rows (Tuesday), 6
+(Wednesday)** - the ordinary per-weekday noise floor, ~4% of parishes, and most
+of those are extraction flap that benefits from being held anyway. Holding all
+seven weekdays touches 46 rows, the upper bound. So MLK and Presidents' Day are
+inert for the ~180 parishes that don't move a Mass, and `NON_DISPLACING` in
+`utils/holidays.py` is the knob if a replay ever shows one is pure cost.
+
+**Warnings drop rather than rise.** A diff on a displaced weekday is *expected*
+and is no longer written, so `verify_schedule_changes` drops those slots and a
+parish left with nothing else warns not at all - 22 of the 79 warnings on the
+09-05 run. The hold itself is recorded in `GPT Logs`, not `Issue Log`. Verified
+live: a `--dry-run` of `0691` today logs the covered week and Labor Day and
+emits **no** Mass warning, where the same command this morning warned
+`added Monday 0900, removed Monday 0800`.
+
+Still open from the design note: the dated-Mass window guard (`1088`'s
+`2027-09-07`), the inverse "Holy Day in the week, no dated Mass extracted"
+warning, and a one-line held-count in the end-of-run summary.
+
 ### v2.5.25 (2026-09-09) - A failed row now says so; fingerprinting Webpage content
 
 **`Error` joins `FEEDBACK_STATUSES`.** `sh-n`'s webpage has been returning 404

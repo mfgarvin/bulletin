@@ -19,7 +19,8 @@ from utils import adoration_capture
 from utils.log_context import set_parish_context
 from utils.sanitize import sanitize_extraction
 from utils.verify_times import verify_times_against_source
-from utils.bulletin_week import staleness_warning
+from utils.bulletin_week import covered_week, staleness_warning
+from utils.holidays import displaced_weekdays
 from utils.content_fingerprint import compare as compare_content
 from utils.verify_changes import verify_schedule_changes
 
@@ -377,6 +378,22 @@ async def process_parish(
         if stale:
             warn(stale)
 
+        # Which weekdays this bulletin's week cannot be trusted on. On a
+        # holiday week the day-by-day listing has no ordinary Mass on the
+        # displaced weekday, so the extraction retracts or replaces a standing
+        # Mass that is gone for one week; the save step keeps the stored
+        # entries for that weekday and takes everything else, dated Masses
+        # included. See utils/holidays.py.
+        (week_start, week_end), exact = covered_week(result.bulletin_date)
+        held_weekdays = displaced_weekdays(week_start, week_end)
+        if held_weekdays:
+            named = ", ".join(f"{d} ({o})" for d, o in sorted(held_weekdays.items()))
+            log(
+                f"Covered week {week_start}..{week_end}"
+                f"{'' if exact else ' (assumed - undated source)'} contains "
+                f"{named}; recurring changes on those weekdays are held"
+            )
+
         # A parish website has no edition and no date, so `bulletin_date` is
         # None for these rows and always will be. Fingerprinting the extracted
         # text answers what the date was standing in for - whether the page
@@ -440,6 +457,7 @@ async def process_parish(
         for msg in await verify_schedule_changes(
             pairings, stored_schedules, _reextract,
             result.pdf_bytes, result.content_type,
+            held_weekdays=held_weekdays,
         ):
             warn(msg)
 
@@ -482,6 +500,7 @@ async def process_parish(
                     log=log_entries,
                     site_index=0,
                     content_fingerprint=content_fingerprint,
+                    held_weekdays=held_weekdays,
                 ):
                     warn(retraction)
                 log("Saved to database")
@@ -536,6 +555,7 @@ async def process_parish(
                             if matched_parish.parish_id == parish_id
                             else None
                         ),
+                        held_weekdays=held_weekdays,
                     ):
                         warn(retraction)
                     log(f"Saved site '{extraction.sites[site_idx].site_name}' → {matched_parish.name}")
