@@ -1,6 +1,8 @@
 """Discover Mass bulletin source."""
 
 import asyncio
+import re
+from datetime import date, datetime
 from typing import Optional
 
 import httpx
@@ -12,6 +14,40 @@ USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_1) AppleWebKit/605.1.15 
 
 # Global lock to serialize all Discover Mass requests (they lock out scrapers)
 _dm_lock = asyncio.Lock()
+
+# Discover Mass hands out an encrypted, opaque download token - 80 bytes of
+# high-entropy binary once un-base64'd - so the URL will never carry a date.
+# The *page* does: the anchor the scraper already looks up prints the covered
+# Sunday as its own link text, with the whole archive listed beneath it.
+#
+#     <a href="...download.php?bulletin=<token>" id="bulletin-current">Sep 6, 2026</a>
+#
+# So freshness IS checkable for these ~28 parishes, and by reading the page
+# rather than by diffing tokens across runs.
+_DM_DATE_FORMATS = ("%b %d, %Y", "%B %d, %Y")
+_DM_DATE_RE = re.compile(r"[A-Za-z]{3,9}\.?\s+\d{1,2},\s*\d{4}")
+
+
+def _parse_link_date(text: Optional[str]) -> Optional[date]:
+    """Read 'Sep 6, 2026' out of the current-bulletin link's own text.
+
+    Returns None on anything unrecognised rather than guessing - the freshness
+    rules say a date that fails to parse costs a check, while a date parsed
+    wrong can pass one.
+    """
+    if not text:
+        return None
+    match = _DM_DATE_RE.search(text)
+    if not match:
+        return None
+    # "Sept" is neither %b nor %B; every other abbreviation already is one.
+    cleaned = re.sub(r"\bSept\b", "Sep", match.group(0).replace(".", ""))
+    for fmt in _DM_DATE_FORMATS:
+        try:
+            return datetime.strptime(cleaned, fmt).date()
+        except ValueError:
+            continue
+    return None
 
 
 class DiscoverMassSource(BulletinSource):
@@ -83,6 +119,9 @@ class DiscoverMassSource(BulletinSource):
                         success=True,
                         pdf_bytes=pdf_response.content,
                         url=bulletin_url,
+                        bulletin_date=_parse_link_date(
+                            bulletin_element.get_text()
+                        ),
                     )
 
                 except httpx.RequestError as e:

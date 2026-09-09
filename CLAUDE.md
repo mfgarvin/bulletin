@@ -489,8 +489,13 @@ Assume there is a fifth. When touching any of this, the question to ask is not
   following Sunday's file and skip a week of events. Note these hosts answer
   **403, not 404**, for a file that doesn't exist; only a 200 counts.
 - **Discover Mass** — scrapes the parish page for its current-bulletin link.
-  The URL is an opaque token with no date in it, so freshness can't be checked
-  from the URL; compare tokens across runs instead (they rotate weekly).
+  The URL is an opaque token (80 bytes of high-entropy binary once un-base64'd,
+  i.e. encrypted) and will never carry a date — but **the page states the date
+  in the link's own text**, which is the element the scraper already looks up:
+  `<a href="…download.php?bulletin=…" id="bulletin-current">Sep 6, 2026</a>`,
+  with the whole archive listed beneath it. Since v2.5.24 that is parsed into
+  `bulletin_date`, so these ~28 parishes are freshness-checkable like any
+  other; diffing tokens across runs is no longer the only option.
 - **Self-Hosted** — ranks every `.pdf` link on the page. See below.
 - **Webpage** — no PDF; freshness is whatever the page currently renders.
 
@@ -566,6 +571,8 @@ gh run view <run-id> --log | grep -E '(parishesonline|ecatholic)' | grep '200 OK
 git diff <prev-export-commit> HEAD -- export.json | grep bulletin_url
 # Discover Mass tokens rotate weekly, so an unchanged DM URL is suspicious.
 # Unchanged is fine for CurrentBulletin.pdf-style and Webpage rows.
+# Since v2.5.24 the run itself warns on a stale DM bulletin, so this check is
+# now a backstop for that publisher rather than the only signal.
 
 # 3. For Self-Hosted, re-rank each page live and eyeball the parsed dates.
 #    SelfHostedSource()._find_best_pdf_link(html, page_url) plus
@@ -646,6 +653,69 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.24 (2026-09-09) - The full Labor Day sweep; ManualFix can add a Mass; Discover Mass dates
+
+**The 09-05 triage found 8 damaged rows by reading the warning list. The real
+number is 15, and one of them is a shape nobody had seen.** Method: diff the
+recurring **Monday** Mass set between `notion_snapshot.json` at `625769f`
+(2026-09-01) and `38382f4` (2026-09-05) over every row the run re-stamped, then
+check each against its own 2026-09-06 bulletin, requiring the time to sit
+within ~45 characters of a weekday name or "Mass". 173 rows re-stamped, **20
+Mondays changed**. Full record: `docs/notes/2026-09-09-labor-day-monday-sweep.md`.
+
+| | rows |
+|---|---|
+| confirmed losses - a real Monday Mass missing | **10** |
+| confirmed wrong additions - the holiday time published weekly | **4** |
+| changed *correctly*, left alone | 4 |
+| unverifiable (image-only bulletins) | 2 |
+
+**A fourth shape: `0244`.** Its masthead weekdays are Tuesday/Wednesday/Friday
+only - the parish has **no Monday Mass at all** - and the run added a recurring
+Monday 11:00 beside a dated one at the same time. Not a swap of an existing
+Mass, an invention on an empty day, so nothing about the row's own pattern
+contradicts it. Its note was `See Worship Calendar for time & location`, which
+is the v2.5.11 published-commentary bug arriving on the same entry.
+
+**A fifth: `5493`.** Labor Day displaced the *second* of two weekday Masses
+(the 11:30 at Saint Ann Shrine, beside the 9:00 in church), so the row still
+shows a Monday and reads as healthy. Any check that asks "does this weekday
+have a Mass?" misses it.
+
+**`ManualFix.add_masses`** - `list[MassTime]`, the missing fourth verb. There
+was a remap (`mass_time_fixes`), a removal (`drop_masses`), a relabel
+(`mass_note_fixes`) and whole-list replacement for confessions and adoration,
+but **no way to add a single Mass** - so a row that was right except for a
+dropped entry could not be repaired at all. Idempotent for free: `_dedupe_masses`
+merges on `(day, time, language, mass_date)`, so re-adding a Mass already there
+collapses to one entry, and a second `notion_fixes` pass writes nothing.
+
+**Applied to 11 rows** (`--apply`, each verified after write, second pass a
+no-op): restored `0036` Mon 0800, `0039` 0830, `0599` 0700, `1101` 0700, `1286`
+0700, `1397` 1200, `1733` 0830, `1794` 0628, `5493` 1130, `st-mary-painesville`
+1215; dropped `0244`'s Monday 1100. `1286` had no masthead to check - its only
+schedule is the intentions listing - so it was settled against the **previous
+week's** issue (`20260830B`: *"MONDAY - August 31-Weekday / 7:00 AM"*). Fetching
+the prior week is worth remembering: PO/eCatholic URLs are date-constructed, so
+it costs one request.
+
+**Retire these entries** once a normal-week run has re-extracted each Monday.
+An `add_masses` entry keeps restoring a Mass, so unlike the other verbs it would
+outlive a genuine cancellation.
+
+**Discover Mass has a date after all, and the docs said it didn't.** The
+download token is opaque *because it is encrypted* - 80 bytes of high-entropy
+binary once un-base64'd - but the anchor the scraper already looks up prints the
+covered Sunday as its own link text (`<a … id="bulletin-current">Sep 6,
+2026</a>`), with the full archive beneath it. `_parse_link_date()` reads it, so
+**28 more parishes carry `bulletin_date`** and are covered by v2.5.23's
+staleness warning. Verified live on 6 of the 28: all parse, and 4 were already
+serving **2026-09-13** on 2026-09-09 - the same post-early behaviour the v2.5.6
+lookahead exists for. Unparseable text returns None rather than a guess.
+
+That leaves **Webpage as the only publisher with no date at all**, plus the four
+Self-Hosted rows whose filenames don't parse (`sc-p`, `sc-l`, `shc`, `sa-o`).
 
 ### v2.5.23 (2026-09-09) - The bulletin's own date; three Labor Day rows repaired
 

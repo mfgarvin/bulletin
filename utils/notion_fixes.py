@@ -35,6 +35,7 @@ from schemas import (
     AdorationTime,
     BulletinExtraction,
     ConfessionTime,
+    DayOfWeek,
     MassTime,
     SiteInfo,
 )
@@ -72,6 +73,19 @@ class ManualFix:
     # together by _dedupe_masses out of two contradictory labels is a defect
     # even when every time on the row is correct. None clears the note.
     mass_note_fixes: dict[tuple[str, int], str | None] = field(default_factory=dict)
+    # Masses to add back. For a Mass the extractor *dropped* - the schedule is
+    # right except that something is missing, so neither a remap (nothing to
+    # remap from) nor a whole-list replacement (which would go stale the moment
+    # the parish changed anything else) fits. The holiday-week displacement
+    # class is the reason it exists: on a holiday week the day-by-day intentions
+    # listing has no ordinary Mass on that weekday, so the model retracts a
+    # standing Mass that is displaced for exactly one week.
+    #
+    # Idempotent for free - `_dedupe_masses` merges on
+    # `(day, time, language, mass_date)`, so re-adding a Mass already present
+    # collapses back to one entry. Applied after the remap, so an added Mass is
+    # never itself remapped, and before the note fixes, so one can be relabelled.
+    add_masses: list[MassTime] = field(default_factory=list)
     # Replaces the confession slots outright. For a listing the extractor
     # misread structurally, where no per-time correction can express the fix
     # (one slot has to become two).
@@ -100,8 +114,12 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         lonlat="-81.6292108,41.4950223",
     ),
     "1794": ManualFix(
-        reason="Saturday Vigil recorded as 05:00; a vigil is an evening Mass",
+        reason="two unrelated repairs on this row: the Saturday Vigil was "
+        "recorded as 05:00 (a vigil is an evening Mass), and the 2026-09-05 "
+        "Labor Day run dropped the standing Monday 06:28 - the 2026-09-06 "
+        "masthead reads 'WEEKDAY MASSES Monday - Friday | 6:28am'",
         mass_time_fixes={("Saturday", 500): 1700},
+        add_masses=[MassTime(day=DayOfWeek.MONDAY, time=628)],
     ),
     "sc-p": ManualFix(
         reason="Saturday Vigil recorded as 04:00; a vigil is an evening Mass",
@@ -153,6 +171,99 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         "text layer), so this is the hand-read masthead from the 2026-09-05 "
         "triage, not a text-layer check",
         mass_time_fixes={("Monday", 900): 830},
+    ),
+    # --- 2026-09-05 Labor Day displacement -------------------------------
+    #
+    # On a holiday week the day-by-day intentions listing has no ordinary Mass
+    # on the displaced weekday, and the v2.5.11 rule (listing beats masthead)
+    # makes the model retract a standing Mass that is gone for exactly one
+    # week. The full sweep - all 20 rows whose recurring Monday changed in that
+    # run, each checked against its own 2026-09-06 bulletin - is in
+    # docs/notes/2026-09-09-labor-day-monday-sweep.md. Four more rows changed
+    # correctly and are deliberately absent from this table.
+    #
+    # RETIRE THESE once a normal-week run has re-extracted each Monday: an
+    # add_masses entry keeps restoring a Mass, so it would outlive a genuine
+    # cancellation. Restorations are idempotent (dedupe merges them), so a row
+    # already correct is a no-op and the entry is easy to forget about.
+    "0036": ManualFix(
+        reason="Labor Day displacement: the standing Monday 08:00 was dropped. "
+        "The 2026-09-06 masthead grid reads Mon 8:00 / Tue 8:30 / Wed 8:00 / "
+        "Thu 8:30 / Fri 8:30, and the body repeats 'Daily Mass: Monday, Wed, "
+        "and Friday: 8:00 a.m.'. Added without a note: the siblings' 'Chapel' "
+        "label belongs to the 8:30 Masses and this bulletin also carries an "
+        "'(at St. Joseph)' 8:00, so the location cannot be stated safely. "
+        "(Its Wednesday 08:00 is missing too, but was already missing before "
+        "this run - a separate gap, not this one)",
+        add_masses=[MassTime(day=DayOfWeek.MONDAY, time=800)],
+    ),
+    "0039": ManualFix(
+        reason="Labor Day displacement: the standing Monday 08:30 was dropped "
+        "in favour of the dated 09:00 holiday Mass. The 2026-09-06 masthead "
+        "reads 'Monday, Tuesday, Friday 8:30 am'",
+        add_masses=[MassTime(day=DayOfWeek.MONDAY, time=830)],
+    ),
+    "0244": ManualFix(
+        reason="the recurring Monday 11:00 is not a Mass this parish has - the "
+        "2026-09-06 masthead's weekdays are 'Tuesday, Wednesday, Friday: 8:30 "
+        "am' and the 11:00 hits in the text are the Sunday Mass. Its own note "
+        "('See Worship Calendar for time & location') is extraction commentary "
+        "of the kind v2.5.11 says must never be published. The dated "
+        "2026-09-07 twin at the same time goes with it: it is already past, so "
+        "it is dropped at export anyway, and drop_masses matches on (day, time) "
+        "without regard to the date",
+        drop_masses={("Monday", 1100)},
+    ),
+    "0599": ManualFix(
+        reason="Labor Day displacement: the standing Monday 07:00 was dropped, "
+        "leaving only the 09:30. The 2026-09-06 masthead reads 'Mon, Tue, Fri "
+        "7:00 & 9:30 am' and the week's listing prints '7:00 am NO MASS'",
+        add_masses=[MassTime(day=DayOfWeek.MONDAY, time=700)],
+    ),
+    "1101": ManualFix(
+        reason="Labor Day displacement: the standing Monday 07:00 was dropped "
+        "in favour of the dated 09:00. The bulletin says so in as many words - "
+        "'Daily Mass is at 9 a.m. (instead of 7 a.m.)' - and Tue/Thu/Fri are "
+        "all 07:00",
+        add_masses=[MassTime(day=DayOfWeek.MONDAY, time=700)],
+    ),
+    "1286": ManualFix(
+        reason="Labor Day displacement: the standing Monday 07:00 was dropped "
+        "in favour of the dated 09:30. This bulletin prints no masthead - its "
+        "only schedule is the intentions listing - so it was settled against "
+        "the PREVIOUS week's issue (20260830B), which reads 'MONDAY - August "
+        "31-Weekday / 7:00 AM'",
+        add_masses=[MassTime(day=DayOfWeek.MONDAY, time=700)],
+    ),
+    "1397": ManualFix(
+        reason="Labor Day displacement: the standing Monday 12:00 was dropped "
+        "after the week's listing printed 'Mon Noon NO MASS'. The 2026-09-06 "
+        "masthead reads 'Monday - Thursday 12:00 noon'",
+        add_masses=[MassTime(day=DayOfWeek.MONDAY, time=1200)],
+    ),
+    "1733": ManualFix(
+        reason="Labor Day displacement: the standing Monday 08:30 was dropped "
+        "after the week's listing printed 'parish center closed / no morning "
+        "mass'. Tue/Wed/Fri are all 08:30",
+        add_masses=[MassTime(day=DayOfWeek.MONDAY, time=830)],
+    ),
+    "5493": ManualFix(
+        reason="Labor Day displacement, second-Mass variant: this row kept its "
+        "Monday 09:00 and lost the Monday 11:30 at Saint Ann Shrine, so the "
+        "gap is invisible at a glance. The 2026-09-06 masthead reads 'weekdays: "
+        "9:00 am in church, 11:30 am in Saint Ann Shrine' and the week's "
+        "listing prints '11:30 am Mass: no Mass (Saint Ann Shrine)'",
+        add_masses=[
+            MassTime(day=DayOfWeek.MONDAY, time=1130, notes="In Saint Ann Shrine")
+        ],
+    ),
+    "st-mary-painesville-oh": ManualFix(
+        reason="Labor Day displacement: Monday lost its 12:15. The 2026-09-06 "
+        "masthead splits the week 'Tuesday & Thursday 6:45am / Monday, "
+        "Wednesday & Friday 12:15pm', which the rest of the row matches "
+        "exactly. Its stored Monday 06:45 was wrong and is correctly gone, so "
+        "only the 12:15 is restored",
+        add_masses=[MassTime(day=DayOfWeek.MONDAY, time=1215)],
     ),
     "1285": ManualFix(
         reason="stored adoration was the bulletin's 'adorers are needed' list - "
@@ -443,6 +554,16 @@ def plan_fixes(parish: FullParishData) -> tuple[dict[str, Any], list[str]]:
                     f"({manual.reason})"
                 )
                 mass.time = new_time
+
+    # Restorations run after the remap (so they are not themselves remapped)
+    # and before the note fixes (so a restored Mass can be relabelled).
+    if manual and manual.add_masses:
+        for mass in manual.add_masses:
+            notes.append(
+                f"mass: added {mass.day.value} {mass.time:04d} "
+                f"({manual.reason})"
+            )
+            site.mass_times.append(mass.model_copy(deep=True))
 
     # Note corrections run after the time remap, so a fix can be keyed to the
     # corrected time rather than the stored one.
