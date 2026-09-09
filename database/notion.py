@@ -348,7 +348,9 @@ class NotionClient(DatabaseClient):
 
         properties: dict = {
             "GPT Timestamp": self._text_property(date.today().isoformat()),
-            "GPT Logs": self._text_property("\n".join(log)),
+            # NB: "GPT Logs" is assigned AFTER the schedule blocks below, not
+            # here - they append to `log` (the held-weekday notes), and joining
+            # it at this point silently dropped every one of them.
             "Link to latest bulletin": {"url": bulletin_url},
         }
 
@@ -400,6 +402,12 @@ class NotionClient(DatabaseClient):
                 retractions.append(warning)
             else:
                 properties["Confessions"] = self._text_property(conf_json)
+        # Joined last, so anything the blocks above appended - the holiday-week
+        # hold notes especially - actually reaches Notion. `GPT Logs` is
+        # overwritten every run, but `notion_snapshot.json` archives it weekly
+        # in git, which is where a past hold can be read back.
+        properties["GPT Logs"] = self._text_property("\n".join(log))
+
         if UPDATE_ADORATION and site and (site.adoration.times or site.adoration.is_perpetual):
             properties["Adoration"] = self._text_property(adore_json)
         # Guarded on the property existing - see CONTENT_FINGERPRINT_PROP.
