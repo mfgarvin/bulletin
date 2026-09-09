@@ -95,10 +95,12 @@ class SelfHostedSource(BulletinSource):
 
                 # Find the best PDF link
                 pdf_url = self._find_best_pdf_link(response.text, bulletin_url)
+                when = self._extract_date(pdf_url) if pdf_url else date.min
                 if not pdf_url:
                     # Some parishes give each week its own page and link only
-                    # to that, so the PDF is one level down.
-                    pdf_url = await self._find_pdf_in_subpages(
+                    # to that, so the PDF is one level down. The subpage slug is
+                    # the date to trust there, not the file it links to.
+                    pdf_url, when = await self._find_pdf_in_subpages(
                         fetch, response.text, bulletin_url
                     )
                 if not pdf_url:
@@ -129,6 +131,9 @@ class SelfHostedSource(BulletinSource):
                     success=True,
                     pdf_bytes=pdf_response.content,
                     url=pdf_url,
+                    # `date.min` is this scraper's "couldn't read it", which is
+                    # exactly what DownloadResult spells None.
+                    bulletin_date=None if when == date.min else when,
                 )
 
             except httpx.RequestError as e:
@@ -218,7 +223,7 @@ class SelfHostedSource(BulletinSource):
 
     async def _find_pdf_in_subpages(
         self, fetch, html: str, base_url: str
-    ) -> Optional[str]:
+    ) -> tuple[Optional[str], date]:
         """Follow the bulletin page's own subpages looking for the PDF.
 
         Parishes running a blog-style bulletin archive link to a page per
@@ -228,6 +233,12 @@ class SelfHostedSource(BulletinSource):
         trustworthy one, while the files behind them are often named alike
         (`Bulletin-8-30-compressed.pdf` in a `/2026/08/` folder), so pooling
         would rank three consecutive weeks as a tie and pick arbitrarily.
+
+        Returns `(pdf_url, subpage_date)`. The subpage's date is returned
+        alongside for the same reason it decides the ranking - it is the only
+        date on the site worth believing - so the caller reports *it* as the
+        bulletin's date rather than re-parsing the PDF's own filename.
+        `date.min` when the slug carried no readable date.
         """
         soup = BeautifulSoup(html, "html.parser")
         page_host = urlparse(base_url).netloc
@@ -253,7 +264,7 @@ class SelfHostedSource(BulletinSource):
 
         candidates.sort(key=lambda c: (c[1], c[2]), reverse=True)
 
-        for sub_url, _, _ in candidates[:SUBPAGE_FETCH_LIMIT]:
+        for sub_url, _, sub_date in candidates[:SUBPAGE_FETCH_LIMIT]:
             try:
                 response = await fetch(sub_url)
             except httpx.RequestError as e:
@@ -264,9 +275,9 @@ class SelfHostedSource(BulletinSource):
             pdf_url = self._find_best_pdf_link(response.text, sub_url)
             if pdf_url:
                 logger.info("Found bulletin PDF via subpage %s", sub_url)
-                return pdf_url
+                return pdf_url, sub_date
 
-        return None
+        return None, date.min
 
     @staticmethod
     def _recency_bonus(d: date) -> int:

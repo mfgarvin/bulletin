@@ -19,6 +19,7 @@ from utils import adoration_capture
 from utils.log_context import set_parish_context
 from utils.sanitize import sanitize_extraction
 from utils.verify_times import verify_times_against_source
+from utils.bulletin_week import staleness_warning
 from utils.verify_changes import verify_schedule_changes
 
 logging.basicConfig(
@@ -357,7 +358,23 @@ async def process_parish(
         if not result.success:
             return ProcessResult(parish_id, parish_name, success=False, error=f"Download failed: {result.error}")
 
-        log(f"Downloaded bulletin ({len(result.pdf_bytes)} bytes, type={result.content_type})")
+        dated = (
+            f", dated {result.bulletin_date.isoformat()}"
+            if result.bulletin_date
+            else ", undated URL"
+        )
+        log(
+            f"Downloaded bulletin ({len(result.pdf_bytes)} bytes, "
+            f"type={result.content_type}{dated})"
+        )
+
+        # A successful download has never meant a *current* bulletin - see
+        # CLAUDE.md's Bulletin Freshness section, where all four instances were
+        # found by accident rather than by the pipeline. This is the first
+        # automatic check. Silent for sources whose URL carries no date.
+        stale = staleness_warning(result.bulletin_date, parish_id)
+        if stale:
+            warn(stale)
 
         # 2. Extract (single LLM call)
         log("Extracting information...")

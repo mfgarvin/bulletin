@@ -120,6 +120,40 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         "Mass and confession runs 16:00-17:00 right before it, so 17:30",
         mass_time_fixes={("Saturday", 530): 1730},
     ),
+    # Labor Day displacement, 2026-09-05 run. The bulletin's day-by-day
+    # intentions listing showed only the holiday Mass on Monday, so the v2.5.11
+    # rule (listing beats masthead) retracted the standing Monday Mass and
+    # published the holiday time as the recurring one. These three do not
+    # self-heal in any way that can be relied on, and each has been publishing a
+    # permanently wrong Monday since 2026-09-05. See
+    # docs/design/schedule-stability.md for the durable fix.
+    #
+    # Retire all three once a normal-week run has re-extracted the right time:
+    # each keys on the *stored* wrong time, so it is inert after the repair, but
+    # it would silently remap a genuine future Monday 09:00.
+    "0691": ManualFix(
+        reason="Labor Day displacement: recurring Monday published as 09:00, "
+        "the Labor Day holiday time. The 2026-09-06 bulletin says 'We will have "
+        "a 9:00 am Holiday Mass on Labor Day, September 7th' and prints 8:00 am "
+        "for every other weekday, so the standing Monday Mass is 08:00",
+        mass_time_fixes={("Monday", 900): 800},
+    ),
+    "1170": ManualFix(
+        reason="Labor Day displacement: recurring Monday published as 09:00 "
+        "from the listing's 'Mon. Sept 7 9:00am'. The 2026-09-06 masthead reads "
+        "'Weekday Masses 8:30am .. Monday, Wednesday & Friday', so Monday is "
+        "08:30. The rest of the row is correct - the Tuesday/Thursday 19:00 "
+        "Masses are a separate masthead line ('7:00pm .. Tuesday & Thursday')",
+        mass_time_fixes={("Monday", 900): 830},
+    ),
+    "st-matthias-the-apostle-parma-oh": ManualFix(
+        reason="Labor Day displacement: recurring Monday published as 09:00, "
+        "the holiday time, replacing the standing 08:30 (which is also what "
+        "Tuesday and Wednesday hold). The bulletin is image-only (1,681-char "
+        "text layer), so this is the hand-read masthead from the 2026-09-05 "
+        "triage, not a text-layer check",
+        mass_time_fixes={("Monday", 900): 830},
+    ),
     "1285": ManualFix(
         reason="stored adoration was the bulletin's 'adorers are needed' list - "
         "eight overnight coverage slots plus a lone Thursday. The bulletin says "

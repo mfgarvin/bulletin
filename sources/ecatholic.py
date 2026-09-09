@@ -53,6 +53,9 @@ class ECatholicSource(BulletinSource):
                             success=True,
                             pdf_bytes=response.content,
                             url=url,
+                            # The filename IS the Sunday this bulletin covers,
+                            # so the date is read, not inferred.
+                            bulletin_date=check_date.date(),
                         )
                 except httpx.RequestError as e:
                     continue

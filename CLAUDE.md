@@ -57,6 +57,68 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   Masses are 8:00 and 11:00) and `notes` is published text. (3) `0512`'s
   adoration is Prince of Peace's, on St. Andrew's row - harmless only because
   `UPDATE_ADORATION = False`.
+- **Holiday weeks displace the standing weekday Mass** (found 2026-09-05 in the
+  Labor Day run; the three *replaced* rows were repaired 2026-09-09, the
+  mechanism is **not** fixed). The 2026-09-05 run warned on **62
+  parishes (41%)** against v2.5.16's predicted 35-50, and the excess is one
+  class. The holiday itself extracts *well* — 43 parishes emitted the Labor Day
+  Mass correctly as a **dated** Mass and none as recurring. The damage is the
+  other half of the v2.5.11 rule (*the day-by-day intentions listing beats the
+  standing schedule box*): on a holiday week the listing has no ordinary Monday
+  Mass, so the model **retracts a standing Mass that is only displaced for one
+  week**. 22 of the 44 Mass diffs involve Monday; 13 of those bulletins mention
+  Labor Day. Two shapes, and the second is worse:
+  1. *Dropped* — `1101` (Mon 0700), `1397` (Mon 1200), `0039` (Mon 0830),
+     `0599` (Mon 0700), `1794` (Mon 0628) each lost a Mass their masthead
+     prints. These **self-heal** next Saturday.
+  2. *Replaced* — `0691`, `1170`, `st-matthias` published the **holiday time
+     as the recurring one** (Monday 0900 in place of 0800/0830/0830). These do
+     **not** self-heal, and a `--dry-run` of `0691` on 2026-09-09 proved it:
+     against the *same* 2026-09-06 bulletin the extractor returns Monday 0900
+     again and it **reproduces on a second extraction**, its own notes saying
+     the Labor Day Mass "is at the same time as the usual Monday Mass (9:00
+     am), so it was kept as a recurring Monday 9:00 am Mass". The bulletin
+     prints 8:00 for every other weekday. `1170`'s bulletin never says "Labor
+     Day" and `0691`'s stored note is empty, so neither `_HOLY_DAY_RE` nor any
+     note-matching rule can catch them. **Repaired by hand** via three
+     `MANUAL_FIXES` entries (v2.5.23) — retire those once a normal-week run has
+     re-extracted the right time.
+  All of these wrote — a one-slot drop is far under `PARTIAL_RETRACTION_RATIO`.
+  **Agreed fix is deterministic, not a prompt change** — the v2.5.10 finding
+  applies, that prompt tuning fixes its target and breaks a neighbour. The
+  design is now written up in `docs/design/schedule-stability.md`, and it is
+  **wider than the holiday table**: the root cause is that the pipeline has no
+  memory, so a per-slot ledger with hysteresis (a new slot is provisional until
+  seen twice; a missing slot is not dropped until absent twice) handles both
+  halves of the damage *and* the ~35-50 weekly noise diffs. The holiday
+  calendar's job inside that is **evidence suppression** — when the covered week
+  has a holiday on weekday *D*, observations on *D* don't touch the ledger at
+  all. That is deliberately stronger than "hold the write and warn", because
+  Christmas and New Year's each land in **two consecutive bulletins** and
+  hysteresis alone would confirm the displaced time twice. Fires ~6 weeks a
+  year, inert the other 46, replayable against this run's 152 extractions. Next hits are
+  **Thanksgiving and Christmas**, both worse than Labor Day because they
+  displace more than one weekday. Also open from the same run: `1088` dated its
+  Labor Day Mass **2027**-09-07 (a year error, and the only dated Mass in the
+  database >120 days out). Full record and the verified repair list:
+  `docs/notes/2026-09-05-holiday-week-triage.md`.
+- **`verify_times`' "(still printed in bulletin)" label is worth about half**
+  (found 2026-09-05). It greps the digit rendering *anywhere* in the document
+  with no requirement that it sit near a weekday name or "Mass". Seven
+  hand-checks: 4 true, 3 false — `0138`'s "removed Sunday 0830 (still printed)"
+  matched **office hours** `8:30 AM - 4:30 PM`; `immat-con-cle`'s bogus 6:30am
+  confession was "confirmed" by the Friday **6:30 pm** Mass; `0885`'s matched
+  the Thu/Fri 12:10 entries while the removed Tue/Wed 12:10 were phantoms. In
+  all three the *new* extraction was correct. Fix: require the digits within
+  ~40 characters of a weekday name or "Mass". Worth doing early — it is the
+  line read every week during triage. **The noise label is not load-bearing
+  either**: `0599` was labelled "NOT reproduced - likely extraction noise" and
+  is a real loss.
+- **`REEXTRACT_BUDGET` is now the binding constraint** (2026-09-05). 44 diff
+  parishes against a budget of 40, spent **in arrival order**, so
+  `immat-con-cle`'s 16-slot change went unverified while single-slot flaps
+  consumed budget. Sort the budget by diff size before spending it — worth more
+  than raising the number.
 - **Note quality: two open `_merge_notes` fixes** (v2.5.22, 2026-09-05).
   (1) A **generic label should lose to a specific one** when both are merged
   onto the same slot - Gesu's "Weekday Mass (Marian Chapel); School Mass (in
@@ -584,6 +646,53 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.23 (2026-09-09) - The bulletin's own date; three Labor Day rows repaired
+
+**`DownloadResult.bulletin_date`** — the first thing in this pipeline that knows
+when a bulletin is *for*. Parishes Online and eCatholic name each file for the
+Sunday it covers, so the probe date that returned 200 *is* the answer, free and
+exact for ~109 parishes. Self-Hosted reports its parsed date, and where the PDF
+came from a subpage it reports the **subpage slug's** date rather than the
+file's own — the v2.5.12 rule, that the post's date is the only one on such a
+site worth believing, now applies to what we report and not only to ranking.
+
+**Nothing is inferred.** Discover Mass URLs are opaque tokens and Webpage rows
+have no file, so those stay `None`; a caller cannot tell a guessed date from a
+read one, and the freshness rules say to prefer failing to parse. A caller that
+needs a week anyway asks for it explicitly (`utils/bulletin_week.run_week()`).
+
+**`utils/bulletin_week.py`** — `week_of`, `run_week`, `covered_week` (which
+returns whether the week was read or assumed), and `staleness_warning`, wired
+into `process_parish`. That last one is the first automatic answer to the
+Bulletin Freshness section's standing complaint: all four known instances of a
+parish serving a months-old PDF were found *by accident*. Threshold is 14 days,
+with `MONTHLY_BULLETIN_PARISHES` holding `hs-gh` at 45 (its bulletin is monthly
+and would otherwise warn every week).
+
+Verified by re-ranking **all 37 Self-Hosted/eCatholic/PO-sample parishes live,
+before and after: zero URL differences**, which is the check that matters here
+(a correct parse that loses the ranking is still a bug). 33 of the 37 now carry
+a date; the 4 that don't are the known undated-filename set — `sc-p`, `sc-l`,
+`shc`, and **`sa-o`, which is a new find**: it is serving
+`Agnes+Orrville+8-23.pdf`, 17 days old, and because `8-23` is a *pair* rather
+than a triple nothing parses it, so no staleness warning can fire. That is the
+"an unparseable filename inverts the pick" failure exactly. A live `--dry-run`
+of `0691` logs `dated 2026-09-06` end to end.
+
+**Data repaired — the three Labor Day "replaced" rows** (`notion_fixes --apply`,
+verified after write): `0691` Monday 0900 -> 0800, `1170` 0900 -> 0830,
+`st-matthias` 0900 -> 0830. The first two were re-read off their 2026-09-06
+bulletins for this repair (`0691`: *"We will have a 9:00 am Holiday Mass on
+Labor Day, September 7th"* with 8:00 printed for every other weekday; `1170`:
+*"Weekday Masses 8:30am .. Monday, Wednesday & Friday"*, and its Tue/Thu 19:00
+Masses are a separate masthead line and are correct). `st-matthias` is
+image-only and rests on the hand-read masthead from the 09-05 triage.
+
+Three unrelated rows were written by the same pass, all documented treadmill
+entries that had drifted back since 09-05: `1687`'s Gesu note had regressed to
+"Marian Chapel" exactly as v2.5.22 predicted, `0582` had re-grown its phantom
+Sunday confession, and `1259`'s was a pure reordering no-op.
 
 ### v2.5.22 (2026-09-05) - A merged note that contradicts itself; ManualFix can fix a note
 
