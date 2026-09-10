@@ -24,7 +24,7 @@ from utils.bulletin_week import (
     implausible_dated_masses,
     staleness_warning,
 )
-from utils.holidays import displaced_weekdays
+from utils.holidays import displaced_weekdays, obligations_in
 from utils.content_fingerprint import compare as compare_content
 from utils.verify_changes import verify_schedule_changes
 
@@ -299,6 +299,15 @@ class ProcessResult:
     success: bool
     error: str | None = None
     warnings: list[str] = field(default_factory=list)
+    # Weekdays frozen because the covered week held a holiday. Deliberately not
+    # a warning - a displaced weekday disagreeing with the standing schedule is
+    # what a holiday week looks like - but the run should still say how much it
+    # declined, in one line rather than one per parish.
+    held: dict[str, str] = field(default_factory=dict)
+    # How many schedule fields were actually spliced. `held` only says the week
+    # contained a holiday; on most rows nothing differed on that weekday and
+    # nothing was frozen, so the two counts must not be conflated.
+    held_applied: int = 0
 
 
 async def process_parish(
@@ -442,6 +451,28 @@ async def process_parish(
                 if mass in site.mass_times:
                     site.mass_times.remove(mass)
             warn(reason)
+
+        # The inverse of every other check here: a Holy Day of obligation in
+        # the covered week with no dated Mass extracted for it. Absence is the
+        # expensive error on a holiday - someone opening the app on Christmas
+        # morning and seeing the ordinary weekday schedule - and nothing else
+        # in this pipeline looks for something that should be there and isn't.
+        # Fires at most five weeks a year (Jan 1, Aug 15, Nov 1, Dec 8, Dec 25),
+        # and abrogated obligations are already excluded.
+        extracted_dates = {
+            m.mass_date for site in extraction.sites for m in site.mass_times
+            if m.mass_date is not None
+        }
+        for when, feast in sorted(obligations_in(week_start, week_end).items()):
+            if when in extracted_dates:
+                continue
+            warn(
+                f"{feast} falls on {when.isoformat()} ({when.strftime('%A')}), "
+                f"inside this bulletin's week, but no Mass was extracted for "
+                f"that date. A Holy Day of obligation the parish is certainly "
+                f"celebrating - check the bulletin prints the times, and that "
+                f"they were not folded into the recurring schedule."
+            )
 
         # Flag recurring Mass times the bulletin's own text never prints
         # (fabrication check). Uses the downloaded bytes, not what the LLM
@@ -590,7 +621,14 @@ async def process_parish(
                 )
             log("Dry run - skipping database save")
 
-        return ProcessResult(parish_id, parish_name, success=True, warnings=warnings)
+        return ProcessResult(
+            parish_id, parish_name, success=True, warnings=warnings,
+            held=held_weekdays,
+            # save_extraction appends its hold notes to this same list.
+            held_applied=sum(
+                1 for e in log_entries if e.startswith("Holiday week")
+            ),
+        )
 
     except Exception as e:
         logger.exception(f"Failed to process {parish_id}")
@@ -724,6 +762,27 @@ async def main():
                     await db.save_issue(r.parish_id, error=r.error, warnings=r.warnings)
                 except Exception as e:
                     logger.error(f"  [{r.parish_id}] save_issue failed: {e}")
+
+    # One line for the whole run, not one per parish: a change on a displaced
+    # weekday is expected, is not written, and is already recorded in each
+    # row's GPT Logs. The count is what a human needs at triage time.
+    held_rows = [r for r in results if r.held]
+    if held_rows:
+        observances = sorted({
+            f"{day} ({name})"
+            for r in held_rows for day, name in r.held.items()
+        })
+        logger.info("=" * 60)
+        applied = [r for r in held_rows if r.held_applied]
+        logger.info(
+            f"HOLIDAY WEEK: {', '.join(observances)}. "
+            f"{len(held_rows)} parish(es) processed a bulletin covering it; "
+            f"{len(applied)} had a schedule frozen because the extraction "
+            f"disagreed on that weekday. Those changes were NOT written and "
+            f"are reconsidered next week - details in each row's GPT Logs."
+        )
+        for r in applied:
+            logger.info(f"    held: [{r.parish_id}] {r.parish_name}")
 
     # Report warnings and save to Notion
     if with_warnings:

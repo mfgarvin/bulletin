@@ -679,6 +679,42 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.28 (2026-09-09) - Warn on a Holy Day with no Mass; one summary line for a held week
+
+Both leftovers from the v2.5.26 design note.
+
+**The inverse warning.** Every other check in this pipeline asks about something
+that *changed*; this one asks about something that should be there and isn't. If
+the covered week contains a Holy Day of obligation and no dated Mass was
+extracted for that date, the run says so. Absence is the expensive error on a
+holiday - someone opening the app on Christmas morning to the ordinary weekday
+schedule - and it is otherwise completely silent, because a missing Mass looks
+exactly like a normal week.
+
+It stays quiet by construction: it keys on **obligation**, not on holidays
+generally, so Labor Day and the other civil days never trip it, and the
+abrogation rule already excludes Jan 1 / Aug 15 / Nov 1 when they fall on a
+Saturday or Monday. Verified across six synthetic weeks - Christmas week with
+nothing dated warns, the same week with the Christmas Mass extracted is silent,
+the Jan 1 week warns, and Labor Day week, an ordinary October week, and the
+abrogated Aug 15 2026 (a Saturday) are all silent. At most five firings a year.
+
+**One line per run for the holiday hold**, not one per parish. `ProcessResult`
+gains `held` (the weekdays under hold) and `held_applied` (how many schedule
+fields were actually spliced) - **kept separate on purpose**, since `held` only
+says the week contained a holiday while on most rows nothing differed on that
+weekday and nothing was frozen. A first cut conflated them and reported every
+parish in a holiday week as "frozen". The summary now reads:
+
+    HOLIDAY WEEK: Monday (Labor Day). 62 parish(es) processed a bulletin
+    covering it; 20 had a schedule frozen because the extraction disagreed on
+    that weekday. Those changes were NOT written and are reconsidered next
+    week - details in each row's GPT Logs.
+
+followed by the held rows by name. It is `logger.info`, not a warning: a
+displaced weekday disagreeing with the standing schedule is what a holiday week
+looks like.
+
 ### v2.5.27 (2026-09-09) - A dated Mass has to belong to its own bulletin
 
 A dated Mass is published until its date passes. That makes a **year typo**
