@@ -679,6 +679,53 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.29 (2026-09-09) - "(still printed in bulletin)" now has to mean this day
+
+The 2026-09-05 triage measured that label at **4 true / 3 false** and called
+fixing it the highest-value small change, because it is the line read every week
+during triage and its failures argue for the *wrong side*. `_time_in_text`
+grepped the digits anywhere in the document with no requirement that they sit
+near a weekday or a Mass.
+
+`_time_in_text_near(time, day, text)` requires the digits within 40 characters
+of **the entry's own weekday**, full name or three-letter abbreviation.
+
+**"Or the word Mass" was tried first and is far too weak** - in a bulletin that
+word sits near almost every time printed, so `immat-con-cle`'s Friday "6:30 pm
+mass" went on corroborating a Monday 6:30am confession exactly as before. Only
+the entry's own day separates the cases: `0138`'s office-hours line says
+"monday-friday", never Sunday.
+
+Re-run against the seven hand-checked cases, live, on the same bulletins:
+
+| row | slot | was | now | hand verdict | |
+|---|---|---|---|---|---|
+| `0138` | Sun 0830 | true | **false** | false | **fixed** - was matching office hours `8:30 am - 4:30 pm` |
+| `0885` | Tue 1210 | true | **false** | false | **fixed** - was matching the Thu/Fri 12:10 entries |
+| `1397` | Mon 1200 | true | true | true | unchanged |
+| `0077` | Mon 0800 | true | true | true | unchanged |
+| `immat-con-cle` | Mon 0700 | false | false | false | unchanged |
+| `immat-con-cle` | Mon 0630 | true | true | false | **residual, see below** |
+| `1101` | Mon 0700 | true | **false** | true | now silent, and that is correct |
+
+**`1101` deserves the note.** The label went quiet, which scores as a miss
+against the triage's verdict - but the triage's "true" meant *the Mass is real*,
+which is not what the label claims. Labor Day displaced it, so this bulletin
+genuinely does not print a Monday 7:00; the old `true` came from the Tue/Thu/Fri
+7:00am entries. Silence is the honest answer.
+
+**The one real residual is `immat-con-cle`**, and proximity cannot fix it. Its
+masthead reads `monday-thursday: 7:30am friday: 6:30pm` - "monday" and "6:30pm"
+are 25 characters apart, but **`friday:` intervenes**. The fix is day *scoping*
+rather than distance: a time belongs to the nearest preceding day label, with
+hyphenated ranges read as one label covering their span. Rejecting on any
+intervening weekday alone would break `1397`, whose true positive comes from
+"monday - thursday 12:00 noon". Left for a session with room to do it properly.
+
+Scope is deliberately the **label only**. `_time_in_text` still backs
+`_text_is_verifiable`, whose hit-rate gate was validated over 1,250 parish-runs
+in v2.5.14; a labelling change should not perturb it.
+
 ### v2.5.28 (2026-09-09) - Warn on a Holy Day with no Mass; one summary line for a held week
 
 Both leftovers from the v2.5.26 design note.

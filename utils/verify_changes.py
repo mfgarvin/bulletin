@@ -85,6 +85,58 @@ def _time_in_text(time: int, text: str) -> bool:
     return any(re.search(p, text) for p in _renderings(time))
 
 
+# How far from the digits a corroborating word may sit. A masthead prints
+# "Sunday: 8:30, 11:00 am" well inside this; an office-hours line and the Mass
+# grid are further apart than this in every case checked.
+_CONTEXT_CHARS = 40
+
+_DAY_ABBREV = {
+    "Sunday": r"sun", "Monday": r"mon", "Tuesday": r"tue", "Wednesday": r"wed",
+    "Thursday": r"thu", "Friday": r"fri", "Saturday": r"sat",
+}
+
+
+def _time_in_text_near(time: int, day: str, text: str) -> bool:
+    """Is this time printed *as this day's Mass*, rather than merely present?
+
+    The bare `_time_in_text` grep is what made "(still printed in bulletin)"
+    worth about half. Seven hand-checks in the 2026-09-05 triage came back 4
+    true, 3 false, and every false one was the digits appearing somewhere
+    unrelated: `0138`'s "removed Sunday 0830 (still printed)" matched the
+    **office hours** line `8:30 am - 4:30 pm`; `immat-con-cle`'s bogus 6:30am
+    confession was "confirmed" by the Friday **6:30 pm** Mass; `0885`'s matched
+    the Thu/Fri 12:10 entries while the removed Tue/Wed 12:10 were phantoms. In
+    all three the *new* extraction was right and the label argued for the wrong
+    side.
+
+    So the digits must sit within `_CONTEXT_CHARS` of **this entry's own
+    weekday** or the word Mass. Keying on the entry's own day rather than any
+    weekday is deliberate and is what separates the three false positives:
+    `0138`'s office hours say "monday-friday", never Sunday.
+
+    This is the label only. `_time_in_text` still backs `_text_is_verifiable`,
+    whose hit-rate gate was validated over 1,250 parish-runs in v2.5.14 and
+    should not be perturbed by a change to the labelling rule.
+    """
+    abbrev = _DAY_ABBREV.get(day)
+    if not abbrev:
+        return _time_in_text(time, text)
+    # The entry's OWN weekday, and nothing else. Accepting "mass" as an
+    # alternative was tried and is far too weak - in a bulletin the word sits
+    # near almost every time printed, so `immat-con-cle`'s Friday "6:30 pm
+    # mass" went on corroborating a Monday 6:30am confession exactly as before.
+    context = re.compile(rf"\b({day.lower()}|{abbrev}\.?)\b")
+    for pattern in _renderings(time):
+        for match in re.finditer(pattern, text):
+            window = text[
+                max(0, match.start() - _CONTEXT_CHARS):
+                match.end() + _CONTEXT_CHARS
+            ]
+            if context.search(window):
+                return True
+    return False
+
+
 def _text_is_verifiable(text: str, site: SiteInfo) -> bool:
     """Same gate as verify_times: the page must verify most of its own times.
 
@@ -114,7 +166,7 @@ def _describe(
         for day, time in sorted(slots):
             entry = f"{label} {day} {time:04d}"
             if verifiable:
-                in_text = _time_in_text(time, text)
+                in_text = _time_in_text_near(time, day, text)
                 if label == "added" and not in_text:
                     entry += f" ({damning} - suspicious)"
                 elif label == "removed" and in_text:
