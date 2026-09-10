@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-05T17:10:56+00:00",
+  "generated_at": "2026-09-10T04:13:50+00:00",
   "database_id": "2de29b8f-0e6e-801a-bd81-db3ade199a45",
   "parish_count": 189,
   "parishes": [
     {
       "parish_id": "0036",
       "page_id": "2df29b8f-0e6e-8124-a4ba-fcd0ca4cf1ac",
-      "last_edited_time": "2026-09-05T17:10:00.000Z",
+      "last_edited_time": "2026-09-09T22:06:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -31,6 +31,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": \"Church\"}, {\"day\": \"Tuesday\", \"start_time\": 1800, \"end_time\": 1845, \"end_next_day\": false, \"notes\": \"Church\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -74,7 +78,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Chapel\"}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Chapel\"}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Chapel\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Chapel\"}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Chapel\"}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Chapel\"}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -109,7 +113,7 @@
     {
       "parish_id": "0039",
       "page_id": "2df29b8f-0e6e-81be-a725-f80109a7b195",
-      "last_edited_time": "2026-09-05T17:10:00.000Z",
+      "last_edited_time": "2026-09-09T22:06:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -134,6 +138,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Monday\", \"start_time\": 1800, \"end_time\": 1900, \"end_next_day\": false, \"notes\": \"Also available by appointment (contact Fr. Joe Warner at 330-376-5144)\"}, {\"day\": \"Wednesday\", \"start_time\": 1800, \"end_time\": 1900, \"end_next_day\": false, \"notes\": \"Also available by appointment (contact Fr. Joe Warner at 330-376-5144)\"}, {\"day\": \"Friday\", \"start_time\": 1800, \"end_time\": 1900, \"end_next_day\": false, \"notes\": \"Also available by appointment (contact Fr. Joe Warner at 330-376-5144)\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -177,7 +185,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -237,6 +245,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Also available by appointment\"}, {\"day\": \"Tuesday\", \"start_time\": 1800, \"end_time\": 1845, \"end_next_day\": false, \"notes\": \"First Tuesday of the month; also available by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -341,6 +353,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Wednesday\", \"start_time\": 1800, \"end_time\": 1900, \"end_next_day\": false, \"notes\": \"Or by appointment\"}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -443,6 +459,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -547,6 +567,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Or call parish office to schedule\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -649,6 +673,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"In the church; and by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -753,6 +781,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the church; and any time upon request\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -855,6 +887,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -959,6 +995,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Tuesday\", \"start_time\": 1730, \"end_time\": 1815, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 1730, \"end_time\": 1815, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1630, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -1061,6 +1101,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Or by appointment\"}, {\"day\": \"Thursday\", \"start_time\": 1830, \"end_time\": 2000, \"end_next_day\": false, \"notes\": \"Thursday before First Saturday; or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -1165,6 +1209,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Thursday\", \"start_time\": 1730, \"end_time\": 1815, \"end_next_day\": false, \"notes\": \"Or by appointment (call the office)\"}, {\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": 1645, \"end_next_day\": false, \"notes\": \"Or by appointment (call the office)\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -1265,6 +1313,10 @@
           "value": "Richfield"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -1371,6 +1423,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Wednesday\", \"start_time\": 845, \"end_time\": 930, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"In the confessional\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -1473,6 +1529,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Wednesday\", \"start_time\": 900, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After the 8:15am Mass\"}, {\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -1577,6 +1637,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": \"In the Library (by the PSR Office)\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": false
@@ -1679,6 +1743,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"By appointment also available\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -1783,6 +1851,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 900, \"end_time\": 1000, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Monday\", \"start_time\": 1715, \"end_time\": 1800, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Friday\", \"start_time\": 1715, \"end_time\": 1800, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -1885,6 +1957,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -1989,6 +2065,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1615, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -2091,6 +2171,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1515, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"First Saturday of the month; or call the Parish Office for an appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -2195,6 +2279,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the church; also by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -2298,6 +2386,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": \"First Saturday of each month\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -2375,7 +2467,7 @@
     {
       "parish_id": "0244",
       "page_id": "2df29b8f-0e6e-8115-8863-fb38d7a1ac58",
-      "last_edited_time": "2026-09-05T17:10:00.000Z",
+      "last_edited_time": "2026-09-09T22:06:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -2398,6 +2490,10 @@
           "value": "Cleveland"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -2443,7 +2539,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 1100, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": \"All Souls at West Park Health Center\"}, {\"day\": \"Monday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": \"See Worship Calendar for time & location\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -2503,6 +2599,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 915, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -2607,6 +2707,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -2709,6 +2813,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"Or call the Rectory.\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -2813,6 +2921,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Any time upon request\"}, {\"day\": \"Wednesday\", \"start_time\": 1400, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Opus Dei confessions (per weekly calendar)\"}, {\"day\": \"Wednesday\", \"start_time\": 1900, \"end_time\": null, \"end_next_day\": false, \"notes\": \"First Wednesday of each month; any time upon request\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -2916,6 +3028,10 @@
           "type": "rich_text",
           "value": "[]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": false
@@ -3016,6 +3132,10 @@
           "value": "Northfield"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -3122,6 +3242,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Thursday\", \"start_time\": 830, \"end_time\": 930, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -3224,6 +3348,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -3328,6 +3456,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Tuesday\", \"start_time\": 1130, \"end_time\": 1200, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 1130, \"end_time\": 1200, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 1130, \"end_time\": 1200, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -3431,6 +3563,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1615, \"end_next_day\": false, \"notes\": \"And by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -3508,7 +3644,7 @@
     {
       "parish_id": "0582",
       "page_id": "2df29b8f-0e6e-81ef-b72d-d3e64b95baf6",
-      "last_edited_time": "2026-09-05T17:06:00.000Z",
+      "last_edited_time": "2026-09-09T21:23:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -3532,7 +3668,11 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Sunday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Please ask a priest before or after Mass\"}]"
+          "value": "[]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -3611,7 +3751,7 @@
     {
       "parish_id": "0599",
       "page_id": "2df29b8f-0e6e-8136-909c-d1b9dd03619f",
-      "last_edited_time": "2026-09-05T17:09:00.000Z",
+      "last_edited_time": "2026-09-09T22:06:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -3636,6 +3776,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -3679,7 +3823,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -3739,6 +3883,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1615, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -3843,6 +3991,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"Or by appointment; call the rectory\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -3945,6 +4097,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In St. Kevin Chapel; and by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -4049,6 +4205,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Tuesday\", \"start_time\": 1900, \"end_time\": 1930, \"end_next_day\": false, \"notes\": \"Or by appointment\"}, {\"day\": \"Friday\", \"start_time\": 1600, \"end_time\": 1700, \"end_next_day\": false, \"notes\": \"Or by appointment\"}, {\"day\": \"Saturday\", \"start_time\": 930, \"end_time\": 1000, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -4126,7 +4286,7 @@
     {
       "parish_id": "0691",
       "page_id": "2df29b8f-0e6e-81d3-985c-f49700e2f22b",
-      "last_edited_time": "2026-09-05T17:10:00.000Z",
+      "last_edited_time": "2026-09-09T21:23:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -4151,6 +4311,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"Or by appointment with Father Jasany\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -4194,7 +4358,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -4254,6 +4418,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Monday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Tuesday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Friday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 845, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -4358,6 +4526,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1630, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Friday\", \"start_time\": 1900, \"end_time\": 2000, \"end_next_day\": false, \"notes\": \"First Fridays (or by appointment)\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -4460,6 +4632,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1615, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -4564,6 +4740,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -4666,6 +4846,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Friday\", \"start_time\": 1600, \"end_time\": 1700, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -4770,6 +4954,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Tuesday\", \"start_time\": 1800, \"end_time\": 1830, \"end_next_day\": false, \"notes\": \"Other times by appointment\"}, {\"day\": \"Saturday\", \"start_time\": 900, \"end_time\": 1000, \"end_next_day\": false, \"notes\": \"1st Saturday only; other times by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -4872,6 +5060,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -4976,6 +5168,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -5079,6 +5275,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Monday\", \"start_time\": 1830, \"end_time\": 1920, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": false
@@ -5156,7 +5356,7 @@
     {
       "parish_id": "1088",
       "page_id": "2df29b8f-0e6e-81c3-b978-d3fb14d33a5d",
-      "last_edited_time": "2026-09-05T17:09:00.000Z",
+      "last_edited_time": "2026-09-10T00:21:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -5181,6 +5381,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1730, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Monday\", \"start_time\": 1515, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -5224,7 +5428,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"time\": 1815, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1145, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": \"2027-09-07\", \"language\": null, \"notes\": \"Labor Day\"}]"
+          "value": "[{\"day\": \"Monday\", \"time\": 1815, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1145, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -5284,6 +5488,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"In the chapel; or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -5362,7 +5570,7 @@
     {
       "parish_id": "1101",
       "page_id": "2df29b8f-0e6e-811b-bf73-dbbc5172747c",
-      "last_edited_time": "2026-09-05T17:09:00.000Z",
+      "last_edited_time": "2026-09-09T22:06:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -5387,6 +5595,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Sunday\", \"start_time\": 900, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -5430,7 +5642,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": \"Labor Day (Daily Mass at 9:00am)\"}, {\"day\": \"Tuesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1830, \"mass_date\": \"2026-09-09\", \"language\": null, \"notes\": \"Mass for Faith Formation Kickoff\"}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}]"
+          "value": "[{\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": \"Labor Day (Daily Mass at 9:00am)\"}, {\"day\": \"Tuesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1830, \"mass_date\": \"2026-09-09\", \"language\": null, \"notes\": \"Mass for Faith Formation Kickoff\"}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Monday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -5490,6 +5702,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1515, \"end_time\": 1550, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -5594,6 +5810,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"Before the 4:00 p.m. Mass; also by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -5696,6 +5916,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1100, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -5800,6 +6024,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": 1700, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": false
@@ -5903,6 +6131,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Wednesday\", \"start_time\": 1900, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Also by appointment\"}, {\"day\": \"Saturday\", \"start_time\": 1445, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Also by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -5980,7 +6212,7 @@
     {
       "parish_id": "1170",
       "page_id": "2df29b8f-0e6e-8164-b56c-cc53b73b4a3b",
-      "last_edited_time": "2026-09-05T17:10:00.000Z",
+      "last_edited_time": "2026-09-09T21:23:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -6005,6 +6237,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 1930, \"end_time\": 2000, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Sunday\", \"start_time\": 945, \"end_time\": 1045, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -6048,7 +6284,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -6108,6 +6344,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Wednesday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Wednesday evening\"}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Also available by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -6212,6 +6452,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Friday\", \"start_time\": 800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Reconciliation (confessions) listed on First Friday liturgy schedule; no end time given.\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -6289,7 +6533,7 @@
     {
       "parish_id": "1259",
       "page_id": "2df29b8f-0e6e-81c6-9100-ce9b22c7f19d",
-      "last_edited_time": "2026-09-05T17:08:00.000Z",
+      "last_edited_time": "2026-09-09T21:23:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -6313,7 +6557,11 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Monday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Monday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Tuesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Tuesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Friday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Friday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 1700, \"end_time\": 1725, \"end_next_day\": false, \"notes\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 1700, \"end_time\": 1725, \"end_next_day\": false, \"notes\": \"Confession in the Chapel\"}, {\"day\": \"Monday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Monday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Tuesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Tuesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Friday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Friday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -6418,6 +6666,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Also available upon request\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -6495,7 +6747,7 @@
     {
       "parish_id": "1286",
       "page_id": "2df29b8f-0e6e-812b-9c91-e557231363f9",
-      "last_edited_time": "2026-09-05T17:09:00.000Z",
+      "last_edited_time": "2026-09-09T22:06:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -6520,6 +6772,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1545, \"end_time\": 1630, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -6563,7 +6819,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"time\": 930, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": \"Labor Day Mass\"}, {\"day\": \"Tuesday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null}]"
+          "value": "[{\"day\": \"Monday\", \"time\": 930, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": \"Labor Day Mass\"}, {\"day\": \"Tuesday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -6623,6 +6879,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": 1645, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -6727,6 +6987,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Thursday\", \"start_time\": 815, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After the 7:30am Mass (Thursday before First Friday)\"}, {\"day\": \"Friday\", \"start_time\": 1800, \"end_time\": 1900, \"end_next_day\": false, \"notes\": \"First Friday\"}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"In the church\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -6829,6 +7093,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1000, \"end_time\": 1100, \"end_next_day\": false, \"notes\": \"Other times by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -6933,6 +7201,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -7010,7 +7282,7 @@
     {
       "parish_id": "1397",
       "page_id": "2df29b8f-0e6e-8186-aa82-d23a416bd297",
-      "last_edited_time": "2026-09-05T17:10:00.000Z",
+      "last_edited_time": "2026-09-09T22:06:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -7035,6 +7307,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -7078,7 +7354,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -7138,6 +7414,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": \"In church; or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -7242,6 +7522,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Sunday\", \"start_time\": 1000, \"end_time\": 1030, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Sunday\", \"start_time\": 1615, \"end_time\": 1700, \"end_next_day\": false, \"notes\": \"Every 2nd Sunday (or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -7344,6 +7628,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Sunday\", \"start_time\": 930, \"end_time\": 1000, \"end_next_day\": false, \"notes\": \"Before Sunday Mass or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -7448,6 +7736,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Thursday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Weekly Sacrament of Reconciliation (in the church)\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -7550,6 +7842,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"Also after 4:00pm Mass; by appointment\"}, {\"day\": \"Saturday\", \"start_time\": 1700, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After 4:00pm Mass; by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -7654,6 +7950,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1515, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"By appointment also available\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -7756,6 +8056,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Monday\", \"start_time\": 1900, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -7860,6 +8164,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1515, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -7962,6 +8270,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -8066,6 +8378,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1630, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -8168,6 +8484,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1100, \"end_time\": 1200, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -8272,6 +8592,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -8349,7 +8673,7 @@
     {
       "parish_id": "1687",
       "page_id": "2df29b8f-0e6e-810c-b34f-e3b97c161ab3",
-      "last_edited_time": "2026-09-05T17:08:00.000Z",
+      "last_edited_time": "2026-09-09T21:23:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -8374,6 +8698,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"In the church; also by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -8417,7 +8745,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Tuesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Wednesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Thursday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Friday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": \"Labor Day Mass (Marian Chapel)\"}, {\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": \"2026-09-05\", \"language\": null, \"notes\": \"Outdoor Mass (Magis Outdoor Chapel)\"}, {\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": \"2026-09-19\", \"language\": null, \"notes\": \"Outdoor Mass (Magis Outdoor Chapel)\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Tuesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Wednesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Thursday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Friday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"School Mass (in the Church)\"}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": \"Labor Day Mass (Marian Chapel)\"}, {\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": \"2026-09-05\", \"language\": null, \"notes\": \"Outdoor Mass (Magis Outdoor Chapel)\"}, {\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": \"2026-09-19\", \"language\": null, \"notes\": \"Outdoor Mass (Magis Outdoor Chapel)\"}]"
         },
         "Name": {
           "type": "title",
@@ -8477,6 +8805,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": \"And by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -8581,6 +8913,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -8658,7 +8994,7 @@
     {
       "parish_id": "1733",
       "page_id": "2df29b8f-0e6e-8174-bee3-fdf989432d32",
-      "last_edited_time": "2026-09-05T17:09:00.000Z",
+      "last_edited_time": "2026-09-09T22:06:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -8683,6 +9019,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -8726,7 +9066,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -8786,6 +9126,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": 1645, \"end_next_day\": false, \"notes\": \"In North Wing confessional; also by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -8890,6 +9234,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -8992,6 +9340,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -9096,6 +9448,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -9198,6 +9554,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -9302,6 +9662,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"By appointment also available\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": false
@@ -9379,7 +9743,7 @@
     {
       "parish_id": "1794",
       "page_id": "2df29b8f-0e6e-8198-b44a-ecb8501e19c5",
-      "last_edited_time": "2026-09-05T17:08:00.000Z",
+      "last_edited_time": "2026-09-09T22:06:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -9404,6 +9768,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": \"Thursday before First Friday\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -9447,7 +9815,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": \"Labor Day\"}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": \"2026-09-11\", \"language\": null, \"notes\": \"Patriot Day\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": \"Labor Day\"}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": \"2026-09-11\", \"language\": null, \"notes\": \"Patriot Day\"}, {\"day\": \"Monday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -9507,6 +9875,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -9611,6 +9983,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": false
@@ -9713,6 +10089,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1615, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -9817,6 +10197,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -9920,6 +10304,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Tuesday\", \"start_time\": 1000, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After Mass\"}, {\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -10020,6 +10408,10 @@
           "value": "Shaker Heights"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -10126,6 +10518,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Sunday\", \"start_time\": 900, \"end_time\": 1000, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Sunday\", \"start_time\": 1130, \"end_time\": 1230, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Monday\", \"start_time\": 1800, \"end_time\": 1820, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Tuesday\", \"start_time\": 1800, \"end_time\": 1820, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 1800, \"end_time\": 1820, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 1800, \"end_time\": 1820, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Friday\", \"start_time\": 1800, \"end_time\": 1820, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -10228,6 +10624,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -10332,6 +10732,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": false
@@ -10434,6 +10838,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -10538,6 +10946,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Sunday\", \"start_time\": 745, \"end_time\": 815, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -10640,6 +11052,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -10744,6 +11160,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Monday\", \"start_time\": 1650, \"end_time\": 1720, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -10846,6 +11266,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Friday\", \"start_time\": 1245, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After Noon Mass\"}, {\"day\": \"Friday\", \"start_time\": 1230, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -10950,6 +11374,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -11052,6 +11480,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -11156,6 +11588,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Friday\", \"start_time\": 900, \"end_time\": 1000, \"end_next_day\": false, \"notes\": \"Or by appointment\"}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -11256,6 +11692,10 @@
           "value": "Cleveland"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -11362,6 +11802,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Wednesday\", \"start_time\": 1810, \"end_time\": 1910, \"end_next_day\": false, \"notes\": \"And by appointment\"}, {\"day\": \"Sunday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": \"First Sunday of the month, before and after noon Mass; and by appointment\"}, {\"day\": \"Sunday\", \"start_time\": 1300, \"end_time\": null, \"end_next_day\": false, \"notes\": \"First Sunday of the month, before and after noon Mass; and by appointment\"}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"And by appointment\"}, {\"day\": \"Friday\", \"start_time\": 1100, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Every 1st Friday; and by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -11464,6 +11908,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Also available by appointment\"}, {\"day\": \"Wednesday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Last Wednesday of each month; also available by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -11568,6 +12016,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -11670,6 +12122,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"Also by appointment\"}, {\"day\": \"Saturday\", \"start_time\": 1700, \"end_time\": 1730, \"end_next_day\": false, \"notes\": \"Also by appointment\"}, {\"day\": \"Thursday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"Thursday before First Friday; also by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -11774,6 +12230,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"and by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -11876,6 +12336,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Sunday\", \"start_time\": 1240, \"end_time\": 1300, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -11980,6 +12444,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the main church; or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -12082,6 +12550,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -12186,6 +12658,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": 1630, \"end_next_day\": false, \"notes\": \"In the chapel; or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -12289,6 +12765,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Wednesday\", \"start_time\": 1830, \"end_time\": 1930, \"end_next_day\": false, \"notes\": \"With Eucharistic Adoration\"}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -12366,7 +12846,7 @@
     {
       "parish_id": "5493",
       "page_id": "2df29b8f-0e6e-8179-a9a5-ea00e4206a69",
-      "last_edited_time": "2026-09-05T17:09:00.000Z",
+      "last_edited_time": "2026-09-09T22:06:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -12391,6 +12871,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1615, \"end_next_day\": false, \"notes\": \"In church; or by appointment\"}, {\"day\": \"Monday\", \"start_time\": 1800, \"end_time\": 1830, \"end_next_day\": false, \"notes\": \"In church\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -12434,7 +12918,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass (in church)\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Sunday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Saturday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Tuesday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": \"In Saint Ann Shrine\"}, {\"day\": \"Wednesday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": \"In Saint Ann Shrine\"}, {\"day\": \"Thursday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": \"In Saint Ann Shrine\"}, {\"day\": \"Friday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": \"In Saint Ann Shrine\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass (in church)\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Sunday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Saturday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"In church\"}, {\"day\": \"Tuesday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": \"In Saint Ann Shrine\"}, {\"day\": \"Wednesday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": \"In Saint Ann Shrine\"}, {\"day\": \"Thursday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": \"In Saint Ann Shrine\"}, {\"day\": \"Friday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": \"In Saint Ann Shrine\"}, {\"day\": \"Monday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": \"In Saint Ann Shrine\"}]"
         },
         "Name": {
           "type": "title",
@@ -12494,6 +12978,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Thursday\", \"start_time\": 1930, \"end_time\": 2030, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 1100, \"end_time\": 1200, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -12595,6 +13083,10 @@
           "value": "South Amherst"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -12701,6 +13193,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": 1645, \"end_next_day\": false, \"notes\": \"At St. Edward\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -12801,6 +13297,10 @@
           "value": "Middlefield"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -12907,6 +13407,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1615, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -13010,6 +13514,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Wednesday\", \"start_time\": 1600, \"end_time\": 1650, \"end_next_day\": false, \"notes\": \"or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -13110,6 +13618,10 @@
           "value": "Cleveland"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -13216,6 +13728,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -13318,6 +13834,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Sunday\", \"start_time\": 730, \"end_time\": 800, \"end_next_day\": false, \"notes\": \"30 minutes prior to Holy Mass\"}, {\"day\": \"Sunday\", \"start_time\": 1000, \"end_time\": 1030, \"end_next_day\": false, \"notes\": \"30 minutes prior to Holy Mass\"}, {\"day\": \"Monday\", \"start_time\": 700, \"end_time\": 730, \"end_next_day\": false, \"notes\": \"30 minutes prior to Holy Mass\"}, {\"day\": \"Tuesday\", \"start_time\": 700, \"end_time\": 730, \"end_next_day\": false, \"notes\": \"30 minutes prior to Holy Mass\"}, {\"day\": \"Wednesday\", \"start_time\": 700, \"end_time\": 730, \"end_next_day\": false, \"notes\": \"30 minutes prior to Holy Mass\"}, {\"day\": \"Thursday\", \"start_time\": 700, \"end_time\": 730, \"end_next_day\": false, \"notes\": \"30 minutes prior to Holy Mass\"}, {\"day\": \"Friday\", \"start_time\": 1800, \"end_time\": 1830, \"end_next_day\": false, \"notes\": \"30 minutes prior to Holy Mass\"}, {\"day\": \"Saturday\", \"start_time\": 830, \"end_time\": 900, \"end_next_day\": false, \"notes\": \"30 minutes prior to Holy Mass\"}, {\"day\": \"Saturday\", \"start_time\": 1730, \"end_time\": 1800, \"end_next_day\": false, \"notes\": \"30 minutes prior to Holy Mass\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -13422,6 +13942,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1500, \"end_next_day\": false, \"notes\": \"Or call the parish office for an appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -13524,6 +14048,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Tuesday\", \"start_time\": 1830, \"end_time\": 1930, \"end_next_day\": false, \"notes\": \"1st Tuesday of each month; and by appointment; and by appointment\"}, {\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1615, \"end_next_day\": false, \"notes\": \"and by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -13628,6 +14156,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Monday\", \"start_time\": 1900, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After 6:00 PM daily Mass (First Monday of the month); and by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": false
@@ -13728,6 +14260,10 @@
           "value": "Nova"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -13834,6 +14370,10 @@
           "type": "rich_text",
           "value": ""
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": false
@@ -13934,6 +14474,10 @@
           "value": "Cleveland"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -14040,6 +14584,10 @@
           "type": "rich_text",
           "value": "[]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -14142,6 +14690,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1545, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Sunday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Also by appointment\"}, {\"day\": \"Sunday\", \"start_time\": 1030, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Also by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -14246,6 +14798,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -14348,6 +14904,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"Church\"}, {\"day\": \"Friday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"First Friday (Chapel)\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -14452,6 +15012,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 900, \"end_time\": 930, \"end_next_day\": false, \"notes\": \"At Our Lady of Victory on the second and fourth Saturdays.\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -14554,6 +15118,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 2000, \"end_time\": 2030, \"end_next_day\": false, \"notes\": \"Thursday before the First Friday (once a month)\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -14658,6 +15226,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -14760,6 +15332,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1615, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -14864,6 +15440,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 1900, \"end_time\": 2000, \"end_next_day\": false, \"notes\": \"Every 1st Wednesday of the month\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -14967,6 +15547,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Thursday\", \"start_time\": 1800, \"end_time\": 1845, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -15067,6 +15651,10 @@
           "value": "Cleveland"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -15173,6 +15761,10 @@
           "type": "rich_text",
           "value": ""
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": false
@@ -15273,6 +15865,10 @@
           "value": "Cleveland"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -15379,6 +15975,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Sunday\", \"start_time\": 1030, \"end_time\": 1130, \"end_next_day\": false, \"notes\": \"\\\"Before Mass\\\"; also after Mass and by request/appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -15481,6 +16081,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 1200, \"end_time\": 1300, \"end_next_day\": false, \"notes\": \"During Adoration; or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -15585,6 +16189,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"and by appointment\"}, {\"day\": \"Thursday\", \"start_time\": 1900, \"end_time\": 2000, \"end_next_day\": false, \"notes\": \"Thursday before the First Friday of each month; and by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -15662,7 +16270,7 @@
     {
       "parish_id": "scas-e",
       "page_id": "2df29b8f-0e6e-81ce-bb19-d214c32ef1f9",
-      "last_edited_time": "2026-09-05T17:09:00.000Z",
+      "last_edited_time": "2026-09-09T22:29:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -15687,6 +16295,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": 1700, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": "{\"hash\": \"6dfb0648073bff88\", \"chars\": 6439, \"first_seen\": \"2026-09-09\"}"
         },
         "Enable": {
           "type": "checkbox",
@@ -15765,7 +16377,7 @@
     {
       "parish_id": "scy-perry",
       "page_id": "2df29b8f-0e6e-81a5-8676-d4f89d31cb67",
-      "last_edited_time": "2026-09-05T17:02:00.000Z",
+      "last_edited_time": "2026-09-09T22:29:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -15790,6 +16402,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": 1645, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": "{\"hash\": \"03ee3aac3b1078d8\", \"chars\": 661, \"first_seen\": \"2026-09-09\"}"
         },
         "Enable": {
           "type": "checkbox",
@@ -15868,7 +16484,7 @@
     {
       "parish_id": "sem-c",
       "page_id": "2df29b8f-0e6e-8124-8205-ce587e7540f3",
-      "last_edited_time": "2026-09-05T17:02:00.000Z",
+      "last_edited_time": "2026-09-09T22:29:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -15893,6 +16509,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": "{\"hash\": \"a0a576df33434a00\", \"chars\": 6175, \"first_seen\": \"2026-09-09\"}"
         },
         "Enable": {
           "type": "checkbox",
@@ -15994,6 +16614,10 @@
           "value": "Gates Mills"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -16100,6 +16724,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Thursday\", \"start_time\": 1730, \"end_time\": 1815, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 900, \"end_time\": 945, \"end_next_day\": false, \"notes\": \"Or call the office to make an appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -16202,6 +16830,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -16306,6 +16938,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Friday\", \"start_time\": 700, \"end_time\": 830, \"end_next_day\": false, \"notes\": \"Confession is always available during adoration; see Fr. Trask\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -16408,6 +17044,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Wednesday\", \"start_time\": 1730, \"end_time\": 1820, \"end_next_day\": false, \"notes\": \"Confession is always available during adoration; see Fr. Trask\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -16512,6 +17152,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": 1630, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -16614,6 +17258,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1615, \"end_time\": 1645, \"end_next_day\": false, \"notes\": \"In the church confessional box\"}, {\"day\": \"Sunday\", \"start_time\": 900, \"end_time\": 930, \"end_next_day\": false, \"notes\": \"Before 9:30am Mass; in the church confessional box\"}, {\"day\": \"Wednesday\", \"start_time\": 1900, \"end_time\": 2000, \"end_next_day\": false, \"notes\": \"Confession, Holy Hour & Benediction\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -16718,6 +17366,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Wednesday\", \"start_time\": 1700, \"end_time\": 1800, \"end_next_day\": false, \"notes\": \"By appointment\\u2014call (330) 425-8141\"}, {\"day\": \"Saturday\", \"start_time\": 1445, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"By appointment\\u2014call (330) 425-8141\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -16818,6 +17470,10 @@
           "value": "Rittman"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -16924,6 +17580,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Monday\", \"start_time\": 1650, \"end_time\": 1725, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1540, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -17026,6 +17686,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 830, \"end_time\": 930, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -17130,6 +17794,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": 1645, \"end_next_day\": false, \"notes\": \"Also available by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -17230,6 +17898,10 @@
           "value": "Cleveland"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -17336,6 +18008,10 @@
           "type": "rich_text",
           "value": ""
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": false
@@ -17438,6 +18114,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"Before Mass\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -17542,6 +18222,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 1730, \"end_time\": 1800, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -17644,6 +18328,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -17748,6 +18436,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": 1645, \"end_next_day\": false, \"notes\": \"Confessions may also be heard on request at any time.\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -17851,6 +18543,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Monday\", \"start_time\": 1830, \"end_time\": 1930, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -17951,6 +18647,10 @@
           "value": "Lorain"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -18057,6 +18757,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -18134,7 +18838,7 @@
     {
       "parish_id": "st-mary-painesville-oh",
       "page_id": "2df29b8f-0e6e-8103-8c27-f7333090c531",
-      "last_edited_time": "2026-09-05T17:09:00.000Z",
+      "last_edited_time": "2026-09-09T22:06:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -18159,6 +18863,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Friday\", \"start_time\": 1300, \"end_time\": 1330, \"end_next_day\": false, \"notes\": \"First Friday of the month\"}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Sunday\", \"start_time\": 1730, \"end_time\": 1800, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -18202,7 +18910,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1200, \"mass_date\": null, \"language\": \"Bilingual\", \"notes\": \"English & Spanish\"}, {\"day\": \"Sunday\", \"time\": 1800, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": \"Spanish Mass\"}, {\"day\": \"Tuesday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1215, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 1215, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": \"Labor Day Mass\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1200, \"mass_date\": null, \"language\": \"Bilingual\", \"notes\": \"English & Spanish\"}, {\"day\": \"Sunday\", \"time\": 1800, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": \"Spanish Mass\"}, {\"day\": \"Tuesday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1215, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 1215, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": \"2026-09-07\", \"language\": null, \"notes\": \"Labor Day Mass\"}, {\"day\": \"Monday\", \"time\": 1215, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -18262,6 +18970,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 900, \"end_time\": 930, \"end_next_day\": false, \"notes\": \"Or anytime by calling the Parish Office\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -18340,7 +19052,7 @@
     {
       "parish_id": "st-matthias-the-apostle-parma-oh",
       "page_id": "2df29b8f-0e6e-81a1-b271-f89828d3dc11",
-      "last_edited_time": "2026-09-05T17:09:00.000Z",
+      "last_edited_time": "2026-09-09T21:23:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -18365,6 +19077,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1515, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"Or call the parish office to schedule an appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -18408,7 +19124,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -18468,6 +19184,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -18572,6 +19292,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Friday\", \"start_time\": 1600, \"end_time\": 1700, \"end_next_day\": false, \"notes\": \"Also by appointment (please call the rectory)\"}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Also by appointment (please call the rectory)\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -18672,6 +19396,10 @@
           "value": "Cleveland"
         },
         "Confessions": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Content Fingerprint": {
           "type": "rich_text",
           "value": ""
         },
@@ -18778,6 +19506,10 @@
           "type": "rich_text",
           "value": ""
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": false
@@ -18880,6 +19612,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Sunday\", \"start_time\": 900, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After the 8:00 AM Mass\"}, {\"day\": \"Sunday\", \"start_time\": 1100, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After the 10:00 AM Mass\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",
@@ -18984,6 +19720,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": false
@@ -19087,6 +19827,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1550, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Sunday\", \"start_time\": 1000, \"end_time\": 1030, \"end_next_day\": false, \"notes\": null}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -19164,7 +19908,7 @@
     {
       "parish_id": "sw-c",
       "page_id": "2df29b8f-0e6e-8143-aceb-f84a67abaac3",
-      "last_edited_time": "2026-09-05T16:56:00.000Z",
+      "last_edited_time": "2026-09-09T22:29:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -19189,6 +19933,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": ""
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": "{\"hash\": \"24ae9a4c20ede8a3\", \"chars\": 2531, \"first_seen\": \"2026-09-09\"}"
         },
         "Enable": {
           "type": "checkbox",
@@ -19293,6 +20041,10 @@
           "type": "rich_text",
           "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"In church; or by appointment\"}]"
         },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
         "Enable": {
           "type": "checkbox",
           "value": true
@@ -19395,6 +20147,10 @@
         "Confessions": {
           "type": "rich_text",
           "value": "[{\"day\": \"Thursday\", \"start_time\": 1700, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In church; or by appointment\"}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
         },
         "Enable": {
           "type": "checkbox",

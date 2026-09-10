@@ -100,20 +100,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
-        },
-        {
-          "day": "Tuesday",
-          "start": "09:00",
-          "mass_date": "2026-09-08",
-          "language": null,
-          "notes": "The Nativity of the Blessed Virgin Mary"
         }
       ],
       "confession": [
@@ -522,13 +508,6 @@
           "mass_date": null,
           "language": null,
           "notes": null
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
         }
       ],
       "confession": [
@@ -747,13 +726,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         }
       ],
       "confession": [
@@ -1048,13 +1020,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass (Pavilion)"
         }
       ],
       "confession": [
@@ -1558,13 +1523,6 @@
           "mass_date": null,
           "language": "English",
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "10:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass (St. Vitus Village Chapel)"
         }
       ],
       "confession": [
@@ -1703,6 +1661,13 @@
           "notes": null
         },
         {
+          "day": "Monday",
+          "start": "06:28",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
           "day": "Tuesday",
           "start": "06:28",
           "mass_date": null,
@@ -1736,13 +1701,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
         },
         {
           "day": "Friday",
@@ -1919,13 +1877,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         }
       ],
       "confession": [
@@ -2150,13 +2101,6 @@
           "notes": "Vigil Mass"
         },
         {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day; Novena and Mass (time change)"
-        },
-        {
           "day": "Sunday",
           "start": "12:00",
           "mass_date": "2026-09-13",
@@ -2237,13 +2181,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
         }
       ],
       "confession": [
@@ -2506,13 +2443,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
         }
       ],
       "confession": [
@@ -2915,20 +2845,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
-        },
-        {
-          "day": "Wednesday",
-          "start": "10:00",
-          "mass_date": "2026-09-09",
-          "language": null,
-          "notes": null
         }
       ],
       "confession": [
@@ -3341,13 +3257,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass at NATBVM"
         }
       ],
       "confession": [
@@ -3594,13 +3503,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Tuesday",
-          "start": "17:30",
-          "mass_date": "2026-09-08",
-          "language": null,
-          "notes": "Mass for Blessed Mother (Nativity of the Blessed Virgin Mary)"
         }
       ],
       "confession": [
@@ -3964,6 +3866,13 @@
           "notes": "In church"
         },
         {
+          "day": "Monday",
+          "start": "11:30",
+          "mass_date": null,
+          "language": null,
+          "notes": "In Saint Ann Shrine"
+        },
+        {
           "day": "Tuesday",
           "start": "09:00",
           "mass_date": null,
@@ -4128,13 +4037,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
         }
       ],
       "confession": [
@@ -4551,7 +4453,7 @@
         },
         {
           "day": "Monday",
-          "start": "09:00",
+          "start": "08:30",
           "mass_date": null,
           "language": null,
           "notes": null
@@ -4653,6 +4555,13 @@
           "notes": null
         },
         {
+          "day": "Monday",
+          "start": "07:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
           "day": "Tuesday",
           "start": "07:00",
           "mass_date": null,
@@ -4686,20 +4595,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day (Daily Mass at 9:00am)"
-        },
-        {
-          "day": "Wednesday",
-          "start": "18:30",
-          "mass_date": "2026-09-09",
-          "language": null,
-          "notes": "Mass for Faith Formation Kickoff"
         }
       ],
       "confession": [
@@ -5209,6 +5104,13 @@
           "notes": "Spanish Mass"
         },
         {
+          "day": "Monday",
+          "start": "12:15",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
           "day": "Tuesday",
           "start": "06:45",
           "mass_date": null,
@@ -5242,13 +5144,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         }
       ],
       "confession": [
@@ -5566,13 +5461,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Sunday Vigil"
-        },
-        {
-          "day": "Monday",
-          "start": "08:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
         }
       ],
       "confession": [
@@ -5823,13 +5711,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         }
       ],
       "confession": [
@@ -5957,13 +5838,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Federal Holiday Mass (Labor Day)"
         }
       ],
       "confession": [
@@ -6366,13 +6240,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
         }
       ],
       "confession": [
@@ -6525,13 +6392,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass (weather permitting, at the outdoor shrine)"
         }
       ],
       "confession": [
@@ -6650,13 +6510,6 @@
           "notes": "Vigil Mass"
         },
         {
-          "day": "Monday",
-          "start": "08:30",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day; Mass time change"
-        },
-        {
           "day": "Sunday",
           "start": "10:00",
           "mass_date": "2026-09-20",
@@ -6768,13 +6621,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass (Livestream)"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass (not part of regular weekday schedule time)"
         }
       ],
       "confession": [
@@ -7425,13 +7271,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass (outside, weather permitting)"
         }
       ],
       "confession": [
@@ -7527,13 +7366,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Tuesday",
-          "start": "18:30",
-          "mass_date": "2026-09-08",
-          "language": null,
-          "notes": "Opening Mass for Family Faith Formation; Feast of the Nativity of the Blessed Virgin Mary (not a Holy Day of Obligation)"
         }
       ],
       "confession": [
@@ -8174,6 +8006,13 @@
         },
         {
           "day": "Monday",
+          "start": "07:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Monday",
           "start": "09:30",
           "mass_date": null,
           "language": null,
@@ -8265,7 +8104,7 @@
     "longitude": -81.2068015,
     "bulletin_url": "https://www.sthelen.com/sunday-page.html",
     "timestamp": "2026-08-29",
-    "invite_feedback": false,
+    "invite_feedback": true,
     "schedules": {
       "mass": [
         {
@@ -8392,6 +8231,13 @@
           "notes": null
         },
         {
+          "day": "Monday",
+          "start": "07:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
           "day": "Tuesday",
           "start": "19:00",
           "mass_date": null,
@@ -8439,13 +8285,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:30",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         }
       ],
       "confession": [
@@ -9782,13 +9621,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         }
       ],
       "confession": [
@@ -9992,13 +9824,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2027-09-07",
-          "language": null,
-          "notes": "Labor Day"
         }
       ],
       "confession": [
@@ -10301,13 +10126,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
         }
       ],
       "confession": [
@@ -10428,13 +10246,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
         }
       ],
       "confession": [
@@ -10664,13 +10475,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         },
         {
           "day": "Thursday",
@@ -10999,13 +10803,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:30",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass (office closed)"
         }
       ],
       "confession": [
@@ -11350,13 +11147,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         }
       ],
       "confession": [
@@ -11890,13 +11680,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
         }
       ],
       "confession": [
@@ -12075,13 +11858,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         }
       ],
       "confession": [
@@ -12328,13 +12104,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": null
         }
       ],
       "confession": [
@@ -12602,20 +12371,6 @@
           "mass_date": null,
           "language": null,
           "notes": null
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
-        },
-        {
-          "day": "Tuesday",
-          "start": "08:15",
-          "mass_date": "2026-09-08",
-          "language": null,
-          "notes": "Nativity of the Blessed Virgin Mary (in the church)"
         }
       ],
       "confession": [
@@ -13442,13 +13197,6 @@
           "notes": "Vigil Mass"
         },
         {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": null
-        },
-        {
           "day": "Thursday",
           "start": "10:00",
           "mass_date": "2026-09-10",
@@ -13521,13 +13269,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Sunday Vigil"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         }
       ],
       "confession": [
@@ -13727,6 +13468,13 @@
         {
           "day": "Sunday",
           "start": "11:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Monday",
+          "start": "08:30",
           "mass_date": null,
           "language": null,
           "notes": null
@@ -14207,13 +13955,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
         }
       ],
       "confession": [],
@@ -14380,15 +14121,7 @@
           "notes": "Special Padre Pio Mass"
         }
       ],
-      "confession": [
-        {
-          "day": "Sunday",
-          "start": "08:30",
-          "end": null,
-          "end_next_day": false,
-          "notes": "Please ask a priest before or after Mass"
-        }
-      ],
+      "confession": [],
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -14442,13 +14175,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         }
       ],
       "confession": [
@@ -14565,13 +14291,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
         }
       ],
       "confession": [
@@ -15107,20 +14826,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day"
-        },
-        {
-          "day": "Tuesday",
-          "start": "06:00",
-          "mass_date": "2026-09-08",
-          "language": null,
-          "notes": "No morning Mass (The Nativity of the Blessed Virgin Mary)"
         }
       ],
       "confession": [
@@ -15287,13 +14992,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         }
       ],
       "confession": [
@@ -15658,13 +15356,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         }
       ],
       "confession": [
@@ -16077,7 +15768,7 @@
         },
         {
           "day": "Monday",
-          "start": "09:00",
+          "start": "08:30",
           "mass_date": null,
           "language": null,
           "notes": null
@@ -16508,6 +16199,13 @@
           "notes": null
         },
         {
+          "day": "Monday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
           "day": "Tuesday",
           "start": "08:30",
           "mass_date": null,
@@ -16796,7 +16494,7 @@
         },
         {
           "day": "Monday",
-          "start": "09:00",
+          "start": "08:00",
           "mass_date": null,
           "language": null,
           "notes": null
@@ -16900,6 +16598,13 @@
         {
           "day": "Sunday",
           "start": "17:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
+          "day": "Monday",
+          "start": "12:00",
           "mass_date": null,
           "language": null,
           "notes": null
@@ -17474,7 +17179,7 @@
           "start": "08:30",
           "mass_date": null,
           "language": null,
-          "notes": "Marian Chapel"
+          "notes": "School Mass (in the Church)"
         },
         {
           "day": "Saturday",
@@ -17482,20 +17187,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Saturday",
-          "start": "16:30",
-          "mass_date": "2026-09-05",
-          "language": null,
-          "notes": "Outdoor Mass (Magis Outdoor Chapel)"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass (Marian Chapel)"
         },
         {
           "day": "Saturday",
@@ -17599,13 +17290,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         }
       ],
       "confession": [
@@ -17695,13 +17379,6 @@
           "mass_date": null,
           "language": null,
           "notes": null
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass"
         }
       ],
       "confession": [
@@ -17857,13 +17534,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Sunday Vigil"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "Labor Day Mass for the Blessing of Human Labor (in the Cathedral)"
         }
       ],
       "confession": [
@@ -17914,7 +17584,7 @@
           "start": "17:00",
           "end": "17:25",
           "end_next_day": false,
-          "notes": null
+          "notes": "Confession in the Chapel"
         },
         {
           "day": "Thursday",
@@ -17997,13 +17667,6 @@
           "notes": null
         },
         {
-          "day": "Monday",
-          "start": "11:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "See Worship Calendar for time & location"
-        },
-        {
           "day": "Tuesday",
           "start": "08:30",
           "mass_date": null,
@@ -18030,13 +17693,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "11:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": "All Souls at West Park Health Center"
         }
       ],
       "confession": [],
@@ -18077,6 +17733,13 @@
           "notes": null
         },
         {
+          "day": "Monday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null
+        },
+        {
           "day": "Tuesday",
           "start": "08:30",
           "mass_date": null,
@@ -18103,13 +17766,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass"
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-09-07",
-          "language": null,
-          "notes": null
         }
       ],
       "confession": [
