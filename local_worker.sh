@@ -19,7 +19,7 @@
 #   cp /path/to/.env "$REPO_DIR/.env"       # OPENAI_API_KEY, NOTION_API_KEY, PARISH_DB_ID
 #
 # Keep THIS script OUTSIDE the cloned repo so a git pull can't rewrite it
-# while it is running. Then add a cron entry, e.g. run Saturday 09:00 local,
+# while it is running. Then add a cron entry, e.g. run Saturday 05:00 local,
 # comfortably before the 2 PM UTC GitHub Actions export:
 #
 #   0 9 * * 6  /home/you/bin/local_worker.sh

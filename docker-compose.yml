@@ -19,8 +19,11 @@ services:
 
       # --- schedule ---
       TZ: America/New_York
-      # Saturday 09:00 local — before the 14:00 UTC Actions export.
-      CRON_SCHEDULE: "0 9 * * 6"
+      # Saturday 05:00 local — must stay AHEAD of the Actions run, which moved
+      # to 10:37 UTC (6:37am ET) on 2026-09-10. At the old 09:00 this worker
+      # would now finish *after* the export was rebuilt, so its three parishes
+      # would miss that week's export.json entirely.
+      CRON_SCHEDULE: "0 5 * * 6"
 
       # --- code ---
       # The image ships no application code; /app is cloned at start and

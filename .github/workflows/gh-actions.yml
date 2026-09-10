@@ -2,11 +2,22 @@ name: Bulletin processor
 run-name: Extract parish information from bulletins
 on:
   schedule:
-    # 14:37, not 14:00. Actions cron is best-effort and the top of the hour is
-    # the most congested minute on the platform; the 2026-08-29 run was dropped
+    # 10:37 UTC Saturday = 6:37am Eastern (5:37am once EST starts; Actions cron
+    # is UTC-only and does not follow DST).
+    #
+    # Moved from 14:37 on 2026-09-10, and it costs nothing: probing the
+    # last-modified header of all 109 PO/eCatholic parishes for the 2026-09-06
+    # bulletin, 105 had uploaded before 10:37 UTC and **zero** uploaded in the
+    # 10:37-14:37 window. The four stragglers landed at Sat 19:36, Sun, Mon and
+    # Tue, so the old time missed them too. Re-run that probe before moving it
+    # any earlier -- the whole point of LOOKAHEAD_DAYS is that the file we want
+    # is named for tomorrow, and it has to exist when we look.
+    #
+    # :37, not :00. Actions cron is best-effort and the top of the hour is the
+    # most congested minute on the platform; the 2026-08-29 run was dropped
     # outright, and a dropped run is silent -- no run record is created at all.
     # An odd minute is materially less likely to be skipped.
-    - cron: '37 14 * * SAT'
+    - cron: '37 10 * * SAT'
   workflow_dispatch:
     inputs:
       stale_days:

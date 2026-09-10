@@ -612,8 +612,17 @@ state a date, so it's a spot-check, not a sweep.
 
 ## Automation
 
-GitHub Actions runs `python main.py --all` every Saturday at 14:37 UTC
-(`.github/workflows/gh-actions.yml`).
+GitHub Actions runs `python main.py --all` every Saturday at **10:37 UTC**
+(`.github/workflows/gh-actions.yml`) — 6:37am Eastern, 5:37am once EST starts,
+since Actions cron is UTC-only and does not follow DST.
+
+Moved from 14:37 on 2026-09-10. Measured first, by probing the `last-modified`
+header of all 109 PO/eCatholic parishes for the 2026-09-06 bulletin: **105 had
+uploaded before 10:37 UTC and zero uploaded in the 10:37–14:37 window.** The
+four stragglers landed Sat 19:36, Sun, Mon and Tue, so the old time missed them
+too. Re-run that probe before moving it earlier again — `LOOKAHEAD_DAYS` exists
+because the file we want is named for *tomorrow*, and it has to be there when
+we look.
 
 **A scheduled run can be dropped, and it is silent when it is.** Actions cron is
 best-effort; on 2026-08-29 the trigger never fired and *no run record was
@@ -665,7 +674,15 @@ connection.
 
 Neither regenerates `export.json` — they only refresh those parishes' Notion
 rows. The Saturday Actions job still rebuilds `export.json` / `parish_data.json`
-from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
+from Notion, **so the worker's cron has to run ahead of it**. The default is
+Sat **05:00 local**, lowered from 09:00 on 2026-09-10 when the Actions run moved
+to 10:37 UTC (6:37am ET) — at 09:00 the worker would have finished *after* the
+export was rebuilt and its three parishes would have missed that week entirely.
+This is a standing coupling: **move one and you must move the other.**
+
+Changing `CRON_SCHEDULE` in `docker-compose.yml` only takes effect when the
+container is recreated, and an Unraid template sets its own value that overrides
+the compose default — so the template needs the same edit by hand.
 
 ## Repo layout notes
 

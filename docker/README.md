@@ -64,7 +64,7 @@ settings page.
 | `OPENAI_API_KEY` | — | **Required.** |
 | `NOTION_API_KEY` | — | **Required.** |
 | `PARISH_DB_ID` | — | **Required.** Notion parish database ID. |
-| `CRON_SCHEDULE` | `0 9 * * 6` | Five-field cron, in `TZ`. Default = Saturday 09:00. |
+| `CRON_SCHEDULE` | `0 5 * * 6` | Five-field cron, in `TZ`. Default = Saturday 05:00, which must stay **ahead of** the Actions run (10:37 UTC / 6:37am ET) or this worker's parishes miss that week's export. |
 | `TZ` | `America/New_York` | Timezone the schedule is read in. |
 | `REPO_URL` | `https://github.com/mfgarvin/bulletin.git` | Cloned into `/app`; re-synced before every run. |
 | `BRANCH` | `main` | Branch to track — what GitHub Actions runs. |
