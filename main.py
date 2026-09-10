@@ -19,7 +19,11 @@ from utils import adoration_capture
 from utils.log_context import set_parish_context
 from utils.sanitize import sanitize_extraction
 from utils.verify_times import verify_times_against_source
-from utils.bulletin_week import covered_week, staleness_warning
+from utils.bulletin_week import (
+    covered_week,
+    implausible_dated_masses,
+    staleness_warning,
+)
 from utils.holidays import displaced_weekdays
 from utils.content_fingerprint import compare as compare_content
 from utils.verify_changes import verify_schedule_changes
@@ -427,6 +431,17 @@ async def process_parish(
             log(f"Sanitized: {msg}")
         for msg in report.flags:
             warn(msg)
+
+        # A dated Mass far from its own bulletin is a year typo, and unlike
+        # every other dated-Mass error it does not expire within the week - it
+        # publishes until its date passes. Dropped rather than flagged.
+        for mass, reason in implausible_dated_masses(
+            extraction.sites, result.bulletin_date
+        ):
+            for site in extraction.sites:
+                if mass in site.mass_times:
+                    site.mass_times.remove(mass)
+            warn(reason)
 
         # Flag recurring Mass times the bulletin's own text never prints
         # (fabrication check). Uses the downloaded bytes, not what the LLM

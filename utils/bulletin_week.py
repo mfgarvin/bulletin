@@ -37,6 +37,58 @@ MONTHLY_BULLETIN_PARISHES: dict[str, int] = {
 }
 
 
+# How far ahead of its own bulletin a dated Mass may legitimately sit. Measured
+# over all 75 dated Masses in the database (2026-09-05 snapshot): 71 fall within
+# -7..+14 days, three more inside +60, and exactly one lies beyond - `1088`'s
+# Labor Day Mass dated **2027**-09-07, 367 days out, which would have published
+# for twelve months. So this window drops one entry across 189 rows and that
+# entry is the bug. 120 leaves roughly double the headroom over the furthest
+# real one; an Advent bulletin advertising Christmas is about 26 days out.
+DATED_MASS_HORIZON_DAYS = 120
+
+# A bulletin can name a Mass a few days before the Sunday it covers (the week's
+# listing usually opens on the preceding Saturday). The observed minimum is -3.
+DATED_MASS_BACKSTOP_DAYS = 7
+
+
+def implausible_dated_masses(
+    sites, bulletin_date: Optional[date]
+) -> list[tuple[object, str]]:
+    """Dated Masses too far from their own bulletin to be that bulletin's.
+
+    Returns `(mass, reason)` pairs. Empty when the source could not date the
+    bulletin - no date, no claim, the same rule the rest of this module follows.
+
+    A year typo is the failure this exists for, and it is unusually expensive:
+    a dated Mass is published until its date passes, so a Mass mis-dated into
+    next year advertises itself for twelve months, while every other dated-Mass
+    error expires within the week. That asymmetry is why these are dropped
+    rather than flagged - the project flags what only a bulletin can settle, and
+    a Mass 367 days from its own bulletin is not one of those.
+    """
+    if bulletin_date is None:
+        return []
+    found = []
+    for site in sites:
+        for mass in site.mass_times:
+            if mass.mass_date is None:
+                continue
+            offset = (mass.mass_date - bulletin_date).days
+            if -DATED_MASS_BACKSTOP_DAYS <= offset <= DATED_MASS_HORIZON_DAYS:
+                continue
+            found.append((
+                mass,
+                f"dated Mass {mass.day.value} {mass.time:04d} on "
+                f"{mass.mass_date.isoformat()} is {offset} days from this "
+                f"bulletin ({bulletin_date.isoformat()}), outside "
+                f"[-{DATED_MASS_BACKSTOP_DAYS}, +{DATED_MASS_HORIZON_DAYS}] - "
+                f"almost always a year typo, and a dated Mass publishes until "
+                f"its date passes. Dropped"
+                + (f" (note: {mass.notes})" if mass.notes else "")
+            ))
+    return found
+
+
 def week_of(day: date) -> tuple[date, date]:
     """The Sunday-through-Saturday week containing `day`, as (start, end)."""
     start = day - timedelta(days=(day.weekday() + 1) % 7)

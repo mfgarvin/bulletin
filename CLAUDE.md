@@ -679,6 +679,43 @@ from Notion, so the worker's cron default (Sat 09:00 local) runs ahead of it.
 
 ## Changelog
 
+### v2.5.27 (2026-09-09) - A dated Mass has to belong to its own bulletin
+
+A dated Mass is published until its date passes. That makes a **year typo**
+uniquely expensive: every other dated-Mass error expires within the week, while
+one mis-dated into next year advertises itself for twelve months. `1088` dated
+its Labor Day Mass **2027**-09-07 and had been publishing it since 2026-09-05.
+
+`implausible_dated_masses()` in `utils/bulletin_week.py` drops any dated Mass
+outside `[-7, +120]` days of the bulletin it came from, which only became
+checkable when v2.5.23 plumbed `bulletin_date`. No date, no claim: rows whose
+source cannot be dated (Webpage, and the four Self-Hosted filenames that don't
+parse) are skipped rather than guessed at.
+
+**The window was measured, not chosen.** Across all 75 dated Masses in the
+2026-09-05 snapshot:
+
+| days from the row's run date | dated Masses |
+|---|---|
+| -7 .. +14 | **71** (95%) |
+| +15 .. +60 | 3 |
+| +61 .. +120 | 0 |
+| **> +120** | **1 - `1088`, at 367** |
+
+The observed minimum is **-3**, so the backstop clips nothing, and the furthest
+legitimate entry is +60, leaving roughly double the headroom (an Advent bulletin
+advertising Christmas sits about 26 days out). **So the guard drops exactly one
+entry across 189 rows, and that entry is the bug.**
+
+Dropped rather than flagged, which is a departure worth naming: this project
+flags what only a bulletin can settle. A Mass 367 days from its own bulletin is
+not one of those, and flagging would have left it publishing for a year.
+
+`1088` repaired via `notion_fixes --apply` (its only recurring Monday is 18:15,
+so the `drop_masses` key matches nothing but the mis-dated entry); re-read after
+the write, second pass a no-op. The guard prevents recurrence, so that entry can
+be retired.
+
 ### v2.5.26 (2026-09-09) - The holiday-week hold: freeze the displaced weekday, let the liturgy through
 
 The fix for the class that started this: on a holiday week the day-by-day Mass

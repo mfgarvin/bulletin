@@ -186,6 +186,17 @@ MANUAL_FIXES: dict[str, ManualFix] = {
     # add_masses entry keeps restoring a Mass, so it would outlive a genuine
     # cancellation. Restorations are idempotent (dedupe merges them), so a row
     # already correct is a no-op and the entry is easy to forget about.
+    "1088": ManualFix(
+        reason="its Labor Day Mass was dated 2027-09-07 - a year typo, and the "
+        "only dated Mass in the database more than 120 days out (367). A dated "
+        "Mass publishes until its date passes, so this one would have "
+        "advertised itself for twelve months while every other dated-Mass "
+        "error expires within the week. 1088's only recurring Monday is 18:15, "
+        "so this key matches nothing but the mis-dated entry. The v2.5.27 "
+        "window guard stops the next one at extraction time; this clears the "
+        "one already stored, and the entry can be retired afterwards",
+        drop_masses={("Monday", 900)},
+    ),
     "0036": ManualFix(
         reason="Labor Day displacement: the standing Monday 08:00 was dropped. "
         "The 2026-09-06 masthead grid reads Mon 8:00 / Tue 8:30 / Wed 8:00 / "
