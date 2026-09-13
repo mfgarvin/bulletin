@@ -616,6 +616,11 @@ GitHub Actions runs `python main.py --all` every Saturday at **10:37 UTC**
 (`.github/workflows/gh-actions.yml`) — 6:37am Eastern, 5:37am once EST starts,
 since Actions cron is UTC-only and does not follow DST.
 
+That is the time it is *scheduled* for, which is not the time it runs: as of
+2026-09-13 it fires around **9:42am Eastern**. See
+[When the chain actually fires](#when-the-chain-actually-fires) before
+reasoning about ordering between any two of these jobs.
+
 Moved from 14:37 on 2026-09-10. Measured first, by probing the `last-modified`
 header of all 109 PO/eCatholic parishes for the 2026-09-06 bulletin: **105 had
 uploaded before 10:37 UTC and zero uploaded in the 10:37–14:37 window.** The
@@ -624,6 +629,71 @@ too. Re-run that probe before moving it earlier again — `LOOKAHEAD_DAYS` exist
 because the file we want is named for *tomorrow*, and it has to be there when
 we look.
 
+### When the chain actually fires
+
+**Nothing fires at its cron time, and nothing ever has.** Measured 2026-09-13
+over 24 consecutive Saturdays of the export cron, which has been unchanged
+(`30 14`) since April and is therefore the clean series:
+
+    Apr  +30 +33 +36                     minutes late
+    May  +40 +58 +62 +75
+    Jun  +79 +85 +87 +77
+    Jul  +70 +58 +58 +67
+    Aug  +64 +26 +16 +15
+    Aug 29 ------------------ +195       step change, has not recovered
+    Sep  +143 +170
+
+So the whole chain lands here. Use these, not the cron times, when reasoning
+about ordering:
+
+| step | cron (UTC) | avg delay | EDT | EST (from Nov 1) |
+|---|---|---|---|---|
+| local worker | `0 5 * * 6` **local** | — | **5:00am** | **5:00am** |
+| bulletin processor | `37 10` | +3h05 | **9:42am** | **8:42am** |
+| export + issue check (chained) | on completion | — | **9:58am** | **8:58am** |
+| export cron backstop | `30 14` | +2h49 | **1:19pm** | **12:19pm** |
+| freshness watcher | `7 17` | +2h00 | **3:07pm** | **2:07pm** |
+
+The processor figure rests on a **single** observation - 2026-09-12 is the only
+Saturday it has run at `37 10` - so treat it as one data point. The export
+backstop has 3 and the watcher 2. The worker is the only one on a local clock,
+so it holds at 5:00am across the DST change while everything else slides an
+hour earlier locally.
+
+**The delay is in GitHub's dispatcher, not in runner queueing**, and that is
+worth knowing before anyone tries to optimise it. Across every scheduled run of
+all three workflows, `created_at == started_at` to the second: the run does not
+*exist* until it fires, and a runner picks it up instantly once it does. This is
+a public repo, so runners are free and uncontended. Nothing in this repository -
+workload, PDF sizes, action versions, the `:37` minute - can move it.
+
+**It is a backlog, not a fixed offset.** On one Saturday the delay shrinks as
+the nominal time gets later (10:37 -> +3h05, 14:30 -> +2h50, 17:07 -> +2h08),
+and 2026-09-05 shows the same gradient. Two consequences: moving a cron earlier
+buys less than its nominal value (the 09-10 move cut 4h of cron time and bought
+3h13 of real time), and moving off the top of the hour no longer helps much -
+`:07`, `:30` and `:37` are all hit alike when the backlog is measured in hours.
+
+**The ordering risk this used to create has fired once.** On 2026-09-05 the
+standalone export cron fired at 16:53:16, **two minutes before the processor**
+at 16:55:29, and exported from Notion before the run had updated it; the
+`workflow_run` export then re-ran at 17:10 and corrected it, leaving two export
+commits 17 minutes apart (`14d4963`, `38382f4`). Under the old pairing the
+export cron was nominally *seven minutes earlier* than the processor, so with
+independent delays it was a coin flip. The 09-10 move opened that to 3h53 in
+the right direction, so the race is gone - but it only ever self-healed because
+the `workflow_run` trigger exists. Keep it.
+
+Re-measure after any cron change, or if the ordering ever looks wrong:
+
+```bash
+# Every scheduled fire time for one workflow, oldest first. Compare against
+# its cron: the gap IS the delay, and the series shows whether it is drifting
+# or has stepped. Swap the name for "Bulletin processor" / "Check pipeline
+# freshness". Add startedAt to confirm it is still dispatcher delay, not queue.
+gh run list --workflow "Export parish data" --limit 60 --json event,createdAt,startedAt -q '.[]|select(.event=="schedule")|"\(.createdAt)  started=\(.startedAt)"' | sort
+```
+
 **A scheduled run can be dropped, and it is silent when it is.** Actions cron is
 best-effort; on 2026-08-29 the trigger never fired and *no run record was
 created at all*, so the failure is invisible in the run list — it looks
@@ -631,10 +701,12 @@ identical to a quiet week. The workflow was enabled, the cron was intact on
 `main`, there was no GitHub incident, and the repo was well inside the 60-day
 inactivity window. The schedule was simply skipped.
 
-The time is 14:37 rather than 14:00 because the top of the hour is the most
-congested minute on the platform. That lowers the odds; it does not remove
-them — it happened again the very next week (2026-08-30 session found no
-scheduled run for 2026-08-29's slot; a manual dispatch covered it).
+The minute is `:37` rather than `:00` because the top of the hour is the most
+congested minute on the platform. That lowers the odds of a dropped trigger; it
+does not remove them — it happened again the very next week (2026-08-30 session
+found no scheduled run for 2026-08-29's slot; a manual dispatch covered it).
+It no longer does much for *lateness*: since 2026-08-29 the dispatch backlog
+has been measured in hours, and `:07`, `:30` and `:37` are all delayed alike.
 
 **`check-freshness.yml`** (Saturdays 17:07 UTC, added 2026-08-30) watches for
 exactly this: `utils/check_freshness.py` asks the Actions API whether a
