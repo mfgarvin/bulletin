@@ -40,6 +40,15 @@ Extract the following information:
      Vietnamese, "bilingual," "English & Spanish"…). Put it in this structured field — not only
      in `notes`.
    - `notes`: brief description ("Vigil Mass", "Christmas Eve", "Holy Day of Obligation")
+   - **`site_label`** — TRANSCRIBE the location tag printed beside this entry, exactly as
+     printed, or leave it null. Clustered parishes label their listings line by line:
+     "8:30AM Mass at Our Lady of Victory", "12:45pm (SMO-C)", "8:30 a.m. - Lodi Worship Site",
+     "8:45 am .. at St. Patrick". Copy that tag and nothing else — do not expand an
+     abbreviation, do not add the parish's own name to a line the bulletin left unlabelled,
+     and do not invent a label from a nearby heading. Null is the correct answer whenever
+     the entry carries no tag of its own. This is transcription, exactly like a time: it is
+     used to route an entry to the right parish, so a guessed label is worse than none.
+     Apply the same rule to confession and adoration entries.
    - A Vigil Mass is always an evening Mass. If you are about to record a vigil before noon,
      you have flipped AM/PM — a "Saturday Vigil at 5:00" means 1700, not 500.
 

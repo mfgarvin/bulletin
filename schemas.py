@@ -40,6 +40,10 @@ class MassTime(BaseModel):
         default=None, description="e.g., 'Spanish', 'Latin' if specified"
     )
     notes: str | None = Field(default=None, description="e.g., 'First Friday only', 'Christmas Eve', 'Holy Day'")
+    cancelled: bool = Field(default=False, description="True when this slot is NOT being celebrated during the week this bulletin covers, while remaining part of the standing schedule. NEVER set by the extractor - it is written by utils/cancellations.py, which only sets it when the bulletin prints this slot's own time next to a cancellation. The reason, if the bulletin gives one, goes in `notes` like any other fact.")
+    site_label: str | None = Field(default=None, description=(
+        "The location tag printed next to THIS entry, transcribed verbatim and nothing else - 'at Our Lady of Victory', 'SMO', 'Lodi Worship Site', 'St. Patrick'. Null when the entry carries no tag. Never a name you compose, infer, or tidy up, and never the parish itself when the bulletin does not label the line."
+    ))
 
     @field_validator("time")
     @classmethod
@@ -70,6 +74,10 @@ class ConfessionTime(BaseModel):
         description="True if end_time falls on the following day (slot crosses midnight)",
     )
     notes: Optional[str] = None
+    cancelled: bool = Field(default=False, description="True when this slot is NOT being celebrated during the week this bulletin covers, while remaining part of the standing schedule. NEVER set by the extractor - it is written by utils/cancellations.py, which only sets it when the bulletin prints this slot's own time next to a cancellation. The reason, if the bulletin gives one, goes in `notes` like any other fact.")
+    site_label: str | None = Field(default=None, description=(
+        "The location tag printed next to THIS entry, transcribed verbatim and nothing else - 'at Our Lady of Victory', 'SMO', 'Lodi Worship Site', 'St. Patrick'. Null when the entry carries no tag. Never a name you compose, infer, or tidy up, and never the parish itself when the bulletin does not label the line."
+    ))
 
     @field_validator("start_time", "end_time")
     @classmethod
@@ -102,6 +110,10 @@ class AdorationTime(BaseModel):
         description="True if end_time falls on the following day (slot crosses midnight)",
     )
     notes: Optional[str] = None
+    cancelled: bool = Field(default=False, description="True when this slot is NOT being celebrated during the week this bulletin covers, while remaining part of the standing schedule. NEVER set by the extractor - it is written by utils/cancellations.py, which only sets it when the bulletin prints this slot's own time next to a cancellation. The reason, if the bulletin gives one, goes in `notes` like any other fact.")
+    site_label: str | None = Field(default=None, description=(
+        "The location tag printed next to THIS entry, transcribed verbatim and nothing else - 'at Our Lady of Victory', 'SMO', 'Lodi Worship Site', 'St. Patrick'. Null when the entry carries no tag. Never a name you compose, infer, or tidy up, and never the parish itself when the bulletin does not label the line."
+    ))
 
     @field_validator("start_time", "end_time")
     @classmethod

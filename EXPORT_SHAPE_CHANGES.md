@@ -80,6 +80,7 @@ arrives pre-parsed.
 - **`mass_date`**: `null` for regular weekly Mass; ISO `"YYYY-MM-DD"` for holiday / one-off Masses (Christmas, Easter, Holy Days, etc.)
 - **`language`**: null = English; otherwise free-text (`"Spanish"`, `"Latin"`, `"Vietnamese"`, etc.)
 - **`notes`**: optional free text (`"Vigil Mass"`, `"Christmas Eve"`, `"First Friday only"`)
+- **`cancelled`**: bool, always present — see below
 
 Entries are pre-sorted: by `mass_date` (regular masses first, holidays after), then by weekday, then by start time.
 
@@ -124,6 +125,56 @@ is always present, and is `false` for ordinary same-day slots.
 
 Slots with no stated time are omitted entirely rather than emitted as
 `00:00–00:00`, so an all-zero slot no longer means "time unknown".
+
+**`cancelled`** (bool) is on these too, with the same meaning as on a Mass.
+
+### `cancelled` — a standing slot that is off this week
+
+Added 2026-09-12. Present on **every** `mass`, `confession` and
+`adoration.times` entry, `false` unless stated otherwise.
+
+`true` means: *this slot is part of the parish's standing schedule, and it is
+not being celebrated during the week this data was pulled for.* It is not a
+deletion and not a correction — the Mass is still the parish's normal Monday
+Mass, it is simply not happening this Monday.
+
+```json
+{"day": "Thursday", "start": "08:45", "mass_date": null, "language": null,
+ "notes": "Fr. Trask is away", "cancelled": true}
+```
+
+**Why it exists.** Parish bulletins print a suspension by showing the Mass's
+own time with `NO MASS` written beside it:
+
+```
+8:45 am .. at St. Patrick .................. NO MASS
+7:30 AM  No Morning Mass
+```
+
+Before this field the pipeline had nowhere to put that. A recurring Mass is
+`mass_date: null` and a one-off is a date — there was no way to say "weekly,
+except this week" — so the slot was simply dropped, and the parish then
+published a schedule with a standing Mass permanently missing. On 2026-09-12
+that cost six slots across four rows; Sacred Heart Oberlin and St. Patrick were
+left publishing weekend Masses only.
+
+**How the app should read it.** Keep showing the slot — people look up a
+schedule to learn what a parish normally does — but mark it as not happening,
+and never count it as in progress or as the next Mass. The reason, when the
+bulletin gives one, is in `notes` like any other fact.
+
+**Lifetime.** It describes the week the bulletin covered, and it is re-derived
+from scratch on every run: next week's bulletin prints the Mass normally, the
+extraction emits it, and it is written back with `cancelled: false`. Nothing
+has to expire it. The one caveat is the usual one — a row whose run failed
+keeps last week's values, `cancelled` included, which is what `invite_feedback`
+and `timestamp` are for.
+
+**What it is never set from.** Only from the bulletin printing this slot's own
+time next to a cancellation phrase, scoped to this slot's own weekday. The
+extractor does not set it; a model opinion is not evidence here. Adoration
+carries the field for completeness but no run writes it, because
+`UPDATE_ADORATION` is `False`.
 
 ### `schedules.adoration`
 

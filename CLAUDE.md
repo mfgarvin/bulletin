@@ -696,6 +696,112 @@ the compose default — so the template needs the same edit by hand.
 
 ## Changelog
 
+### v2.5.30 (2026-09-12) - A cancelled Mass is not a deleted Mass; labels the model copies instead of composes
+
+Four changes out of the 2026-09-12 triage, in rising order of how much they
+change.
+
+**`cancelled` on MassTime / ConfessionTime / AdorationTime, and in
+`export.json`.** The largest category of damage this pipeline produces is a
+standing Mass retracted because the listing suspended it for ONE week, and the
+holiday hold (v2.5.26) only ever sees the subset a calendar can predict. The
+09-12 run produced six more slots across four rows with no holiday anywhere
+near them - a priest away a fortnight (`shc`, `shc-pat`, four slots), a feast
+substitution (`0134`), a school Mass (`1831`).
+
+The root cause is representational, not a prompt failure: `mass_date` is null
+for "every week" or a date for "one specific day", and there is no way to say
+*weekly, except this week*. So a correct reading of "Monday 8:45 — NO MASS" has
+only two legal outputs and both lose the slot. `cancelled` is the missing one.
+
+**`utils/cancellations.py`** sets it, and only from the page: a stored slot the
+new extraction dropped, whose own time is still printed next to its own weekday
+AND next to a cancellation phrase, is restored with `cancelled=True`. It never
+invents a slot, and it re-derives every run, so the flag clears itself the week
+the parish resumes - nothing has to expire it.
+
+**It is deliberately NOT gated on `_text_is_verifiable`, and the distinction
+matters.** That gate governs *absence* claims, which are meaningless on a scan.
+This makes a positive claim - a phrase IS printed here - which is
+self-verifying. Applying the gate would also have inverted it: the hit rate is
+measured over the Masses that SURVIVED, and a parish that just lost most of its
+weekday Masses has few left, so Sacred Heart Oberlin (two survivors, under the
+5-time minimum) would have been the one row ineligible for its own repair.
+
+**Day *scoping*, not distance - the thing v2.5.29 deferred.** A time belongs to
+the nearest weekday label BEFORE it, and that label must be the slot's own day;
+and the cancellation phrase must not be separated from the time by any weekday
+label at all, its own included. The second rule is what rejects "Tuesday 7:30
+AM No Morning Mass / Thursday 7:30 AM Fr. Smith" asked about Thursday - the
+phrase sits before the Thursday header, so it is Tuesday's. Distance alone
+passes that, and so does rule 1 alone. The search window for finding the header
+is wide (400 chars) because a real listing puts the day's readings between the
+header and the time - `0134` prints 110 characters of scripture citation
+between them - and that is not a loosening, because the discrimination comes
+from *nearest*, not from proximity.
+
+Replayed over all 13 rows that lost a recurring Mass in the 09-12 run:
+**5 restorations, and they are exactly the 5 correct ones** (`0134` Tuesday
+07:30, `shc` Thu/Fri 08:45, `shc-pat` Mon 08:45 + Wed 18:30). **Zero false
+restorations** on the eight rows whose drops were genuine, `22544`'s three
+Sunday Masses and `20822`'s four included. `1831` is the known limit and is
+refused correctly: its listing prints "Thursday, September 17 — No Mass" with
+no time beside it, so there is nothing to key on.
+
+**`site_label` on the same three models** - the location tag printed beside an
+entry, transcribed verbatim or null. Cluster bleed was the second-largest
+category (5 rows, 3 of them recurrences), and every mechanism built for it so
+far keys on something the model rewrites each run. `st-matthew-akron-oh` proved
+how weak that is inside one afternoon: the note-level `SITE_EXCLUSIONS` rule
+added that morning dropped four of Our Lady of Victory's Masses, and a
+re-extraction of the same bulletin an hour later emitted them with **no note at
+all**, so the rule saw nothing and the bleed came back.
+
+A note is prose the model composes; a label is a tag it copies, and copying is
+what prompt v3's rule 1 already governs. `_apply_site_exclusions` now tests a
+rule's `note_match`/`note_unless` against the label too - reused rather than
+given their own pair, since a label is strictly more specific than a note, so a
+pattern safe against surrounding prose is safe here.
+
+Live, the model transcribes them reliably and does not invent them: `1905`
+tagged every entry `(STP)` or `(SMO)` - including the Friday 12:45 confession
+that bled onto St. Patrick's row that morning - and `olhc` tagged every entry
+with its worship site, including the Monday confession noted "Lodi Site" that
+bled onto Litchfield. On eleven single-site bulletins it emitted **0 labels out
+of 100 entries**, which was the stated risk and did not happen, and no bulletin
+gained a site (the `sites_total` canary from v2.5.10). St. Matthew's row now
+holds exactly its own four Masses and its `MANUAL_FIXES` treadmill was retired
+the same day.
+
+**This is still a prompt change, and it has not had a wide study.** Eleven
+cached bulletins is not 50 x 5, and v2.5.10's finding stands: each iteration
+there fixed its target and broke a neighbour, and only reading bulletins found
+it. Watch the next run's adoration and confession counts specifically.
+
+**The re-extraction budget reserves capacity for large diffs.** It was the
+binding constraint on 09-05 (44 diffs, budget 40) and again on 09-12 (44 v 40),
+and both times it was spent in ARRIVAL order, so `immat-con-cle`'s 16-slot
+change went unverified while single-slot flaps used it up. A true global sort is
+not available - parishes run concurrently, so no point in the run knows all 44 -
+so `LARGE_DIFF_RESERVE` (15 of the 40) is drawable only by diffs of
+`LARGE_DIFF_SLOTS` (3) or more. Total spend is unchanged; only who gets it.
+
+**The two verification labels agreeing gets its own prefix.** They are
+independent - one asks the page, one asks the model again - and neither is
+reliable alone. Together they were right **7 for 7** across the 09-12 run:
+`0414`, `1060`, `1494`, `0242` and `1905` were each confirmed a wrong write and
+repaired by hand, and `1094`/`1855` each lost a real monthly Mass. Nothing else
+in that warning list reached 50%. So a removal the page still prints, or an
+addition it never prints, combined with "NOT reproduced", now reads
+`LIKELY WRONG WRITE - `. That is all it gets: no gating, nothing dropped - the
+line just says where to start.
+
+**New: `docs/fixlog.md`** - one row per repaired field per run, with a
+`resolution` column separating `structural` from `treadmill`, `manual`, `held`
+and `deferred`. The changelog records what was built; nothing recorded what kept
+breaking, and the reason for a repair is the part that was being thrown away.
+Seeded with 09-12 and backfilled with 09-05.
+
 ### v2.5.29 (2026-09-09) - "(still printed in bulletin)" now has to mean this day
 
 The 2026-09-05 triage measured that label at **4 true / 3 false** and called

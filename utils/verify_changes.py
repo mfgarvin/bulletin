@@ -53,6 +53,25 @@ logger = logging.getLogger(__name__)
 # the cap exists so a prompt regression that changes *everything* costs one
 # bounded batch of retries, not a doubled run.
 REEXTRACT_BUDGET = 40
+
+# ...of which this many are reserved for diffs of LARGE_DIFF_SLOTS or more.
+#
+# The budget was the binding constraint on 2026-09-05 (44 diff parishes, 40
+# re-extractions) and again on 2026-09-12 (44 against 40), and both times it
+# was spent in ARRIVAL order: `immat-con-cle`'s 16-slot change went unverified
+# while single-slot flaps used it up. A slot count is the best cheap proxy for
+# how much a diff is worth verifying - a whole schedule turning over is either
+# a real change worth confirming or a bulletin that printed no schedule, and
+# either way it is the thing a human most needs an answer about.
+#
+# A true global sort is not available here: parishes run concurrently and each
+# one decides independently, so there is no point at which the run knows all
+# 44 diffs. Reserving capacity gets the same outcome without that restructure -
+# once the ordinary pool is gone, small diffs stop drawing and large ones keep
+# going. Total spend is unchanged; only who gets it changes.
+LARGE_DIFF_RESERVE = 15
+LARGE_DIFF_SLOTS = 3
+
 _budget = REEXTRACT_BUDGET
 
 # Pairings: parish_id -> the (possibly merged) site about to be saved there.
@@ -89,6 +108,11 @@ def _time_in_text(time: int, text: str) -> bool:
 # "Sunday: 8:30, 11:00 am" well inside this; an office-hours line and the Mass
 # grid are further apart than this in every case checked.
 _CONTEXT_CHARS = 40
+
+_NOT_REPRODUCED = (
+    " [NOT reproduced on a second extraction - likely extraction noise; "
+    "distrust this week's value]"
+)
 
 _DAY_ABBREV = {
     "Sunday": r"sun", "Monday": r"mon", "Tuesday": r"tue", "Wednesday": r"wed",
@@ -159,8 +183,13 @@ def _describe(
     text: str,
     verifiable: bool,
 ) -> str:
-    """One line per schedule kind: what changed, and what the page says."""
+    """One line per schedule kind: what changed, and what the page says.
+
+    Returns the line and whether any slot drew a *damning* label - an addition
+    the page never prints, or a removal the page still prints.
+    """
     parts = []
+    contradicted = False
     for label, slots, damning in (("added", added, "not printed in bulletin"),
                                   ("removed", removed, "still printed in bulletin")):
         for day, time in sorted(slots):
@@ -169,10 +198,12 @@ def _describe(
                 in_text = _time_in_text_near(time, day, text)
                 if label == "added" and not in_text:
                     entry += f" ({damning} - suspicious)"
+                    contradicted = True
                 elif label == "removed" and in_text:
                     entry += f" ({damning})"
+                    contradicted = True
             parts.append(entry)
-    return f"{kind} changed vs stored: " + ", ".join(parts)
+    return f"{kind} changed vs stored: " + ", ".join(parts), contradicted
 
 
 async def verify_schedule_changes(
@@ -245,13 +276,25 @@ async def verify_schedule_changes(
     # Step 2: does a second extraction of the same bytes agree with the change?
     confirmed: Optional[Pairings] = None
     repro_note = ""
-    if _budget > 0:
+    # How much of this parish's schedule moved, across every kind. Reaching
+    # into the reserve needs a diff big enough to justify it.
+    slot_count = sum(
+        len(added) + len(removed)
+        for per_kind in diffs.values()
+        for added, removed in per_kind.values()
+    )
+    floor = 0 if slot_count >= LARGE_DIFF_SLOTS else LARGE_DIFF_RESERVE
+    if _budget > floor:
         _budget -= 1
         try:
             confirmed = await reextract()
         except Exception as e:  # verification must not fail the parish
             logger.warning("re-extraction failed: %s", e)
             repro_note = " [re-extraction failed - unverified]"
+    elif _budget > 0:
+        repro_note = (
+            " [re-extraction budget held for larger diffs - unverified]"
+        )
     else:
         repro_note = " [re-extraction budget spent - unverified]"
 
@@ -279,11 +322,25 @@ async def verify_schedule_changes(
                     qualifier = (
                         " [reproduced on a second extraction]"
                         if reproduced
-                        else " [NOT reproduced on a second extraction - likely "
-                        "extraction noise; distrust this week's value]"
+                        else _NOT_REPRODUCED
                     )
-            warnings.append(
-                prefix + _describe(kind, added, removed, text, verifiable) + qualifier
-            )
+            line, contradicted = _describe(kind, added, removed, text, verifiable)
+            # The two checks are independent - one asks the page, the other
+            # asks the model a second time - and neither is reliable alone.
+            # "Still printed in bulletin" was worth 4-true/3-false before
+            # v2.5.29 tightened it, and the noise label misses a real loss
+            # (`0599`, 2026-09-05). Together they have been right every time
+            # they have both fired: 7 for 7 across the 2026-09-12 run - `0414`,
+            # `1060`, `1494`, `0242`, `1905` were each confirmed a wrong write
+            # and repaired by hand, and `1094`/`1855` each lost a real monthly
+            # Mass. Nothing else in that run's warning list reached 50%.
+            #
+            # So the conjunction gets its own prefix, and that is deliberately
+            # ALL it gets: no new computation, no gating, nothing dropped.
+            # Triage reads the warning list top to bottom and this is the line
+            # that says start here.
+            if contradicted and _NOT_REPRODUCED in qualifier:
+                line = "LIKELY WRONG WRITE - " + line
+            warnings.append(prefix + line + qualifier)
 
     return warnings

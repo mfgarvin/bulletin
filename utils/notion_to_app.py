@@ -111,6 +111,13 @@ def _structured_mass(mass_times: list[dict], today: str) -> list[dict[str, Any]]
             "mass_date": mass_date,  # null or "YYYY-MM-DD"
             "language": m.get("language"),
             "notes": m.get("notes"),
+            # True only for the week this data was pulled for: the slot is part
+            # of the standing schedule but is not being celebrated. Written by
+            # utils/cancellations.py when the bulletin prints this time beside
+            # a cancellation, and re-derived every run, so it clears itself as
+            # soon as the parish resumes. Emitted always, not only when true -
+            # an app cannot distinguish a missing key from a false one.
+            "cancelled": bool(m.get("cancelled", False)),
         }
         # weeks_of_month / excluded_weeks: emitted only when derived, and
         # never on a dated Mass (mutually exclusive with mass_date per spec).
@@ -156,6 +163,7 @@ def _structured_ranges(items: list[dict]) -> list[dict[str, Any]]:
                 item.get("end_next_day", end < start if end is not None else False)
             ),
             "notes": item.get("notes"),
+            "cancelled": bool(item.get("cancelled", False)),
         }
         # weeks_of_month / excluded_weeks, emitted only when derived.
         entry.update(derive_ordinal(day, item.get("notes")) or {})

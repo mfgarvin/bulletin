@@ -26,6 +26,7 @@ from utils.bulletin_week import (
 )
 from utils.holidays import displaced_weekdays, obligations_in
 from utils.content_fingerprint import compare as compare_content
+from utils.cancellations import restore_cancelled_slots
 from utils.verify_changes import verify_schedule_changes
 
 logging.basicConfig(
@@ -175,6 +176,25 @@ def _apply_site_exclusions(
     def note_excluded(note: str) -> bool:
         return _matches(note, "note_match", "note_unless")
 
+    def label_excluded(label: str) -> bool:
+        """Same patterns, tested against the transcribed `site_label`.
+
+        The note rule was always the weaker half, and 2026-09-12 measured how
+        weak: it dropped four of Our Lady of Victory's Masses off St. Matthew's
+        row on the scheduled run, and a re-extraction of the same bulletin the
+        same afternoon emitted them with no note at all, so the rule saw
+        nothing and the bleed came straight back. A note is prose the model
+        composes; `site_label` is a tag it copies, and copying is the one thing
+        prompt v3's rule 1 already governs.
+
+        The rule's own note patterns are reused rather than given a separate
+        pair. A label is strictly more specific than a note - it is the tag and
+        nothing else - so a pattern written to be safe against surrounding
+        prose is safe here too, and `note_unless` only ever makes it more
+        conservative.
+        """
+        return _matches(label, "note_match", "note_unless")
+
     kept, dropped = [], []
     for site in extraction.sites:
         if excluded((site.site_name or "").lower()):
@@ -193,13 +213,19 @@ def _apply_site_exclusions(
     for site in extraction.sites:
         drops = [
             m for m in site.mass_times
-            if m.mass_date is None and note_excluded((m.notes or "").lower())
+            if m.mass_date is None
+            and (
+                note_excluded((m.notes or "").lower())
+                or label_excluded((m.site_label or "").lower())
+            )
         ]
         if not drops or len(drops) == len(site.mass_times):
             # A full match is not bleed - isolated bleed is one or two entries -
             # and blanking a whole schedule over a note pattern is worse.
             continue
-        dropped_masses += [f"{m.day.value} {m.time:04d} '{m.notes}'" for m in drops]
+        dropped_masses += [
+            f"{m.day.value} {m.time:04d} '{m.site_label or m.notes}'" for m in drops
+        ]
         site.mass_times = [m for m in site.mass_times if m not in drops]
 
     notes = []
@@ -499,6 +525,15 @@ async def process_parish(
             collapse_sites(second, parish_id, parish_name, len(group_parishes))
             sanitize_extraction(second, parish_id)
             return _pair_sites(second, parish, group_parishes)
+
+        # A slot the bulletin prints beside "NO MASS" is suspended for this
+        # week, not gone from the standing schedule. Restoring it as
+        # `cancelled` has to happen BEFORE the diff, or every restoration would
+        # also warn as a change - and it is not one, it is the absence of one.
+        for msg in restore_cancelled_slots(
+            pairings, stored_schedules, result.pdf_bytes, result.content_type
+        ):
+            log(msg)
 
         for msg in await verify_schedule_changes(
             pairings, stored_schedules, _reextract,

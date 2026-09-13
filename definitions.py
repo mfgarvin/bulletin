@@ -45,8 +45,9 @@ SINGLE_SITE_PARISHES: set[str] = {
     "1548",
     "0138",
     "20812",
+    # Both rows of the Holy Redeemer / St. Jerome pair. The name filter cannot
+    # separate them on its own - see the "0342" SITE_EXCLUSIONS rule below.
     "st-jerome-cleveland-oh",
-    "0342",
 }
 
 # Sites to drop from a parish's extraction before any collapse happens.
@@ -90,6 +91,55 @@ SITE_EXCLUSIONS: dict[str, list[dict]] = {
             "match": "oratory of the immaculate conception",
             "unless": ("chapel", "temporary", "weekday", "renovation"),
             "note_match": "immaculate conception",
+            "note_unless": ("solemnity", "feast", "holy day", "holyday"),
+        },
+    ],
+    # One bulletin, two churches, two rows. Holy Redeemer Roman Catholic Parish
+    # is the parish; St. Jerome Church (15000 Lakeshore) and Holy Redeemer
+    # Church (15712 Kipling) are its two worship sites, and each has its own
+    # Notion row - 0342 sits at the Kipling address, st-jerome-cleveland-oh at
+    # Lakeshore, and the two pull the bulletin from different publishers.
+    #
+    # SINGLE_SITE_PARISHES cannot separate them, and both rows are already in
+    # it. The filter scores extracted site names against the Notion name, and
+    # the model writes BOTH sites as "<church> (Holy Redeemer Roman Catholic
+    # Parish)" - so against the name "Holy Redeemer Roman Catholic Parish" the
+    # two score identically, the filter keeps both, and the merge branch folds
+    # St. Jerome's schedule onto the Kipling address. The 2026-09-12 run did
+    # exactly that, adding St. Jerome's Sunday 09:00 and Wed/Fri 08:30 to 0342
+    # beside Holy Redeemer's own Sunday 11:00 and Mon/Thu 08:00.
+    #
+    # The guard is the discriminator, not decoration: "st. jerome church
+    # (holy redeemer roman catholic parish)" does not contain "holy redeemer
+    # church", while Holy Redeemer's own site name does. So a site that names
+    # Holy Redeemer's church is never dropped, however the model decorates it.
+    "0342": [
+        {
+            "match": "jerome",
+            "unless": ("holy redeemer church",),
+        },
+    ],
+    # St. Matthew and Our Lady of Victory (Tallmadge) share a priest and a
+    # Mass-intentions listing. OLV's own row is our-lady-of-victory-tallmadge-oh
+    # and it publishes these Masses correctly.
+    #
+    # This is the note half of the leak, and here it is the ONLY half: the
+    # model does not split OLV out as a site at all, it copies the Masses into
+    # St. Matthew's own list with the location in the note - the listing prints
+    # "8:30AM  Mass at Our Lady of Victory" against Tue/Thu/Sun and "5:45PM
+    # Mass at Our Lady of Victory" against Wednesday, so from the page's point
+    # of view they are entries in St. Matthew's week. The 2026-09-12 run put
+    # four of them on St. Matthew's row. `match` is stated anyway for the run
+    # where the model does split it out; the guard keeps a welded name
+    # ("St. Matthew Parish / Our Lady of Victory") on our side.
+    #
+    # Its Sunday 08:30 twin carries NO note and so is invisible here - see the
+    # st-matthew-akron-oh entry in utils/notion_fixes.py.
+    "st-matthew-akron-oh": [
+        {
+            "match": "our lady of victory",
+            "unless": ("matthew",),
+            "note_match": "our lady of victory",
             "note_unless": ("solemnity", "feast", "holy day", "holyday"),
         },
     ],
