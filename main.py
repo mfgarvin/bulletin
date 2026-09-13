@@ -26,7 +26,7 @@ from utils.bulletin_week import (
 )
 from utils.holidays import displaced_weekdays, obligations_in
 from utils.content_fingerprint import compare as compare_content
-from utils.cancellations import restore_cancelled_slots
+from utils.cancellations import mark_cancelled_slots
 from utils.verify_changes import verify_schedule_changes
 
 logging.basicConfig(
@@ -530,7 +530,7 @@ async def process_parish(
         # week, not gone from the standing schedule. Restoring it as
         # `cancelled` has to happen BEFORE the diff, or every restoration would
         # also warn as a change - and it is not one, it is the absence of one.
-        for msg in restore_cancelled_slots(
+        for msg in mark_cancelled_slots(
             pairings, stored_schedules, result.pdf_bytes, result.content_type
         ):
             log(msg)

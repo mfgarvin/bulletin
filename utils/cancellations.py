@@ -307,17 +307,51 @@ def _restore(
     return notes
 
 
-def restore_cancelled_slots(
+def _mark_kept(entries, text, kind: str, time_attr: str) -> list[str]:
+    """Flag a slot the extraction KEPT that the bulletin says is off this week.
+
+    This is the common half and it was missed in the first cut, which only
+    looked at slots the extraction had dropped. Whether the model drops a
+    cancelled Mass or keeps it is not something the parish controls and not
+    something we can predict - of the eight cancelled slots in the week of
+    2026-09-13, it dropped five and kept three, and the three it kept
+    (`0240` x3, `1548`, `our-lady-of-victory`) would have published as though
+    nothing had happened.
+
+    Needs no stored value, so it also works on a parish's first extraction.
+    """
+    notes = []
+    for e in entries:
+        if getattr(e, "mass_date", None) is not None or e.cancelled:
+            continue
+        time = getattr(e, time_attr)
+        phrase = _cancelled_near(time, e.day.value, text)
+        if phrase:
+            e.cancelled = True
+            notes.append(
+                f"{kind} {e.day.value} {time:04d} marked CANCELLED this week - "
+                f"the bulletin prints this time beside {phrase!r}"
+            )
+    return notes
+
+
+def mark_cancelled_slots(
     pairings: Pairings,
     stored: dict[str, tuple[Optional[list[dict]], Optional[list[dict]]]],
     source_bytes: bytes,
     content_type: str = "pdf",
     text: Optional[str] = None,
 ) -> list[str]:
-    """Restore, as cancelled, any stored slot the page says is off this week.
+    """Mark every standing slot the page says is not being celebrated this week.
+
+    Two halves, because the extractor handles a cancellation both ways:
+
+    - a slot it **kept** is flagged in place (`_mark_kept`);
+    - a slot it **dropped** is restored and flagged (`_restore`), so a
+      suspension cannot read as a retraction.
 
     Mutates the sites in `pairings` - the same objects the save step writes -
-    and returns one note per restoration for `GPT Logs`.
+    and returns one note per slot for `GPT Logs`.
 
     Adoration is not covered. `UPDATE_ADORATION = False` means a run never
     writes it, so there is nothing here to preserve; the field exists on
@@ -337,7 +371,7 @@ def restore_cancelled_slots(
     # is allowed to say a time is missing. This check makes the opposite kind
     # of claim - it asserts that a cancellation phrase IS printed next to this
     # slot's own time - and a positive find is self-verifying. An image-only
-    # bulletin simply matches nothing and restores nothing.
+    # bulletin simply matches nothing and marks nothing.
     #
     # Applying the gate here would also invert it. Its hit rate is measured
     # over the Masses the extraction KEPT, and a parish that just lost most of
@@ -350,6 +384,11 @@ def restore_cancelled_slots(
 
     notes: list[str] = []
     for pid, site in pairings.items():
+        notes += _mark_kept(site.mass_times, text, "Mass", "time")
+        notes += _mark_kept(
+            site.confession_times, text, "Confession", "start_time"
+        )
+
         if pid not in stored:
             continue
         stored_masses, stored_confessions = stored[pid]
@@ -372,3 +411,7 @@ def restore_cancelled_slots(
                     ConfessionTime, "day", "start_time",
                 )
     return notes
+
+
+# Previous name, from when this only handled the dropped half.
+restore_cancelled_slots = mark_cancelled_slots
