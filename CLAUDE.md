@@ -768,6 +768,61 @@ the compose default — so the template needs the same edit by hand.
 
 ## Changelog
 
+### v2.5.31 (2026-09-13) - The cancellation detector, swept against the whole diocese
+
+v2.5.30 shipped `cancelled` on the strength of a 13-row replay. Swept against
+**150 parishes** on that week's live bulletins, the first cut produced **7 false
+positives out of 15 hits** - and not one of the three failures was reachable at
+13 rows. Details and the worked examples are in `utils/cancellations.py`:
+
+| # | failure | cost |
+|---|---|---|
+| 1 | `no` matched inside a word - `5493`'s "+Mark Balza**no** 10:30 am Mass" read as "no 10:30 am mass" | 3 Sunday Masses cancelled at a parish that cancelled nothing |
+| 2 | a phrase naming a time applied to other times - `olp-cle`'s "there is no 5:30pm Mass" | its Sunday 09:00 and 11:00 |
+| 3 | a *standing* exclusion read as a cancellation - `1714`'s "[ no Mass on Thursday ]", `1311`'s "no Mass on Monday, Wednesday & Thursday" | the Friday Mass printed beside each |
+
+Fixed with a word boundary, `_same_time()` (digits compared modulo 12, since a
+bulletin writes the same Mass as "5:30", "5:30pm" and "17:30"), and a rule that
+a day named *after* the phrase must be the slot's own.
+
+**The connector in guard 3 is load-bearing.** Requiring "on"/"for" was not
+tidiness - making it optional overshoots and rejects real cancellations,
+because in a day-by-day listing the text after the phrase is the *next entry*.
+`0240` prints "8:30 a.m. No Mass / Wednesday, September 16 ... 8:30 a.m. No
+Mass", and an optional connector reads Wednesday as the day Monday's
+cancellation applies to. That intermediate version scored 2 hits where the
+right answer is 8.
+
+**After all four guards: 8 hits across 150 rows, 0 false positives**, every
+true positive from the 13-row replay retained, and all 15 unit cases passing.
+
+**What is actually cancelled in the week of 2026-09-13**, which is the first
+time this question has been answerable at all:
+
+| parish | slot | why |
+|---|---|---|
+| `0240` Transfiguration | Mon/Wed/Fri 08:30 | three weekday Masses, printed "8:30 a.m. No Mass" |
+| `shc` Sacred Heart Oberlin | Thu/Fri 08:45 | "Fr. Trask will be away the next two weeks" |
+| `shc-pat` St. Patrick | Mon 08:45, Wed 18:30 | same (not in the sweep - a secondary site has no bulletin URL of its own) |
+| `0134` St. Victor | Tue 07:30 | "7:30 AM No Morning Mass" |
+| `1548` St. Therese | Sun 10:30 | moved to noon for a centennial celebration |
+| `our-lady-of-victory` | Sat 09:00 **confession** | "No confessions this week!" |
+
+**None of it is reflected in the data, and that does not fix itself.** The
+2026-09-12 run predates this code, so nothing carries the flag; the first run
+that can set one is 2026-09-19. Worse, for the four rows where the extractor
+had *already* dropped the slot (`0134`, `shc` x2, `shc-pat` x2) the flag alone
+cannot recover them: `restore_cancelled_slots` computes `dropped = stored -
+produced`, and those slots are no longer in `stored`. **A slot has to survive
+into the ledger before the flag can describe it** - so last week's losses need
+restoring by hand, or by the schedule-stability ledger, before the detector can
+ever see them again. Left deliberately, logged in `docs/fixlog.md`.
+
+Also from the sweep: the survey covers only rows with their own
+`Bulletin Page URL`, so 7 secondary sites were invisible to it. That is a limit
+of the survey, not of the feature - in production `restore_cancelled_slots`
+receives the whole `pairings` map, so every site in a bulletin group is covered.
+
 ### v2.5.30 (2026-09-12) - A cancelled Mass is not a deleted Mass; labels the model copies instead of composes
 
 Four changes out of the 2026-09-12 triage, in rising order of how much they

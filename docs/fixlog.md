@@ -105,6 +105,32 @@ address) and `monthly-as-weekly`, which is still export-time only, so the
 mapboard renders those slots weekly and a removal like `1094`'s First Friday
 loses the Mass entirely rather than demoting it.
 
+### Cancellation survey — week of 2026-09-13
+
+First week this was measurable. 150 rows with a usable text layer, scanned
+against their own live bulletins (`utils/cancellations.py`). Eight cancelled
+slots across six parishes; none of it reached the data, because the detector
+shipped after the 09-12 run.
+
+| parish | slot | why | in the data? |
+|---|---|---|---|
+| `0240` Transfiguration | Mon/Wed/Fri 08:30 | "8:30 a.m. No Mass" x3 | Mass still published, unflagged |
+| `shc` Sacred Heart Oberlin | Thu/Fri 08:45 | priest away two weeks | **dropped** 09-12 |
+| `shc-pat` St. Patrick | Mon 08:45, Wed 18:30 | same | **dropped** 09-12 |
+| `0134` St. Victor | Tue 07:30 | "No Morning Mass" | **dropped** 09-12 |
+| `1548` St. Therese | Sun 10:30 | moved to noon, centennial | Mass still published, unflagged |
+| `our-lady-of-victory` | Sat 09:00 confession | "No confessions this week!" | still published, unflagged |
+
+**The two failure modes are opposite and both live.** Three rows still publish
+a Mass that is not happening; three rows have lost a Mass that still exists.
+
+**The already-dropped ones do not self-heal when the detector runs.**
+`restore_cancelled_slots` computes `dropped = stored − produced`, so a slot
+that left `stored` last week is invisible to it. The flag can only describe a
+slot that survived into the ledger. That is the sharpest argument yet for
+`docs/design/schedule-stability.md`: hysteresis would have kept all five in
+`stored`, and the detector would then have labelled them correctly.
+
 ## 2026-09-05 (backfilled)
 
 Labor Day. 62 of 152 parishes (41%) warned against a predicted 35–50, and the

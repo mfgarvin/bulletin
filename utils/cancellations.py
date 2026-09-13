@@ -41,6 +41,44 @@ Three properties worth stating, because each is a deliberate limit:
 - **It refuses rather than guesses.** An unverifiable bulletin (an image-only
   scan) restores nothing, exactly as the v2.5.14 gate refuses to make absence
   claims about a document it cannot read.
+
+**Four guards, and three of them were written by a diocese-wide sweep**
+(2026-09-13, 150 rows with a usable text layer, run against that week's live
+bulletins). The first cut passed a 13-row replay and still produced **7 false
+positives out of 15 hits** at full scale. None of the three failures were
+reachable at 13 rows, which is the argument for sweeping before trusting
+anything that writes:
+
+1. `no` matched inside a word. `5493` prints "8:30 am Mass: +Mark **Balza-no**
+   10:30 am Mass" - the tail of a surname, a time and the word Mass, which read
+   as "no 10:30 am mass" and cancelled three Sunday Masses at a parish that had
+   cancelled nothing. Fixed with a word boundary.
+2. A phrase naming a time was applied to slots at other times. `olp-cle`'s
+   "there is no 5:30pm Mass" cancelled its Sunday 09:00 and 11:00. Now a time
+   inside the phrase must match the slot (`_same_time`).
+3. A standing exclusion read as a cancellation. `1714`'s masthead is "Daily
+   Mass Monday, Tuesday, Wednesday, and Friday - 8:30 am [ no Mass on Thursday
+   ]", and `1311`'s is "Tuesday & Friday - 9 am; no Mass on Monday, Wednesday &
+   Thursday morning" - both describe a schedule that has never included those
+   days, and both cancelled the Friday Mass printed beside them. Now a day
+   named after the phrase must be the slot's own day.
+
+Guard 3 requires the connector "on"/"for" and that is load-bearing: making it
+optional swings the rule too far and rejects real cancellations, because in a
+day-by-day listing the text after the phrase is simply the *next* entry.
+`0240` prints "8:30 a.m. No Mass / Wednesday, September 16 ... 8:30 a.m. No
+Mass", and an optional connector reads Wednesday as the day Monday's
+cancellation applies to. A day qualifies a cancellation only when the sentence
+says it does.
+
+After all four: **8 hits across 150 rows, 0 false positives**, and every true
+positive from the 13-row replay retained.
+
+**Known limit.** A cancellation that names its day and then restates the time
+afterwards - "no Mass on Thursday, September 17 at 8:30 am" - is refused,
+because the intervening day label trips rule 2. Both shapes bulletins actually
+use are handled ("no 8:30 Mass on Thursday" puts the time inside the phrase;
+the listing form puts the day first), so this is a miss in the safe direction.
 """
 
 from __future__ import annotations
@@ -92,16 +130,30 @@ _DAY_SCOPE_CHARS = 400
 # ("Thursdays no Mass / no hay misa los jueves").
 _CANCELLATION_RE = re.compile(
     r"""
-      no \s* (?: public | morning | evening | daily | weekday | am | pm | \d[\d:]* \s* (?:am|pm)? )? \s*
+      \b no \s* (?P<t1> \d{1,2} [:.]? \d{0,2} \s* (?:am|pm)? )? \s*
+         (?: public | morning | evening | daily | weekday )? \s*
          (?: mass(?:es)? | confession(?:s)? | liturg\w+ )
     | (?: mass(?:es)? | confession(?:s)? ) \s+
          (?: is | are | will \s+ be | has \s+ been | have \s+ been ) \s+ cancell?ed
-    | (?: mass(?:es)? | confession(?:s)? ) \s* : \s* (?: no \s* mass | cancell?ed )
-    | no \s+ hay \s+ misa
+    | \b no \s+ hay \s+ misa
     | misa \s+ cancelada
     """,
     re.IGNORECASE | re.VERBOSE,
 )
+
+# A phrase may name the day it applies to right after itself - "no Mass on
+# Thursday". That is a STANDING exclusion in a masthead, not a cancellation of
+# whatever time happens to sit near it, and it is how 1714 ("Monday, Tuesday,
+# Wednesday, and Friday - 8:30 am [ no Mass on Thursday ]") and 1311 ("Tuesday
+# & Friday - 9 am; no Mass on Monday, Wednesday & Thursday morning") both
+# attached Thursday's absence to a Friday Mass.
+# "on"/"for" is REQUIRED, and that is the whole point of the pattern. Without
+# it the tail simply runs into the NEXT entry of a day-by-day listing - 0240
+# prints "8:30 a.m. no Mass / Wednesday, September 16 ... 8:30 a.m. no Mass",
+# so an optional connector reads Wednesday as the day Monday's cancellation
+# applies to and rejects a real one. A day only qualifies a cancellation when
+# the sentence says it does.
+_APPLIES_TO_RE = re.compile(r"\s*(?:on|for)\s+(?P<days>[^.;!?]{0,60})", re.IGNORECASE)
 
 
 # Plurals are not optional polish: a masthead says "Thursdays no Mass" and a
@@ -113,6 +165,24 @@ _ANY_DAY_RE = re.compile(
     r"\b(sun|mon|tues?|wed(?:nes)?|thur?s?|fri|satur?)(?:day)?s?\b\.?",
     re.IGNORECASE,
 )
+
+
+def _same_time(stated: str, time: int) -> bool:
+    """Does a time written inside a cancellation phrase mean this slot?
+
+    Compared on the printed digits rather than by parsing to 24-hour, because
+    the phrase rarely says am/pm and a bulletin writes the same Mass as "5:30",
+    "5:30pm" and "17:30" in different places. Hour-and-minute equality modulo
+    12 is the honest test; being wrong here only costs a missed cancellation.
+    """
+    digits = re.sub(r"[^\d]", "", stated)
+    if not digits:
+        return True
+    if len(digits) <= 2:
+        hh, mm = int(digits), 0
+    else:
+        hh, mm = int(digits[:-2]), int(digits[-2:])
+    return (hh % 12, mm) == ((time // 100) % 12, time % 100)
 
 
 def _cancelled_near(time: int, day: str, text: str) -> Optional[str]:
@@ -175,6 +245,25 @@ def _cancelled_near(time: int, day: str, text: str) -> Optional[str]:
                     gap = (match.start(), match.start())
                 if _ANY_DAY_RE.search(text, *gap):
                     continue
+
+                # (3) if the phrase names a TIME, it must be this slot's time.
+                # "there is no 5:30pm Mass" says nothing about the 9:00 - and
+                # olp-cle's Labor Day notice cancelled two Sunday Masses that
+                # were never in question, because the digits went unchecked.
+                stated = hit.group("t1")
+                if stated and not _same_time(stated, time):
+                    continue
+
+                # (4) if the phrase names a DAY right after itself, it must be
+                # this slot's day. A masthead's "no Mass on Thursday" is the
+                # standing schedule, not a cancellation of the Friday Mass
+                # printed beside it.
+                tail = _APPLIES_TO_RE.match(text, hit.end())
+                if tail:
+                    named = list(_ANY_DAY_RE.finditer(tail.group("days")))
+                    if named and not any(own.match(d.group(0)) for d in named):
+                        continue
+
                 return hit.group(0).strip()
     return None
 
