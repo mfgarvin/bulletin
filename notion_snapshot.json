@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T17:20:44+00:00",
+  "generated_at": "2026-09-13T16:03:45+00:00",
   "database_id": "2de29b8f-0e6e-801a-bd81-db3ade199a45",
   "parish_count": 189,
   "parishes": [
@@ -2360,7 +2360,7 @@
     {
       "parish_id": "0242",
       "page_id": "2df29b8f-0e6e-81d8-a456-d847be4f7a45",
-      "last_edited_time": "2026-09-12T13:57:00.000Z",
+      "last_edited_time": "2026-09-12T17:40:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -2432,7 +2432,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": \"English\", \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": \"Polish\", \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": \"English\", \"notes\": null}, {\"day\": \"Monday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 1215, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1215, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 1215, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": \"English\", \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": \"Polish\", \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": \"English\", \"notes\": null}, {\"day\": \"Monday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 1215, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1215, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 1215, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -2788,7 +2788,7 @@
     {
       "parish_id": "0342",
       "page_id": "2df29b8f-0e6e-81bb-b5b1-f4122013ae4b",
-      "last_edited_time": "2026-09-12T13:57:00.000Z",
+      "last_edited_time": "2026-09-12T17:43:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -2812,7 +2812,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"Or call the Parish Office; Or call the Rectory\"}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"Or call the Rectory\"}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -2824,15 +2824,15 @@
         },
         "Events": {
           "type": "rich_text",
-          "value": "[{\"name\": \"Holy Hours (Month of September)\", \"description\": \"Holy Hour at 7:00pm; confession at 6:30pm. Sept. 16 at Holy Redeemer (no confessions); Sept. 23 at St. Jerome; Sept. 30 at Holy Redeemer.\", \"frequency\": \"other_recurring\", \"event_date\": null, \"day_of_week\": null, \"time\": 1900, \"location\": null, \"contact\": null, \"cost\": null}, {\"name\": \"Bible Study (Holy Redeemer)\", \"description\": \"Starting Friday, September 11 at 7:00pm for 6 weeks.\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-11\", \"day_of_week\": \"Friday\", \"time\": 1900, \"location\": \"Holy Redeemer\", \"contact\": null, \"cost\": null}, {\"name\": \"Senior Citizen\\u2019s Meeting\", \"description\": \"Meetings held the third Wednesday of the month at 12:00 noon at the Mill Tavern.\", \"frequency\": \"monthly\", \"event_date\": null, \"day_of_week\": \"Wednesday\", \"time\": 1200, \"location\": \"Mill Tavern\", \"contact\": null, \"cost\": null}, {\"name\": \"Annual Tripe Dinner\", \"description\": \"At LaVERA Party Center. Stay tuned for details.\", \"frequency\": \"one_time\", \"event_date\": \"2026-10-13\", \"day_of_week\": null, \"time\": null, \"location\": \"LaVERA Party Center\", \"contact\": null, \"cost\": null}]"
+          "value": "[{\"name\": \"Holy Hours \\u2013 Month of September (7:00pm Holy Hour)\", \"description\": \"Holy Hour at 7:00pm. Confession at 6:30pm (note: Sept. 16 at Holy Redeemer has no confessions). Locations rotate between Holy Redeemer and St. Jerome.\", \"frequency\": \"other_recurring\", \"event_date\": null, \"day_of_week\": null, \"time\": 1900, \"location\": null, \"contact\": null, \"cost\": null}, {\"name\": \"Bible Study (Holy Redeemer)\", \"description\": \"Starting Friday, September 11 at 7:00pm for 6 weeks.\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-11\", \"day_of_week\": \"Friday\", \"time\": 1900, \"location\": \"Holy Redeemer\", \"contact\": null, \"cost\": null}, {\"name\": \"Senior Citizen\\u2019s Meeting\", \"description\": \"Meetings held the Third Wednesday of the Month, 12 noon, at the Mill Tavern.\", \"frequency\": \"monthly\", \"event_date\": null, \"day_of_week\": \"Wednesday\", \"time\": 1200, \"location\": \"Mill Tavern\", \"contact\": null, \"cost\": null}, {\"name\": \"Annual Tripe Dinner\", \"description\": \"Annual Tripe Dinner at LaVERA Party Center. Stay tuned for details.\", \"frequency\": \"one_time\", \"event_date\": \"2026-10-13\", \"day_of_week\": \"Tuesday\", \"time\": null, \"location\": \"LaVERA Party Center\", \"contact\": null, \"cost\": null}]"
         },
         "Events Summary": {
           "type": "rich_text",
-          "value": "September Holy Hours are held at 7:00pm (with confession at 6:30pm; note Sept. 16 at Holy Redeemer has no confessions), rotating between Holy Redeemer and St. Jerome. Bible Study begins Friday, September 11 at 7:00pm and runs for 6 weeks. The Annual Tripe Dinner is scheduled for October 13, 2026 at LaVERA Party Center (details to come)."
+          "value": "Holy Hours are held at 7:00pm during September with Confession at 6:30pm (note: no confessions on Sept. 16 at Holy Redeemer). Bible Study at Holy Redeemer begins Friday, September 11 at 7:00pm and runs for 6 weeks. The Annual Tripe Dinner is Tuesday, October 13, 2026 at LaVERA Party Center (details coming), and Senior Citizens meet the third Wednesday of each month at 12:00 noon at the Mill Tavern."
         },
         "GPT Logs": {
           "type": "rich_text",
-          "value": "Downloading from Parishes Online...\nDownloaded bulletin (2669245 bytes, type=pdf, dated 2026-09-13)\nExtracting information...\nCollapsed 2 sites ['St. Jerome Church (Holy Redeemer Roman Catholic Parish)', 'Holy Redeemer Church (Holy Redeemer Roman Catholic Parish)'] → 'Holy Redeemer Roman Catholic Parish'\nSanitized: mass: merged duplicate Saturday 1600 entry\nSanitized: confession: merged duplicate Saturday 1500 slot\nWARNING: Recurring Masses changed vs stored: added Friday 0830 (not printed in bulletin - suspicious), added Sunday 0900 (not printed in bulletin - suspicious), added Wednesday 0830 (not printed in bulletin - suspicious) [reproduced on a second extraction]\nFound: 1 sites, 7 masses, 1 confessions, 4 events\n  Site 'Holy Redeemer Roman Catholic Parish': 7 masses, 1 confessions\nNotes: Bulletin header is dated September 13, 2026 (Twenty-Fourth Sunday in Ordinary Time). Two worship sites are listed (Holy Redeemer Church and St. Jerome Church) with separate addresses and websites/phones; the bulletin does not provide a single shared parish phone/website/email, so parish_info phone/website/email were left null and recorded at the site level instead. Holy Day Mass times are listed as 'to be announced' for both sites and therefore omitted from Mass entries. No year-round adoration schedule is provided. The Mass Intentions block includes duplicates for the same day/time (multiple intentions per Mass); per instructions, these were not added as additional Masses since they match the standing schedule."
+          "value": "Downloading from Parishes Online...\nDownloaded bulletin (2669245 bytes, type=pdf, dated 2026-09-13)\nExtracting information...\nExcluded 1 site(s) ['St. Jerome Church (Holy Redeemer Roman Catholic Parish)'] - another parish's row owns them\nWARNING: Recurring Masses changed vs stored: removed Friday 0830, removed Sunday 0900, removed Wednesday 0830 [reproduced on a second extraction]\nFound: 1 sites, 4 masses, 1 confessions, 4 events\n  Site 'Holy Redeemer Church (Holy Redeemer Roman Catholic Parish)': 4 masses, 1 confessions\nNotes: Bulletin (Sept. 13, 2026) covers two worship sites under Holy Redeemer Roman Catholic Parish: St. Jerome Church and Holy Redeemer Church, each with its own address, phone, and website (page 1). Parish-level phone/website/email are not presented as a single shared contact; individual site contact info is: St. Jerome Church (216) 481-8200, www.stjeromecleveland.org; Holy Redeemer Church (216) 531-3313, www.holyredeemer-cleveland.org. No general parish email is shown; staff emails are listed on page 2 (e.g., asimone@holyredeemer-cleveland.org, tward@holyredeemer-cleveland.org, jpantano@holyredeemer-cleveland.org, kduke@holyredeemer-cleveland.org, cingold@holyredeemer-cleveland.org). Mass intentions on page 1 list specific dates/times for the week but match the standing weekly schedule; no additional special/holiday Masses were identified. ‘Holy Day Mass Times to be announced’ is a policy note and not extracted as Mass times. No year-round adoration schedule is provided; seasonal/dated Holy Hours were recorded as events (not adoration)."
         },
         "GPT Results": {
           "type": "rich_text",
@@ -2844,7 +2844,7 @@
         },
         "Issue Log": {
           "type": "rich_text",
-          "value": "WARNING: Recurring Masses changed vs stored: added Friday 0830 (not printed in bulletin - suspicious), added Sunday 0900 (not printed in bulletin - suspicious), added Wednesday 0830 (not printed in bulletin - suspicious) [reproduced on a second extraction]"
+          "value": "WARNING: Recurring Masses changed vs stored: removed Friday 0830, removed Sunday 0900, removed Wednesday 0830 [reproduced on a second extraction]"
         },
         "Issues": {
           "type": "status",
@@ -2860,7 +2860,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -2895,7 +2895,7 @@
     {
       "parish_id": "0414",
       "page_id": "2df29b8f-0e6e-8100-83b0-f89558dc754d",
-      "last_edited_time": "2026-09-12T13:58:00.000Z",
+      "last_edited_time": "2026-09-12T17:41:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -2967,7 +2967,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -3644,7 +3644,7 @@
     {
       "parish_id": "0582",
       "page_id": "2df29b8f-0e6e-81ef-b72d-d3e64b95baf6",
-      "last_edited_time": "2026-09-12T13:53:00.000Z",
+      "last_edited_time": "2026-09-12T17:40:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -3668,7 +3668,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Sunday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Please ask a priest before or after Mass\"}, {\"day\": \"Sunday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Please ask a priest before or after Mass\"}, {\"day\": \"Tuesday\", \"start_time\": 800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Please ask a priest before or after Mass\"}, {\"day\": \"Thursday\", \"start_time\": 900, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Please ask a priest before or after Mass\"}]"
+          "value": "[]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -4500,7 +4500,7 @@
     {
       "parish_id": "0882",
       "page_id": "2df29b8f-0e6e-8134-b02d-d8dbbd8dd2a7",
-      "last_edited_time": "2026-09-12T13:57:00.000Z",
+      "last_edited_time": "2026-09-12T17:40:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -4572,7 +4572,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": \"First Fridays only\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -5035,7 +5035,7 @@
     {
       "parish_id": "1060",
       "page_id": "2df29b8f-0e6e-8180-9cb6-db73a8a35fed",
-      "last_edited_time": "2026-09-12T13:57:00.000Z",
+      "last_edited_time": "2026-09-12T17:40:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -5059,7 +5059,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Wednesday\", \"start_time\": 1800, \"end_time\": 1900, \"end_next_day\": false, \"notes\": \"During Family Friendly Holy Hour; Or by appointment\"}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Or by appointment\"}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -6533,7 +6533,7 @@
     {
       "parish_id": "1259",
       "page_id": "2df29b8f-0e6e-81c6-9100-ce9b22c7f19d",
-      "last_edited_time": "2026-09-12T13:56:00.000Z",
+      "last_edited_time": "2026-09-12T17:41:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -6557,7 +6557,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the Chapel; and 11:30 am; and 11:30 am\"}, {\"day\": \"Monday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the Chapel; and 7:45 am; and 7:45 am\"}, {\"day\": \"Tuesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the Chapel; and 11:30 am; and 11:30 am\"}, {\"day\": \"Tuesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the Chapel; and 7:45 am; and 7:45 am\"}, {\"day\": \"Wednesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the Chapel; and 11:30 am; and 11:30 am\"}, {\"day\": \"Wednesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the Chapel; and 7:45 am; and 7:45 am\"}, {\"day\": \"Wednesday\", \"start_time\": 1700, \"end_time\": 1725, \"end_next_day\": false, \"notes\": \"In the Chapel\"}, {\"day\": \"Thursday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the Chapel; and 11:30 am; and 11:30 am\"}, {\"day\": \"Thursday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the Chapel; and 7:45 am; and 7:45 am\"}, {\"day\": \"Friday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the Chapel; and 11:30 am; and 11:30 am\"}, {\"day\": \"Friday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the Chapel; and 7:45 am; and 7:45 am\"}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 1700, \"end_time\": 1725, \"end_next_day\": false, \"notes\": \"Confession in the Chapel\"}, {\"day\": \"Monday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Monday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Tuesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Tuesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Wednesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Thursday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Friday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Friday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -7817,7 +7817,7 @@
     {
       "parish_id": "1494",
       "page_id": "2df29b8f-0e6e-8117-8408-e811d348356e",
-      "last_edited_time": "2026-09-12T13:58:00.000Z",
+      "last_edited_time": "2026-09-12T17:41:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -7841,7 +7841,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 1600, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After the 4:00pm Mass; and by appointment\"}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": null}, {\"day\": \"Saturday\", \"start_time\": 1700, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After the 4:00pm Mass; and by appointment\"}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -7924,7 +7924,7 @@
     {
       "parish_id": "1532",
       "page_id": "2df29b8f-0e6e-818a-aab0-de40a524ec6b",
-      "last_edited_time": "2026-09-12T13:57:00.000Z",
+      "last_edited_time": "2026-09-12T17:40:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -7996,7 +7996,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"Morning Prayer\"}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 2100, \"mass_date\": null, \"language\": null, \"notes\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"Morning Prayer\"}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -8673,7 +8673,7 @@
     {
       "parish_id": "1687",
       "page_id": "2df29b8f-0e6e-810c-b34f-e3b97c161ab3",
-      "last_edited_time": "2026-09-12T13:56:00.000Z",
+      "last_edited_time": "2026-09-12T17:40:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -8745,7 +8745,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Tuesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Wednesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Thursday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Friday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Church\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Tuesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Wednesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Thursday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Friday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\"}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"School Mass (in the Church)\"}]"
         },
         "Name": {
           "type": "title",
@@ -11134,7 +11134,7 @@
     {
       "parish_id": "1905",
       "page_id": "2df29b8f-0e6e-8105-9c27-e2f53d060f43",
-      "last_edited_time": "2026-09-12T13:57:00.000Z",
+      "last_edited_time": "2026-09-12T17:40:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -11158,7 +11158,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"start_time\": 1650, \"end_time\": 1720, \"end_next_day\": false, \"notes\": \"In the church\"}, {\"day\": \"Friday\", \"start_time\": 1245, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After the Noon Mass; also by appointment\"}]"
+          "value": "[{\"day\": \"Monday\", \"start_time\": 1650, \"end_time\": 1720, \"end_next_day\": false, \"notes\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -11455,7 +11455,7 @@
     {
       "parish_id": "20822",
       "page_id": "2df29b8f-0e6e-8144-8098-fea711d6eb28",
-      "last_edited_time": "2026-09-12T13:57:00.000Z",
+      "last_edited_time": "2026-09-12T17:40:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -11527,7 +11527,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Sunday\", \"time\": 930, \"mass_date\": null, \"language\": \"English\", \"notes\": null}, {\"day\": \"Monday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": \"In the chapel (English). No 12:00 pm Mass if there is a funeral on Monday.\"}, {\"day\": \"Saturday\", \"time\": 1900, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 1200, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": null}]"
+          "value": "[{\"day\": \"Sunday\", \"time\": 930, \"mass_date\": null, \"language\": \"English\", \"notes\": null}, {\"day\": \"Monday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": \"In the chapel (English). No 12:00 pm Mass if there is a funeral on Monday.\"}, {\"day\": \"Saturday\", \"time\": 1900, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 1200, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -12733,6 +12733,113 @@
         "Zip Code": {
           "type": "rich_text",
           "value": "44095"
+        }
+      }
+    },
+    {
+      "parish_id": "40500",
+      "page_id": "2df29b8f-0e6e-8178-b473-d98ff8e84300",
+      "last_edited_time": "2026-09-12T17:56:00.000Z",
+      "properties": {
+        "Adoration": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Bulletin Group ID": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Bulletin Page URL": {
+          "type": "url",
+          "value": "https://www.sthelen.com/"
+        },
+        "Bulletin Publisher": {
+          "type": "select",
+          "value": "eCatholic"
+        },
+        "City": {
+          "type": "rich_text",
+          "value": "Newbury"
+        },
+        "Confessions": {
+          "type": "rich_text",
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": null}]"
+        },
+        "Content Fingerprint": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "Enable": {
+          "type": "checkbox",
+          "value": true
+        },
+        "Events": {
+          "type": "rich_text",
+          "value": "[{\"name\": \"Coffee & Donuts after all morning Masses\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Sunday\", \"time\": null, \"location\": null, \"contact\": null, \"cost\": null}, {\"name\": \"Cross Training (friends and families)\", \"description\": \"Meets with James Hogan after the 8:30 a.m. Sunday Mass in the 8th grade classroom.\", \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Sunday\", \"time\": 930, \"location\": \"8th grade classroom\", \"contact\": null, \"cost\": null}, {\"name\": \"PSR/EDGE Orientation\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Sunday\", \"time\": 945, \"location\": \"CLRM, LTC, CH\", \"contact\": null, \"cost\": null}, {\"name\": \"AA Meeting\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Sunday\", \"time\": 2000, \"location\": \"Gym\", \"contact\": null, \"cost\": null}, {\"name\": \"Women\\u2019s Bible Study\", \"description\": \"Women of all ages welcome! Meets in the Bride\\u2019s Room.\", \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Monday\", \"time\": 1730, \"location\": \"Bride\\u2019s Room\", \"contact\": null, \"cost\": null}, {\"name\": \"Men\\u2019s Bible Study\", \"description\": \"Men of all ages welcome! Meets in the Bride\\u2019s Room.\", \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Monday\", \"time\": 1900, \"location\": \"Bride\\u2019s Room\", \"contact\": null, \"cost\": null}, {\"name\": \"Confirmation Meeting\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Monday\", \"time\": 1830, \"location\": \"LTC\", \"contact\": null, \"cost\": null}, {\"name\": \"Testify\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Monday\", \"time\": 1830, \"location\": \"Church\", \"contact\": null, \"cost\": null}, {\"name\": \"Dance Ministry\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Tuesday\", \"time\": 1730, \"location\": \"LTC\", \"contact\": null, \"cost\": null}, {\"name\": \"Girls\\u2019 Volleyball\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Tuesday\", \"time\": 1830, \"location\": \"Gym\", \"contact\": null, \"cost\": null}, {\"name\": \"Parent Band Presentation (6th grade)\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Tuesday\", \"time\": 1900, \"location\": \"6th Grade Classroom\", \"contact\": null, \"cost\": null}, {\"name\": \"Legion of Mary\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Wednesday\", \"time\": 900, \"location\": \"Bride\\u2019s Room\", \"contact\": null, \"cost\": null}, {\"name\": \"Fatima Hour\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Wednesday\", \"time\": 1000, \"location\": \"Adoration Chapel\", \"contact\": null, \"cost\": null}, {\"name\": \"Prayer Shawl Ministry\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Wednesday\", \"time\": 1700, \"location\": \"Bride\\u2019s Room\", \"contact\": null, \"cost\": null}, {\"name\": \"Collective Grace\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Wednesday\", \"time\": 1700, \"location\": \"Church\", \"contact\": null, \"cost\": null}, {\"name\": \"Unicycle Practice\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Wednesday\", \"time\": 1800, \"location\": \"Gym\", \"contact\": null, \"cost\": null}, {\"name\": \"Life Teen Staff Meeting\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Thursday\", \"time\": 1800, \"location\": \"LTC\", \"contact\": null, \"cost\": null}, {\"name\": \"Girls\\u2019 Volleyball\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Thursday\", \"time\": 1830, \"location\": \"Gym\", \"contact\": null, \"cost\": null}, {\"name\": \"Choir Rehearsal\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Thursday\", \"time\": 1900, \"location\": \"Church\", \"contact\": null, \"cost\": null}, {\"name\": \"Unicycle Practice\", \"description\": null, \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Saturday\", \"time\": 900, \"location\": \"Gym\", \"contact\": null, \"cost\": null}, {\"name\": \"Fr. Jay birthday breakfast (Save the date)\", \"description\": \"Celebrating Fr. Jay\\u2019s birthday with a breakfast at Mary Yoder\\u2019s restaurant (details forthcoming).\", \"frequency\": \"one_time\", \"event_date\": \"2026-10-05\", \"day_of_week\": \"Monday\", \"time\": null, \"location\": \"Mary Yoder\\u2019s restaurant\", \"contact\": null, \"cost\": null}, {\"name\": \"Summer Evening Men\\u2019s Mass (at The Rookery Lodge)\", \"description\": \"Mass for men age 18+ (under 18 with adult). Potluck dinner follows; meat provided by St. Helen; bring a dish to pass. Celebrant: Fr. Walt Jenne.\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-23\", \"day_of_week\": \"Wednesday\", \"time\": 1900, \"location\": \"The Rookery Lodge, 10110 Cedar Road, Chesterland, OH 44026\", \"contact\": \"Walt Zagar (440-413-3811; waltzagar@gmail.com)\", \"cost\": null}, {\"name\": \"Fall Adoration Campaign\", \"description\": \"Campaign runs Sept. 8\\u2013Nov. 18. (Sign-up in Gathering Space; weekly committed hour during campaign.)\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-08\", \"day_of_week\": null, \"time\": null, \"location\": \"St. Helen (Gathering Space sign-up)\", \"contact\": null, \"cost\": null}, {\"name\": \"All Souls Cemetery \\u2013 Preplanning Seminar\", \"description\": \"One-hour educational seminar on burial preplanning, types of burials (including cremation), and the Rite of Christian Burial. RSVP requested.\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-26\", \"day_of_week\": \"Saturday\", \"time\": 1300, \"location\": \"All Souls Cemetery main office, 10366 Chardon Road, Chardon, OH\", \"contact\": \"216-641-7575 ext. 4; bstrauchon@clecem.org\", \"cost\": null}, {\"name\": \"40 Days for Life (Cleveland-area)\", \"description\": \"40 days of prayer and fasting for an end to abortion (Sept. 23\\u2013Nov. 1). Peaceful prayer vigil participation invited 7:00 a.m.\\u20137:00 p.m. at listed locations.\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-23\", \"day_of_week\": null, \"time\": null, \"location\": \"Preterm (Cleveland), Planned Parenthood (Bedford Heights), Signature Health (Painesville)\", \"contact\": \"John Noall (clevelandpraysforlife@gmail.com; 216-245-9744)\", \"cost\": null}, {\"name\": \"40 Days for Life Kickoff Rally\", \"description\": \"Kickoff Rally at St. John Vianney Parish Center; speaker Rachel Benda (Bethesda House of Mercy).\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-21\", \"day_of_week\": \"Monday\", \"time\": 1900, \"location\": \"St. John Vianney Parish Center, 7575 Bellflower Road, Mentor, OH 44060\", \"contact\": \"John Noall (clevelandpraysforlife@gmail.com; 216-245-9744)\", \"cost\": null}, {\"name\": \"Life Teen Fall Semester Kickoff\", \"description\": \"All high school teens invited; after the 5:00 p.m. Mass.\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-20\", \"day_of_week\": \"Sunday\", \"time\": null, \"location\": \"St. Helen Life Teen Center / parish campus\", \"contact\": null, \"cost\": null}, {\"name\": \"Life Teen Team meeting (Juniors & Seniors)\", \"description\": \"For Juniors and Seniors who have made a retreat and want to help with retreat planning; meets every Wednesday until the Fall Retreat weekend (Nov. 13\\u201315).\", \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Wednesday\", \"time\": null, \"location\": \"Life Teen Center\", \"contact\": null, \"cost\": null}, {\"name\": \"An Invitation to Medjugorje (Zoom informational session)\", \"description\": \"Informational session on Zoom; email to request the link.\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-23\", \"day_of_week\": \"Wednesday\", \"time\": 1900, \"location\": \"Zoom\", \"contact\": \"kennyb7@gmail.com\", \"cost\": null}, {\"name\": \"Bethesda House of Mercy Weekend Healing Retreat\", \"description\": \"Confidential healing retreat for women after an abortion at Loyola Retreat House (north of Canton).\", \"frequency\": \"one_time\", \"event_date\": \"2026-10-23\", \"day_of_week\": \"Friday\", \"time\": null, \"location\": \"Loyola Retreat House (near Canton, OH)\", \"contact\": \"800-482-4100; bethesdahouseofmercy2008@gmail.com\", \"cost\": null}]"
+        },
+        "Events Summary": {
+          "type": "rich_text",
+          "value": "St. Helen continues weekly faith and fellowship opportunities, including Coffee & Donuts after Sunday morning Masses, Men’s Bible Study (Mondays 7:00–8:00 p.m.) and Women’s Bible Study (Mondays 5:30–6:30 p.m.). Coming up soon: the 40 Days for Life Kickoff Rally is Monday, September 21 at 7:00 p.m., and the Summer Evening Men’s Mass is Wednesday, September 23 at 7:00 p.m. at The Rookery Lodge. An All Souls Cemetery preplanning seminar will be held Saturday, September 26 at 1:00 p.m. in Chardon."
+        },
+        "GPT Logs": {
+          "type": "rich_text",
+          "value": "Downloading from eCatholic...\nDownloaded bulletin (13108222 bytes, type=pdf, dated 2026-09-13)\nExtracting information...\nWARNING: Recurring Masses changed vs stored: added Monday 0700, added Thursday 0700, added Tuesday 0700, added Wednesday 0700, removed Monday 0800 (still printed in bulletin), removed Thursday 0800 (still printed in bulletin), removed Tuesday 0800 (still printed in bulletin), removed Wednesday 0800 [reproduced on a second extraction]\nFound: 1 sites, 10 masses, 1 confessions, 30 events\n  Site 'Saint Helen Catholic Church (St. Helen Church)': 10 masses, 1 confessions (6 adoration times)\nNotes: Mass intentions listing (Sept. 13–20, 2026) shows weekday Masses at 7:00 a.m. Monday–Thursday and 8:00 a.m. Friday, which differs from the general schedule box (daily Mass Mon–Fri at 8:00 a.m.). Per instructions, the intentions listing was used as authoritative for the recurring weekly Mass pattern.\nGeneral schedule mentions ‘First Friday Mass: 7:00 p.m.’ but no specific First Friday occurs within the bulletin week; this was not added to Mass times.\nConfession ‘Sunday before each Mass by request’ is request-based and does not provide a usable scheduled time window, so it was not encoded as a confession slot.\nThe ‘Fall Adoration Campaign’ describes seasonal adoration hours (Sept. 8–Nov. 18). Seasonal campaign hours were not used to override the year-round adoration schedule box, which was extracted as the site’s adoration schedule.\nBulletin references being ‘Clustered with Sts. Edward and Lucy’ and includes an event at St. Lucy’s Church, but does not provide contact/address/schedule details for those parishes; therefore no additional site entries were created."
+        },
+        "GPT Results": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "GPT Timestamp": {
+          "type": "rich_text",
+          "value": "2026-09-12"
+        },
+        "Issue Log": {
+          "type": "rich_text",
+          "value": "WARNING: Recurring Masses changed vs stored: added Monday 0700, added Thursday 0700, added Tuesday 0700, added Wednesday 0700, removed Monday 0800 (still printed in bulletin), removed Thursday 0800 (still printed in bulletin), removed Tuesday 0800 (still printed in bulletin), removed Wednesday 0800 [reproduced on a second extraction]"
+        },
+        "Issues": {
+          "type": "status",
+          "value": "Warning"
+        },
+        "Link to latest bulletin": {
+          "type": "url",
+          "value": "https://files.ecatholic.com/40500/bulletins/20260913.pdf"
+        },
+        "LonLat": {
+          "type": "rich_text",
+          "value": "-81.2068015,41.4664957"
+        },
+        "Mass Times": {
+          "type": "rich_text",
+          "value": "[{\"day\": \"Saturday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1115, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}]"
+        },
+        "Name": {
+          "type": "title",
+          "value": "Saint Helen"
+        },
+        "Notes": {
+          "type": "rich_text",
+          "value": ""
+        },
+        "ParishID": {
+          "type": "rich_text",
+          "value": "40500"
+        },
+        "Phone Number": {
+          "type": "rich_text",
+          "value": "440-564-5805"
+        },
+        "Street Address": {
+          "type": "rich_text",
+          "value": "12060 Kinsman Rd."
+        },
+        "Website": {
+          "type": "rich_text",
+          "value": "https://www.sthelen.com/"
+        },
+        "Zip Code": {
+          "type": "rich_text",
+          "value": "44065"
         }
       }
     },
@@ -14130,7 +14237,7 @@
     {
       "parish_id": "olhc-lodi",
       "page_id": "2df29b8f-0e6e-81a4-8acc-ed916335ae59",
-      "last_edited_time": "2026-09-12T13:54:00.000Z",
+      "last_edited_time": "2026-09-12T17:40:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -14202,7 +14309,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null}]"
+          "value": "[{\"day\": \"Monday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",
@@ -14558,7 +14665,7 @@
     {
       "parish_id": "our-lady-help-of-christians-litchfield-oh",
       "page_id": "2df29b8f-0e6e-819d-b1b1-e98755961cdf",
-      "last_edited_time": "2026-09-12T13:57:00.000Z",
+      "last_edited_time": "2026-09-12T17:40:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -14582,7 +14689,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"start_time\": 1900, \"end_time\": null, \"end_next_day\": false, \"notes\": \"First Monday of the month; after 6:00 PM Mass at Lodi Site; by appointment (call parish office); seasonally in Advent & Lent\"}]"
+          "value": "[]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -16803,113 +16910,6 @@
       }
     },
     {
-      "parish_id": "sh-n",
-      "page_id": "2df29b8f-0e6e-8178-b473-d98ff8e84300",
-      "last_edited_time": "2026-09-12T13:56:00.000Z",
-      "properties": {
-        "Adoration": {
-          "type": "rich_text",
-          "value": ""
-        },
-        "Bulletin Group ID": {
-          "type": "rich_text",
-          "value": ""
-        },
-        "Bulletin Page URL": {
-          "type": "url",
-          "value": "https://www.sthelen.com/sunday-page.html"
-        },
-        "Bulletin Publisher": {
-          "type": "select",
-          "value": "Webpage"
-        },
-        "City": {
-          "type": "rich_text",
-          "value": "Newbury"
-        },
-        "Confessions": {
-          "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1630, \"end_next_day\": false, \"notes\": null}]"
-        },
-        "Content Fingerprint": {
-          "type": "rich_text",
-          "value": ""
-        },
-        "Enable": {
-          "type": "checkbox",
-          "value": true
-        },
-        "Events": {
-          "type": "rich_text",
-          "value": "[{\"name\": \"Coffee and Donuts after Mass\", \"description\": \"Fellowship in the Parish Hall after the 8:30 a.m. and 11:15 a.m. Sunday Masses.\", \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Sunday\", \"time\": null, \"location\": \"Parish Hall\", \"contact\": null, \"cost\": null}, {\"name\": \"Lifeteen Program (following Sunday evening Mass)\", \"description\": \"Lifeteen program follows the Sunday evening 5:00 p.m. Mass (September through May).\", \"frequency\": \"other_recurring\", \"event_date\": null, \"day_of_week\": \"Sunday\", \"time\": null, \"location\": null, \"contact\": null, \"cost\": null}, {\"name\": \"Streaming Mass (online)\", \"description\": \"Mass available via the parish website link (\\u201cCLICK HERE FOR MASS\\u201d).\", \"frequency\": \"other_recurring\", \"event_date\": null, \"day_of_week\": null, \"time\": null, \"location\": \"Online\", \"contact\": null, \"cost\": null}, {\"name\": \"Online Giving\", \"description\": \"Online giving available for weekly contributions, Holy Days, school tuition, flower funds, and ministries.\", \"frequency\": \"other_recurring\", \"event_date\": null, \"day_of_week\": null, \"time\": null, \"location\": \"Online\", \"contact\": null, \"cost\": null}]"
-        },
-        "Events Summary": {
-          "type": "rich_text",
-          "value": "Coffee and donuts are offered every Sunday after the 8:30 a.m. and 11:15 a.m. Masses in the Parish Hall. The parish also notes that the LifeTeen program runs September through May following the 5:00 p.m. Sunday evening Mass, and Mass and giving options are available online."
-        },
-        "GPT Logs": {
-          "type": "rich_text",
-          "value": "Downloading from Webpage...\nDownloaded bulletin (3652 bytes, type=text)\nExtracting information...\nFound: 1 sites, 10 masses, 1 confessions, 4 events\n  Site 'Parish (main church)': 10 masses, 1 confessions\nNotes: Parish name and website were not stated in the provided webpage text. No adoration schedule was listed. Coffee & donuts and LifeTeen were described relative to Masses but without specific start times, so event times are left null."
-        },
-        "GPT Results": {
-          "type": "rich_text",
-          "value": ""
-        },
-        "GPT Timestamp": {
-          "type": "rich_text",
-          "value": "2026-08-29"
-        },
-        "Issue Log": {
-          "type": "rich_text",
-          "value": "ERROR: Download failed: Failed to load webpage: HTTP 404"
-        },
-        "Issues": {
-          "type": "status",
-          "value": "Error"
-        },
-        "Link to latest bulletin": {
-          "type": "url",
-          "value": "https://www.sthelen.com/sunday-page.html"
-        },
-        "LonLat": {
-          "type": "rich_text",
-          "value": "-81.2068015,41.4664957"
-        },
-        "Mass Times": {
-          "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1115, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Sunday evening Mass\"}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}]"
-        },
-        "Name": {
-          "type": "title",
-          "value": "Saint Helen"
-        },
-        "Notes": {
-          "type": "rich_text",
-          "value": ""
-        },
-        "ParishID": {
-          "type": "rich_text",
-          "value": "sh-n"
-        },
-        "Phone Number": {
-          "type": "rich_text",
-          "value": "440-564-5805"
-        },
-        "Street Address": {
-          "type": "rich_text",
-          "value": "12060 Kinsman Rd."
-        },
-        "Website": {
-          "type": "rich_text",
-          "value": "https://www.sthelen.com/"
-        },
-        "Zip Code": {
-          "type": "rich_text",
-          "value": "44065"
-        }
-      }
-    },
-    {
       "parish_id": "shc",
       "page_id": "2df29b8f-0e6e-81fd-b187-d211df45fab2",
       "last_edited_time": "2026-09-12T13:57:00.000Z",
@@ -18945,7 +18945,7 @@
     {
       "parish_id": "st-matthew-akron-oh",
       "page_id": "2df29b8f-0e6e-81ae-8208-efc0be0a9660",
-      "last_edited_time": "2026-09-12T13:57:00.000Z",
+      "last_edited_time": "2026-09-12T18:11:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -18969,7 +18969,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 900, \"end_time\": 930, \"end_next_day\": false, \"notes\": \"Or by calling the Parish Office; see calendar for location; No confessions the week of September 13, 2026\"}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 900, \"end_time\": 930, \"end_next_day\": false, \"notes\": \"Or anytime by calling the Parish Office.\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -18981,15 +18981,15 @@
         },
         "Events": {
           "type": "rich_text",
-          "value": "[{\"name\": \"Catechist meeting\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-13\", \"day_of_week\": \"Sunday\", \"time\": 900, \"location\": \"Conference Room\", \"contact\": null, \"cost\": null}, {\"name\": \"Dominican Associates\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-13\", \"day_of_week\": \"Sunday\", \"time\": 1330, \"location\": \"Conference Room\", \"contact\": null, \"cost\": null}, {\"name\": \"Scout Troop #310/7310 meeting\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-14\", \"day_of_week\": \"Monday\", \"time\": 1845, \"location\": \"Silva Center\", \"contact\": null, \"cost\": null}, {\"name\": \"September Bible Study: \\u201cThe Acts of the Apostles - Part II\\u201d\", \"description\": \"Meets Tuesdays September 8 through September 22, 10:00\\u201311:30 AM (includes commentary, reflection questions, prayers, and online lectures). Book cost $11.\", \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Tuesday\", \"time\": 1000, \"location\": \"Conference Room\", \"contact\": \"Barb Jentes (330-733-9944)\", \"cost\": \"$11 (book)\"}, {\"name\": \"Cub Scout Pack #3310 meeting\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-15\", \"day_of_week\": \"Tuesday\", \"time\": 1830, \"location\": \"Classrooms\", \"contact\": null, \"cost\": null}, {\"name\": \"Rosary Makers (Rosary Making Apostolate) gathering\", \"description\": \"Gathering to make rosaries for parishioners and for those hospitalized or homebound.\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-16\", \"day_of_week\": \"Wednesday\", \"time\": 1100, \"location\": \"Parish Office (Lower)\", \"contact\": \"Netha Gussey (330-794-0366)\", \"cost\": null}, {\"name\": \"Cancer Spirituality Group\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-17\", \"day_of_week\": \"Thursday\", \"time\": 1100, \"location\": \"Conference Room\", \"contact\": null, \"cost\": null}, {\"name\": \"Cub Scout Pack #3310 Lock-in\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-18\", \"day_of_week\": \"Friday\", \"time\": 1900, \"location\": \"Silva Center\", \"contact\": null, \"cost\": null}, {\"name\": \"Parish Cook-Out (parish feast weekend)\", \"description\": \"Outdoor concert and free cookout; beverages and \\u201cbeer garden.\\u201d\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-19\", \"day_of_week\": \"Saturday\", \"time\": 1730, \"location\": \"Rectory lawn\", \"contact\": null, \"cost\": null}, {\"name\": \"Outdoor Mass (parish feast weekend)\", \"description\": \"Outdoor Mass on the Benton Lawn (weather permitting).\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-20\", \"day_of_week\": \"Sunday\", \"time\": 1030, \"location\": \"Benton Lawn\", \"contact\": null, \"cost\": null}, {\"name\": \"Parish Picnic (parish feast weekend)\", \"description\": \"\\u201cPotluck\\u201d picnic after the 10:30 AM Mass; meats and beverages provided; bring a side dish to share.\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-20\", \"day_of_week\": \"Sunday\", \"time\": 1130, \"location\": \"Benton Lawn\", \"contact\": null, \"cost\": null}, {\"name\": \"Happy Holly Days Bazaar\", \"description\": \"Bazaar November 14 & 15; craft spaces available; donations for bake sale and raffle requested.\", \"frequency\": \"one_time\", \"event_date\": null, \"day_of_week\": null, \"time\": null, \"location\": null, \"contact\": \"Questions: Linda McDaniel (330-671-4712). Craft spaces: Beth Hayes (330-858-2427). Raffle donations: Marie Webster (330-571-9510).\", \"cost\": null}, {\"name\": \"Catholic Women\\u2019s Book Study\", \"description\": \"Sisters In Scripture: Exploring Relationships of Biblical Women. Meets Thursdays at 7:00 PM in the Parish Center at Our Lady of Victory.\", \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Thursday\", \"time\": 1900, \"location\": \"Parish Center at Our Lady of Victory\", \"contact\": \"Nicole (330-571-3542) or Amy (330-807-7948)\", \"cost\": null}, {\"name\": \"Confirmation Candidate & Parent meeting\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-24\", \"day_of_week\": \"Thursday\", \"time\": 1830, \"location\": \"Our Lady of Victory\", \"contact\": null, \"cost\": null}, {\"name\": \"PSR (Parish School of Religion) sessions begin\", \"description\": \"For preschool (age 4) through 8th grade; online registration open.\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-27\", \"day_of_week\": \"Sunday\", \"time\": null, \"location\": null, \"contact\": \"Religious Education Office (330-733-9944)\", \"cost\": null}, {\"name\": \"First Reconciliation & First Communion Parent meeting\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-10-08\", \"day_of_week\": \"Thursday\", \"time\": 1830, \"location\": \"Saint Matthew\", \"contact\": null, \"cost\": null}, {\"name\": \"OCIA informational gathering\", \"description\": \"Initial gathering for those interested in becoming Catholic/learning more; combined with Our Lady of Victory Parish.\", \"frequency\": \"one_time\", \"event_date\": \"2026-10-14\", \"day_of_week\": \"Wednesday\", \"time\": null, \"location\": null, \"contact\": null, \"cost\": null}, {\"name\": \"Outreach Ministry volunteer date (Father Hilkert Center)\", \"description\": \"Help at the Father Hilkert Center (Visitation of Mary Parish, Goodyear Heights).\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-26\", \"day_of_week\": \"Saturday\", \"time\": 930, \"location\": \"Father Hilkert Center (Visitation of Mary Parish, Goodyear Heights)\", \"contact\": \"Mike Madonio (330-354-9238)\", \"cost\": null}, {\"name\": \"ACME receipts collection for Community Cash Back (Scout Troops 310 & 7310)\", \"description\": \"Save ACME receipts dated Aug 1, 2026\\u2013Feb 15, 2027; drop off in collection bins in church vestibules.\", \"frequency\": \"other_recurring\", \"event_date\": null, \"day_of_week\": null, \"time\": null, \"location\": \"Church vestibules\", \"contact\": null, \"cost\": null}]"
+          "value": "[{\"name\": \"Catechist meeting\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-13\", \"day_of_week\": \"Sunday\", \"time\": 900, \"location\": \"Conference Room\", \"contact\": null, \"cost\": null}, {\"name\": \"Dominican Associates\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-13\", \"day_of_week\": \"Sunday\", \"time\": 1330, \"location\": \"Conference Room\", \"contact\": null, \"cost\": null}, {\"name\": \"Scout Troop #310/7310\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-14\", \"day_of_week\": \"Monday\", \"time\": 1845, \"location\": \"Silva Center\", \"contact\": null, \"cost\": null}, {\"name\": \"Bible Study\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-15\", \"day_of_week\": \"Tuesday\", \"time\": 1000, \"location\": \"Conference Room\", \"contact\": null, \"cost\": null}, {\"name\": \"Cub Scout Pack #3310\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-15\", \"day_of_week\": \"Tuesday\", \"time\": 1830, \"location\": \"Classrooms\", \"contact\": null, \"cost\": null}, {\"name\": \"Rosary Makers\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-16\", \"day_of_week\": \"Wednesday\", \"time\": 1100, \"location\": \"Parish Office, Lower\", \"contact\": null, \"cost\": null}, {\"name\": \"Cancer Spirituality Group\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-17\", \"day_of_week\": \"Thursday\", \"time\": 1100, \"location\": \"Conference Room\", \"contact\": null, \"cost\": null}, {\"name\": \"Cub Scout Pack #3310 Lock-in\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-18\", \"day_of_week\": \"Friday\", \"time\": 1900, \"location\": \"Silva Center\", \"contact\": null, \"cost\": null}, {\"name\": \"Parish Cook-Out\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-19\", \"day_of_week\": \"Saturday\", \"time\": 1730, \"location\": \"Rectory Lawn\", \"contact\": null, \"cost\": null}, {\"name\": \"Outdoor Concert\", \"description\": \"Outdoor concert on the rectory lawn; part of parish feast weekend.\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-19\", \"day_of_week\": \"Saturday\", \"time\": 1730, \"location\": \"Rectory Lawn\", \"contact\": null, \"cost\": null}, {\"name\": \"Parish Picnic\", \"description\": \"\\u201cPotluck\\u201d picnic after the 10:30 AM Mass; meats/beverages provided; bring a side dish to share.\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-20\", \"day_of_week\": \"Sunday\", \"time\": 1130, \"location\": \"Benton Lawn\", \"contact\": null, \"cost\": null}, {\"name\": \"Outdoor Mass (Parish Feast Weekend)\", \"description\": \"Outdoor Mass on the Benton Lawn (weather permitting).\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-20\", \"day_of_week\": \"Sunday\", \"time\": 1030, \"location\": \"Benton Lawn\", \"contact\": null, \"cost\": null}, {\"name\": \"Happy Holly Days Bazaar\", \"description\": \"Bazaar; craft spaces available; bake sale and raffle donations requested.\", \"frequency\": \"one_time\", \"event_date\": \"2026-11-14\", \"day_of_week\": null, \"time\": null, \"location\": null, \"contact\": \"Linda McDaniel 330-671-4712; Beth Hayes 330-858-2427; Marie Webster 330-571-9510\", \"cost\": null}, {\"name\": \"Happy Holly Days Bazaar\", \"description\": \"Bazaar (second day).\", \"frequency\": \"one_time\", \"event_date\": \"2026-11-15\", \"day_of_week\": null, \"time\": null, \"location\": null, \"contact\": \"Linda McDaniel 330-671-4712; Beth Hayes 330-858-2427; Marie Webster 330-571-9510\", \"cost\": null}, {\"name\": \"Rosary Making Apostolate\", \"description\": \"Gather to make rosaries for parishioners and those hospitalized or homebound. Next gathering Wed, Sept. 16.\", \"frequency\": \"other_recurring\", \"event_date\": null, \"day_of_week\": null, \"time\": null, \"location\": null, \"contact\": \"Netha Gussey 330-794-0366\", \"cost\": null}, {\"name\": \"Catholic Women's Book Study\", \"description\": \"Thursdays at 7:00 PM in the Parish Center at Our Lady of Victory. Book: Sisters In Scripture: Exploring Relationships of Biblical Women.\", \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Thursday\", \"time\": 1900, \"location\": \"Parish Center at Our Lady of Victory\", \"contact\": \"Nicole 330-571-3542 or Amy 330-807-7948\", \"cost\": null}, {\"name\": \"September Bible Study: \\u201cThe Acts of the Apostles - Part II\\u201d\", \"description\": \"Tuesdays Sept. 8 through Sept. 22, 10:00\\u201311:30 AM in the Conference Room; book cost $11.\", \"frequency\": \"weekly\", \"event_date\": null, \"day_of_week\": \"Tuesday\", \"time\": 1000, \"location\": \"Conference Room\", \"contact\": \"Barb Jentes 330-733-9944\", \"cost\": \"$11\"}, {\"name\": \"Confirmation Candidate & Parent meeting\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-09-24\", \"day_of_week\": \"Thursday\", \"time\": 1830, \"location\": \"Our Lady of Victory\", \"contact\": null, \"cost\": null}, {\"name\": \"First Reconciliation & First Communion Parent meeting\", \"description\": null, \"frequency\": \"one_time\", \"event_date\": \"2026-10-08\", \"day_of_week\": \"Thursday\", \"time\": 1830, \"location\": \"Saint Matthew\", \"contact\": null, \"cost\": null}, {\"name\": \"Parish School of Religion (PSR) registration\", \"description\": \"PSR sessions begin Sunday, September 27 (preschool age 4 to 8th grade).\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-27\", \"day_of_week\": \"Sunday\", \"time\": null, \"location\": null, \"contact\": \"Religious Education Office 330-733-9944\", \"cost\": null}, {\"name\": \"Outreach Ministry volunteer day (Father Hilkert Center)\", \"description\": \"Volunteer help at the Father Hilkert Center (Visitation of Mary Parish in Goodyear Heights).\", \"frequency\": \"one_time\", \"event_date\": \"2026-09-26\", \"day_of_week\": \"Saturday\", \"time\": 930, \"location\": \"Father Hilkert Center (Visitation of Mary Parish, Goodyear Heights)\", \"contact\": \"Mike Madonio 330-354-9238\", \"cost\": null}]"
         },
         "Events Summary": {
           "type": "rich_text",
-          "value": "This week includes a parish cook-out on Saturday, September 19 at 5:30 PM (with an outdoor concert), followed by an outdoor Mass on Sunday, September 20 at 10:30 AM and a potluck parish picnic at 11:30 AM on the Benton Lawn. Bible Study on Acts of the Apostles continues Tuesdays from 10:00–11:30 AM through September 22, and Catholic Women’s Book Study meets Thursdays at 7:00 PM at Our Lady of Victory. An Outreach Ministry volunteer day at the Father Hilkert Center is scheduled for Saturday, September 26 from 9:30 AM to noon."
+          "value": "This weekend (Sept. 19–20) Saint Matthew celebrates its parish feast with outdoor events: an outdoor concert and cookout on Saturday at 5:30 PM, and an outdoor Mass on Sunday at 10:30 AM followed by an 11:30 AM potluck parish picnic on the Benton Lawn. Weekly/ongoing programs include Tuesday Bible Study (10:00–11:30 AM) and the Catholic Women’s Book Study on Thursdays at 7:00 PM at Our Lady of Victory. Mark your calendar for the Happy Holly Days Bazaar on November 14–15."
         },
         "GPT Logs": {
           "type": "rich_text",
-          "value": "Downloading from Discover Mass...\nDownloaded bulletin (2330959 bytes, type=pdf, dated 2026-09-13)\nExtracting information...\nSanitized: confession: merged open-ended duplicate of Saturday 0900 into the slot that states an end\nWARNING: Recurring Masses changed vs stored: added Sunday 0830 (not printed in bulletin - suspicious), added Thursday 0830 (not printed in bulletin - suspicious), added Tuesday 0830 (not printed in bulletin - suspicious), added Wednesday 1745 (not printed in bulletin - suspicious) [reproduced on a second extraction]\nFound: 1 sites, 8 masses, 1 confessions, 19 events\n  Site 'Saint Matthew Parish': 8 masses, 1 confessions\nNotes: Bulletin dated September 13, 2026 (Twenty-fourth Sunday in Ordinary Time). Masses & Services list shows a one-week schedule including: Mon 9/14 'No Mass Today' and Sat 9/19 includes '9:00 AM No Confessions this week!'—recorded as a temporary cancellation note rather than changing the standing confession schedule. The bulletin references Masses at 'Our Lady of Victory' (8:30 AM Tue/Thu, 5:45 PM Wed, and 8:30 AM Sunday) and events located there, but does not provide an address; these were kept as notes/locations rather than creating a separate site entry. Sunday outdoor Mass on 9/20 is mentioned elsewhere, but the Mass schedule already lists Sunday 10:30 AM; treated as the same recurring Mass with location change noted only in events (not as a separate Mass entry). No adoration schedule was found in the bulletin."
+          "value": "Downloading from Discover Mass...\nDownloaded bulletin (2330959 bytes, type=pdf, dated 2026-09-13)\nExtracting information...\nExcluded 3 Mass(es) noted at an excluded site: Tuesday 0830 'Mass at Our Lady of Victory'; Wednesday 1745 'Mass at Our Lady of Victory'; Sunday 0830 'Mass at Our Lady of Victory'\nFound: 1 sites, 4 masses, 1 confessions, 21 events\n  Site 'Saint Matthew Parish': 4 masses, 1 confessions\nNotes: Bulletin dated September 13, 2026 (page 3 header). Masses & Services block (page 2) lists weekday/day-by-day Mass intentions; extracted as recurring weekly Mass times, except noted cancellation: Monday 'No Mass Today' and Saturday 'No Confessions this week!' appear date-specific, but cancellations are not encoded as schedule entries. The Mass lines explicitly labeled 'Mass at Our Lady of Victory' were kept with site_label transcribed verbatim; however the bulletin does not provide an address for Our Lady of Victory, so it was not added as a separate site. Confession schedule states Saturdays 9:00–9:30 with note 'See the calendar below for location' but no separate location calendar was found in the provided pages, so site_label left null. No adoration schedule found."
         },
         "GPT Results": {
           "type": "rich_text",
@@ -19001,15 +19001,15 @@
         },
         "Issue Log": {
           "type": "rich_text",
-          "value": "WARNING: Recurring Masses changed vs stored: added Sunday 0830 (not printed in bulletin - suspicious), added Thursday 0830 (not printed in bulletin - suspicious), added Tuesday 0830 (not printed in bulletin - suspicious), added Wednesday 1745 (not printed in bulletin - suspicious) [reproduced on a second extraction]"
+          "value": ""
         },
         "Issues": {
           "type": "status",
-          "value": "Warning"
+          "value": "No Issues"
         },
         "Link to latest bulletin": {
           "type": "url",
-          "value": "https://bulletins.discovermass.com/download.php?bulletin=NebbB2BmOPU000WJLVVblX6baIIuxYiTptCKlU1EQ087gzN02kdB%2BrXqkGV2yDTqXWtqlNE2LfAkM%2BT7JpXwfCSNDC6nFpFKZH%2BWeOlCrXY%3D"
+          "value": "https://bulletins.discovermass.com/download.php?bulletin=ppdGn%2FubZ4HHWMR3U5OtiHqsKrev1%2FitIGj0fMWZeScJVQchHH4f9ubDf6u6eYK17mPfOcPIpYNrmPPWR3i4Db1ZlX1XqXA11olpiJnHifk%3D"
         },
         "LonLat": {
           "type": "rich_text",
@@ -19017,7 +19017,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Mass at Our Lady of Victory\"}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Wednesday\", \"time\": 1745, \"mass_date\": null, \"language\": null, \"notes\": \"Mass at Our Lady of Victory\"}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Mass at Our Lady of Victory\"}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": null}]"
+          "value": "[{\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -20015,7 +20015,7 @@
     {
       "parish_id": "visitation-of-mary-parish-akron-oh",
       "page_id": "2df29b8f-0e6e-8142-84b5-e4049826988d",
-      "last_edited_time": "2026-09-12T13:56:00.000Z",
+      "last_edited_time": "2026-09-12T17:40:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -20039,7 +20039,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"In church; or by appointment\"}, {\"day\": \"Thursday\", \"start_time\": 1700, \"end_time\": 1730, \"end_next_day\": false, \"notes\": \"Individual appointment available (see St. John the Baptist listing)\"}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -20087,7 +20087,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Rectory Chapel\"}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Rectory Chapel\"}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Rectory Chapel\"}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Rectory Chapel\"}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Rectory Chapel\"}, {\"day\": \"Sunday\", \"time\": 1200, \"mass_date\": null, \"language\": \"Swahili\", \"notes\": \"Last Sunday of the month only\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\"}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Rectory Chapel\"}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Rectory Chapel\"}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Rectory Chapel\"}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Rectory Chapel\"}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Rectory Chapel\"}]"
         },
         "Name": {
           "type": "title",
@@ -20122,7 +20122,7 @@
     {
       "parish_id": "visitation-of-mary-parish-akron-oh-sjb",
       "page_id": "2e029b8f-0e6e-8040-96c2-cf5cf3f2491c",
-      "last_edited_time": "2026-09-12T13:43:00.000Z",
+      "last_edited_time": "2026-09-12T17:40:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -20194,7 +20194,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Sunday\", \"time\": 1400, \"mass_date\": null, \"language\": \"Vietnamese\", \"notes\": \"2026 schedule (see specific dates)\"}]"
+          "value": "[{\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null}, {\"day\": \"Thursday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null}]"
         },
         "Name": {
           "type": "title",

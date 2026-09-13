@@ -274,8 +274,7 @@
     "Name": "Saint John the Baptist Parish",
     "Mass Times": {
       "Sunday": [
-        1000,
-        1400
+        1000
       ],
       "Thursday": [
         1730
@@ -372,8 +371,7 @@
         1600
       ],
       "Sunday": [
-        1030,
-        1200
+        1030
       ],
       "Monday": [
         800
@@ -395,11 +393,6 @@
       "Saturday": [
         {
           "1500": 30
-        }
-      ],
-      "Thursday": [
-        {
-          "1700": 30
         }
       ]
     },
@@ -1005,7 +998,6 @@
       ],
       "Wednesday": [
         645,
-        830,
         1215
       ],
       "Thursday": [
@@ -1713,6 +1705,7 @@
         1200
       ],
       "Saturday": [
+        1700,
         1900
       ]
     },
@@ -2013,8 +2006,7 @@
         900
       ],
       "Friday": [
-        900,
-        2100
+        900
       ]
     },
     "Confessions": {
@@ -2506,18 +2498,10 @@
     "Name": "Saint Matthew Parish",
     "Mass Times": {
       "Sunday": [
-        830,
         1030
       ],
-      "Tuesday": [
-        830
-      ],
       "Wednesday": [
-        800,
-        1745
-      ],
-      "Thursday": [
-        830
+        800
       ],
       "Friday": [
         800
@@ -3357,16 +3341,16 @@
         1700
       ],
       "Monday": [
-        800
+        700
       ],
       "Tuesday": [
-        800
+        700
       ],
       "Wednesday": [
-        800
+        700
       ],
       "Thursday": [
-        800
+        700
       ],
       "Friday": [
         800
@@ -3985,8 +3969,7 @@
         800
       ],
       "Friday": [
-        800,
-        1830
+        800
       ]
     },
     "Confessions": {
@@ -4968,13 +4951,7 @@
         830
       ]
     },
-    "Confessions": {
-      "Wednesday": [
-        {
-          "1800": 60
-        }
-      ]
-    },
+    "Confessions": {},
     "Adoration": {
       "Friday": [
         {
@@ -5978,11 +5955,11 @@
     "ID": 159,
     "Name": "Our Lady Help of Christians Catholic Church - Lodi",
     "Mass Times": {
-      "Saturday": [
-        830
-      ],
       "Monday": [
         1800
+      ],
+      "Sunday": [
+        830
       ]
     },
     "Confessions": {},
@@ -6684,14 +6661,7 @@
         1600
       ],
       "Sunday": [
-        900,
         1100
-      ],
-      "Wednesday": [
-        830
-      ],
-      "Friday": [
-        830
       ],
       "Monday": [
         800
@@ -7055,7 +7025,7 @@
         1600
       ],
       "Sunday": [
-        800,
+        830,
         1130
       ],
       "Monday": [
@@ -7114,14 +7084,14 @@
       ]
     },
     "Confessions": {
-      "Wednesday": [
-        {
-          "1700": 25
-        }
-      ],
       "Saturday": [
         {
           "1500": 60
+        }
+      ],
+      "Wednesday": [
+        {
+          "1700": 25
         }
       ]
     },
