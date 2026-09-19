@@ -553,17 +553,6 @@
           "language": null,
           "notes": null,
           "cancelled": false
-        },
-        {
-          "day": "Friday",
-          "start": "17:30",
-          "mass_date": null,
-          "language": null,
-          "notes": "First Friday only",
-          "cancelled": false,
-          "weeks_of_month": [
-            1
-          ]
         }
       ],
       "confession": [
@@ -4178,6 +4167,17 @@
           "language": null,
           "notes": null,
           "cancelled": false
+        },
+        {
+          "day": "Friday",
+          "start": "17:30",
+          "mass_date": null,
+          "language": null,
+          "notes": "First Friday (ONLY)",
+          "cancelled": false,
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -10866,9 +10866,17 @@
       ],
       "confession": [
         {
+          "day": "Monday",
+          "start": "17:15",
+          "end": "18:00",
+          "end_next_day": false,
+          "notes": null,
+          "cancelled": false
+        },
+        {
           "day": "Saturday",
-          "start": "15:30",
-          "end": "17:30",
+          "start": "15:00",
+          "end": "15:30",
           "end_next_day": false,
           "notes": null,
           "cancelled": false

@@ -215,6 +215,53 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         drop_masses={("Thursday", 1100)},
         add_masses=[MassTime(day=DayOfWeek.THURSDAY, time=1100)],
     ),
+    # --- 2026-09-19 audit of the chronically unreliable rows ----------------
+    #
+    # Six rows read against their own bulletins. `immat-con-cle`, `0512`,
+    # `0512-peace` and `1687` came back CORRECT and get no entry; `0582` is an
+    # image-only scan whose text layer is nothing but ad pages, so its
+    # First-Friday adoration stored as weekly cannot be settled here and is
+    # left alone (inert anyway - UPDATE_ADORATION = False). These three are the
+    # repairs.
+    "1088": ManualFix(
+        reason="the Saturday confession was wrong at BOTH ends and the Monday "
+        "one had just been deleted. Its schedule lives on an image-only back "
+        "cover, which is why three consecutive editions grep clean and no "
+        "text-layer check can ever see it; rendered and read, the 2026-09-20 "
+        "page prints 'Reconciliation: Sat. 3-3:30PM | Mon. 5:15PM - 6:00PM'. "
+        "So Saturday is a single 30-minute window, not the stored 1530-1730 - "
+        "which means the standing 2h00m span flag on this row was a TRUE "
+        "positive all along, though not the two-slots-read-as-a-range shape it "
+        "warns about. The 2026-09-19 run's 'removed Monday 1715' was simply "
+        "wrong. Everything else on the row matches the same page ('Holy Mass: "
+        "Mon. 6:15PM | Tues., Wed., Fri. 11AM / Sat. 4pm | Sun. 8AM, 10AM, "
+        "11:45AM', adoration 'Mondays 9:30AM - 6PM')",
+        confession_times=[
+            ConfessionTime(day=DayOfWeek.SATURDAY, start_time=1500, end_time=1530),
+            ConfessionTime(day=DayOfWeek.MONDAY, start_time=1715, end_time=1800),
+        ],
+    ),
+    "1905-smo": ManualFix(
+        reason="two errors, both settled by the masthead's own site tags. "
+        "(1) The Friday 17:30 Mass is St. PATRICK's and is First-Friday-only: "
+        "'Friday - 12:00pm (SMO)  First Friday (ONLY)- 5:30pm (STP)'. The "
+        "stored entry's own site_label even reads '(STP)', so v2.5.30's label "
+        "is pointing straight at the row it belongs on - it moves to `1905` "
+        "below. (2) The Friday confession is printed as 'Friday  12:30pm "
+        "(SMO)'; the stored 12:45 was DERIVED from 'After Noon Mass' when the "
+        "bulletin prints BOTH times and contradicts itself, so the stored "
+        "12:45 is left alone - see below",
+        drop_masses={("Friday", 1730)},
+        # The confession is deliberately NOT touched. The 2026-09-19 audit read
+        # the masthead's "Friday  12:30pm (SMO)" and called the stored 12:45
+        # wrong, but the SAME edition's week listing prints "12:45pm(SMO-C) |
+        # Confessions after Noon Mass". Both are printed, they differ by
+        # fifteen minutes, and nothing on the page ranks one over the other -
+        # the v2.5.11 listing-beats-the-box rule is about which LITURGIES are
+        # celebrated this week, not about arbitrating a time the bulletin
+        # states twice. This is the `1532` typo situation: only the parish can
+        # settle it, so it is flagged here rather than guessed at.
+    ),
     # --- 2026-09-19: two monthly Masses that were parked in `events` --------
     #
     # `utils/promote_monthly_masses.py` now moves these into the schedule at
@@ -519,6 +566,17 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         "AND 'not reproduced' (2026-09-12)",
         confession_times=[
             ConfessionTime(day=DayOfWeek.MONDAY, start_time=1650, end_time=1720),
+        ],
+        # 2026-09-19: receives the First Friday 17:30 Mass that had been sitting
+        # on `1905-smo`. The masthead tags it St. Patrick's and says it is
+        # monthly in the same breath - "Friday - 12:00pm (SMO)  First Friday
+        # (ONLY)- 5:30pm (STP)" - and the stored entry's own site_label read
+        # "(STP)", so v2.5.30's label pointed straight at the right row.
+        # The note is load-bearing, not decoration: without it the Mass
+        # publishes every Friday, and `derive_ordinal` reads "First Friday
+        # (ONLY)" as weeks_of_month [1] at export time.
+        add_masses=[
+            MassTime(day=DayOfWeek.FRIDAY, time=1730, notes="First Friday (ONLY)"),
         ],
     ),
     # Retired 2026-09-12, same day it was written, by `site_label`.
