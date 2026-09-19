@@ -192,6 +192,19 @@ _HOLIDAY_NAME_RE = re.compile(
 _HOLIDAY_TAIL_RE = re.compile(r"\s*(?:on|for)?\s*[^.;!?]{0,60}", re.IGNORECASE)
 
 
+# A clock time, as distinct from the scripture citations these listings are
+# full of. "9:00 am" and "6:30pm" must match; "lk 8:19-21", "1 cor 15:35-37",
+# "ps 119:1" and "mt 20:1-16a" must not - hence a two-digit minute that is not
+# followed by another digit or a hyphen, and nothing word-like in front.
+_CLOCK_RE = re.compile(r"(?<![\w:.-])(\d{1,2})[:.](\d{2})(?![\d-])")
+
+
+def _preceding_clock(text: str, start: int, window: int) -> Optional[str]:
+    """The last clock time printed before `start`, if one is close enough."""
+    hits = list(_CLOCK_RE.finditer(text, max(0, start - window), start))
+    return hits[-1].group(0) if hits else None
+
+
 def _qualified_by_holiday(tail: str) -> bool:
     """Is this tail a list of holidays rather than a day this week?
 
@@ -331,6 +344,30 @@ def _cancelled_near(time: int, day: str, text: str) -> Optional[str]:
                 holiday_tail = _HOLIDAY_TAIL_RE.match(text, hit.end())
                 if holiday_tail and _qualified_by_holiday(holiday_tail.group(0)):
                     continue
+
+                # (6) a phrase that names no time of its own belongs to the
+                # NEAREST time, not to every time in the day's block. A
+                # listing annotates a time by following it:
+                #
+                #     9:00 am no mass   11:00 am +John Lenehan
+                #     8:00 a.m. no mass   5:00 p.m. Lukanc & Ojnik Families
+                #
+                # Guards 1 and 2 both pass for the 11:00 and the 5:00 pm -
+                # same weekday, no day label in between - so without this the
+                # phrase cancels a Mass printed with an intention beside it.
+                # This is guard 1's "nearest label" logic applied to times.
+                #
+                # Only when the phrase states no time itself; when it does,
+                # guard 3 has already settled it exactly. And only looking
+                # BACKWARD, because the annotation follows its time - `shc`
+                # prints "8:45 am .. at St. Patrick ......... NO MASS", which
+                # is why the window is the full _CANCEL_CONTEXT_CHARS.
+                if not stated:
+                    owner = _preceding_clock(
+                        text, hit.start(), _CANCEL_CONTEXT_CHARS
+                    )
+                    if owner and not _same_time(owner, time):
+                        continue
 
                 return hit.group(0).strip()
     return None

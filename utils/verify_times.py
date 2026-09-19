@@ -86,13 +86,28 @@ def _extract_text(source_bytes: bytes, content_type: str) -> str:
         return ""
 
 
+# Control characters a PDF producer emits where a word space belongs. Discover
+# Mass bulletins are full of ETX (\x03): st-mary-cleveland-oh's listing prints
+# "8:00\x03a.m.\x03 no\x03mass", so the words are glued together as far as any
+# regex is concerned and `\bno\s*mass\b` simply does not match. Times still
+# matched, because a rendering only ever looks at digits and the separator, so
+# the fabrication check never noticed - the damage was confined to the checks
+# that read WORDS, which is the cancellation detector.
+#
+# Folded to a single space each rather than deleted, so a control character
+# between two words becomes a boundary instead of joining them.
+_CONTROL_CHARS_RE = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f ​﻿]")
+
+
 def _normalize(text: str) -> str:
     """Lowercase and collapse whitespace so line breaks can't split a time.
 
     PDF text layers wrap wherever the column does, so "11:00" and the "am" that
-    qualifies it routinely land on different lines.
+    qualifies it routinely land on different lines. Control characters some
+    producers emit in place of spaces are folded in with the whitespace for the
+    same reason - see `_CONTROL_CHARS_RE`.
     """
-    return re.sub(r"\s+", " ", text.lower())
+    return re.sub(r"\s+", " ", _CONTROL_CHARS_RE.sub(" ", text.lower()))
 
 
 def _renderings(time: int) -> list[str]:
