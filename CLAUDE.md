@@ -502,8 +502,9 @@ found by accident — never by the pipeline:
 | 2026-08-10 | **108 of 109** PO/eCatholic | date walk only looked backwards; the Sunday-dated file is posted days early | v2.5.6 |
 | 2026-08-10 | `sp-l` (456 days stale), `ss-c` | filename dialects the date parser couldn't read, so ranking fell back to keywords | v2.5.6 |
 | 2026-08-10 | `hs-gh` (caught pre-merge) | a widened month-name pattern read a year as a day, ranking July above August | v2.5.6 |
+| 2026-09-19 | **7 of 15** Self-Hosted | the recency bonus ranked a date up to 14 days ahead BELOW anything 0-30 days old, so the coming Sunday's file - which is what the current bulletin is named for - lost to last week's every Saturday | v2.5.33 |
 
-Assume there is a fifth. When touching any of this, the question to ask is not
+The fifth arrived, and it was inside the ranking model itself. Assume there is a sixth. When touching any of this, the question to ask is not
 "does it download?" but "is what it downloaded the newest thing the site has?"
 
 ### How each source decides
@@ -544,8 +545,13 @@ Score = keyword score + recency bonus, sorted by that, then by parsed date.
 - Keywords (`_score_link`): `.pdf` +10, bulletin-ish word in the href +20 or
   link text +15, any date-shaped run of digits +25, "current"/"latest"/"this
   week" +30, `archive`/`past`/`old` −20.
-- Recency (`_recency_bonus`): ≤30 days old +100, ≤120 +60, ≤400 +25, older +5,
-  up to 14 days *future* +90, further future or unparseable **0**.
+- Recency (`_recency_bonus`): up to `LOOKAHEAD_DAYS` (3) *ahead* through 30
+  days old +100, ≤120 +60, ≤400 +25, older +5, 4-14 days *future* +90, further
+  future or unparseable **0**. The near-future band is the TOP band, tied with
+  the recent past so the date tiebreak takes the newer file - it was one tier
+  below until v2.5.33, which made the coming Sunday's bulletin lose to last
+  week's on every Saturday run. It stays narrow because `sp-l` posts three
+  issues at once and a wider window jumps a run two weeks ahead.
 
 Recency is deliberately larger than any keyword so a dated current bulletin
 beats a stale file merely named "bulletin" — but it is only a bonus, so undated
@@ -780,6 +786,190 @@ the compose default — so the template needs the same edit by hand.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.33 (2026-09-19) - The Saturday run was asking for yesterday's bulletin
+
+Out of the 2026-09-19 triage. 154 parishes, 0 failures, 43 warned (28%).
+
+**The Self-Hosted ranker was losing to itself every week.** `_recency_bonus`
+scored a date up to 14 days ahead at **90** and anything 0-30 days old at
+**100**. A bulletin is named for the Sunday it *covers*, so on the Saturday run
+the current issue is dated **tomorrow** - and it lost to last week's file,
+every week, with the right PDF listed on the same page:
+
+    (135, 2026-09-06, kw=35, rec=100)  20260906-2.pdf   <- picked, 13 days old
+    (125, 2026-09-20, kw=35, rec= 90)  20260920.pdf     <- the current one
+
+**Seven of the fifteen enabled Self-Hosted parishes** were a week behind for
+this reason alone - `ss-c`, `sp-l`, `amherst`, `bearer`, `sc-c`,
+`st-basil-the-g`, and `olg-m`, which was 13 days stale because it had also
+skipped a week and had been behind for **three consecutive runs**. This is the
+fifth instance of the Bulletin Freshness class and the first inside the
+ranking model itself; it is also v2.5.6's `LOOKAHEAD_DAYS` insight, never
+applied to this side.
+
+`LOOKAHEAD_DAYS = 3` here too, and **the lookahead must stay small** - that was
+measured, not assumed. A flat `-14..30` band sends `sp-l` to its **October 3**
+issue, since it posts three weeks at once, skipping two weeks of events, which
+is exactly what the constant exists to prevent. At 3 days the coming Sunday
+ties with the recent past and the existing date tiebreak takes it on being
+newer, so nothing else moves. Verified by re-ranking all 15 pages live - the
+check that counts here: **7 move to the current bulletin, 8 byte-identical,
+nobody jumps ahead.**
+
+`staleness_warning()` caught none of them: they were 6 days old, well under the
+14-day threshold. **A weekly job permanently one week behind is invisible to a
+threshold measured in days.** The honest check is "is the newest file on the
+page the one we took?"
+
+**Guard 5: a cancellation qualified by holidays is a policy line.** The run
+published Saint Eugene's (`1734`) Thursday 11:00 Mass as `cancelled`, off
+
+    Monday - Thursday: 11:00 a.m.
+    Holy Days: 11:00 a.m. & 7:00 p.m.
+    No weekday Mass/ Memorial Day, 4th of July, or Labor Day
+
+All four v2.5.31 guards pass it: "Holy Days" is not a weekday label so nothing
+separates the phrase from the time, and the tail names no weekday, so guard 4
+has nothing to test. The connector is optional here, unlike guard 4, and that
+is safe for a reason - guard 4 needs "on"/"for" because in a day-by-day listing
+the text after the phrase is the next entry, but an entry of such a listing
+always opens with a **weekday**, never with "Memorial Day".
+
+`_qualified_by_holiday` asks which kind of name the sentence reaches **first**,
+not merely which is present: a 60-character tail overruns a short masthead line
+- 1734's picks up the Confessions line below it - so a plain "names no weekday"
+test never fires on the one case it was written for.
+
+**Control characters were hiding cancellations on ~28 parishes.** Discover Mass
+PDFs separate words with **ETX**, and `_normalize` collapsed `\s+` only, so
+`st-mary-cleveland-oh` arrived as `8:00\x03a.m.\x03 no\x03mass` and
+`\bno\s*mass\b` did not match. Times were never affected - a rendering only
+looks at digits and the separator - so the fabrication check never noticed and
+the damage was confined to the checks that read **words**. Folded to one space
+each; recurring-time hits move by **one** across ten local bulletins carrying
+1-2,798 control characters, so the v2.5.14 gate is not perturbed.
+
+**And that immediately exposed guard 6**, which is the argument for sweeping.
+Un-gluing the words took the detector 30 hits -> 41: four genuine cancellations
+it could never see, and two false positives it could never make.
+
+    ola-cle     sunday ... 9:00 am no mass   11:00 am +John Lenehan
+    stmary-cle  saturday ... 8:00 a.m. no mass   5:00 p.m. Lukanc & Ojnik
+
+Guards 1 and 2 both pass for the 11:00 and the 5:00 pm, so a bare phrase
+cancelled a Mass printed with an intention beside it. Guard 6 is guard 1's
+"nearest label" logic applied to **times**: a phrase naming no time of its own
+belongs to the nearest time, not to every time in the day's block. Backward
+only, because a listing annotates a time by following it (`shc` prints
+"8:45 am .. at St. Patrick ......... NO MASS"). `_CLOCK_RE` keeps "9:00 am" and
+"6:30pm" while rejecting "lk 8:19-21", "1 cor 15:35-37" and "mt 20:1-16a".
+
+**`notion_fixes` wrote rich_text in ONE block, so long rows were never
+repaired.** Notion's 2000-character cap is per *block* - the v2.5.1 rule
+`database/notion.py` has followed since and this file never did. Any repair to
+a row whose schedule JSON exceeds it failed with
+
+    body.properties.Mass Times.rich_text[0].text.content.length
+    should be <= 2000, instead was 2010
+
+while the summary still counted the row as written. Found on `1259`, whose Mass
+Times are 2010 characters; its **confession** repair went through on the same
+pass because that field is shorter, which is exactly what made it look like a
+success. Every earlier apply against that row had been failing the same way.
+Only `1259` and `1494` are over the cap today, and `1494`'s fix writes
+Confessions, so `1259` was the sole casualty.
+
+**Data repaired** - 20 rows via `notion_fixes --apply`, second pass a no-op.
+Eight warnings carried `LIKELY WRONG WRITE` or the fabrication flag and **seven
+were wrong**; the eighth was half right:
+
+| row | repair | why |
+|---|---|---|
+| `0164` | drop Thu 0900 | masthead is "Mon, Tues, Wed & Fri 9:00am" |
+| `st-matthew-akron-oh` | drop Sun 0800 | it is **Wednesday's**, two-column interleave |
+| `1101` | drop Sun 1300 | `site_label` says "@ St. Agnes in Orrville" |
+| `our-lady-of-angels` | drop Wed 1800 | the **summer** time, published in September |
+| `1532` | add Fri 0900 | Thursday's removal was **correct** - Morning Prayer |
+| `st-vitus` | conf Sat 0330-0350 -> 1530-1550 | that bulletin prints no confession times at all |
+| `1259` | drop Sat 0430 | the bulletin's own typo, "4:30 am People of the Cathedral Parish" |
+| `1734` | clear the bad `cancelled` flag | until guard 5 re-derives it; retire after 2026-09-26 |
+
+**The Cathedral now matches its masthead line for line** - 14 recurring Masses,
+12 confession slots, no Sunday 10:30 fabrication, no inline IC vigil, and the
+weekday confessions still two open-ended slots rather than a 7:45-11:30 range.
+
+### "First" is a failure mode of its own
+
+The triage kept landing on ordinal slots, so it was measured. Ordinal slots in
+`export.json`, week over week: **8 lost, 9 gained - 17 moving on a population
+of ~48**, about 35% turnover, against nothing like that for ordinary slots.
+Three independent mechanisms:
+
+1. **They are deleted in the weeks they do not occur.** A monthly slot is
+   legitimately absent from three bulletins in four, the extractor drops it on
+   those three, and a one-slot removal is far under
+   `PARTIAL_RETRACTION_RATIO`, so it writes. Three rows lost one in this run:
+   `1794`'s anchored "Thursday Before First Friday" confession - **one of the
+   six rows v2.5.32 built `anchored_week` for, deleted six days after it
+   shipped** - plus `0242`'s First Saturday and `23926`'s last-Wednesday.
+   Restored by hand, and flagged in `notion_fixes` as a **treadmill**: the
+   structural answer is the ledger in `docs/design/schedule-stability.md`,
+   which already has to hold a slot absent for one week. An ordinal slot is the
+   same thing on a longer period.
+2. **`MANUAL_FIXES["0882"] was wrong and had been deleting a real Mass.** Added
+   2026-09-12 reasoning "there is no 6:30 of any kind in the document" - true
+   of that week's document and of three in four, because it is a **First
+   Friday** Mass. Its stored notes say so as a matched pair ("First Fridays
+   only" / "Except on First Fridays") and the export derives
+   `weeks_of_month [1]` / `excluded_weeks [1]` from them. Settled by fetching
+   the two First Friday editions, both of which print it beside 08:00 on every
+   other weekday:
+
+       20260802B:  Thursday, 8/6  8:00 AM   Friday,8/7  6:30 PM
+       20260830B:  Thursday, 9/3  8:00 AM   Friday,9/4  6:30 PM
+
+   Retired. The same blind spot is in `verify_times`: a monthly slot is
+   *recurring* but printed once a month, so on the other three weeks the
+   fabrication check sees a time the page never prints. **Before dropping
+   anything carrying an ordinal note, fetch an edition from the week it falls
+   in** - PO/eCatholic URLs are date-constructed, so it costs one request.
+3. **The prompt is refusing ordinals the export layer can now publish.** Four
+   extractions said so in their own notes this run - `20812` ("*'2nd Monday of
+   Month 7-8:00pm' (monthly); omitted because it is not a year-round weekly
+   schedule and could be mispublished as weekly*"), `20822` ("*would require
+   date-specific handling*"), `21865`, `st-martin-of-tours-maple-heights-oh`
+   ("*omitted rather than guessed*"). v2.5.11 taught the model to suppress
+   undated policy lines; v2.5.17 then built `weeks_of_month` so ordinals can be
+   published correctly; nobody told the prompt. **Not fixed** - a prompt change
+   needs the v2.5.10 treatment, and this is the clearest target one has had.
+
+**`anchored_week` emitted nothing this week**, and not because of a bug: v2.5.32
+committed at 14:33 UTC and the run started at 13:58, exporting at 14:13 on the
+previous commit. Both are pushed now, so it takes effect 2026-09-26. Five of
+its six source rows still derive correctly; `1794` is the one this run
+destroyed, and is restored.
+
+### Still open from this run
+
+- **11 budget-held diffs went unverified** - `0244` (-2 Masses), `5217`,
+  `1494`, `0042`, `1318`, `immat-con-cle`, `13722`, `1236`, `1608`, `olg-m`,
+  `our-lady-of-victory`.
+- **`shc` / `shc-pat` are still missing four slots** dropped on 2026-09-12.
+  `restore_cancelled_slots` computes `dropped = stored - produced` and they are
+  no longer in `stored`, so they cannot self-heal - they need restoring by hand
+  before the detector can ever describe them again.
+- **`(still printed in bulletin)` failed twice more**, both the shape v2.5.29
+  aimed at: `1794` Friday 0900 matched the **office hours** line
+  "Monday - Friday | 9:00am - 3:00pm" (day and time genuinely adjacent, so
+  proximity cannot fix this one either), and `sa-o` Sunday 1045 matched the
+  *summer* schedule line it was correctly replacing.
+- **`st-mary-cleveland-oh` publishes 07:45 while Mass is at 08:00 until Oct 9**
+  - the previous week's bulletin says *"Beginning September 21st, weekday
+  Masses will be at 8:00 a.m., rather than 7:45 a.m. until October 9th"*, a
+  three-week substitution while the pastor is in Slovenia. The partial-
+  retraction guard held the write, which was right, and nothing can express
+  "weekly, but different for a while".
 
 ### v2.5.32 (2026-09-19) - "The Thursday before the First Friday" is a rule, not a refusal
 
