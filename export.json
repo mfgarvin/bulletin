@@ -706,14 +706,6 @@
           "cancelled": false
         },
         {
-          "day": "Sunday",
-          "start": "14:00",
-          "mass_date": null,
-          "language": "Vietnamese",
-          "notes": "Listed dates in 2026 only (monthly)",
-          "cancelled": false
-        },
-        {
           "day": "Thursday",
           "start": "17:30",
           "mass_date": null,
@@ -975,17 +967,6 @@
           "cancelled": false
         },
         {
-          "day": "Sunday",
-          "start": "12:00",
-          "mass_date": null,
-          "language": "Swahili",
-          "notes": "Last Sunday of the month only",
-          "cancelled": false,
-          "weeks_of_month": [
-            -1
-          ]
-        },
-        {
           "day": "Monday",
           "start": "08:00",
           "mass_date": null,
@@ -1040,7 +1021,7 @@
           "start": "15:00",
           "end": "15:30",
           "end_next_day": false,
-          "notes": "In church; or by appointment",
+          "notes": null,
           "cancelled": false
         }
       ],
@@ -1723,8 +1704,8 @@
         },
         {
           "day": "Saturday",
-          "start": "03:30",
-          "end": "03:50",
+          "start": "15:30",
+          "end": "15:50",
           "end_next_day": false,
           "notes": null,
           "cancelled": false
@@ -1909,6 +1890,21 @@
         }
       ],
       "confession": [
+        {
+          "day": "Thursday",
+          "start": "15:30",
+          "end": "16:30",
+          "end_next_day": false,
+          "notes": "Thursday before First Friday",
+          "cancelled": false,
+          "anchored_week": {
+            "weekday": "Friday",
+            "weeks_of_month": [
+              1
+            ],
+            "offset_days": -1
+          }
+        },
         {
           "day": "Saturday",
           "start": "15:30",
@@ -2704,6 +2700,17 @@
         }
       ],
       "confession": [
+        {
+          "day": "Saturday",
+          "start": "08:30",
+          "end": null,
+          "end_next_day": false,
+          "notes": "First Saturday of each month",
+          "cancelled": false,
+          "weeks_of_month": [
+            1
+          ]
+        },
         {
           "day": "Saturday",
           "start": "16:00",
@@ -4619,6 +4626,14 @@
         },
         {
           "day": "Saturday",
+          "start": "17:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null,
+          "cancelled": false
+        },
+        {
+          "day": "Saturday",
           "start": "19:00",
           "mass_date": null,
           "language": "Spanish",
@@ -4835,16 +4850,7 @@
           "cancelled": false
         }
       ],
-      "confession": [
-        {
-          "day": "Saturday",
-          "start": "15:00",
-          "end": "16:00",
-          "end_next_day": false,
-          "notes": null,
-          "cancelled": false
-        }
-      ],
+      "confession": [],
       "adoration": {
         "is_perpetual": false,
         "times": []
@@ -4978,14 +4984,6 @@
           "start": "11:00",
           "mass_date": null,
           "language": null,
-          "notes": null,
-          "cancelled": false
-        },
-        {
-          "day": "Sunday",
-          "start": "13:00",
-          "mass_date": null,
-          "language": "Spanish",
           "notes": null,
           "cancelled": false
         },
@@ -5454,6 +5452,14 @@
         },
         {
           "day": "Wednesday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null,
+          "cancelled": false
+        },
+        {
+          "day": "Friday",
           "start": "09:00",
           "mass_date": null,
           "language": null,
@@ -6132,11 +6138,22 @@
       ],
       "confession": [
         {
+          "day": "Wednesday",
+          "start": "18:00",
+          "end": null,
+          "end_next_day": false,
+          "notes": "Last Wednesday of each month; confessions also available by appointment with a priest.",
+          "cancelled": false,
+          "weeks_of_month": [
+            -1
+          ]
+        },
+        {
           "day": "Saturday",
           "start": "15:00",
           "end": "16:00",
           "end_next_day": false,
-          "notes": "Also available by appointment",
+          "notes": "Confessions also available by appointment with a priest.",
           "cancelled": false
         }
       ],
@@ -6734,14 +6751,6 @@
     "invite_feedback": false,
     "schedules": {
       "mass": [
-        {
-          "day": "Sunday",
-          "start": "08:00",
-          "mass_date": null,
-          "language": null,
-          "notes": null,
-          "cancelled": false
-        },
         {
           "day": "Sunday",
           "start": "10:30",
@@ -7656,7 +7665,14 @@
           "end": "20:00",
           "end_next_day": false,
           "notes": "Thursday before First Saturday; or by appointment",
-          "cancelled": false
+          "cancelled": false,
+          "anchored_week": {
+            "weekday": "Saturday",
+            "weeks_of_month": [
+              1
+            ],
+            "offset_days": -2
+          }
         },
         {
           "day": "Saturday",
@@ -8091,14 +8107,6 @@
         },
         {
           "day": "Wednesday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": null,
-          "notes": null,
-          "cancelled": false
-        },
-        {
-          "day": "Thursday",
           "start": "09:00",
           "mass_date": null,
           "language": null,
@@ -9853,7 +9861,7 @@
           "mass_date": null,
           "language": null,
           "notes": null,
-          "cancelled": true
+          "cancelled": false
         },
         {
           "day": "Saturday",
@@ -10610,7 +10618,14 @@
           "end": "20:00",
           "end_next_day": false,
           "notes": "the Thursday before the First Friday of each month; and by appointment",
-          "cancelled": false
+          "cancelled": false,
+          "anchored_week": {
+            "weekday": "Friday",
+            "weeks_of_month": [
+              1
+            ],
+            "offset_days": -1
+          }
         },
         {
           "day": "Saturday",
@@ -11304,7 +11319,14 @@
           "end": "15:45",
           "end_next_day": false,
           "notes": "Thursday before First Friday. Also by appointment.",
-          "cancelled": false
+          "cancelled": false,
+          "anchored_week": {
+            "weekday": "Friday",
+            "weeks_of_month": [
+              1
+            ],
+            "offset_days": -1
+          }
         },
         {
           "day": "Saturday",
@@ -13979,7 +14001,14 @@
           "end": "20:30",
           "end_next_day": false,
           "notes": "Thursday before the First Friday",
-          "cancelled": false
+          "cancelled": false,
+          "anchored_week": {
+            "weekday": "Friday",
+            "weeks_of_month": [
+              1
+            ],
+            "offset_days": -1
+          }
         },
         {
           "day": "Saturday",
@@ -15502,40 +15531,7 @@
           "cancelled": false
         }
       ],
-      "confession": [
-        {
-          "day": "Sunday",
-          "start": "08:30",
-          "end": null,
-          "end_next_day": false,
-          "notes": "Please ask a priest before or after Mass",
-          "cancelled": false
-        },
-        {
-          "day": "Sunday",
-          "start": "18:00",
-          "end": null,
-          "end_next_day": false,
-          "notes": "Please ask a priest before or after Mass",
-          "cancelled": false
-        },
-        {
-          "day": "Tuesday",
-          "start": "08:00",
-          "end": null,
-          "end_next_day": false,
-          "notes": "Please ask a priest before or after Mass",
-          "cancelled": false
-        },
-        {
-          "day": "Thursday",
-          "start": "08:00",
-          "end": null,
-          "end_next_day": false,
-          "notes": "Please ask a priest before or after Mass",
-          "cancelled": false
-        }
-      ],
+      "confession": [],
       "adoration": {
         "is_perpetual": false,
         "times": [
@@ -15933,14 +15929,6 @@
           "mass_date": null,
           "language": null,
           "notes": "During school year",
-          "cancelled": false
-        },
-        {
-          "day": "Wednesday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "During summer",
           "cancelled": false
         },
         {
@@ -17224,7 +17212,14 @@
           "end": null,
           "end_next_day": false,
           "notes": "Thursday before First Friday: after 7:30 am Mass",
-          "cancelled": false
+          "cancelled": false,
+          "anchored_week": {
+            "weekday": "Friday",
+            "weeks_of_month": [
+              1
+            ],
+            "offset_days": -1
+          }
         },
         {
           "day": "Friday",
@@ -18876,7 +18871,7 @@
           "start": "08:30",
           "mass_date": null,
           "language": null,
-          "notes": "Weekdays in the Marian Chapel",
+          "notes": "School Mass (in the Church)",
           "cancelled": false
         },
         {
@@ -19263,14 +19258,6 @@
           "language": null,
           "notes": "Sunday Vigil",
           "cancelled": false
-        },
-        {
-          "day": "Saturday",
-          "start": "04:30",
-          "mass_date": "2026-09-19",
-          "language": null,
-          "notes": null,
-          "cancelled": false
         }
       ],
       "confession": [
@@ -19327,7 +19314,7 @@
           "start": "17:00",
           "end": "17:25",
           "end_next_day": false,
-          "notes": null,
+          "notes": "Confession in the Chapel",
           "cancelled": false
         },
         {
@@ -19723,7 +19710,15 @@
           "start": "15:00",
           "end": "15:45",
           "end_next_day": false,
-          "notes": "and after 4:00pm Mass; by appointment",
+          "notes": null,
+          "cancelled": false
+        },
+        {
+          "day": "Saturday",
+          "start": "17:00",
+          "end": null,
+          "end_next_day": false,
+          "notes": "After the 4:00pm Mass; and by appointment",
           "cancelled": false
         }
       ],
