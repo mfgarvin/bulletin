@@ -1451,6 +1451,12 @@
       ],
       "Sunday": [
         815
+      ],
+      "Monday": [
+        845
+      ],
+      "Wednesday": [
+        1830
       ]
     },
     "Confessions": {
@@ -5417,6 +5423,12 @@
       ],
       "Sunday": [
         1030
+      ],
+      "Thursday": [
+        845
+      ],
+      "Friday": [
+        845
       ]
     },
     "Confessions": {
@@ -5569,14 +5581,16 @@
     "Name": "Our Lady of Victory Church",
     "Mass Times": {
       "Sunday": [
-        830,
-        1030
+        830
       ],
       "Tuesday": [
         830
       ],
       "Saturday": [
         1745
+      ],
+      "Thursday": [
+        830
       ]
     },
     "Confessions": {
@@ -6593,6 +6607,7 @@
     "Name": "Holy Rosary Church",
     "Mass Times": {
       "Saturday": [
+        830,
         1600
       ],
       "Sunday": [
@@ -7100,6 +7115,12 @@
         1100
       ],
       "Tuesday": [
+        830
+      ],
+      "Wednesday": [
+        830
+      ],
+      "Friday": [
         830
       ]
     },

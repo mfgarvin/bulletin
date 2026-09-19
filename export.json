@@ -3931,6 +3931,22 @@
           "cancelled": false
         },
         {
+          "day": "Monday",
+          "start": "08:45",
+          "mass_date": null,
+          "language": null,
+          "notes": null,
+          "cancelled": true
+        },
+        {
+          "day": "Wednesday",
+          "start": "18:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null,
+          "cancelled": true
+        },
+        {
           "day": "Saturday",
           "start": "18:00",
           "mass_date": null,
@@ -14775,6 +14791,22 @@
           "cancelled": false
         },
         {
+          "day": "Thursday",
+          "start": "08:45",
+          "mass_date": null,
+          "language": null,
+          "notes": null,
+          "cancelled": true
+        },
+        {
+          "day": "Friday",
+          "start": "08:45",
+          "mass_date": null,
+          "language": null,
+          "notes": null,
+          "cancelled": true
+        },
+        {
           "day": "Saturday",
           "start": "16:00",
           "mass_date": null,
@@ -15145,15 +15177,15 @@
           "cancelled": false
         },
         {
-          "day": "Sunday",
-          "start": "10:30",
+          "day": "Tuesday",
+          "start": "08:30",
           "mass_date": null,
           "language": null,
           "notes": null,
           "cancelled": false
         },
         {
-          "day": "Tuesday",
+          "day": "Thursday",
           "start": "08:30",
           "mass_date": null,
           "language": null,
@@ -15175,8 +15207,12 @@
           "start": "09:00",
           "end": "09:30",
           "end_next_day": false,
-          "notes": null,
-          "cancelled": false
+          "notes": "At Our Lady of Victory on the second and fourth Saturdays.",
+          "cancelled": false,
+          "weeks_of_month": [
+            2,
+            4
+          ]
         }
       ],
       "adoration": {
@@ -17973,6 +18009,17 @@
         },
         {
           "day": "Saturday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": "First Saturday of the month",
+          "cancelled": false,
+          "weeks_of_month": [
+            1
+          ]
+        },
+        {
+          "day": "Saturday",
           "start": "16:00",
           "mass_date": null,
           "language": null,
@@ -18454,14 +18501,6 @@
           "end": null,
           "end_next_day": false,
           "notes": "Wednesday Evening",
-          "cancelled": false
-        },
-        {
-          "day": "Saturday",
-          "start": "08:00",
-          "end": null,
-          "end_next_day": false,
-          "notes": "Healing Mass: Confession & Adoration",
           "cancelled": false
         },
         {
@@ -19433,6 +19472,22 @@
         },
         {
           "day": "Tuesday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null,
+          "cancelled": false
+        },
+        {
+          "day": "Wednesday",
+          "start": "08:30",
+          "mass_date": null,
+          "language": null,
+          "notes": null,
+          "cancelled": false
+        },
+        {
+          "day": "Friday",
           "start": "08:30",
           "mass_date": null,
           "language": null,

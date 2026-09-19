@@ -215,6 +215,134 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         drop_masses={("Thursday", 1100)},
         add_masses=[MassTime(day=DayOfWeek.THURSDAY, time=1100)],
     ),
+    # --- 2026-09-19: the eleven diffs the re-extraction budget could not ----
+    # reach. Verified by hand against each row's own bulletin. Five needed
+    # nothing (`1494` already repaired, `1608` correct and carrying its
+    # ordinal, `olg-m` self-corrected once the ranker fix gave it the right
+    # bulletin, `immat-con-cle` and `13722` both correct removals). Two are
+    # flagged and NOT repaired: `0042`, whose bulletin literally prints
+    # "First Tuesday of the Month | 6:645 p.m." so neither 18:00 nor 18:45 can
+    # be called right, and `1318`, where 08:00 vs 08:15 are both derived from
+    # "after 7:30 am Mass" and a manual fix would only start a treadmill over
+    # fifteen minutes. These four are real.
+    "0244": ManualFix(
+        reason="the run removed two weekday Masses its bulletin prints twice. "
+        "Masthead: 'Tuesday, Wednesday, Friday: 8:30 am', and the week's "
+        "listing repeats 'WEDNESDAY, SEPTEMBER 23 / 8:30 am' and 'FRIDAY, "
+        "SEPTEMBER 25 / 8:30 am'. The row was left with Tuesday alone",
+        add_masses=[
+            MassTime(day=DayOfWeek.WEDNESDAY, time=830),
+            MassTime(day=DayOfWeek.FRIDAY, time=830),
+        ],
+    ),
+    "5217": ManualFix(
+        reason="an ORDINAL slot deleted because this was not its week - the "
+        "class described in the block below. The masthead prints 'First "
+        "Saturday of the month: 8:30 a.m.' among the weekday Masses, and "
+        "September's first Saturday was the 5th, so the 09-20 edition's "
+        "listing has no 8:30 Saturday and the extractor dropped it. Restored "
+        "with the note it needs: `derive_ordinal` reads it as "
+        "weeks_of_month [1], so it publishes twelve times a year rather than "
+        "fifty-two",
+        add_masses=[
+            MassTime(
+                day=DayOfWeek.SATURDAY,
+                time=830,
+                notes="First Saturday of the month",
+            )
+        ],
+    ),
+    "1236": ManualFix(
+        reason="a ONE-OFF event's confession published as a weekly slot. The "
+        "bulletin's Healing Mass flyer reads 'Saturday, Sept 26th / 8:00 am "
+        "Confession & Adoration / 8:30 am Praise and Worship / 9:00 am Healing "
+        "Mass and Anointing'. The 9:00 Mass was correctly captured as a DATED "
+        "Mass for 2026-09-26; the 08:00 confession beside it was not, and went "
+        "in as every Saturday. The masthead's real schedule is 'Confession / "
+        "Wednesday Evening | 6:00 pm / Saturday | 3:00 pm - 4:00 pm or by "
+        "appointment', both of which are stored and correct",
+        confession_times=[
+            ConfessionTime(
+                day=DayOfWeek.WEDNESDAY, start_time=1800, notes="Wednesday Evening"
+            ),
+            ConfessionTime(
+                day=DayOfWeek.SATURDAY,
+                start_time=1500,
+                end_time=1600,
+                notes="or by appointment",
+            ),
+        ],
+    ),
+    "our-lady-of-victory-tallmadge-oh": ManualFix(
+        reason="cluster bleed with St. Matthew, plus the confession's monthly "
+        "rule. The shared bulletin's 'Schedule of Masses' is two interleaved "
+        "columns and tags the partner's entries: Sunday prints '8:30 AM: "
+        "Armando & Angelina Colella' and '10:30 AM: Mass at St. Matthew', so "
+        "the SUNDAY 10:30 on this row is St. Matthew's - which holds it "
+        "correctly - while OLV's own 08:30 was missing entirely, as was "
+        "Thursday 08:30 ('John Mark Sedlock'). Saturday 17:45 is right (the "
+        "4:00 PM that day is tagged 'Mass at Saint Matthew'), and Monday, "
+        "Wednesday and Friday correctly have none. "
+        "The confession is the v2.5.17 two-rule shape in the form that slips "
+        "past the phrase counter, because the second clause elides the "
+        "weekday: 'Saturdays, 9:00 to 9:30 AM / At Saint Matthew Parish on the "
+        "first and third Saturdays. / At Our Lady of Victory on the second and "
+        "fourth Saturdays.' Stored with no note at all, it published every "
+        "week; the note below is only this parish's half, so `derive_ordinal` "
+        "reads weeks_of_month [2, 4]",
+        drop_masses={("Sunday", 1030)},
+        add_masses=[
+            MassTime(day=DayOfWeek.SUNDAY, time=830),
+            MassTime(day=DayOfWeek.THURSDAY, time=830),
+        ],
+        confession_times=[
+            ConfessionTime(
+                day=DayOfWeek.SATURDAY,
+                start_time=900,
+                end_time=930,
+                notes="At Our Lady of Victory on the second and fourth Saturdays.",
+            )
+        ],
+    ),
+    # --- 2026-09-19: the four slots v2.5.31 said could not self-heal --------
+    #
+    # `restore_cancelled_slots` computes `dropped = stored - produced`, so a
+    # slot has to survive into the ledger before the flag can describe it. The
+    # 2026-09-12 run dropped these four before the detector existed, so they
+    # were no longer in `stored` and every run since has been unable to see
+    # them. This is the hand restore that entry called for.
+    #
+    # Restored with `cancelled=True`, which is what the page says TODAY: the
+    # 13 September bulletin (still the current one - `CurrentBulletin.pdf` is
+    # undated, so nothing flags how old it is) prints each slot's own time
+    # beside NO MASS, and explains why: "Father Trask will be away the next two
+    # weeks so there will not be any weekday Masses, Adoration or Confession
+    # during that time at either parish."
+    #
+    # RETIRE BOTH once a run has re-derived the flag. `add_masses` is the one
+    # verb that would otherwise outlive a genuine cancellation, and these two
+    # entries would keep asserting a suspension after the parish resumes.
+    "shc": ManualFix(
+        reason="Thursday and Friday 08:45 were dropped by the 2026-09-12 run "
+        "and could not be restored by the cancellation detector afterwards, "
+        "because it only ever describes a slot still in `stored`. Bulletin: "
+        "'Thursday, September 17 / 8:45 am....at Sacred Heart .... NO MASS' "
+        "and the same for Friday the 18th",
+        add_masses=[
+            MassTime(day=DayOfWeek.THURSDAY, time=845, cancelled=True),
+            MassTime(day=DayOfWeek.FRIDAY, time=845, cancelled=True),
+        ],
+    ),
+    "shc-pat": ManualFix(
+        reason="same as `shc`, for St. Patrick's half of the cluster. "
+        "Bulletin: 'Monday, September 14 / 8:45 am .. at St. Patrick ... NO "
+        "MASS' and 'Wednesday, September 16 / 6:30 pm .. at St. Patrick ... NO "
+        "MASS'",
+        add_masses=[
+            MassTime(day=DayOfWeek.MONDAY, time=845, cancelled=True),
+            MassTime(day=DayOfWeek.WEDNESDAY, time=1830, cancelled=True),
+        ],
+    ),
     # --- 2026-09-19 audit of the chronically unreliable rows ----------------
     #
     # Six rows read against their own bulletins. `immat-con-cle`, `0512`,
