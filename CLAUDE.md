@@ -25,15 +25,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   recur on an ordinal weekday but are stored as weekly, so anything that
   *computes* (the mapboard, "what's on today/soonest") treats them as every
   week. **The export shape is specified and frozen** in the
-  `weeks_of_month` / `excluded_weeks` section of `EXPORT_SHAPE_CHANGES.md`, and
-  the app is being built against it - that section is normative and must not
-  change. `docs/design/monthly-recurrence.md` is SUPERSEDED (its `occurrences`
-  array was withdrawn); keep it for the problem statement only. **The
-  export.json side is implemented (v2.5.17): `utils/monthly_recurrence.py`
-  derives the ordinal from `notes` at export time** — 58 derived, 14 refused,
-  0 wrong, no new LLM output. Still open: the mapboard (`notion_to_json` /
-  `parish_data.json`) does not carry the rule yet, so the LED board still
-  renders these slots weekly.
+  `weeks_of_month` / `excluded_weeks` section of `EXPORT_SHAPE_CHANGES.md` -
+  that section is normative and must not change.
+  `docs/design/monthly-recurrence.md` is SUPERSEDED (its `occurrences` array
+  was withdrawn); keep it for the problem statement only. **The export.json
+  side is implemented (v2.5.17): `utils/monthly_recurrence.py` derives the
+  ordinal from `notes` at export time** — 58 derived, 14 refused, 0 wrong, no
+  new LLM output. **The app side has landed** (verified 2026-09-19 in
+  `massgpt_app_o1_preview`): `lib/utils/schedule_parser.dart` carries
+  `weeksOfMonth`/`excludedWeeks`, and `ScheduleEntry.occursOn()` is the single
+  predicate every recurrence decision routes through, including a bounded
+  400-day scan for "what's next".
+
+  v2.5.32 adds **`anchored_week`** for 6 of those 14 refusals ("Thursday before
+  First Friday"), which no value of `weeks_of_month` can express. Still open:
+  (1) **the app does not implement `anchored_week` yet**, so those 6
+  confessions still display weekly in Introibo — work plan written for it in
+  `docs/integration/anchored-week-app-plan.md`, and it is small because it
+  reuses `occursOn`'s existing ordinal math on a resolved anchor date; (2) the
+  mapboard (`notion_to_json` / `parish_data.json`) carries **none** of these
+  rules — not `weeks_of_month`, not `anchored_week` — so the LED board still
+  renders every one of them weekly, and `reference.py` needs the same
+  predicate. Deferred deliberately (2026-09-19); retrofit later.
 - **Workflow action versions** (bumped 2026-08-29, `ce6a7f4`) - All three
   workflows moved from `actions/checkout@v4` / `actions/setup-python@v5` to
   `@v5` / `@v6`. Runners had begun force-running the old pins on Node 24
@@ -767,6 +780,85 @@ the compose default — so the template needs the same edit by hand.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.32 (2026-09-19) - "The Thursday before the First Friday" is a rule, not a refusal
+
+Found by reading Saint Charles Borromeo, Parma (`2492`) in the database. Its
+bulletin prints `CONFESSION / Saturdays 3:00-3:45 pm and 5:00-5:30 pm /
+Thursday before First Friday 3:00-3:45 pm`. The two Saturday slots are right;
+**the Thursday slot published every week** — a confession advertised 52 times a
+year for something that happens 12. The rest of the row is exact: all 11 Masses
+match the masthead line for line.
+
+It was not an extraction error. `derive_ordinal` saw the ordinal and **refused
+it on purpose** (v2.5.17), because the ordinal attaches to *Friday* while the
+entry's day is *Thursday*, and the spec's domain (`weeks_of_month: 1-5, -1`)
+can only name an ordinal of the entry's own weekday.
+
+**And the refusal was right.** "The Thursday before the First Friday" is not the
+first Thursday of the month. When a month *begins* on a Friday its first Friday
+is the 1st, and the Thursday before it is **in the previous month**. Measured
+over 2026-2031, `weeks_of_month: [1]` names the wrong Thursday in **10 of 72
+months (14%)** for a Friday anchor, and **28%** for `0116`, whose note anchors
+to a First *Saturday*. Wrong in the expensive direction, too - it sends someone
+to a church where nothing is happening.
+
+**So the rule is carried whole rather than flattened.** New `anchored_week` on
+any schedule entry - anchor weekday, its ordinals, and a fixed day offset:
+
+```json
+"anchored_week": { "weekday": "Friday", "weeks_of_month": [1], "offset_days": -1 }
+```
+
+Resolve the anchor date, then step by the offset. Month rollover is the
+*point*, not an edge case. Spec and the consumer predicate are in a new
+`anchored_week` section of `EXPORT_SHAPE_CHANGES.md`; **the frozen
+`weeks_of_month` / `excluded_weeks` section is untouched** except for its
+refusal bullet, which now points at the new section instead of saying "do not
+special-case them in the app". `anchored_week` is never emitted alongside
+either other key, so nothing that carries one today changes.
+
+`_derive_anchored()` requires an explicit **subject weekday** ("**Thursday**
+before First Friday") and requires it to equal the entry's own day. Without a
+subject there is no offset to compute, and a subject naming some *other* day is
+the v2.5.21 duplicate-slot-note shape - a note describing the slot listed above
+this one. Both refuse. So do an anchored exclusion ("except the Thursday
+before...", no predicate specified) and the v2.5.17 weekly-label case.
+
+Verified three ways:
+
+| check | result |
+|---|---|
+| offsets, 6 phrase shapes incl. "after" and "last" | correct |
+| predicate replayed over 72 months x 6 rules | **exactly 1 occurrence per month**, never 0 or 2 |
+| predicate vs. independently computed true date | **72/72 months** |
+| 18 unit cases (4 derivations, 8 refusals, 6 live notes) | 18/18 |
+| old vs. new parser over all 1,835 recurring export entries | **1,829 identical, 6 changed** |
+
+The 6 are all confessions, all Thursday: `1794`, `0116` (Saturday anchor),
+`sc-p`, `2492`, `sa-o`, `1318`. Nothing else in the corpus moves.
+
+**Neither consumer implements it yet**, so this changes no pixels today - the
+app and the mapboard both still render those 6 weekly. That is the established
+additive-contract pattern and it is safe (an unknown key is ignored), but the
+fix is not *delivered* until the app ships the predicate.
+
+**The app's side is small, and that was checked rather than assumed.** It has
+already landed `weeks_of_month`, and `ScheduleEntry.occursOn()` in
+`lib/utils/schedule_parser.dart` is the one predicate everything routes through
+- `findNextOccurrence`, the 400-day scan, the availability sweeps. An anchored
+entry is **the same ordinal math on a different date**: resolve the anchor,
+then run the existing `n`/`isLast`/`listed()` test on it. So the integration is
+one file, and it inherits the monthly presentation (a small ordinal chip) while
+touching nothing on the `cancelled` path - no badge, no strikethrough, which is
+right, because nothing here is cancelled. Work plan:
+`docs/integration/anchored-week-app-plan.md`. The one open choice recorded
+there is the chip label: `ordinalShortLabel` must **not** reuse "1st", since
+this is not the 1st Thursday and in a Friday-start month not even in that
+month; "Monthly" is the recommendation.
+
+The mapboard is further behind - it carries no monthly rule at all,
+`weeks_of_month` included - and is deliberately deferred.
 
 ### v2.5.31 (2026-09-13) - The cancellation detector, swept against the whole diocese
 

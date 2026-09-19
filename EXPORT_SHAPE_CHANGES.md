@@ -269,11 +269,13 @@ derived, 10 refused, 0 wrong.**
 carry one.** The residue stays weekly-with-a-note, which is today's behaviour.
 The known refusals:
 
-- **8 slots read "the Thursday before the First Friday."** That is genuinely
-  not an ordinal of the month — when the first Friday falls on the 1st or 2nd,
-  the Thursday before it is in the *previous* month. Approximating it as "first
-  Thursday" would be wrong about a third of the year. These stay `null`
-  deliberately; do not special-case them in the app.
+- **6 slots read "the Thursday before the First Friday."** That is genuinely
+  not an ordinal of the month — when a month *begins* on a Friday, the Thursday
+  before its first Friday is in the *previous* month, so no value of
+  `weeks_of_month` can express it. These carry **`anchored_week`** instead; see
+  the section below. They were `null` (weekly) from v2.5.17 until v2.5.32.
+  `weeks_of_month` is still never emitted for them, so the semantics of the two
+  keys above are unchanged.
 - Notes naming two subjects (one bulletin listing two parishes' ordinals) are
   refused rather than merged.
 
@@ -337,6 +339,104 @@ Required behaviour:
 4. **The weekday filter is fine unchanged.** A First Friday entry does occur on
    Fridays; it is the *date* questions ("today", "tomorrow", "this week",
    "soonest") that need the predicate.
+
+### Anchored monthly recurrence — `anchored_week`
+
+**Status: emitted since v2.5.32 (2026-09-19) by `utils/monthly_recurrence.py`
+at export time — 6 entries, all confessions, all Thursday.** Additive; no
+existing key changes, and no entry that carries `weeks_of_month` today is
+affected.
+
+Six slots across the diocese read **"the Thursday before the First Friday"** —
+the devotional confession before a First Friday, and at `0116` before a First
+Saturday. These are monthly, but they are *not* an ordinal weekday of the
+month, so the two keys above cannot express them and v2.5.17 deliberately left
+them weekly. In the app that means a confession advertised 52 times a year for
+something that happens 12.
+
+The rule is carried whole instead: the **anchor weekday**, its ordinals, and a
+fixed **day offset** from it.
+
+```json
+{
+  "day": "Thursday",
+  "start": "15:00",
+  "end": "15:45",
+  "end_next_day": false,
+  "notes": "Thursday before First Friday; also by appointment",
+
+  "anchored_week": { "weekday": "Friday", "weeks_of_month": [1], "offset_days": -1 }
+}
+```
+
+Read as: *this slot falls `offset_days` from the 1st Friday of the month.*
+
+#### Semantics
+
+| field | type | meaning |
+|---|---|---|
+| `weekday` | string | The **anchor** weekday, capitalised. Never the entry's own `day`. |
+| `weeks_of_month` | `int[]` | Which anchor weekday of the month — same domain as above: `1`–`5`, `-1` for last. Sorted, de-duplicated. |
+| `offset_days` | int | Days from the anchor to this slot. `-6`…`-1` or `1`…`6`, never `0`. |
+
+- **Absent means "not anchored"** — the entry falls back to `weeks_of_month`,
+  `excluded_weeks`, or weekly, exactly as today.
+- **Mutually exclusive with both other keys**, and with `mass_date`. The
+  deriver returns at most one of the three.
+- **The offset crosses month boundaries, and that is the point.** When a month
+  begins on a Friday, "the Thursday before the First Friday" lands in the
+  *previous* month. Resolve the anchor first, then step — never clamp to the
+  month.
+- **`notes` keeps stating the rule in words**, the same guarantee the other two
+  keys carry: the field is derived from the note, so a consumer that ignores
+  `anchored_week` still renders something truthful.
+
+#### Why not just `weeks_of_month: [1]`
+
+Because it is wrong often enough to matter, and wrong in the worst direction —
+it sends someone to church on a Thursday when nothing is happening. Measured
+over 2026–2031, the naive "first Thursday" reading names the wrong date in
+**10 of 72 months (14%)** for a Friday anchor and **28%** for `0116`'s Saturday
+anchor. Every failure is a month that begins on the anchor weekday:
+
+| month | true date | `weeks_of_month: [1]` would say |
+|---|---|---|
+| 2026-05 (starts Friday) | **2026-04-30** | 2026-05-07 |
+| 2027-01 (starts Friday) | **2026-12-31** | 2027-01-07 |
+| 2027-10 (starts Friday) | **2027-09-30** | 2027-10-07 |
+
+#### Consumer contract
+
+Same shape as the predicate above — resolve the anchor date, then ask the
+ordinal question about *it*:
+
+```dart
+// `day` is a candidate date already known to match the entry's weekday.
+final anchor = day.subtract(Duration(days: anchoredWeek.offsetDays));
+if (anchor.weekday != _weekdayNumber(anchoredWeek.weekday)) return false;
+
+final n = ((anchor.day - 1) ~/ 7) + 1;
+final daysInMonth = DateTime(anchor.year, anchor.month + 1, 0).day;
+final isLast = anchor.day + 7 > daysInMonth;
+
+final weeks = anchoredWeek.weeksOfMonth;
+return weeks.contains(n) || (weeks.contains(-1) && isLast);
+```
+
+Required behaviour:
+
+1. **Parse defensively**, as with the other two keys. A malformed object —
+   missing field, `offset_days` of `0` or outside `-6…6`, an unparseable
+   weekday, an empty week list — is discarded and the entry is treated as
+   **weekly**, which is exactly today's behaviour. A cached export predating
+   this change is unaffected.
+2. **Route it through the same predicate** as `weeks_of_month`. Everything in
+   *Required behaviour* items 2–4 above applies unchanged: bound the forward
+   scan, keep the rule in any grouping key, and leave the plain weekday filter
+   alone.
+3. **Do not resolve the anchor within the month.** `DateTime` arithmetic that
+   rolls over month and year ends handles this for free; hand-rolled day
+   clamping does not.
 
 ### `latitude` / `longitude`
 

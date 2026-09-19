@@ -18,10 +18,12 @@ improvement reaches every stored row on the next export without touching them.
 refused note stays weekly-with-a-note, which is today's behaviour and renders
 truthfully to a human. The refusals, per the spec:
 
-- **The weekday in the phrase must be the entry's own day.** This covers
-  "the Thursday before the First Friday" (not an ordinal of the month at all —
-  when the first Friday falls on the 1st or 2nd, that Thursday is in the
-  *previous* month) and cross-day subjects.
+- **The weekday in the phrase must be the entry's own day**, for the two
+  plain keys. "The Thursday before the First Friday" is genuinely not an
+  ordinal of the month — when a month *starts* on a Friday, that Thursday is
+  in the previous month — so it can never be `weeks_of_month`. It is now
+  derived as `anchored_week` instead (see `_derive_anchored`); a cross-day
+  subject with no stated offset is still refused outright.
 - **More than one ordinal-weekday phrase refuses.** Found live at
   `our-lady-of-victory`: "held at Saint Matthew on the 1st and 3rd Saturdays;
   at Our Lady of Victory on the 2nd and 4th Saturdays" — two subjects, and
@@ -33,13 +35,24 @@ truthfully to a human. The refusals, per the spec:
   Saturday devotion's label. Emitting `[1]` would hide a real weekly Mass
   three weeks a month, the exact inversion of this feature. Applies to
   inclusions only: "Weekday Mass (except on First Fridays)" is coherent.
-- **"before"/"after" adjacent to the phrase** refuses even on a matching day.
+- **"before"/"after" adjacent to the phrase** never yields `weeks_of_month`,
+  even on a matching day. With an explicit subject weekday it yields
+  `anchored_week`; without one there is no offset to compute, so it refuses.
 - An ordinal with no weekday attached ("first week of the month", "4th of
   July") derives nothing.
 
 Output domain per the spec: 1-5 and -1 (last), sorted ascending (-1 first),
-de-duplicated, and the two keys are mutually exclusive. Only recurring entries
-(`mass_date` null) may carry them — the caller enforces that.
+de-duplicated, and the keys are mutually exclusive — exactly one of
+`weeks_of_month`, `excluded_weeks`, `anchored_week` is ever returned. Only
+recurring entries (`mass_date` null) may carry them — the caller enforces that.
+
+`anchored_week` carries the same ordinal list, but resolved against a *different
+weekday* and then stepped by a fixed offset: "Thursday before First Friday" is
+`{"weekday": "Friday", "weeks_of_month": [1], "offset_days": -1}`, read as *the
+slot falls on the day `offset_days` from the 1st Friday of the month*. That is
+exact in every month, including the ~15% that begin on a Friday and push the
+Thursday into the month before — which is why approximating these as
+`weeks_of_month: [1]` was rejected.
 """
 
 import logging
@@ -74,6 +87,28 @@ _PHRASE_RE = re.compile(
 
 _ORD_TOKEN_RE = re.compile(_ORD, re.IGNORECASE)
 
+_WD = r"monday|tuesday|wednesday|thursday|friday|saturday|sunday"
+
+_WD_INDEX = {
+    "monday": 0, "tuesday": 1, "wednesday": 2, "thursday": 3,
+    "friday": 4, "saturday": 5, "sunday": 6,
+}
+
+# "Thursday before First Friday", "the Monday after the last Sunday".
+# The subject weekday is required: without it there is no way to know how many
+# days from the anchor the slot sits, and guessing is the one thing this module
+# does not do.
+_ANCHORED_RE = re.compile(
+    rf"(?P<subject>{_WD})s?\s+"
+    rf"(?P<prep>before|preceding|prior\s+to|after|following)\s+"
+    rf"(?:the\s+)?"
+    rf"(?P<ords>{_ORD}(?:{_SEP}{_ORD})*)[\s-]+"
+    rf"(?P<anchor>{_WD})s?\b",
+    re.IGNORECASE,
+)
+
+_BACKWARD = {"before", "preceding", "prior to"}
+
 # Immediately before the phrase, these words mean the phrase anchors some
 # *other* day ("the Thursday before First Friday") - never this entry.
 _ANCHOR_RE = re.compile(r"\b(?:before|after|preceding|following|prior\s+to)\s*(?:the\s+)?$",
@@ -97,6 +132,75 @@ def _has_weekly_clause(notes: str) -> bool:
     )
 
 
+def _derive_anchored(day: str, notes: str) -> Optional[dict]:
+    """{"anchored_week": {...}} | None.
+
+    "Thursday before First Friday" is not an ordinal Thursday: it is the 1st
+    Friday stepped back one day, and in a month that begins on a Friday that
+    lands in the *previous* month. Measured over 2026-2031, calling it
+    `weeks_of_month: [1]` would name the wrong Thursday in 10 of 72 months
+    (14%) for a Friday anchor and 28% for a Saturday one, so the rule is
+    carried whole instead: anchor weekday, its ordinals, and a fixed day
+    offset.
+
+    Returns None both when there is no anchored phrase and when there is one we
+    refuse. Falling through is safe either way - `_ANCHOR_RE` in the plain path
+    refuses anything with "before"/"after" in front of it.
+    """
+    matches = list(_ANCHORED_RE.finditer(notes))
+    if not matches:
+        return None
+    if len(matches) > 1:
+        logger.info("anchored refused (multiple phrases - two subjects): %r", notes)
+        return None
+
+    m = matches[0]
+    subject, anchor = m.group("subject").lower(), m.group("anchor").lower()
+
+    if subject != day.strip().lower():
+        # "the Thursday before First Friday" on a Friday entry: the note is
+        # describing some other slot, which is the v2.5.21 duplicate-slot-note
+        # shape, not this entry's rule.
+        logger.info(
+            "anchored refused (subject %r is not the entry's %s): %r",
+            m.group("subject"), day, notes,
+        )
+        return None
+
+    if _EXCLUDE_RE.search(notes[: m.start()]):
+        # "except the Thursday before First Friday" - coherent, but no consumer
+        # predicate is specified for a negated anchor. Stays weekly-with-a-note.
+        logger.info("anchored refused (exclusion - not specified): %r", notes)
+        return None
+
+    if _has_weekly_clause(notes):
+        logger.info("anchored refused (note also labels the slot weekly): %r", notes)
+        return None
+
+    step = (_WD_INDEX[anchor] - _WD_INDEX[subject]) % 7
+    if step == 0:
+        logger.info("anchored refused (subject and anchor are the same day): %r", notes)
+        return None
+
+    prep = re.sub(r"\s+", " ", m.group("prep").strip().lower())
+    # step is how far the anchor sits AHEAD of the subject weekday, 1..6.
+    # Going backward the slot is that many days before the anchor; going
+    # forward it is the complement, so the two never collapse onto each other.
+    offset = -step if prep in _BACKWARD else 7 - step
+
+    weeks = {_ORDINALS[t.lower()] for t in _ORD_TOKEN_RE.findall(m.group("ords"))}
+    if not weeks:
+        return None
+
+    return {
+        "anchored_week": {
+            "weekday": anchor.capitalize(),
+            "weeks_of_month": sorted(weeks),
+            "offset_days": offset,
+        }
+    }
+
+
 def derive_ordinal(day: str, notes: Optional[str]) -> Optional[dict]:
     """{"weeks_of_month": [...]} | {"excluded_weeks": [...]} | None (weekly).
 
@@ -105,6 +209,10 @@ def derive_ordinal(day: str, notes: Optional[str]) -> Optional[dict]:
     """
     if not notes:
         return None
+
+    anchored = _derive_anchored(day, notes)
+    if anchored is not None:
+        return anchored
 
     matches = list(_PHRASE_RE.finditer(notes))
     if not matches:
