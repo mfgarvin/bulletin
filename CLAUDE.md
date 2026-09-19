@@ -934,7 +934,57 @@ Three independent mechanisms:
    fabrication check sees a time the page never prints. **Before dropping
    anything carrying an ordinal note, fetch an edition from the week it falls
    in** - PO/eCatholic URLs are date-constructed, so it costs one request.
-3. **The prompt is refusing ordinals the export layer can now publish.** Four
+3. **A monthly Mass was parked in `events`, which nothing exports.** The
+   events section of `extractor.py` still carries a rule written before
+   `weeks_of_month` existed - *"Recurring monthly Masses ... belong here as
+   events ... NOT in mass_times"* - and `notion_to_app` does not export
+   `events` at all, only the mapboard reads it. `olp-cle`'s **Igbo Language
+   Mass, last Sunday at 1:00 PM** sat in that drawer while the row's
+   `weeks_of_month Sunday 13:00 [-1]` vanished from the export.
+
+   Fixed **deterministically rather than in the prompt**
+   (`utils/promote_monthly_masses.py`): the data is already present and
+   correctly described, only in the wrong field, and loosening the prompt rule
+   would invite the 24 non-Mass events beside them ("Coffee & Donuts after
+   Mass", "Children's Liturgy of the Word", "Annual October Mass Count").
+
+   **It only ever ADDS a slot**, which is the safety argument. Annotating an
+   existing Mass that an event calls monthly is the dangerous half, and `ss-c`
+   proves it: its masthead reads *"1st Friday Mass & Benediction: 6:30pm"*
+   beside weekday Masses of Monday-Friday 6:30pm, so that line is the ordinary
+   Friday Mass with Benediction added, and marking it `[1]` would hide a real
+   Mass three Fridays in four. `2492`'s "Mass and Rosary for Life" on its
+   weekly Saturday 08:00 and `ss-c`'s German Mass on its weekly Sunday 11:00
+   are the same shape - the v2.5.17 `0116` refusal arriving from the events
+   side.
+
+   Five conditions: a monthly frequency; a name that is a Mass (parentheticals
+   stripped, no disqualifying head noun, **name only**); a weekday and a time;
+   **an ordinal `derive_ordinal` can parse from the event's own words**,
+   without which the promoted Mass would publish weekly and the cure would be
+   worse than the disease; and a `(day, time)` not already in `mass_times`.
+
+   Replayed over all 2,575 stored events: **2 promotions, 0 false positives**
+   (`olp-cle` Sunday 13:00 `[-1]`, `ss-c` Saturday 09:30 `[1]`), 45 refused
+   with a recorded reason. Applied immediately via two `add_masses` entries -
+   retire them once a run has promoted the same slots.
+
+   **The app was re-verified rather than assumed**, since a promoted slot that
+   published weekly would be worse than the status quo.
+   `lib/utils/schedule_parser.dart` parses both keys, `occursOn` is the only
+   predicate `nextOccurrence` and `currentWindowStart` consult, `recurrenceKey`
+   stops a monthly slot being grouped into a weekly row, and its 67-case suite
+   passes - including *"an off-week window is not reported as in progress"*.
+
+4. **`verify_times` no longer calls a monthly Mass a fabrication.** A recurring
+   Mass whose `notes` yield an ordinal is skipped - skipped entirely rather
+   than counted as a miss, since its absence says nothing and counting it would
+   drag the hit rate below the v2.5.14 gate and silence the real fabrications
+   on the same page. Replayed against `0882`'s own bulletin, the warning that
+   produced the bad manual fix is gone. 16 Mass slots carry a derivable
+   ordinal.
+
+5. **The prompt is still refusing ordinals the export layer can now publish.** Four
    extractions said so in their own notes this run - `20812` ("*'2nd Monday of
    Month 7-8:00pm' (monthly); omitted because it is not a year-round weekly
    schedule and could be mispublished as weekly*"), `20822` ("*would require
@@ -943,6 +993,12 @@ Three independent mechanisms:
    undated policy lines; v2.5.17 then built `weeks_of_month` so ordinals can be
    published correctly; nobody told the prompt. **Not fixed** - a prompt change
    needs the v2.5.10 treatment, and this is the clearest target one has had.
+   The three refusals above are all **adoration**, which the promoter does not
+   reach: it moves Masses out of `events`, and a refused adoration slot was
+   never emitted anywhere, so there is nothing to move. The wording to fix is
+   "only record adoration the parish holds year-round", whose stated
+   justification - *"`AdorationTime` has no date and no season field"* - has
+   been false for the monthly case since v2.5.17.
 
 **`anchored_week` emitted nothing this week**, and not because of a bug: v2.5.32
 committed at 14:33 UTC and the run started at 13:58, exporting at 14:13 on the
