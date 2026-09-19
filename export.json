@@ -11314,21 +11314,6 @@
       ],
       "confession": [
         {
-          "day": "Thursday",
-          "start": "15:00",
-          "end": "15:45",
-          "end_next_day": false,
-          "notes": "Thursday before First Friday. Also by appointment.",
-          "cancelled": false,
-          "anchored_week": {
-            "weekday": "Friday",
-            "weeks_of_month": [
-              1
-            ],
-            "offset_days": -1
-          }
-        },
-        {
           "day": "Saturday",
           "start": "15:00",
           "end": "15:45",

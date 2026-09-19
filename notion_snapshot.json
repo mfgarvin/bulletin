@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T17:21:09+00:00",
+  "generated_at": "2026-09-19T18:43:04+00:00",
   "database_id": "2de29b8f-0e6e-801a-bd81-db3ade199a45",
   "parish_count": 189,
   "parishes": [
@@ -12097,7 +12097,7 @@
     {
       "parish_id": "2492",
       "page_id": "2df29b8f-0e6e-8111-8e9d-e44a2298f21e",
-      "last_edited_time": "2026-09-19T14:06:00.000Z",
+      "last_edited_time": "2026-09-19T18:41:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -12121,7 +12121,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"Also by appointment.\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1700, \"end_time\": 1730, \"end_next_day\": false, \"notes\": \"Also by appointment.\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"Thursday before First Friday. Also by appointment.\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"Also by appointment.\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1700, \"end_time\": 1730, \"end_next_day\": false, \"notes\": \"Also by appointment.\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
