@@ -568,7 +568,16 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         # inert this week - kept because the spurious 15th Mass has taken a
         # different form three weeks running, and an unmatched drop costs
         # nothing.
-        drop_masses={("Saturday", 1800), ("Saturday", 1600)},
+        # ("Saturday", 430) added 2026-09-19: a second Saturday Mass that is
+        # the 16:30 vigil duplicated off a typo in the bulletin's OWN listing -
+        # "SATURDAY, 19 SEPTEMBER 2026 ... 4:30 am People of the Cathedral
+        # Parish", where the masthead says "4:30 pm (Sunday Vigil)" and the
+        # following Saturday prints a bare "4:30". Prompt v3 rule 1 says
+        # transcribe rather than normalise, so the extractor is right to copy
+        # it and it has to be corrected here - the same shape as 1532's
+        # "Friday | 9:00pm". Dropped rather than remapped: the correct 16:30 is
+        # already stored, so a remap would merge a second entry onto it.
+        drop_masses={("Saturday", 1800), ("Saturday", 1600), ("Saturday", 430)},
         # Only the Saturday start is wrong, but there is no per-slot confession
         # remap, so the full masthead listing is stated. Stable enough to state:
         # these times have not moved through the whole renovation.
@@ -775,8 +784,27 @@ def _dump_adoration(site: SiteInfo) -> str:
     return json.dumps(site.adoration.model_dump(mode="json"))
 
 
+# Notion's 2000-character cap is per BLOCK, not per property, and this script
+# wrote a single block - so any repair to a row whose schedule JSON exceeds it
+# failed with "rich_text[0].text.content.length should be <= 2000" and the row
+# was left unrepaired while the summary still counted it. Found 2026-09-19 on
+# 1259, whose Mass Times are 2010 characters; its confession repair had gone
+# through on the same pass because that field is shorter, which is what made
+# it look like a success. This is the v2.5.1 rule, which database/notion.py
+# has followed since but this file never did. Readers join every block, so the
+# value round-trips exactly.
+_NOTION_BLOCK_CHARS = 2000
+
+
 def _text(value: str) -> dict:
-    return {"rich_text": [{"text": {"content": value}}]}
+    if not value:
+        return {"rich_text": []}
+    return {
+        "rich_text": [
+            {"text": {"content": value[i : i + _NOTION_BLOCK_CHARS]}}
+            for i in range(0, len(value), _NOTION_BLOCK_CHARS)
+        ]
+    }
 
 
 def plan_fixes(parish: FullParishData) -> tuple[dict[str, Any], list[str]]:
