@@ -215,6 +215,47 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         drop_masses={("Thursday", 1100)},
         add_masses=[MassTime(day=DayOfWeek.THURSDAY, time=1100)],
     ),
+    # --- 2026-09-19: two monthly Masses that were parked in `events` --------
+    #
+    # `utils/promote_monthly_masses.py` now moves these into the schedule at
+    # extraction time, but only on a future run. These two entries put them in
+    # today, and each carries the ordinal in its `notes` so the export derives
+    # weeks_of_month rather than publishing them every week. Both were verified
+    # against the parish's own masthead.
+    #
+    # RETIRE BOTH once a run has promoted them - they will then be no-ops, and
+    # an add_masses entry is the one verb that would outlive a real
+    # cancellation.
+    "olp-cle": ManualFix(
+        reason="the Igbo Language Mass - last Sunday of the month, 1:00 PM - "
+        "was sitting in `events` while the row's weeks_of_month Sunday 13:00 "
+        "[-1] vanished from export.json in the 2026-09-19 rebuild. The prompt "
+        "routes monthly Masses to `events`, and notion_to_app does not export "
+        "that field, so an entire language community's Mass was invisible in "
+        "the app",
+        add_masses=[
+            MassTime(
+                day=DayOfWeek.SUNDAY,
+                time=1300,
+                notes="Last Sunday of the month at 1:00 PM.",
+            )
+        ],
+    ),
+    "ss-c": ManualFix(
+        reason="the First Saturday Mass was in `events` only. Masthead: "
+        "'1st Saturday Mass & Lecture: 9:30am'. Promoted rather than merged "
+        "because the parish has no other Saturday morning Mass - unlike its "
+        "'1st Friday Mass & Benediction: 6:30pm', which IS the ordinary "
+        "Monday-Friday 6:30pm Mass with Benediction added and must stay "
+        "weekly",
+        add_masses=[
+            MassTime(
+                day=DayOfWeek.SATURDAY,
+                time=930,
+                notes="First Saturday Mass & Lecture",
+            )
+        ],
+    ),
     # --- 2026-09-19: ORDINAL SLOTS deleted because this was not their week ----
     #
     # A monthly slot is legitimately absent from three bulletins in four, and

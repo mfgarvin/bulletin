@@ -2514,6 +2514,17 @@
         },
         {
           "day": "Saturday",
+          "start": "09:30",
+          "mass_date": null,
+          "language": null,
+          "notes": "First Saturday Mass & Lecture",
+          "cancelled": false,
+          "weeks_of_month": [
+            1
+          ]
+        },
+        {
+          "day": "Saturday",
           "start": "17:00",
           "mass_date": null,
           "language": null,
@@ -15278,6 +15289,17 @@
           "language": null,
           "notes": null,
           "cancelled": false
+        },
+        {
+          "day": "Sunday",
+          "start": "13:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "Last Sunday of the month at 1:00 PM.",
+          "cancelled": false,
+          "weeks_of_month": [
+            -1
+          ]
         },
         {
           "day": "Monday",

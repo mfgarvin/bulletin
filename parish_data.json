@@ -930,6 +930,7 @@
     "Name": "Saint Stephen Roman Catholic Church",
     "Mass Times": {
       "Saturday": [
+        930,
         1700
       ],
       "Sunday": [
@@ -5619,7 +5620,8 @@
       ],
       "Sunday": [
         900,
-        1100
+        1100,
+        1300
       ],
       "Monday": [
         1730

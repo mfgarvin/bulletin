@@ -18,6 +18,7 @@ from sources import get_source_for_publisher
 from utils import adoration_capture
 from utils.log_context import set_parish_context
 from utils.sanitize import sanitize_extraction
+from utils.promote_monthly_masses import promote_monthly_masses
 from utils.verify_times import verify_times_against_source
 from utils.bulletin_week import (
     covered_week,
@@ -459,6 +460,14 @@ async def process_parish(
         )
         if collapsed:
             log(collapsed)
+
+        # A monthly Mass the prompt routed into `events` is invisible - nothing
+        # exports that field to the app. Move it into the schedule, where
+        # `weeks_of_month` can carry the rule. Runs BEFORE the sanitizer so a
+        # promoted Mass is validated and deduped on the same path as anything
+        # the extractor produced.
+        for msg in promote_monthly_masses(extraction, parish_id):
+            log(msg)
 
         # Clean up known LLM failure modes before anything is logged or saved
         report = sanitize_extraction(extraction, parish_id)
