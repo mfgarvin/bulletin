@@ -222,6 +222,35 @@ def derive_ordinal(day: str, notes: Optional[str]) -> Optional[dict]:
         logger.info("ordinal refused (multiple phrases - two subjects): %r", notes)
         return None
 
+    # The same refusal, for the shape the count above cannot see. `_PHRASE_RE`
+    # needs an ordinal ATTACHED to a weekday, so a second clause that elides
+    # the weekday is invisible to it and only the first half gets derived:
+    #
+    #   "at Saint Matthew on the 1st and 3rd Saturdays;
+    #    at Our Lady of Victory on the 2nd and 4th"     -> [1, 3]
+    #
+    # which publishes a Saturday confession on two weeks of the month and
+    # silently drops the other two. That is worse than refusing, because it
+    # reads as a complete answer. An ordinal token outside the one matched
+    # phrase means the note states more than one rule, so refuse it whole.
+    #
+    # Measured over every note in the live database: **no entry carries two
+    # ordinal tokens at all**, so this cannot change any current derivation -
+    # it closes the hole before the phrasing returns. `our-lady-of-victory`,
+    # the parish v2.5.17 found it at, is one re-extraction away from producing
+    # it again.
+    span = matches[0].span()
+    stray = [
+        t for t in _ORD_TOKEN_RE.finditer(notes)
+        if t.start() < span[0] or t.end() > span[1]
+    ]
+    if stray:
+        logger.info(
+            "ordinal refused (ordinal %r outside the phrase - two rules): %r",
+            stray[0].group(0), notes,
+        )
+        return None
+
     entry_day = day.strip().lower()
     weeks: set[int] = set()
     polarity: Optional[str] = None  # "include" | "exclude"
