@@ -48,6 +48,8 @@ import logging
 import re
 from typing import TYPE_CHECKING
 
+from utils.monthly_recurrence import derive_ordinal
+
 if TYPE_CHECKING:  # pragma: no cover
     from schemas import BulletinExtraction
 
@@ -96,7 +98,7 @@ def _extract_text(source_bytes: bytes, content_type: str) -> str:
 #
 # Folded to a single space each rather than deleted, so a control character
 # between two words becomes a boundary instead of joining them.
-_CONTROL_CHARS_RE = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f ​﻿]")
+_CONTROL_CHARS_RE = re.compile("[\\x00-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f\\u00a0\\u200b\\ufeff]")
 
 
 def _normalize(text: str) -> str:
@@ -170,6 +172,17 @@ def verify_times_against_source(
     for site in extraction.sites:
         for mass in site.mass_times:
             if mass.mass_date is not None:
+                continue
+            # A monthly Mass is `recurring` but PRINTED about once a month, so
+            # on three bulletins in four its time is legitimately absent and
+            # this check calls it a fabrication. That is not hypothetical: it
+            # is how MANUAL_FIXES["0882"] came to delete a real First Friday
+            # Mass for a week, on the reasoning "there is no 6:30 of any kind
+            # in the document" - true of that week's document and of three in
+            # four. Skipped entirely rather than counted as a miss, because
+            # its absence says nothing either way; counting it would also drag
+            # the hit rate down and push the whole document below the gate.
+            if derive_ordinal(mass.day.value, mass.notes):
                 continue
             checked += 1
             if any(re.search(p, text) for p in _renderings(mass.time)):
