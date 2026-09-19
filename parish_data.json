@@ -223,7 +223,8 @@
         1200
       ],
       "Friday": [
-        1200
+        1200,
+        1730
       ]
     },
     "Confessions": {},
@@ -274,19 +275,14 @@
     "Name": "Saint John the Baptist Parish",
     "Mass Times": {
       "Sunday": [
-        1000
+        1000,
+        1400
       ],
       "Thursday": [
         1730
       ]
     },
-    "Confessions": {
-      "Thursday": [
-        {
-          "1700": 30
-        }
-      ]
-    },
+    "Confessions": {},
     "Adoration": {
       "Tuesday": [
         {
@@ -371,7 +367,8 @@
         1600
       ],
       "Sunday": [
-        1030
+        1030,
+        1200
       ],
       "Monday": [
         800
@@ -523,7 +520,13 @@
         830
       ]
     },
-    "Confessions": {},
+    "Confessions": {
+      "Thursday": [
+        {
+          "1700": 60
+        }
+      ]
+    },
     "Adoration": {}
   },
   "2df29b8f-0e6e-81ab-89b5-dcfacd3ebe3e": {
@@ -653,7 +656,7 @@
     "Confessions": {
       "Saturday": [
         {
-          "1530": 20
+          "330": 20
         }
       ],
       "Sunday": [
@@ -718,17 +721,11 @@
         628
       ],
       "Friday": [
-        628,
-        900
+        628
       ]
     },
     "Confessions": {
       "Saturday": [
-        {
-          "1530": 60
-        }
-      ],
-      "Thursday": [
         {
           "1530": 60
         }
@@ -754,6 +751,9 @@
         1130
       ],
       "Monday": [
+        730
+      ],
+      "Tuesday": [
         730
       ],
       "Friday": [
@@ -933,6 +933,9 @@
         800,
         1100
       ],
+      "Monday": [
+        1830
+      ],
       "Tuesday": [
         645,
         1830
@@ -944,9 +947,6 @@
         1830
       ],
       "Friday": [
-        1830
-      ],
-      "Monday": [
         1830
       ]
     },
@@ -1405,18 +1405,18 @@
       "Monday": [
         830
       ],
+      "Tuesday": [
+        700
+      ],
       "Wednesday": [
         830
+      ],
+      "Thursday": [
+        700
       ],
       "Friday": [
         830,
         1730
-      ],
-      "Tuesday": [
-        700
-      ],
-      "Thursday": [
-        700
       ]
     },
     "Confessions": {
@@ -1501,17 +1501,17 @@
     "ID": 43,
     "Name": "Saint Patrick Church West Park ",
     "Mass Times": {
-      "Tuesday": [
-        1900
-      ],
-      "Wednesday": [
-        830
-      ],
       "Saturday": [
         1600
       ],
       "Sunday": [
         1100
+      ],
+      "Tuesday": [
+        1900
+      ],
+      "Wednesday": [
+        830
       ]
     },
     "Confessions": {},
@@ -1705,7 +1705,6 @@
         1200
       ],
       "Saturday": [
-        1700,
         1900
       ]
     },
@@ -1729,6 +1728,7 @@
     "Name": "Saint Michael Catholic Church",
     "Mass Times": {
       "Saturday": [
+        1600,
         1630
       ],
       "Sunday": [
@@ -1777,7 +1777,13 @@
         645
       ]
     },
-    "Confessions": {},
+    "Confessions": {
+      "Saturday": [
+        {
+          "1500": 60
+        }
+      ]
+    },
     "Adoration": {}
   },
   "2df29b8f-0e6e-81a1-b271-f89828d3dc11": {
@@ -1830,6 +1836,7 @@
       "Sunday": [
         800,
         1100,
+        1300,
         1700
       ],
       "Monday": [
@@ -1864,9 +1871,6 @@
     "ID": 53,
     "Name": "Avon Catholic Community - Holy Trinity",
     "Mass Times": {
-      "Saturday": [
-        1700
-      ],
       "Sunday": [
         730,
         900,
@@ -1881,6 +1885,9 @@
       ],
       "Wednesday": [
         745
+      ],
+      "Saturday": [
+        1700
       ]
     },
     "Confessions": {
@@ -2000,12 +2007,6 @@
         900
       ],
       "Wednesday": [
-        900
-      ],
-      "Thursday": [
-        900
-      ],
-      "Friday": [
         900
       ]
     },
@@ -2147,15 +2148,6 @@
     "ID": 59,
     "Name": "Saint Mary Parish",
     "Mass Times": {
-      "Saturday": [
-        1630
-      ],
-      "Sunday": [
-        800,
-        930,
-        1130,
-        1730
-      ],
       "Monday": [
         900
       ],
@@ -2170,6 +2162,15 @@
       ],
       "Friday": [
         900
+      ],
+      "Saturday": [
+        1630
+      ],
+      "Sunday": [
+        800,
+        930,
+        1130,
+        1730
       ]
     },
     "Confessions": {
@@ -2309,6 +2310,9 @@
       ],
       "Sunday": [
         915
+      ],
+      "Tuesday": [
+        800
       ],
       "Wednesday": [
         800
@@ -2462,6 +2466,9 @@
     "ID": 67,
     "Name": "Saint Mark Parish",
     "Mass Times": {
+      "Saturday": [
+        1630
+      ],
       "Sunday": [
         830
       ],
@@ -2473,9 +2480,6 @@
       ],
       "Thursday": [
         830
-      ],
-      "Saturday": [
-        1630
       ]
     },
     "Confessions": {
@@ -2498,6 +2502,7 @@
     "Name": "Saint Matthew Parish",
     "Mass Times": {
       "Sunday": [
+        800,
         1030
       ],
       "Wednesday": [
@@ -2533,6 +2538,7 @@
         815
       ],
       "Saturday": [
+        815,
         1630
       ],
       "Sunday": [
@@ -2690,14 +2696,14 @@
       "Tuesday": [
         830
       ],
+      "Wednesday": [
+        1830
+      ],
       "Thursday": [
         830
       ],
       "Friday": [
         830
-      ],
-      "Wednesday": [
-        1830
       ]
     },
     "Confessions": {
@@ -2984,6 +2990,14 @@
     "ID": 80,
     "Name": "Saint John Neumann Church",
     "Mass Times": {
+      "Saturday": [
+        1600
+      ],
+      "Sunday": [
+        900,
+        1100,
+        1700
+      ],
       "Monday": [
         900
       ],
@@ -2993,16 +3007,11 @@
       "Wednesday": [
         900
       ],
-      "Friday": [
+      "Thursday": [
         900
       ],
-      "Saturday": [
-        1600
-      ],
-      "Sunday": [
-        900,
-        1100,
-        1700
+      "Friday": [
+        900
       ]
     },
     "Confessions": {
@@ -3050,11 +3059,11 @@
       "Wednesday": [
         730
       ],
-      "Friday": [
-        730
-      ],
       "Thursday": [
         1900
+      ],
+      "Friday": [
+        730
       ]
     },
     "Confessions": {
@@ -3145,6 +3154,7 @@
         1130
       ],
       "Monday": [
+        1730,
         1800
       ],
       "Wednesday": [
@@ -3219,7 +3229,6 @@
     "Name": "Saint Jerome Church",
     "Mass Times": {
       "Saturday": [
-        830,
         1600
       ],
       "Sunday": [
@@ -3369,6 +3378,15 @@
     "ID": 89,
     "Name": "The Catholic Community of Saint Gabriel",
     "Mass Times": {
+      "Sunday": [
+        730,
+        930,
+        1130
+      ],
+      "Saturday": [
+        830,
+        1700
+      ],
       "Monday": [
         700
       ],
@@ -3384,15 +3402,6 @@
       ],
       "Friday": [
         700
-      ],
-      "Saturday": [
-        830,
-        1700
-      ],
-      "Sunday": [
-        730,
-        930,
-        1130
       ]
     },
     "Confessions": {
@@ -3497,13 +3506,7 @@
         1730
       ]
     },
-    "Confessions": {
-      "Saturday": [
-        {
-          "1530": 30
-        }
-      ]
-    },
+    "Confessions": {},
     "Adoration": {
       "Friday": [
         {
@@ -3568,13 +3571,15 @@
         1100
       ],
       "Monday": [
-        815
+        815,
+        1900
       ],
       "Tuesday": [
         815
       ],
       "Wednesday": [
-        815
+        815,
+        900
       ],
       "Thursday": [
         815,
@@ -3740,12 +3745,10 @@
     "Name": "Saint Edward, Parkman",
     "Mass Times": {
       "Saturday": [
-        1700,
-        1830
+        1700
       ],
       "Sunday": [
-        830,
-        1030
+        830
       ],
       "Monday": [
         1800
@@ -3969,7 +3972,8 @@
         800
       ],
       "Friday": [
-        800
+        800,
+        1830
       ]
     },
     "Confessions": {
@@ -4009,12 +4013,7 @@
     "Confessions": {
       "Saturday": [
         {
-          "1530": 60
-        }
-      ],
-      "Monday": [
-        {
-          "1715": 45
+          "1530": 120
         }
       ]
     },
@@ -4304,7 +4303,7 @@
     "Confessions": {
       "Saturday": [
         {
-          "1530": 60
+          "1330": 180
         }
       ]
     },
@@ -5113,8 +5112,8 @@
       ],
       "Sunday": [
         900,
-        1045,
-        1200
+        1130,
+        1300
       ],
       "Monday": [
         815
@@ -5319,6 +5318,7 @@
     "Name": "Sacred Heart of Jesus Catholic Church",
     "Mass Times": {
       "Saturday": [
+        800,
         1700
       ],
       "Sunday": [
@@ -5555,11 +5555,6 @@
         {
           "1530": 30
         }
-      ],
-      "Wednesday": [
-        {
-          "1730": 45
-        }
       ]
     },
     "Adoration": {
@@ -5575,12 +5570,10 @@
     "Name": "Our Lady of Victory Church",
     "Mass Times": {
       "Sunday": [
-        830
+        830,
+        1030
       ],
       "Tuesday": [
-        830
-      ],
-      "Thursday": [
         830
       ],
       "Saturday": [
@@ -5635,9 +5628,7 @@
       ],
       "Sunday": [
         900,
-        1100,
-        1300,
-        1600
+        1100
       ],
       "Monday": [
         1730
@@ -5779,11 +5770,6 @@
       ]
     },
     "Confessions": {
-      "Tuesday": [
-        {
-          "1830": 60
-        }
-      ],
       "Saturday": [
         {
           "1530": 45
@@ -5872,7 +5858,8 @@
         1800
       ],
       "Wednesday": [
-        930
+        930,
+        1800
       ],
       "Thursday": [
         1800
@@ -5946,6 +5933,9 @@
     "Mass Times": {
       "Sunday": [
         1100
+      ],
+      "Saturday": [
+        900
       ]
     },
     "Confessions": {},
@@ -5955,11 +5945,11 @@
     "ID": 159,
     "Name": "Our Lady Help of Christians Catholic Church - Lodi",
     "Mass Times": {
-      "Monday": [
-        1800
-      ],
       "Sunday": [
         830
+      ],
+      "Monday": [
+        1800
       ]
     },
     "Confessions": {},
@@ -5972,11 +5962,11 @@
       "Saturday": [
         1800
       ],
-      "Sunday": [
-        900
-      ],
       "Wednesday": [
         900
+      ],
+      "Friday": [
+        1900
       ]
     },
     "Confessions": {},
@@ -6013,11 +6003,6 @@
       ]
     },
     "Confessions": {
-      "Tuesday": [
-        {
-          "1800": 45
-        }
-      ],
       "Saturday": [
         {
           "1500": 60
@@ -6379,17 +6364,17 @@
       "Monday": [
         830
       ],
-      "Tuesday": [
-        1900
-      ],
       "Wednesday": [
         830
       ],
-      "Thursday": [
-        1900
-      ],
       "Friday": [
         830
+      ],
+      "Tuesday": [
+        1900
+      ],
+      "Thursday": [
+        1900
       ]
     },
     "Confessions": {
@@ -6480,9 +6465,6 @@
       "Saturday": [
         {
           "830": 30
-        },
-        {
-          "1730": 30
         }
       ]
     },
@@ -6492,10 +6474,6 @@
     "ID": 172,
     "Name": "Avon Catholic Community - Saint Mary of the Immaculate Conception",
     "Mass Times": {
-      "Saturday": [
-        830,
-        1600
-      ],
       "Sunday": [
         800,
         1000,
@@ -6509,6 +6487,10 @@
       ],
       "Friday": [
         830
+      ],
+      "Saturday": [
+        830,
+        1600
       ]
     },
     "Confessions": {
@@ -6607,7 +6589,6 @@
     "Name": "Holy Rosary Church",
     "Mass Times": {
       "Saturday": [
-        830,
         1600
       ],
       "Sunday": [
@@ -6906,13 +6887,6 @@
     "ID": 182,
     "Name": "Guardian Angels Catholic Church",
     "Mass Times": {
-      "Saturday": [
-        1700
-      ],
-      "Sunday": [
-        900,
-        1100
-      ],
       "Monday": [
         800
       ],
@@ -6924,6 +6898,13 @@
       ],
       "Friday": [
         800
+      ],
+      "Saturday": [
+        1700
+      ],
+      "Sunday": [
+        900,
+        1100
       ]
     },
     "Confessions": {},
@@ -7115,12 +7096,6 @@
         1100
       ],
       "Tuesday": [
-        830
-      ],
-      "Wednesday": [
-        830
-      ],
-      "Friday": [
         830
       ]
     },
