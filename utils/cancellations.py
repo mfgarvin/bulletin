@@ -155,6 +155,60 @@ _CANCELLATION_RE = re.compile(
 # the sentence says it does.
 _APPLIES_TO_RE = re.compile(r"\s*(?:on|for)\s+(?P<days>[^.;!?]{0,60})", re.IGNORECASE)
 
+# The same shape as _APPLIES_TO_RE, for the case where what follows the phrase
+# is a list of HOLIDAYS rather than weekdays: 1734's masthead prints
+#
+#     Monday - Thursday: 11:00 a.m.
+#     Holy Days: 11:00 a.m. & 7:00 p.m.
+#     No weekday Mass/ Memorial Day, 4th of July, or Labor Day
+#
+# which is a year-round policy - the parish suspends its weekday Mass on three
+# civil holidays - and it published St. Eugene's Thursday 11:00 as cancelled in
+# the 2026-09-19 run. Every one of the four guards above passes it: "Holy Days"
+# is not a weekday label so nothing separates the phrase from the time, and the
+# tail names no weekday at all, so guard 4 has nothing to test.
+#
+# The connector is optional here, and unlike guard 4 that is safe. Guard 4
+# needs "on"/"for" because in a day-by-day listing the text after the phrase is
+# simply the next entry - but an entry of such a listing always opens with a
+# WEEKDAY, never with "Memorial Day". So a holiday name sitting right after a
+# cancellation can only be qualifying it.
+#
+# Written from the vernacular rather than imported from utils/holidays.py: a
+# bulletin prints "4th of July", not "Independence Day", and "New Year's", not
+# "New Year's Day". The calendar's job is to know which dates these fall on,
+# which is not the question here.
+_HOLIDAY_NAME_RE = re.compile(
+    r"""\b(?:
+          (?:memorial | labor | labour | presidents?'? | veterans?'? | columbus
+             | independence | thanksgiving | new \s+ year'?s? ) \s+ day
+        | \d{1,2} (?:st|nd|rd|th)? \s+ of \s+ july
+        | (?: fourth | 4th ) \s+ of \s+ july
+        | thanksgiving | christmas | easter | new \s+ year'?s?
+        | martin \s+ luther \s+ king
+        )\b""",
+    re.IGNORECASE | re.VERBOSE,
+)
+_HOLIDAY_TAIL_RE = re.compile(r"\s*(?:on|for)?\s*[^.;!?]{0,60}", re.IGNORECASE)
+
+
+def _qualified_by_holiday(tail: str) -> bool:
+    """Is this tail a list of holidays rather than a day this week?
+
+    Asks which comes FIRST, not merely which is present, and that is not
+    fussiness - a 60-character window reaches past the end of a short masthead
+    line. 1734's tail is "/ memorial day, 4 of july, or labor day th
+    saturdays: 4:00 p", picking up the Confessions line printed underneath, so
+    a plain "names no weekday" test never fires on the one case it was written
+    for. Whichever kind of name the sentence reaches first is the one
+    qualifying the phrase.
+    """
+    holiday = _HOLIDAY_NAME_RE.search(tail)
+    if not holiday:
+        return False
+    weekday = _ANY_DAY_RE.search(tail)
+    return weekday is None or holiday.start() < weekday.start()
+
 
 # Plurals are not optional polish: a masthead says "Thursdays no Mass" and a
 # listing says "Thursday, September 17", and both have to register as the same
@@ -263,6 +317,20 @@ def _cancelled_near(time: int, day: str, text: str) -> Optional[str]:
                     named = list(_ANY_DAY_RE.finditer(tail.group("days")))
                     if named and not any(own.match(d.group(0)) for d in named):
                         continue
+
+                # (5) if the phrase is qualified by HOLIDAYS and by no weekday
+                # at all, it is a standing policy line - "No weekday Mass /
+                # Memorial Day, 4th of July, or Labor Day" - and says nothing
+                # about this week. Checked only when no weekday is named, so
+                # guard 4 still decides "no Mass on Monday, Labor Day".
+                #
+                # This does refuse a genuine dated cancellation written as
+                # "Monday 8:30 No Mass - Labor Day", and that is the cheap
+                # side: a holiday weekday is already frozen by the v2.5.26
+                # hold, so the slot survives either way.
+                holiday_tail = _HOLIDAY_TAIL_RE.match(text, hit.end())
+                if holiday_tail and _qualified_by_holiday(holiday_tail.group(0)):
+                    continue
 
                 return hit.group(0).strip()
     return None

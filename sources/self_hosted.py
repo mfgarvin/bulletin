@@ -36,6 +36,15 @@ _EARLIEST_YEAR = 2000
 # back a run of PDF-less posts can push us, not a sample of the page.
 SUBPAGE_FETCH_LIMIT = 3
 
+# How far ahead a filename may be dated and still be THIS week's bulletin.
+# Same constant and the same reasoning as `LOOKAHEAD_DAYS` in the Parishes
+# Online / eCatholic sources: the file is named for the Sunday it *covers* and
+# parishes upload days early, so on the Saturday run the bulletin we want is
+# dated tomorrow. It must not be larger: `sp-l` has its next three issues on
+# the page at once, so a wide window pulls a run onto a bulletin two weeks out
+# and silently skips two weeks of events.
+LOOKAHEAD_DAYS = 3
+
 logger = logging.getLogger(__name__)
 
 
@@ -281,15 +290,31 @@ class SelfHostedSource(BulletinSource):
 
     @staticmethod
     def _recency_bonus(d: date) -> int:
-        """Bonus favoring recent bulletins. Future-dated parses are distrusted."""
+        """Bonus favoring recent bulletins. Future-dated parses are distrusted.
+
+        The near-future band is the *top* band, not a discount, and that is the
+        whole point of it. A bulletin is named for the Sunday it covers, so on
+        the Saturday run the current issue is dated **tomorrow** - and while it
+        sat one tier below "0-30 days old" it lost to last week's file every
+        single week. Seven of the fifteen enabled Self-Hosted parishes were a
+        week behind on 2026-09-19 for that reason alone, with the right PDF
+        listed on the same page; `olg-m` had been for three runs.
+
+        Tying it with the recent-past band rather than beating it is
+        deliberate: the sort falls through to the parsed date, so tomorrow's
+        issue wins on being newer and nothing else about the ranking moves.
+        """
         if d == date.min:
             return 0
         days = (date.today() - d).days
         if days < -14:      # more than two weeks ahead => almost certainly a bad parse
             return 0
-        if days < 0:        # dated up to ~2 weeks ahead (next Sunday's bulletin)
+        if days < -LOOKAHEAD_DAYS:
+            # Dated further ahead than a parish posts for the coming Sunday.
+            # Real (sp-l publishes three issues at a time), but it is NEXT
+            # week's, and taking it skips a week of events.
             return 90
-        if days <= 30:
+        if days <= 30:      # includes the coming Sunday's issue, posted early
             return 100
         if days <= 120:
             return 60
