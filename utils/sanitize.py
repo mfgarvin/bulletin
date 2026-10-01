@@ -238,12 +238,36 @@ class SanitizeReport:
 
 
 def _merge_notes(*notes: str | None) -> str | None:
-    """Join distinct notes with '; ', preserving order and dropping blanks."""
+    """Join distinct notes with '; ', preserving order and dropping blanks.
+
+    Distinct means per CLAUSE and ignoring case. Comparing whole notes let a
+    merged note grow by one clause every time it met a differently-cased twin:
+    `1905`'s "First Friday (only)" plus a stated "First Friday (ONLY)" became
+    "First Friday (only); First Friday (ONLY)", then gained a third copy on the
+    next `notion_fixes` pass, and `olg-m` published "or by appointment; Or by
+    appointment". The first spelling wins.
+
+    A note with nothing dropped is kept verbatim - never re-split and
+    re-joined - because a single note may carry its own ';' ("celebrated in
+    the Parish Center Chapel; when school is in session ...") and v2.5.21
+    showed that normalising every note a pass merely reads damages them all.
+    """
     seen: list[str] = []
+    keys: set[str] = set()
     for n in notes:
         n = (n or "").strip()
-        if n and n not in seen:
+        if not n:
+            continue
+        clauses = [c.strip() for c in n.split(";") if c.strip()]
+        kept = []
+        for c in clauses:
+            if c.casefold() not in keys:
+                keys.add(c.casefold())
+                kept.append(c)
+        if len(kept) == len(clauses):
             seen.append(n)
+        elif kept:
+            seen.append("; ".join(kept))
     return "; ".join(seen) or None
 
 

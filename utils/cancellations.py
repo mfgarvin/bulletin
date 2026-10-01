@@ -85,6 +85,7 @@ from __future__ import annotations
 
 import logging
 import re
+from datetime import date
 from typing import Optional
 
 from schemas import SiteInfo
@@ -252,7 +253,102 @@ def _same_time(stated: str, time: int) -> bool:
     return (hh % 12, mm) == ((time // 100) % 12, time % 100)
 
 
-def _cancelled_near(time: int, day: str, text: str) -> Optional[str]:
+# Calendar dates as a bulletin prints them, for guard 7. Three shapes only:
+#
+#     "friday, oct 9"   "october 2nd"   "oct. 6th"       month name, then day
+#     "28 september 2026"                                day, then month name
+#     "10/9", "9/28/26", "9-28-2026"                     numeric
+#
+# The numeric form is deliberately narrow. A slash reads as a date on its own,
+# but a HYPHEN only counts with a four-digit year after it: these listings are
+# full of scripture citations ("ps 17:1bcd, 2-3, 6-7") and "2-3" is not
+# February 3rd. Missing a date here costs nothing - no date found means the
+# guard does not apply, which is exactly the behaviour before it existed.
+_MONTHS = {
+    m: i + 1
+    for i, m in enumerate(
+        ("jan", "feb", "mar", "apr", "may", "jun",
+         "jul", "aug", "sep", "oct", "nov", "dec")
+    )
+}
+_DATE_RE = re.compile(
+    r"""
+      \b (?P<mon1> jan|feb|mar|apr|may|jun|jul|aug|sept?|oct|nov|dec ) [a-z]* \.? ,? \s*
+         (?P<day1> \d{1,2} ) (?: st|nd|rd|th )? (?!\d)
+    | (?<![\d:]) (?P<day2> \d{1,2} ) (?: st|nd|rd|th )? \s+
+         (?P<mon2> jan|feb|mar|apr|may|jun|jul|aug|sept?|oct|nov|dec ) [a-z]* \b
+    | (?<![\d/:.]) (?P<mon3> \d{1,2} ) / (?P<day3> \d{1,2} ) (?: / \d{2,4} )? (?![\d/])
+    | (?<![\d/:.-]) (?P<mon4> \d{1,2} ) - (?P<day4> \d{1,2} ) - \d{4} (?!\d)
+    """,
+    re.IGNORECASE | re.VERBOSE,
+)
+
+# How far either side of a cancellation phrase to look for the date it is
+# about. Backward is wide for the same reason _DAY_SCOPE_CHARS is: a listing
+# prints the date in the day header and the day's readings sit between it and
+# the time - `2492` puts ~115 characters of scripture between "friday, october
+# 2" and "*** no 8:30 am mass". Forward is short, and stops at the next day
+# label, because after the phrase comes the NEXT entry and its date is not ours.
+_DATE_BACK_CHARS = 200
+_DATE_AHEAD_CHARS = 60
+
+
+def _to_date(match: re.Match, week: tuple[date, date]) -> Optional[date]:
+    """The calendar date a _DATE_RE match names, in the year nearest `week`."""
+    g = match.groupdict()
+    if g["mon1"]:
+        month, day = _MONTHS[g["mon1"][:3].lower()], int(g["day1"])
+    elif g["mon2"]:
+        month, day = _MONTHS[g["mon2"][:3].lower()], int(g["day2"])
+    elif g["mon3"]:
+        month, day = int(g["mon3"]), int(g["day3"])
+    else:
+        month, day = int(g["mon4"]), int(g["day4"])
+    # No year is printed as often as not, and December's bulletin talks about
+    # January. Take whichever year puts the date closest to the covered week.
+    candidates = []
+    for year in (week[0].year - 1, week[0].year, week[0].year + 1):
+        try:
+            candidates.append(date(year, month, day))
+        except ValueError:
+            continue
+    if not candidates:
+        return None
+    return min(candidates, key=lambda d: abs((d - week[0]).days))
+
+
+def _governing_date(
+    text: str, start: int, end: int, week: tuple[date, date]
+) -> Optional[date]:
+    """The date a cancellation phrase at text[start:end] is about, if printed.
+
+    The nearest date on either side, where "after" is cut off at the next day
+    label - that is where the next entry of a listing starts.
+    """
+    best: Optional[tuple[int, date]] = None
+    for m in _DATE_RE.finditer(text, max(0, start - _DATE_BACK_CHARS), start):
+        d = _to_date(m, week)
+        if d is not None:
+            best = (start - m.end(), d)  # later matches are nearer: overwrite
+
+    stop = end + _DATE_AHEAD_CHARS
+    boundary = _ANY_DAY_RE.search(text, end, stop)
+    if boundary:
+        stop = boundary.start()
+    ahead = _DATE_RE.search(text, end, stop)
+    if ahead:
+        d = _to_date(ahead, week)
+        if d is not None and (best is None or ahead.start() - end < best[0]):
+            best = (ahead.start() - end, d)
+    return best[1] if best else None
+
+
+def _cancelled_near(
+    time: int,
+    day: str,
+    text: str,
+    week: Optional[tuple[date, date]] = None,
+) -> Optional[str]:
     """Is this slot's own time printed beside a cancellation for its own day?
 
     Returns the matched phrase (for the log) or None.
@@ -369,6 +465,36 @@ def _cancelled_near(time: int, day: str, text: str) -> Optional[str]:
                     if owner and not _same_time(owner, time):
                         continue
 
+                # (7) if the phrase is about a DATE, that date must fall in
+                # the week this bulletin covers. A bulletin announces future
+                # cancellations as readily as it prints this week's, and the
+                # 2026-09-26 run proved it at scale: the diocesan priests'
+                # convocation (Oct 6-9) put 5 false flags out of 7 on the
+                # bulletins for the week BEFORE it -
+                #
+                #     1704   "friday, oct 9 - 8:30 a.m. no mass"
+                #     0134   "fri 10/9 7:30 am no morning mass"
+                #     1259   "...through friday, oct. 9th. on wednesday,
+                #             thursday, & friday of that week, there will be
+                #             no 7:15 am mass"
+                #     1170   "convocation is oct 6-9th. there will be no
+                #             masses that week"
+                #     olmsted "*no daily mass october 7"
+                #
+                # while the two true ones printed a date inside the week
+                # ("friday, october 2", "monday, 28 september 2026"). Every
+                # other guard passes all five: the weekday, the time and the
+                # phrase are all right - only the week is wrong.
+                #
+                # No printed date means no claim, so undated phrases behave as
+                # before; and `week` is None when the caller has no week at
+                # all. The undated-source case is covered by `run_week`, which
+                # errs towards refusing - a missed cancellation, the cheap side.
+                if week is not None:
+                    about = _governing_date(text, hit.start(), hit.end(), week)
+                    if about is not None and not week[0] <= about <= week[1]:
+                        continue
+
                 return hit.group(0).strip()
     return None
 
@@ -382,6 +508,7 @@ def _restore(
     model,
     day_key: str,
     time_key: str,
+    week: Optional[tuple[date, date]] = None,
 ) -> list[str]:
     """Put back each dropped slot the page shows as cancelled this week."""
     notes = []
@@ -390,7 +517,7 @@ def _restore(
         row = by_slot.get((day, time))
         if row is None:
             continue
-        phrase = _cancelled_near(time, day, text)
+        phrase = _cancelled_near(time, day, text, week)
         if not phrase:
             continue
         restored = row.copy()
@@ -412,7 +539,10 @@ def _restore(
     return notes
 
 
-def _mark_kept(entries, text, kind: str, time_attr: str) -> list[str]:
+def _mark_kept(
+    entries, text, kind: str, time_attr: str,
+    week: Optional[tuple[date, date]] = None,
+) -> list[str]:
     """Flag a slot the extraction KEPT that the bulletin says is off this week.
 
     This is the common half and it was missed in the first cut, which only
@@ -430,7 +560,7 @@ def _mark_kept(entries, text, kind: str, time_attr: str) -> list[str]:
         if getattr(e, "mass_date", None) is not None or e.cancelled:
             continue
         time = getattr(e, time_attr)
-        phrase = _cancelled_near(time, e.day.value, text)
+        phrase = _cancelled_near(time, e.day.value, text, week)
         if phrase:
             e.cancelled = True
             notes.append(
@@ -446,6 +576,7 @@ def mark_cancelled_slots(
     source_bytes: bytes,
     content_type: str = "pdf",
     text: Optional[str] = None,
+    week: Optional[tuple[date, date]] = None,
 ) -> list[str]:
     """Mark every standing slot the page says is not being celebrated this week.
 
@@ -454,6 +585,9 @@ def mark_cancelled_slots(
     - a slot it **kept** is flagged in place (`_mark_kept`);
     - a slot it **dropped** is restored and flagged (`_restore`), so a
       suspension cannot read as a retraction.
+
+    `week` is the (start, end) the bulletin covers. A cancellation that names a
+    date outside it is refused (guard 7); None skips that guard.
 
     Mutates the sites in `pairings` - the same objects the save step writes -
     and returns one note per slot for `GPT Logs`.
@@ -489,9 +623,9 @@ def mark_cancelled_slots(
 
     notes: list[str] = []
     for pid, site in pairings.items():
-        notes += _mark_kept(site.mass_times, text, "Mass", "time")
+        notes += _mark_kept(site.mass_times, text, "Mass", "time", week)
         notes += _mark_kept(
-            site.confession_times, text, "Confession", "start_time"
+            site.confession_times, text, "Confession", "start_time", week
         )
 
         if pid not in stored:
@@ -504,7 +638,7 @@ def mark_cancelled_slots(
             if dropped:
                 notes += _restore(
                     site, stored_masses, dropped, text, "Mass",
-                    MassTime, "day", "time",
+                    MassTime, "day", "time", week,
                 )
         if stored_confessions:
             dropped = _stored_confession_slots(stored_confessions) - {
@@ -513,7 +647,7 @@ def mark_cancelled_slots(
             if dropped:
                 notes += _restore(
                     site, stored_confessions, dropped, text, "Confession",
-                    ConfessionTime, "day", "start_time",
+                    ConfessionTime, "day", "start_time", week,
                 )
     return notes
 

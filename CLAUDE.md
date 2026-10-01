@@ -138,10 +138,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   the Church)". Fixed by hand via the new `ManualFix.mass_note_fixes`, but
   that is a treadmill: the next extraction re-merges it. Would also clean up
   the 4 Holy Day double labels the v2.5.11 guard keeps on purpose.
-  (2) `_merge_notes` dedupes **case-sensitively** (`utils/sanitize.py:245`),
-  so `olg-m` publishes "or by appointment; Or by appointment". One line.
-  Both need a replay over all 189 rows first - a note pass that *reads* every
-  note can damage every note.
+  (2) ~~`_merge_notes` dedupes case-sensitively~~ - **fixed v2.5.34**, per
+  clause and ignoring case, replayed over all 189 rows (1 changed: `1905`).
+  (1) still needs its own replay - a note pass that *reads* every note can
+  damage every note.
 - **GitHub integration** - Integrate Claude with GitHub for automated workflows or issue tracking.
 - **Data change safety** - Add safeguards for when extracted data changes significantly (e.g., mass times suddenly very different). Could warn or require confirmation before overwriting.
 - **Adoration in Events** - Sometimes adoration schedule appears in the Events listing instead of the dedicated Adoration field. May need extraction prompt adjustment or post-processing.
@@ -786,6 +786,66 @@ the compose default — so the template needs the same edit by hand.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.34 (2026-09-26) - A cancellation printed this week is not always about this week
+
+Out of the 2026-09-26 triage. 154 parishes, 0 failures, 47 warned; 33 rows
+repaired. Full record in `docs/fixlog.md`.
+
+**Guard 7 on the cancellation detector.** The bulletins for the week of Sep 27
+announced the diocesan priests' convocation, **Oct 6-9**, and the detector
+applied those notices to *this* week. The result was 5 false flags out of 7:
+
+    1704     "FRIDAY, Oct 9 - 8:30 a.m. No Mass"               Wed/Thu/Fri
+    0134     "Fri 10/9 7:30 AM No Morning Mass"                Friday
+    1259     "...Friday, Oct. 9th. On Wednesday, Thursday, &
+              Friday of that week, there will be no 7:15 am Mass"
+    1170     "Convocation is Oct 6-9th. There will be no Masses that week"
+                                                               a SUNDAY Mass
+    olmsted  "*No Daily Mass October 7"                        Friday
+
+All six earlier guards pass every one of these. The weekday, the time and the
+phrase are all right; only the week is wrong. The two true flags both printed a
+date *inside* the week ("FRIDAY, OCTOBER 2", "MONDAY, 28 SEPTEMBER 2026"). So
+the detector now looks for the date the phrase is about: the nearest one on
+either side, with the forward search cut at the next day label. If that date
+falls outside `covered_week`, the flag is refused. A phrase with no date near
+it behaves exactly as before. Hyphenated numerals only count with a 4-digit
+year, because "Ps 17:1bcd, 2-3" is not February 3rd.
+
+Swept over 146 live bulletins: **13 hits became 5, and the 8 removed were
+exactly the 8 false ones** — the five above, plus `shc`'s Thu/Fri, whose
+undated `CurrentBulletin.pdf` is still the 20 September edition (its listing
+dates fall outside the week `run_week` assumes). It keeps all 5 true ones.
+**Next week the same notices are true** (the 10-04 bulletins cover Oct 4-10),
+so this is the guard doing its job twice over: it refuses them now and lets
+them through then.
+
+**`ManualFix.uncancel_masses`** clears a wrong `cancelled` flag. Before this,
+drop + add was the only way to do that, and it threw away the entry's notes,
+language and `site_label`. It only clears: a real cancellation is re-derived
+every run and never needs stating.
+
+**`_merge_notes` dedupes per clause, case-insensitively.** Comparing whole
+notes let `1905`'s First Friday note grow by one "First Friday (ONLY)" on
+every `notion_fixes` pass. A note with nothing dropped is still returned
+verbatim, which is the v2.5.21 rule. Replayed over all 189 rows: 1 changed.
+
+**The prompt is refusing monthly confessions.** Three slots were lost this run
+(`our-lady-of-mount-carmel`, `0042`, `saint-albert`), plus `22544`'s, which
+was held. In each case the extractor's own notes say it declined on purpose:
+*"the schema does not support monthly confession frequency"*. `1794`'s
+Thursday-before-First-Friday went too, and **in the one week it actually
+happens**. This is v2.5.33 item 5, now reaching confessions: the export has
+published ordinals correctly since v2.5.17, and the prompt was never told. All
+four were restored by hand. That is a treadmill, and **this is now the largest
+single source of repeat repairs**.
+
+**Also found:** Discover Mass is serving St. Christopher's (Indianapolis)
+bulletin from OLHC's own page. `20812` stopped posting to eCatholic after
+09-06. `scas-e`'s configured page carries no Mass schedule; `masses-en.html`
+does. One of 09-12's repairs was wrong (`20822`'s vigil has ended) and has
+been retired.
 
 ### v2.5.33 (2026-09-19) - The Saturday run was asking for yesterday's bulletin
 

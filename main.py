@@ -540,7 +540,8 @@ async def process_parish(
         # `cancelled` has to happen BEFORE the diff, or every restoration would
         # also warn as a change - and it is not one, it is the absence of one.
         for msg in mark_cancelled_slots(
-            pairings, stored_schedules, result.pdf_bytes, result.content_type
+            pairings, stored_schedules, result.pdf_bytes, result.content_type,
+            week=(week_start, week_end),
         ):
             log(msg)
 

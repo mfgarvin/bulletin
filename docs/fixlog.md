@@ -45,6 +45,57 @@ most, because it separates *fixed* from *patched*:
 | `masthead-incomplete` | the standing schedule box omits a Mass the rest of the bulletin evidences |
 | `note-defect` | times correct, published `notes` wrong |
 | `publisher-broken` | the bulletin could not be fetched, or the wrong one was |
+| `wrong-week` | a notice about another week applied to this one (opened 2026-09-26) |
+| `monthly-dropped` | a genuine monthly-ordinal slot deleted, or never emitted (opened 2026-09-26) |
+| `noise-drop` | a standing slot lost on one draw; flagged "not reproduced" or budget-held, and written anyway (opened 2026-09-26) |
+| `non-mass-as-mass` | a devotion or service published as a Mass (opened 2026-09-26) |
+
+---
+
+## 2026-09-26
+
+154 parishes, 0 failed, 47 warned. 33 rows repaired (32 by the table, plus
+`1905`'s note once `_merge_notes` was fixed), 9 left deliberately. Freshness
+clean: 140 on the 2026-09-27 edition; `20812` 20 days stale, `40500` 13.
+
+The bulletins' week holds **October 2-3, First Friday and First Saturday**, and
+most of them carried a notice for the **Oct 6-9 priests' convocation**. Those
+two facts explain most of this list.
+
+| parish | field | change applied | category | cause | resolution |
+|---|---|---|---|---|---|
+| `1704`, `0134`, `1170`, `st-mary-of-the-falls-…` | Mass | `cancelled` cleared (6 slots) | wrong-week | convocation notices for Oct 6-9 ("FRIDAY, Oct 9 — 8:30 a.m. No Mass") flagged this week's Masses. `1170` lost a **Sunday** | structural (guard 7) |
+| `1259` | Mass | Mon–Thu 0715 restored, Fri 0715 `cancelled` cleared | wrong-week | same notice ("On Wednesday, Thursday, & Friday of that week, there will be no 7:15 am Mass"). The detector flagged Friday, and the extractor applied it to the other four days | structural (flag) / manual (drops) |
+| `1259` | Mass | Sun 1030 → 1100, dropped Sun 0600 | fabrication | the v2.5.10 pair came back together: an invented 10:30, and the IC 6:00 pm vigil moved to Sunday AM | treadmill |
+| `shc`, `shc-pat` | Mass | `cancelled` cleared (4 slots); 09-19 entries retired | wrong-week | the undated `CurrentBulletin.pdf` is still the 20 September edition. Fr. Trask's absence ended on the 27th | structural (guard 7) |
+| `our-lady-of-mount-carmel-…`, `0042`, `saint-albert-…` | Conf | ordinal slot restored | monthly-dropped | **the extractor refused them**: "the schema does not support monthly confession frequency". This is v2.5.33 item 5 reaching confessions | treadmill |
+| `1794` | Conf | Thursday-before-First-Friday restored | monthly-dropped | lost for the second time in two weeks, this time in the one week it actually happens | treadmill |
+| `0882` | Mass | restored Fri 0800 "Except on First Fridays" | monthly-dropped | First Friday week, so the listing prints 6:30 PM in its place | treadmill |
+| `22544` | Conf | — | monthly-dropped | the same refusal, 3 of 5 slots | held |
+| `5217` | Mass | Mon 1215 restored as `cancelled` | one-week-cancellation | listing moves it to 11:30. No phrase sits beside a 12:15, so the detector cannot see it. **Retire after 10-03** | manual |
+| `0085` | Mass | restored Sat 0730 Croatian | masthead-incomplete | masthead says "Weekdays: 7:30am"; listing prints Saturday 7:30 with intentions | manual |
+| `0290`, `0691` | Mass | restored Sat 1700 / Sat 0800 | noise-drop | "not reproduced" and budget-held respectively. Both written anyway, and both printed in the listing | manual |
+| `our-lady-of-victory-…` | Mass | restored Sat 1745 (Thu 0830 via existing entry) | cluster-bleed | the two-column interleave with St. Matthew. Both slots were dropped again one week after the repair | treadmill |
+| `1101` | Mass | Mon 1900 → dated 2026-09-28 | dated-as-recurring | "Mass of Compassion", one entry in the listing | manual |
+| `visitation-…-sjb` | Mass | Sun 1400 → 3 dated Masses | dated-as-recurring | **09-12 called this a fabrication, which was wrong.** The masthead gives a list of 2026 dates for the Vietnamese Mass, with no ordinal | manual |
+| `1485` | Conf | dropped Wed 1630-1800 | dated-as-recurring | the parish's periodic "Many priests available" service. Same row as the v2.5.18 monthly item | manual |
+| `st-bernadette-…` | Conf, Mass | Sat conf 1600-1645 → 1500-1545; dropped 0930 conf and a vigil dated to a Sunday | dated-as-recurring | the vigil moved to 4:00 from Oct 3 and the extractor caught that, but not "Confession will move to 3:00-3:45PM" | manual |
+| `ss-c` | Mass | dropped Sun 0930 "Rosary" | non-mass-as-mass | "Rosary — Sundays: 9:00am" | manual |
+| `scas-e` | Mass | added Sun 1100 Lithuanian, Mon/Tue/Thu 0730; cleared Fri 0730's "First Friday" note | publisher-broken | the configured page (`bulletin-en.html`) has no Mass schedule; `masses-en.html` does. The row had never carried weekday Masses | manual |
+| `1532` | Mass | Fri 2100 → 0900 | bulletin-typo | **fourth** recurrence | treadmill |
+| `1905` | Mass | note "First Friday (only); First Friday (ONLY)" → "First Friday (only)" | note-defect | `_merge_notes` deduped case-sensitively, so each `notion_fixes` pass added one more copy | structural |
+| `20822` | Mass | **09-12 entry retired**; the run's removal of Sat 1700 stands | masthead-incomplete | the 09-19/20 offering table lists three Masses, not four. The English vigil has ended, so 09-12's repair was wrong | structural |
+| `our-lady-help-of-christians-…` | all | — | publisher-broken | **Discover Mass serves St. Christopher's (stchrisindy.org) bulletin from OLHC's own page.** Nothing matched a site, so nothing was written; all four rows are a week stale | deferred |
+| `20812` | all | — | publisher-broken | stopped uploading to eCatholic after 09-06. The parish now posts one article per week (`ststephen.ws/article/september-27-2026`) with a `stephen-west-salem-9-27.pdf` filename that does not parse. Self-Hosted currently picks the 8-30 file | deferred |
+| `1137` / `1137-svdp` | Mass | — | — | Thursday 08:30 moved from SVdP to STP in the listing, after two weeks at SVdP. Can't tell yet whether that's a one-off or the new schedule | deferred |
+| `0523` | Mass | — | dated-as-recurring | a new 6:00 pm vigil "(begins Oct. 17, 2026)" is already publishing. Its note says so; it will be true in three weeks | deferred |
+| `st-mary-cleveland-oh`, `sem-c`, `our-lady-of-angels-cleveland-oh` (conf) | — | — | — | partial-retraction guard held; each hold was correct | held |
+
+**Cancellation detector, before and after guard 7**, swept over 146 live
+bulletins: 13 hits became 5. All 8 removed were false and all 5 kept are real
+(`0240` Mon/Wed/Fri, `2492` Fri 0830, `our-lady-of-angels` Mon 1800). **`0240`
+has printed "No Mass" at 8:30 Mon/Wed/Fri for three consecutive weeks** — at
+some point that stops being a cancellation and is the schedule.
 
 ---
 
