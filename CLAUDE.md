@@ -788,6 +788,51 @@ the compose default — so the template needs the same edit by hand.
 
 ## Changelog
 
+### v2.5.37 (2026-10-02) - The prompt publishes monthly ordinals instead of refusing them
+
+v2.5.33 item 5 and v2.5.34's largest repeat-repair source. The export has
+published `weeks_of_month` since v2.5.17 and `anchored_week` since v2.5.32;
+the prompt was never told, so the extractor refused monthly confessions ("the
+schema does not support monthly confession frequency") and parked monthly
+Masses in `events`. New **MONTHLY SCHEDULES** section in `extractor.py`:
+record an ordinal slot as recurring, state the ordinal *and* weekday in
+`notes` the way the bulletin prints it (that is what `derive_ordinal` reads),
+and never put an ordinal on a weekly slot's note - "Benediction on First
+Fridays" beside an every-Friday Mass derives `[1]` and hides it three weeks in
+four. Plus: anchored notes must name their own weekday ("Wednesday before
+First Friday"); a substitution needs a qualifier on the weekly line; only a
+printed ordinal counts; "Perpetual" on a bounded span is not 24/7; a weekly
+standing slot is year-round without saying so, and a short suspension does
+not remove it; a dated one-off Mass stays a dated Mass even when announced
+like an event; a seasonal line is still out of season.
+
+**Judged by targeted signatures on fixed bytes, six iterations**, per the
+v2.5.10 rule. Truth: 26 hand-read ordinal slots in 20 cached bulletins, plus
+10 hazard bulletins (ordinals beside weekly slots, other parishes' rotas).
+
+| | HEAD | v6 |
+|---|---|---|
+| ordinal slots published correctly (30 x 5) | 56% | ~94% |
+| ordinal written onto a weekly slot | 1 | 0 |
+| 50 x 5 wide (v4): aggregates | - | all in noise; sites 295 -> 295; vigil_before_noon 1 -> 0 |
+
+Each iteration broke a neighbour, and every one was found by reading the
+bulletin, not the aggregate: v2 flipped `olg-m` to perpetual (4/5); v3
+published school-year lines in August; v4 dropped `0131`'s weekly Hora Santa
+(5/5 -> 1/5) and `0042`'s Thursday adoration on a "year-round" proof test; v5
+sent `21865`'s dated Nurses Mass to `events` (4/5 -> 0/5). All four fixed in
+v6, confirmed at n=5. On `1259`'s convocation-week bulletin HEAD drops the
+real noon Masses (2-3 of 3) and v6 keeps them; cancellation flags identical.
+
+Not fixed: `1094` never writes "Except on First Fridays"; `1318`'s anchored
+confession comes back with no note; `our-lady-of-angels`' 1st/3rd Monday Holy
+Hour is never extracted; `our-lady-of-victory`'s St. Matthew 10:30 bleed is at
+HEAD's rate. **More `anchored_week` slots now reach an app that does not read
+the key yet** (`0138` is offset -2) - they display weekly until it does, which
+is today's behaviour. First live run 2026-10-03: triage adoration and dated
+Masses first. Several prompt examples are quoted from the test set, so the
+hazard numbers are partly in-sample.
+
 ### v2.5.36 (2026-10-02) - Cancellation guards 8 and 9, from the convocation week
 
 Swept against all 151 live bulletins for the week of Oct 4 (the priests'

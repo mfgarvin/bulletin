@@ -31,8 +31,10 @@ Extract the following information:
 
 3. **Mass schedule** (per site):
    - Day of week + time (24hr, e.g. 1630 for 4:30pm)
-   - **`mass_date`** — set on every non-recurring Mass; leave null only for truly recurring weekly Masses.
-     - Recurring (null): "Sunday at 9am every week", "Daily Mass M-F at 7am", standing Saturday Vigil.
+   - **`mass_date`** — set on every non-recurring Mass; leave null for every recurring Mass, weekly
+     OR monthly on an ordinal weekday (see MONTHLY SCHEDULES below).
+     - Recurring (null): "Sunday at 9am every week", "Daily Mass M-F at 7am", standing Saturday Vigil,
+       "First Friday Mass 7:00 pm", "Igbo Mass, last Sunday of the month".
      - Dated (YYYY-MM-DD): holidays (Christmas, Easter), Holy Days of Obligation, civic-day Masses
        (Memorial Day, Labor Day, Thanksgiving), one-off parish Masses (First Communion, graduations,
        jubilees), and ANY Mass listed under a date-specific heading or "this week's schedule" block.
@@ -114,7 +116,9 @@ Extract the following information:
    changes and "when applicable" Masses); the listing states what is celebrated in the week
    the bulletin covers. Use the box for the shape of the recurring week, but do not promote a
    time to a recurring Mass when the intentions listing shows no Mass on that day at all -
-   that time belongs to a Holy Day or seasonal schedule.
+   that time belongs to a Holy Day or seasonal schedule. The one exception is a time the box
+   marks with a monthly ordinal ("First Friday: 7:00 pm"): the listing omits it three weeks in
+   four, which is expected. See MONTHLY SCHEDULES.
 
    Never write a single entry that means both. If the parish's daily 11:00 am Mass and its
    Holy Day 11:00 am Mass are the same slot, emit the daily Mass with its ordinary note and
@@ -165,6 +169,9 @@ Extract the following information:
      or describes 24-hour / 24/7 / round-the-clock adoration. Do NOT infer it from First Friday
      adoration, weekly Holy Hour, or post-Mass adoration. If the bulletin says the chapel closes
      overnight, or gives the hours it is open, it is NOT perpetual.
+     The word "perpetual" on a span with a stated start and end is a label for that span, not
+     24/7: "Perpetual Monday 9:00 am to Tuesday 8:00 am / Daily Tuesday-Thursday 9:00 am-4:00 pm"
+     is a 23-hour Monday slot plus daytime hours, so `is_perpetual: false` and list them.
    - **When adoration is perpetual, `is_perpetual: true` IS the whole schedule — leave `times`
      empty.** A chapel open 24/7 has no hours to enumerate.
    - **Hours listed as needing adorers are NOT the schedule.** "Hours needing coverage", "open
@@ -181,6 +188,14 @@ Extract the following information:
      here is published as happening every week of the year. A Holy Thursday slot becomes
      "adoration every Thursday, 8-10 pm" forever. Leave them out and describe them in
      `extraction_notes`; only record adoration the parish holds year-round.
+     A monthly ordinal is NOT a season: "First Friday adoration 6-7 pm" or "2nd Tuesday of the
+     month 12-7 pm" happens all year, and is recorded under MONTHLY SCHEDULES.
+     This rule excludes what the bulletin TIES to a season or feast - nothing else. A weekly slot
+     in the parish's standing schedule or activities list ("Adoration/Exposition - Thursdays from
+     Noon - 7PM", "Jueves - Hora Santa (5:30pm)") is the year-round schedule: do not require the
+     bulletin to say "year-round", and a Holy Hour counts as adoration. A notice that it is
+     cancelled for a week or two does not remove it either; record it as usual and mention the
+     cancellation in `extraction_notes`, exactly as for a cancelled Mass.
      A bulletin printed during Holy Week or Lent often shows ONLY the seasonal adoration. In
      that case the correct adoration is empty - do not promote the seasonal one to fill it.
    - Otherwise list specific time slots.
@@ -203,6 +218,55 @@ Masses are. All of it belongs in `extraction_notes`, which stays internal.
 If a note would consist only of such commentary, emit no note at all. If the uncertainty is
 bad enough that you want to warn the reader, that is a sign the entry should be omitted -
 omit it and explain in `extraction_notes`.
+
+**MONTHLY SCHEDULES (Masses, confessions and adoration).**
+Many slots recur on an ordinal weekday of the month: "First Friday Mass 7:00 pm", "Confessions
+1st Tuesday of each month 6:30-7:30 pm", "Adoration 2nd Tuesday of the month 12-7 pm", "Igbo Mass,
+last Sunday 1:00 pm", "Thursday before First Friday 7:00-8:00 pm". These ARE part of the standing
+schedule and the output CAN express them. Do not leave one out because it is not weekly.
+- Record it as a recurring entry (`mass_date: null` for a Mass) on the weekday it falls on.
+- Only when the bulletin prints the ordinal. "Evening Mass is now once a month; the next is
+  Wednesday, August 19" names a date, not an ordinal: emit that one dated Mass, and never work
+  out "3rd Wednesday" from a date yourself.
+- State the rule in `notes`, naming the ordinal AND the weekday as the bulletin does: "First
+  Friday", "1st Tuesday of the month", "2nd & 4th Saturdays", "Last Sunday of the month",
+  "Thursday before First Friday". Downstream reads the ordinal from this note and shows the slot
+  only in the weeks it happens. A note without it ("Monthly", "Holy Hour") publishes the slot
+  every week. The note must stand on its own: when the bulletin prints "Wednesday 8:45-9:30 AM
+  before First Friday only", write "Wednesday before First Friday", naming the slot's own weekday
+  again - "Before First Friday" alone cannot be read. Keep the full phrase even when you add
+  other detail: "Thursday before First Friday, after the 7:30 am Mass".
+- Record it whether or not it falls in this bulletin's week.
+- If the bulletin says a weekly slot is REPLACED on those weeks, emit BOTH entries and note both.
+  "Monday, Tuesday, Wednesday, Friday: 9:00 AM (First Fridays 7:00 pm)" means the Friday 9:00 am
+  Mass does not happen on First Fridays, so it is Friday 9:00 noted "Except on First Fridays",
+  plus Friday 7:00 pm noted "First Friday". Leaving the 9:00 note empty publishes it on a day it
+  is not celebrated.
+  Only a qualifier printed ON the weekly line, or words like "instead" / "in place of" / "no
+  9:00 Mass on First Fridays", make a replacement. A separate line ("Monday-Friday: 7:30 am" and
+  below it "First Friday: 7:00 pm") ADDS a Mass: the 7:30 still happens, so its note gets no
+  "Except".
+
+**Never put an ordinal in the note of a slot that happens every week.** "Benediction on First
+Fridays" printed beside an every-Friday Mass, "Children's Liturgy at the 11:00 Mass on 1st & 3rd
+Sundays", "Anointing of the Sick at the 8:30 Mass on the fourth Friday": in each, the Mass is
+weekly and only an addition is monthly. Leave the ordinal out of that slot's `notes` entirely and
+mention the addition in `extraction_notes`. An ordinal in a note HIDES the slot in the other weeks.
+
+These are not monthly schedules, so the rules above do not apply:
+- "Monthly" with no ordinal weekday ("monthly reconciliation service"), or an ordinal naming a
+  week rather than a weekday ("the first week of the month"). Nothing says which day; omit it and
+  describe it in `extraction_notes` (a Mass with a printed date is a dated Mass as usual).
+- A season bounded by ordinals ("Outdoor Mass: first Sunday in May through last Sunday in
+  October") - that is a seasonal schedule.
+- A line limited to part of the year ("Wednesday 9:30 am (during school year)", "Friday
+  (September-May) 8:30 am"). "Record it whether or not it falls this week" is about monthly
+  ordinals ONLY. A seasonal line is in the standing schedule only while its season is running
+  in the week this bulletin covers; outside it, leave it out as before.
+- Another parish's monthly slot - a deanery rota of anointing Masses, or "confessions are also
+  available at St. Mary on the last Wednesday". It belongs to that parish, not this one.
+- A slot the bulletin calls suspended, discontinued or "on hiatus" - omit it entirely, monthly or
+  not. Do not emit it with "(currently suspended)" in the note; a note does not stop it publishing.
 
 **TIME ENCODING RULES (all schedules):**
 - Midnight is `0`, never `2400` and never `240`. A slot running "8:30 PM until Midnight" is
@@ -228,8 +292,11 @@ omit it and explain in `extraction_notes`.
 
 6. **Parish events** (shared across all sites): retreats, fish fries, bible studies, RCIA,
    youth group, Knights of Columbus, fundraisers, etc.
-   - Recurring monthly Masses (e.g., monthly Anointing of the Sick Mass on first Monday) belong
-     here as events with `frequency: first_friday` or `other_recurring`, NOT in mass_times.
+   - A Mass on an ordinal weekday ("First Friday Mass", "Igbo Mass on the last Sunday") belongs in
+     `mass_times` under MONTHLY SCHEDULES, not here.
+   - A public one-off Mass with a date and time ("Nurses Mass of Thanksgiving, Thursday August 13
+     at 6 pm") is a dated Mass in `mass_times` with `mass_date`, even when the bulletin announces
+     it like an event. It may also appear here; it must not appear ONLY here.
    - Use `one_time` for things on a specific date; `weekly`/`biweekly`/`monthly`/`first_friday`/
      `other_recurring` otherwise.
 
