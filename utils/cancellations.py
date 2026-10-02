@@ -129,6 +129,8 @@ _DAY_SCOPE_CHARS = 400
 # liturgy: "no (morning|evening|...) mass", "mass is cancelled", "no
 # confessions". Spanish included because the bilingual bulletins print both
 # ("Thursdays no Mass / no hay misa los jueves").
+_CONFESSION_WORD_RE = re.compile(r"confession", re.IGNORECASE)
+
 _CANCELLATION_RE = re.compile(
     r"""
       \b no \s* (?P<t1> \d{1,2} [:.]? \d{0,2} \s* (?:am|pm)? )? \s*
@@ -348,6 +350,7 @@ def _cancelled_near(
     day: str,
     text: str,
     week: Optional[tuple[date, date]] = None,
+    kind: Optional[str] = None,
 ) -> Optional[str]:
     """Is this slot's own time printed beside a cancellation for its own day?
 
@@ -494,6 +497,26 @@ def _cancelled_near(
                     about = _governing_date(text, hit.start(), hit.end(), week)
                     if about is not None and not week[0] <= about <= week[1]:
                         continue
+                    # (8) ...and on this slot's own weekday. Guard 7 asks only
+                    # whether the date is in the week, so a masthead's
+                    # "Wed. & Fri.: 7:00am *No Daily Mass October 7"
+                    # (st-mary-of-the-falls, week of 2026-10-04) cancelled
+                    # the Friday too - October 7 is a Wednesday, and the
+                    # listing below prints "Friday, October 9: 7:00 a.m."
+                    # with an intention beside it. Guard 1 cannot see this:
+                    # "Fri." is the nearest label before the time.
+                    if about is not None and about.strftime("%A") != day:
+                        continue
+
+                # (9) the phrase must be about this slot's sacrament. The
+                # pattern accepts either word for either kind, so on the
+                # 2026-10-04 sweep "no confessions" cancelled three MASSES
+                # (0054, 1142, 5217) - a confession notice printed beside a
+                # weekday Mass time. `kind` is None only for ad-hoc callers.
+                if kind is not None:
+                    confession = bool(_CONFESSION_WORD_RE.search(hit.group(0)))
+                    if confession != (kind == "Confession"):
+                        continue
 
                 return hit.group(0).strip()
     return None
@@ -517,7 +540,7 @@ def _restore(
         row = by_slot.get((day, time))
         if row is None:
             continue
-        phrase = _cancelled_near(time, day, text, week)
+        phrase = _cancelled_near(time, day, text, week, kind)
         if not phrase:
             continue
         restored = row.copy()
@@ -560,7 +583,7 @@ def _mark_kept(
         if getattr(e, "mass_date", None) is not None or e.cancelled:
             continue
         time = getattr(e, time_attr)
-        phrase = _cancelled_near(time, e.day.value, text, week)
+        phrase = _cancelled_near(time, e.day.value, text, week, kind)
         if phrase:
             e.cancelled = True
             notes.append(

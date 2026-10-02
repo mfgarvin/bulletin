@@ -792,6 +792,27 @@ MANUAL_FIXES: dict[str, ManualFix] = {
             ("Saturday", 1630): "Vigil Mass, in the gym",
         },
     ),
+    # Week of 2026-10-04 (priests' convocation). The 151-bulletin sweep left
+    # 45 cancellation hits; these 6 are false and no guard can see them. Apply
+    # with --parish after the 2026-10-03 run, before the 14:30 UTC export
+    # backstop; retire after 2026-10-10. uncancel only clears a set flag.
+    "1639": ManualFix(
+        reason="the Sunday intentions run straight into Wed/Thu's 'no Mass "
+        "(see chart on page 10 of the bulletin)' - a jumbled chart, not a "
+        "cancelled Sunday. Retire after 2026-10-10",
+        uncancel_masses={("Sunday", 800), ("Sunday", 1000), ("Sunday", 1200)},
+    ),
+    "0069": ManualFix(
+        reason="standing two-column masthead (St. Therese | Ss. Peter & Paul): "
+        "'friday no mass 8:30 am' is St. Therese's empty cell beside this "
+        "parish's Mass. Retire after 2026-10-10",
+        uncancel_masses={("Friday", 830)},
+    ),
+    "1548": ManualFix(
+        reason="the same two-column masthead as 0069, other column: 'monday "
+        "6:30 pm no mass', 'thursday 8:30 am no mass'. Retire after 2026-10-10",
+        uncancel_masses={("Monday", 1830), ("Thursday", 830)},
+    ),
     "olg-m": ManualFix(
         reason="no longer a 24/7 chapel (confirmed with the parish 2026-10-02). "
         "Masthead, unchanged 08-02 through 09-27: 'Perpetual Monday 9:00 am to "

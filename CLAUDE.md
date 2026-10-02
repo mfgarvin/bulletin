@@ -788,6 +788,39 @@ the compose default — so the template needs the same edit by hand.
 
 ## Changelog
 
+### v2.5.36 (2026-10-02) - Cancellation guards 8 and 9, from the convocation week
+
+Swept against all 151 live bulletins for the week of Oct 4 (the priests'
+convocation, Oct 6-9), every stored recurring slot: **52 hits -> 45, and the 7
+removed are all false.**
+
+**Guard 8: the date a phrase is about must fall on the slot's own weekday**,
+not just inside the week. `st-mary-of-the-falls`' masthead "Wed. & Fri.:
+7:00am *No Daily Mass October 7" cancelled the Friday too, while the listing
+prints "Friday, October 9: 7:00 a.m. † Elizabeth Rebold". Also removes
+`1734`'s Sunday 11:00 ("no Mass or Bible Study the week of October 5th",
+under the Sunday intentions) and `5217`'s two Sunday Masses ("no Masses on
+October 7-9th", in a paragraph inviting people to them). Known limit: a range
+("October 7-9") governs as its first day, so a Thursday time printed beside
+one would be refused - the cheap side; none in this sweep.
+
+**Guard 9: the phrase must name the slot's sacrament.** The pattern accepts
+"mass" or "confession" for either kind, so "no confessions" cancelled three
+weekday MASSES (`0054`, `1142`, `5217`).
+
+**6 false positives remain**, and neither has a rule that would not cost a
+true one: `1639`'s three Sunday Masses (a jumbled chart puts Wed/Thu's "no Mass
+(see chart on page 10)" straight after the Sunday intentions), and the
+`0069`/`1548` two-column standing masthead ("friday no mass 8:30 am" is the
+other parish's empty cell). Covered for this week by `uncancel_masses`
+entries - **apply them after the 2026-10-03 run**. `1170` cancels its whole
+week with "there will be no Masses that week" and no times, so nothing can
+flag it - the known limit, as with `1831`.
+
+Prompt-independent: the same week's bulletins run under both the current
+prompt and the monthly-ordinal draft give identical flags, 3/3, on all nine
+convocation parishes.
+
 ### v2.5.35 (2026-10-02) - Year-less filenames, a listing with one stale PDF, monthly issues
 
 Out of the 2026-09-26 faulty-bulletin review. Every Self-Hosted page re-ranked
