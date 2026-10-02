@@ -52,6 +52,15 @@ most, because it separates *fixed* from *patched*:
 
 ---
 
+## 2026-10-02 (out of band - app feedback and the faulty-bulletin review)
+
+| parish | field | change applied | category | cause | resolution |
+|---|---|---|---|---|---|
+| `0116` | Adoration | Thursday Evening Prayer -> Sun 11:30 to Sat 16:30, covered days between | masthead-incomplete | app feedback: the chapel is exposed all week except across the weekend Masses. The bulletin names the chapel and prints no hours | manual |
+| `0509` | Mass | weekend replaced (Sat 16:30; Sun 08:00/09:30/11:00/17:30, in the gym); six weekday Masses dropped | cluster-bleed | app feedback. Weekday Masses are at OLG Macedonia, which `olg-m` already publishes. Hand-maintained row | manual |
+| `olg-m` | Adoration | restated to the masthead; out of `VERIFIED_PERPETUAL_PARISHES` | layout-slip | no longer 24/7; stored Wednesday ran to 19:00 off the office-hours line | manual |
+| `sa-o`, `sc-p`, `sc-l`, `20812`, `hs-gh` | bulletin | — | publisher-broken | v2.5.35 scraper fixes; `20812` moved to Self-Hosted | structural |
+
 ## 2026-09-26
 
 154 parishes, 0 failed, 47 warned. 33 rows repaired (32 by the table, plus

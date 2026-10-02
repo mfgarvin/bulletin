@@ -754,6 +754,44 @@ MANUAL_FIXES: dict[str, ManualFix] = {
                                 "Sunday; the bulletin does not state when it ends")
         ],
     ),
+    "0116": ManualFix(
+        reason="app feedback 2026-10-02: the Adoration Chapel is exposed all "
+        "week except across the weekend Masses - from after the last Sunday "
+        "Mass (10:30) until the Saturday 4:30 pm Vigil. The bulletin names the "
+        "chapel but prints no hours, so nothing in an extraction can state "
+        "this. Replaces the only stored slot, Thursday Evening Prayer with "
+        "Benediction, whose own note said it was not labelled adoration",
+        adoration_times=[
+            AdorationTime(day="Sunday", start_time=1130, end_time=0, end_next_day=True,
+                          notes="After the 10:30 am Mass"),
+        ] + [
+            AdorationTime(day=day, start_time=0, end_time=0, end_next_day=True)
+            for day in ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+        ] + [
+            AdorationTime(day="Saturday", start_time=0, end_time=1630,
+                          notes="Until the 4:30 pm Vigil Mass"),
+        ],
+    ),
+    "0509": ManualFix(
+        reason="app feedback 2026-10-02 (hand-maintained row; Unsupported). "
+        "Weekend: Saturday 4:30 pm; Sunday 8:00, 9:30, 11:00 am and 5:30 pm, "
+        "in the gym. Weekday Masses are at Our Lady of Guadalupe, Macedonia, "
+        "whose own row (olg-m) already publishes them - left here, they "
+        "advertised six weekday Masses at the Northfield address",
+        drop_masses={
+            ("Sunday", 830), ("Sunday", 1030),
+            ("Monday", 830), ("Tuesday", 830), ("Wednesday", 700),
+            ("Thursday", 700), ("Friday", 830), ("Saturday", 830),
+        },
+        add_masses=[
+            MassTime(day="Sunday", time=t, notes="In the gym")
+            for t in (800, 930, 1100)
+        ],
+        mass_note_fixes={
+            ("Sunday", 1730): "In the gym",
+            ("Saturday", 1630): "Vigil Mass, in the gym",
+        },
+    ),
     "olg-m": ManualFix(
         reason="no longer a 24/7 chapel (confirmed with the parish 2026-10-02). "
         "Masthead, unchanged 08-02 through 09-27: 'Perpetual Monday 9:00 am to "
