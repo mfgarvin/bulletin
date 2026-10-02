@@ -577,9 +577,10 @@ Real examples, all currently live. `_extract_date_raw()` tries these in order;
 | `26_08_09_bulletin.pdf` | `YY-MM-DD` | `ss-c` |
 | `August_9_bulletin_8x11.pdf`, `august_9_2026.pdf` | textual, `_` separator | `sp-l`, `bearer` |
 | `JFuly 19. 2026.pdf` | textual, typo'd, spaces | `olp-cle` |
-| `bulletin_AUGUST-2026.pdf` | month only → 1st of path month | `hs-gh` (monthly) |
+| `bulletin_AUGUST-2026.pdf`, `bulletin_SEPTEMBER.pdf` | month only → today while the month runs, its last day once past | `hs-gh` (monthly) |
 | `/2026/08/file-1-4.pdf` | day from name, year+month from path | eCatholic docs layout |
-| `CurrentBulletin.pdf`, `8-9.pdf`, `Clare8-9__178…pdf` | **undated** — keyword-ranked | `shc`, `sc-p`, `sc-l` |
+| `8-9.pdf`, `Clare9-27__179…pdf`, `Agnes+Orrville+9-27.pdf`, `stephen-west-salem-8-30-1.pdf` | `M-D`, no year → the year that keeps it in the past (+14d) | `sc-p`, `sc-l`, `sa-o`, `20812` |
+| `CurrentBulletin.pdf` | **undated** — keyword-ranked | `shc` |
 
 Ambiguous triples resolve to `M-D-YY` (these are US parish sites) unless the
 URL path names a month and only one reading agrees with it. Readings outside
@@ -786,6 +787,55 @@ the compose default — so the template needs the same edit by hand.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.35 (2026-10-02) - Year-less filenames, a listing with one stale PDF, monthly issues
+
+Out of the 2026-09-26 faulty-bulletin review. Every Self-Hosted page re-ranked
+live before and after: **5 rows change, the other 11 are byte-identical.**
+
+**`M-D` filenames now parse** (`_parse_month_day_pair`, last resort after every
+pattern that can see a year). `Agnes+Orrville+9-27.pdf`, `9-27.pdf` and
+`Clare9-27__1790363721.pdf` were undated, so `sa-o`, `sc-p` and `sc-l` were
+picked by page order - `sa-o` served 9-20 on 09-26 with 9-27 on the page. The
+year is the one that puts the date in the past, give or take the 14 days
+`_extract_date` tolerates, so `12-28` read in January is last December. Same
+URLs today; they are now *dated*, so the ranking and the staleness warning
+both work for them.
+
+**A listing with one stale PDF and newer posts** (`20812`, St. Stephen West
+Salem). Its article grid puts a PDF icon on the 08-30 card only; 09-13, 09-20
+and 09-27 link only to their article pages. The page ranked its one PDF and
+never looked further. Subpages are now also consulted when the page's own PDF
+is dated, but only subpages dated *after* it, and only a PDF found there whose
+own name is dated after it too - otherwise any dated event page holding a
+flyer could replace a current bulletin. Moved off eCatholic (last upload
+09-06) to Self-Hosted `ststephen.ws/bulletins/`; resolves `…-9-27.pdf`.
+
+**Monthly issues are current through their month** (`_month_only_date`).
+`hs-gh`'s `bulletin_SEPTEMBER.pdf` dated to Sep 1, aged out of the top recency
+band on Oct 1, and `bulletin_6-28-26.pdf` then won on its digits: the parish
+would have been served a **June** bulletin from the 1st of every month until
+the new one went up. Found by the end-to-end check, not by the pipeline.
+
+**`_drop_suspended`** in the sanitizer: a slot whose note says it is
+*currently* suspended or discontinued is dropped - `0039`'s "Fourth Sunday
+(currently suspended due to coronavirus)" Swahili Mass, which a note cannot
+stop publishing. Present tense only: `st-bernadette`'s "to be discontinued
+starting Dec. 3" is still celebrated. Replayed over every stored row: 0 change.
+
+**`olg-m` is no longer a 24/7 chapel** (confirmed 2026-10-02): out of
+`VERIFIED_PERPETUAL_PARISHES`, and its adoration restated to the masthead
+via `ManualFix` - one Monday 9:00 -> Tuesday 8:00 span, Tue-Thu 9-4, Fri 9-2.
+The stored Wednesday ran to 19:00, bled from the office-hours line beneath it.
+
+**`notion_fixes --parish ID`** (repeatable) applies one row without re-writing
+every standing table entry.
+
+Also from the review: `40500` St. Helen has not uploaded since 09-13 and its
+site links no bulletin - deferred until the parish posts one. `scas-e`'s page
+was repointed by hand. OLHC's 09-26 failure was Discover Mass serving another
+parish's file under OLHC's own entry; it has since been replaced at source.
+
 
 ### v2.5.34 (2026-09-26) - A cancellation printed this week is not always about this week
 

@@ -12,7 +12,6 @@ VERIFIED_PERPETUAL_PARISHES: set[str] = {
     "0885",  # Sacred Heart of Jesus
     "1236",  # Holy Family
     "1608",  # Sacred Heart of Jesus (Wadsworth / Divine Mercy Chapel)
-    "olg-m",  # Our Lady of Guadalupe
     "2492",  # Saint Charles Borromeo, Parma
 }
 

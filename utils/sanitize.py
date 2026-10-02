@@ -48,6 +48,19 @@ _APPOINTMENT_ONLY_RE = re.compile(
 # "Dedication of the Altar; no 9:00 AM Mass this day" is a real 11:00 Mass
 # whose note happens to mention a different, cancelled one.
 _CANCELLED_RE = re.compile(r"^\s*\(?\s*(no mass|mass cancel|cancelled)", re.IGNORECASE)
+
+# A slot the parish has stopped holding, kept with the fact in its note:
+# "Fourth Sunday of the month (currently suspended due to coronavirus)". A note
+# does not stop a slot publishing, so the entry has to go. Present tense only -
+# st-bernadette's "Thursday morning Mass to be discontinued starting Dec. 3"
+# is a Mass that is still celebrated today.
+_SUSPENDED_RE = re.compile(
+    r"\b(?:currently|temporarily)\s+(?:suspended|discontinued|on\s+hiatus)\b"
+    r"|\bsuspended\s+until\s+further\s+notice\b"
+    r"|\b(?:is|are|has\s+been|have\s+been)\s+(?:suspended|discontinued)\b"
+    r"|\bon\s+hiatus\b",
+    re.IGNORECASE,
+)
 _VIGIL_RE = re.compile(r"\bvigil\b", re.IGNORECASE)
 _CLOSED_RE = re.compile(r"\bclosed\b|\bnot available\b", re.IGNORECASE)
 # An adoration chapel's "hours needing coverage" list is a staffing appeal, not
@@ -401,6 +414,22 @@ def _dedupe_ranges(items: list, label: str, report: SanitizeReport) -> list:
             merged.append(item)
 
     return merged
+
+
+def _drop_suspended(items: list, label: str, report: SanitizeReport) -> list:
+    """Drop slots whose own note says they are not currently held."""
+    kept = []
+    for item in items:
+        if _SUSPENDED_RE.search(item.notes or ""):
+            start = getattr(item, "time", None)
+            if start is None:
+                start = item.start_time
+            report.repair(
+                f"{label}: dropped suspended slot ({item.day.value} {start:04d} - {item.notes})"
+            )
+            continue
+        kept.append(item)
+    return kept
 
 
 def _clean_masses(masses: list[MassTime], report: SanitizeReport) -> list[MassTime]:
@@ -991,6 +1020,9 @@ def sanitize_extraction(
         # entry into the real Mass at the same (day, time) and leave the Holy
         # Day note as the only survivor - which is how 1734's genuine Monday
         # 11:00 daily Mass ended up labelled a Holy Day Mass.
+        site.mass_times = _drop_suspended(site.mass_times, "mass", report)
+        site.confession_times = _drop_suspended(site.confession_times, "confession", report)
+        site.adoration.times = _drop_suspended(site.adoration.times, "adoration", report)
         site.mass_times = _drop_undated_holy_day_masses(site.mass_times, report)
         site.mass_times = _clean_masses(site.mass_times, report)
         site.confession_times = _clean_ranges(

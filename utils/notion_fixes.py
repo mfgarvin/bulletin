@@ -754,6 +754,24 @@ MANUAL_FIXES: dict[str, ManualFix] = {
                                 "Sunday; the bulletin does not state when it ends")
         ],
     ),
+    "olg-m": ManualFix(
+        reason="no longer a 24/7 chapel (confirmed with the parish 2026-10-02). "
+        "Masthead, unchanged 08-02 through 09-27: 'Perpetual Monday 9:00 am to "
+        "Tuesday at 8:00 am / Daily Tuesday-Thursday: 9:00 am-4:00 pm / Friday: "
+        "9:00 am-2:00 pm'. Stored Wednesday ended 19:00, bled from the office-"
+        "hours line beneath it ('Evenings ... Wed: 5:00-7:00 pm'), and the "
+        "Monday span was split at midnight with 'perpetual' in its published "
+        "note. UPDATE_ADORATION = False, so no run would ever correct it",
+        adoration_times=[
+            AdorationTime(day="Monday", start_time=900, end_time=800,
+                          end_next_day=True, notes="Monday 9:00 am to Tuesday 8:00 am"),
+        ] + [
+            AdorationTime(day=day, start_time=900, end_time=1600)
+            for day in ("Tuesday", "Wednesday", "Thursday")
+        ] + [
+            AdorationTime(day="Friday", start_time=900, end_time=1400),
+        ],
+    ),
     "2492": ManualFix(
         reason="perpetual chapel carrying one stale slot - a Holy Thursday "
         "one-off ('Adoration in church until Midnight after the Mass of the "
@@ -1357,6 +1375,10 @@ async def main() -> None:
     parser.add_argument(
         "--apply", action="store_true", help="write changes (default: dry run)"
     )
+    parser.add_argument(
+        "--parish", action="append", metavar="PARISH_ID",
+        help="only this ParishID (repeatable); default is every row",
+    )
     args = parser.parse_args()
 
     client = AsyncClient(auth=os.environ["NOTION_API_KEY"])
@@ -1364,6 +1386,9 @@ async def main() -> None:
     print(f"Fetched {len(parishes)} parishes\n")
 
     changed = flagged = written = 0
+
+    if args.parish:
+        parishes = [p for p in parishes if p.parish_id in set(args.parish)]
 
     for parish in parishes:
         properties, notes = plan_fixes(parish)

@@ -112,6 +112,18 @@ class SelfHostedSource(BulletinSource):
                     pdf_url, when = await self._find_pdf_in_subpages(
                         fetch, response.text, bulletin_url
                     )
+                elif when != date.min:
+                    # A listing can carry a direct PDF for an OLD issue and
+                    # only a post link for the newer ones - St. Stephen West
+                    # Salem's card grid has a PDF icon on 08-30's card alone,
+                    # so ranking the page's PDFs served 08-30 for a month.
+                    # Only a subpage dated newer than that PDF is followed,
+                    # and only a PDF whose own name dates it newer is taken.
+                    newer_url, newer_when = await self._find_pdf_in_subpages(
+                        fetch, response.text, bulletin_url, newer_than=when
+                    )
+                    if newer_url:
+                        pdf_url, when = newer_url, newer_when
                 if not pdf_url:
                     return DownloadResult(
                         success=False,
@@ -231,7 +243,7 @@ class SelfHostedSource(BulletinSource):
         return src if ".pdf" in src.lower() else None
 
     async def _find_pdf_in_subpages(
-        self, fetch, html: str, base_url: str
+        self, fetch, html: str, base_url: str, newer_than: Optional[date] = None
     ) -> tuple[Optional[str], date]:
         """Follow the bulletin page's own subpages looking for the PDF.
 
@@ -248,6 +260,12 @@ class SelfHostedSource(BulletinSource):
         date on the site worth believing - so the caller reports *it* as the
         bulletin's date rather than re-parsing the PDF's own filename.
         `date.min` when the slug carried no readable date.
+
+        With `newer_than`, the page already has a dated PDF and this is asked
+        only whether a newer issue sits one level down. Then a subpage must be
+        dated after it, and so must the PDF found there: a dated post that
+        happens to hold a flyer is not a bulletin, and without the second
+        test any dated event page could replace a perfectly current PDF.
         """
         soup = BeautifulSoup(html, "html.parser")
         page_host = urlparse(base_url).netloc
@@ -263,6 +281,8 @@ class SelfHostedSource(BulletinSource):
                 continue
 
             when = self._extract_date(full_url)
+            if newer_than is not None and not when > newer_than:
+                continue
             score = self._score_link(full_url, link.get_text().lower())
             score += self._recency_bonus(when)
             if score <= 0:
@@ -282,6 +302,8 @@ class SelfHostedSource(BulletinSource):
             if response.status_code != 200:
                 continue
             pdf_url = self._find_best_pdf_link(response.text, sub_url)
+            if pdf_url and newer_than is not None and not self._extract_date(pdf_url) > newer_than:
+                continue
             if pdf_url:
                 logger.info("Found bulletin PDF via subpage %s", sub_url)
                 return pdf_url, sub_date
@@ -448,11 +470,55 @@ class SelfHostedSource(BulletinSource):
         if path_year and path_month:
             stripped = re.sub(r"20\d{2}", "", fname)
             days = [int(n) for n in re.findall(r"\d{1,2}", stripped) if 1 <= int(n) <= 31]
+            if not days:
+                return self._month_only_date(path_year, path_month)
             try:
-                return date(path_year, path_month, days[0] if days else 1)
+                return date(path_year, path_month, days[0])
             except ValueError:
                 return date(path_year, path_month, 1)
 
+        # 6. A bare month-day pair with no year anywhere: "Agnes+Orrville+9-27",
+        #    "9-27.pdf", "Clare9-27__1790363721", "stephen-west-salem-8-30-1".
+        #    Without this all four are undated, and an undated current issue
+        #    loses to any stale sibling that parses. Last on purpose: every
+        #    reading above has better evidence for its year.
+        return self._parse_month_day_pair(fname)
+
+    @staticmethod
+    def _month_only_date(year: int, month: int) -> date:
+        """Date a monthly bulletin ("bulletin_SEPTEMBER.pdf") by the month it covers.
+
+        Dating it the 1st made it age out of the top recency band on the 31st
+        day while still current, and `hs-gh` then served a June weekly issue
+        for the start of every month until the next one was posted: every
+        file fell to the same band, and `bulletin_6-28-26` won on its digits.
+        A monthly issue is current until its month ends, so it is dated today
+        while its month runs, its last day once it has passed, and its 1st when
+        posted ahead - which still sorts it above the month before.
+        """
+        first = date(year, month, 1)
+        nxt = date(year + month // 12, month % 12 + 1, 1)
+        return max(first, min(nxt - timedelta(days=1), date.today()))
+
+    @staticmethod
+    def _parse_month_day_pair(fname: str) -> date:
+        """`M-D` with no year. `date.min` if none.
+
+        The year is the one that puts the date in the past, give or take the
+        14 days `_extract_date` tolerates ahead - so "12-28" read on Jan 3 is
+        last December, not next. A pair is only read after every pattern that
+        could see a year has failed, and only once: the first plausible pair
+        in the name, which is where these sites put the date.
+        """
+        today = date.today()
+        for match in re.finditer(r"(?<!\d)(\d{1,2})[-_](\d{1,2})(?!\d)", fname):
+            month, day = int(match.group(1)), int(match.group(2))
+            if not 1 <= month <= 12:
+                continue
+            for year in (today.year, today.year - 1):
+                d = _safe_date(year, month, day)
+                if d != date.min and d <= today + timedelta(days=14):
+                    return d
         return date.min
 
     def _might_be_pdf(self, href: str, text: str) -> bool:
