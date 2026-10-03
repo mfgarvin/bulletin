@@ -482,9 +482,25 @@ def _clean_masses(masses: list[MassTime], report: SanitizeReport) -> list[MassTi
 
 def _dedupe_masses(masses: list[MassTime], report: SanitizeReport) -> list[MassTime]:
     """Collapse exact duplicates and dated Masses that restate a recurring one."""
+    from utils.monthly_recurrence import derive_ordinal  # local: keeps import light
+
+    def _includes(m: MassTime) -> bool:
+        d = derive_ordinal(m.day.value, m.notes) if m.mass_date is None else None
+        return bool(d) and "excluded_weeks" not in d
+
     by_key: dict[tuple, MassTime] = {}
+    weekly_seen: set[tuple] = set()   # keys where a plain (non-monthly) entry exists
+    monthly_seen: set[tuple] = set()  # keys where a monthly-inclusion entry exists
+    # Each entry's OWN note, before merging rewrites the survivor's.
+    plain_notes: dict[tuple, list[str]] = {}
     for mass in masses:
         key = (mass.day, mass.time, mass.language, mass.mass_date)
+        if _includes(mass):
+            monthly_seen.add(key)
+        else:
+            weekly_seen.add(key)
+            if mass.notes:
+                plain_notes.setdefault(key, []).append(mass.notes)
         existing = by_key.get(key)
         if existing is None:
             by_key[key] = mass
@@ -493,6 +509,23 @@ def _dedupe_masses(masses: list[MassTime], report: SanitizeReport) -> list[MassT
             report.repair(
                 f"mass: merged duplicate {mass.day.value} {mass.time:04d} entry"
             )
+
+    # A plain entry and a monthly-inclusion entry at the same slot is a weekly
+    # Mass plus something added to it once a month - ss-c, 2026-10-03: the
+    # masthead's Monday-Friday 6:30 pm and "1st Friday Mass & Benediction:
+    # 6:30pm" merged into one Friday 18:30 whose note derived weeks_of_month
+    # [1], hiding the weekly Mass three Fridays in four. The slot is weekly, so
+    # the inclusion note goes. Exclusions ("Except on First Fridays") describe
+    # the weekly slot correctly and are left alone.
+    for key in weekly_seen & monthly_seen:
+        mass = by_key[key]
+        kept_notes = plain_notes.get(key, [])
+        mass.notes = _merge_notes(*kept_notes) if kept_notes else None
+        report.repair(
+            f"mass: {mass.day.value} {mass.time:04d} is weekly - dropped the "
+            "monthly note merged onto it (an addition to the weekly Mass, not "
+            "its recurrence)"
+        )
 
     result = list(by_key.values())
     recurring = {(m.day, m.time) for m in result if m.mass_date is None}

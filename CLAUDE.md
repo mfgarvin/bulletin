@@ -788,6 +788,31 @@ the compose default — so the template needs the same edit by hand.
 
 ## Changelog
 
+### v2.5.38 (2026-10-03) - A merge must not turn a weekly Mass monthly
+
+Out of the first live run of the v2.5.37 prompt. Full record in `docs/fixlog.md`.
+
+**`_dedupe_masses`: a plain entry and a monthly-inclusion entry at one slot is
+a weekly slot.** `ss-c` prints Mon-Fri 6:30 pm and "1st Friday Mass &
+Benediction: 6:30pm". The prompt did its job - two Friday 18:30 entries, the
+weekly one plain - and the dedupe merged them; the surviving note derived
+`weeks_of_month [1]` and hid the weekly Friday Mass three weeks in four. That
+is the exact hazard the prompt's "never put an ordinal on a weekly slot" rule
+names, re-created downstream of the prompt. The merged slot now keeps only the
+plain entries' notes; an exclusion ("Except on First Fridays") is kept, since
+it correctly describes the weekly slot. Six unit cases, both orders.
+
+**`derive_ordinal` refuses only phrases that DISAGREE.** The two-subjects guard
+(v2.5.17, `our-lady-of-victory`'s "1st and 3rd ... 2nd and 4th") also refused
+two copies of one rule, and merging produces those routinely: `1905`'s
+"First Friday only" + a restated "First Friday (ONLY)" would have published a
+monthly Mass every Friday. Conflicting subjects, mixed include/except and stray
+ordinals still refuse. Replayed over all 666 notes in Notion: 0 changes.
+
+**v6's first run**: monthly confessions extracted unaided (three treadmill
+entries retired), adoration capture 167 -> 176 slots with 10 -> 15 ordinal,
+`olg-m` correctly bounded. Remaining weak spots are in the fixlog.
+
 ### v2.5.37 (2026-10-02) - The prompt publishes monthly ordinals instead of refusing them
 
 v2.5.33 item 5 and v2.5.34's largest repeat-repair source. The export has

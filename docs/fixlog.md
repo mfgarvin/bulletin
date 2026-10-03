@@ -52,6 +52,50 @@ most, because it separates *fixed* from *patched*:
 
 ---
 
+## 2026-10-03 (v2.5.37 prompt's first live run; convocation week)
+
+155 parishes, 0 failed, 46 warned. 29 rows repaired, 7 entries retired, 6
+false cancellations cleared post-run. Freshness clean except `40500` (20 days,
+parish not posting). Two code fixes (v2.5.38).
+
+| parish | field | change applied | category | cause | resolution |
+|---|---|---|---|---|---|
+| `ss-c` | Mass | Fri 1830 note cleared | note-defect | masthead Mon-Fri 6:30 + "1st Friday Mass & Benediction: 6:30pm" MERGED by `_dedupe_masses`; merged note derived `[1]` and hid the weekly Mass 3 Fridays in 4 | structural (sanitizer) |
+| `1905` | Mass | — | note-defect | its First Friday restate would have merged into "First Friday only; First Friday (ONLY)", which the parser refused as two subjects -> weekly | structural (parser) |
+| `0875` | Mass, Conf | Sat 0430 -> 1630; dropped Sat 0630 conf | layout-slip | vigil AM/PM flip; invented confession | manual |
+| `st-martin-of-tours-…` | Mass | Wed/Thu/Fri 0630 -> 0730 | fabrication | "LIKELY WRONG WRITE", not reproduced | manual |
+| `1532` | Mass | Fri 2100 -> 0900; dropped Thu 0900 | bulletin-typo / non-mass-as-mass | **fifth** recurrence of the masthead typo, plus "Morning Prayer" | treadmill |
+| `1687`, `1130`, `1286` | Mass | dropped Sat 1500 / Mon 1730 / Wed 1900 | non-mass-as-mass | Adoration, Exposition, Communion Service | manual |
+| `1286` | Mass | dropped Sat 1100 | dated-as-recurring | the dated "11:00pm HS Candlelight Mass" at the wrong half of the day | manual |
+| `1841` | Conf | Mon-Thu 1730 dropped | dated-as-recurring | Oct 19-22 parish mission | manual |
+| `22544` | Conf | Sun 1200-1400 dropped | layout-slip | the First FRIDAY line put on Sunday | manual |
+| `1259` | Conf | ends removed | fabrication | v6 invented 15/30-min ends on "7:45 am & 11:30 am" | treadmill (existing entry) |
+| `st-mary-cleveland-oh` | Mass | dropped Mon-Sat 0800 | dated-as-recurring | the temporary 8:00 (to Oct 9) added beside the standing 7:45. **Retire after 10-10** | manual |
+| `saint-agnes-elyria-oh` | Mass | dropped Thu/Fri/Sat 0900 | cluster-bleed | "9:00 am - at St. Mary" | manual |
+| `st-paul-akron-oh` | Mass | restored Sat 0900 First Saturday | monthly-dropped | re-filed as a dated one-off | manual |
+| `37345` | Mass | Sun 1200 noted "second Sunday of each month" | monthly-dropped | listing names only Oct 11 | manual |
+| `olg-m`, `1494`, `0691` | Conf / Mass | restored Sat 0900 conf / Sat 1700 conf / Sat 0800 Mass | noise-drop | still printed, budget-held | manual / treadmill |
+| `0244`, `0599` | Mass | dropped Mon 1100 / Sat 0700 | fabrication | West Park Health Center (off-site) / in no masthead line | manual |
+| `visitation-…` x2, `st-mel`, `st-bernadette`, `our-lady-of-angels`, `our-lady-of-victory`, `st-matthew-akron-oh`, `1485`, `1088` | various | standing entries re-applied | treadmill | the same defects as 09-12 to 09-26, back again | treadmill |
+| `0134`, `1704`, `1101`, `scas-e`, `0085`, `olp-cle`, `0042`, `our-lady-of-mount-carmel`, `saint-albert` | — | **entries retired** | — | uncancels that would have cleared TRUE convocation flags; restores v6 now produces itself (all three monthly confessions, the Igbo Mass); `0085`'s Saturday restore was wrong | structural |
+| `1101`, `1572`, `0083`, `saint-john-bosco`, `1831`, `scas-e`, `1137` | Mass | — | one-week-cancellation | convocation: "no Mass" printed per DATE, not beside a time, so not flaggable. Removals are true this week | deferred (self-heals 10-10) |
+| `immat-con-cle` | Mass, Conf | — | — | "Mass times THIS WEEK: Mon-Thu 7:00am" (canon on retreat) written as standing | deferred (flips back) |
+| `1639`, `0069`, `1548` | Mass | 6 cancellations cleared | wrong-week | layout false positives (v2.5.36) | manual |
+
+**Prompt (v6) verdict**, from the slot diff against the 10-02 snapshot and the
+adoration capture A/B (09-26 old prompt vs today):
+monthly confessions are no longer refused (0042, OLMC, saint-albert kept their
+ordinals unaided; 3 treadmills retired), the Igbo and Syro-Malabar Masses
+extracted with ordinals, `0138`'s "Wednesday before First Friday" derives,
+`1259` keeps its noon Masses on a convocation bulletin. Adoration capture: 167
+-> 176 slots, ordinal 10 -> 15, no parish lost all adoration, OLA's 1st/3rd
+Monday Holy Hour captured. Weak spots: `1259`'s novenas captured as adoration;
+monthly-dropped still 2 rows (`st-paul-akron`, `37345`); seasonal "(during
+summer)" still leaked once (OLA); invented confession ends at `1259`;
+`visitation-sjb` folds a printed date list into one weekly slot (third time).
+
+---
+
 ## 2026-10-02 (out of band - app feedback and the faulty-bulletin review)
 
 | parish | field | change applied | category | cause | resolution |

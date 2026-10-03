@@ -218,9 +218,21 @@ def derive_ordinal(day: str, notes: Optional[str]) -> Optional[dict]:
     if not matches:
         return None
 
+    # More than one phrase refuses only when they DISAGREE. The guard exists for
+    # two subjects ("1st and 3rd Saturdays ... 2nd and 4th Saturdays"), but
+    # merging notes routinely produces two copies of ONE rule: on 2026-10-03
+    # `1905`'s stored "First Friday only" plus a restated "First Friday (ONLY)"
+    # merged to a note this refused, which would have published a monthly
+    # Mass every Friday. Agreeing phrases state one rule; derive it once.
     if len(matches) > 1:
-        logger.info("ordinal refused (multiple phrases - two subjects): %r", notes)
-        return None
+        rules = {
+            (m.group("weekday").lower(),
+             frozenset(_ORDINALS[t.lower()] for t in _ORD_TOKEN_RE.findall(m.group("ords"))))
+            for m in matches
+        }
+        if len(rules) > 1:
+            logger.info("ordinal refused (multiple phrases - two subjects): %r", notes)
+            return None
 
     # The same refusal, for the shape the count above cannot see. `_PHRASE_RE`
     # needs an ordinal ATTACHED to a weekday, so a second clause that elides
@@ -239,10 +251,10 @@ def derive_ordinal(day: str, notes: Optional[str]) -> Optional[dict]:
     # it closes the hole before the phrasing returns. `our-lady-of-victory`,
     # the parish v2.5.17 found it at, is one re-extraction away from producing
     # it again.
-    span = matches[0].span()
+    spans = [m.span() for m in matches]
     stray = [
         t for t in _ORD_TOKEN_RE.finditer(notes)
-        if t.start() < span[0] or t.end() > span[1]
+        if not any(a <= t.start() and t.end() <= b for a, b in spans)
     ]
     if stray:
         logger.info(
