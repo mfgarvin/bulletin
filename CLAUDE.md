@@ -38,11 +38,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   400-day scan for "what's next".
 
   v2.5.32 adds **`anchored_week`** for 6 of those 14 refusals ("Thursday before
-  First Friday"), which no value of `weeks_of_month` can express. Still open:
-  (1) **the app does not implement `anchored_week` yet**, so those 6
-  confessions still display weekly in Introibo — work plan written for it in
-  `docs/integration/anchored-week-app-plan.md`, and it is small because it
-  reuses `occursOn`'s existing ordinal math on a resolved anchor date; (2) the
+  First Friday"), which no value of `weeks_of_month` can express. **The app
+  reads it as of Introibo 1.1.0** (confirmed 2026-10-03, `schedule_parser.dart`
+  + tests), so anchored slots now display only in their week. Still open: the
   mapboard (`notion_to_json` / `parish_data.json`) carries **none** of these
   rules — not `weeks_of_month`, not `anchored_week` — so the LED board still
   renders every one of them weekly, and `reference.py` needs the same
