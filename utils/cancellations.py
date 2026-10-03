@@ -345,6 +345,118 @@ def _governing_date(
     return best[1] if best else None
 
 
+# How far before a time-less phrase its day label may sit. Tighter than
+# _DAY_SCOPE_CHARS on purpose: the time path can afford a wide window because
+# the slot's own digits pin the entry down; here the label is the only anchor.
+_DAY_PHRASE_CHARS = 160
+
+# A dated day header prints its date right after the weekday: "Thursday,
+# October 8", "Wed 10/07", "FRIDAY, 9 OCTOBER 2026". Anything further away is
+# some other date on the page.
+_LABEL_DATE_CHARS = 20
+
+# "no weekday Masses at Holy Name: Wednesday, October 7th, Thursday ..." - a
+# colon introduces the days the phrase applies to. Short lead-in, no sentence
+# break before the colon, so a listing's next entry is never read as a target.
+# The lead-in excludes digits and the colon must not be followed by one: the
+# first cut matched the colon INSIDE the next entry's clock time ("saturday,
+# october 10 3:30pm") and read that entry's days as the phrase's targets.
+_COLON_LIST_RE = re.compile(r"[^.;:!?\d]{0,40}:(?!\d)\s*(?P<days>[^.;!?]{0,90})", re.IGNORECASE)
+
+
+def _cancelled_by_day(
+    day: str,
+    text: str,
+    week: tuple[date, date],
+    kind: Optional[str],
+) -> Optional[str]:
+    """A dated, time-less cancellation of this slot's whole weekday.
+
+    The time path below requires the slot's own time beside the phrase, and the
+    convocation week (2026-10-04) showed what that misses: most listings print
+    the day, not the hour -
+
+        wednesday, october 7th, our lady ... no mass     saint-john-bosco
+        thursday, october 8 no mass                      1831
+        friday, oct. 9 *no mass (priests at convocation)* 1101
+
+    so every one of those Masses was retracted instead of flagged. A phrase
+    naming no time, scoped to this weekday, covers all of that day's Masses.
+
+    The DATE is what makes that safe and it is mandatory: the phrase must
+    govern a date inside the covered week that falls on this weekday. A
+    masthead's standing "Thursday: no Mass" carries no date and stays a
+    standing exclusion (guard 3); next week's notice fails guard 7; a date on
+    another weekday fails guard 8. A clock time between the label and the
+    phrase means the phrase annotates THAT time, which is the time path's
+    business - the 0069/1548 two-column masthead ("monday 6:30 pm no mass")
+    is exactly that shape and must not reach here.
+
+    Communion services are deliberately not read as cancellations ("Instead,
+    Liturgy of the Word with Holy Communion ..."). Only an explicit phrase.
+    """
+    abbrev = _DAY_ABBREV.get(day)
+    if not abbrev:
+        return None
+    own = re.compile(rf"^({day.lower()}|{abbrev})", re.IGNORECASE)
+
+    for hit in _CANCELLATION_RE.finditer(text):
+        if hit.group("t1"):
+            continue  # names a time: the time path decides it
+
+        # Guard 9: the sacrament must match.
+        if kind is not None:
+            confession = bool(_CONFESSION_WORD_RE.search(hit.group(0)))
+            if confession != (kind == "Confession"):
+                continue
+
+        # Which day is it about? Days named right after it win - "no Mass on
+        # Friday", or a list behind a colon: 0691 printed "there will be an 8
+        # am weekday Mass on Tuesday, October 6th. There will be no weekday
+        # Masses at Holy Name: Wednesday, October 7th, Thursday ... Friday",
+        # and the nearest label before that phrase is the Tuesday that DOES
+        # have Mass. Otherwise, the nearest day label before it.
+        tail = _APPLIES_TO_RE.match(text, hit.end()) or _COLON_LIST_RE.match(text, hit.end())
+        named = list(_ANY_DAY_RE.finditer(tail.group("days"))) if tail else []
+        if named:
+            if not any(own.match(d.group(0)) for d in named):
+                continue  # guard 4: it names some other day
+        else:
+            lo = max(0, hit.start() - _DAY_PHRASE_CHARS)
+            labels = list(_ANY_DAY_RE.finditer(text, lo, hit.start()))
+            if not labels or not own.match(labels[-1].group(0)):
+                continue
+            label = labels[-1]
+            # A time between the label and the phrase owns the phrase.
+            if _CLOCK_RE.search(text, label.end(), hit.start()):
+                continue
+            # The label must be a DATED day header - "Thursday, October 8",
+            # "Wed 10/07" - on this weekday, in this week. 1759's listing heads
+            # each entry with its liturgical title, so the nearest "weekday" to
+            # "St. Bruno, priest no Mass" was the "Sunday" of "27th Sunday in
+            # Ordinary Time", and the masthead's October 4 dated it: both
+            # Sunday Masses were cancelled beside their own intentions.
+            dated = _DATE_RE.search(text, label.end(), label.end() + _LABEL_DATE_CHARS)
+            when = _to_date(dated, week) if dated else None
+            if when is None or when.strftime("%A") != day or not week[0] <= when <= week[1]:
+                continue
+
+        # Guard 5: a holiday-qualified phrase is a standing policy line.
+        holiday_tail = _HOLIDAY_TAIL_RE.match(text, hit.end())
+        if holiday_tail and _qualified_by_holiday(holiday_tail.group(0)):
+            continue
+
+        # Guards 7 + 8, mandatory here: a date in the week, on this weekday.
+        about = _governing_date(text, hit.start(), hit.end(), week)
+        if about is None or not week[0] <= about <= week[1]:
+            continue
+        if about.strftime("%A") != day:
+            continue
+
+        return hit.group(0).strip()
+    return None
+
+
 def _cancelled_near(
     time: int,
     day: str,
@@ -519,6 +631,11 @@ def _cancelled_near(
                         continue
 
                 return hit.group(0).strip()
+
+    # No phrase sat beside this slot's own time. A listing that cancels the
+    # whole day without printing the hour is the second, dated path.
+    if week is not None:
+        return _cancelled_by_day(day, text, week, kind)
     return None
 
 

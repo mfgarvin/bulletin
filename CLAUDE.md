@@ -788,6 +788,49 @@ the compose default — so the template needs the same edit by hand.
 
 ## Changelog
 
+### v2.5.39 (2026-10-03) - A day cancelled without its hour is still cancelled
+
+The convocation week (Oct 6-9) showed the detector's blind spot at scale. It
+only fired when a slot's OWN TIME was printed beside the phrase, and most
+listings cancel the day, not the hour - "Thursday, October 8 no mass",
+"Friday, Oct. 9 *no mass (priests at convocation)*". Every such Mass was
+retracted instead of flagged: `1101`, `saint-john-bosco`, `1831`, `1572` and
+more lost their weekday Masses from the row for the week.
+
+**`_cancelled_by_day`**, a second path tried only when the time path finds
+nothing (so no existing hit can change): a phrase naming no time cancels every
+recurring slot on its weekday, when ALL of -
+
+- the day is the slot's own: named right after the phrase ("no Mass on
+  Friday", or a colon list - "no weekday Masses at Holy Name: Wednesday,
+  October 7th, Thursday ..."), else the nearest day label before it;
+- that label is a **dated day header** ("Thursday, October 8", "Wed 10/07")
+  whose date is in the covered week and on this weekday. This is the safety: a
+  standing masthead's "Thursday: no Mass" has no date, so it stays a standing
+  exclusion;
+- no clock time sits between the label and the phrase (the phrase then
+  annotates that time - the time path's job, and the `0069`/`1548` two-column
+  masthead shape);
+- guards 4, 5, 7, 8 and 9 hold.
+
+Communion services are NOT read as cancellations ("Instead, Liturgy of the
+Word with Holy Communion ...") - only an explicit phrase.
+
+Swept over the 152 cached bulletins of the week of Oct 4, against every
+stored recurring slot in the pre-run snapshot: **45 hits -> 79, all 45
+retained, and the 34 new are each a dated "no Mass" for their own day this
+week**, read by hand. The first cut had 3 false positives, each now a guard:
+`0691`'s Tuesday ("there WILL be an 8 am Mass on Tuesday ... no weekday Masses
+at Holy Name: Wednesday ..." - colon list), and `1759`'s two Sunday Masses
+("27th Sunday in Ordinary Time" is a liturgical title, not a dated header).
+The colon-list pattern then briefly matched the colon inside a clock time
+("saturday, october 10 3:30pm") and lost 4 true hits; its lead-in now
+excludes digits and the colon may not be followed by one.
+
+This week's rows are not retroactively repaired: the run already dropped
+those slots, and `_restore` needs them in the stored row. They return on
+2026-10-10, when the listing prints them normally.
+
 ### v2.5.38 (2026-10-03) - A merge must not turn a weekly Mass monthly
 
 Out of the first live run of the v2.5.37 prompt. Full record in `docs/fixlog.md`.
