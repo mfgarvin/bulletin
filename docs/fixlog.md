@@ -78,9 +78,10 @@ parish not posting). Two code fixes (v2.5.38).
 | `0244`, `0599` | Mass | dropped Mon 1100 / Sat 0700 | fabrication | West Park Health Center (off-site) / in no masthead line | manual |
 | `visitation-…` x2, `st-mel`, `st-bernadette`, `our-lady-of-angels`, `our-lady-of-victory`, `st-matthew-akron-oh`, `1485`, `1088` | various | standing entries re-applied | treadmill | the same defects as 09-12 to 09-26, back again | treadmill |
 | `0134`, `1704`, `1101`, `scas-e`, `0085`, `olp-cle`, `0042`, `our-lady-of-mount-carmel`, `saint-albert` | — | **entries retired** | — | uncancels that would have cleared TRUE convocation flags; restores v6 now produces itself (all three monthly confessions, the Igbo Mass); `0085`'s Saturday restore was wrong | structural |
-| `1101`, `1572`, `0083`, `saint-john-bosco`, `1831`, `scas-e`, `1137` | Mass | — | one-week-cancellation | convocation: "no Mass" printed per DATE, not beside a time, so not flaggable. Removals are true this week | deferred (self-heals 10-10) |
+| `0083`, `scas-e`, `1137` | Mass | — | one-week-cancellation | convocation removals the day path still cannot see (`0083` image-only; the others print no dated phrase) | deferred (self-heals 10-10) |
 | `immat-con-cle` | Mass, Conf | — | — | "Mass times THIS WEEK: Mon-Thu 7:00am" (canon on retreat) written as standing | deferred (flips back) |
 | `1639`, `0069`, `1548` | Mass | 6 cancellations cleared | wrong-week | layout false positives (v2.5.36) | manual |
+| 20 rows (`0036`, `0042`, `0077`, `0090`, `0216`, `0342`, `0670`, `1071`, `1071-MIC`, `1101`, `1285`, `1397`, `1414`, `1572`, `1639`, `1714`, `1831`, `29676`, `saint-john-bosco`, `ss-cosmas-damian`) | Mass | 29 slots flagged `cancelled`, 5 restored as `cancelled` | one-week-cancellation | the v2.5.39 day path replayed retroactively over the cached 10-04 bulletins (pre-run snapshot for restores; the six known false positives and `2492`'s stale 09-27 cache excluded). Cancelled slots 39 -> 72 | structural (replay) |
 
 **Prompt (v6) verdict**, from the slot diff against the 10-02 snapshot and the
 adoration capture A/B (09-26 old prompt vs today):
