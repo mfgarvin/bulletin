@@ -52,6 +52,54 @@ most, because it separates *fixed* from *patched*:
 
 ---
 
+## 2026-10-10 (Columbus Day week; triaged 2026-10-12)
+
+155 parishes, 0 failed, 46 warned. 36 rows written by `notion_fixes`, 9
+entries retired or narrowed. Columbus Day held 7 Mondays, all of them benign
+noise. The convocation week healed itself (`0083`, `scas-e`, `1137-svdp`,
+`1101`, `1572` got their weekday Masses back). Every warning was checked against
+its own bulletin text.
+
+| parish | field | change applied | category | cause | resolution |
+|---|---|---|---|---|---|
+| `0882` | Mass | Sun 1300 -> dated 10-18 (Swahili) | dated-as-recurring | one week's listing "Sunday,10/18 ... 1:00 PM ... Swahili Mass" | manual |
+| `1584` | Mass | Fri 0830 -> dated 10-16 | dated-as-recurring | "This Friday ... 8:30 a.m. instead of 9:30" | manual |
+| `1794` | Mass | Fri 0900 -> dated 10-16 | dated-as-recurring | "Fall School Mass, 9am" | manual |
+| `1485` | Mass | Sat 1700 -> dated 10-17 | dated-as-recurring | harvest festival "Mass at the Grotto at 5 pm" | manual |
+| `1900` | Mass | Fri 1800 -> dated 10-16 | dated-as-recurring | the week's 6:00 kept beside the masthead's 5:30 "pending clarification" (its own notes) | manual |
+| `21865` | Mass | dropped Tue 1330, Sat 1830 | fabrication / non-mass-as-mass | assisted-living Mass; an 18:30 printed nowhere. The new Wed 11:30 is real | manual |
+| `40500` | Mass | Mon-Thu 0800 -> 0700 | layout-slip | masthead 8:00 added beside the listing's 7:00 (bulletin still 10-04) | manual |
+| `olhc` + `olhc-nova` | Mass | dropped Sat 0900 | non-mass-as-mass | "ROSARY / First Saturday of the Month, 9:00 a.m." | manual |
+| `0138` | Conf | dropped Tue 1800 | cluster-bleed | "(at Holy Spirit Parish)" - `0036` holds it | manual |
+| `0512-peace` | Conf | dropped Thu 0830 | cluster-bleed | St. Andrew's slot, LIKELY WRONG WRITE | manual |
+| `saint-agnes-elyria-oh` | Conf | Sat 1500 open -> 1530-1615 | — | run extracted none; the STORED value was wrong (the v2.5.8 shape) | manual |
+| `1259` | Mass | Sun 1030/1130 -> 1100; Sat 1800 dropped | fabrication / cluster-bleed | the classic three, again | treadmill |
+| `37345`, `st-paul-akron-oh` | Mass | restored Sun 1200 / Sat 0900; st-paul Sun 1630 dropped | monthly-dropped / fabrication | off-week ordinals deleted again | treadmill |
+| `sfds-a`, `0691`, `olg-m`, `1494` | Mass / Conf | restored Wed 0900, Sat 0800, Sat 0900 conf, Sat 1700 conf | noise-drop | still printed this week | treadmill |
+| `1532`, OLA, `visitation-sjb`, `23926`, `0069`, `1548` | various | standing entries re-applied | treadmill | 1532's Friday 9:00pm typo (sixth time); OLA's summer Mass; Vietnamese date list; invented last-Sunday confessions; the two-column masthead false cancellations | treadmill |
+| `st-mary-of-the-falls`, `1170`, `1639`, `st-mary-cleveland-oh`, `5217` (Mon 12:15) | — | **retired** | — | week-specific; the falls entry would have cleared a TRUE flag (Oct 12-16 no daily Mass) | structural |
+| `0242` (Wed 0830), `1823` (Thu 0930), `visitation` (Sun 1200), `0244` (Wed/Fri adds) | — | **retired** | — | the parish changed its schedule: 0242's masthead now has Wed 8:30 and Mon/Fri 12:15; 1823 added a Thursday Mass; Visitation prints a last-Sunday Swahili noon Mass. Each entry was deleting a real Mass | structural |
+| `immat-con-cle` | Mass | — | wrong-week | still the 10-04 bulletin (10-11 uploaded Sunday 04:24 UTC), and the 10-11 one says Mon-Wed 7:00 again, so the stored 7:00 is closer to right this week | deferred |
+| `1088`, `1241`, `1810`, `sc-c` | — | — | — | image-only bulletins; changes unverifiable (1241's was a return to baseline) | deferred |
+
+**The v2.5.39 day path in an ordinary week:** 20 cancellation flags, 17 true.
+The 3 false ones are `0069` Fri / `1548` Mon+Thu, the same two-column masthead
+as v2.5.36 - so it is **standing**, not week-specific, and the uncancel
+entries are now a weekly treadmill. One miss: `1831`'s "Tuesday, October 13
+No 8:30 a.m. Mass due to funeral" (the time sits between "No" and "Mass").
+
+**Freshness:** 102 PO/eCatholic on 10-11, 7 on 10-04 (parish uploads after the
+run). Self-Hosted: `ss-c`, `olp-cle`, `immat-con-cle` uploaded after the run
+(last-modified 17:18, 18:00 Sat; 04:24 Sun). `sc-c` and `sa-o` are a week behind
+too. `20812` is on 09-27 because the parish has posted nothing newer. `shc`'s
+`CurrentBulletin.pdf` is still the 10-04 edition.
+
+**Schedules that changed:** three parishes changed their schedules this
+month, and each one had a standing `MANUAL_FIXES` entry deleting the new Mass.
+A `drop_masses` entry is only true while the parish's schedule stays the same,
+and nothing re-checks it. Re-read the masthead whenever a drop entry fires
+against a slot the run "reproduced".
+
 ## 2026-10-03 (v2.5.37 prompt's first live run; convocation week)
 
 155 parishes, 0 failed, 46 warned. 29 rows repaired, 7 entries retired, 6
