@@ -695,19 +695,27 @@
           "cancelled": false
         },
         {
-          "day": "Sunday",
-          "start": "14:00",
-          "mass_date": null,
-          "language": "Vietnamese",
-          "notes": "Vietnamese Sunday Mass Schedule 2026 (see bulletin for dates)",
-          "cancelled": false
-        },
-        {
           "day": "Thursday",
           "start": "17:30",
           "mass_date": null,
           "language": null,
           "notes": null,
+          "cancelled": false
+        },
+        {
+          "day": "Sunday",
+          "start": "14:00",
+          "mass_date": "2026-11-15",
+          "language": "Vietnamese",
+          "notes": "Vietnamese Sunday Mass",
+          "cancelled": false
+        },
+        {
+          "day": "Sunday",
+          "start": "14:00",
+          "mass_date": "2026-12-13",
+          "language": "Vietnamese",
+          "notes": "Vietnamese Sunday Mass",
           "cancelled": false
         }
       ],
@@ -1029,7 +1037,7 @@
           "start": "15:00",
           "end": "15:30",
           "end_next_day": false,
-          "notes": "In church; or by appointment",
+          "notes": null,
           "cancelled": false
         }
       ],
@@ -1097,14 +1105,6 @@
           "cancelled": false
         },
         {
-          "day": "Tuesday",
-          "start": "13:30",
-          "mass_date": null,
-          "language": null,
-          "notes": "Mass at GreenView Senior Assisted Living",
-          "cancelled": false
-        },
-        {
           "day": "Wednesday",
           "start": "08:30",
           "mass_date": null,
@@ -1150,14 +1150,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass",
-          "cancelled": false
-        },
-        {
-          "day": "Saturday",
-          "start": "18:30",
-          "mass_date": null,
-          "language": "Korean",
-          "notes": null,
           "cancelled": false
         }
       ],
@@ -1388,7 +1380,7 @@
           "mass_date": null,
           "language": null,
           "notes": null,
-          "cancelled": true
+          "cancelled": false
         },
         {
           "day": "Saturday",
@@ -1921,19 +1913,19 @@
           "cancelled": false
         },
         {
-          "day": "Friday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": null,
-          "notes": null,
-          "cancelled": false
-        },
-        {
           "day": "Saturday",
           "start": "17:00",
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass",
+          "cancelled": false
+        },
+        {
+          "day": "Friday",
+          "start": "09:00",
+          "mass_date": "2026-10-16",
+          "language": null,
+          "notes": "Fall School Mass",
           "cancelled": false
         }
       ],
@@ -2354,7 +2346,7 @@
           "mass_date": null,
           "language": null,
           "notes": null,
-          "cancelled": true
+          "cancelled": false
         },
         {
           "day": "Thursday",
@@ -2362,7 +2354,7 @@
           "mass_date": null,
           "language": null,
           "notes": null,
-          "cancelled": true
+          "cancelled": false
         },
         {
           "day": "Saturday",
@@ -2565,7 +2557,7 @@
           "start": "09:30",
           "mass_date": null,
           "language": null,
-          "notes": "1st Saturday Mass",
+          "notes": "1st Saturday Mass; First Saturday Mass & Lecture",
           "cancelled": false,
           "weeks_of_month": [
             1
@@ -3900,14 +3892,6 @@
           "cancelled": false
         },
         {
-          "day": "Sunday",
-          "start": "16:30",
-          "mass_date": null,
-          "language": null,
-          "notes": null,
-          "cancelled": false
-        },
-        {
           "day": "Monday",
           "start": "08:30",
           "mass_date": null,
@@ -3954,6 +3938,17 @@
           "language": null,
           "notes": "Ordinary Form",
           "cancelled": false
+        },
+        {
+          "day": "Saturday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "First Saturday Mass and Devotions",
+          "cancelled": false,
+          "weeks_of_month": [
+            1
+          ]
         },
         {
           "day": "Saturday",
@@ -5585,16 +5580,8 @@
           "cancelled": false
         },
         {
-          "day": "Thursday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Morning Prayer",
-          "cancelled": false
-        },
-        {
           "day": "Friday",
-          "start": "21:00",
+          "start": "09:00",
           "mass_date": null,
           "language": null,
           "notes": null,
@@ -6264,39 +6251,6 @@
       ],
       "confession": [
         {
-          "day": "Sunday",
-          "start": "09:00",
-          "end": null,
-          "end_next_day": false,
-          "notes": "Last Sunday of the month, following the 8:00 a.m. Mass",
-          "cancelled": false,
-          "weeks_of_month": [
-            -1
-          ]
-        },
-        {
-          "day": "Sunday",
-          "start": "11:00",
-          "end": null,
-          "end_next_day": false,
-          "notes": "Last Sunday of the month, following the 10:00 a.m. Mass",
-          "cancelled": false,
-          "weeks_of_month": [
-            -1
-          ]
-        },
-        {
-          "day": "Sunday",
-          "start": "13:00",
-          "end": null,
-          "end_next_day": false,
-          "notes": "Last Sunday of the month, following the 12:00 p.m. Mass",
-          "cancelled": false,
-          "weeks_of_month": [
-            -1
-          ]
-        },
-        {
           "day": "Wednesday",
           "start": "18:00",
           "end": null,
@@ -6312,7 +6266,7 @@
           "start": "15:00",
           "end": "16:00",
           "end_next_day": false,
-          "notes": "Confessions must end promptly at 4:15 p.m. so the priest can prepare for Mass. Confessions also available by appointment with a priest.",
+          "notes": "Confessions also available by appointment with a priest.",
           "cancelled": false
         }
       ],
@@ -6584,14 +6538,6 @@
         },
         {
           "day": "Friday",
-          "start": "08:30",
-          "mass_date": null,
-          "language": null,
-          "notes": null,
-          "cancelled": false
-        },
-        {
-          "day": "Friday",
           "start": "09:30",
           "mass_date": null,
           "language": null,
@@ -6604,6 +6550,14 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass",
+          "cancelled": false
+        },
+        {
+          "day": "Friday",
+          "start": "08:30",
+          "mass_date": "2026-10-16",
+          "language": null,
+          "notes": "This week only, instead of 9:30 a.m.",
           "cancelled": false
         }
       ],
@@ -7409,6 +7363,17 @@
           "cancelled": false
         },
         {
+          "day": "Sunday",
+          "start": "12:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "Sensory Mass (in the Chapel), second Sunday of each month",
+          "cancelled": false,
+          "weeks_of_month": [
+            2
+          ]
+        },
+        {
           "day": "Monday",
           "start": "08:30",
           "mass_date": null,
@@ -7995,14 +7960,6 @@
         }
       ],
       "confession": [
-        {
-          "day": "Tuesday",
-          "start": "18:00",
-          "end": "18:45",
-          "end_next_day": false,
-          "notes": null,
-          "cancelled": false
-        },
         {
           "day": "Wednesday",
           "start": "08:45",
@@ -9208,14 +9165,6 @@
           "cancelled": false
         },
         {
-          "day": "Monday",
-          "start": "08:00",
-          "mass_date": null,
-          "language": null,
-          "notes": null,
-          "cancelled": false
-        },
-        {
           "day": "Tuesday",
           "start": "07:00",
           "mass_date": null,
@@ -9224,16 +9173,8 @@
           "cancelled": false
         },
         {
-          "day": "Tuesday",
-          "start": "08:00",
-          "mass_date": null,
-          "language": null,
-          "notes": null,
-          "cancelled": false
-        },
-        {
           "day": "Wednesday",
-          "start": "08:00",
+          "start": "07:00",
           "mass_date": null,
           "language": null,
           "notes": null,
@@ -9241,7 +9182,7 @@
         },
         {
           "day": "Thursday",
-          "start": "08:00",
+          "start": "07:00",
           "mass_date": null,
           "language": null,
           "notes": null,
@@ -9932,6 +9873,14 @@
           "mass_date": null,
           "language": null,
           "notes": null,
+          "cancelled": false
+        },
+        {
+          "day": "Wednesday",
+          "start": "09:00",
+          "mass_date": null,
+          "language": null,
+          "notes": "School Mass",
           "cancelled": false
         },
         {
@@ -10940,14 +10889,6 @@
           "cancelled": false
         },
         {
-          "day": "Sunday",
-          "start": "13:00",
-          "mass_date": null,
-          "language": "Swahili",
-          "notes": null,
-          "cancelled": false
-        },
-        {
           "day": "Monday",
           "start": "08:00",
           "mass_date": null,
@@ -10984,8 +10925,11 @@
           "start": "08:00",
           "mass_date": null,
           "language": null,
-          "notes": null,
-          "cancelled": false
+          "notes": "Except on First Fridays",
+          "cancelled": false,
+          "excluded_weeks": [
+            1
+          ]
         },
         {
           "day": "Friday",
@@ -11004,6 +10948,14 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass",
+          "cancelled": false
+        },
+        {
+          "day": "Sunday",
+          "start": "13:00",
+          "mass_date": "2026-10-18",
+          "language": "Swahili",
+          "notes": "Swahili Mass",
           "cancelled": false
         }
       ],
@@ -12217,7 +12169,7 @@
           "start": "11:30",
           "end": null,
           "end_next_day": false,
-          "notes": "First Sunday of the month, before and after noon Mass; and by appointment",
+          "notes": "First Sunday of the month, before noon Mass; and by appointment",
           "cancelled": false,
           "weeks_of_month": [
             1
@@ -12228,7 +12180,7 @@
           "start": "13:00",
           "end": null,
           "end_next_day": false,
-          "notes": "First Sunday of the month, before and after noon Mass; and by appointment",
+          "notes": "First Sunday of the month, after noon Mass; and by appointment",
           "cancelled": false,
           "weeks_of_month": [
             1
@@ -12239,13 +12191,13 @@
           "start": "18:10",
           "end": "19:10",
           "end_next_day": false,
-          "notes": null,
+          "notes": "And by appointment",
           "cancelled": false
         },
         {
           "day": "Friday",
           "start": "11:00",
-          "end": "14:00",
+          "end": null,
           "end_next_day": false,
           "notes": "Every 1st Friday; and by appointment",
           "cancelled": false,
@@ -12258,7 +12210,7 @@
           "start": "15:00",
           "end": "16:00",
           "end_next_day": false,
-          "notes": null,
+          "notes": "And by appointment",
           "cancelled": false
         }
       ],
@@ -12371,7 +12323,7 @@
           "start": "15:00",
           "end": "15:45",
           "end_next_day": false,
-          "notes": "Confessions also available by appointment",
+          "notes": "Also available by appointment",
           "cancelled": false
         }
       ],
@@ -12977,19 +12929,19 @@
           "cancelled": false
         },
         {
-          "day": "Friday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": null,
-          "cancelled": false
-        },
-        {
           "day": "Saturday",
           "start": "16:15",
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass",
+          "cancelled": false
+        },
+        {
+          "day": "Friday",
+          "start": "18:00",
+          "mass_date": "2026-10-16",
+          "language": null,
+          "notes": "This week only",
           "cancelled": false
         }
       ],
@@ -13954,19 +13906,19 @@
           "cancelled": false
         },
         {
-          "day": "Saturday",
-          "start": "17:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "Mass at the Grotto (Autumn Harvest Festival)",
-          "cancelled": false
-        },
-        {
           "day": "Wednesday",
           "start": "19:00",
           "mass_date": "2026-10-14",
           "language": null,
           "notes": "Silent Sorrows Mass",
+          "cancelled": false
+        },
+        {
+          "day": "Saturday",
+          "start": "17:00",
+          "mass_date": "2026-10-17",
+          "language": null,
+          "notes": "Mass at the Grotto (Autumn Harvest Festival)",
           "cancelled": false
         }
       ],
@@ -13976,7 +13928,7 @@
           "start": "18:00",
           "end": null,
           "end_next_day": false,
-          "notes": "Weekly Sacrament of Reconciliation",
+          "notes": "Weekly Sacrament of Reconciliation (Church)",
           "cancelled": false
         }
       ],
@@ -14422,8 +14374,8 @@
       "confession": [
         {
           "day": "Saturday",
-          "start": "15:00",
-          "end": null,
+          "start": "15:30",
+          "end": "16:15",
           "end_next_day": false,
           "notes": null,
           "cancelled": false
@@ -15344,14 +15296,6 @@
       ],
       "confession": [
         {
-          "day": "Thursday",
-          "start": "08:30",
-          "end": "09:30",
-          "end_next_day": false,
-          "notes": "or by appointment",
-          "cancelled": false
-        },
-        {
           "day": "Saturday",
           "start": "14:30",
           "end": "15:30",
@@ -15571,7 +15515,7 @@
           "start": "09:00",
           "end": "09:30",
           "end_next_day": false,
-          "notes": "Second and fourth Saturdays",
+          "notes": "At Our Lady of Victory on the second and fourth Saturdays.",
           "cancelled": false,
           "weeks_of_month": [
             2,
@@ -16161,6 +16105,14 @@
         },
         {
           "day": "Saturday",
+          "start": "09:00",
+          "end": null,
+          "end_next_day": false,
+          "notes": null,
+          "cancelled": false
+        },
+        {
+          "day": "Saturday",
           "start": "15:30",
           "end": "16:15",
           "end_next_day": false,
@@ -16354,14 +16306,6 @@
           "cancelled": true
         },
         {
-          "day": "Wednesday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "During summer",
-          "cancelled": false
-        },
-        {
           "day": "Thursday",
           "start": "18:00",
           "mass_date": null,
@@ -16538,17 +16482,6 @@
           "language": null,
           "notes": null,
           "cancelled": false
-        },
-        {
-          "day": "Saturday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "First Saturday of the Month",
-          "cancelled": false,
-          "weeks_of_month": [
-            1
-          ]
         }
       ],
       "confession": [],
@@ -16648,17 +16581,6 @@
           "mass_date": null,
           "language": null,
           "notes": "First Friday of the Month",
-          "cancelled": false,
-          "weeks_of_month": [
-            1
-          ]
-        },
-        {
-          "day": "Saturday",
-          "start": "09:00",
-          "mass_date": null,
-          "language": null,
-          "notes": "First Saturday of the Month",
           "cancelled": false,
           "weeks_of_month": [
             1
@@ -16945,14 +16867,6 @@
           "language": null,
           "notes": "Vigil Mass",
           "cancelled": false
-        },
-        {
-          "day": "Sunday",
-          "start": "15:00",
-          "mass_date": "2026-10-11",
-          "language": "Polish",
-          "notes": "Mass in Polish",
-          "cancelled": false
         }
       ],
       "confession": [
@@ -17200,7 +17114,7 @@
           "start": "08:30",
           "end": null,
           "end_next_day": false,
-          "notes": "Weekdays",
+          "notes": null,
           "cancelled": false
         },
         {
@@ -17208,7 +17122,7 @@
           "start": "08:30",
           "end": null,
           "end_next_day": false,
-          "notes": "Weekdays",
+          "notes": null,
           "cancelled": false
         },
         {
@@ -17216,7 +17130,7 @@
           "start": "08:30",
           "end": null,
           "end_next_day": false,
-          "notes": "Weekdays",
+          "notes": null,
           "cancelled": false
         },
         {
@@ -17224,7 +17138,7 @@
           "start": "08:30",
           "end": null,
           "end_next_day": false,
-          "notes": "Weekdays",
+          "notes": null,
           "cancelled": false
         },
         {
@@ -17232,7 +17146,7 @@
           "start": "08:30",
           "end": null,
           "end_next_day": false,
-          "notes": "Weekdays",
+          "notes": null,
           "cancelled": false
         },
         {
@@ -18638,6 +18552,14 @@
         },
         {
           "day": "Saturday",
+          "start": "08:00",
+          "mass_date": null,
+          "language": null,
+          "notes": null,
+          "cancelled": false
+        },
+        {
+          "day": "Saturday",
           "start": "16:00",
           "mass_date": null,
           "language": null,
@@ -18903,7 +18825,7 @@
           "start": "18:00",
           "end": null,
           "end_next_day": false,
-          "notes": null,
+          "notes": "Wednesday Evening",
           "cancelled": false
         },
         {
@@ -19113,14 +19035,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass",
-          "cancelled": false
-        },
-        {
-          "day": "Saturday",
-          "start": "19:00",
-          "mass_date": "2026-10-10",
-          "language": "Spanish",
-          "notes": null,
           "cancelled": false
         }
       ],
@@ -19347,7 +19261,7 @@
           "start": "08:30",
           "mass_date": null,
           "language": null,
-          "notes": "School Mass (Church)",
+          "notes": "School Mass (in the Church)",
           "cancelled": false
         },
         {
@@ -19625,15 +19539,7 @@
         },
         {
           "day": "Sunday",
-          "start": "10:30",
-          "mass_date": null,
-          "language": null,
-          "notes": null,
-          "cancelled": false
-        },
-        {
-          "day": "Sunday",
-          "start": "11:30",
+          "start": "11:00",
           "mass_date": null,
           "language": null,
           "notes": null,
@@ -19734,14 +19640,6 @@
           "language": null,
           "notes": "Vigil Mass",
           "cancelled": false
-        },
-        {
-          "day": "Saturday",
-          "start": "18:00",
-          "mass_date": null,
-          "language": null,
-          "notes": null,
-          "cancelled": false
         }
       ],
       "confession": [
@@ -19750,7 +19648,7 @@
           "start": "07:45",
           "end": null,
           "end_next_day": false,
-          "notes": "In the chapel",
+          "notes": null,
           "cancelled": false
         },
         {
@@ -19758,7 +19656,7 @@
           "start": "11:30",
           "end": null,
           "end_next_day": false,
-          "notes": "In the chapel",
+          "notes": null,
           "cancelled": false
         },
         {
@@ -19766,7 +19664,7 @@
           "start": "07:45",
           "end": null,
           "end_next_day": false,
-          "notes": "In the chapel",
+          "notes": null,
           "cancelled": false
         },
         {
@@ -19774,7 +19672,7 @@
           "start": "11:30",
           "end": null,
           "end_next_day": false,
-          "notes": "In the chapel",
+          "notes": null,
           "cancelled": false
         },
         {
@@ -19782,7 +19680,7 @@
           "start": "07:45",
           "end": null,
           "end_next_day": false,
-          "notes": "In the chapel",
+          "notes": null,
           "cancelled": false
         },
         {
@@ -19790,7 +19688,7 @@
           "start": "11:30",
           "end": null,
           "end_next_day": false,
-          "notes": "In the chapel",
+          "notes": null,
           "cancelled": false
         },
         {
@@ -19798,23 +19696,23 @@
           "start": "17:00",
           "end": "17:25",
           "end_next_day": false,
+          "notes": "Confession in the Chapel",
+          "cancelled": false
+        },
+        {
+          "day": "Thursday",
+          "start": "07:45",
+          "end": null,
+          "end_next_day": false,
           "notes": null,
           "cancelled": false
         },
         {
           "day": "Thursday",
-          "start": "07:45",
-          "end": null,
-          "end_next_day": false,
-          "notes": "In the chapel",
-          "cancelled": false
-        },
-        {
-          "day": "Thursday",
           "start": "11:30",
           "end": null,
           "end_next_day": false,
-          "notes": "In the chapel",
+          "notes": null,
           "cancelled": false
         },
         {
@@ -19822,7 +19720,7 @@
           "start": "07:45",
           "end": null,
           "end_next_day": false,
-          "notes": "In the chapel",
+          "notes": null,
           "cancelled": false
         },
         {
@@ -19830,7 +19728,7 @@
           "start": "11:30",
           "end": null,
           "end_next_day": false,
-          "notes": "In the chapel",
+          "notes": null,
           "cancelled": false
         },
         {
@@ -19919,14 +19817,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass",
-          "cancelled": false
-        },
-        {
-          "day": "Monday",
-          "start": "11:00",
-          "mass_date": "2026-10-12",
-          "language": null,
-          "notes": "All Souls at West Park Health Center (4401 West 150th Street, Cleveland)",
           "cancelled": false
         }
       ],
@@ -20223,10 +20113,10 @@
         },
         {
           "day": "Saturday",
-          "start": "16:30",
+          "start": "17:00",
           "end": null,
           "end_next_day": false,
-          "notes": "After 4:00pm Mass; also by appointment",
+          "notes": "After the 4:00pm Mass; and by appointment",
           "cancelled": false
         }
       ],

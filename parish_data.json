@@ -271,8 +271,7 @@
     "Name": "Saint John the Baptist Parish",
     "Mass Times": {
       "Sunday": [
-        1000,
-        1400
+        1000
       ],
       "Thursday": [
         1730
@@ -409,16 +408,14 @@
     "Mass Times": {
       "Saturday": [
         830,
-        1630,
-        1830
+        1630
       ],
       "Sunday": [
         815,
         1100
       ],
       "Tuesday": [
-        830,
-        1330
+        830
       ],
       "Wednesday": [
         830,
@@ -726,8 +723,7 @@
         628
       ],
       "Friday": [
-        628,
-        900
+        628
       ]
     },
     "Confessions": {
@@ -1407,12 +1403,12 @@
     "Name": "Saint Paul Catholic Parish",
     "Mass Times": {
       "Saturday": [
+        900,
         1630
       ],
       "Sunday": [
         800,
-        1030,
-        1630
+        1030
       ],
       "Monday": [
         830
@@ -2026,9 +2022,6 @@
         900
       ],
       "Friday": [
-        2100
-      ],
-      "Thursday": [
         900
       ]
     },
@@ -2391,7 +2384,6 @@
         830
       ],
       "Friday": [
-        830,
         930
       ]
     },
@@ -2707,7 +2699,8 @@
     "Mass Times": {
       "Sunday": [
         800,
-        1030
+        1030,
+        1200
       ],
       "Saturday": [
         1700
@@ -2949,11 +2942,6 @@
       ]
     },
     "Confessions": {
-      "Tuesday": [
-        {
-          "1800": 45
-        }
-      ],
       "Wednesday": [
         {
           "845": 45
@@ -3397,23 +3385,21 @@
         1115,
         1700
       ],
-      "Monday": [
-        700,
-        800
-      ],
-      "Tuesday": [
-        700,
-        800
-      ],
-      "Wednesday": [
-        800
-      ],
-      "Thursday": [
-        800
-      ],
       "Friday": [
         800,
         1900
+      ],
+      "Monday": [
+        700
+      ],
+      "Tuesday": [
+        700
+      ],
+      "Wednesday": [
+        700
+      ],
+      "Thursday": [
+        700
       ]
     },
     "Confessions": {
@@ -3631,7 +3617,8 @@
         815
       ],
       "Wednesday": [
-        815
+        815,
+        900
       ],
       "Thursday": [
         815,
@@ -4012,8 +3999,7 @@
       ],
       "Sunday": [
         900,
-        1100,
-        1300
+        1100
       ],
       "Monday": [
         800
@@ -4070,14 +4056,14 @@
       ]
     },
     "Confessions": {
-      "Monday": [
-        {
-          "1715": 45
-        }
-      ],
       "Saturday": [
         {
           "1500": 30
+        }
+      ],
+      "Monday": [
+        {
+          "1715": 45
         }
       ]
     },
@@ -4472,11 +4458,6 @@
         {
           "1500": 60
         }
-      ],
-      "Friday": [
-        {
-          "1100": 180
-        }
       ]
     },
     "Adoration": {}
@@ -4723,8 +4704,7 @@
         1730
       ],
       "Friday": [
-        1730,
-        1800
+        1730
       ]
     },
     "Confessions": {
@@ -5080,8 +5060,7 @@
       ],
       "Saturday": [
         815,
-        1630,
-        1700
+        1630
       ]
     },
     "Confessions": {},
@@ -5251,7 +5230,13 @@
         900
       ]
     },
-    "Confessions": {},
+    "Confessions": {
+      "Saturday": [
+        {
+          "1530": 45
+        }
+      ]
+    },
     "Adoration": {
       "Tuesday": [
         {
@@ -5596,11 +5581,6 @@
         {
           "1430": 60
         }
-      ],
-      "Thursday": [
-        {
-          "830": 60
-        }
       ]
     },
     "Adoration": {
@@ -5885,14 +5865,14 @@
       ]
     },
     "Confessions": {
-      "Tuesday": [
-        {
-          "1830": 60
-        }
-      ],
       "Saturday": [
         {
           "1530": 45
+        }
+      ],
+      "Tuesday": [
+        {
+          "1830": 60
         }
       ]
     },
@@ -5981,8 +5961,7 @@
         1800
       ],
       "Wednesday": [
-        930,
-        1800
+        930
       ]
     },
     "Confessions": {
@@ -6050,9 +6029,6 @@
     "Mass Times": {
       "Sunday": [
         1100
-      ],
-      "Saturday": [
-        900
       ]
     },
     "Confessions": {},
@@ -6077,7 +6053,6 @@
     "Name": "Our Lady Help of Christians Catholic Church - Litchfield",
     "Mass Times": {
       "Saturday": [
-        900,
         1800
       ],
       "Sunday": [
@@ -6809,6 +6784,7 @@
     "Name": "Holy Name Church",
     "Mass Times": {
       "Saturday": [
+        800,
         1600
       ],
       "Sunday": [
@@ -7173,13 +7149,11 @@
     "Name": "The Cathedral of Saint John the Evangelist",
     "Mass Times": {
       "Saturday": [
-        1630,
-        1800
+        1630
       ],
       "Sunday": [
         830,
-        1030,
-        1130,
+        1100,
         1730
       ],
       "Monday": [
@@ -7204,14 +7178,14 @@
       ]
     },
     "Confessions": {
-      "Wednesday": [
-        {
-          "1700": 25
-        }
-      ],
       "Saturday": [
         {
           "1500": 60
+        }
+      ],
+      "Wednesday": [
+        {
+          "1700": 25
         }
       ]
     },

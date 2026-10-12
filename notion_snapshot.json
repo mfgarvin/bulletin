@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T18:45:08+00:00",
+  "generated_at": "2026-10-12T13:52:16+00:00",
   "database_id": "2de29b8f-0e6e-801a-bd81-db3ade199a45",
   "parish_count": 189,
   "parishes": [
@@ -434,7 +434,7 @@
     {
       "parish_id": "0069",
       "page_id": "2df29b8f-0e6e-8156-aefd-dad5993dc413",
-      "last_edited_time": "2026-10-10T15:57:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -506,7 +506,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -1397,7 +1397,7 @@
     {
       "parish_id": "0138",
       "page_id": "2df29b8f-0e6e-8196-b853-e1c72bc28a23",
-      "last_edited_time": "2026-10-10T16:11:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -1421,7 +1421,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Tuesday\", \"start_time\": 1800, \"end_time\": 1845, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": \"(at Holy Spirit Parish)\"}, {\"day\": \"Wednesday\", \"start_time\": 845, \"end_time\": 930, \"end_next_day\": false, \"notes\": \"Wednesday before First Friday only\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"In the confessional\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Wednesday\", \"start_time\": 845, \"end_time\": 930, \"end_next_day\": false, \"notes\": \"Wednesday before First Friday only\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"In the confessional\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -2467,7 +2467,7 @@
     {
       "parish_id": "0244",
       "page_id": "2df29b8f-0e6e-8115-8863-fb38d7a1ac58",
-      "last_edited_time": "2026-10-10T16:10:00.000Z",
+      "last_edited_time": "2026-10-12T13:28:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -2539,7 +2539,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1100, \"mass_date\": \"2026-10-12\", \"language\": null, \"notes\": \"All Souls at West Park Health Center (4401 West 150th Street, Cleveland)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -3323,7 +3323,7 @@
     {
       "parish_id": "0512-peace",
       "page_id": "2df29b8f-0e6e-81e4-abe1-c2099acbb0d6",
-      "last_edited_time": "2026-10-10T15:57:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -3347,7 +3347,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": \"Prince of Peace-Saturdays\"}, {\"day\": \"Thursday\", \"start_time\": 830, \"end_time\": 930, \"end_next_day\": false, \"notes\": \"or by appointment\", \"cancelled\": false, \"site_label\": \"St. Andrew the Apostle-Thursdays\"}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -4286,7 +4286,7 @@
     {
       "parish_id": "0691",
       "page_id": "2df29b8f-0e6e-81d3-985c-f49700e2f22b",
-      "last_edited_time": "2026-10-10T16:12:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -4358,7 +4358,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -4393,7 +4393,7 @@
     {
       "parish_id": "0875",
       "page_id": "2df29b8f-0e6e-8176-abbc-e8fb7dcbb7ca",
-      "last_edited_time": "2026-10-10T16:08:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -4417,7 +4417,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Weekdays\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Weekdays\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Weekdays\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Weekdays\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Weekdays\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 845, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Monday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 845, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -4500,7 +4500,7 @@
     {
       "parish_id": "0882",
       "page_id": "2df29b8f-0e6e-8134-b02d-d8dbbd8dd2a7",
-      "last_edited_time": "2026-10-10T16:11:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -4572,7 +4572,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1300, \"mass_date\": null, \"language\": \"Swahili\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": \"First Friday\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Except on First Fridays\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": \"First Friday\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1300, \"mass_date\": \"2026-10-18\", \"language\": \"Swahili\", \"notes\": \"Swahili Mass\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -5356,7 +5356,7 @@
     {
       "parish_id": "1088",
       "page_id": "2df29b8f-0e6e-81c3-b978-d3fb14d33a5d",
-      "last_edited_time": "2026-10-10T16:11:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -5380,7 +5380,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"start_time\": 1715, \"end_time\": 1800, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"start_time\": 1715, \"end_time\": 1800, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -6319,7 +6319,7 @@
     {
       "parish_id": "1236",
       "page_id": "2df29b8f-0e6e-814b-9672-cd82002f2a82",
-      "last_edited_time": "2026-10-10T16:12:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -6343,7 +6343,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Wednesday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"or by appointment\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Wednesday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Wednesday Evening\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"or by appointment\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -6533,7 +6533,7 @@
     {
       "parish_id": "1259",
       "page_id": "2df29b8f-0e6e-81c6-9100-ce9b22c7f19d",
-      "last_edited_time": "2026-10-10T16:12:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -6557,7 +6557,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1700, \"end_time\": 1725, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1700, \"end_time\": 1725, \"end_next_day\": false, \"notes\": \"Confession in the Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -6605,7 +6605,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": \"In the chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -7710,7 +7710,7 @@
     {
       "parish_id": "1485",
       "page_id": "2df29b8f-0e6e-8109-94f9-cdad8bfc117c",
-      "last_edited_time": "2026-10-10T16:12:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -7734,7 +7734,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Thursday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Weekly Sacrament of Reconciliation\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Thursday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Weekly Sacrament of Reconciliation (Church)\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -7782,7 +7782,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Sunday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": \"Subject to change\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1900, \"mass_date\": \"2026-10-14\", \"language\": null, \"notes\": \"Silent Sorrows Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Mass at the Grotto (Autumn Harvest Festival)\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Sunday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": \"Subject to change\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1900, \"mass_date\": \"2026-10-14\", \"language\": null, \"notes\": \"Silent Sorrows Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": \"2026-10-17\", \"language\": null, \"notes\": \"Mass at the Grotto (Autumn Harvest Festival)\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -7817,7 +7817,7 @@
     {
       "parish_id": "1494",
       "page_id": "2df29b8f-0e6e-8117-8408-e811d348356e",
-      "last_edited_time": "2026-10-10T16:12:00.000Z",
+      "last_edited_time": "2026-10-12T13:28:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -7841,7 +7841,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1630, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After 4:00pm Mass; also by appointment\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1700, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After the 4:00pm Mass; and by appointment\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -7924,7 +7924,7 @@
     {
       "parish_id": "1532",
       "page_id": "2df29b8f-0e6e-818a-aab0-de40a524ec6b",
-      "last_edited_time": "2026-10-10T16:11:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -7996,7 +7996,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 2100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"Morning Prayer\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -8031,7 +8031,7 @@
     {
       "parish_id": "1548",
       "page_id": "2df29b8f-0e6e-812b-a725-f3055db88499",
-      "last_edited_time": "2026-10-10T15:58:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -8103,7 +8103,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -8245,7 +8245,7 @@
     {
       "parish_id": "1584",
       "page_id": "2df29b8f-0e6e-81a0-a7ea-d9771ccce630",
-      "last_edited_time": "2026-10-10T16:11:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -8317,7 +8317,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": \"2026-10-16\", \"language\": null, \"notes\": \"This week only, instead of 9:30 a.m.\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -8673,7 +8673,7 @@
     {
       "parish_id": "1687",
       "page_id": "2df29b8f-0e6e-810c-b34f-e3b97c161ab3",
-      "last_edited_time": "2026-10-10T16:10:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -8745,7 +8745,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"School Mass (Church)\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"School Mass (in the Church)\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -9743,7 +9743,7 @@
     {
       "parish_id": "1794",
       "page_id": "2df29b8f-0e6e-8198-b44a-ecb8501e19c5",
-      "last_edited_time": "2026-10-10T16:11:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -9815,7 +9815,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": \"2026-10-16\", \"language\": null, \"notes\": \"Fall School Mass\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -11027,7 +11027,7 @@
     {
       "parish_id": "1900",
       "page_id": "2df29b8f-0e6e-8169-a5ff-df9f21841526",
-      "last_edited_time": "2026-10-10T16:12:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -11099,7 +11099,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1615, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1615, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1800, \"mass_date\": \"2026-10-16\", \"language\": null, \"notes\": \"This week only\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -11134,7 +11134,7 @@
     {
       "parish_id": "1905",
       "page_id": "2df29b8f-0e6e-8105-9c27-e2f53d060f43",
-      "last_edited_time": "2026-10-10T16:11:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -11158,7 +11158,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"start_time\": 1650, \"end_time\": 1720, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": \"(STP, Church)\"}]"
+          "value": "[{\"day\": \"Monday\", \"start_time\": 1650, \"end_time\": 1720, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -11562,7 +11562,7 @@
     {
       "parish_id": "21865",
       "page_id": "2df29b8f-0e6e-81b4-b63f-e3476b5b6578",
-      "last_edited_time": "2026-10-10T16:11:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -11634,7 +11634,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1330, \"mass_date\": null, \"language\": null, \"notes\": \"Mass at GreenView Senior Assisted Living\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1830, \"mass_date\": null, \"language\": \"Korean\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -11776,7 +11776,7 @@
     {
       "parish_id": "22544",
       "page_id": "2df29b8f-0e6e-81f7-9e37-de6b59669d8e",
-      "last_edited_time": "2026-10-10T16:12:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -11800,7 +11800,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Wednesday\", \"start_time\": 1810, \"end_time\": 1910, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": \"First Sunday of the month, before and after noon Mass; and by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 1300, \"end_time\": null, \"end_next_day\": false, \"notes\": \"First Sunday of the month, before and after noon Mass; and by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 1100, \"end_time\": 1400, \"end_next_day\": false, \"notes\": \"Every 1st Friday; and by appointment\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Wednesday\", \"start_time\": 1810, \"end_time\": 1910, \"end_next_day\": false, \"notes\": \"And by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"And by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": \"First Sunday of the month, before noon Mass; and by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 1300, \"end_time\": null, \"end_next_day\": false, \"notes\": \"First Sunday of the month, after noon Mass; and by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 1100, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Every 1st Friday; and by appointment\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -11883,7 +11883,7 @@
     {
       "parish_id": "23926",
       "page_id": "2df29b8f-0e6e-81a5-905b-e5fea07f297e",
-      "last_edited_time": "2026-10-10T16:11:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -11907,7 +11907,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Confessions must end promptly at 4:15 p.m. so the priest can prepare for Mass. Confessions also available by appointment with a priest.\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Last Wednesday of each month; confessions also available by appointment with a priest.\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 900, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Last Sunday of the month, following the 8:00 a.m. Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 1100, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Last Sunday of the month, following the 10:00 a.m. Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 1300, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Last Sunday of the month, following the 12:00 p.m. Mass\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Confessions also available by appointment with a priest.\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Last Wednesday of each month; confessions also available by appointment with a priest.\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -12632,7 +12632,7 @@
     {
       "parish_id": "37345",
       "page_id": "2df29b8f-0e6e-8113-8e64-e38cb4218084",
-      "last_edited_time": "2026-10-10T16:11:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -12704,7 +12704,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass (Livestream)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass (Livestream)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": \"Sensory Mass (in the Chapel), second Sunday of each month\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -12739,7 +12739,7 @@
     {
       "parish_id": "40500",
       "page_id": "2df29b8f-0e6e-8178-b473-d98ff8e84300",
-      "last_edited_time": "2026-10-10T16:11:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -12811,7 +12811,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1115, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": \"First Friday\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1115, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": \"First Friday\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -14130,7 +14130,7 @@
     {
       "parish_id": "olg-m",
       "page_id": "2df29b8f-0e6e-81e2-8106-f688484a67b3",
-      "last_edited_time": "2026-10-10T16:12:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -14154,7 +14154,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Tuesday\", \"start_time\": 1830, \"end_time\": 1930, \"end_next_day\": false, \"notes\": \"1st Tuesday of each month; or by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1615, \"end_next_day\": false, \"notes\": \"Or by appointment\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 900, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1615, \"end_next_day\": false, \"notes\": \"Or by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 1830, \"end_time\": 1930, \"end_next_day\": false, \"notes\": \"1st Tuesday of each month; or by appointment\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -14344,7 +14344,7 @@
     {
       "parish_id": "olhc-nova",
       "page_id": "2df29b8f-0e6e-81b8-8326-fc3a0424e6c0",
-      "last_edited_time": "2026-10-10T16:08:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -14416,7 +14416,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"- Nova Worship Site\"}, {\"day\": \"Saturday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"First Saturday of the Month\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"- Nova Worship Site\"}]"
         },
         "Name": {
           "type": "title",
@@ -14665,7 +14665,7 @@
     {
       "parish_id": "our-lady-help-of-christians-litchfield-oh",
       "page_id": "2df29b8f-0e6e-819d-b1b1-e98755961cdf",
-      "last_edited_time": "2026-10-10T16:12:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -14737,7 +14737,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"- Litchfield Worship Site\"}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"- Litchfield Worship Site\"}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"- Litchfield Worship Site\"}, {\"day\": \"Saturday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"First Saturday of the Month\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": \"First Friday of the Month\", \"cancelled\": false, \"site_label\": \"Litchfield Worship Site\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"- Litchfield Worship Site\"}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"- Litchfield Worship Site\"}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"- Litchfield Worship Site\"}, {\"day\": \"Friday\", \"time\": 1900, \"mass_date\": null, \"language\": null, \"notes\": \"First Friday of the Month\", \"cancelled\": false, \"site_label\": \"Litchfield Worship Site\"}]"
         },
         "Name": {
           "type": "title",
@@ -14772,7 +14772,7 @@
     {
       "parish_id": "our-lady-of-angels-cleveland-oh",
       "page_id": "2df29b8f-0e6e-81db-9839-fc6973d11f9a",
-      "last_edited_time": "2026-10-10T16:12:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -14844,7 +14844,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": \"During school year\", \"cancelled\": true, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": \"During summer\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": \"During school year\", \"cancelled\": true, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -15093,7 +15093,7 @@
     {
       "parish_id": "our-lady-of-victory-tallmadge-oh",
       "page_id": "2df29b8f-0e6e-817c-981e-f5098c68820a",
-      "last_edited_time": "2026-10-10T16:07:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -15117,7 +15117,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 900, \"end_time\": 930, \"end_next_day\": false, \"notes\": \"Second and fourth Saturdays\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 900, \"end_time\": 930, \"end_next_day\": false, \"notes\": \"At Our Lady of Victory on the second and fourth Saturdays.\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -15307,7 +15307,7 @@
     {
       "parish_id": "saint-agnes-elyria-oh",
       "page_id": "2df29b8f-0e6e-81ba-b21e-d4999913b534",
-      "last_edited_time": "2026-10-10T16:12:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -15331,7 +15331,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1615, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -16805,7 +16805,7 @@
     {
       "parish_id": "sfds-a",
       "page_id": "2df29b8f-0e6e-8151-ab18-e5ffb7ce8c25",
-      "last_edited_time": "2026-10-10T16:11:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -16877,7 +16877,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"School Mass\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -17233,7 +17233,7 @@
     {
       "parish_id": "ss-c",
       "page_id": "2df29b8f-0e6e-81e8-acd2-e84eb915b03c",
-      "last_edited_time": "2026-10-10T09:00:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -17305,7 +17305,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": \"German\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": \"1st Saturday Mass\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": \"German\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 645, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": \"1st Saturday Mass; First Saturday Mass & Lecture\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -17768,7 +17768,7 @@
     {
       "parish_id": "st-bernadette-westlake-oh",
       "page_id": "2df29b8f-0e6e-8112-bdcd-c502ed4c9799",
-      "last_edited_time": "2026-10-10T16:06:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -17792,7 +17792,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"Confessions also available by appointment\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": \"Also available by appointment\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -19266,7 +19266,7 @@
     {
       "parish_id": "st-paul-akron-oh",
       "page_id": "2df29b8f-0e6e-8102-b187-d8a5c5644752",
-      "last_edited_time": "2026-10-10T16:11:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -19338,7 +19338,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": \"Latin\", \"notes\": \"Ordinary Form with Latin & incense\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": \"Ordinary Form\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1900, \"mass_date\": \"2026-10-15\", \"language\": null, \"notes\": \"Mass for the Sanctification of Priests\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": \"Latin\", \"notes\": \"Ordinary Form with Latin & incense\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": \"Ordinary Form\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1900, \"mass_date\": \"2026-10-15\", \"language\": null, \"notes\": \"Mass for the Sanctification of Priests\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"First Saturday Mass and Devotions\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -20015,7 +20015,7 @@
     {
       "parish_id": "visitation-of-mary-parish-akron-oh",
       "page_id": "2df29b8f-0e6e-8142-84b5-e4049826988d",
-      "last_edited_time": "2026-10-10T16:11:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -20039,7 +20039,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"In church; or by appointment\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -20122,7 +20122,7 @@
     {
       "parish_id": "visitation-of-mary-parish-akron-oh-sjb",
       "page_id": "2e029b8f-0e6e-8040-96c2-cf5cf3f2491c",
-      "last_edited_time": "2026-10-10T15:57:00.000Z",
+      "last_edited_time": "2026-10-12T13:27:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -20194,7 +20194,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1400, \"mass_date\": null, \"language\": \"Vietnamese\", \"notes\": \"Vietnamese Sunday Mass Schedule 2026 (see bulletin for dates)\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1400, \"mass_date\": \"2026-10-11\", \"language\": \"Vietnamese\", \"notes\": \"Vietnamese Sunday Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1400, \"mass_date\": \"2026-11-15\", \"language\": \"Vietnamese\", \"notes\": \"Vietnamese Sunday Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1400, \"mass_date\": \"2026-12-13\", \"language\": \"Vietnamese\", \"notes\": \"Vietnamese Sunday Mass\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
