@@ -826,7 +826,11 @@ and lit a week later.
 
 The Pi side is not done. The plan is `docs/integration/mapboard-rules-plan.md`
 (three reads in `thePastor()`, plus the debug-mode trap: `DEBUG_DAY` is a name,
-not a date).
+not a date). The board re-ingests daily at noon, and with night mode on (as
+deployed) its parish threads restart each morning. That puts Saturday's export
+in use from Sunday morning, the start of the week it covers. Without night
+mode the threads would never pick up a refresh; the plan's optional step 2
+covers that case.
 
 ### v2.5.39 (2026-10-03) - A day cancelled without its hour is still cancelled
 

@@ -1,9 +1,10 @@
 # Mapboard: reading `Rules` and `Dated Masses` from `parish_data.json`
 
-For the agent working in the mapboard repo (which owns `reference.py`). The
-scraper side shipped in v2.5.40. **Nothing changes on the board until this
-plan is implemented.** The new keys are additive, and the current
-`reference.py` never reads them.
+For the agent working in the mapboard repo. The board's driver is `main.py`
+there; bulletin-v2 keeps an older copy as `reference.py`. The scraper side
+shipped in v2.5.40. **Nothing changes on the board until this plan is
+implemented.** The new keys are additive, and the current driver never reads
+them.
 
 ## What the board gets wrong today
 
@@ -55,9 +56,9 @@ These are real values (`2492`, 2026-10-16). Elsewhere: Saint Colman has
   first three are the normative ones in `EXPORT_SHAPE_CHANGES.md`. They are
   derived by the same `derive_ordinal` that feeds `export.json`.
 - `cancelled_on` is a list of ISO dates, so **a cancellation expires on its
-  own**. The board loads the file once at startup and keeps it until restart,
-  so an undated "cancelled" would leave a Mass dark for as long as the Pi
-  stays up.
+  own**. That holds however old the board's copy is. With night mode on, the
+  copy is at most about a day old, but a dated rule needs no assumptions about
+  that.
 - `Dated Masses` holds only dates from the export day onward. Times are the
   same `HHMM` ints as `Mass Times`.
 
@@ -76,7 +77,8 @@ Masses are already merged in. It falls back cleanly when `Rules` /
 `Dated Masses` are missing (an old cached file), so the board behaves as it
 does today.
 
-In `thePastor()` there are three reads, one per activity:
+**1. Read slots by date.** In `thePastor()` there are three reads, one per
+activity:
 
 ```python
 massToday = parishCalendar["Mass Times"][weekday]
@@ -88,6 +90,30 @@ Replace each with `slots_on(parishCalendar, "<kind>", today)`, and replace the
 `.get(weekday) is None` / `== {}` guards in front of them with an
 empty-list check. The duration parsing that follows needs no change, because
 the elements keep their shape. Leave `Is24Hour` alone.
+
+**2. Optional: re-read `parishCalendar` every pass of the loop.** This isn't
+needed for correctness on the board as deployed. `dataRefreshWatcher()` calls
+`ingest()` daily after 12:00. `thePastor()` binds
+`parishCalendar = rawjson[notionID]` when its thread starts, and with night
+mode on (as deployed) `wakeUpParish()` restarts every thread each morning. So
+Saturday's export (~10am ET) is loaded at noon and in use from Sunday
+morning, which is when the week it covers begins.
+
+It would matter if night mode were ever turned off (`enableNightMode = False`
+is the repo default). Threads would then never restart, and no refresh would
+reach them before a process restart. The change is one line at the top of
+each pass through `thePastor()`'s `while` loop:
+
+```python
+parishCalendar = rawjson.get(notionID, parishCalendar)
+```
+
+`ingest()` replaces the whole object in a single assignment, so a thread sees
+either the old file or the new one, never a mix.
+
+Not part of this plan: `setID()` builds `allocation` at startup only, so a
+parish newly added to the data or to `leds.json` still needs a restart to get
+a thread. That is rare, and it is a separate change.
 
 ## Traps
 
@@ -107,10 +133,10 @@ the elements keep their shape. Leave `Is24Hour` alone.
 4. **A dated Mass can share a time with a weekly one.** `slots_on` de-dupes,
    so if you merge them yourself, de-dupe too or the loop finds the same slot
    twice.
-5. **The file is still only re-read at restart.** Cancellations expire
-   correctly now, but a new week's schedule still does not reach a board that
-   has not restarted. A daily `ingest()` is a separate, worthwhile change, but
-   it is not needed for this one.
+5. **Call `slots_on` on every pass, not once per thread.** Its result depends
+   on the date, so a value cached across midnight would apply yesterday's
+   rules. With step 2 done as well, a noon refresh also takes effect without
+   waiting for the morning restart.
 
 ## Test dates
 
