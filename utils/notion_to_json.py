@@ -6,9 +6,17 @@ import logging
 import os
 from collections import defaultdict
 from dataclasses import dataclass
+from datetime import date, timedelta
 from typing import Any, Optional
 
 from notion_client import AsyncClient
+
+try:
+    from .bulletin_week import run_week
+    from .monthly_recurrence import derive_ordinal
+except ImportError:
+    from bulletin_week import run_week
+    from monthly_recurrence import derive_ordinal
 
 logger = logging.getLogger(__name__)
 
@@ -237,14 +245,141 @@ def _format_adoration(adoration: dict) -> dict:
     return dict(grouped)
 
 
-def parish_to_dict(parish: FullParishData, parish_id: int) -> dict:
-    """Convert FullParishData to a dictionary for reference.py consumption."""
+_SUNDAY_FIRST = (
+    "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
+)
+
+
+def _cancelled_on(day: str, last_run: Optional[str]) -> Optional[str]:
+    """The date a `cancelled` flag is about, or None if it cannot be dated.
+
+    `cancelled` means "not this week", and the Pi keeps whatever it loaded at
+    startup indefinitely, so an undated flag would keep the slot dark until the
+    next restart - weeks, possibly. Resolved against the week the run assumed
+    (`run_week` of its own date, as the pipeline does for an undated bulletin),
+    the cancellation expires by itself. No run date, no claim: the slot stays
+    weekly, which is what the old board shows anyway.
+    """
+    if not last_run or day not in _SUNDAY_FIRST:
+        return None
+    try:
+        run_day = date.fromisoformat(last_run[:10])
+    except ValueError:
+        return None
+    week_start, _ = run_week(run_day)
+    return (week_start + timedelta(days=_SUNDAY_FIRST.index(day))).isoformat()
+
+
+def _entry_rule(entry: dict, last_run: Optional[str]) -> dict:
+    """Everything that narrows one weekly entry to particular dates."""
+    day = entry.get("day")
+    rule = dict(derive_ordinal(day, entry.get("notes")) or {})
+    if entry.get("cancelled"):
+        when = _cancelled_on(day, last_run)
+        if when:
+            rule["cancelled_on"] = [when]
+    return rule
+
+
+def _rules(
+    entries: list[tuple[str, int, dict]], parish: str, kind: str
+) -> dict[str, dict[str, dict]]:
+    """Group per-entry rules by the weekday + start key the legacy lists use.
+
+    The legacy lists are keyed by start time alone, so two entries sharing a
+    slot share its rule. If either is unconditional the slot is weekly; if they
+    disagree, refuse and leave it weekly rather than pick one - the board then
+    shows what it always has.
+    """
+    by_slot: dict[tuple[str, str], list[dict]] = defaultdict(list)
+    for day, start, rule in entries:
+        by_slot[(day, str(start))].append(rule)
+
+    out: dict[str, dict[str, dict]] = defaultdict(dict)
+    for (day, start), rules in by_slot.items():
+        if not all(rules):
+            continue
+        if any(r != rules[0] for r in rules[1:]):
+            logger.warning(
+                "conflicting %s rules for %s %s %s - exporting weekly: %s",
+                kind, parish, day, start, rules,
+            )
+            continue
+        out[day][start] = rules[0]
+    return dict(out)
+
+
+def _schedule_rules(parish: FullParishData) -> dict[str, dict]:
+    """The `Rules` sidecar: which weeks each legacy slot actually occurs in.
+
+    Only entries the legacy lists export are considered, with the same filters,
+    so every rule key names a slot the Pi already has. Empty kinds are omitted.
+    """
+    run = parish.last_run
+    masses = [
+        (m["day"], m["time"], _entry_rule(m, run))
+        for m in parish.mass_times
+        if m.get("day") and m.get("time") is not None and not m.get("mass_date")
+    ]
+    ranges: dict[str, list[dict]] = {"Confessions": parish.confessions}
+    if not parish.adoration.get("is_perpetual"):
+        ranges["Adoration"] = parish.adoration.get("times", [])
+
+    rules = {"Mass Times": _rules(masses, parish.name, "Mass Times")}
+    for kind, items in ranges.items():
+        kept = [
+            (it["day"], it["start_time"], _entry_rule(it, run))
+            for it in items
+            if it.get("day") and it.get("start_time") is not None
+            and _has_end_time(
+                it["start_time"], it.get("end_time"), bool(it.get("end_next_day"))
+            )
+        ]
+        rules[kind] = _rules(kept, parish.name, kind)
+    return {kind: r for kind, r in rules.items() if r}
+
+
+def _dated_masses(mass_times: list[dict], today: str) -> dict[str, list[int]]:
+    """Dated Masses from today on, keyed by date: `{"2026-12-24": [1600, 2400]}`.
+
+    Kept out of the weekday lists, which the old board reads as every week.
+    Past dates, private Masses and cancelled ones are dropped, as in export.json.
+    """
+    try:
+        from .notion_to_app import _is_private_mass
+    except ImportError:
+        from notion_to_app import _is_private_mass
+
+    grouped: dict[str, list[int]] = defaultdict(list)
+    for m in mass_times:
+        when, time = m.get("mass_date"), m.get("time")
+        if not when or time is None or when < today:
+            continue
+        if m.get("cancelled") or _is_private_mass(m):
+            continue
+        if time not in grouped[when]:
+            grouped[when].append(time)
+    return {when: sorted(times) for when, times in sorted(grouped.items())}
+
+
+def parish_to_dict(
+    parish: FullParishData, parish_id: int, today: Optional[str] = None
+) -> dict:
+    """Convert FullParishData to a dictionary for reference.py consumption.
+
+    The first five keys are the legacy shape and are unchanged. `Rules` and
+    `Dated Masses` are additive: a board that does not read them lights every
+    slot weekly, as before. See `utils/schedule_rules.py` for the reader.
+    """
+    today = today or date.today().isoformat()
     return {
         "ID": parish_id,
         "Name": parish.name,
         "Mass Times": _group_mass_times(parish.mass_times),
         "Confessions": _group_confessions(parish.confessions),
         "Adoration": _format_adoration(parish.adoration),
+        "Rules": _schedule_rules(parish),
+        "Dated Masses": _dated_masses(parish.mass_times, today),
     }
 
 
@@ -257,8 +392,9 @@ async def main() -> str:
     parishes = await fetch_all_parishes(client, database_id)
 
     # Export as dict keyed by NotionID
+    today = date.today().isoformat()
     export_data = {
-        p.notion_id: parish_to_dict(p, idx + 1)
+        p.notion_id: parish_to_dict(p, idx + 1, today)
         for idx, p in enumerate(parishes)
     }
 

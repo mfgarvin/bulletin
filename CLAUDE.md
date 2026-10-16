@@ -40,11 +40,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   v2.5.32 adds **`anchored_week`** for 6 of those 14 refusals ("Thursday before
   First Friday"), which no value of `weeks_of_month` can express. **The app
   reads it as of Introibo 1.1.0** (confirmed 2026-10-03, `schedule_parser.dart`
-  + tests), so anchored slots now display only in their week. Still open: the
-  mapboard (`notion_to_json` / `parish_data.json`) carries **none** of these
-  rules — not `weeks_of_month`, not `anchored_week` — so the LED board still
-  renders every one of them weekly, and `reference.py` needs the same
-  predicate. Deferred deliberately (2026-09-19); retrofit later.
+  + tests), so anchored slots now display only in their week. **The mapboard
+  export carries them too as of v2.5.40**, in an additive `Rules` sidecar
+  alongside `cancelled_on` dates and a `Dated Masses` key. The board does not
+  read them yet: the Pi side is `docs/integration/mapboard-rules-plan.md`, and
+  its reader is `utils/schedule_rules.py`, written to be vendored as-is.
 - **Workflow action versions** (bumped 2026-08-29, `ce6a7f4`) - All three
   workflows moved from `actions/checkout@v4` / `actions/setup-python@v5` to
   `@v5` / `@v6`. Runners had begun force-running the old pins on Node 24
@@ -785,6 +785,48 @@ the compose default — so the template needs the same edit by hand.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.40 (2026-10-16) - The mapboard export carries the rules
+
+`parish_data.json` had none of the recurrence work since v2.5.17, so every
+monthly, anchored and cancelled slot exported as weekly, and dated Masses were
+not exported at all. Each parish now carries two **additive** keys. The legacy
+five (`ID`, `Name`, `Mass Times`, `Confessions`, `Adoration`) were regenerated
+**byte-identical across all 189 parishes**, and `reference.py` reads only
+those, so the deployed board is unaffected.
+
+- **`Rules[kind][weekday][start]`**: `weeks_of_month` / `excluded_weeks` /
+  `anchored_week` from the same `derive_ordinal` that feeds `export.json`,
+  keyed exactly like the legacy lists. A slot with no rule is weekly. When two
+  entries share a slot, an unconditional one makes it weekly; disagreeing rules
+  are refused (weekly, logged). There are none today.
+- **`cancelled_on`** is a *date*, not a flag, and this is the one place the
+  mapboard deliberately differs from `export.json`. The Pi calls `ingest()`
+  once at startup and never again, so an undated "cancelled" would keep a Mass
+  dark until the next restart. It resolves against `run_week(GPT Timestamp)`,
+  the week the pipeline assumes, and so it expires on its own. A row with no
+  run date gets no cancellation.
+- **`Dated Masses`**: `{date: [HHMM]}`, from the export day onward, with
+  private and cancelled Masses dropped as in `export.json`. Kept out of the
+  weekday lists, which the old board reads as every week.
+
+Why not resolve "this week" server-side: the board's copy has no horizon (it
+is as old as the last restart), so anything resolved at export time is
+guaranteed wrong once it is stale. A rule is not.
+
+**`utils/schedule_rules.py`** is the reader: `occurs_on(rule, date)` and
+`slots_on(parish, kind, date)`, which return the legacy element shape with
+rules applied. It uses only the stdlib, has no repo imports and parses as
+Python 3.7, so the mapboard repo can vendor it unchanged. Verified on the
+live export: 74 rules on 51 parishes (54 `weeks_of_month`, 1
+`excluded_weeks`, 6 `anchored_week`, 14 `cancelled_on`). All 6 anchored rules
+match an independently computed date in every month 2026-2031 (72/72),
+including 2026-12-31 for January 2027. Every cancellation is dark on its date
+and lit a week later.
+
+The Pi side is not done. The plan is `docs/integration/mapboard-rules-plan.md`
+(three reads in `thePastor()`, plus the debug-mode trap: `DEBUG_DAY` is a name,
+not a date).
 
 ### v2.5.39 (2026-10-03) - A day cancelled without its hour is still cancelled
 

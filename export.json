@@ -3196,14 +3196,6 @@
           "language": null,
           "notes": "Vigil Mass",
           "cancelled": false
-        },
-        {
-          "day": "Wednesday",
-          "start": "10:00",
-          "mass_date": "2026-10-14",
-          "language": null,
-          "notes": null,
-          "cancelled": false
         }
       ],
       "confession": [
@@ -3956,14 +3948,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass",
-          "cancelled": false
-        },
-        {
-          "day": "Thursday",
-          "start": "19:00",
-          "mass_date": "2026-10-15",
-          "language": null,
-          "notes": "Mass for the Sanctification of Priests",
           "cancelled": false
         }
       ],
@@ -10475,14 +10459,6 @@
           "language": null,
           "notes": "Vigil Mass",
           "cancelled": false
-        },
-        {
-          "day": "Monday",
-          "start": "09:00",
-          "mass_date": "2026-10-12",
-          "language": null,
-          "notes": "Columbus Day",
-          "cancelled": false
         }
       ],
       "confession": [
@@ -13906,14 +13882,6 @@
           "cancelled": false
         },
         {
-          "day": "Wednesday",
-          "start": "19:00",
-          "mass_date": "2026-10-14",
-          "language": null,
-          "notes": "Silent Sorrows Mass",
-          "cancelled": false
-        },
-        {
           "day": "Saturday",
           "start": "17:00",
           "mass_date": "2026-10-17",
@@ -14861,14 +14829,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass",
-          "cancelled": false
-        },
-        {
-          "day": "Thursday",
-          "start": "10:00",
-          "mass_date": "2026-10-15",
-          "language": null,
-          "notes": null,
           "cancelled": false
         }
       ],
@@ -18342,14 +18302,6 @@
           "language": null,
           "notes": "Vigil Mass",
           "cancelled": false
-        },
-        {
-          "day": "Monday",
-          "start": "10:00",
-          "mass_date": "2026-10-12",
-          "language": null,
-          "notes": "Columbus Day",
-          "cancelled": false
         }
       ],
       "confession": [
@@ -18800,14 +18752,6 @@
           "mass_date": null,
           "language": null,
           "notes": "Vigil Mass",
-          "cancelled": false
-        },
-        {
-          "day": "Wednesday",
-          "start": "09:00",
-          "mass_date": "2026-10-14",
-          "language": null,
-          "notes": null,
           "cancelled": false
         },
         {

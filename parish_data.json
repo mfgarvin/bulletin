@@ -8,7 +8,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2ef29b8f-0e6e-80f7-b685-fa4fea6f9838": {
     "ID": 2,
@@ -61,7 +63,9 @@
           "830": 670
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2e529b8f-0e6e-804c-8847-db1eedddcf8d": {
     "ID": 3,
@@ -72,7 +76,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2e029b8f-0e6e-80cd-b8c5-f2c997d60cda": {
     "ID": 4,
@@ -126,7 +132,9 @@
           "700": 840
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2e029b8f-0e6e-80a1-a790-d48824b5e2a8": {
     "ID": 5,
@@ -146,7 +154,19 @@
           "1900": 60
         }
       ]
-    }
+    },
+    "Rules": {
+      "Adoration": {
+        "Tuesday": {
+          "1900": {
+            "weeks_of_month": [
+              2
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2e029b8f-0e6e-8034-8a4f-f52734997709": {
     "ID": 6,
@@ -175,7 +195,9 @@
           "0": 1439
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2e029b8f-0e6e-805b-8383-c405ee328862": {
     "ID": 7,
@@ -207,7 +229,9 @@
           "1600": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2e029b8f-0e6e-8026-9c91-f00608cfd6f1": {
     "ID": 8,
@@ -230,7 +254,9 @@
           "1730": 150
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2e029b8f-0e6e-802b-bcdd-d544b5fe2c50": {
     "ID": 9,
@@ -264,7 +290,9 @@
           "930": 120
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2e029b8f-0e6e-8040-96c2-cf5cf3f2491c": {
     "ID": 10,
@@ -289,6 +317,15 @@
         {
           "1600": 60
         }
+      ]
+    },
+    "Rules": {},
+    "Dated Masses": {
+      "2026-11-15": [
+        1400
+      ],
+      "2026-12-13": [
+        1400
       ]
     }
   },
@@ -326,7 +363,9 @@
           "1400": 180
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2e029b8f-0e6e-8059-82f1-f88866826fa8": {
     "ID": 12,
@@ -358,7 +397,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8142-84b5-e4049826988d": {
     "ID": 13,
@@ -400,7 +441,19 @@
           "1030": 60
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Sunday": {
+          "1200": {
+            "weeks_of_month": [
+              -1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81b4-b63f-e3476b5b6578": {
     "ID": 14,
@@ -445,7 +498,9 @@
     },
     "Adoration": {
       "Is24Hour": true
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8198-811d-d08003f1009e": {
     "ID": 15,
@@ -474,7 +529,42 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {
+      "Mass Times": {
+        "Monday": {
+          "830": {
+            "cancelled_on": [
+              "2026-10-12"
+            ]
+          }
+        },
+        "Wednesday": {
+          "830": {
+            "cancelled_on": [
+              "2026-10-14"
+            ]
+          }
+        },
+        "Friday": {
+          "830": {
+            "cancelled_on": [
+              "2026-10-16"
+            ]
+          }
+        }
+      },
+      "Confessions": {
+        "Saturday": {
+          "1515": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81ae-b240-e92ffbaacef3": {
     "ID": 16,
@@ -503,7 +593,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8156-aefd-dad5993dc413": {
     "ID": 17,
@@ -529,7 +621,19 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {
+      "Confessions": {
+        "Thursday": {
+          "1700": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81ab-89b5-dcfacd3ebe3e": {
     "ID": 18,
@@ -606,6 +710,12 @@
           "900": 600
         }
       ]
+    },
+    "Rules": {},
+    "Dated Masses": {
+      "2026-10-22": [
+        1900
+      ]
     }
   },
   "2df29b8f-0e6e-8143-aceb-f84a67abaac3": {
@@ -626,7 +736,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8176-be3b-f23042e45dd1": {
     "ID": 20,
@@ -673,7 +785,9 @@
           "1900": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-811b-bf41-e10339d73ac4": {
     "ID": 21,
@@ -697,7 +811,9 @@
           "800": 540
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8198-b44a-ecb8501e19c5": {
     "ID": 22,
@@ -744,6 +860,26 @@
           "1530": 75
         }
       ]
+    },
+    "Rules": {
+      "Confessions": {
+        "Thursday": {
+          "1530": {
+            "anchored_week": {
+              "weekday": "Friday",
+              "weeks_of_month": [
+                1
+              ],
+              "offset_days": -1
+            }
+          }
+        }
+      }
+    },
+    "Dated Masses": {
+      "2026-10-16": [
+        900
+      ]
     }
   },
   "2df29b8f-0e6e-814a-b56f-c98faeef73fc": {
@@ -768,7 +904,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81b3-8d2a-efc0d08594dc": {
     "ID": 24,
@@ -802,7 +940,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-819c-a36e-e9b2c8f634de": {
     "ID": 25,
@@ -833,7 +973,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81cf-85e0-d2ba27a6fca5": {
     "ID": 26,
@@ -866,7 +1008,9 @@
           "900": 240
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-812b-a725-f3055db88499": {
     "ID": 27,
@@ -892,7 +1036,9 @@
           "1800": 30
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8135-8145-c6b9b3976432": {
     "ID": 28,
@@ -927,7 +1073,9 @@
           "1300": 420
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81e8-acd2-e84eb915b03c": {
     "ID": 29,
@@ -981,7 +1129,19 @@
           "1900": 60
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Saturday": {
+          "930": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81d8-a456-d847be4f7a45": {
     "ID": 30,
@@ -1018,7 +1178,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81c4-a283-dac7310c10f5": {
     "ID": 31,
@@ -1100,7 +1262,9 @@
           "700": 720
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81cf-854d-f78f77a2f115": {
     "ID": 32,
@@ -1143,7 +1307,9 @@
           "930": 570
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-813e-a312-c03e908e4a9d": {
     "ID": 33,
@@ -1186,7 +1352,9 @@
           "730": 330
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-814e-8280-f04a8290019e": {
     "ID": 34,
@@ -1237,7 +1405,9 @@
           "0": 960
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8161-ad33-c08aa86b788d": {
     "ID": 35,
@@ -1280,7 +1450,9 @@
           "900": 555
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81df-9251-fd169f9c32c8": {
     "ID": 36,
@@ -1318,7 +1490,9 @@
           "1900": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8155-90fc-da7e364ae164": {
     "ID": 37,
@@ -1345,7 +1519,13 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-816a-8429-ccdc7d16cbf4": {
     "ID": 38,
@@ -1359,7 +1539,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8183-9673-e8d4daa1f985": {
     "ID": 39,
@@ -1395,6 +1577,25 @@
         {
           "1700": 60
         }
+      ]
+    },
+    "Rules": {
+      "Adoration": {
+        "Friday": {
+          "1700": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {
+      "2026-10-16": [
+        1800
+      ],
+      "2026-10-17": [
+        730
       ]
     }
   },
@@ -1445,7 +1646,19 @@
           "915": 60
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Saturday": {
+          "900": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8152-baac-d5eda1c1d328": {
     "ID": 41,
@@ -1477,7 +1690,9 @@
           "1730": 50
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8101-9103-de306ec8aed1": {
     "ID": 42,
@@ -1509,7 +1724,9 @@
           "2000": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81fe-b3d8-c663c2c6936a": {
     "ID": 43,
@@ -1538,7 +1755,9 @@
           "2000": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8105-9c27-e2f53d060f43": {
     "ID": 44,
@@ -1577,7 +1796,19 @@
           "1800": 120
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Friday": {
+          "1730": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8179-a9a5-ea00e4206a69": {
     "ID": 45,
@@ -1631,7 +1862,9 @@
           "930": 630
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8172-a3dc-d52223d14acb": {
     "ID": 46,
@@ -1670,7 +1903,9 @@
           "900": 540
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81e2-b6d1-fa7fb4a721d4": {
     "ID": 47,
@@ -1711,7 +1946,9 @@
           "1430": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8144-8098-fea711d6eb28": {
     "ID": 48,
@@ -1741,7 +1978,19 @@
           "1900": 60
         }
       ]
-    }
+    },
+    "Rules": {
+      "Adoration": {
+        "Friday": {
+          "1900": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8108-a992-f6a8d5b84fdb": {
     "ID": 49,
@@ -1779,7 +2028,26 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {
+      "Mass Times": {
+        "Friday": {
+          "700": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {
+      "2026-11-06": [
+        930
+      ],
+      "2026-11-07": [
+        900
+      ]
+    }
   },
   "2df29b8f-0e6e-8157-a489-ea71565cf57b": {
     "ID": 50,
@@ -1797,7 +2065,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81a1-b271-f89828d3dc11": {
     "ID": 51,
@@ -1840,7 +2110,9 @@
           "1200": 240
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-811b-bf73-dbbc5172747c": {
     "ID": 52,
@@ -1877,7 +2149,9 @@
           "900": 720
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81f3-b3a5-d226ca83f6db": {
     "ID": 53,
@@ -1920,7 +2194,9 @@
           "1000": 300
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81fc-916c-f75035916518": {
     "ID": 54,
@@ -1959,7 +2235,40 @@
           "1900": 60
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Monday": {
+          "900": {
+            "cancelled_on": [
+              "2026-10-12"
+            ]
+          }
+        },
+        "Tuesday": {
+          "900": {
+            "cancelled_on": [
+              "2026-10-13"
+            ]
+          }
+        },
+        "Wednesday": {
+          "700": {
+            "cancelled_on": [
+              "2026-10-14"
+            ]
+          }
+        },
+        "Friday": {
+          "700": {
+            "cancelled_on": [
+              "2026-10-16"
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-813f-8b78-cb5576bd82c5": {
     "ID": 55,
@@ -1999,7 +2308,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-818a-aab0-de40a524ec6b": {
     "ID": 56,
@@ -2068,7 +2379,9 @@
           "830": 750
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8103-8c27-f7333090c531": {
     "ID": 57,
@@ -2133,7 +2446,19 @@
           "2000": 60
         }
       ]
-    }
+    },
+    "Rules": {
+      "Confessions": {
+        "Friday": {
+          "1300": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-811e-bd5d-df80f9eab274": {
     "ID": 58,
@@ -2157,7 +2482,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81a9-922c-ef58001e9be0": {
     "ID": 59,
@@ -2206,7 +2533,9 @@
           "1100": 420
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81a7-9041-f1ff47219753": {
     "ID": 60,
@@ -2243,7 +2572,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81a5-905b-e5fea07f297e": {
     "ID": 61,
@@ -2287,6 +2618,22 @@
           "1230": 390
         }
       ]
+    },
+    "Rules": {
+      "Mass Times": {
+        "Saturday": {
+          "830": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {
+      "2026-11-03": [
+        1900
+      ]
     }
   },
   "2df29b8f-0e6e-81dd-b16a-e02449e10e51": {
@@ -2314,7 +2661,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81aa-982e-e6c82394299f": {
     "ID": 63,
@@ -2343,7 +2692,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8147-b4a8-cf4c3bd8d694": {
     "ID": 64,
@@ -2361,7 +2712,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81a0-a7ea-d9771ccce630": {
     "ID": 65,
@@ -2430,6 +2783,12 @@
           "700": 720
         }
       ]
+    },
+    "Rules": {},
+    "Dated Masses": {
+      "2026-10-16": [
+        830
+      ]
     }
   },
   "2df29b8f-0e6e-811b-9a13-dae94abc747c": {
@@ -2475,7 +2834,9 @@
     },
     "Adoration": {
       "Is24Hour": true
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81c1-9be5-c7d0bef03c29": {
     "ID": 67,
@@ -2510,7 +2871,19 @@
           "1600": 60
         }
       ]
-    }
+    },
+    "Rules": {
+      "Adoration": {
+        "Friday": {
+          "1600": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81ae-8208-efc0be0a9660": {
     "ID": 68,
@@ -2536,7 +2909,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81f0-8650-c85bc941155c": {
     "ID": 69,
@@ -2573,7 +2948,28 @@
           "1900": 60
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Saturday": {
+          "815": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      },
+      "Adoration": {
+        "Tuesday": {
+          "1900": {
+            "weeks_of_month": [
+              2
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8122-8344-df9dc04db3e1": {
     "ID": 70,
@@ -2593,7 +2989,9 @@
           "1300": 300
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-814f-80a6-eba0c5b588fa": {
     "ID": 71,
@@ -2644,7 +3042,37 @@
           "900": 360
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Sunday": {
+          "1700": {
+            "weeks_of_month": [
+              2
+            ]
+          }
+        }
+      },
+      "Confessions": {
+        "Sunday": {
+          "1615": {
+            "weeks_of_month": [
+              2
+            ]
+          }
+        }
+      },
+      "Adoration": {
+        "Friday": {
+          "900": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8137-9a88-e86f18bc231a": {
     "ID": 72,
@@ -2691,7 +3119,19 @@
           "900": 60
         }
       ]
-    }
+    },
+    "Rules": {
+      "Adoration": {
+        "Tuesday": {
+          "900": {
+            "weeks_of_month": [
+              2
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8113-8e64-e38cb4218084": {
     "ID": 73,
@@ -2764,7 +3204,19 @@
           "900": 420
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Sunday": {
+          "1200": {
+            "weeks_of_month": [
+              2
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8156-8bbf-d7f9baedbf3c": {
     "ID": 74,
@@ -2806,6 +3258,12 @@
           "900": 60
         }
       ]
+    },
+    "Rules": {},
+    "Dated Masses": {
+      "2026-10-25": [
+        1530
+      ]
     }
   },
   "2df29b8f-0e6e-81cd-989a-e4b6ea98273a": {
@@ -2839,7 +3297,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8125-a2de-c7579c4ef0ba": {
     "ID": 76,
@@ -2917,7 +3377,32 @@
           "0": 990
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Saturday": {
+          "800": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      },
+      "Confessions": {
+        "Thursday": {
+          "1830": {
+            "anchored_week": {
+              "weekday": "Saturday",
+              "weeks_of_month": [
+                1
+              ],
+              "offset_days": -2
+            }
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8196-b853-e1c72bc28a23": {
     "ID": 77,
@@ -2959,6 +3444,26 @@
           "900": 660
         }
       ]
+    },
+    "Rules": {
+      "Confessions": {
+        "Wednesday": {
+          "845": {
+            "anchored_week": {
+              "weekday": "Friday",
+              "weeks_of_month": [
+                1
+              ],
+              "offset_days": -2
+            }
+          }
+        }
+      }
+    },
+    "Dated Masses": {
+      "2026-10-31": [
+        900
+      ]
     }
   },
   "2df29b8f-0e6e-811d-8d86-ede10ab44dd5": {
@@ -2995,7 +3500,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-818d-b7d7-d53b1ce69e9b": {
     "ID": 79,
@@ -3029,7 +3536,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-815f-bbd0-cfda6dfa68c9": {
     "ID": 80,
@@ -3079,7 +3588,9 @@
           "930": 495
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8194-8f27-fb0a08cdc072": {
     "ID": 81,
@@ -3151,7 +3662,9 @@
           "600": 960
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81c3-9376-c42b78bffd7f": {
     "ID": 82,
@@ -3177,7 +3690,9 @@
           "1800": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8176-a3ac-e95c75aace8e": {
     "ID": 83,
@@ -3216,7 +3731,9 @@
           "1730": 30
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-813f-85ca-ed3468a5d5d5": {
     "ID": 84,
@@ -3258,7 +3775,9 @@
           "1000": 630
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8134-9167-f8cfab892398": {
     "ID": 85,
@@ -3290,7 +3809,9 @@
           "1900": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8111-b21c-ea34ff9dac4a": {
     "ID": 86,
@@ -3323,7 +3844,9 @@
           "1530": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8136-909c-d1b9dd03619f": {
     "ID": 87,
@@ -3370,7 +3893,9 @@
           "730": 690
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8178-b473-d98ff8e84300": {
     "ID": 88,
@@ -3409,7 +3934,19 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {
+      "Mass Times": {
+        "Friday": {
+          "1900": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-812b-9c91-e557231363f9": {
     "ID": 89,
@@ -3448,7 +3985,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-810e-bde9-dbf004496439": {
     "ID": 90,
@@ -3486,7 +4025,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81ea-b210-de635137d18a": {
     "ID": 91,
@@ -3512,7 +4053,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8165-be89-ffb1efbf4512": {
     "ID": 92,
@@ -3555,7 +4098,26 @@
           "800": 45
         }
       ]
-    }
+    },
+    "Rules": {
+      "Adoration": {
+        "Friday": {
+          "1930": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        },
+        "Thursday": {
+          "800": {
+            "weeks_of_month": [
+              2
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-814c-93d5-ef378a7e5e21": {
     "ID": 93,
@@ -3595,7 +4157,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8151-ab18-e5ffb7ce8c25": {
     "ID": 94,
@@ -3669,7 +4233,9 @@
           "700": 900
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81bc-a078-f953cb64d946": {
     "ID": 95,
@@ -3702,14 +4268,18 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81cf-aae4-ef161a4d16fd": {
     "ID": 96,
     "Name": "Saint Elizabeth of Hungary",
     "Mass Times": {},
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8193-9f95-c63ad29759ea": {
     "ID": 97,
@@ -3748,7 +4318,9 @@
           "1200": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8124-8205-ce587e7540f3": {
     "ID": 98,
@@ -3777,7 +4349,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81c9-a620-f7a8846c02d7": {
     "ID": 99,
@@ -3818,7 +4392,9 @@
           "1000": 480
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81c6-a639-e4e62c8e6a5f": {
     "ID": 100,
@@ -3871,7 +4447,19 @@
           "0": 1440
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Saturday": {
+          "800": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8145-a619-ffd5ef0e6211": {
     "ID": 101,
@@ -3901,7 +4489,19 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "830": {
+            "cancelled_on": [
+              "2026-10-15"
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81a5-8676-d4f89d31cb67": {
     "ID": 102,
@@ -3943,7 +4543,9 @@
           "900": 570
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8104-8424-c7773b03b3a2": {
     "ID": 103,
@@ -3988,7 +4590,23 @@
     },
     "Adoration": {
       "Is24Hour": true
-    }
+    },
+    "Rules": {
+      "Confessions": {
+        "Thursday": {
+          "1900": {
+            "anchored_week": {
+              "weekday": "Friday",
+              "weeks_of_month": [
+                1
+              ],
+              "offset_days": -1
+            }
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8134-b02d-d8dbbd8dd2a7": {
     "ID": 104,
@@ -4025,7 +4643,37 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {
+      "Mass Times": {
+        "Friday": {
+          "800": {
+            "excluded_weeks": [
+              1
+            ]
+          },
+          "1830": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      },
+      "Confessions": {
+        "Friday": {
+          "1900": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {
+      "2026-10-18": [
+        1300
+      ]
+    }
   },
   "2df29b8f-0e6e-81c3-b978-d3fb14d33a5d": {
     "ID": 105,
@@ -4073,7 +4721,9 @@
           "930": 510
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8114-8f74-e9e85ba3c4d6": {
     "ID": 106,
@@ -4110,7 +4760,9 @@
           "900": 600
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81f5-9cf7-fbc2a7e4639c": {
     "ID": 107,
@@ -4149,7 +4801,9 @@
           "900": 240
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81f9-84be-f9ac5b0e11a3": {
     "ID": 108,
@@ -4186,7 +4840,19 @@
           "1200": 210
         }
       ]
-    }
+    },
+    "Rules": {
+      "Adoration": {
+        "Friday": {
+          "1200": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8111-8e9d-e44a2298f21e": {
     "ID": 109,
@@ -4235,7 +4901,23 @@
     },
     "Adoration": {
       "Is24Hour": true
-    }
+    },
+    "Rules": {
+      "Confessions": {
+        "Thursday": {
+          "1500": {
+            "anchored_week": {
+              "weekday": "Friday",
+              "weeks_of_month": [
+                1
+              ],
+              "offset_days": -1
+            }
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81ce-bb19-d214c32ef1f9": {
     "ID": 110,
@@ -4273,7 +4955,26 @@
           "1700": 60
         }
       ]
-    }
+    },
+    "Rules": {
+      "Adoration": {
+        "Friday": {
+          "800": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        },
+        "Tuesday": {
+          "1700": {
+            "weeks_of_month": [
+              2
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8169-b8a1-ca63639d578d": {
     "ID": 111,
@@ -4290,7 +4991,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8164-87b9-f65d2e7da474": {
     "ID": 112,
@@ -4327,7 +5030,9 @@
           "900": 570
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8152-b105-dd78a3b1d2f4": {
     "ID": 113,
@@ -4389,7 +5094,9 @@
           "1300": 420
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81b2-88c7-e60f58e7ab91": {
     "ID": 114,
@@ -4418,7 +5125,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81f7-9e37-de6b59669d8e": {
     "ID": 115,
@@ -4460,7 +5169,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8112-bdcd-c502ed4c9799": {
     "ID": 116,
@@ -4503,6 +5214,22 @@
           "1000": 420
         }
       ]
+    },
+    "Rules": {
+      "Adoration": {
+        "Friday": {
+          "1000": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
     }
   },
   "2df29b8f-0e6e-810e-b79a-cc461cb27fb8": {
@@ -4543,7 +5270,19 @@
           "930": 390
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Friday": {
+          "1900": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81c3-a009-ee24ebdf3043": {
     "ID": 118,
@@ -4592,7 +5331,9 @@
           "830": 750
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-819e-af51-c403251b35d5": {
     "ID": 119,
@@ -4620,7 +5361,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-813f-a774-fc6471f0e007": {
     "ID": 120,
@@ -4637,7 +5380,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-818c-84c2-e78c3e9bc0fe": {
     "ID": 121,
@@ -4684,7 +5429,28 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {
+      "Mass Times": {
+        "Friday": {
+          "1800": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      },
+      "Confessions": {
+        "Friday": {
+          "1600": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8169-a5ff-df9f21841526": {
     "ID": 122,
@@ -4714,7 +5480,13 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {
+      "2026-10-16": [
+        1800
+      ]
+    }
   },
   "2df29b8f-0e6e-81c4-84e2-cba95eaada54": {
     "ID": 123,
@@ -4747,7 +5519,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81aa-b998-f339768a3a5d": {
     "ID": 124,
@@ -4791,7 +5565,9 @@
           "1500": 240
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8149-9af8-cbd7a6ff9268": {
     "ID": 125,
@@ -4843,7 +5619,9 @@
           "900": 300
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8141-97d0-fe76197f0694": {
     "ID": 126,
@@ -4870,7 +5648,9 @@
           "1500": 240
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-814c-bae0-e942686c0400": {
     "ID": 127,
@@ -4908,7 +5688,9 @@
           "1600": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8167-abd2-d96cab7fd861": {
     "ID": 128,
@@ -4947,7 +5729,9 @@
           "830": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81dc-9ab8-ccf6aa935093": {
     "ID": 129,
@@ -4979,7 +5763,19 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {
+      "Confessions": {
+        "Saturday": {
+          "900": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8180-9cb6-db73a8a35fed": {
     "ID": 130,
@@ -5016,7 +5812,9 @@
           "915": 345
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8154-b85c-ef5c39efad90": {
     "ID": 131,
@@ -5033,7 +5831,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8109-94f9-cdad8bfc117c": {
     "ID": 132,
@@ -5070,6 +5870,12 @@
           "900": 630
         }
       ]
+    },
+    "Rules": {},
+    "Dated Masses": {
+      "2026-10-17": [
+        1700
+      ]
     }
   },
   "2df29b8f-0e6e-81f5-befc-ca6a7c6dd8b6": {
@@ -5087,7 +5893,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81f5-a006-f4af8a897af5": {
     "ID": 134,
@@ -5160,7 +5968,19 @@
           "0": 1020
         }
       ]
-    }
+    },
+    "Rules": {
+      "Confessions": {
+        "Wednesday": {
+          "1900": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-812b-ae0f-c24462a6cc4a": {
     "ID": 135,
@@ -5208,7 +6028,23 @@
           "900": 705
         }
       ]
-    }
+    },
+    "Rules": {
+      "Confessions": {
+        "Thursday": {
+          "2000": {
+            "anchored_week": {
+              "weekday": "Friday",
+              "weeks_of_month": [
+                1
+              ],
+              "offset_days": -1
+            }
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81ba-b21e-d4999913b534": {
     "ID": 136,
@@ -5243,7 +6079,9 @@
           "930": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81d6-b944-dd8d452255c6": {
     "ID": 137,
@@ -5269,7 +6107,13 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {
+      "2026-10-25": [
+        1000
+      ]
+    }
   },
   "2df29b8f-0e6e-812d-83a0-f06c6ab0c47f": {
     "ID": 138,
@@ -5286,7 +6130,19 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {
+      "Mass Times": {
+        "Saturday": {
+          "1600": {
+            "weeks_of_month": [
+              -1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-814a-b187-f2a13f8de764": {
     "ID": 139,
@@ -5340,7 +6196,9 @@
           "900": 555
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8170-8f5f-e09d4c01c64d": {
     "ID": 140,
@@ -5384,7 +6242,9 @@
           "1730": 45
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81be-a332-f5991e2c9ed6": {
     "ID": 141,
@@ -5424,7 +6284,19 @@
     },
     "Adoration": {
       "Is24Hour": true
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Saturday": {
+          "800": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81d3-9423-f9376c490bf5": {
     "ID": 142,
@@ -5453,7 +6325,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8139-a1fd-ebcf3dd284a9": {
     "ID": 143,
@@ -5489,7 +6363,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81fd-b187-d211df45fab2": {
     "ID": 144,
@@ -5521,7 +6397,9 @@
           "700": 90
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8174-bee3-fdf989432d32": {
     "ID": 145,
@@ -5554,7 +6432,13 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-81e4-abe1-c2099acbb0d6": {
     "ID": 146,
@@ -5609,6 +6493,12 @@
           "700": 840
         }
       ]
+    },
+    "Rules": {},
+    "Dated Masses": {
+      "2026-10-18": [
+        1400
+      ]
     }
   },
   "2df29b8f-0e6e-8160-a0b6-e9792b401e99": {
@@ -5651,7 +6541,22 @@
           "1430": 240
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Wednesday": {
+          "1830": {
+            "weeks_of_month": [
+              3
+            ],
+            "cancelled_on": [
+              "2026-10-14"
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-817c-981e-f5098c68820a": {
     "ID": 148,
@@ -5677,7 +6582,20 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {
+      "Confessions": {
+        "Saturday": {
+          "900": {
+            "weeks_of_month": [
+              2,
+              4
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-812c-9ce3-ffa40cb0f37e": {
     "ID": 149,
@@ -5710,7 +6628,13 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-8146-8010-f8884fda41cb": {
     "ID": 150,
@@ -5742,7 +6666,25 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {
+      "Mass Times": {
+        "Sunday": {
+          "1300": {
+            "weeks_of_month": [
+              -1
+            ]
+          },
+          "1600": {
+            "weeks_of_month": [
+              1,
+              3
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-812e-b3d6-d7d0f282bcdd": {
     "ID": 151,
@@ -5786,7 +6728,19 @@
     },
     "Adoration": {
       "Is24Hour": true
-    }
+    },
+    "Rules": {
+      "Confessions": {
+        "Friday": {
+          "1500": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81ef-b72d-d3e64b95baf6": {
     "ID": 152,
@@ -5810,7 +6764,19 @@
           "2200": 615
         }
       ]
-    }
+    },
+    "Rules": {
+      "Adoration": {
+        "Friday": {
+          "2200": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-815d-a722-cf9faea7c0fc": {
     "ID": 153,
@@ -5831,7 +6797,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81e2-8106-f688484a67b3": {
     "ID": 154,
@@ -5902,7 +6870,19 @@
           "900": 300
         }
       ]
-    }
+    },
+    "Rules": {
+      "Confessions": {
+        "Tuesday": {
+          "1830": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8154-b0cb-fc6212f98bcc": {
     "ID": 155,
@@ -5938,7 +6918,9 @@
           "830": 570
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81db-9839-fc6973d11f9a": {
     "ID": 156,
@@ -6007,7 +6989,40 @@
           "500": 1020
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Monday": {
+          "1800": {
+            "cancelled_on": [
+              "2026-10-12"
+            ]
+          }
+        },
+        "Thursday": {
+          "1800": {
+            "cancelled_on": [
+              "2026-10-15"
+            ]
+          }
+        },
+        "Friday": {
+          "1800": {
+            "cancelled_on": [
+              "2026-10-16"
+            ]
+          }
+        },
+        "Wednesday": {
+          "930": {
+            "cancelled_on": [
+              "2026-10-14"
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8187-b29d-c99b4e19a917": {
     "ID": 157,
@@ -6021,7 +7036,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81b8-8326-fc3a0424e6c0": {
     "ID": 158,
@@ -6032,7 +7049,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81a4-8acc-ed916335ae59": {
     "ID": 159,
@@ -6046,7 +7065,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-819d-b1b1-e98755961cdf": {
     "ID": 160,
@@ -6072,7 +7093,28 @@
           "1800": 60
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Friday": {
+          "1900": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      },
+      "Adoration": {
+        "Friday": {
+          "1800": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-813b-b394-d42bc56caf24": {
     "ID": 161,
@@ -6116,7 +7158,19 @@
           "1200": 420
         }
       ]
-    }
+    },
+    "Rules": {
+      "Confessions": {
+        "Tuesday": {
+          "1800": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8106-98b6-d7a3b67ef78d": {
     "ID": 162,
@@ -6156,7 +7210,9 @@
           "1100": 660
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-817a-b836-df0687dff586": {
     "ID": 163,
@@ -6194,7 +7250,9 @@
           "1430": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8107-adfd-f41a12649d1a": {
     "ID": 164,
@@ -6225,7 +7283,9 @@
           "1800": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8176-abbc-e8fb7dcbb7ca": {
     "ID": 165,
@@ -6269,7 +7329,28 @@
           "645": 15
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Friday": {
+          "1900": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      },
+      "Adoration": {
+        "Friday": {
+          "645": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8176-8787-e572904eee14": {
     "ID": 166,
@@ -6308,7 +7389,9 @@
           "830": 600
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8162-b336-fae1d9798570": {
     "ID": 167,
@@ -6350,7 +7433,9 @@
           "830": 510
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8166-a588-f94f1d80d87a": {
     "ID": 168,
@@ -6382,7 +7467,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81f7-a797-d2cdfcc637c3": {
     "ID": 169,
@@ -6460,7 +7547,28 @@
           "600": 1020
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Friday": {
+          "1900": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      },
+      "Confessions": {
+        "Friday": {
+          "1800": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8164-b56c-cc53b73b4a3b": {
     "ID": 170,
@@ -6510,7 +7618,9 @@
           "900": 420
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-815c-838f-e65b319eb239": {
     "ID": 171,
@@ -6580,7 +7690,9 @@
         }
       ]
     },
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81fb-bb0b-fbcc16cd3fde": {
     "ID": 172,
@@ -6623,7 +7735,9 @@
           "1700": 120
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8167-a60b-d1b7f7be9da8": {
     "ID": 173,
@@ -6652,7 +7766,9 @@
           "1600": 50
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8124-a4ba-fcd0ca4cf1ac": {
     "ID": 174,
@@ -6694,7 +7810,9 @@
           "1600": 180
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8170-ba30-e1933a1ecfda": {
     "ID": 175,
@@ -6745,7 +7863,28 @@
           "1215": 90
         }
       ]
-    }
+    },
+    "Rules": {
+      "Mass Times": {
+        "Saturday": {
+          "830": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      },
+      "Adoration": {
+        "Friday": {
+          "1215": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81bb-b5b1-f4122013ae4b": {
     "ID": 176,
@@ -6777,7 +7916,9 @@
           "1900": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81d3-985c-f49700e2f22b": {
     "ID": 177,
@@ -6821,7 +7962,9 @@
           "1800": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8186-aa82-d23a416bd297": {
     "ID": 178,
@@ -6861,7 +8004,9 @@
           "1230": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-814b-9672-cd82002f2a82": {
     "ID": 179,
@@ -6902,6 +8047,12 @@
     },
     "Adoration": {
       "Is24Hour": true
+    },
+    "Rules": {},
+    "Dated Masses": {
+      "2026-10-16": [
+        1700
+      ]
     }
   },
   "2df29b8f-0e6e-8155-8723-ea9777416b47": {
@@ -6950,7 +8101,9 @@
           "1330": 120
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-817b-a6e8-f5445a11611c": {
     "ID": 181,
@@ -6994,7 +8147,9 @@
           "930": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-815a-9b4b-d08db87e8ee2": {
     "ID": 182,
@@ -7021,7 +8176,9 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-810c-b34f-e3b97c161ab3": {
     "ID": 183,
@@ -7067,7 +8224,9 @@
           "1500": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81c8-bef3-de60123024dd": {
     "ID": 184,
@@ -7109,7 +8268,9 @@
           "900": 780
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8100-83b0-f89558dc754d": {
     "ID": 185,
@@ -7142,7 +8303,9 @@
           "1900": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81c6-9100-ce9b22c7f19d": {
     "ID": 186,
@@ -7195,7 +8358,9 @@
           "1230": 300
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8115-8863-fb38d7a1ac58": {
     "ID": 187,
@@ -7219,7 +8384,19 @@
       ]
     },
     "Confessions": {},
-    "Adoration": {}
+    "Adoration": {},
+    "Rules": {
+      "Mass Times": {
+        "Friday": {
+          "830": {
+            "cancelled_on": [
+              "2026-10-16"
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81be-a725-f80109a7b195": {
     "ID": 188,
@@ -7278,7 +8455,9 @@
           "1800": 60
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8117-8408-e811d348356e": {
     "ID": 189,
@@ -7358,6 +8537,8 @@
           "600": 900
         }
       ]
-    }
+    },
+    "Rules": {},
+    "Dated Masses": {}
   }
 }
