@@ -263,7 +263,6 @@
     "Name": "Saint Mary (Our Lady of the Assumption) - Elyria",
     "Mass Times": {
       "Saturday": [
-        900,
         1630
       ],
       "Sunday": [
@@ -299,19 +298,14 @@
     "Name": "Saint John the Baptist Parish",
     "Mass Times": {
       "Sunday": [
-        1000
+        1000,
+        1400
       ],
       "Thursday": [
         1730
       ]
     },
-    "Confessions": {
-      "Thursday": [
-        {
-          "1700": 30
-        }
-      ]
-    },
+    "Confessions": {},
     "Adoration": {
       "Tuesday": [
         {
@@ -320,14 +314,7 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {
-      "2026-11-15": [
-        1400
-      ],
-      "2026-12-13": [
-        1400
-      ]
-    }
+    "Dated Masses": {}
   },
   "2e029b8f-0e6e-80df-840e-c265e2dc9796": {
     "ID": 11,
@@ -461,11 +448,15 @@
     "Mass Times": {
       "Saturday": [
         830,
-        1630
+        1630,
+        1830
       ],
       "Sunday": [
         815,
         1100
+      ],
+      "Monday": [
+        830
       ],
       "Tuesday": [
         830
@@ -478,9 +469,6 @@
         830
       ],
       "Friday": [
-        830
-      ],
-      "Monday": [
         830
       ]
     },
@@ -500,7 +488,11 @@
       "Is24Hour": true
     },
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-8198-811d-d08003f1009e": {
     "ID": 15,
@@ -535,21 +527,21 @@
         "Monday": {
           "830": {
             "cancelled_on": [
-              "2026-10-12"
+              "2026-10-19"
             ]
           }
         },
         "Wednesday": {
           "830": {
             "cancelled_on": [
-              "2026-10-14"
+              "2026-10-21"
             ]
           }
         },
         "Friday": {
           "830": {
             "cancelled_on": [
-              "2026-10-16"
+              "2026-10-23"
             ]
           }
         }
@@ -623,6 +615,15 @@
     },
     "Adoration": {},
     "Rules": {
+      "Mass Times": {
+        "Friday": {
+          "830": {
+            "cancelled_on": [
+              "2026-10-23"
+            ]
+          }
+        }
+      },
       "Confessions": {
         "Thursday": {
           "1700": {
@@ -876,11 +877,7 @@
         }
       }
     },
-    "Dated Masses": {
-      "2026-10-16": [
-        900
-      ]
-    }
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-814a-b56f-c98faeef73fc": {
     "ID": 23,
@@ -1037,8 +1034,29 @@
         }
       ]
     },
-    "Rules": {},
-    "Dated Masses": {}
+    "Rules": {
+      "Mass Times": {
+        "Monday": {
+          "1830": {
+            "cancelled_on": [
+              "2026-10-19"
+            ]
+          }
+        },
+        "Thursday": {
+          "830": {
+            "cancelled_on": [
+              "2026-10-22"
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {
+      "2026-10-24": [
+        1600
+      ]
+    }
   },
   "2df29b8f-0e6e-8135-8145-c6b9b3976432": {
     "ID": 28,
@@ -1087,6 +1105,8 @@
       ],
       "Sunday": [
         800,
+        930,
+        1100,
         1100
       ],
       "Monday": [
@@ -1115,11 +1135,6 @@
       "Sunday": [
         {
           "900": 30
-        }
-      ],
-      "Wednesday": [
-        {
-          "1900": 60
         }
       ]
     },
@@ -1180,7 +1195,11 @@
     "Confessions": {},
     "Adoration": {},
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-26": [
+        900
+      ]
+    }
   },
   "2df29b8f-0e6e-81c4-a283-dac7310c10f5": {
     "ID": 31,
@@ -1354,7 +1373,11 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-814e-8280-f04a8290019e": {
     "ID": 34,
@@ -1491,19 +1514,50 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Monday": {
+          "800": {
+            "cancelled_on": [
+              "2026-10-19"
+            ]
+          }
+        },
+        "Tuesday": {
+          "800": {
+            "cancelled_on": [
+              "2026-10-20"
+            ]
+          }
+        },
+        "Wednesday": {
+          "800": {
+            "cancelled_on": [
+              "2026-10-21"
+            ]
+          }
+        },
+        "Friday": {
+          "1200": {
+            "cancelled_on": [
+              "2026-10-23"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {}
   },
   "2df29b8f-0e6e-8155-90fc-da7e364ae164": {
     "ID": 37,
     "Name": "Saint Peter Parish",
     "Mass Times": {
-      "Saturday": [
-        1600
-      ],
       "Sunday": [
         900,
         1200
+      ],
+      "Saturday": [
+        1600
       ],
       "Monday": [
         1730
@@ -1554,13 +1608,15 @@
         730
       ],
       "Wednesday": [
-        730
+        730,
+        1800
       ],
       "Thursday": [
         730
       ],
       "Friday": [
-        730
+        730,
+        1800
       ],
       "Saturday": [
         1700
@@ -1591,10 +1647,7 @@
       }
     },
     "Dated Masses": {
-      "2026-10-16": [
-        1800
-      ],
-      "2026-10-17": [
+      "2026-10-24": [
         730
       ]
     }
@@ -1604,7 +1657,6 @@
     "Name": "Saint Paul Catholic Parish",
     "Mass Times": {
       "Saturday": [
-        900,
         1630
       ],
       "Sunday": [
@@ -1647,17 +1699,7 @@
         }
       ]
     },
-    "Rules": {
-      "Mass Times": {
-        "Saturday": {
-          "900": {
-            "weeks_of_month": [
-              1
-            ]
-          }
-        }
-      }
-    },
+    "Rules": {},
     "Dated Masses": {}
   },
   "2df29b8f-0e6e-8152-baac-d5eda1c1d328": {
@@ -1948,7 +1990,11 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-8144-8098-fea711d6eb28": {
     "ID": 48,
@@ -2064,7 +2110,13 @@
         645
       ]
     },
-    "Confessions": {},
+    "Confessions": {
+      "Saturday": [
+        {
+          "1500": 60
+        }
+      ]
+    },
     "Adoration": {},
     "Rules": {},
     "Dated Masses": {}
@@ -2124,9 +2176,6 @@
         1700
       ],
       "Monday": [
-        700
-      ],
-      "Tuesday": [
         700
       ],
       "Wednesday": [
@@ -2241,28 +2290,28 @@
         "Monday": {
           "900": {
             "cancelled_on": [
-              "2026-10-12"
+              "2026-10-19"
             ]
           }
         },
         "Tuesday": {
           "900": {
             "cancelled_on": [
-              "2026-10-13"
+              "2026-10-20"
             ]
           }
         },
         "Wednesday": {
           "700": {
             "cancelled_on": [
-              "2026-10-14"
+              "2026-10-21"
             ]
           }
         },
         "Friday": {
           "700": {
             "cancelled_on": [
-              "2026-10-16"
+              "2026-10-23"
             ]
           }
         }
@@ -2458,7 +2507,11 @@
         }
       }
     },
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-811e-bd5d-df80f9eab274": {
     "ID": 58,
@@ -2490,15 +2543,6 @@
     "ID": 59,
     "Name": "Saint Mary Parish",
     "Mass Times": {
-      "Saturday": [
-        1630
-      ],
-      "Sunday": [
-        800,
-        930,
-        1130,
-        1730
-      ],
       "Monday": [
         900
       ],
@@ -2513,6 +2557,15 @@
       ],
       "Friday": [
         900
+      ],
+      "Saturday": [
+        1630
+      ],
+      "Sunday": [
+        800,
+        930,
+        1130,
+        1730
       ]
     },
     "Confessions": {
@@ -2535,7 +2588,11 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-10-23": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-81a7-9041-f1ff47219753": {
     "ID": 60,
@@ -2543,7 +2600,8 @@
     "Mass Times": {
       "Saturday": [
         745,
-        1700
+        1700,
+        1745
       ],
       "Sunday": [
         830,
@@ -2574,7 +2632,11 @@
     },
     "Adoration": {},
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-10-25": [
+        1015
+      ]
+    }
   },
   "2df29b8f-0e6e-81a5-905b-e5fea07f297e": {
     "ID": 61,
@@ -2700,9 +2762,28 @@
     "ID": 64,
     "Name": "Saint Mary",
     "Mass Times": {
+      "Saturday": [
+        1630
+      ],
       "Sunday": [
-        900,
-        1300
+        1000,
+        1200,
+        2000
+      ],
+      "Monday": [
+        1210
+      ],
+      "Tuesday": [
+        1210
+      ],
+      "Wednesday": [
+        1210
+      ],
+      "Thursday": [
+        1210
+      ],
+      "Friday": [
+        1210
       ]
     },
     "Confessions": {
@@ -2710,11 +2791,45 @@
         {
           "1240": 20
         }
+      ],
+      "Saturday": [
+        {
+          "1500": 60
+        }
+      ],
+      "Wednesday": [
+        {
+          "1810": 60
+        }
+      ],
+      "Friday": [
+        {
+          "1100": 180
+        }
       ]
     },
     "Adoration": {},
-    "Rules": {},
-    "Dated Masses": {}
+    "Rules": {
+      "Confessions": {
+        "Friday": {
+          "1100": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {
+      "2026-10-18": [
+        900,
+        1300
+      ],
+      "2026-10-25": [
+        900,
+        1300
+      ]
+    }
   },
   "2df29b8f-0e6e-81a0-a7ea-d9771ccce630": {
     "ID": 65,
@@ -2785,11 +2900,7 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {
-      "2026-10-16": [
-        830
-      ]
-    }
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-811b-9a13-dae94abc747c": {
     "ID": 66,
@@ -2842,6 +2953,12 @@
     "ID": 67,
     "Name": "Saint Mark Parish",
     "Mass Times": {
+      "Saturday": [
+        1630
+      ],
+      "Sunday": [
+        830
+      ],
       "Monday": [
         830
       ],
@@ -2849,12 +2966,6 @@
         830
       ],
       "Thursday": [
-        830
-      ],
-      "Saturday": [
-        1630
-      ],
-      "Sunday": [
         830
       ]
     },
@@ -2899,7 +3010,7 @@
         800
       ],
       "Saturday": [
-        1600
+        400
       ]
     },
     "Confessions": {
@@ -3139,8 +3250,7 @@
     "Mass Times": {
       "Sunday": [
         800,
-        1030,
-        1200
+        1030
       ],
       "Saturday": [
         1700
@@ -3151,14 +3261,14 @@
       "Tuesday": [
         830
       ],
-      "Wednesday": [
-        1830
-      ],
       "Thursday": [
         830
       ],
       "Friday": [
         830
+      ],
+      "Wednesday": [
+        1830
       ]
     },
     "Confessions": {
@@ -3205,18 +3315,12 @@
         }
       ]
     },
-    "Rules": {
-      "Mass Times": {
-        "Sunday": {
-          "1200": {
-            "weeks_of_month": [
-              2
-            ]
-          }
-        }
-      }
-    },
-    "Dated Masses": {}
+    "Rules": {},
+    "Dated Masses": {
+      "2026-11-01": [
+        1800
+      ]
+    }
   },
   "2df29b8f-0e6e-8156-8bbf-d7f9baedbf3c": {
     "ID": 74,
@@ -3402,7 +3506,11 @@
         }
       }
     },
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-8196-b853-e1c72bc28a23": {
     "ID": 77,
@@ -3427,6 +3535,11 @@
       ]
     },
     "Confessions": {
+      "Tuesday": [
+        {
+          "1800": 45
+        }
+      ],
       "Wednesday": [
         {
           "845": 45
@@ -3492,6 +3605,9 @@
       "Thursday": [
         {
           "1930": 60
+        },
+        {
+          "2000": 30
         }
       ],
       "Saturday": [
@@ -3538,7 +3654,11 @@
     "Confessions": {},
     "Adoration": {},
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-10-20": [
+        2000
+      ]
+    }
   },
   "2df29b8f-0e6e-815f-bbd0-cfda6dfa68c9": {
     "ID": 80,
@@ -3705,6 +3825,10 @@
         930,
         1130
       ],
+      "Monday": [
+        1730,
+        1800
+      ],
       "Wednesday": [
         1800
       ],
@@ -3713,9 +3837,6 @@
       ],
       "Thursday": [
         830
-      ],
-      "Monday": [
-        1800
       ]
     },
     "Confessions": {
@@ -3895,7 +4016,11 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-10-31": [
+        930
+      ]
+    }
   },
   "2df29b8f-0e6e-8178-b473-d98ff8e84300": {
     "ID": 88,
@@ -3910,10 +4035,6 @@
         1115,
         1700
       ],
-      "Friday": [
-        800,
-        1900
-      ],
       "Monday": [
         700
       ],
@@ -3925,6 +4046,10 @@
       ],
       "Thursday": [
         700
+      ],
+      "Friday": [
+        800,
+        1900
       ]
     },
     "Confessions": {
@@ -3946,12 +4071,25 @@
         }
       }
     },
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-812b-9c91-e557231363f9": {
     "ID": 89,
     "Name": "The Catholic Community of Saint Gabriel",
     "Mass Times": {
+      "Saturday": [
+        830,
+        1700
+      ],
+      "Sunday": [
+        730,
+        930,
+        1130
+      ],
       "Monday": [
         700
       ],
@@ -3963,19 +4101,10 @@
         1000
       ],
       "Thursday": [
-        1900
+        700
       ],
       "Friday": [
         700
-      ],
-      "Saturday": [
-        830,
-        1700
-      ],
-      "Sunday": [
-        730,
-        930,
-        1130
       ]
     },
     "Confessions": {
@@ -4117,7 +4246,11 @@
         }
       }
     },
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-814c-93d5-ef378a7e5e21": {
     "ID": 93,
@@ -4235,7 +4368,11 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-81bc-a078-f953cb64d946": {
     "ID": 95,
@@ -4495,7 +4632,7 @@
         "Thursday": {
           "830": {
             "cancelled_on": [
-              "2026-10-15"
+              "2026-10-22"
             ]
           }
         }
@@ -4617,7 +4754,8 @@
       ],
       "Sunday": [
         900,
-        1100
+        1100,
+        1300
       ],
       "Monday": [
         800
@@ -4647,11 +4785,6 @@
     "Rules": {
       "Mass Times": {
         "Friday": {
-          "800": {
-            "excluded_weeks": [
-              1
-            ]
-          },
           "1830": {
             "weeks_of_month": [
               1
@@ -4669,11 +4802,7 @@
         }
       }
     },
-    "Dated Masses": {
-      "2026-10-18": [
-        1300
-      ]
-    }
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81c3-b978-d3fb14d33a5d": {
     "ID": 105,
@@ -4704,14 +4833,14 @@
       ]
     },
     "Confessions": {
-      "Saturday": [
-        {
-          "1500": 30
-        }
-      ],
       "Monday": [
         {
           "1715": 45
+        }
+      ],
+      "Saturday": [
+        {
+          "1500": 30
         }
       ]
     },
@@ -4852,7 +4981,11 @@
         }
       }
     },
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-10-26": [
+        900
+      ]
+    }
   },
   "2df29b8f-0e6e-8111-8e9d-e44a2298f21e": {
     "ID": 109,
@@ -4923,6 +5056,9 @@
     "ID": 110,
     "Name": "Church of Saint Casimir / Parafia Sw. Kazimierza",
     "Mass Times": {
+      "Saturday": [
+        1700
+      ],
       "Sunday": [
         830,
         1100
@@ -4938,9 +5074,6 @@
       ],
       "Friday": [
         730
-      ],
-      "Saturday": [
-        1700
       ]
     },
     "Confessions": {},
@@ -5032,7 +5165,11 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        1830
+      ]
+    }
   },
   "2df29b8f-0e6e-8152-b105-dd78a3b1d2f4": {
     "ID": 113,
@@ -5096,7 +5233,11 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-81b2-88c7-e60f58e7ab91": {
     "ID": 114,
@@ -5167,10 +5308,45 @@
         {
           "1500": 60
         }
+      ],
+      "Sunday": [
+        {
+          "1130": 30
+        },
+        {
+          "1300": 30
+        }
+      ],
+      "Friday": [
+        {
+          "1100": 180
+        }
       ]
     },
     "Adoration": {},
-    "Rules": {},
+    "Rules": {
+      "Confessions": {
+        "Sunday": {
+          "1130": {
+            "weeks_of_month": [
+              1
+            ]
+          },
+          "1300": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        },
+        "Friday": {
+          "1100": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {}
   },
   "2df29b8f-0e6e-8112-bdcd-c502ed4c9799": {
@@ -5363,7 +5539,11 @@
     "Confessions": {},
     "Adoration": {},
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-10-23": [
+        700
+      ]
+    }
   },
   "2df29b8f-0e6e-813f-a774-fc6471f0e007": {
     "ID": 120,
@@ -5482,11 +5662,7 @@
     },
     "Adoration": {},
     "Rules": {},
-    "Dated Masses": {
-      "2026-10-16": [
-        1800
-      ]
-    }
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81c4-84e2-cba95eaada54": {
     "ID": 123,
@@ -5537,14 +5713,14 @@
       "Monday": [
         700
       ],
-      "Tuesday": [
-        800
-      ],
       "Wednesday": [
         700
       ],
       "Friday": [
         700
+      ],
+      "Tuesday": [
+        800
       ]
     },
     "Confessions": {
@@ -5699,14 +5875,14 @@
       "Monday": [
         830
       ],
+      "Wednesday": [
+        1900
+      ],
       "Thursday": [
         830
       ],
       "Friday": [
         830
-      ],
-      "Wednesday": [
-        1900
       ],
       "Saturday": [
         1600
@@ -5873,8 +6049,8 @@
     },
     "Rules": {},
     "Dated Masses": {
-      "2026-10-17": [
-        1700
+      "2026-11-02": [
+        1900
       ]
     }
   },
@@ -5889,7 +6065,7 @@
     "Confessions": {
       "Sunday": [
         {
-          "900": 60
+          "930": 30
         }
       ]
     },
@@ -6211,6 +6387,9 @@
         1000,
         1200
       ],
+      "Monday": [
+        1830
+      ],
       "Tuesday": [
         1830
       ],
@@ -6296,7 +6475,11 @@
         }
       }
     },
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-10-23": [
+        1000
+      ]
+    }
   },
   "2df29b8f-0e6e-81d3-9423-f9376c490bf5": {
     "ID": 142,
@@ -6340,19 +6523,16 @@
         930,
         1130
       ],
+      "Monday": [
+        930
+      ],
       "Tuesday": [
         930
       ],
       "Wednesday": [
         1800
       ],
-      "Thursday": [
-        930
-      ],
       "Friday": [
-        930
-      ],
-      "Monday": [
         930
       ]
     },
@@ -6365,7 +6545,11 @@
     },
     "Adoration": {},
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-81fd-b187-d211df45fab2": {
     "ID": 144,
@@ -6374,14 +6558,14 @@
       "Thursday": [
         845
       ],
+      "Friday": [
+        845
+      ],
       "Saturday": [
         1600
       ],
       "Sunday": [
         1030
-      ],
-      "Friday": [
-        845
       ]
     },
     "Confessions": {
@@ -6533,6 +6717,11 @@
         {
           "1530": 30
         }
+      ],
+      "Wednesday": [
+        {
+          "1730": 45
+        }
       ]
     },
     "Adoration": {
@@ -6548,9 +6737,6 @@
           "1830": {
             "weeks_of_month": [
               3
-            ],
-            "cancelled_on": [
-              "2026-10-14"
             ]
           }
         }
@@ -6563,12 +6749,6 @@
     "Name": "Our Lady of Victory Church",
     "Mass Times": {
       "Sunday": [
-        830
-      ],
-      "Tuesday": [
-        830
-      ],
-      "Thursday": [
         830
       ],
       "Saturday": [
@@ -6603,9 +6783,6 @@
     "Mass Times": {
       "Monday": [
         900
-      ],
-      "Tuesday": [
-        845
       ],
       "Wednesday": [
         900
@@ -6799,7 +6976,11 @@
     },
     "Adoration": {},
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-81e2-8106-f688484a67b3": {
     "ID": 154,
@@ -6833,14 +7014,14 @@
       ]
     },
     "Confessions": {
-      "Saturday": [
-        {
-          "1530": 45
-        }
-      ],
       "Tuesday": [
         {
           "1830": 60
+        }
+      ],
+      "Saturday": [
+        {
+          "1530": 45
         }
       ]
     },
@@ -6933,13 +7114,13 @@
         900,
         1100
       ],
+      "Friday": [
+        1800
+      ],
       "Monday": [
         1800
       ],
       "Thursday": [
-        1800
-      ],
-      "Friday": [
         1800
       ],
       "Wednesday": [
@@ -6992,31 +7173,31 @@
     },
     "Rules": {
       "Mass Times": {
+        "Friday": {
+          "1800": {
+            "cancelled_on": [
+              "2026-10-23"
+            ]
+          }
+        },
         "Monday": {
           "1800": {
             "cancelled_on": [
-              "2026-10-12"
+              "2026-10-19"
             ]
           }
         },
         "Thursday": {
           "1800": {
             "cancelled_on": [
-              "2026-10-15"
-            ]
-          }
-        },
-        "Friday": {
-          "1800": {
-            "cancelled_on": [
-              "2026-10-16"
+              "2026-10-22"
             ]
           }
         },
         "Wednesday": {
           "930": {
             "cancelled_on": [
-              "2026-10-14"
+              "2026-10-21"
             ]
           }
         }
@@ -7081,9 +7262,6 @@
       ],
       "Wednesday": [
         900
-      ],
-      "Friday": [
-        1900
       ]
     },
     "Confessions": {},
@@ -7095,15 +7273,6 @@
       ]
     },
     "Rules": {
-      "Mass Times": {
-        "Friday": {
-          "1900": {
-            "weeks_of_month": [
-              1
-            ]
-          }
-        }
-      },
       "Adoration": {
         "Friday": {
           "1800": {
@@ -7273,7 +7442,7 @@
       ],
       "Saturday": [
         {
-          "1500": 30
+          "1700": 30
         }
       ]
     },
@@ -7296,6 +7465,10 @@
         830,
         1100
       ],
+      "Monday": [
+        615,
+        800
+      ],
       "Tuesday": [
         615,
         800
@@ -7316,10 +7489,6 @@
       "Saturday": [
         800,
         1630
-      ],
-      "Monday": [
-        615,
-        800
       ]
     },
     "Confessions": {},
@@ -7350,7 +7519,13 @@
         }
       }
     },
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        630,
+        1230,
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-8176-8787-e572904eee14": {
     "ID": 166,
@@ -7391,7 +7566,11 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-10-23": [
+        1100
+      ]
+    }
   },
   "2df29b8f-0e6e-8162-b336-fae1d9798570": {
     "ID": 167,
@@ -7584,17 +7763,17 @@
       "Monday": [
         830
       ],
-      "Wednesday": [
-        830
-      ],
-      "Friday": [
-        830
-      ],
       "Tuesday": [
         1900
       ],
+      "Wednesday": [
+        830
+      ],
       "Thursday": [
         1900
+      ],
+      "Friday": [
+        830
       ]
     },
     "Confessions": {
@@ -7620,7 +7799,11 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-815c-838f-e65b319eb239": {
     "ID": 171,
@@ -7640,7 +7823,7 @@
         700
       ],
       "Thursday": [
-        700
+        730
       ],
       "Friday": [
         1830
@@ -7676,7 +7859,7 @@
       ],
       "Thursday": [
         {
-          "630": 30
+          "700": 30
         }
       ],
       "Friday": [
@@ -8005,7 +8188,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Sunday": {
+          "1700": {
+            "cancelled_on": [
+              "2026-10-18"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {}
   },
   "2df29b8f-0e6e-814b-9672-cd82002f2a82": {
@@ -8049,11 +8242,7 @@
       "Is24Hour": true
     },
     "Rules": {},
-    "Dated Masses": {
-      "2026-10-16": [
-        1700
-      ]
-    }
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-8155-8723-ea9777416b47": {
     "ID": 180,
@@ -8110,7 +8299,8 @@
     "Name": "Church of the Holy Angels",
     "Mass Times": {
       "Saturday": [
-        1700
+        1700,
+        1900
       ],
       "Sunday": [
         900,
@@ -8148,7 +8338,18 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Saturday": {
+          "1900": {
+            "weeks_of_month": [
+              2,
+              4
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {}
   },
   "2df29b8f-0e6e-815a-9b4b-d08db87e8ee2": {
@@ -8270,7 +8471,11 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {}
+    "Dated Masses": {
+      "2026-11-02": [
+        1900
+      ]
+    }
   },
   "2df29b8f-0e6e-8100-83b0-f89558dc754d": {
     "ID": 185,
@@ -8290,6 +8495,9 @@
         800
       ],
       "Wednesday": [
+        800
+      ],
+      "Thursday": [
         800
       ],
       "Friday": [
@@ -8387,10 +8595,24 @@
     "Adoration": {},
     "Rules": {
       "Mass Times": {
+        "Tuesday": {
+          "830": {
+            "cancelled_on": [
+              "2026-10-20"
+            ]
+          }
+        },
+        "Wednesday": {
+          "830": {
+            "cancelled_on": [
+              "2026-10-21"
+            ]
+          }
+        },
         "Friday": {
           "830": {
             "cancelled_on": [
-              "2026-10-16"
+              "2026-10-23"
             ]
           }
         }
