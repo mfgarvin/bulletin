@@ -58,10 +58,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   (2026-07-20); v5/v6 clear the deprecation, so this is a treadmill, not a
   finished job.
 - **Open from the 2026-08-29 warning triage** (v2.5.18) - three items left
-  deliberately unfixed. (1) `1485` publishes a **monthly** reconciliation
-  service as weekly; its note says "Monthly Reconciliation" with no ordinal, so
-  the ordinal parser refuses it - confirm the ordinal with the parish and state
-  it, or teach the extractor to read the calendar date. Its 2-hour span flag is
+  deliberately unfixed. (1) ~~`1485`'s monthly reconciliation has no
+  ordinal~~ - the 11-01 bulletin prints "the first Wednesday of the month";
+  stated in `MANUAL_FIXES` 2026-10-31 and it derives `[1]`. Its 2-hour span flag is
   a standing false positive, the second known one after St. Brendan's (`0290`);
   a `definitions.py` exemption set is the agreed fix if it gets noisy. (2)
   `ss-c`'s Sunday confession note "Before 9:30am Mass" is fabricated (Sunday

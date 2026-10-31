@@ -52,6 +52,54 @@ most, because it separates *fixed* from *patched*:
 
 ---
 
+## 2026-10-17, 10-24, 10-31 (All Saints Sunday / All Souls Monday; triaged together 2026-10-31)
+
+Three runs untriaged, 155 parishes each, 0 failed. Warned: 36, 34, **148** -
+the last is 145 false "Holy Day with no dated Mass" warnings (All Saints fell
+on a Sunday). Diffed the net drift since the 10-12 repair snapshot rather than
+each run, and checked every changed row against its 11-01 bulletin. 41 rows
+written by `notion_fixes`; second pass a no-op. Two code fixes (holidays.py).
+
+| parish | field | change applied | category | cause | resolution |
+|---|---|---|---|---|---|
+| (145 rows) | Issues | — | — | the inverse Holy Day check fired on a Holy Day falling on a Sunday, where the Sunday Masses ARE the feast's | structural (`obligations_in` skips Sunday, Christmas apart) |
+| `0036`, `0080`, `0691`, `5493`, `scas-e`, `st-mary-cleveland-oh`, `1137-svdp`, OLV | Mass | — | holiday-displacement | All Souls evening Mass published as a weekly Monday | deferred (right for Nov 2; should revert 11-07) / structural for future years (All Souls now holds Monday) |
+| `1584`, `saint-john-bosco` | Mass | — | holiday-displacement | *replaced*: Mon 17:00 / 07:30 -> 19:00 | deferred, same; CHECK 11-07 |
+| `1286`, `0674` (Mon), `immat-con-cle` | Mass | — | holiday-displacement | Monday Mass displaced by All Souls / starred this-week times | deferred, same |
+| `29182` | Mass, Conf | St. Bernard's 10 Masses + 4 confessions -> Sun 0900/1300, conf Sun 1240-1300 | cluster-bleed | 10-17 write NOT reproduced; the partial-retraction guard then HELD the correct 10-24 and 10-31 extractions (9 of 9 dropped) | manual |
+| `1733` | Mass | uncancel Sun 0900/1100 | wrong-week | text layer puts day headers AFTER their entries, so Monday's "No Morning Mass" read as Sunday's | manual (one week) |
+| `1687` | Mass | uncancel Sun 1130 | wrong-week | "no 11:30 am Mass offered that day" = Sunday Dec 6; guard 7 missed the date ~250 chars back | manual (one week) |
+| `0090`, `st-jerome-cleveland-oh` | Mass | Sat note -> "First Saturday" | monthly-as-weekly | First Saturday Mass published weekly | manual |
+| `1101` | Mass | Sat 0830 -> dated 11-07 | dated-as-recurring | "Saturday, Nov. 7 / 8:30 am First Friday Mass" - neither rule readable | manual |
+| `1094` | Mass | restored Fri 1900 "First Friday" | monthly-dropped | its First Friday became a dated memorial Mass this week | treadmill |
+| `0674` | Mass | restored Tue 0845 | noise-drop | dropped 10-17, not re-extracted in two runs; masthead and listing both print it | manual |
+| `0138`, `0342`, `1236`, `1352`, `1714`, `23926`, OLMC, `st-mary-cleveland-oh`, OLA | Mass | dropped Sat 0900 / Wed 1900 / Wed 0900 / Sun 1530 / Sun 0830 / Sat 0730 / Fri 1245 / Wed 1200 / Tue 1800 | dated-as-recurring / non-mass-as-mass | one-off intentions, a Holy Hour, a men's group, a First Friday school Mass, a "Married in Christ Mass" | manual |
+| `0244` | Mass | dropped Wed 0830 | — | the parish moved Wednesday to Thursday (masthead "Tuesday, Thursday, Friday") | manual |
+| `amherst` | Conf | dropped Thu 2000 duplicate | layout-slip | listing's "to follow Mass until 8:30" beside the masthead's 7:30-8:30 | manual |
+| `1485` | Conf | KEEP Wed 1630-1800, first Wednesday | — | the bulletin now prints the ordinal; the 10-03 entry would have dropped a correct slot | manual (entry rewritten) |
+| `saint-agnes-elyria-oh` | Conf | 10-10 restatement RETIRED | cluster-bleed | the "3:30-4:15" was St. Mary's contact block; St. Agnes's own line is "3:00 PM Confession" | structural |
+| `1259`, `st-mel`, `0138`, `23926`, `22544`, `1532`, `37345`, `1130`, OLV, `sfds-a`, `0512`, `1905`, SJB, `0069`, `1548` | various | standing entries re-applied | treadmill | regressed during the three runs | treadmill |
+| `1584`, `1900`, `40500`, `1794`/`0882`/`1485` (10-10 parts) | — | **retired** | — | one-week dated substitutions, long past; 40500 now extracts Mon-Thu 07:00 itself | structural |
+| `1137`/`1137-svdp`, `1855`, `1241`, `1810`, `0131` | — | — | — | image-only or ambiguous (0131's listing prints Mon/Tue 6:30 the masthead lacks) | deferred |
+| `sem-c` | Mass | — | publisher-broken | Webpage post carries no schedule (only the sidebar does); guard held all three runs, correctly | held |
+
+**Cancellation flags this week:** 17 live, 13 true (`0240` x3, `20812` x2,
+Olmsted Falls x2, `0886`, `0116` conf, `1831`, `0244`). False: `1733` x2 and
+`1687` (above), and the standing `0069`/`1548` masthead. Missed: `1733` Mon
+08:30 (same header-order layout).
+
+**Freshness:** 104 PO on 11-01; eCatholic `15918`, `22544`, `2452`, `29182`,
+`40500` on 10-25 and `20822` on 10-18 (no newer upload). Self-Hosted `sc-c` and
+`sa-o` on 10-18 - re-ranked live, nothing newer on either page. `20812` caught
+up (`november-1.pdf`) after a month stuck on 09-27.
+
+**The finding worth keeping:** the partial-retraction guard protects whatever
+is stored, including a wrong write that went in unguarded. Adds are never held,
+so a bleed that *expands* a row (29182: 2 Masses -> 10) writes freely, and
+every later correct extraction is then a large removal and is held. The row
+cannot self-heal. A stored value that was itself written by a NOT-reproduced
+run is weaker evidence than the guard assumes.
+
 ## 2026-10-10 (Columbus Day week; triaged 2026-10-12)
 
 155 parishes, 0 failed, 46 warned. 36 rows written by `notion_fixes`, 9

@@ -135,6 +135,12 @@ def observances(year: int) -> dict[date, Observance]:
     add(paschal - timedelta(days=2), "Good Friday")
     add(paschal - timedelta(days=1), "Holy Saturday")
     add(paschal + timedelta(days=1), "Easter Monday")
+    # Not an obligation, but parishes add an evening Mass of Remembrance and
+    # often drop the morning one. The 2026-10-31 run published it as a weekly
+    # Monday on 13 rows - 11 added, 2 REPLACED the standing Mass (1584 17:00,
+    # saint-john-bosco 07:30) - and replaying that run, those 13 are exactly
+    # the rows whose recurring Monday changed: holding the day costs nothing.
+    add(date(year, 11, 2), "All Souls")
     if not ASCENSION_TRANSFERRED_TO_SUNDAY:
         add(paschal + timedelta(days=39), "Ascension", obligation=True)
 
@@ -200,10 +206,17 @@ def obligations_in(start: date, end: date) -> dict[date, str]:
     Mass extracted for it is a *missing* liturgy, which is the expensive error
     on a holiday - every other warning in this pipeline is about something that
     changed.
+
+    A Holy Day that falls on a Sunday is excluded, Christmas apart: it is
+    celebrated at the ordinary Sunday Masses, so there is no dated Mass to
+    look for. All Saints on Sunday 2026-11-01 fired the warning on 145 of 155
+    parishes and set every one of them to Warning. Christmas keeps its own
+    schedule (Vigil, Midnight, Dawn) whatever the weekday.
     """
     return {
         when: o.name
         for year in {start.year, end.year}
         for when, o in observances(year).items()
         if o.obligation and start <= when <= end
+        and (when.weekday() != 6 or o.name == "Christmas")
     }
