@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T20:37:18+00:00",
+  "generated_at": "2026-11-24T15:33:10+00:00",
   "database_id": "2de29b8f-0e6e-801a-bd81-db3ade199a45",
   "parish_count": 189,
   "parishes": [
@@ -434,7 +434,7 @@
     {
       "parish_id": "0069",
       "page_id": "2df29b8f-0e6e-8156-aefd-dad5993dc413",
-      "last_edited_time": "2026-11-21T17:45:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -506,7 +506,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -541,7 +541,7 @@
     {
       "parish_id": "0077",
       "page_id": "2df29b8f-0e6e-815a-9b4b-d08db87e8ee2",
-      "last_edited_time": "2026-11-21T17:59:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -613,7 +613,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Daily Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Daily Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Daily Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Daily Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -2253,7 +2253,7 @@
     {
       "parish_id": "0241",
       "page_id": "2df29b8f-0e6e-8164-87b9-f65d2e7da474",
-      "last_edited_time": "2026-11-21T17:59:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -2277,7 +2277,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"In the church; or by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1830, \"end_time\": 2000, \"end_next_day\": false, \"notes\": \"Advent confession schedule (Dec. 16)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"Advent confession schedule (Dec. 19)\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": \"or by appointment\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -3216,7 +3216,7 @@
     {
       "parish_id": "0512",
       "page_id": "2e029b8f-0e6e-80cd-b8c5-f2c997d60cda",
-      "last_edited_time": "2026-11-21T17:58:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -3288,7 +3288,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 530, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"StA\"}, {\"day\": \"Saturday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"StA\"}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"StA\"}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"StA\"}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day\", \"cancelled\": false, \"site_label\": \"StA\"}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"StA\"}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"StA\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"StA\"}, {\"day\": \"Saturday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"StA\"}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"StA\"}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"StA\"}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"StA\"}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"StA\"}]"
         },
         "Name": {
           "type": "title",
@@ -3965,7 +3965,7 @@
     {
       "parish_id": "0674",
       "page_id": "2df29b8f-0e6e-812c-9ce3-ffa40cb0f37e",
-      "last_edited_time": "2026-11-21T17:55:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -4037,7 +4037,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1700, \"mass_date\": \"2026-12-07\", \"language\": null, \"notes\": \"Immaculate Conception of the Blessed Virgin Mary (Vigil)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception of the Blessed Virgin Mary\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1900, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception of the Blessed Virgin Mary\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1600, \"mass_date\": \"2026-12-24\", \"language\": null, \"notes\": \"Christmas Eve Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1900, \"mass_date\": \"2026-12-24\", \"language\": null, \"notes\": \"Christmas Eve Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1000, \"mass_date\": \"2026-12-25\", \"language\": null, \"notes\": \"Christmas Day Mass\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1700, \"mass_date\": \"2026-12-07\", \"language\": null, \"notes\": \"Immaculate Conception of the Blessed Virgin Mary (Vigil)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception of the Blessed Virgin Mary\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1900, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception of the Blessed Virgin Mary\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1600, \"mass_date\": \"2026-12-24\", \"language\": null, \"notes\": \"Christmas Eve Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1900, \"mass_date\": \"2026-12-24\", \"language\": null, \"notes\": \"Christmas Eve Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1000, \"mass_date\": \"2026-12-25\", \"language\": null, \"notes\": \"Christmas Day Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 845, \"mass_date\": null, \"language\": null, \"notes\": \"At VASJ Chapel\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -4393,7 +4393,7 @@
     {
       "parish_id": "0875",
       "page_id": "2df29b8f-0e6e-8176-abbc-e8fb7dcbb7ca",
-      "last_edited_time": "2026-11-21T17:56:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -4417,7 +4417,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Weekdays\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Weekdays\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Weekdays\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Weekdays\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Weekdays\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 845, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 1000, \"end_time\": 1045, \"end_next_day\": false, \"notes\": \"Every Sunday of Advent\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Monday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 830, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 845, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -4500,7 +4500,7 @@
     {
       "parish_id": "0882",
       "page_id": "2df29b8f-0e6e-8134-b02d-d8dbbd8dd2a7",
-      "last_edited_time": "2026-11-21T17:58:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -4572,7 +4572,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": \"First Friday\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": \"2026-11-22\", \"language\": null, \"notes\": \"St. Colman Feast Day and Volunteers Recognition (only one Mass)\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Except on First Fridays\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": \"First Friday\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": \"2026-11-22\", \"language\": null, \"notes\": \"St. Colman Feast Day and Volunteers Recognition (only one Mass)\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -5035,7 +5035,7 @@
     {
       "parish_id": "1060",
       "page_id": "2df29b8f-0e6e-8180-9cb6-db73a8a35fed",
-      "last_edited_time": "2026-11-21T17:53:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -5059,7 +5059,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": \"or by appointment\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Or by appointment\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -5356,7 +5356,7 @@
     {
       "parish_id": "1088",
       "page_id": "2df29b8f-0e6e-81c3-b978-d3fb14d33a5d",
-      "last_edited_time": "2026-11-21T17:52:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -5380,7 +5380,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"start_time\": 1715, \"end_time\": 1800, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"start_time\": 1715, \"end_time\": 1800, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -5677,7 +5677,7 @@
     {
       "parish_id": "1130",
       "page_id": "2df29b8f-0e6e-8176-a3ac-e95c75aace8e",
-      "last_edited_time": "2026-11-21T17:50:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -5749,7 +5749,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 930, \"mass_date\": null, \"language\": \"Polish\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": \"Exposition\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": \"Miraculous Medal Novena, followed by benediction and Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 930, \"mass_date\": null, \"language\": \"Polish\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": \"Miraculous Medal Novena, followed by benediction and Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -6533,7 +6533,7 @@
     {
       "parish_id": "1259",
       "page_id": "2df29b8f-0e6e-81c6-9100-ce9b22c7f19d",
-      "last_edited_time": "2026-11-21T17:59:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -6557,7 +6557,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1700, \"end_time\": 1725, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"start_time\": 745, \"end_time\": 830, \"end_next_day\": false, \"notes\": \"in the Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"start_time\": 1130, \"end_time\": 1200, \"end_next_day\": false, \"notes\": \"in the Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 745, \"end_time\": 830, \"end_next_day\": false, \"notes\": \"in the Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 1130, \"end_time\": 1200, \"end_next_day\": false, \"notes\": \"in the Chapel\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1700, \"end_time\": 1725, \"end_next_day\": false, \"notes\": \"Confession in the Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 745, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -6605,7 +6605,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Sunday Vigil\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": \"Sunday Vigil\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Sunday Vigil\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 715, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -6747,7 +6747,7 @@
     {
       "parish_id": "1286",
       "page_id": "2df29b8f-0e6e-812b-9c91-e557231363f9",
-      "last_edited_time": "2026-11-21T17:58:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -6771,7 +6771,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1515, \"end_time\": 1630, \"end_next_day\": false, \"notes\": \"Or by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 1630, \"end_time\": 1700, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1930, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1545, \"end_time\": 1630, \"end_next_day\": false, \"notes\": \"or by appointment\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -7175,7 +7175,7 @@
     {
       "parish_id": "13722",
       "page_id": "2df29b8f-0e6e-8160-a0b6-e9792b401e99",
-      "last_edited_time": "2026-11-21T17:59:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -7199,7 +7199,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1715, \"end_time\": 1815, \"end_next_day\": false, \"notes\": \"December 2 & 9 only (in the church)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1900, \"end_time\": 2000, \"end_next_day\": false, \"notes\": \"December 16 only (in the church)\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -7710,7 +7710,7 @@
     {
       "parish_id": "1485",
       "page_id": "2df29b8f-0e6e-8109-94f9-cdad8bfc117c",
-      "last_edited_time": "2026-11-21T17:59:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -7734,7 +7734,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Thursday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Except Christmas Eve\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1630, \"end_time\": 1800, \"end_next_day\": false, \"notes\": \"Advent Sacrament of Reconciliation\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1300, \"end_time\": 1400, \"end_next_day\": false, \"notes\": \"Advent Communal Penance Service\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 1730, \"end_time\": 1845, \"end_next_day\": false, \"notes\": \"Advent Communal Penance Service\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Thursday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Weekly Sacrament of Reconciliation (Church)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1630, \"end_time\": 1800, \"end_next_day\": false, \"notes\": \"First Wednesday of the month (Monthly Reconciliation, many priests available)\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -7817,7 +7817,7 @@
     {
       "parish_id": "1494",
       "page_id": "2df29b8f-0e6e-8117-8408-e811d348356e",
-      "last_edited_time": "2026-11-21T17:59:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -7841,7 +7841,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1700, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After 4:00pm Mass\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1545, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1700, \"end_time\": null, \"end_next_day\": false, \"notes\": \"After the 4:00pm Mass; and by appointment\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -7924,7 +7924,7 @@
     {
       "parish_id": "1532",
       "page_id": "2df29b8f-0e6e-818a-aab0-de40a524ec6b",
-      "last_edited_time": "2026-11-21T17:48:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -7996,7 +7996,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"Morning Prayer\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -8031,7 +8031,7 @@
     {
       "parish_id": "1548",
       "page_id": "2df29b8f-0e6e-812b-a725-f3055db88499",
-      "last_edited_time": "2026-11-21T17:46:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -8103,7 +8103,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -8673,7 +8673,7 @@
     {
       "parish_id": "1687",
       "page_id": "2df29b8f-0e6e-810c-b34f-e3b97c161ab3",
-      "last_edited_time": "2026-11-21T17:58:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -8745,7 +8745,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day (Marian Chapel)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": \"2026-11-27\", \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"School Mass (in the Church)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day (Marian Chapel)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 800, \"mass_date\": \"2026-11-27\", \"language\": null, \"notes\": \"Marian Chapel\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -9208,7 +9208,7 @@
     {
       "parish_id": "1736",
       "page_id": "2df29b8f-0e6e-8167-abd2-d96cab7fd861",
-      "last_edited_time": "2026-11-21T17:59:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -9232,7 +9232,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"Or by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1930, \"end_time\": 2030, \"end_next_day\": false, \"notes\": \"Evening of Confession (Dec 9)\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1430, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"Or by appointment\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -9743,7 +9743,7 @@
     {
       "parish_id": "1794",
       "page_id": "2df29b8f-0e6e-8198-b44a-ecb8501e19c5",
-      "last_edited_time": "2026-11-21T17:45:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -9815,7 +9815,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 628, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -10385,7 +10385,7 @@
     {
       "parish_id": "1831",
       "page_id": "2df29b8f-0e6e-8145-a619-ffd5ef0e6211",
-      "last_edited_time": "2026-11-21T17:58:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -10457,7 +10457,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"In-Person and Livestream\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"In-Person and Livestream\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"In-Person and Livestream\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass; In-Person\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"In-Person and Livestream\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": \"In-Person and Livestream\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"In-person (not livestreamed)\", \"cancelled\": true, \"site_label\": null}]"
+          "value": "[{\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"In-Person and Livestream\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"In-Person and Livestream\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"In-Person and Livestream\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass; In-Person\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"In-Person and Livestream\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": \"In-Person and Livestream\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": \"In-person (not livestreamed)\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -10599,7 +10599,7 @@
     {
       "parish_id": "1855",
       "page_id": "2df29b8f-0e6e-81f0-8650-c85bc941155c",
-      "last_edited_time": "2026-11-21T17:58:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -10671,7 +10671,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Luke\"}, {\"day\": \"Tuesday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Luke\"}, {\"day\": \"Wednesday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Luke\"}, {\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Luke\"}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Luke\"}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Luke\"}]"
+          "value": "[{\"day\": \"Monday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Luke\"}, {\"day\": \"Tuesday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Luke\"}, {\"day\": \"Wednesday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Luke\"}, {\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Luke\"}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Luke\"}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Luke\"}, {\"day\": \"Saturday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": \"First Saturday\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -10706,7 +10706,7 @@
     {
       "parish_id": "1855-clem",
       "page_id": "2e029b8f-0e6e-8034-8a4f-f52734997709",
-      "last_edited_time": "2026-11-21T17:49:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -10778,7 +10778,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Clement\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Clement\"}, {\"day\": \"Thursday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"St. Clement\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Clement\"}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at St. Clement\"}, {\"day\": \"Thursday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"St. Clement\"}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -11134,7 +11134,7 @@
     {
       "parish_id": "1905",
       "page_id": "2df29b8f-0e6e-8105-9c27-e2f53d060f43",
-      "last_edited_time": "2026-11-21T17:47:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -11158,7 +11158,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"start_time\": 1650, \"end_time\": 1720, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": \"(STP, Church)\"}, {\"day\": \"Friday\", \"start_time\": 1230, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Other by appointment\", \"cancelled\": false, \"site_label\": \"(SMO)\"}]"
+          "value": "[{\"day\": \"Monday\", \"start_time\": 1650, \"end_time\": 1720, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -11455,7 +11455,7 @@
     {
       "parish_id": "20822",
       "page_id": "2df29b8f-0e6e-8144-8098-fea711d6eb28",
-      "last_edited_time": "2026-11-21T17:58:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -11527,7 +11527,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Sunday\", \"time\": 930, \"mass_date\": null, \"language\": \"Bilingual\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1900, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1200, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1200, \"mass_date\": null, \"language\": \"English\", \"notes\": \"In the chapel (no 12pm English Mass if there is a funeral on Monday)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1830, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 930, \"mass_date\": \"2026-11-26\", \"language\": \"Bilingual\", \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Sunday\", \"time\": 930, \"mass_date\": null, \"language\": \"Bilingual\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1900, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1200, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1200, \"mass_date\": null, \"language\": \"English\", \"notes\": \"In the chapel (no 12pm English Mass if there is a funeral on Monday)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 930, \"mass_date\": \"2026-11-26\", \"language\": \"Bilingual\", \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -11776,7 +11776,7 @@
     {
       "parish_id": "22544",
       "page_id": "2df29b8f-0e6e-81f7-9e37-de6b59669d8e",
-      "last_edited_time": "2026-11-21T17:53:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -11800,7 +11800,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Wednesday\", \"start_time\": 1810, \"end_time\": 1910, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 1130, \"end_time\": 1200, \"end_next_day\": false, \"notes\": \"First Sunday of the month, before noon Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 1300, \"end_time\": 1400, \"end_next_day\": false, \"notes\": \"First Sunday of the month, after noon Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 1100, \"end_time\": 1400, \"end_next_day\": false, \"notes\": \"Every 1st Friday; and by appointment\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Wednesday\", \"start_time\": 1810, \"end_time\": 1910, \"end_next_day\": false, \"notes\": \"And by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"And by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 1130, \"end_time\": null, \"end_next_day\": false, \"notes\": \"First Sunday of the month, before noon Mass; and by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 1300, \"end_time\": null, \"end_next_day\": false, \"notes\": \"First Sunday of the month, after noon Mass; and by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 1100, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Every 1st Friday; and by appointment\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -11883,7 +11883,7 @@
     {
       "parish_id": "23926",
       "page_id": "2df29b8f-0e6e-81a5-905b-e5fea07f297e",
-      "last_edited_time": "2026-11-21T17:58:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -11907,7 +11907,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Confessions also available by appointment with a priest.\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Last Wednesday of each month\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 900, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Last Sunday of the month, following the 8:00 a.m. Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 1100, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Last Sunday of the month, following the 10:00 a.m. Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"start_time\": 1300, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Last Sunday of the month, following the 12:00 p.m. Mass\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": \"Confessions also available by appointment with a priest.\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"start_time\": 1800, \"end_time\": null, \"end_next_day\": false, \"notes\": \"Last Wednesday of each month; confessions also available by appointment with a priest.\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -12311,7 +12311,7 @@
     {
       "parish_id": "29182",
       "page_id": "2df29b8f-0e6e-8147-b4a8-cf4c3bd8d694",
-      "last_edited_time": "2026-11-21T17:58:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -12383,7 +12383,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1200, \"mass_date\": null, \"language\": \"Spanish\", \"notes\": \"Espa\\u00f1ol\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 2000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1210, \"mass_date\": null, \"language\": null, \"notes\": \"Daily Mass (Monday-Friday)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1210, \"mass_date\": null, \"language\": null, \"notes\": \"Daily Mass (Monday-Friday)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1210, \"mass_date\": null, \"language\": null, \"notes\": \"Daily Mass (Monday-Friday)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 845, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1730, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Tuesday\", \"time\": 845, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1730, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1300, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -12632,7 +12632,7 @@
     {
       "parish_id": "37345",
       "page_id": "2df29b8f-0e6e-8113-8e64-e38cb4218084",
-      "last_edited_time": "2026-11-21T17:49:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -12704,7 +12704,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": \"Sensory Mass (in the Chapel), second Sunday of each month\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -12953,7 +12953,7 @@
     {
       "parish_id": "5493",
       "page_id": "2df29b8f-0e6e-8179-a9a5-ea00e4206a69",
-      "last_edited_time": "2026-11-21T17:58:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -13025,7 +13025,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": \"Advent schedule: Mondays at 6:00 pm (Rite 1 \\u2013 Individual)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 630, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1215, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1900, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1600, \"mass_date\": \"2026-12-24\", \"language\": null, \"notes\": \"Christmas Eve (Vigil Mass)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 2000, \"mass_date\": \"2026-12-24\", \"language\": null, \"notes\": \"Christmas Eve (Mass at Night)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": \"2026-12-25\", \"language\": null, \"notes\": \"Christmas Day (Mass at Dawn)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1030, \"mass_date\": \"2026-12-25\", \"language\": null, \"notes\": \"Christmas Day (Mass during the Day)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1630, \"mass_date\": \"2026-12-31\", \"language\": null, \"notes\": \"Vigil of the Solemnity of Mary, Mother of God\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": \"2027-01-01\", \"language\": null, \"notes\": \"Solemnity of Mary, Mother of God\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1030, \"mass_date\": \"2027-01-01\", \"language\": null, \"notes\": \"Solemnity of Mary, Mother of God\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 630, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1215, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1900, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1600, \"mass_date\": \"2026-12-24\", \"language\": null, \"notes\": \"Christmas Eve (Vigil Mass)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 2000, \"mass_date\": \"2026-12-24\", \"language\": null, \"notes\": \"Christmas Eve (Mass at Night)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": \"2026-12-25\", \"language\": null, \"notes\": \"Christmas Day (Mass at Dawn)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1030, \"mass_date\": \"2026-12-25\", \"language\": null, \"notes\": \"Christmas Day (Mass during the Day)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1630, \"mass_date\": \"2026-12-31\", \"language\": null, \"notes\": \"Vigil of the Solemnity of Mary, Mother of God\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": \"2027-01-01\", \"language\": null, \"notes\": \"Solemnity of Mary, Mother of God\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1030, \"mass_date\": \"2027-01-01\", \"language\": null, \"notes\": \"Solemnity of Mary, Mother of God\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": \"Saint Ann Shrine\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": \"Saint Ann Shrine\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1130, \"mass_date\": null, \"language\": null, \"notes\": \"Saint Ann Shrine\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -13060,7 +13060,7 @@
     {
       "parish_id": "amherst",
       "page_id": "2df29b8f-0e6e-811d-8d86-ede10ab44dd5",
-      "last_edited_time": "2026-11-21T17:50:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -13084,7 +13084,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1100, \"end_time\": 1200, \"end_next_day\": false, \"notes\": \"Individual Reconciliation\", \"cancelled\": false, \"site_label\": \"Confession at St. Joseph Parish:\"}, {\"day\": \"Thursday\", \"start_time\": 1930, \"end_time\": 2030, \"end_next_day\": false, \"notes\": \"Individual Reconciliation\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"start_time\": 2000, \"end_time\": 2030, \"end_next_day\": false, \"notes\": \"After the 7:00 p.m. Mass (Confessions to follow Mass until 8:30 p.m.)\", \"cancelled\": false, \"site_label\": \"St. Joseph Parish\"}]"
+          "value": "[{\"day\": \"Thursday\", \"start_time\": 1930, \"end_time\": 2030, \"end_next_day\": false, \"notes\": \"Individual Reconciliation\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1100, \"end_time\": 1200, \"end_next_day\": false, \"notes\": \"Individual Reconciliation\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -14130,7 +14130,7 @@
     {
       "parish_id": "olg-m",
       "page_id": "2df29b8f-0e6e-81e2-8106-f688484a67b3",
-      "last_edited_time": "2026-11-21T17:59:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -14154,7 +14154,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Tuesday\", \"start_time\": 1830, \"end_time\": 1930, \"end_next_day\": false, \"notes\": \"1st Tuesday of each month; or by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1615, \"end_next_day\": false, \"notes\": \"or by appointment\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 900, \"end_time\": null, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"start_time\": 1530, \"end_time\": 1615, \"end_next_day\": false, \"notes\": \"Or by appointment\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"start_time\": 1830, \"end_time\": 1930, \"end_next_day\": false, \"notes\": \"1st Tuesday of each month; or by appointment\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -14202,7 +14202,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day\", \"cancelled\": false, \"site_label\": \"CH\"}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day\", \"cancelled\": false, \"site_label\": \"CH\"}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -14772,7 +14772,7 @@
     {
       "parish_id": "our-lady-of-angels-cleveland-oh",
       "page_id": "2df29b8f-0e6e-81db-9839-fc6973d11f9a",
-      "last_edited_time": "2026-11-21T17:59:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -14844,7 +14844,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": \"During school year\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": \"During summer\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": \"During school year\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -14986,7 +14986,7 @@
     {
       "parish_id": "our-lady-of-mount-carmel-wickliffe-oh",
       "page_id": "2df29b8f-0e6e-812e-b3d6-d7d0f282bcdd",
-      "last_edited_time": "2026-11-21T17:55:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -15058,7 +15058,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": \"(Chapel)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": \"(Chapel)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": \"(Chapel)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": \"(Chapel)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day\", \"cancelled\": false, \"site_label\": \"Mass, C -\"}, {\"day\": \"Friday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": \"Chapel\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1245, \"mass_date\": null, \"language\": null, \"notes\": \"School Mass\", \"cancelled\": false, \"site_label\": \"C\"}]"
+          "value": "[{\"day\": \"Monday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": \"(Chapel)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": \"(Chapel)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": \"(Chapel)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": \"(Chapel)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day\", \"cancelled\": false, \"site_label\": \"Mass, C -\"}, {\"day\": \"Friday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": \"Chapel\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -15093,7 +15093,7 @@
     {
       "parish_id": "our-lady-of-victory-tallmadge-oh",
       "page_id": "2df29b8f-0e6e-817c-981e-f5098c68820a",
-      "last_edited_time": "2026-11-21T17:55:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -15117,7 +15117,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 900, \"end_time\": 930, \"end_next_day\": false, \"notes\": \"2nd and 4th Saturdays\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 900, \"end_time\": 930, \"end_next_day\": false, \"notes\": \"At Our Lady of Victory on the second and fourth Saturdays.\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -15307,7 +15307,7 @@
     {
       "parish_id": "saint-agnes-elyria-oh",
       "page_id": "2df29b8f-0e6e-81ba-b21e-d4999913b534",
-      "last_edited_time": "2026-11-21T17:59:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -15379,7 +15379,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass (at St. Mary)\", \"cancelled\": false, \"site_label\": \"at St. Mary\"}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": \"2026-11-27\", \"language\": null, \"notes\": \"(at St. Mary)\", \"cancelled\": false, \"site_label\": \"at St. Mary\"}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -15414,7 +15414,7 @@
     {
       "parish_id": "saint-agnes-elyria-oh-ola",
       "page_id": "2e029b8f-0e6e-802b-bcdd-d544b5fe2c50",
-      "last_edited_time": "2026-11-21T17:55:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -15486,7 +15486,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -16805,7 +16805,7 @@
     {
       "parish_id": "sfds-a",
       "page_id": "2df29b8f-0e6e-8151-ab18-e5ffb7ce8c25",
-      "last_edited_time": "2026-11-21T17:58:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -16877,7 +16877,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 730, \"mass_date\": \"2026-11-24\", \"language\": null, \"notes\": \"Morning Mass moved from 8:15 a.m. for one day\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 930, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1730, \"mass_date\": \"2026-12-07\", \"language\": null, \"notes\": \"Immaculate Conception Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1900, \"mass_date\": \"2026-12-07\", \"language\": null, \"notes\": \"Immaculate Conception Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 730, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception (Holy Day of Obligation)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception (Holy Day of Obligation)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1830, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception (Holy Day of Obligation)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1600, \"mass_date\": \"2026-12-24\", \"language\": null, \"notes\": \"Christmas Eve Vigil (Children\\u2019s Choir)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1800, \"mass_date\": \"2026-12-24\", \"language\": null, \"notes\": \"Christmas Eve Vigil\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 0, \"mass_date\": \"2026-12-25\", \"language\": null, \"notes\": \"Midnight Mass (Choir Prelude at 11:30 p.m.)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": \"2026-12-25\", \"language\": null, \"notes\": \"Christmas Day\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1100, \"mass_date\": \"2026-12-25\", \"language\": null, \"notes\": \"Christmas Day\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1700, \"mass_date\": \"2026-12-31\", \"language\": null, \"notes\": \"Vigil Mass (Solemnity of Mary, Mother of God)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": \"2027-01-01\", \"language\": null, \"notes\": \"Solemnity of Mary, Mother of God\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1100, \"mass_date\": \"2027-01-01\", \"language\": null, \"notes\": \"Solemnity of Mary, Mother of God\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 815, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 730, \"mass_date\": \"2026-11-24\", \"language\": null, \"notes\": \"Morning Mass moved from 8:15 a.m. for one day\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 930, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1730, \"mass_date\": \"2026-12-07\", \"language\": null, \"notes\": \"Immaculate Conception Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1900, \"mass_date\": \"2026-12-07\", \"language\": null, \"notes\": \"Immaculate Conception Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 730, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception (Holy Day of Obligation)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception (Holy Day of Obligation)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1830, \"mass_date\": \"2026-12-08\", \"language\": null, \"notes\": \"Immaculate Conception (Holy Day of Obligation)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1600, \"mass_date\": \"2026-12-24\", \"language\": null, \"notes\": \"Christmas Eve Vigil (Children\\u2019s Choir)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1800, \"mass_date\": \"2026-12-24\", \"language\": null, \"notes\": \"Christmas Eve Vigil\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 0, \"mass_date\": \"2026-12-25\", \"language\": null, \"notes\": \"Midnight Mass (Choir Prelude at 11:30 p.m.)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": \"2026-12-25\", \"language\": null, \"notes\": \"Christmas Day\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1100, \"mass_date\": \"2026-12-25\", \"language\": null, \"notes\": \"Christmas Day\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1700, \"mass_date\": \"2026-12-31\", \"language\": null, \"notes\": \"Vigil Mass (Solemnity of Mary, Mother of God)\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 900, \"mass_date\": \"2027-01-01\", \"language\": null, \"notes\": \"Solemnity of Mary, Mother of God\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1100, \"mass_date\": \"2027-01-01\", \"language\": null, \"notes\": \"Solemnity of Mary, Mother of God\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"School Mass\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -16912,7 +16912,7 @@
     {
       "parish_id": "shc",
       "page_id": "2df29b8f-0e6e-81fd-b187-d211df45fab2",
-      "last_edited_time": "2026-11-21T17:59:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -16936,7 +16936,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Wednesday\", \"start_time\": 1730, \"end_time\": 1820, \"end_next_day\": false, \"notes\": \"Eucharistic Adoration & Confession\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"start_time\": 700, \"end_time\": 830, \"end_next_day\": false, \"notes\": \"Eucharistic Adoration & Confession\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Friday\", \"start_time\": 700, \"end_time\": 830, \"end_next_day\": false, \"notes\": \"Eucharistic Adoration & Confession\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -16984,7 +16984,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": \"Nativity of the BVM\", \"cancelled\": false, \"site_label\": \"Nativity of the BVM\"}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"Our Lady, Queen of Peace\", \"cancelled\": false, \"site_label\": \"Our Lady, Queen of Peace\"}, {\"day\": \"Thursday\", \"time\": 845, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at SHO\"}, {\"day\": \"Friday\", \"time\": 845, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at SHO\"}, {\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at SHO\"}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at SHO\"}]"
+          "value": "[{\"day\": \"Thursday\", \"time\": 845, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at SHO\"}, {\"day\": \"Friday\", \"time\": 845, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at SHO\"}, {\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at SHO\"}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": \"at SHO\"}]"
         },
         "Name": {
           "type": "title",
@@ -17126,11 +17126,11 @@
     {
       "parish_id": "sp-l",
       "page_id": "2df29b8f-0e6e-81df-9251-fd169f9c32c8",
-      "last_edited_time": "2026-11-21T17:58:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
-          "value": "{\"is_perpetual\": false, \"times\": [{\"day\": \"Monday\", \"start_time\": 1900, \"end_time\": 2000, \"notes\": \"Holy Hour with Adoration of the Blessed Sacrament (May 12, 2025)\"}]}"
+          "value": "{\"is_perpetual\": false, \"times\": [{\"day\": \"Monday\", \"start_time\": 1900, \"end_time\": 2000, \"end_next_day\": false, \"notes\": \"2nd Monday of the month\", \"cancelled\": false, \"site_label\": null}]}"
         },
         "Bulletin Group ID": {
           "type": "rich_text",
@@ -17198,7 +17198,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": true, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1200, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -17233,7 +17233,7 @@
     {
       "parish_id": "ss-c",
       "page_id": "2df29b8f-0e6e-81e8-acd2-e84eb915b03c",
-      "last_edited_time": "2026-11-21T10:02:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -17305,7 +17305,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 645, \"mass_date\": null, \"language\": \"Latin\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1830, \"mass_date\": null, \"language\": \"Latin\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": \"1st Saturday Mass & Lecture\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 645, \"mass_date\": null, \"language\": \"Latin\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1830, \"mass_date\": null, \"language\": \"Latin\", \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 930, \"mass_date\": null, \"language\": null, \"notes\": \"1st Saturday Mass & Lecture; First Saturday Mass & Lecture\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1100, \"mass_date\": null, \"language\": \"German\", \"notes\": \"First Sunday of every month\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -18303,7 +18303,7 @@
     {
       "parish_id": "st-mary-berea-oh",
       "page_id": "2df29b8f-0e6e-81dd-b16a-e02449e10e51",
-      "last_edited_time": "2026-11-21T17:49:00.000Z",
+      "last_edited_time": "2026-11-24T15:32:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -18375,7 +18375,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 930, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1600, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -18410,7 +18410,7 @@
     {
       "parish_id": "st-mary-cleveland-oh",
       "page_id": "2df29b8f-0e6e-81a7-9041-f1ff47219753",
-      "last_edited_time": "2026-11-21T17:58:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -18482,7 +18482,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Monday\", \"time\": 745, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 745, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 745, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 745, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 745, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 745, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1015, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-25\", \"language\": null, \"notes\": \"Thanksgiving Day\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Monday\", \"time\": 745, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 745, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 745, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 745, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 745, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 745, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 1700, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1015, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 900, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -19159,7 +19159,7 @@
     {
       "parish_id": "st-mel-cleveland-oh",
       "page_id": "2df29b8f-0e6e-8157-a489-ea71565cf57b",
-      "last_edited_time": "2026-11-21T17:58:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -19183,7 +19183,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1600, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": \"@ St. Mark\"}]"
+          "value": "[]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -19266,7 +19266,7 @@
     {
       "parish_id": "st-paul-akron-oh",
       "page_id": "2df29b8f-0e6e-8102-b187-d8a5c5644752",
-      "last_edited_time": "2026-11-21T17:47:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -19338,7 +19338,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": \"Latin\", \"notes\": \"Ordinary Form with Latin & incense\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": \"Ordinary Form\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"time\": 1630, \"mass_date\": null, \"language\": null, \"notes\": \"Vigil Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 800, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1030, \"mass_date\": null, \"language\": \"Latin\", \"notes\": \"Ordinary Form with Latin & incense\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Monday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Tuesday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Wednesday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 700, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 830, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Friday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": \"Ordinary Form\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 830, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Thanksgiving Day Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Saturday\", \"time\": 900, \"mass_date\": null, \"language\": null, \"notes\": \"First Saturday Mass and Devotions\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",
@@ -20015,7 +20015,7 @@
     {
       "parish_id": "visitation-of-mary-parish-akron-oh",
       "page_id": "2df29b8f-0e6e-8142-84b5-e4049826988d",
-      "last_edited_time": "2026-11-21T17:45:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -20039,7 +20039,7 @@
         },
         "Confessions": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": \"In Church; or by appointment\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Saturday\", \"start_time\": 1500, \"end_time\": 1530, \"end_next_day\": false, \"notes\": null, \"cancelled\": false, \"site_label\": null}]"
         },
         "Content Fingerprint": {
           "type": "rich_text",
@@ -20122,7 +20122,7 @@
     {
       "parish_id": "visitation-of-mary-parish-akron-oh-sjb",
       "page_id": "2e029b8f-0e6e-8040-96c2-cf5cf3f2491c",
-      "last_edited_time": "2026-11-21T17:45:00.000Z",
+      "last_edited_time": "2026-11-23T19:16:00.000Z",
       "properties": {
         "Adoration": {
           "type": "rich_text",
@@ -20194,7 +20194,7 @@
         },
         "Mass Times": {
           "type": "rich_text",
-          "value": "[{\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1400, \"mass_date\": null, \"language\": \"Vietnamese\", \"notes\": \"See bulletin for 2026 specific dates schedule\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1000, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Weekday Mass\", \"cancelled\": false, \"site_label\": null}]"
+          "value": "[{\"day\": \"Sunday\", \"time\": 1000, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1730, \"mass_date\": null, \"language\": null, \"notes\": null, \"cancelled\": false, \"site_label\": null}, {\"day\": \"Thursday\", \"time\": 1000, \"mass_date\": \"2026-11-26\", \"language\": null, \"notes\": \"Weekday Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1400, \"mass_date\": \"2026-10-11\", \"language\": \"Vietnamese\", \"notes\": \"Vietnamese Sunday Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1400, \"mass_date\": \"2026-11-15\", \"language\": \"Vietnamese\", \"notes\": \"Vietnamese Sunday Mass\", \"cancelled\": false, \"site_label\": null}, {\"day\": \"Sunday\", \"time\": 1400, \"mass_date\": \"2026-12-13\", \"language\": \"Vietnamese\", \"notes\": \"Vietnamese Sunday Mass\", \"cancelled\": false, \"site_label\": null}]"
         },
         "Name": {
           "type": "title",

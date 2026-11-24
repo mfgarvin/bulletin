@@ -64,7 +64,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "805": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -93,8 +103,8 @@
     "Name": "Saint Andrew the Apostle - Norton",
     "Mass Times": {
       "Saturday": [
-        530,
-        800
+        800,
+        1730
       ],
       "Sunday": [
         1000,
@@ -142,11 +152,7 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {
-      "2026-11-26": [
-        800
-      ]
-    }
+    "Dated Masses": {}
   },
   "2e029b8f-0e6e-80a1-a790-d48824b5e2a8": {
     "ID": 5,
@@ -208,8 +214,22 @@
         }
       ]
     },
-    "Rules": {},
-    "Dated Masses": {}
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "815": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
+    "Dated Masses": {
+      "2026-11-26": [
+        900
+      ]
+    }
   },
   "2e029b8f-0e6e-805b-8383-c405ee328862": {
     "ID": 7,
@@ -321,19 +341,14 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {
-      "2026-11-26": [
-        900
-      ]
-    }
+    "Dated Masses": {}
   },
   "2e029b8f-0e6e-8040-96c2-cf5cf3f2491c": {
     "ID": 10,
     "Name": "Saint John the Baptist Parish",
     "Mass Times": {
       "Sunday": [
-        1000,
-        1400
+        1000
       ],
       "Thursday": [
         1730
@@ -353,10 +368,23 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "1730": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         1000
+      ],
+      "2026-12-13": [
+        1400
       ]
     }
   },
@@ -429,7 +457,17 @@
     },
     "Confessions": {},
     "Adoration": {},
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "830": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -534,7 +572,17 @@
     "Adoration": {
       "Is24Hour": true
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "830": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -640,7 +688,17 @@
     },
     "Confessions": {},
     "Adoration": {},
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "1830": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -673,15 +731,6 @@
     },
     "Adoration": {},
     "Rules": {
-      "Mass Times": {
-        "Friday": {
-          "830": {
-            "cancelled_on": [
-              "2026-11-27"
-            ]
-          }
-        }
-      },
       "Confessions": {
         "Thursday": {
           "1700": {
@@ -845,7 +894,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "1700": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -902,8 +961,7 @@
         628
       ],
       "Friday": [
-        628,
-        900
+        628
       ]
     },
     "Confessions": {
@@ -926,6 +984,15 @@
       ]
     },
     "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "628": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      },
       "Confessions": {
         "Thursday": {
           "1530": {
@@ -1135,13 +1202,6 @@
     },
     "Rules": {
       "Mass Times": {
-        "Monday": {
-          "1830": {
-            "cancelled_on": [
-              "2026-11-23"
-            ]
-          }
-        },
         "Thursday": {
           "830": {
             "cancelled_on": [
@@ -1191,7 +1251,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -1208,6 +1278,7 @@
       ],
       "Sunday": [
         800,
+        1100,
         1100
       ],
       "Monday": [
@@ -1300,7 +1371,22 @@
     },
     "Confessions": {},
     "Adoration": {},
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "645": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          },
+          "1900": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -1445,7 +1531,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "845": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -1494,7 +1590,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "700": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -1596,7 +1702,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "815": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -1613,13 +1729,7 @@
       "Sunday": [
         900
       ],
-      "Monday": [
-        800
-      ],
       "Tuesday": [
-        800
-      ],
-      "Wednesday": [
         800
       ],
       "Friday": [
@@ -1641,11 +1751,11 @@
       ]
     },
     "Rules": {
-      "Mass Times": {
-        "Friday": {
-          "1200": {
-            "cancelled_on": [
-              "2026-11-27"
+      "Adoration": {
+        "Monday": {
+          "1900": {
+            "weeks_of_month": [
+              2
             ]
           }
         }
@@ -1679,7 +1789,17 @@
     },
     "Confessions": {},
     "Adoration": {},
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "1730": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -1760,6 +1880,7 @@
     "Name": "Saint Paul Catholic Parish",
     "Mass Times": {
       "Saturday": [
+        900,
         1630
       ],
       "Sunday": [
@@ -1802,7 +1923,24 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "700": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        },
+        "Saturday": {
+          "900": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         830
@@ -1974,13 +2112,15 @@
       ],
       "Monday": [
         900,
-        1830
+        1130
       ],
       "Tuesday": [
-        900
+        900,
+        1130
       ],
       "Wednesday": [
-        900
+        900,
+        1130
       ],
       "Thursday": [
         900,
@@ -2141,7 +2281,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -2161,9 +2311,6 @@
       ],
       "Monday": [
         1200
-      ],
-      "Thursday": [
-        1830
       ]
     },
     "Confessions": {
@@ -2262,13 +2409,7 @@
         645
       ]
     },
-    "Confessions": {
-      "Saturday": [
-        {
-          "1500": 60
-        }
-      ]
-    },
+    "Confessions": {},
     "Adoration": {},
     "Rules": {
       "Mass Times": {
@@ -2368,7 +2509,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "700": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -2579,9 +2730,6 @@
         900
       ],
       "Friday": [
-        900
-      ],
-      "Thursday": [
         900
       ]
     },
@@ -2839,9 +2987,19 @@
       ]
     },
     "Adoration": {},
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "745": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
-      "2026-11-25": [
+      "2026-11-26": [
         900
       ]
     }
@@ -2897,6 +3055,13 @@
               1
             ]
           }
+        },
+        "Thursday": {
+          "730": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
         }
       }
     },
@@ -2939,11 +3104,7 @@
     },
     "Adoration": {},
     "Rules": {},
-    "Dated Masses": {
-      "2026-11-26": [
-        930
-      ]
-    }
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81aa-982e-e6c82394299f": {
     "ID": 63,
@@ -2973,7 +3134,17 @@
       ]
     },
     "Adoration": {},
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -2990,22 +3161,9 @@
     "ID": 64,
     "Name": "Saint Mary",
     "Mass Times": {
-      "Saturday": [
-        1630
-      ],
       "Sunday": [
-        1000,
-        1200,
-        2000
-      ],
-      "Monday": [
-        1210
-      ],
-      "Tuesday": [
-        1210
-      ],
-      "Wednesday": [
-        1210
+        900,
+        1300
       ]
     },
     "Confessions": {
@@ -3262,6 +3420,7 @@
         815
       ],
       "Saturday": [
+        815,
         1630
       ],
       "Sunday": [
@@ -3284,6 +3443,15 @@
       ]
     },
     "Rules": {
+      "Mass Times": {
+        "Saturday": {
+          "815": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      },
       "Adoration": {
         "Tuesday": {
           "1900": {
@@ -3374,6 +3542,13 @@
           "1700": {
             "weeks_of_month": [
               2
+            ]
+          }
+        },
+        "Thursday": {
+          "830": {
+            "cancelled_on": [
+              "2026-11-26"
             ]
           }
         }
@@ -3471,7 +3646,8 @@
       ],
       "Sunday": [
         800,
-        1030
+        1030,
+        1200
       ],
       "Monday": [
         830
@@ -3533,7 +3709,24 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "830": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        },
+        "Sunday": {
+          "1200": {
+            "weeks_of_month": [
+              2
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -3814,17 +4007,14 @@
       ]
     },
     "Confessions": {
-      "Saturday": [
-        {
-          "1100": 60
-        }
-      ],
       "Thursday": [
         {
           "1930": 60
-        },
+        }
+      ],
+      "Saturday": [
         {
-          "2000": 30
+          "1100": 60
         }
       ]
     },
@@ -3875,7 +4065,17 @@
     },
     "Confessions": {},
     "Adoration": {},
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -4071,7 +4271,6 @@
         1130
       ],
       "Monday": [
-        1730,
         1800
       ],
       "Wednesday": [
@@ -4098,7 +4297,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "830": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -4288,7 +4497,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "700": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         930
@@ -4335,6 +4554,13 @@
     "Adoration": {},
     "Rules": {
       "Mass Times": {
+        "Thursday": {
+          "700": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        },
         "Friday": {
           "1900": {
             "weeks_of_month": [
@@ -4403,12 +4629,7 @@
     "Confessions": {
       "Saturday": [
         {
-          "1515": 75
-        }
-      ],
-      "Friday": [
-        {
-          "1630": 30
+          "1545": 45
         }
       ]
     },
@@ -4419,6 +4640,13 @@
           "1000": {
             "cancelled_on": [
               "2026-11-25"
+            ]
+          }
+        },
+        "Thursday": {
+          "1900": {
+            "cancelled_on": [
+              "2026-11-26"
             ]
           }
         }
@@ -4544,6 +4772,15 @@
       ]
     },
     "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "730": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      },
       "Adoration": {
         "Friday": {
           "1930": {
@@ -4562,9 +4799,6 @@
       }
     },
     "Dated Masses": {
-      "2026-11-22": [
-        1600
-      ],
       "2026-11-26": [
         900
       ],
@@ -4618,7 +4852,17 @@
       ]
     },
     "Adoration": {},
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "1210": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -4642,7 +4886,8 @@
         815
       ],
       "Wednesday": [
-        815
+        815,
+        900
       ],
       "Thursday": [
         815,
@@ -4699,7 +4944,22 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "815": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          },
+          "1830": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-24": [
         730
@@ -4816,7 +5076,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "1200": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -4894,7 +5164,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -4955,6 +5235,13 @@
     },
     "Rules": {
       "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        },
         "Saturday": {
           "800": {
             "weeks_of_month": [
@@ -4996,22 +5283,8 @@
     },
     "Confessions": {},
     "Adoration": {},
-    "Rules": {
-      "Mass Times": {
-        "Thursday": {
-          "830": {
-            "cancelled_on": [
-              "2026-11-26"
-            ]
-          }
-        }
-      }
-    },
-    "Dated Masses": {
-      "2026-11-26": [
-        830
-      ]
-    }
+    "Rules": {},
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81a5-8676-d4f89d31cb67": {
     "ID": 102,
@@ -5157,6 +5430,11 @@
     "Rules": {
       "Mass Times": {
         "Friday": {
+          "800": {
+            "excluded_weeks": [
+              1
+            ]
+          },
           "1830": {
             "weeks_of_month": [
               1
@@ -5174,11 +5452,7 @@
         }
       }
     },
-    "Dated Masses": {
-      "2026-11-22": [
-        1000
-      ]
-    }
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81c3-b978-d3fb14d33a5d": {
     "ID": 105,
@@ -5209,14 +5483,14 @@
       ]
     },
     "Confessions": {
-      "Monday": [
-        {
-          "1715": 45
-        }
-      ],
       "Saturday": [
         {
           "1500": 30
+        }
+      ],
+      "Monday": [
+        {
+          "1715": 45
         }
       ]
     },
@@ -5227,7 +5501,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "1100": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -5351,6 +5635,15 @@
       ]
     },
     "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "1100": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      },
       "Adoration": {
         "Friday": {
           "1200": {
@@ -5417,6 +5710,13 @@
     },
     "Rules": {
       "Mass Times": {
+        "Thursday": {
+          "700": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        },
         "Friday": {
           "830": {
             "cancelled_on": [
@@ -5483,6 +5783,15 @@
       ]
     },
     "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "730": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      },
       "Adoration": {
         "Friday": {
           "800": {
@@ -5553,21 +5862,7 @@
         830
       ]
     },
-    "Confessions": {
-      "Saturday": [
-        {
-          "1500": 60
-        },
-        {
-          "1430": 60
-        }
-      ],
-      "Wednesday": [
-        {
-          "1830": 90
-        }
-      ]
-    },
+    "Confessions": {},
     "Adoration": {
       "Wednesday": [
         {
@@ -5575,7 +5870,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "830": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -5665,7 +5970,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "830": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -5737,53 +6052,25 @@
           "1810": 60
         }
       ],
-      "Sunday": [
-        {
-          "1130": 30
-        },
-        {
-          "1300": 60
-        }
-      ],
       "Saturday": [
         {
           "1500": 60
-        }
-      ],
-      "Friday": [
-        {
-          "1100": 180
         }
       ]
     },
     "Adoration": {},
     "Rules": {
-      "Confessions": {
-        "Sunday": {
-          "1130": {
-            "weeks_of_month": [
-              1
-            ]
-          },
-          "1300": {
-            "weeks_of_month": [
-              1
-            ]
-          }
-        },
-        "Friday": {
-          "1100": {
-            "weeks_of_month": [
-              1
+      "Mass Times": {
+        "Thursday": {
+          "1210": {
+            "cancelled_on": [
+              "2026-11-26"
             ]
           }
         }
       }
     },
     "Dated Masses": {
-      "2026-11-23": [
-        1900
-      ],
       "2026-11-26": [
         930
       ],
@@ -5840,6 +6127,15 @@
       ]
     },
     "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      },
       "Adoration": {
         "Friday": {
           "1000": {
@@ -6011,7 +6307,17 @@
     },
     "Confessions": {},
     "Adoration": {},
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "700": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -6382,11 +6688,6 @@
         {
           "1430": 60
         }
-      ],
-      "Wednesday": [
-        {
-          "1930": 60
-        }
       ]
     },
     "Adoration": {
@@ -6396,7 +6697,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "830": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -6430,6 +6741,15 @@
     },
     "Adoration": {},
     "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      },
       "Confessions": {
         "Saturday": {
           "900": {
@@ -6537,16 +6857,6 @@
         {
           "1630": 90
         }
-      ],
-      "Saturday": [
-        {
-          "1300": 60
-        }
-      ],
-      "Tuesday": [
-        {
-          "1730": 75
-        }
       ]
     },
     "Adoration": {
@@ -6556,11 +6866,27 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "1730": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      },
+      "Confessions": {
+        "Wednesday": {
+          "1630": {
+            "weeks_of_month": [
+              1
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
-      "2026-11-23": [
-        1730
-      ],
       "2026-11-24": [
         815
       ],
@@ -6673,6 +6999,20 @@
       ]
     },
     "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "715": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          },
+          "1130": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      },
       "Confessions": {
         "Wednesday": {
           "1900": {
@@ -6737,6 +7077,15 @@
       ]
     },
     "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "815": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      },
       "Confessions": {
         "Thursday": {
           "2000": {
@@ -6762,7 +7111,6 @@
     "Name": "Saint Agnes - Elyria",
     "Mass Times": {
       "Saturday": [
-        900,
         1600
       ],
       "Sunday": [
@@ -6787,14 +7135,7 @@
       ]
     },
     "Rules": {},
-    "Dated Masses": {
-      "2026-11-26": [
-        900
-      ],
-      "2026-11-27": [
-        900
-      ]
-    }
+    "Dated Masses": {}
   },
   "2df29b8f-0e6e-81d6-b944-dd8d452255c6": {
     "ID": 137,
@@ -7002,6 +7343,13 @@
               1
             ]
           }
+        },
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
         }
       }
     },
@@ -7045,7 +7393,17 @@
       ]
     },
     "Adoration": {},
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "1210": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -7095,10 +7453,6 @@
     "ID": 144,
     "Name": "Sacred Heart, Oberlin",
     "Mass Times": {
-      "Tuesday": [
-        800,
-        900
-      ],
       "Thursday": [
         845
       ],
@@ -7113,11 +7467,6 @@
       ]
     },
     "Confessions": {
-      "Wednesday": [
-        {
-          "1730": 50
-        }
-      ],
       "Friday": [
         {
           "700": 90
@@ -7262,14 +7611,6 @@
         {
           "1530": 30
         }
-      ],
-      "Wednesday": [
-        {
-          "1715": 60
-        },
-        {
-          "1900": 60
-        }
       ]
     },
     "Adoration": {
@@ -7357,6 +7698,9 @@
       "Sunday": [
         830,
         1100
+      ],
+      "Tuesday": [
+        845
       ]
     },
     "Confessions": {
@@ -7418,6 +7762,13 @@
     "Adoration": {},
     "Rules": {
       "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        },
         "Sunday": {
           "1300": {
             "weeks_of_month": [
@@ -7464,8 +7815,7 @@
         1000
       ],
       "Friday": [
-        700,
-        1245
+        700
       ]
     },
     "Confessions": {
@@ -7484,6 +7834,15 @@
       "Is24Hour": true
     },
     "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "700": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      },
       "Confessions": {
         "Friday": {
           "1500": {
@@ -7524,6 +7883,15 @@
       ]
     },
     "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "830": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      },
       "Adoration": {
         "Friday": {
           "2200": {
@@ -7609,9 +7977,7 @@
         1200
       ],
       "Wednesday": [
-        700,
-        830,
-        1200
+        700
       ],
       "Friday": [
         830,
@@ -7622,14 +7988,14 @@
       ]
     },
     "Confessions": {
-      "Tuesday": [
-        {
-          "1830": 60
-        }
-      ],
       "Saturday": [
         {
           "1530": 45
+        }
+      ],
+      "Tuesday": [
+        {
+          "1830": 60
         }
       ]
     },
@@ -7661,6 +8027,15 @@
       ]
     },
     "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "700": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      },
       "Confessions": {
         "Tuesday": {
           "1830": {
@@ -7740,8 +8115,7 @@
         1800
       ],
       "Wednesday": [
-        930,
-        1800
+        930
       ]
     },
     "Confessions": {
@@ -7790,6 +8164,13 @@
     },
     "Rules": {
       "Mass Times": {
+        "Thursday": {
+          "1800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        },
         "Friday": {
           "1800": {
             "cancelled_on": [
@@ -7957,6 +8338,13 @@
     },
     "Rules": {
       "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        },
         "Friday": {
           "800": {
             "cancelled_on": [
@@ -8064,7 +8452,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "815": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -8132,13 +8530,7 @@
         1900
       ]
     },
-    "Confessions": {
-      "Sunday": [
-        {
-          "1000": 45
-        }
-      ]
-    },
+    "Confessions": {},
     "Adoration": {
       "Friday": [
         {
@@ -8206,7 +8598,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -8260,7 +8662,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -8453,7 +8865,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "1900": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -8547,7 +8969,17 @@
       ]
     },
     "Adoration": {},
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "730": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-25": [
         700
@@ -8602,7 +9034,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "1930": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -8854,7 +9296,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -8900,7 +9352,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "1200": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         1000
@@ -8952,7 +9414,17 @@
     "Adoration": {
       "Is24Hour": true
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -9076,16 +9548,10 @@
       "Tuesday": [
         800
       ],
-      "Wednesday": [
-        700
-      ],
       "Thursday": [
-        700,
         800
       ],
       "Friday": [
-        700,
-        730,
         800
       ]
     },
@@ -9093,10 +9559,10 @@
     "Adoration": {},
     "Rules": {
       "Mass Times": {
-        "Wednesday": {
-          "700": {
+        "Thursday": {
+          "800": {
             "cancelled_on": [
-              "2026-11-25"
+              "2026-11-26"
             ]
           }
         }
@@ -9153,7 +9619,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "730": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -9204,7 +9680,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "830": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -9246,7 +9732,17 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "800": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
@@ -9258,8 +9754,7 @@
     "Name": "The Cathedral of Saint John the Evangelist",
     "Mass Times": {
       "Saturday": [
-        1630,
-        1800
+        1630
       ],
       "Sunday": [
         830,
@@ -9297,22 +9792,6 @@
         {
           "1700": 25
         }
-      ],
-      "Thursday": [
-        {
-          "745": 45
-        },
-        {
-          "1130": 30
-        }
-      ],
-      "Friday": [
-        {
-          "745": 45
-        },
-        {
-          "1130": 30
-        }
       ]
     },
     "Adoration": {
@@ -9324,6 +9803,18 @@
     },
     "Rules": {
       "Mass Times": {
+        "Thursday": {
+          "715": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          },
+          "1200": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        },
         "Friday": {
           "715": {
             "cancelled_on": [
@@ -9362,7 +9853,17 @@
     },
     "Confessions": {},
     "Adoration": {},
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "830": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         930
@@ -9513,7 +10014,22 @@
         }
       ]
     },
-    "Rules": {},
+    "Rules": {
+      "Mass Times": {
+        "Thursday": {
+          "630": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          },
+          "830": {
+            "cancelled_on": [
+              "2026-11-26"
+            ]
+          }
+        }
+      }
+    },
     "Dated Masses": {
       "2026-11-26": [
         900
