@@ -172,7 +172,7 @@ class SelfHostedSource(BulletinSource):
         - Is a direct .pdf link
         """
         soup = BeautifulSoup(html, "html.parser")
-        candidates: list[tuple[str, int]] = []  # (url, score)
+        candidates: list[tuple[str, int, str]] = []  # (url, score, link text)
 
         # Find all links
         for link in soup.find_all("a", href=True):
@@ -188,7 +188,7 @@ class SelfHostedSource(BulletinSource):
 
             # Score this link
             score = self._score_link(href, text)
-            candidates.append((full_url, score))
+            candidates.append((full_url, score, text))
 
         # Also check for embedded PDFs (iframes, embeds)
         for embed in soup.find_all(["iframe", "embed", "object"]):
@@ -197,7 +197,7 @@ class SelfHostedSource(BulletinSource):
             if resolved:
                 full_url = urljoin(base_url, resolved)
                 score = self._score_link(resolved, "")
-                candidates.append((full_url, score))
+                candidates.append((full_url, score, ""))
 
         if not candidates:
             return None
@@ -208,12 +208,70 @@ class SelfHostedSource(BulletinSource):
         # "CurrentBulletin"-style links (score-driven) still win when nothing is
         # dated. Implausible future dates (typo'd filenames) score 0 recency
         # rather than sorting to the top.
-        ranked = [
-            (url, kw + self._recency_bonus(self._extract_date(url)), self._extract_date(url))
-            for url, kw in candidates
-        ]
+        ranked = []
+        for url, kw, text in candidates:
+            when = self._link_date(url, text)
+            ranked.append((url, kw + self._recency_bonus(when), when))
         ranked.sort(key=lambda x: (x[1], x[2]), reverse=True)
         return ranked[0][0]
+
+    def _link_date(self, url: str, text: str) -> date:
+        """The link's date: the filename's, unless the link text prints a year
+        the filename only had to guess.
+
+        `sp-l` read 2020 bulletins for three months (2026-08-15 to 11-21). Its
+        page lists the current `11-22-26.pdf` and, further down, the 2020
+        archive's `November_22_bulletin_8x11.pdf`. The second has no year, so
+        it is read as this year's Nov 22 - the same date as the real one - and
+        "bulletin" in its name wins the tie. Sundays fall on the same dates in
+        2020 and 2026 from March on, so it won every week. Its link text said
+        "November 22, 2020" the whole time.
+
+        So a year *printed* beats a year *inferred* - and that is ALL it does.
+        It corrects only the year of a filename date whose month and day the
+        text agrees with. A first cut also dated undated files from their link
+        text, and on sp-l's own page that lifted `Bulletin_template_3_.pdf`
+        ("October 25, 2026") into the top recency band, where its keyword
+        score beat the current issue: an undated file has to stay undated, as
+        the ranking model expects. A filename that states its own year keeps it.
+        """
+        when = self._extract_date(url)
+        if when == date.min or not text or self._url_states_year(url):
+            return when
+        printed = self._text_date(text)
+        if printed == date.min or (printed.month, printed.day) != (when.month, when.day):
+            return when
+        return printed
+
+    @staticmethod
+    def _text_date(text: str) -> date:
+        """A 'Month D, YYYY' date in link text, or `date.min`. Year required."""
+        match = re.search(
+            r"\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+"
+            r"(\d{1,2})(?!\d)(?:st|nd|rd|th)?,?\s+(\d{4})(?!\d)",
+            text.lower(),
+        )
+        if not match:
+            return date.min
+        return _safe_date(
+            int(match.group(3)), _MONTHS[match.group(1)], int(match.group(2))
+        )
+
+    def _url_states_year(self, url: str) -> bool:
+        """Whether the URL itself names a year, so nothing had to be guessed.
+
+        A 4-digit year in the filename, a /YYYY/ path segment, or a numeric
+        triple (whose readings all carry a year: `11-22-26`, `26_11_22`).
+        """
+        url_lower = url.lower()
+        fname = url_lower.rstrip("/").rsplit("/", 1)[-1]
+        if re.search(r"(?<!\d)20\d{2}(?!\d)", fname):
+            return True
+        if re.search(r"(?<!\d)20\d{2}[-_]?\d{2}[-_]?\d{2}", fname):  # 20261122B
+            return True
+        if re.search(r"/20\d{2}/", url_lower):
+            return True
+        return self._parse_numeric_triple(fname, None) != date.min
 
     @staticmethod
     def _resolve_embedded_pdf(src: str) -> Optional[str]:

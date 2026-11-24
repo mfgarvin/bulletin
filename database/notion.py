@@ -159,10 +159,27 @@ def _splice_held_weekdays(
     if not kept:
         return None, notes
 
+    # A restored entry keeps its SLOT from stored, never its week-specific
+    # `cancelled`: that flag described last week. 2026-11-21: 1831's Thursday
+    # 08:30 came back from the Thanksgiving hold still flagged from the 11-14
+    # week, so its one Thanksgiving Mass published as cancelled. This week's
+    # flag comes from the new extraction's matching slot, if it has one - the
+    # cancellation detector runs before the save, so a slot it marked this
+    # week is in `new`.
+    def slot(e: dict) -> tuple:
+        return (e.get(day_key),) + tuple(e.get(f) for f in key_fields)
+
+    this_week = {
+        slot(e): bool(e.get("cancelled"))
+        for e in new
+        if e.get(day_key) in kept and recurring(e)
+    }
     spliced = [
         e for e in new if not (e.get(day_key) in kept and recurring(e))
     ] + [
-        e for e in stored if e.get(day_key) in kept and recurring(e)
+        {**e, "cancelled": this_week.get(slot(e), False)}
+        for e in stored
+        if e.get(day_key) in kept and recurring(e)
     ]
     return spliced, notes
 

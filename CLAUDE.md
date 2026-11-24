@@ -500,8 +500,9 @@ found by accident — never by the pipeline:
 | 2026-08-10 | `sp-l` (456 days stale), `ss-c` | filename dialects the date parser couldn't read, so ranking fell back to keywords | v2.5.6 |
 | 2026-08-10 | `hs-gh` (caught pre-merge) | a widened month-name pattern read a year as a day, ranking July above August | v2.5.6 |
 | 2026-09-19 | **7 of 15** Self-Hosted | the recency bonus ranked a date up to 14 days ahead BELOW anything 0-30 days old, so the coming Sunday's file - which is what the current bulletin is named for - lost to last week's every Saturday | v2.5.33 |
+| 2026-11-23 | `sp-l` (**2020 bulletins for 3 months**) | a year-less `November_22_bulletin_8x11.pdf` from the 2020 archive read as this year, tied the real `11-22-26.pdf` on date and won on "bulletin"; its link text said "November 22, 2020" | v2.5.41 |
 
-The fifth arrived, and it was inside the ranking model itself. Assume there is a sixth. When touching any of this, the question to ask is not
+The fifth arrived, and it was inside the ranking model itself. The sixth (Discover Mass serving another parish's file, 2026-09-26) and seventh (`sp-l`, found only because a Thanksgiving Mass came out dated 2020) were found by accident too. Assume there is an eighth. When touching any of this, the question to ask is not
 "does it download?" but "is what it downloaded the newest thing the site has?"
 
 ### How each source decides
@@ -572,7 +573,7 @@ Real examples, all currently live. `_extract_date_raw()` tries these in order;
 | `Bulletin-English-2026-08-09.pdf` | `YYYY-M-D` | `sc-c` |
 | `8-9-26.pdf`, `bulletin_1-4-26.pdf` | `M-D-YY` | `sp-l` |
 | `26_08_09_bulletin.pdf` | `YY-MM-DD` | `ss-c` |
-| `August_9_bulletin_8x11.pdf`, `august_9_2026.pdf` | textual, `_` separator | `sp-l`, `bearer` |
+| `august_9_2026.pdf`; `August_9_bulletin_8x11.pdf` (no year - **these were sp-l's 2020 archive**; a year in the link text now overrides the guess, v2.5.41) | textual, `_` separator | `bearer`; `sp-l` |
 | `JFuly 19. 2026.pdf` | textual, typo'd, spaces | `olp-cle` |
 | `bulletin_AUGUST-2026.pdf`, `bulletin_SEPTEMBER.pdf` | month only → today while the month runs, its last day once past | `hs-gh` (monthly) |
 | `/2026/08/file-1-4.pdf` | day from name, year+month from path | eCatholic docs layout |
@@ -784,6 +785,50 @@ the compose default — so the template needs the same edit by hand.
   mapboard repo owns it.
 
 ## Changelog
+
+### v2.5.41 (2026-11-24) - Thanksgiving: the holiday Mass replaces the day; a printed year beats a guessed one
+
+Out of the 2026-11-21 triage (`docs/fixlog.md`).
+
+**A dated Thanksgiving Mass now cancels the day's other weekly Masses, at
+export time.** The holiday hold did its job: 34 rows frozen, the *replaced*
+shape caught on 5, and 105 rows published a dated Thanksgiving Mass. But the
+hold protects only the weekly schedule, so 73 rows then showed their standing
+Thursday Mass, live, beside the holiday one - and in 16 of 18 readable
+bulletins the Thanksgiving listing printed only the holiday Mass ("instead of
+the usual 8:45am", "no 8:00am Mass that morning"). The cancellation detector
+needs a "no Mass" phrase; a listing that simply prints a different time has
+none. `replaced_by_holiday_mass()` (`utils/holidays.py`) marks those slots
+`cancelled` in `export.json` and `cancelled_on` in the mapboard's `Rules`, for
+the export's own week, weekly entries only. `REPLACING_HOLIDAYS` is
+Thanksgiving alone: on a Holy Day a parish often keeps its daily Mass, and the
+sanitizer drops a dated copy at the daily time, so the rule would cancel a real
+Mass. `KEEPS_STANDING_MASSES` exempts by (parish, date) - `1318` and `0131`
+this year. Against the 11-24 data: 72 rows, 77 Thursday slots, nothing else
+changes; mapboard legacy keys byte-identical. Exported the same day.
+
+**The hold restored last week's `cancelled` with the slot.** `1831`'s only
+Thanksgiving Mass (8:30, its usual time) published as cancelled, carried over
+from the 11-14 week. `_splice_held_weekdays` now takes the flag from this
+week's matching slot, or false.
+
+**`sp-l` had read 2020 bulletins since 2026-08-15** - the seventh Bulletin
+Freshness instance, and v2.5.6's own doing: teaching the parser
+`August_9_bulletin_8x11.pdf` made the 2020 archive's year-less files parse as
+this year, and "bulletin" in their names won the tie against the real
+`11-22-26.pdf` (55 v 35). Nov 22 is a Sunday in both years, as is every Sunday
+from March on. Only the dated-Mass window guard noticed, when its Thanksgiving
+Mass came out dated 2020-11-26 (2026's bulletin: "NO Mass on Thanksgiving
+Day"). `_link_date` lets a "Month D, YYYY" in the link's own text correct the
+**year** of a filename date it agrees with on month and day - nothing more. A
+first cut also dated undated files from their link text, and on sp-l's own
+page that lifted `Bulletin_template_3_.pdf` into the top recency band above the
+current issue. Re-ranked all 16 Self-Hosted pages on fixed bytes: 15
+byte-identical, sp-l moves to `11-22-26.pdf`.
+
+**`notion_fixes`: a `drop_masses` (day, time) key no longer matches dated
+Masses**; name the date to drop one. `1532`'s and `0164`'s Thursday 09:00
+drops would otherwise have deleted their Thanksgiving Masses on apply.
 
 ### v2.5.40 (2026-10-16) - The mapboard export carries the rules
 
