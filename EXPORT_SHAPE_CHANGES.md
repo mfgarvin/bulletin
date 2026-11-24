@@ -171,10 +171,21 @@ keeps last week's values, `cancelled` included, which is what `invite_feedback`
 and `timestamp` are for.
 
 **What it is never set from.** Only from the bulletin printing this slot's own
-time next to a cancellation phrase, scoped to this slot's own weekday. The
-extractor does not set it; a model opinion is not evidence here. Adoration
-carries the field for completeness but no run writes it, because
-`UPDATE_ADORATION` is `False`.
+time next to a cancellation phrase, scoped to this slot's own weekday — or
+from the holiday rule below. The extractor does not set it; a model opinion is
+not evidence here. Adoration carries the field for completeness but no run
+writes it, because `UPDATE_ADORATION` is `False`.
+
+**The holiday rule** (added 2026-11-24, same meaning, no app change). On a
+holiday whose dated Mass *replaces* the day — Thanksgiving only, for now — a
+parish that publishes a dated Mass on that date has its other weekly Masses on
+that weekday exported with `cancelled: true`, for the week of the export only.
+It reads the parish's own dated Mass, so a parish that printed none is left
+alone. Measured on Thanksgiving 2026: in 16 of 18 readable bulletins the day's
+listing held only the holiday Mass; the two that keep both are exempted by
+date (`KEEPS_STANDING_MASSES` in `utils/holidays.py`). Derived at export time
+from stored data, so it lapses once the holiday's dated Mass is in the past.
+Monthly entries (`weeks_of_month` etc.) are never touched.
 
 ### `schedules.adoration`
 

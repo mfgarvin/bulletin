@@ -884,6 +884,16 @@ MANUAL_FIXES: dict[str, ManualFix] = {
                              mass_date="2026-11-26",
                              notes="Thanksgiving Day Mass")],
     ),
+    "st-mary-berea-oh": ManualFix(
+        reason="the bulletin contradicts itself on Thanksgiving: the Mass "
+        "intentions give 'Thanksgiving Day Mass at 9:00am on Thu 11/26' (its "
+        "usual Thursday time) and the ministry schedule '9:30am'. The 9:00 "
+        "copy was dropped as a restatement, leaving only the 9:30 - which "
+        "would make the export's holiday rule cancel the 9:00. Kept the "
+        "intentions' time (unverified: Discover Mass was unreachable "
+        "2026-11-23). RETIRE after the 11-28 run",
+        drop_masses={("Thursday", 930, "2026-11-26")},
+    ),
     "20822": ManualFix(
         reason="Thursday 18:30 Spanish is one week's intention ('THURSDAY/"
         "JUEVES, 19 November / 6:30 pm - Spanish - Madre Divina "

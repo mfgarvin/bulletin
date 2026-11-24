@@ -220,3 +220,73 @@ def obligations_in(start: date, end: date) -> dict[date, str]:
         if o.obligation and start <= when <= end
         and (when.weekday() != 6 or o.name == "Christmas")
     }
+
+
+# Observances on which a parish's dated Mass REPLACES that weekday's ordinary
+# Masses instead of adding to them. Measured on Thanksgiving 2026: 73 rows
+# published their standing Thursday Mass, uncancelled, beside a dated
+# Thanksgiving Mass, and in 16 of the 17 bulletins with a readable listing the
+# Thanksgiving header printed ONLY the holiday Mass ("instead of the usual
+# 8:45am", "no 8:00am Mass that morning"). The one exception, 1318, keeps its
+# 7:30 and adds a 9:00 - a false cancellation, accepted: someone skipping a
+# Mass that happens still sees the holiday Mass, while someone sent to one that
+# doesn't finds a locked church.
+#
+# Deliberately NOT the Holy Days. On Dec 8 or Jan 1 a parish often keeps its
+# daily Mass and adds more, and when it lists the daily time among the Holy Day
+# Masses the sanitizer drops that dated copy as a restatement - so the rule
+# would see a dated Mass at another time and cancel a Mass that is happening.
+# The other civil holidays (Labor Day, Memorial Day, July 4) are the same shape
+# as Thanksgiving and are candidates once a run has been measured.
+REPLACING_HOLIDAYS: frozenset[str] = frozenset({"Thanksgiving"})
+
+# (ParishID, date) pairs where the bulletin shows the standing Masses kept
+# beside the holiday one, so the rule must not cancel them. Keyed by date so an
+# entry lapses by itself - a parish's practice one year says nothing about the
+# next. Each entry quotes its bulletin.
+KEEPS_STANDING_MASSES: frozenset[tuple[str, str]] = frozenset({
+    # Liturgical Schedule: "Thursday ... 7:30 ... 9:00 Thanksgiving Day Mass".
+    ("1318", "2026-11-26"),
+    # "Jueves 26 de noviembre Misa 6:30pm" in the week's listing, and the
+    # catechism's "Thanksgiving Mass on November 26th at 10 am".
+    ("0131", "2026-11-26"),
+})
+
+
+def replaced_by_holiday_mass(
+    masses: list[dict], start: date, end: date, parish_id: str | None = None
+) -> dict[tuple[str, int], date]:
+    """Recurring Masses that a dated holiday Mass replaces inside [start, end].
+
+    `masses` are stored entries (`day`, `time`, `mass_date`). Returns
+    (day, time) -> the holiday's date, for every recurring entry on the
+    holiday's weekday whose time is NOT one of the parish's dated Masses that
+    day. A parish with no dated Mass on the holiday gets nothing: the rule
+    reads the parish's own bulletin, it never guesses that a parish closed.
+
+    The caller decides what an entry with a monthly rule means; this does not
+    look at notes.
+    """
+    out: dict[tuple[str, int], date] = {}
+    for year in {start.year, end.year}:
+        for when, observance in observances(year).items():
+            if observance.name not in REPLACING_HOLIDAYS:
+                continue
+            if not (start <= when <= end):
+                continue
+            iso = when.isoformat()
+            if (parish_id, iso) in KEEPS_STANDING_MASSES:
+                continue
+            dated = {m.get("time") for m in masses if m.get("mass_date") == iso}
+            if not dated:
+                continue
+            weekday = _WEEKDAY_NAMES[when.weekday()]
+            for m in masses:
+                if (
+                    not m.get("mass_date")
+                    and m.get("day") == weekday
+                    and m.get("time") is not None
+                    and m.get("time") not in dated
+                ):
+                    out[(weekday, m["time"])] = when
+    return out

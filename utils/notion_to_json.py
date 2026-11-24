@@ -13,9 +13,11 @@ from notion_client import AsyncClient
 
 try:
     from .bulletin_week import run_week
+    from .holidays import replaced_by_holiday_mass
     from .monthly_recurrence import derive_ordinal
 except ImportError:
     from bulletin_week import run_week
+    from holidays import replaced_by_holiday_mass
     from monthly_recurrence import derive_ordinal
 
 logger = logging.getLogger(__name__)
@@ -309,18 +311,34 @@ def _rules(
     return dict(out)
 
 
-def _schedule_rules(parish: FullParishData) -> dict[str, dict]:
+def _schedule_rules(
+    parish: FullParishData, today: Optional[str] = None
+) -> dict[str, dict]:
     """The `Rules` sidecar: which weeks each legacy slot actually occurs in.
 
     Only entries the legacy lists export are considered, with the same filters,
     so every rule key names a slot the Pi already has. Empty kinds are omitted.
     """
     run = parish.last_run
-    masses = [
-        (m["day"], m["time"], _entry_rule(m, run))
-        for m in parish.mass_times
-        if m.get("day") and m.get("time") is not None and not m.get("mass_date")
-    ]
+    today = today or date.today().isoformat()
+    # The same holiday rule export.json applies (REPLACING_HOLIDAYS): a dated
+    # Thanksgiving Mass means the weekday's other Masses are off that day. Here
+    # it is a date, like every cancellation the board is given.
+    replaced = replaced_by_holiday_mass(
+        parish.mass_times, *run_week(date.fromisoformat(today)),
+        parish_id=parish.parish_id,
+    )
+    masses = []
+    for m in parish.mass_times:
+        if not m.get("day") or m.get("time") is None or m.get("mass_date"):
+            continue
+        rule = _entry_rule(m, run)
+        when = replaced.get((m["day"], m["time"]))
+        if when and set(rule) <= {"cancelled_on"}:
+            rule["cancelled_on"] = sorted(
+                set(rule.get("cancelled_on", [])) | {when.isoformat()}
+            )
+        masses.append((m["day"], m["time"], rule))
     ranges: dict[str, list[dict]] = {"Confessions": parish.confessions}
     if not parish.adoration.get("is_perpetual"):
         ranges["Adoration"] = parish.adoration.get("times", [])
@@ -378,7 +396,7 @@ def parish_to_dict(
         "Mass Times": _group_mass_times(parish.mass_times),
         "Confessions": _group_confessions(parish.confessions),
         "Adoration": _format_adoration(parish.adoration),
-        "Rules": _schedule_rules(parish),
+        "Rules": _schedule_rules(parish, today),
         "Dated Masses": _dated_masses(parish.mass_times, today),
     }
 

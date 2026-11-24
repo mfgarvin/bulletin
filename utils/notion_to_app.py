@@ -20,9 +20,13 @@ from notion_client import AsyncClient
 try:
     from .notion_to_json import FullParishData, fetch_all_parishes
     from .monthly_recurrence import derive_ordinal
+    from .bulletin_week import run_week
+    from .holidays import replaced_by_holiday_mass
 except ImportError:
     from notion_to_json import FullParishData, fetch_all_parishes
     from monthly_recurrence import derive_ordinal
+    from bulletin_week import run_week
+    from holidays import replaced_by_holiday_mass
 
 logger = logging.getLogger(__name__)
 
@@ -73,7 +77,15 @@ def _hhmm(t: int | None) -> str | None:
     return f"{t // 100:02d}:{t % 100:02d}"
 
 
-def _structured_mass(mass_times: list[dict], today: str) -> list[dict[str, Any]]:
+# The keys of a weekly entry - anything beyond them is a monthly rule.
+_WEEKLY_KEYS = frozenset(
+    {"day", "start", "mass_date", "language", "notes", "cancelled"}
+)
+
+
+def _structured_mass(
+    mass_times: list[dict], today: str, parish_id: str | None = None
+) -> list[dict[str, Any]]:
     """Structured mass entries.
 
     Regular weekly masses have mass_date == null.
@@ -86,6 +98,16 @@ def _structured_mass(mass_times: list[dict], today: str) -> list[dict[str, Any]]
         "Sunday": 0, "Monday": 1, "Tuesday": 2, "Wednesday": 3,
         "Thursday": 4, "Friday": 5, "Saturday": 6,
     }
+    # On a holiday whose dated Mass replaces the day (Thanksgiving), the
+    # standing Masses at other times that weekday are not celebrated - the
+    # bulletin printed the holiday Mass instead. Derived here, at export time,
+    # for the week this export is for, so it lapses with the holiday's own
+    # dated Mass. See REPLACING_HOLIDAYS in utils/holidays.py.
+    replaced = replaced_by_holiday_mass(
+        [m for m in mass_times if not _is_private_mass(m)],
+        *run_week(date.fromisoformat(today)),
+        parish_id=parish_id,
+    )
     out = []
     for m in mass_times:
         day = m.get("day")
@@ -123,6 +145,11 @@ def _structured_mass(mass_times: list[dict], today: str) -> list[dict[str, Any]]
         # never on a dated Mass (mutually exclusive with mass_date per spec).
         if not mass_date:
             entry.update(derive_ordinal(day, m.get("notes")) or {})
+            # A monthly slot is left alone: whether it falls on the holiday at
+            # all is the app's question, and a struck-through ordinal would
+            # read as the monthly Mass being off.
+            if (day, time) in replaced and set(entry) == _WEEKLY_KEYS:
+                entry["cancelled"] = True
         out.append(entry)
     out.sort(key=lambda e: (
         e["mass_date"] or "",
@@ -241,7 +268,7 @@ def format_parish_for_app(parish: FullParishData, today: str) -> dict[str, Any]:
         "timestamp": parish.last_run,
         "invite_feedback": parish.issues in FEEDBACK_STATUSES,
         "schedules": {
-            "mass": _structured_mass(parish.mass_times, today),
+            "mass": _structured_mass(parish.mass_times, today, parish.parish_id),
             "confession": _structured_ranges(parish.confessions),
             "adoration": _structured_adoration(parish.adoration),
         },
