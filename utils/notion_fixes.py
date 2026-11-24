@@ -66,8 +66,10 @@ class ManualFix:
     # rather than mistimed — a feast heading read as its own celebration, a
     # neighbouring parish's Mass — where remapping the time would merge a
     # week-specific note into the recurring entry and repeat it forever.
-    # Matched against the stored time, before mass_time_fixes runs.
-    drop_masses: set[tuple[str, int]] = field(default_factory=set)
+    # Matched against the stored time, before mass_time_fixes runs. A
+    # (day, time) key matches recurring entries only; (day, time, "YYYY-MM-DD")
+    # matches the dated Mass on that date.
+    drop_masses: set[tuple] = field(default_factory=set)
     # (day, time) -> replacement note, for a Mass whose time is right but whose
     # published note is wrong. `notes` is user-facing text, so a note welded
     # together by _dedupe_masses out of two contradictory labels is a defect
@@ -143,6 +145,9 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         # Retired 2026-10-31: the 10-10 Friday 09:00 drop + dated 10-16 add
         # (one week). The 10-31 run re-added a Friday 09:00 for Nov 6's First
         # Friday school Mass - correct for that week; left to self-heal.
+        # 2026-11-21: it did NOT self-heal - the Thanksgiving hold froze
+        # Friday and kept it. Masthead: "Monday - Friday | 6:28AM" only.
+        drop_masses={("Friday", 900)},
     ),
     "sc-p": ManualFix(
         reason="Saturday Vigil recorded as 04:00; a vigil is an evening Mass",
@@ -157,12 +162,6 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         mass_note_fixes={("Friday", 830): "School Mass (in the Church)"},
         # 2026-10-03: "Eucharistic adoration Saturdays at 3:00 - 4:00 pm" published as a Mass.
         drop_masses={("Saturday", 1500)},
-        # 2026-10-31: Sunday 11:30 flagged cancelled off "there will be no
-        # 11:30 am Mass offered that day" - the day is the bishop's visit,
-        # SUNDAY, DECEMBER 6 (wrong-week; guard 7 missed the date ~250 chars
-        # back). RETIRE after the 11-07 run, and certainly before the 12-06
-        # week, when the flag is TRUE.
-        uncancel_masses={("Sunday", 1130)},
     ),
     "0512": ManualFix(
         reason="Saturday 'Vigil Mass' recorded as 05:30; a vigil is an evening "
@@ -268,17 +267,10 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         "in as every Saturday. The masthead's real schedule is 'Confession / "
         "Wednesday Evening | 6:00 pm / Saturday | 3:00 pm - 4:00 pm or by "
         "appointment', both of which are stored and correct",
-        confession_times=[
-            ConfessionTime(
-                day=DayOfWeek.WEDNESDAY, start_time=1800, notes="Wednesday Evening"
-            ),
-            ConfessionTime(
-                day=DayOfWeek.SATURDAY,
-                start_time=1500,
-                end_time=1600,
-                notes="or by appointment",
-            ),
-        ],
+        # confession_times retired 2026-11-23: the September one-off is long
+        # gone, and the restatement now fights a real change - "Beginning next
+        # week, Confession will move from 6:00 PM to 5:30 PM, with Mass
+        # remaining at 6:30 PM" (Advent schedule, from Nov 29).
         # 2026-10-31: Wednesday 09:00 is one week's extra intention ("Wednesday
         # November 4th 8:00am ... 9:00am Mark Joseph Beeson"); the masthead is
         # "Monday - Friday | 8:00 am / Wednesday | 6:30 pm / Saturday | 8:00 am".
@@ -331,15 +323,21 @@ MANUAL_FIXES: dict[str, ManualFix] = {
     # ended on the 27th. `CurrentBulletin.pdf` is undated, so the run could not
     # tell - guard 7 now can, because the listing's own dates fall outside the
     # week the run assumes.
+    # 2026-11-23: the September uncancels for shc / shc-pat are retired (that
+    # absence ended 09-27, and neither flag has been set since).
     "shc": ManualFix(
-        reason="cancelled flags carried over from a bulletin whose week has "
-        "passed - the 20 September edition, still the current file on "
-        "2026-09-26. Father Trask's absence covered 14-27 September",
-        uncancel_masses={("Thursday", 845), ("Friday", 845)},
-    ),
-    "shc-pat": ManualFix(
-        reason="same as `shc`, for St. Patrick's half of the cluster",
-        uncancel_masses={("Monday", 845), ("Wednesday", 1830)},
+        reason="cluster bleed from the shared listing, 2026-11-21. 'Tuesday, "
+        "November 24 / 8:00 am ... Nativity of the BVM ... S. Amherst / 9:00 "
+        "am ... Our Lady, Queen of Peace ... Grafton' are intentions said at "
+        "other parishes; Sacred Heart's own weekdays are Thu/Fri 8:45 'at SHO'. "
+        "The Wednesday '5:30-6:20 pm Eucharistic Adoration & Confession' sits "
+        "above '6:30 pm ... at SPW' - St. Patrick Wellington's, which shc-pat "
+        "already holds",
+        drop_masses={("Tuesday", 800), ("Tuesday", 900)},
+        confession_times=[
+            ConfessionTime(day="Friday", start_time=700, end_time=830,
+                           notes="Eucharistic Adoration & Confession"),
+        ],
     ),
     # --- 2026-09-19 audit of the chronically unreliable rows ----------------
     #
@@ -411,7 +409,15 @@ MANUAL_FIXES: dict[str, ManualFix] = {
                 day=DayOfWeek.SATURDAY,
                 time=930,
                 notes="First Saturday Mass & Lecture",
-            )
+            ),
+            # 2026-11-21: the monthly German Mass deleted in an off week (the
+            # worker read the 11-15 edition, a third Sunday).
+            MassTime(
+                day=DayOfWeek.SUNDAY,
+                time=1100,
+                language="German",
+                notes="First Sunday of every month",
+            ),
         ],
         # 2026-09-26: a Sunday 09:30 "Mass" noted 'Rosary'. The masthead is
         # "Saturday 5:00pm / Sunday 8:00am & 11:00am" and "Rosary - Sundays:
@@ -822,14 +828,121 @@ MANUAL_FIXES: dict[str, ManualFix] = {
     # 19:00), plus immat-con-cle's starred this-week-only times. Each is
     # exactly right for the coming week and should revert on the 11-07 run;
     # stating them here would only add entries to retire. CHECK after 11-07.
-    "1733": ManualFix(
-        reason="both Sunday Masses flagged cancelled. The listing's text layer "
-        "prints each day header AFTER its entries ('9:00am Mass ... 11:00am "
-        "Mass ... SUNDAY, NOVEMBER 1 / ALL SAINTS / No Morning Mass / 7:00pm "
-        "Mass of Remembrance (All Souls' Day) / MONDAY, NOVEMBER 2'), so "
-        "MONDAY's 'No Morning Mass' was read as Sunday's. All Saints Masses "
-        "at 9 and 11 are happening. One week: RETIRE after the 11-07 run",
-        uncancel_masses={("Sunday", 900), ("Sunday", 1100)},
+    # Retired 2026-11-23: 1733 (one-week Sunday uncancels), 1101 (a dated
+    # 11-07 Mass, past), 1687's Sunday 11:30 uncancel (it would have cleared a
+    # TRUE flag in the 12-06 week). Every All Souls Monday above reverted on
+    # its own by 11-21, as predicted.
+    # ---- 2026-11-21 run triage (Thanksgiving week; covered week 11-22..28) ----
+    # Thursday and Friday were held. Entries marked RETIRE are one-week.
+    "0077": ManualFix(
+        reason="St. Hilary's and St. Victor's schedules bled in on 11-14 from "
+        "the neighbour table under the masthead ('St.Hilary Mass Schedule / "
+        "St.Victor Mass Schedule'); 11-21 removed most of them, but the "
+        "Thanksgiving hold froze Thursday and Friday and kept the bleed there. "
+        "Guardian Angels' own masthead: 'Saturday Vigil 5pm / Sunday 9am & 11am "
+        "/ DAILY MASS Mon, Tues, Thurs, Fri 8am'. Wednesday 07:00 came back "
+        "via the cancellation restore",
+        drop_masses={("Thursday", 700), ("Friday", 700), ("Friday", 730),
+                     ("Wednesday", 700)},
+    ),
+    "1831": ManualFix(
+        reason="Thursday 08:30 carried a STALE cancelled flag: the 11-21 "
+        "extraction dropped the recurring Thursday (Thanksgiving is a dated "
+        "8:30 Mass), so the holiday hold restored the stored entry - which "
+        "still carried the 11-14 week's cancellation. The listing: 'Thursday, "
+        "November 26 / 8:30 a.m. / Happy Thanksgiving' and 'We will celebrate "
+        "one Mass at 8:30 a.m. on Thanksgiving day'. RETIRE after the 11-28 run",
+        uncancel_masses={("Thursday", 830)},
+    ),
+    "5493": ManualFix(
+        reason="(1) Monday 18:30 is not a Mass: it was built from the Advent "
+        "line 'Let's Go to Confession! - Saturdays at 3:30 pm, Mondays at 6:00 "
+        "pm' and 'Monday, December 14: 6:30 pm' (a penance service). (2) The "
+        "Mon/Tue/Wed 11:30 Shrine Masses were dropped on one draw (NOT "
+        "reproduced); the masthead reads 'Weekdays: 9:00 am in church, 11:30 "
+        "am in Saint Ann Shrine' and the listing prints all three this week. "
+        "Thu/Fri 11:30 are correctly cancelled ('MASS: NO MASS'). RETIRE the "
+        "adds after the 11-28 run",
+        drop_masses={("Monday", 1830)},
+        add_masses=[MassTime(day=day, time=1130, notes="Saint Ann Shrine")
+                    for day in (DayOfWeek.MONDAY, DayOfWeek.TUESDAY,
+                                DayOfWeek.WEDNESDAY)],
+    ),
+    "1855": ManualFix(
+        reason="Saturday 08:15 is monthly, not gone: 'First Saturday • 8:15am "
+        "at St. Luke'. Dropped in a week it does not fall in",
+        add_masses=[MassTime(day=DayOfWeek.SATURDAY, time=815,
+                             notes="First Saturday")],
+    ),
+    "1855-clem": ManualFix(
+        reason="Thanksgiving Mass lost. 'Please note that Mass for "
+        "Thanksgiving will be celebrated at 9am at St. Clement Parish' - the "
+        "run emitted it as a RECURRING Thursday 09:00 (the replaced shape), "
+        "the hold correctly declined that, and no dated Mass was emitted. "
+        "RETIRE after the 11-28 run",
+        add_masses=[MassTime(day=DayOfWeek.THURSDAY, time=900,
+                             mass_date="2026-11-26",
+                             notes="Thanksgiving Day Mass")],
+    ),
+    "20822": ManualFix(
+        reason="Thursday 18:30 Spanish is one week's intention ('THURSDAY/"
+        "JUEVES, 19 November / 6:30 pm - Spanish - Madre Divina "
+        "Providencia'); the masthead has no Thursday Mass",
+        drop_masses={("Thursday", 1830)},
+    ),
+    "sp-l": ManualFix(
+        reason="the row has been reading 2020 bulletins since 2026-08-15. The "
+        "page lists both '11-22-26.pdf' (link text 'November 22, 2026') and "
+        "the 2020 archive's 'November_22_bulletin_8x11.pdf' (link text "
+        "'November 22, 2020'); the year-less name parses to 2026-11-22 too, "
+        "and 'bulletin' in it wins the tie (score 55 v 35). Nov 22 is a Sunday "
+        "in both years. The 2026 masthead: 'Weekday Mass: Tue 8:00am, Fri "
+        "12:00noon / Weekend Mass: Saturday Vigil 5:00pm, Sunday 9:00am / "
+        "Confession: Saturday 4-4:30pm / Adoration: 2nd Monday of Month "
+        "7-8:00pm / Morning Prayer: Mon, Wed 8:00am'. So Mon/Wed 08:00 are "
+        "Morning Prayer, and the Friday noon 'No Mass' is 2020's - in 2026 "
+        "'there will be NO Mass on Thanksgiving Day ... There will be Mass at "
+        "Noon on Friday as usual'. A treadmill until the ranker is fixed",
+        drop_masses={("Monday", 800), ("Wednesday", 800)},
+        uncancel_masses={("Friday", 1200)},
+        adoration_times=[
+            AdorationTime(day="Monday", start_time=1900, end_time=2000,
+                          notes="2nd Monday of the month"),
+        ],
+    ),
+    "13722": ManualFix(
+        reason="Advent confessions on specific dates published as weekly "
+        "Wednesday slots: 'Confession will be available every Saturday in the "
+        "church from 3:30 p.m. to 4:00 p.m., on these Wednesdays: December 2 "
+        "and 9th from 5:15-6:15 ... and December 16th from 7-8 p.m.; and on "
+        "Friday, December 18th'. A confession has no date field, so the dated "
+        "ones cannot be published at all; the masthead is 'Confessions "
+        "Saturday 3:30-4:00pm'",
+        confession_times=[
+            ConfessionTime(day="Saturday", start_time=1530, end_time=1600),
+        ],
+    ),
+    "1736": ManualFix(
+        reason="Wednesday 19:30-20:30 is a one-off: 'St. Anselm / Wednesday, "
+        "December 9 / EVENING OF CONFESSION / MASS: 7:00 / ... CONFESSION: "
+        "7:30-8:30'. Masthead: 'Reconciliation / Saturday ... 2:30-3:30 p.m.* "
+        "*Or by appointment'",
+        confession_times=[
+            ConfessionTime(day="Saturday", start_time=1430, end_time=1530,
+                           notes="Or by appointment"),
+        ],
+    ),
+    "0241": ManualFix(
+        reason="Saturday 14:30-15:30 and Wednesday 18:30-20:00 were added "
+        "'not printed in bulletin' (reproduced); neither appears in the text "
+        "layer, and the masthead reads 'RECONCILIATION / Saturdays at 3:00 PM "
+        "in the church, or by appointment' - no end, so 15:00-16:00 invents "
+        "one. Most likely an Advent graphic, the same week 13722/1736/1485 "
+        "published theirs",
+        confession_times=[
+            ConfessionTime(day="Saturday", start_time=1500,
+                           notes="or by appointment"),
+        ],
     ),
     "29182": ManualFix(
         reason="cluster bleed, locked in by the partial-retraction guard. The "
@@ -862,15 +975,6 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         "before it (Oct 31) has only the 4:00 p.m. vigil",
         mass_note_fixes={("Saturday", 830): "First Saturday"},
     ),
-    "1101": ManualFix(
-        reason="'Saturday, Nov. 7 / 8:30 am First Friday Mass' - a Saturday "
-        "Mass labelled First Friday, which no row had before. Neither monthly "
-        "nor weekly can be read off that with confidence, so it is restated as "
-        "the dated Mass it certainly is. RETIRE after the 11-07 run",
-        drop_masses={("Saturday", 830)},
-        add_masses=[MassTime(day=DayOfWeek.SATURDAY, time=830,
-                             mass_date="2026-11-07", notes="First Friday Mass")],
-    ),
     "0342": ManualFix(
         reason="Wednesday 19:00 is in no masthead line ('Saturdays (vigil) "
         "4:00PM / Sundays 11:00AM / Mondays & Thursdays: 8:00AM'); St. "
@@ -899,7 +1003,14 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         reason="Wednesday 12:00 is one week's extra intention ('Wednesday: "
         "(11/4) ... 7:45 a.m. ... 12:00 noon Deceased members of the Slovenska "
         "Pristava Pensioners'); every other weekday is 7:45 only",
-        drop_masses={("Wednesday", 1200)},
+        # 2026-11-21: the Thanksgiving Day Mass was stored as Thursday 09:00
+        # dated 2026-11-25 - the WEDNESDAY - so the app would show it a day
+        # early. The run's own notes call the bulletin's date "inconsistent
+        # with the dated week shown on p.3 (which lists Thanksgiving Day as
+        # 11/26)". RETIRE after the 11-28 run.
+        drop_masses={("Wednesday", 1200), ("Thursday", 900, "2026-11-25")},
+        add_masses=[MassTime(day=DayOfWeek.THURSDAY, time=900,
+                             mass_date="2026-11-26", notes="Thanksgiving Day")],
     ),
     "0674": ManualFix(
         reason="Tuesday 08:45 dropped on 10-17 and never re-extracted, though "
@@ -987,6 +1098,17 @@ MANUAL_FIXES: dict[str, ManualFix] = {
         "Saturday 11:00 is the dated 'Sat Oct 10 11:00pm HS Candlelight Mass' "
         "published weekly at the wrong half of the day",
         drop_masses={("Wednesday", 1900), ("Saturday", 1100)},
+        # 2026-11-21: confessions bled from the cluster's 'Reconciliation
+        # Times' table (Sat 3:30-4 / Fri 4-5 / Wed 7-7:30 / ... one column per
+        # parish) between 11-07 and 11-14, unguarded because adds never are.
+        # The 11-21 run extracted the right single slot and was HELD as a
+        # 2-of-3 retraction, and the Thanksgiving hold froze the Friday too.
+        # St. Gabriel's own line: 'The sacrament of Reconciliation is
+        # celebrated every Saturday from 3:45 - 4:30pm, or by appointment'.
+        confession_times=[
+            ConfessionTime(day="Saturday", start_time=1545, end_time=1630,
+                           notes="or by appointment"),
+        ],
     ),
     "22544": ManualFix(
         reason="a weekly Sunday 12:00-14:00 confession built from the FIRST FRIDAY "
@@ -1028,7 +1150,12 @@ MANUAL_FIXES: dict[str, ManualFix] = {
     "saint-agnes-elyria-oh": ManualFix(
         reason="'9:00 am - at St. Mary' - the sister parish's Masses (cluster "
         "bleed), not reproduced",
-        drop_masses={("Thursday", 900), ("Friday", 900), ("Saturday", 900)},
+        drop_masses={("Thursday", 900), ("Friday", 900), ("Saturday", 900),
+                     # 2026-11-21: the same bleed, dated - 'Thanksgiving Day
+                     # Mass (at St. Mary)' and the Friday after. St. Mary's
+                     # own row (-ola) holds both. RETIRE after the 11-28 run.
+                     ("Thursday", 900, "2026-11-26"),
+                     ("Friday", 900, "2026-11-27")},
         # Retired 2026-10-31: the 10-10 confession restatement (Sat 15:30-
         # 16:15) was WRONG. "RECONCILIATION: Saturdays from 3:30PM-4:15PM"
         # sits in St. MARY's contact block (www.stmaryelyria.org); St.
@@ -1091,6 +1218,10 @@ MANUAL_FIXES: dict[str, ManualFix] = {
             ConfessionTime(day="Tuesday", start_time=1830, end_time=1930,
                            notes="1st Tuesday of each month; or by appointment"),
         ],
+        # 2026-11-21: Wednesday 08:30 and 12:00 added on one draw (LIKELY
+        # WRONG WRITE: not printed, NOT reproduced). The 11-22 listing has
+        # 'Wednesday, November 25 ... 7:00am Mass' and nothing else.
+        drop_masses={("Wednesday", 830), ("Wednesday", 1200)},
     ),
     "2492": ManualFix(
         reason="perpetual chapel carrying one stale slot - a Holy Thursday "
@@ -1518,7 +1649,17 @@ def plan_fixes(parish: FullParishData) -> tuple[dict[str, Any], list[str]]:
     if manual and manual.drop_masses:
         kept = []
         for mass in site.mass_times:
-            if (mass.day.value, mass.time) in manual.drop_masses:
+            # A (day, time) key drops only the RECURRING entry. A dated Mass
+            # at the same slot is a different fact - 1532's and 0164's
+            # Thursday 09:00 drops (invented weekly Masses) were deleting each
+            # parish's dated Thanksgiving 09:00 along with them. To drop a
+            # dated Mass, name its date: (day, time, "YYYY-MM-DD").
+            if mass.mass_date is None:
+                hit = (mass.day.value, mass.time) in manual.drop_masses
+            else:
+                hit = (mass.day.value, mass.time,
+                       mass.mass_date.isoformat()) in manual.drop_masses
+            if hit:
                 notes.append(
                     f"mass: dropped {mass.day.value} {mass.time:04d} "
                     f"({manual.reason})"

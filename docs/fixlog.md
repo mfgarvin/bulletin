@@ -52,6 +52,63 @@ most, because it separates *fixed* from *patched*:
 
 ---
 
+## 2026-11-21 (Thanksgiving week; triaged 2026-11-23)
+
+155 parishes, 1 failed (OLHC: Discover Mass "Request error", and DM was still
+timing out from a residential IP on 11-23), 40 warned. Covered week 11-22..28
+for 147 bulletins, so Thursday and Friday were held: 34 rows frozen. 46 rows
+written by `notion_fixes`; second pass a no-op. The 11-07 and 11-14 runs were
+not triaged separately; their damage is in the rows below where it survived.
+
+| parish | field | change applied | category | cause | resolution |
+|---|---|---|---|---|---|
+| `sp-l` | Mass, Adoration | Mon/Wed 08:00 dropped; Fri 12:00 uncancelled; adoration -> 2nd Monday 19-20 | publisher-broken | **serving 2020 bulletins since 08-15**: `November_22_bulletin_8x11.pdf` (link text "November 22, 2020") parses to 2026-11-22 and beats the real `11-22-26.pdf` on the "bulletin" keyword, 55 v 35 | treadmill (until the ranker reads the link text's year) |
+| `0077` | Mass | dropped Wed 0700, Thu 0700, Fri 0700/0730 | cluster-bleed | St. Hilary/St. Victor schedules bled in on 11-14; 11-21 removed most, and the Thanksgiving hold kept the Thu/Fri remainder | manual |
+| `1831` | Mass | uncancel Thu 0830 | — | the hold restored the stored Thursday with the 11-14 week's `cancelled` still on it; Thanksgiving is one 8:30 Mass | manual (one week) |
+| `5493` | Mass | dropped Mon 1830; restored Mon/Tue/Wed 1130 | fabrication / noise-drop | Mon 18:30 built from the Advent confession line; Shrine Masses dropped on one draw (NOT reproduced) | manual |
+| `st-mary-cleveland-oh` | Mass | Thanksgiving 09:00 re-dated 11-25 -> 11-26 | — | the bulletin's own date slip; app would have shown it on the Wednesday | manual (one week) |
+| `1855-clem` | Mass | added dated 11-26 0900 | holiday-displacement | *replaced* shape: emitted as a weekly Thursday 09:00, the hold declined it, no dated Mass left | manual (one week) |
+| `1855`, `ss-c` | Mass | restored Sat 0815 "First Saturday"; Sun 1100 German "First Sunday" | monthly-dropped | off-week deletions | treadmill |
+| `20822`, `olg-m`, `shc` | Mass | dropped Thu 1830; Wed 0830/1200; Tue 0800/0900 | dated-as-recurring / noise / cluster-bleed | one week's intention; a NOT-reproduced draw; Amherst/Grafton intentions in the shared listing | manual |
+| `1794` | Mass | dropped Fri 0900 | dated-as-recurring | Nov 6 First Friday school Mass never reverted, then the hold froze Friday | manual |
+| `13722`, `1736`, `1485`, `0241` | Conf | restated to the masthead | dated-as-recurring | **Advent penance services published as weekly slots** (Dec 2/9/16 Wednesdays, Dec 9 evening, Dec 12/16) | manual |
+| `1286` | Conf | Sat 1545-1630 only | cluster-bleed | the cluster's "Reconciliation Times" table bled in 11-07/11-14; the correct 11-21 extraction was HELD as a 2-of-3 retraction | manual |
+| `shc` | Conf | Fri 0700-0830 only | cluster-bleed | Wednesday's slot is St. Patrick Wellington's (shc-pat holds it) | manual |
+| `29182`, `23926`, `22544`, `1494`, `st-mel`, `1259`, OLMC, `saint-agnes`, OLA, `0069`, `1548`, `1532`, `0674`, `37345`, `st-paul-akron-oh`, `1130`, `0875`, `1060`, `1088`, `amherst`, `1905`, visitation x2, OLV, `1687`, `0512` | various | standing entries re-applied | treadmill | 29182 is the St. Bernard bleed AGAIN (an expansion, never held); 23926's invented Sunday confessions locked in by the retraction guard | treadmill |
+| `1733`, `1101`, `1687` (Sun 11:30 uncancel), `shc`/`shc-pat` (Sept uncancels), `1236` (Sept confession restatement) | — | **retired** | — | one-week entries past their week; 1236's now fought a real Advent change (Wed confession 18:00 -> 17:30 from Nov 29) | structural |
+| `1831` Tue, `immat-con-cle` Wed, `sfds-a` Tue, `0886` Sat conf | — | — | one-week-cancellation | the run is right for THIS week (funeral; special 7:00; Tue 7:30; confession moves to Sat 9-10 from 11-28); self-heals 11-28 | deferred |
+| `0241` (image section), `1241`, OLA conf, `st-vincent-de-paul-elyria-oh` conf | — | — | — | unverifiable (image layer; DM unreachable) | deferred |
+
+**Thanksgiving, measured.** 105 rows publish a dated 11-26 Mass (95 of them at
+9:00); 4 rows a Wednesday-evening vigil. Errors: `sp-l` (a 2020 bulletin - the
+year guard dropped its "2020-11-26" Mass, and was right: 2026 has *no*
+Thanksgiving Mass), `st-mary-cleveland-oh` (dated the Wednesday), `1855-clem`
+(lost). The hold caught the *replaced* shape on 5 rows (`1137`, `1137-svdp`,
+`saint-john-bosco`, `1855-clem`/`-james`, `olg-m`) and the *dropped* shape on
+~20. **The gap is the other half of the day:** 73 rows still publish their
+standing Thursday Mass, uncancelled, beside the dated Thanksgiving one. In 16 of
+17 bulletins with a readable listing the Thanksgiving header prints ONLY the
+holiday Mass (`1318` is the exception, with both 7:30 and 9:00), and the run's
+own notes say so ("instead of the usual 8:45am", "no 8:00am Mass that
+morning"). Only 6 Thursday slots carry `cancelled`. The detector keys on a "no
+Mass" phrase; a listing that simply prints a different time has none.
+
+**Two mechanism findings:**
+1. `_splice_held_weekdays` restores stored entries **with their old
+   `cancelled` flag** - last week's cancellation carried into this week
+   (`1831`). Clear the flag on restore.
+2. `drop_masses` matched dated Masses too, so `1532`'s and `0164`'s Thursday
+   09:00 drops would have deleted their Thanksgiving Masses on apply. Fixed in
+   `notion_fixes`: a (day, time) key is recurring-only; name a date to drop a
+   dated one.
+
+**Also:** the partial-retraction guard locked in a bad unguarded write twice
+more (`1286`, `23926`), and the holiday hold did the same for `0077` - every
+guard that "protects stored" protects stored bleed. Discover Mass unreachable
+(OLHC failed; 11 DM rows unverifiable today). Freshness: 93 PO on 11-22;
+`20822` on 11-15 (no newer upload); `2452` 27 days and `sc-p` 20 days stale
+(warned); `ss-c` and `olp-cle` a week behind (worker runs before they upload).
+
 ## 2026-10-17, 10-24, 10-31 (All Saints Sunday / All Souls Monday; triaged together 2026-10-31)
 
 Three runs untriaged, 155 parishes each, 0 failed. Warned: 36, 34, **148** -
